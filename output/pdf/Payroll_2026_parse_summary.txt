@@ -1,0 +1,10 @@
+OCR source: /Users/bryan/Desktop/Payroll 2026.pdf
+Total parsed rows: 151
+
+Per-page alignment (employees, titles, salaries, paired):
+Page 1: 31, 31, 31, 31
+Page 2: 24, 24, 24, 24
+Page 3: 29, 30, 29, 29
+Page 4: 37, 37, 40, 37
+Page 5: 25, 25, 25, 25
+Page 7: 5, 5, 5, 5

@@ -1,0 +1,958 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC62F71A48000246CF7 /* FirebaseAnalytics */; };
+		9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */; };
+		9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */; };
+		A1B2C3D42FAD100000000001 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42FAD100000000002 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93F8487E2E3F22C2002CEF92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93F848672E3F22C1002CEF92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93F8486E2E3F22C1002CEF92;
+			remoteInfo = "Riverhead NY Budget App";
+		};
+		93F848882E3F22C2002CEF92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93F848672E3F22C1002CEF92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93F8486E2E3F22C1002CEF92;
+			remoteInfo = "Riverhead NY Budget App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9306E1292F46081200067A60 /* Gross Earnings 2023.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2023.csv"; sourceTree = "<group>"; };
+		9306E12D2F4608E700067A60 /* Gross Earnings 2022.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2022.csv"; sourceTree = "<group>"; };
+		9306E32A2F46118B00067A60 /* Gross Earnings 2018.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2018.csv"; sourceTree = "<group>"; };
+		9306E32B2F46118B00067A60 /* Gross Earnings 2019.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2019.csv"; sourceTree = "<group>"; };
+		9306E32C2F46118B00067A60 /* Gross Earnings 2020.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2020.csv"; sourceTree = "<group>"; };
+		9306E32D2F46118B00067A60 /* Gross Earnings 2021.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Gross Earnings 2021.csv"; sourceTree = "<group>"; };
+		93F8486F2E3F22C1002CEF92 /* Riverhead NY Budget App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Riverhead NY Budget App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F8487D2E3F22C2002CEF92 /* Riverhead NY Budget AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Riverhead NY Budget AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F848872E3F22C2002CEF92 /* Riverhead NY Budget AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Riverhead NY Budget AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9357D3DA2F217CD900F60EDE /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				"RBCivicToolkitStore+TownSquareSeed.swift",
+				TownSquareProjectSeeder.swift,
+			);
+			target = 93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */;
+		};
+		9373F9ED2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				05.adopted.budget.pdf,
+				06.adopted.budget.pdf,
+				07.adopted.budget.pdf,
+				08.adopted.budget.pdf,
+				2009.adopted.budget.pdf,
+				2010.adopted.budget.pdf,
+				"2011.Adopted Budget.pdf",
+				2012.Adopted.Budget.pdf,
+				2020AdoptedBudget957121129112119PM.pdf,
+				"2021 Adopted Budget (PDF).pdf",
+				2021AdoptedBudget958090915113020AM.pdf,
+				"2022 Tentative Budget (PDF).pdf",
+				2022AdoptedBudget958105751111721AM.pdf,
+				"2023 Tentative Budget (PDF).pdf",
+				2023TentativeBudget1505035948093022PM.pdf,
+				"2024 Adopted Budget (PDF).pdf",
+				"2024 Annual Financial Report Update (PDF) (1).pdf",
+				"2024 Annual Financial Report Update (PDF).pdf",
+				"2024 Tentative Budget (PDF).pdf",
+				2024AdoptedBudget1505034817111523PM.pdf,
+				"2025 Adopted Budget (PDF).pdf",
+				"2025 Budget Supplement (PDF).pdf",
+				"2025 Tentative Budget (PDF).pdf",
+				"2025AdoptedBudget1518015509112024PM (1).pdf",
+				2025AdoptedBudget1518015509112024PM.pdf,
+				"2026 Tentative Budget Print (PDF).pdf",
+				AboutAppView.swift,
+				BHFundYearRow_MODEL.swift,
+				"Budget2026Explore+Shift.swift",
+				BudgetAudienceMode.swift,
+				BudgetDataBootstrapper.swift,
+				BudgetHistoryShift.swift,
+				BudgetPolicyInsightsView.swift,
+				BudgetSlice.swift,
+				BudgetSliceDashboardView.swift,
+				BudgetTabView.swift,
+				Channel22View.swift,
+				CivicToolkitsHubView.swift,
+				ContactView.swift,
+				ContentView.swift,
+				ContractCatalog.swift,
+				ContractImpactEngine.swift,
+				ContractImpactEstimatorView.swift,
+				ContractImpactModels.swift,
+				CostOfLivingToolkitsView.swift,
+				DepartmentsView.swift,
+				document957022719050415.pdf,
+				document957030902120612.pdf,
+				document957043856112013.pdf,
+				document957094340010417.pdf,
+				document957104317121615.pdf,
+				document958090952092917.pdf,
+				document958105748120718.pdf,
+				EnergyFocusArea.swift,
+				EnergyPolicyCostDriversView.swift,
+				ENT_COMPAT_.txt,
+				EPFocusArea.swift,
+				ExpertTabView.swift,
+				FundBalancePoliciesView.swift,
+				FundBalanceShiftView.swift,
+				FundDetailExplorerView.swift,
+				FundDetailView.swift,
+				"GoogleService-Info.plist",
+				"Gross Earnings 2018.csv",
+				"Gross Earnings 2019.csv",
+				"Gross Earnings 2020.csv",
+				"Gross Earnings 2021.csv",
+				HistoricalTabView.swift,
+				HomeView.swift,
+				HowDoIView.swift,
+				MainTabView.swift,
+				MoreView.swift,
+				MyTaxesView.swift,
+				NewsAndEventsView.swift,
+				NYTaxCapInputs.swift,
+				OverviewShiftView.swift,
+				PDFViewer.swift,
+				RBBudgetExplorerView.swift,
+				RBBudgetNode.swift,
+				RBBudgetStore.swift,
+				RBCapitalProject.swift,
+				RBCapitalProjectsMapView.swift,
+				RBCivicToolkitHostView.swift,
+				RBCivicToolkitStore.swift,
+				RBFundBalancePolicy.swift,
+				RBLocalJSONCache.swift,
+				RBMunicipality.swift,
+				RBSalaryInsightsView.swift,
+				RBSixSigmaPhase.swift,
+				RBSixSigmaStore.swift,
+				RBTownSquareHubView.swift,
+				RBTownSquareQEBudgetMathView.swift,
+				RBTownSquareSweetheartDealAuditView.swift,
+				riverhead_general_fund_2005_2025.csv,
+				riverhead_levies.csv,
+				Riverhead_NYApp.swift,
+				RiverheadBudgetDoc.swift,
+				RiverheadBudgetHubView.swift,
+				RiverheadCommitteesView.swift,
+				RiverheadFundBalanceAuditView.swift,
+				RiverheadTheme.swift,
+				RiverheadURLs.swift,
+				RootView.swift,
+				SafariView.swift,
+				salary_excerpt_2021_2026_app_ready_with_elected_officials_police_highway_2021_2026.csv,
+				"SixSigmaProcessImprovementShiftView 2.swift",
+				Tab.swift,
+				tables_flat.csv,
+				ToolRowTrailing.swift,
+				TownSquareBANImpactView.swift,
+				TownSquareCoreTerms.swift,
+				TownSquareLeaseAmendmentTerms.swift,
+				TownSquareProjectHubView.swift,
+				WebContentView.swift,
+				YearlyEarnings.swift,
+			);
+			target = 93F8487C2E3F22C2002CEF92 /* Riverhead NY Budget AppTests */;
+		};
+		9373F9EE2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				05.adopted.budget.pdf,
+				06.adopted.budget.pdf,
+				07.adopted.budget.pdf,
+				08.adopted.budget.pdf,
+				2009.adopted.budget.pdf,
+				2010.adopted.budget.pdf,
+				"2011.Adopted Budget.pdf",
+				2012.Adopted.Budget.pdf,
+				2020AdoptedBudget957121129112119PM.pdf,
+				"2021 Adopted Budget (PDF).pdf",
+				2021AdoptedBudget958090915113020AM.pdf,
+				"2022 Tentative Budget (PDF).pdf",
+				2022AdoptedBudget958105751111721AM.pdf,
+				"2023 Tentative Budget (PDF).pdf",
+				2023TentativeBudget1505035948093022PM.pdf,
+				"2024 Adopted Budget (PDF).pdf",
+				"2024 Annual Financial Report Update (PDF) (1).pdf",
+				"2024 Annual Financial Report Update (PDF).pdf",
+				"2024 Tentative Budget (PDF).pdf",
+				2024AdoptedBudget1505034817111523PM.pdf,
+				"2025 Adopted Budget (PDF).pdf",
+				"2025 Budget Supplement (PDF).pdf",
+				"2025 Tentative Budget (PDF).pdf",
+				"2025AdoptedBudget1518015509112024PM (1).pdf",
+				2025AdoptedBudget1518015509112024PM.pdf,
+				"2026 Tentative Budget Print (PDF).pdf",
+				AboutAppView.swift,
+				BHFundYearRow_MODEL.swift,
+				"Budget2026Explore+Shift.swift",
+				BudgetAudienceMode.swift,
+				BudgetDataBootstrapper.swift,
+				BudgetHistoryShift.swift,
+				BudgetPolicyInsightsView.swift,
+				BudgetSlice.swift,
+				BudgetSliceDashboardView.swift,
+				BudgetTabView.swift,
+				Channel22View.swift,
+				CivicToolkitsHubView.swift,
+				ContactView.swift,
+				ContentView.swift,
+				ContractCatalog.swift,
+				ContractImpactEngine.swift,
+				ContractImpactEstimatorView.swift,
+				ContractImpactModels.swift,
+				CostOfLivingToolkitsView.swift,
+				DepartmentsView.swift,
+				document957022719050415.pdf,
+				document957030902120612.pdf,
+				document957043856112013.pdf,
+				document957094340010417.pdf,
+				document957104317121615.pdf,
+				document958090952092917.pdf,
+				document958105748120718.pdf,
+				EnergyFocusArea.swift,
+				EnergyPolicyCostDriversView.swift,
+				ENT_COMPAT_.txt,
+				EPFocusArea.swift,
+				ExpertTabView.swift,
+				FundBalancePoliciesView.swift,
+				FundBalanceShiftView.swift,
+				FundDetailExplorerView.swift,
+				FundDetailView.swift,
+				"GoogleService-Info.plist",
+				"Gross Earnings 2018.csv",
+				"Gross Earnings 2019.csv",
+				"Gross Earnings 2020.csv",
+				"Gross Earnings 2021.csv",
+				HistoricalTabView.swift,
+				HomeView.swift,
+				HowDoIView.swift,
+				MainTabView.swift,
+				MoreView.swift,
+				MyTaxesView.swift,
+				NewsAndEventsView.swift,
+				NYTaxCapInputs.swift,
+				OverviewShiftView.swift,
+				PDFViewer.swift,
+				RBBudgetExplorerView.swift,
+				RBBudgetNode.swift,
+				RBBudgetStore.swift,
+				RBCapitalProject.swift,
+				RBCapitalProjectsMapView.swift,
+				RBCivicToolkitHostView.swift,
+				RBCivicToolkitStore.swift,
+				RBFundBalancePolicy.swift,
+				RBLocalJSONCache.swift,
+				RBMunicipality.swift,
+				RBSalaryInsightsView.swift,
+				RBSixSigmaPhase.swift,
+				RBSixSigmaStore.swift,
+				RBTownSquareHubView.swift,
+				RBTownSquareQEBudgetMathView.swift,
+				RBTownSquareSweetheartDealAuditView.swift,
+				riverhead_general_fund_2005_2025.csv,
+				riverhead_levies.csv,
+				Riverhead_NYApp.swift,
+				RiverheadBudgetDoc.swift,
+				RiverheadBudgetHubView.swift,
+				RiverheadCommitteesView.swift,
+				RiverheadFundBalanceAuditView.swift,
+				RiverheadTheme.swift,
+				RiverheadURLs.swift,
+				RootView.swift,
+				SafariView.swift,
+				salary_excerpt_2021_2026_app_ready_with_elected_officials_police_highway_2021_2026.csv,
+				"SixSigmaProcessImprovementShiftView 2.swift",
+				Tab.swift,
+				tables_flat.csv,
+				ToolRowTrailing.swift,
+				TownSquareBANImpactView.swift,
+				TownSquareCoreTerms.swift,
+				TownSquareLeaseAmendmentTerms.swift,
+				TownSquareProjectHubView.swift,
+				WebContentView.swift,
+				YearlyEarnings.swift,
+			);
+			target = 93F848862E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		93F848712E3F22C1002CEF92 /* Riverhead NY Budget App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9357D3DA2F217CD900F60EDE /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget App" target */,
+				9373F9ED2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppTests" target */,
+				9373F9EE2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppUITests" target */,
+			);
+			path = "Riverhead NY Budget App";
+			sourceTree = "<group>";
+		};
+		93F848802E3F22C2002CEF92 /* Riverhead NY Budget AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Riverhead NY Budget AppTests";
+			sourceTree = "<group>";
+		};
+		93F8488A2E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Riverhead NY Budget AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93F8486C2E3F22C1002CEF92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */,
+				9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */,
+				A1B2C3D42FAD100000000001 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F8487A2E3F22C2002CEF92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F848842E3F22C2002CEF92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93F848662E3F22C1002CEF92 = {
+			isa = PBXGroup;
+			children = (
+				9306E1292F46081200067A60 /* Gross Earnings 2023.csv */,
+				9306E12D2F4608E700067A60 /* Gross Earnings 2022.csv */,
+				93F848712E3F22C1002CEF92 /* Riverhead NY Budget App */,
+				93F848802E3F22C2002CEF92 /* Riverhead NY Budget AppTests */,
+				93F8488A2E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */,
+				93F848702E3F22C1002CEF92 /* Products */,
+				9306E32A2F46118B00067A60 /* Gross Earnings 2018.csv */,
+				9306E32B2F46118B00067A60 /* Gross Earnings 2019.csv */,
+				9306E32C2F46118B00067A60 /* Gross Earnings 2020.csv */,
+				9306E32D2F46118B00067A60 /* Gross Earnings 2021.csv */,
+			);
+			sourceTree = "<group>";
+		};
+		93F848702E3F22C1002CEF92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93F8486F2E3F22C1002CEF92 /* Riverhead NY Budget App.app */,
+				93F8487D2E3F22C2002CEF92 /* Riverhead NY Budget AppTests.xctest */,
+				93F848872E3F22C2002CEF92 /* Riverhead NY Budget AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F848912E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget App" */;
+			buildPhases = (
+				93F8486B2E3F22C1002CEF92 /* Sources */,
+				93F8486C2E3F22C1002CEF92 /* Frameworks */,
+				93F8486D2E3F22C1002CEF92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				93F848712E3F22C1002CEF92 /* Riverhead NY Budget App */,
+			);
+			name = "Riverhead NY Budget App";
+			packageProductDependencies = (
+				A1B2C3D42FAD100000000002 /* GoogleMobileAds */,
+				9338FCC62F71A48000246CF7 /* FirebaseAnalytics */,
+				9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */,
+				9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */,
+			);
+			productName = "Riverhead NY Budget App";
+			productReference = 93F8486F2E3F22C1002CEF92 /* Riverhead NY Budget App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93F8487C2E3F22C2002CEF92 /* Riverhead NY Budget AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F848942E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget AppTests" */;
+			buildPhases = (
+				93F848792E3F22C2002CEF92 /* Sources */,
+				93F8487A2E3F22C2002CEF92 /* Frameworks */,
+				93F8487B2E3F22C2002CEF92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93F8487F2E3F22C2002CEF92 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				93F848802E3F22C2002CEF92 /* Riverhead NY Budget AppTests */,
+			);
+			name = "Riverhead NY Budget AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Riverhead NY Budget AppTests";
+			productReference = 93F8487D2E3F22C2002CEF92 /* Riverhead NY Budget AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93F848862E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93F848972E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget AppUITests" */;
+			buildPhases = (
+				93F848832E3F22C2002CEF92 /* Sources */,
+				93F848842E3F22C2002CEF92 /* Frameworks */,
+				93F848852E3F22C2002CEF92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93F848892E3F22C2002CEF92 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				93F8488A2E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */,
+			);
+			name = "Riverhead NY Budget AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Riverhead NY Budget AppUITests";
+			productReference = 93F848872E3F22C2002CEF92 /* Riverhead NY Budget AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93F848672E3F22C1002CEF92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					93F8486E2E3F22C1002CEF92 = {
+						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 2600;
+					};
+					93F8487C2E3F22C2002CEF92 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 93F8486E2E3F22C1002CEF92;
+					};
+					93F848862E3F22C2002CEF92 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 93F8486E2E3F22C1002CEF92;
+					};
+				};
+			};
+			buildConfigurationList = 93F8486A2E3F22C1002CEF92 /* Build configuration list for PBXProject "Riverhead NY Budget App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93F848662E3F22C1002CEF92;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 93F848702E3F22C1002CEF92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */,
+				93F8487C2E3F22C2002CEF92 /* Riverhead NY Budget AppTests */,
+				93F848862E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93F8486D2E3F22C1002CEF92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F8487B2E3F22C2002CEF92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F848852E3F22C2002CEF92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93F8486B2E3F22C1002CEF92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F848792E3F22C2002CEF92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93F848832E3F22C2002CEF92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93F8487F2E3F22C2002CEF92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */;
+			targetProxy = 93F8487E2E3F22C2002CEF92 /* PBXContainerItemProxy */;
+		};
+		93F848892E3F22C2002CEF92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */;
+			targetProxy = 93F848882E3F22C2002CEF92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		93F8488F2E3F22C2002CEF92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93F848902E3F22C2002CEF92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		93F848922E3F22C2002CEF92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 25;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Riverhead NY Budget App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Riverhead Budget";
+				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-9917450718827221~2743419962";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 2026.04.19;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		93F848932E3F22C2002CEF92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 25;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Riverhead NY Budget App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Riverhead Budget";
+				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-9917450718827221~2743419962";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 2026.04.19;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		93F848952E3F22C2002CEF92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riverhead NY Budget App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Riverhead NY Budget App";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		93F848962E3F22C2002CEF92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riverhead NY Budget App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Riverhead NY Budget App";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		93F848982E3F22C2002CEF92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = "Riverhead NY Budget App";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		93F848992E3F22C2002CEF92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = RT25WXR9M5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = "Riverhead NY Budget App";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93F8486A2E3F22C1002CEF92 /* Build configuration list for PBXProject "Riverhead NY Budget App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F8488F2E3F22C2002CEF92 /* Debug */,
+				93F848902E3F22C2002CEF92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F848912E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F848922E3F22C2002CEF92 /* Debug */,
+				93F848932E3F22C2002CEF92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F848942E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F848952E3F22C2002CEF92 /* Debug */,
+				93F848962E3F22C2002CEF92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93F848972E3F22C2002CEF92 /* Build configuration list for PBXNativeTarget "Riverhead NY Budget AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93F848982E3F22C2002CEF92 /* Debug */,
+				93F848992E3F22C2002CEF92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.11.0;
+			};
+		};
+		A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9338FCC62F71A48000246CF7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsIdentitySupport;
+		};
+		A1B2C3D42FAD100000000002 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 93F848672E3F22C1002CEF92 /* Project object */;
+}

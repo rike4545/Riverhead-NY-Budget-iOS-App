@@ -1,0 +1,24 @@
+Rows: 151
+Departments and row counts:
+UNASSIGNED: 58
+Buildings & Grounds: 18
+Justice Court: 12
+Economic Development: 7
+Finance: 7
+Senior Citizen Programs Nutrition: 6
+Engineering: 5
+Municipal Garage Employees: 5
+Senior Citizen Programs Bus Operations: 5
+Planning: 4
+Assessors: 3
+Building: 3
+Sanitation Department & Yard Waste Program: 3
+Human Resources: 2
+Juvenile Aid Bureau: 2
+Police Civilian: 2
+Registrar Of Vital Statistics: 2
+Senior Citizen Programs Administration: 2
+Transportation Administration: 2
+Harbormaster: 1
+Historian: 1
+Legislative: 1

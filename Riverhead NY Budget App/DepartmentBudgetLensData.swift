@@ -47,11 +47,30 @@ struct RebalanceRecommendation: Identifiable, Hashable {
     let direction: RebalanceDirection
     let adopted2025: Double
     let adopted2026: Double
+    let changeLabel: String?
     let rationale: String
 
     var id: String { "\(fundFunction)-\(account)" }
 
     var change: Double { adopted2026 - adopted2025 }
+
+    init(
+        fundFunction: String,
+        account: String,
+        direction: RebalanceDirection,
+        adopted2025: Double,
+        adopted2026: Double,
+        changeLabel: String? = nil,
+        rationale: String
+    ) {
+        self.fundFunction = fundFunction
+        self.account = account
+        self.direction = direction
+        self.adopted2025 = adopted2025
+        self.adopted2026 = adopted2026
+        self.changeLabel = changeLabel
+        self.rationale = rationale
+    }
 }
 
 enum DepartmentBudgetLensData {
@@ -153,7 +172,7 @@ enum DepartmentBudgetLensData {
             salaryBase: 1_594_542.10,
             adoptedTotal: 1_429_097,
             keyTitles: ["Deputy Town Attorney (3)", "Paralegal (2)", "Fire Marshal I (2)"],
-            note: "Read carefully: the staffing file carries fire marshal and code-related titles that do not map perfectly to budget function 1420."
+            note: "Action required: 16 mapped positions carry a $1.594M salary base against the $1.429M function 1420 adopted total, a roughly $165K overage. Confirm whether fire marshal and code-compliance titles belong under functions 3625/3620, or correct the staffing-to-budget crosswalk."
         ),
         .init(
             budgetDepartment: "Human Resources",
@@ -329,103 +348,71 @@ enum DepartmentBudgetLensData {
             direction: .tighten,
             adopted2025: 752_400,
             adopted2026: 943_000,
-            rationale: "Very large jump. This is the kind of account that deserves monthly staffing and schedule review before it becomes the new permanent baseline."
+            changeLabel: "+25.3%",
+            rationale: "Tie to scheduling audit before normalizing as permanent baseline."
         ),
         .init(
             fundFunction: "A01 Police 3120",
-            account: "Police health insurance buy back",
+            account: "Police health insurance buy-back",
             direction: .tighten,
-            adopted2025: 388_666,
-            adopted2026: 500_729,
-            rationale: "A good audit-and-monitor account. If participation eases, the Town should capture the savings rather than normalize the peak."
+            adopted2025: 389_000,
+            adopted2026: 501_000,
+            changeLabel: "+28.8%",
+            rationale: "Active audit needed. Capture savings if participation declines."
         ),
         .init(
             fundFunction: "A01 Town Hall 1620",
-            account: "Peconic Hockey electricity",
+            account: "Peconic Hockey electricity (new)",
             direction: .tighten,
             adopted2025: 0,
             adopted2026: 167_742,
-            rationale: "This is a new major utility burden. It should stay visible as a separable policy and cost-recovery question."
-        ),
-        .init(
-            fundFunction: "A01 Tax Collection 1330",
-            account: "Postage",
-            direction: .tighten,
-            adopted2025: 1_500,
-            adopted2026: 13_500,
-            rationale: "A sharp operating increase worth testing against billing design, online options, and print/mail workflow."
-        ),
-        .init(
-            fundFunction: "A01 Community Development 8686",
-            account: "Special events",
-            direction: .tighten,
-            adopted2025: 0,
-            adopted2026: 43_200,
-            rationale: "New programmatic cost. If retained, it should be tied to explicit outcomes rather than absorbed into a broad downtown bucket."
-        ),
-        .init(
-            fundFunction: "DA1 Highway 5142",
-            account: "Snow contractual",
-            direction: .tighten,
-            adopted2025: 174_000,
-            adopted2026: 225_000,
-            rationale: "Understandable weather hedge, but it should be monitored against actual winter conditions instead of normalized automatically."
-        ),
-        .init(
-            fundFunction: "ES1 Sewer 8130",
-            account: "Waste disposal",
-            direction: .tighten,
-            adopted2025: 490_000,
-            adopted2026: 585_700,
-            rationale: "One of the largest recurring jumps in the sewer operation and a strong candidate for vendor and process review."
+            changeLabel: "New",
+            rationale: "Absorbed into Town Hall utilities with no cost recovery plan."
         ),
         .init(
             fundFunction: "ES5 Scavenger Waste 8189",
-            account: "Waste disposal",
+            account: "ES5 scavenger waste disposal",
             direction: .tighten,
             adopted2025: 490_000,
-            adopted2026: 677_100,
-            rationale: "A very large increase. This belongs near the top of any rebalancing and contract-management discussion."
+            adopted2026: 677_000,
+            changeLabel: "+38.2%",
+            rationale: "Largest single enterprise fund jump. Benchmark disposal contracts."
         ),
         .init(
-            fundFunction: "EW1 Water 8320",
-            account: "Consultants",
+            fundFunction: "A01 Tax Collection 1330",
+            account: "Tax collection postage",
             direction: .tighten,
-            adopted2025: 150_000,
-            adopted2026: 175_000,
-            rationale: "Keep if it is truly project-bound or compliance-bound; otherwise it should be controlled more tightly."
-        ),
-        .init(
-            fundFunction: "EW1 Water 8320",
-            account: "Lab fees",
-            direction: .tighten,
-            adopted2025: 150_000,
-            adopted2026: 165_000,
-            rationale: "Likely justified operationally, but still worth watch-list treatment because it is large and recurring."
-        ),
-        .init(
-            fundFunction: "A01 Building 3620",
-            account: "Equipment",
-            direction: .strengthen,
-            adopted2025: 3_750,
-            adopted2026: 0,
-            rationale: "Too lean for an inspection-heavy field function. If the Town wants faster service, some field-tech support should come back in."
-        ),
-        .init(
-            fundFunction: "A01 Code Enforcement 3625",
-            account: "Equipment",
-            direction: .strengthen,
-            adopted2025: 10_500,
-            adopted2026: 10_500,
-            rationale: "Flat funding is manageable only if it is paired with separate fleet and staffing support."
+            adopted2025: 1_500,
+            adopted2026: 13_500,
+            changeLabel: "+800%",
+            rationale: "Review billing process changes vs. actual mailing volume."
         ),
         .init(
             fundFunction: "A01 Buildings & Grounds 1625",
-            account: "Vehicles",
+            account: "Buildings & Grounds vehicles",
             direction: .strengthen,
             adopted2025: 132_000,
             adopted2026: 55_000,
-            rationale: "This looks like deferred replacement more than a genuine long-term savings solution."
+            changeLabel: "-58.3%",
+            rationale: "Fleet age risk. Deferred replacement compounds future repair costs."
+        ),
+        .init(
+            fundFunction: "A01 Building 3620",
+            account: "Building dept equipment",
+            direction: .strengthen,
+            adopted2025: 3_750,
+            adopted2026: 0,
+            changeLabel: "-100%",
+            rationale: "Eliminated entirely. Field inspection department with zero equipment budget is a gap."
+        ),
+        .init(
+            fundFunction: "A01 Programs for the Aging 6772",
+            account: "Programs for the Aging vehicles",
+            direction: .strengthen,
+            adopted2025: 0,
+            adopted2026: 0,
+            changeLabel: "Denied",
+            rationale: "Transportation-heavy senior program with no vehicle capital."
         ),
         .init(
             fundFunction: "A01 Buildings & Grounds 1625",
@@ -433,15 +420,8 @@ enum DepartmentBudgetLensData {
             direction: .strengthen,
             adopted2025: 25_000,
             adopted2026: 12_500,
-            rationale: "A visible cut to maintenance capacity and a likely candidate for restoration if service complaints rise."
-        ),
-        .init(
-            fundFunction: "A01 Programs for the Aging 6772",
-            account: "Vehicles",
-            direction: .strengthen,
-            adopted2025: 0,
-            adopted2026: 0,
-            rationale: "The request appeared in the budget process, but the adopted plan left it out. That may be too lean for a transportation-heavy program."
+            changeLabel: "-50%",
+            rationale: "Deferred maintenance is costlier long-term. Restore if complaints are rising."
         )
     ]
 }

@@ -88,15 +88,15 @@ struct RBTownSquareQEBudgetMathView: View {
             sourceRow(
                 title: "Downtown Revitalization Projects (hub)",
                 subtitle: "Town page linking to Q&E docs/presentation",
-                url: URL(string: "https://www.townofriverheadny.gov/213/2896/Downtown-Revitalization-Projects")!
+                url: TownSquareCoreTerms.downtownRevitalizationHubURL
             )
 
             Divider()
 
             sourceRow(
                 title: "Town Square Q&E Documents (PDF)",
-                subtitle: "Budget summary + financial verification letter(s)",
-                url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/2344/Town-Square-QE-Documents")!
+                subtitle: "\(TownSquareCoreTerms.qeBudgetDate) budget summary + financial verification letter(s)",
+                url: TownSquareCoreTerms.qeDocumentsURL
             )
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -122,7 +122,7 @@ struct RBTownSquareQEBudgetMathView: View {
 
     private var budgetBox: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Q&E Budget (7/22/2025)")
+            Text("Q&E Budget (\(TownSquareCoreTerms.qeBudgetDate))")
                 .font(.headline)
 
             // High-level
@@ -412,18 +412,18 @@ private struct QEBudget: Equatable {
     }
 
     static var defaultFromTownQE: QEBudget {
-        // From Town Square Q&E packet budget summary (7/22/2025).
+        // From Town Square Q&E packet budget summary.
         QEBudget(
-            total: 32_672_889.76,
-            constructionLoan: 19_603_733.86,
-            developerEquity: 12_069_155.90,
-            restoreNYGrant: 1_000_000.00,
-            landAcquisition: 2_625_000.00,
-            hardCosts: 26_079_289.76,
-            softCosts: 3_365_600.00,
-            contingency: 603_000.00,
-            hotelRooms: 76,
-            condoUnits: 12
+            total: TownSquareCoreTerms.qeTotalProjectCost,
+            constructionLoan: TownSquareCoreTerms.qeConstructionLoan,
+            developerEquity: TownSquareCoreTerms.qeDeveloperEquity,
+            restoreNYGrant: TownSquareCoreTerms.qeRestoreNYGrantAwarded2024,
+            landAcquisition: TownSquareCoreTerms.qeLandAcquisition,
+            hardCosts: TownSquareCoreTerms.qeHardCosts,
+            softCosts: TownSquareCoreTerms.qeSoftCosts,
+            contingency: TownSquareCoreTerms.qeContingency,
+            hotelRooms: TownSquareCoreTerms.qeHotelRooms,
+            condoUnits: TownSquareCoreTerms.qeCondoUnits
         )
     }
 }

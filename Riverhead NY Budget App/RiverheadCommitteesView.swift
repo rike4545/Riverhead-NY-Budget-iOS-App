@@ -512,13 +512,14 @@ final class RiverheadCommitteesScraper {
             items.append(IndexItem(name: title, url: url))
         }
 
-        // The menu list can include items in other departments. We "prefer" those that show up in the
-        // Town Hall Committees list by requiring the title to include common committee/board keywords,
-        // OR be in a known exceptions list.
+        // The menu list can include items in other departments. We keep committee-like
+        // titles, then merge the current Town-published index below so official entries
+        // with unusual names or outside URLs, such as Comprehensive Plan Update, remain visible.
         let filtered = items.filter { RiverheadHTMLParser.isLikelyCommitteeTitle($0.name) }
+        let merged = RiverheadHTMLParser.mergeWithCurrentTownCommitteeIndex(filtered)
 
         // If filtering becomes too strict due to site changes, fall back to raw items.
-        return filtered.count >= 10 ? filtered : items
+        return merged.count >= 10 ? merged : items
     }
 
     func fetchCommitteeDetail(name: String, url: URL) async throws -> RiverheadCommittee {
@@ -641,20 +642,21 @@ enum RiverheadHTMLParser {
     }
 
     static func absoluteURL(from href: String, base: URL) -> URL? {
-        if href.hasPrefix("http://") || href.hasPrefix("https://") {
-            return URL(string: href)
+        let decodedHref = decodeBasicHTMLEntities(href)
+        if decodedHref.hasPrefix("http://") || decodedHref.hasPrefix("https://") {
+            return URL(string: decodedHref)
         }
-        if href.hasPrefix("//") {
-            return URL(string: "https:\(href)")
+        if decodedHref.hasPrefix("//") {
+            return URL(string: "https:\(decodedHref)")
         }
-        if href.hasPrefix("/") {
+        if decodedHref.hasPrefix("/") {
             var comps = URLComponents(url: base, resolvingAgainstBaseURL: false)
-            comps?.path = href
+            comps?.path = decodedHref
             comps?.query = nil
             comps?.fragment = nil
             return comps?.url
         }
-        return URL(string: href, relativeTo: base)?.absoluteURL
+        return URL(string: decodedHref, relativeTo: base)?.absoluteURL
     }
 
     static func looksLikeCommitteePath(_ path: String) -> Bool {
@@ -685,17 +687,82 @@ enum RiverheadHTMLParser {
 
         // Most committee/board names contain one of these.
         let keywords = [
-            "committee", "task force", "board", "council", "forum", "agency"
+            "committee", "task force", "board", "council", "forum", "agency", "commission"
         ]
         if keywords.contains(where: { t.contains($0) }) { return true }
 
         // Exceptions (in case names are short/odd).
         let allowList: Set<String> = [
-            "ida", "industrial development agency (ida)"
+            "ida",
+            "industrial development agency (ida)",
+            "comprehensive plan update"
         ]
         if allowList.contains(t.trimmingCharacters(in: .whitespacesAndNewlines)) { return true }
 
         return false
+    }
+
+    static func mergeWithCurrentTownCommitteeIndex(_ parsedItems: [RiverheadCommitteesScraper.IndexItem]) -> [RiverheadCommitteesScraper.IndexItem] {
+        var merged = parsedItems
+        var seenKeys = Set(parsedItems.map { canonicalCommitteeName($0.name) })
+
+        for item in currentTownCommitteeIndex {
+            let key = canonicalCommitteeName(item.name)
+            guard !seenKeys.contains(key) else { continue }
+            merged.append(item)
+            seenKeys.insert(key)
+        }
+
+        return merged.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+    }
+
+    private static var currentTownCommitteeIndex: [RiverheadCommitteesScraper.IndexItem] {
+        [
+            officialCommittee("Agricultural Advisory Committee", "https://www.townofriverheadny.gov/271/Agricultural-Advisory-Committee"),
+            officialCommittee("Emerging Technology Committee", "https://www.townofriverheadny.gov/486/Emerging-Technology-Committee"),
+            officialCommittee("Alternative Transportation Committee", "https://www.townofriverheadny.gov/270/Alternative-Transportation-Committee"),
+            officialCommittee("Anti-Bias Task Force", "https://www.townofriverheadny.gov/269/Anti-Bias-Task-Force"),
+            officialCommittee("Anti-Litter Advisory Committee", "https://www.townofriverheadny.gov/268/Anti-Litter-Advisory-Committee"),
+            officialCommittee("Architectural Review Board", "https://www.townofriverheadny.gov/225/Architectural-Review-Board"),
+            officialCommittee("Beach Advisory Committee", "https://www.townofriverheadny.gov/267/Beach-Advisory-Committee"),
+            officialCommittee("Board of Assessment Review", "https://www.townofriverheadny.gov/266/Board-of-Assessment-Review"),
+            officialCommittee("Board of Ethics", "https://www.townofriverheadny.gov/265/Board-of-Ethics"),
+            officialCommittee("Business Advisory Committee", "https://www.townofriverheadny.gov/264/Business-Advisory-Committee"),
+            officialCommittee("Climate Smart Community Task Force", "https://www.townofriverheadny.gov/263/Climate-Smart-Community-Task-Force"),
+            officialCommittee("Code Revision Committee", "https://www.townofriverheadny.gov/262/Code-Revision-Committee"),
+            officialCommittee("Comprehensive Plan Update", "https://townofriverheadcomprehensiveplanupdate.com/?id=56426&catid=119"),
+            officialCommittee("Conservation Advisory Council", "https://www.townofriverheadny.gov/224/Conservation-Advisory-Council"),
+            officialCommittee("Disability Advisory Committee", "https://www.townofriverheadny.gov/484/Disability-Advisory-Committee"),
+            officialCommittee("Downtown Revitalization Committee", "https://www.townofriverheadny.gov/261/Downtown-Revitalization-Committee"),
+            officialCommittee("East Creek Advisory Committee", "https://www.townofriverheadny.gov/260/East-Creek-Advisory-Committee"),
+            officialCommittee("Environmental Advisory Committee", "https://www.townofriverheadny.gov/259/Environmental-Advisory-Committee"),
+            officialCommittee("Farmland Preservation Committee", "https://www.townofriverheadny.gov/258/Farmland-Preservation-Committee"),
+            officialCommittee("Helicopter Noise Task Force", "https://www.townofriverheadny.gov/257/Helicopter-Noise-Task-Force"),
+            officialCommittee("Hispanic Development Empowerment and Education Committee", "https://www.townofriverheadny.gov/471/Hispanic-Development-Empowerment-and-Edu"),
+            officialCommittee("Industrial Development Agency (IDA)", "https://www.townofriverheadny.gov/256/Industrial-Development-Agency-IDA"),
+            officialCommittee("Landmarks Preservation Commission", "https://www.townofriverheadny.gov/255/Landmarks-Preservation-Commission"),
+            officialCommittee("Open Space Committee", "https://www.townofriverheadny.gov/254/Open-Space-Committee"),
+            officialCommittee("Parking District Advisory Committee", "https://www.townofriverheadny.gov/253/Parking-District-Advisory-Committee"),
+            officialCommittee("Planning Board", "https://www.townofriverheadny.gov/221/Planning-Board"),
+            officialCommittee("Recreation Advisory Committee", "https://www.townofriverheadny.gov/252/Recreation-Advisory-Committee"),
+            officialCommittee("Senior Citizen Advisory Council", "https://www.townofriverheadny.gov/251/Senior-Citizen-Advisory-Council"),
+            officialCommittee("Traffic Safety Committee", "https://www.townofriverheadny.gov/250/Traffic-Safety-Committee"),
+            officialCommittee("Veterans Advisory Committee", "https://www.townofriverheadny.gov/249/Veterans-Advisory-Committee"),
+            officialCommittee("Water Forum", "https://www.townofriverheadny.gov/248/Water-Forum"),
+            officialCommittee("Wildlife Management Advisory Committee", "https://www.townofriverheadny.gov/247/Wildlife-Management-Advisory-Committee"),
+            officialCommittee("Zoning Board of Appeals", "https://www.townofriverheadny.gov/220/Zoning-Board-of-Appeals")
+        ]
+    }
+
+    private static func officialCommittee(_ name: String, _ urlString: String) -> RiverheadCommitteesScraper.IndexItem {
+        RiverheadCommitteesScraper.IndexItem(name: name, url: URL(string: urlString)!)
+    }
+
+    private static func canonicalCommitteeName(_ name: String) -> String {
+        name
+            .lowercased()
+            .replacingOccurrences(of: #"[^a-z0-9]+"#, with: " ", options: .regularExpression)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     static func stripTags(_ s: String) -> String {

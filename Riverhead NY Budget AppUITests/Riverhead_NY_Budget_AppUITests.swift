@@ -2,38 +2,61 @@
 //  Riverhead_NY_Budget_AppUITests.swift
 //  Riverhead NY Budget AppUITests
 //
-//  Created by Bryan on 8/3/25.
-//
 
 import XCTest
 
 final class Riverhead_NY_Budget_AppUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testPrimaryTabsAndCommandCenterLaunch() throws {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(app.tabBars.buttons["Home"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.tabBars.buttons["Budget"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Discover"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Toolkits"].exists)
+        XCTAssertTrue(app.tabBars.buttons["More"].exists)
+
+        app.tabBars.buttons["Discover"].tap()
+        XCTAssertTrue(app.staticTexts["Find the right civic move faster"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["Start with my goal"].exists)
+    }
+
+    @MainActor
+    func testSearchAndScorecardAreReachable() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.tabBars.buttons["Discover"].tap()
+        app.staticTexts["Search"].tap()
+        XCTAssertTrue(app.navigationBars["Search"].waitForExistence(timeout: 5))
+
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.staticTexts["Budget Scorecard"].tap()
+        XCTAssertTrue(app.navigationBars["Budget Scorecard"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor
+    func testTrustAndPdfSearchAreReachable() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.tabBars.buttons["Discover"].tap()
+        app.staticTexts["PDF Search"].tap()
+        XCTAssertTrue(app.navigationBars["PDF Search"].waitForExistence(timeout: 5))
+
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.staticTexts["Trust & Privacy"].tap()
+        XCTAssertTrue(app.navigationBars["Trust & Privacy"].waitForExistence(timeout: 5))
     }
 
     @MainActor
     func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()
         }

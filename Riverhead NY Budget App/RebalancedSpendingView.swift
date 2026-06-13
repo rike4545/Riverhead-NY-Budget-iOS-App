@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 @MainActor
 struct RebalancedSpendingView: View {
@@ -24,6 +25,25 @@ struct RebalancedSpendingView: View {
             .reduce(0) { $0 + max($1.change, 0) }
     }
 
+    private var strengthenShift: Double {
+        abs(
+            DepartmentBudgetLensData.rebalancedSpending
+                .filter { $0.direction == .strengthen }
+                .reduce(0) { $0 + min($1.change, 0) }
+        )
+    }
+
+    private var directionChartData: [RebalanceDirectionSlice] {
+        [
+            .init(direction: .tighten, count: tightenCount),
+            .init(direction: .strengthen, count: strengthenCount)
+        ]
+    }
+
+    private var topMovers: [RebalanceRecommendation] {
+        Array(items.prefix(6))
+    }
+
     var body: some View {
         List {
             Section {
@@ -43,6 +63,11 @@ struct RebalancedSpendingView: View {
                 quickReadRow("Tighten list", value: "\(tightenCount) accounts", tint: .orange)
                 quickReadRow("Strengthen list", value: "\(strengthenCount) accounts", tint: .teal)
                 quickReadRow("Largest upward watch list", value: tightenShift.formatted(.currency(code: "USD")), tint: .red)
+            }
+
+            Section("Visual Summary") {
+                rebalanceInfographic
+                topMoverChart
             }
 
             Section("Rebalanced Spending Accounts") {
@@ -79,9 +104,14 @@ struct RebalancedSpendingView: View {
                                 Text("Change")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
-                                Text(item.change, format: .currency(code: "USD"))
+                                Text(primaryChangeText(for: item))
                                     .font(.subheadline.weight(.semibold))
                                     .foregroundStyle(item.change >= 0 ? .orange : .green)
+                                if let changeLabel = item.changeLabel, abs(item.change) >= 0.5 {
+                                    Text(changeLabel)
+                                        .font(.caption2.weight(.semibold))
+                                        .foregroundStyle(color(for: item.direction))
+                                }
                             }
                             Spacer()
                             VStack(alignment: .trailing, spacing: 2) {
@@ -122,6 +152,114 @@ struct RebalancedSpendingView: View {
         case .strengthen: return .teal
         }
     }
+
+    private func primaryChangeText(for item: RebalanceRecommendation) -> String {
+        if abs(item.change) < 0.5, let changeLabel = item.changeLabel {
+            return changeLabel
+        }
+
+        return item.change.formatted(.currency(code: "USD").precision(.fractionLength(0)))
+    }
+
+    private func chartAnnotation(for item: RebalanceRecommendation) -> String {
+        if abs(item.change) < 0.5, let changeLabel = item.changeLabel {
+            return changeLabel
+        }
+
+        return item.change.formatted(.currency(code: "USD").precision(.fractionLength(0)))
+    }
+
+    private var rebalanceInfographic: some View {
+        HStack(spacing: 14) {
+            Chart(directionChartData) { slice in
+                SectorMark(
+                    angle: .value("Accounts", slice.count),
+                    innerRadius: .ratio(0.56),
+                    angularInset: 2
+                )
+                .foregroundStyle(color(for: slice.direction))
+                .accessibilityLabel("\(slice.direction.rawValue), \(slice.count) accounts")
+            }
+            .chartLegend(.hidden)
+            .frame(width: 112, height: 112)
+
+            VStack(alignment: .leading, spacing: 10) {
+                infographicRow(
+                    title: "Tighten",
+                    value: "\(tightenCount) accounts",
+                    detail: tightenShift.formatted(.currency(code: "USD")),
+                    tint: .orange,
+                    systemImage: "slider.horizontal.3"
+                )
+
+                infographicRow(
+                    title: "Strengthen",
+                    value: "\(strengthenCount) accounts",
+                    detail: strengthenShift.formatted(.currency(code: "USD")),
+                    tint: .teal,
+                    systemImage: "plus.forwardslash.minus"
+                )
+            }
+        }
+        .padding(.vertical, 4)
+    }
+
+    private var topMoverChart: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Largest 2026 movement")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Chart(topMovers) { item in
+                BarMark(
+                    x: .value("Change", abs(item.change)),
+                    y: .value("Account", item.account)
+                )
+                .foregroundStyle(color(for: item.direction))
+                .annotation(position: .trailing) {
+                    Text(chartAnnotation(for: item))
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .monospacedDigit()
+                }
+                .accessibilityLabel("\(item.account), changed \(item.change.formatted(.currency(code: "USD")))")
+            }
+            .chartXAxis(.hidden)
+            .chartYAxis {
+                AxisMarks(position: .leading)
+            }
+            .frame(height: CGFloat(max(topMovers.count, 3) * 28))
+        }
+    }
+
+    private func infographicRow(title: String, value: String, detail: String, tint: Color, systemImage: String) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: systemImage)
+                .font(.title3)
+                .foregroundStyle(tint)
+                .frame(width: 28)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.subheadline.weight(.semibold))
+                Text(value)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text(detail)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(tint)
+                    .monospacedDigit()
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+}
+
+private struct RebalanceDirectionSlice: Identifiable {
+    let direction: RebalanceDirection
+    let count: Int
+
+    var id: RebalanceDirection { direction }
 }
 
 private enum RebalancedFilter: String, CaseIterable, Identifiable {

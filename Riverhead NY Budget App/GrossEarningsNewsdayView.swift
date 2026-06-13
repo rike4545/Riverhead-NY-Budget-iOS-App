@@ -11,7 +11,7 @@ struct GrossEarningsNewsdayView: View {
         List {
             Section {
                 HStack {
-                    Label("Total Rows", systemImage: "list.bullet")
+                    Label("Payroll Rows", systemImage: "list.bullet")
                     Spacer()
                     Text("\(yearScopedRows.count)")
                         .foregroundStyle(.secondary)
@@ -31,6 +31,14 @@ struct GrossEarningsNewsdayView: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
+                }
+
+                HStack {
+                    Label("Pay detail", systemImage: "dollarsign.circle")
+                    Spacer()
+                    Text("Regular, overtime, gross")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
                 }
 
                 if let error = model.errorMessage {
@@ -404,13 +412,23 @@ private struct GrossEarningsEmployeeRowView: View {
             .foregroundStyle(.secondary)
 
             HStack(spacing: 12) {
+                Text(row.positionStatusLabel)
                 Text("Hire: \(row.hireDateLabel)")
-                Text("Term: \(row.terminationDateLabel)")
                 Spacer(minLength: 0)
                 Text("Tenure: \(row.tenureLabel)")
             }
             .font(.caption)
             .foregroundStyle(.secondary)
+
+            if row.regularPay > 0 || row.overtimePay > 0 {
+                HStack(spacing: 12) {
+                    Text("Regular: \(row.regularPay.currency)")
+                    Text("OT: \(row.overtimePay.currency)")
+                    Spacer(minLength: 0)
+                }
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+            }
         }
         .padding(.vertical, 2)
     }
@@ -425,16 +443,20 @@ private struct GrossEarningsEmployeeDetailView: View {
                 LabeledContent("Year", value: String(row.year))
                 LabeledContent("Payroll Name", value: row.payrollName)
                 LabeledContent("Employee ID", value: row.employeeID)
+                LabeledContent("Position Status", value: row.positionStatusLabel)
                 LabeledContent("Union Code", value: row.unionCode)
             }
 
             Section("Dates") {
                 LabeledContent("Hire Date", value: row.hireDateLabel)
+                LabeledContent("Rehire Date", value: row.rehireDateLabel)
                 LabeledContent("Termination Date", value: row.terminationDateLabel)
                 LabeledContent("Length of Tenure", value: row.tenureLabel)
             }
 
             Section("Pay") {
+                LabeledContent("Regular Earnings", value: row.regularPay.currency)
+                LabeledContent("Overtime Earnings", value: row.overtimePay.currency)
                 LabeledContent("Gross Pay", value: row.grossPay.currency)
             }
         }
@@ -446,7 +468,7 @@ private struct GrossEarningsEmployeeDetailView: View {
 @MainActor
 final class GrossEarningsNewsdayModel: ObservableObject {
     @Published var rows: [GrossEarningsEmployeeRow] = []
-    @Published var sourceLabel: String = "GrossEarnings_Newsday_2019_2021.csv"
+    @Published var sourceLabel: String = "Newsday gross earnings 2019-2021"
     @Published var errorMessage: String?
 
     private var hasLoaded: Bool = false
@@ -497,7 +519,11 @@ private enum GrossEarningsNewsdayParser {
         let idxID = index(in: header, matching: ["File Number", "Employee ID"])
         let idxYear = index(in: header, matching: ["Year"])
         let idxHireDate = index(in: header, matching: ["Hire Date"])
+        let idxRehireDate = index(in: header, matching: ["Rehire Date"])
+        let idxPositionStatus = index(in: header, matching: ["Position Status"])
         let idxTerminationDate = index(in: header, matching: ["Termination Date"])
+        let idxRegularPay = index(in: header, matching: ["Regular Earnings Total", "Regular Earnings"])
+        let idxOvertimePay = index(in: header, matching: ["Overtime Detail Total", "Overtime Earnings Total", "Overtime Earnings"])
         let idxGrossPay = index(in: header, matching: ["Gross Pay"])
         let idxUnionCode = index(in: header, matching: ["Union Code"])
 
@@ -515,11 +541,15 @@ private enum GrossEarningsNewsdayParser {
             guard normalize(employeeID) != normalize("File Number") else { return nil }
 
             let hireDateRaw = value(row, at: idxHireDate)
+            let rehireDateRaw = value(row, at: idxRehireDate ?? -1)
+            let positionStatus = value(row, at: idxPositionStatus ?? -1)
             let terminationDateRaw = value(row, at: idxTerminationDate)
             let yearRaw = value(row, at: idxYear ?? -1)
 
             let hireDate = parseDate(hireDateRaw)
             let terminationDate = parseDate(terminationDateRaw)
+            let regularPay = parseCurrency(value(row, at: idxRegularPay ?? -1))
+            let overtimePay = parseCurrency(value(row, at: idxOvertimePay ?? -1))
             let grossPay = parseCurrency(value(row, at: idxGrossPay))
             let unionCode = value(row, at: idxUnionCode)
             let parsedYear = parseYear(yearRaw) ?? 2021
@@ -530,8 +560,12 @@ private enum GrossEarningsNewsdayParser {
                 employeeID: employeeID.isEmpty ? "—" : employeeID,
                 hireDate: hireDate,
                 hireDateRaw: hireDateRaw,
+                rehireDateRaw: rehireDateRaw,
+                positionStatus: positionStatus,
                 terminationDate: terminationDate,
                 terminationDateRaw: terminationDateRaw,
+                regularPay: regularPay,
+                overtimePay: overtimePay,
                 grossPay: grossPay,
                 grossPayString: value(row, at: idxGrossPay),
                 unionCode: unionCode.isEmpty ? "—" : unionCode
@@ -561,6 +595,11 @@ private enum GrossEarningsNewsdayParser {
             .replacingOccurrences(of: "$", with: "")
             .replacingOccurrences(of: ",", with: "")
             .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if cleaned.hasPrefix("("), cleaned.hasSuffix(")") {
+            let inner = cleaned.dropFirst().dropLast()
+            return -(Double(inner) ?? 0)
+        }
 
         return Double(cleaned) ?? 0
     }
@@ -645,14 +684,18 @@ struct GrossEarningsEmployeeRow: Identifiable {
     let employeeID: String
     let hireDate: Date?
     let hireDateRaw: String
+    let rehireDateRaw: String
+    let positionStatus: String
     let terminationDate: Date?
     let terminationDateRaw: String
+    let regularPay: Double
+    let overtimePay: Double
     let grossPay: Double
     let grossPayString: String
     let unionCode: String
 
     var id: String {
-        "\(employeeID)|\(payrollName)|\(hireDateRaw)|\(terminationDateRaw)"
+        "\(year)|\(employeeID)|\(payrollName)|\(hireDateRaw)|\(terminationDateRaw)"
     }
 
     // Use employee ID as canonical identity for cross-year summary math.
@@ -666,11 +709,25 @@ struct GrossEarningsEmployeeRow: Identifiable {
     }
 
     var isActive: Bool {
-        terminationDate == nil && terminationDateRaw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let status = positionStatus.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if status == "active" || status == "leave" { return true }
+        if ["terminated", "retired", "deceased"].contains(status) { return false }
+        return terminationDate == nil && terminationDateRaw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     var hireDateLabel: String {
         Self.displayDate(hireDate, fallback: hireDateRaw)
+    }
+
+    var rehireDateLabel: String {
+        let cleaned = rehireDateRaw.trimmingCharacters(in: .whitespacesAndNewlines)
+        return cleaned.isEmpty ? "—" : cleaned
+    }
+
+    var positionStatusLabel: String {
+        let cleaned = positionStatus.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !cleaned.isEmpty { return cleaned }
+        return isActive ? "Active" : "Former"
     }
 
     var terminationDateLabel: String {

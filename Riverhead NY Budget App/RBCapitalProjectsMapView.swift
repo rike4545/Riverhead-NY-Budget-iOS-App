@@ -593,7 +593,7 @@ private struct ProjectDetailSheet: View {
                             Text(TownSquareCoreTerms.currentReportedProjectCost, format: .currency(code: "USD"))
                         }
                         LabeledContent("Reported program") {
-                            Text("Up to \(TownSquareCoreTerms.currentReportedHotelRoomsMax) hotel rooms + \(TownSquareCoreTerms.currentReportedCondoUnits) condos")
+                            Text("Latest hotel proposal: \(TownSquareCoreTerms.latestHotelProposalRooms) rooms, \(TownSquareCoreTerms.latestHotelProposalStories) stories")
                         }
                         LabeledContent("Official MDA program") {
                             Text("Up to \(TownSquareCoreTerms.hotelRoomsMax) hotel rooms + \(TownSquareCoreTerms.condoUnits) condos")
@@ -653,6 +653,9 @@ private struct ProjectDetailSheet: View {
 
                     Section("Source documents") {
                         openButton("Downtown Revitalization Projects (Town hub)", TownSquareCoreTerms.downtownRevitalizationHubURL.absoluteString)
+                        openButton("Downtown Revitalization Efforts (Town page)", TownSquareCoreTerms.downtownRevitalizationEffortsURL.absoluteString)
+                        openButton("Historic Downtown / Peconic River Corridor (Town page)", TownSquareCoreTerms.historicDowntownPeconicRiverCorridorURL.absoluteString)
+                        openButton("Planning Department (Town page)", TownSquareCoreTerms.planningDepartmentURL.absoluteString)
                         openButton("Town Square Q&E Documents (Town PDF)", TownSquareCoreTerms.qeDocumentsURL.absoluteString)
                         openButton("Town Square Q&E Presentation (Town PDF)", TownSquareCoreTerms.qePresentationURL.absoluteString)
                         openButton("Master Developer Agreement (Town PDF)", TownSquareCoreTerms.mdaPublicURL.absoluteString)

@@ -45,8 +45,16 @@ struct BudgetExplainersView: View {
         let accent: Color
         let title: String
         let plainEnglish: String
+        let visualSteps: [VisualStep]
         let whyItMatters: String
         let practicalQuestion: String
+    }
+
+    private struct VisualStep: Identifiable {
+        let id = UUID()
+        let label: String
+        let systemImage: String
+        let tint: Color
     }
 
     private var explainers: [Explainer] {
@@ -57,6 +65,11 @@ struct BudgetExplainersView: View {
                 accent: RiverheadTheme.accent,
                 title: "Appropriations vs. Levy",
                 plainEnglish: "Appropriations are what the Town plans to spend. The tax levy is only the property-tax portion used to pay for that plan after other revenues.",
+                visualSteps: [
+                    .init(label: "Spend plan", systemImage: "list.clipboard.fill", tint: RiverheadTheme.accent),
+                    .init(label: "Other revenue", systemImage: "arrow.down.circle.fill", tint: .green),
+                    .init(label: "Tax levy", systemImage: "house.and.flag.fill", tint: RiverheadTheme.brandSky)
+                ],
                 whyItMatters: "A budget can grow without all of that increase landing on the levy if recurring revenues, fees, or aid are doing some of the work.",
                 practicalQuestion: "If spending rises, which non-tax revenues are expected to offset it before levy impact?"
             ),
@@ -66,6 +79,11 @@ struct BudgetExplainersView: View {
                 accent: RiverheadTheme.brandSky,
                 title: "Why Taxes Can Rise Even If One Budget Line Is Flat",
                 plainEnglish: "Your total bill is affected by multiple jurisdictions and assessed value changes, not just one Town line item.",
+                visualSteps: [
+                    .init(label: "Town levy", systemImage: "building.columns.fill", tint: RiverheadTheme.brandSky),
+                    .init(label: "Assessment", systemImage: "house.lodge.fill", tint: RiverheadTheme.gold),
+                    .init(label: "Full bill", systemImage: "doc.text.fill", tint: .orange)
+                ],
                 whyItMatters: "Residents experience the whole bill, while the Town controls only one part of it.",
                 practicalQuestion: "What changed this year: Town levy, assessed value, county/school share, or special districts?"
             ),
@@ -75,6 +93,11 @@ struct BudgetExplainersView: View {
                 accent: .green,
                 title: "Fund Balance Is Not Free Money",
                 plainEnglish: "Using fund balance can smooth one year, but it lowers reserves. Riverhead has long referenced a 15% floor, while GFOA-style guidance often treats roughly two months of spending, about 17%, as a minimum benchmark rather than the automatic target.",
+                visualSteps: [
+                    .init(label: "Reserve bucket", systemImage: "cylinder.split.1x2.fill", tint: .green),
+                    .init(label: "One-year draw", systemImage: "drop.fill", tint: RiverheadTheme.gold),
+                    .init(label: "Rebuild plan", systemImage: "arrow.trianglehead.2.clockwise.rotate.90", tint: RiverheadTheme.brandSky)
+                ],
                 whyItMatters: "The strongest reserve policy does not just say when money can be used. It also says how and when the cushion gets rebuilt.",
                 practicalQuestion: "Is this use one-time, does it drop reserves below the floor, and what is the rebuild plan next year?"
             ),
@@ -84,6 +107,11 @@ struct BudgetExplainersView: View {
                 accent: .mint,
                 title: "One-Time Money vs. Recurring Costs",
                 plainEnglish: "Reserve draws, asset sales, settlements, or grants can help once. Payroll, benefits, and routine services come back every year.",
+                visualSteps: [
+                    .init(label: "One-time help", systemImage: "sparkles", tint: RiverheadTheme.gold),
+                    .init(label: "Annual costs", systemImage: "calendar", tint: .red),
+                    .init(label: "Next year gap", systemImage: "exclamationmark.triangle.fill", tint: .orange)
+                ],
                 whyItMatters: "A budget can look balanced now and still create a structural gap next year if one-time money is carrying recurring costs.",
                 practicalQuestion: "Which part of this plan disappears after one year, and which costs still remain?"
             ),
@@ -93,6 +121,11 @@ struct BudgetExplainersView: View {
                 accent: .orange,
                 title: "Contracts and Mandates Drive Baseline Costs",
                 plainEnglish: "Large parts of the budget are tied to contracts, health insurance, pensions, and mandated services that are hard to cut quickly.",
+                visualSteps: [
+                    .init(label: "Contracts", systemImage: "signature", tint: .orange),
+                    .init(label: "Benefits", systemImage: "cross.case.fill", tint: .pink),
+                    .init(label: "Baseline", systemImage: "chart.line.uptrend.xyaxis", tint: .red)
+                ],
                 whyItMatters: "That is why salary settlements, overtime, and retirement costs can move the budget before new priorities are even added.",
                 practicalQuestion: "What share of the increase is contractual or mandated versus discretionary policy choices?"
             ),
@@ -102,6 +135,11 @@ struct BudgetExplainersView: View {
                 accent: RiverheadTheme.gold,
                 title: "Capital vs Operating",
                 plainEnglish: "Capital pays for assets (roads, equipment, facilities). Operating pays for ongoing services (staffing, utilities, maintenance).",
+                visualSteps: [
+                    .init(label: "Build or buy", systemImage: "hammer.fill", tint: RiverheadTheme.gold),
+                    .init(label: "Run it yearly", systemImage: "gearshape.2.fill", tint: RiverheadTheme.brandSky),
+                    .init(label: "Show both", systemImage: "rectangle.split.2x1.fill", tint: .green)
+                ],
                 whyItMatters: "A project can be affordable to build and still create new recurring costs after the ribbon-cutting.",
                 practicalQuestion: "Will this project add recurring operating costs after construction is complete?"
             ),
@@ -111,6 +149,11 @@ struct BudgetExplainersView: View {
                 accent: .pink,
                 title: "Tax Cap vs. Override",
                 plainEnglish: "The New York tax cap limits levy growth unless the Town Board overrides it by local law. It is a legal guardrail, not a promise that taxes never rise.",
+                visualSteps: [
+                    .init(label: "Cap formula", systemImage: "function", tint: .pink),
+                    .init(label: "Board vote", systemImage: "person.3.fill", tint: RiverheadTheme.brandSky),
+                    .init(label: "Public reason", systemImage: "quote.bubble.fill", tint: RiverheadTheme.gold)
+                ],
                 whyItMatters: "The public question is not just whether an override happens. It is whether the Town shows a cap-compliant baseline, clear findings, and a path back to stability.",
                 practicalQuestion: "What would the budget look like under the cap, and what exactly does an override fund?"
             )
@@ -174,8 +217,9 @@ struct BudgetExplainersView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 
-            HStack(spacing: 10) {
+            ExplainerFlowLayout(spacing: 10, lineSpacing: 8) {
                 explainerBadge("Plain English", systemImage: "text.alignleft")
+                explainerBadge("Pictures first", systemImage: "rectangle.on.rectangle.angled")
                 explainerBadge("Hearing-ready", systemImage: "person.2.wave.2")
                 explainerBadge("Riverhead context", systemImage: "map")
             }
@@ -245,6 +289,8 @@ struct BudgetExplainersView: View {
                 }
             }
 
+            whiteboardSketch(for: item)
+
             Rectangle()
                 .fill(RiverheadTheme.softBorder)
                 .frame(height: 1)
@@ -260,6 +306,64 @@ struct BudgetExplainersView: View {
             RoundedRectangle(cornerRadius: 22, style: .continuous)
                 .stroke(RiverheadTheme.softBorder, lineWidth: 1)
         )
+    }
+
+    private func whiteboardSketch(for item: Explainer) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("Whiteboard version", systemImage: "pencil.and.outline")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(item.accent)
+
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) {
+                    ForEach(Array(item.visualSteps.enumerated()), id: \.element.id) { index, step in
+                        pictogramStep(step)
+
+                        if index < item.visualSteps.count - 1 {
+                            Image(systemName: "arrow.right")
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(.secondary)
+                                .accessibilityHidden(true)
+                        }
+                    }
+                }
+
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(item.visualSteps) { step in
+                        pictogramStep(step)
+                    }
+                }
+            }
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(Color.white.opacity(0.72))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(item.accent.opacity(0.18), lineWidth: 1)
+        )
+        .accessibilityElement(children: .combine)
+    }
+
+    private func pictogramStep(_ step: VisualStep) -> some View {
+        HStack(spacing: 7) {
+            Image(systemName: step.systemImage)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(step.tint)
+                .frame(width: 22, height: 22)
+                .background(step.tint.opacity(0.12), in: Circle())
+
+            Text(step.label)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.82)
+        }
+        .padding(.horizontal, 9)
+        .padding(.vertical, 8)
+        .background(RiverheadTheme.Surface.inset, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 
     private var deepDivesSection: some View {
@@ -306,6 +410,18 @@ struct BudgetExplainersView: View {
                 )
             }
             .buttonStyle(.plain)
+
+            NavigationLink {
+                OffBalanceLiabilitiesView()
+            } label: {
+                deepDiveCard(
+                    title: "Off-Balance Liabilities",
+                    subtitle: "Scan OPEB, leave payouts, claims, BANs, leases, and other costs that can sit outside simple line-item view.",
+                    systemImage: "exclamationmark.triangle",
+                    accent: RiverheadTheme.brandGold
+                )
+            }
+            .buttonStyle(.plain)
         }
     }
 
@@ -347,6 +463,8 @@ struct BudgetExplainersView: View {
     private func explainerBadge(_ text: String, systemImage: String) -> some View {
         Label(text, systemImage: systemImage)
             .font(.caption.weight(.semibold))
+            .lineLimit(1)
+            .fixedSize()
             .foregroundStyle(RiverheadTheme.primaryBlue)
             .padding(.horizontal, 10)
             .padding(.vertical, 8)
@@ -410,6 +528,58 @@ struct BudgetExplainersView: View {
 
     private func currency(_ value: Double) -> String {
         appCurrencyFormatter.string(from: NSNumber(value: value)) ?? "$0"
+    }
+}
+
+// MARK: - Wrapping layout for the header badges
+
+/// Lays subviews left-to-right and wraps to a new line when the proposed
+/// width runs out. File-scoped/private so it won't collide with any other
+/// layout type elsewhere in the project.
+private struct ExplainerFlowLayout: Layout {
+    var spacing: CGFloat = 8
+    var lineSpacing: CGFloat = 8
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) -> CGSize {
+        let maxWidth = proposal.width ?? .infinity
+        var x: CGFloat = 0
+        var rowHeight: CGFloat = 0
+        var totalHeight: CGFloat = 0
+        var widestRow: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x > 0, x + size.width > maxWidth {
+                totalHeight += rowHeight + lineSpacing
+                widestRow = max(widestRow, x - spacing)
+                x = 0
+                rowHeight = 0
+            }
+            x += size.width + spacing
+            rowHeight = max(rowHeight, size.height)
+        }
+        totalHeight += rowHeight
+        widestRow = max(widestRow, x - spacing)
+        let resolvedWidth = proposal.width ?? widestRow
+        return CGSize(width: resolvedWidth, height: totalHeight)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Void) {
+        var x = bounds.minX
+        var y = bounds.minY
+        var rowHeight: CGFloat = 0
+
+        for subview in subviews {
+            let size = subview.sizeThatFits(.unspecified)
+            if x > bounds.minX, x + size.width > bounds.maxX {
+                x = bounds.minX
+                y += rowHeight + lineSpacing
+                rowHeight = 0
+            }
+            subview.place(at: CGPoint(x: x, y: y), anchor: .topLeading, proposal: ProposedViewSize(size))
+            x += size.width + spacing
+            rowHeight = max(rowHeight, size.height)
+        }
     }
 }
 

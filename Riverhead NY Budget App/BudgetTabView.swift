@@ -91,6 +91,21 @@ private struct BudgetDeepDiveHubView: View {
     var body: some View {
         List {
             Section("Deep Dive") {
+                NavigationLink { BudgetExplainersView() } label: {
+                    Label("Plain-English Budget Explainers", systemImage: "rectangle.on.rectangle.angled")
+                }
+                NavigationLink { BudgetSupplementExplorerView() } label: {
+                    Label("Budget Supplement Explorer", systemImage: "doc.text.magnifyingglass")
+                }
+                NavigationLink { Budget2027ExecutiveWhiteboardView() } label: {
+                    Label("2027 Executive Summary", systemImage: "pencil.and.outline")
+                }
+                NavigationLink { Proposed2027BudgetPresentationView() } label: {
+                    Label("Unofficial 2027 Budget Proposal", systemImage: "doc.text.magnifyingglass")
+                }
+                NavigationLink { Budget2027LabView() } label: {
+                    Label("2027 Budget Lab", systemImage: "slider.horizontal.below.sun.max")
+                }
                 NavigationLink { BudgetSimulator2027View() } label: {
                     Label("2027 Budget Simulator", systemImage: "slider.horizontal.3")
                 }
@@ -99,6 +114,9 @@ private struct BudgetDeepDiveHubView: View {
                 }
                 NavigationLink { RebalancedSpendingView() } label: {
                     Label("Rebalanced Spending", systemImage: "arrow.left.arrow.right.circle")
+                }
+                NavigationLink { BudgetAccuracyWatchlistView() } label: {
+                    Label("Budget Accuracy Watch List", systemImage: "exclamationmark.triangle")
                 }
                 NavigationLink { ExpertTabView() } label: {
                     Label("Expert Tools", systemImage: "brain.head.profile")

@@ -961,6 +961,7 @@ struct BudgetSimulator2027View: View {
                 summaryRow("Union salary pressure inside that total", value: modeledUnionPressure)
                 summaryRow("Approved CSEA 2027 action", value: colaBreakout.cseaPressure)
                 summaryRow("Non-contract COLA pressure", value: modeledNonContractCOLAPressure)
+                summaryRow("Published-rate pension pressure", value: Budget2027PensionPressureModel.midpointIncrease)
             }
 
             DisclosureGroup("More FY27 baseline context") {
@@ -969,15 +970,19 @@ struct BudgetSimulator2027View: View {
                     summaryRow("2026 GF health-insurance base", value: Budget2026AdoptedGeneralFundModel.healthInsuranceTotal)
                     summaryRow("Illustrative current levy base", value: currentLevyEstimate)
 
-                    Text("The simulator treats the current levy base as an illustration anchored to the app’s 2026 adopted-budget posture. Its CSEA 2027 wage assumption now reflects the Town Board-approved 2026-2029 deal: 2.5% plus a $1,000 supplemental payment in 2027.")
+                    Text("The simulator treats the current levy base as an illustration anchored to the app’s 2026 adopted-budget posture. Its CSEA 2027 wage assumption now reflects the Town Board-approved 2026-2029 deal approved on December 16, 2025: 2.5% plus a $1,000 supplemental payment in 2027.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
 
-                    Text("The signed PBA contract and the SOA agreement both run through December 31, 2026, not 2027. RiverheadLOCAL reported the July 25, 2023 PBA deal as 6% in 2023 followed by 2.5% in 2024, 2025, and 2026, while the signed SOA MOA uses a 6% salary-schedule increase effective July 30, 2023 followed by +2% in 2024, +4% in 2025, and +6% in 2026. The automatic COLA control therefore treats 2027 PBA, SOA, and non-contract growth as a planning fallback while keeping the approved CSEA 2027 action fixed.")
+                    Text("The signed PBA contract and the signed SOA MOA both run through December 31, 2026, not 2027. The PBA contract's Article XXXVI salary schedules step from the 2023 schedule to +2.5% in 2024, +2.5% in 2025, and +2.5% in 2026. The SOA MOA's Articles XXVI and XXXII set the 2023-2026 term and increase Sergeant, Detective Sergeant, and Lieutenant schedules by 6% effective July 30, 2023, then +2% in 2024, +4% in 2025, and +6% in 2026. The automatic COLA control therefore treats 2027 PBA, SOA, and non-contract growth as a planning fallback while keeping the approved CSEA 2027 action fixed.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
 
-                    Text("Pension pressure is not auto-priced yet, but the 2027 planning lens should reflect the September 4, 2025 NYSLRS announcement that average SFY 2026-27 employer rates rose to 17.6% for ERS and 36.5% for PFRS.")
+                    Text("Pension pressure is now included as a default recurring cost pressure because NYSLRS published the 2026 and 2027 annual invoice rates. PFRS is the largest driver: Tier 6 contributory 25-Year Plan 384 rises from 22.4% to 25.4%, while 20-Year Plan 384-d rises from 28.5% to 31.9%. ERS coordinated rates also rise: Tier 6 from 12.6% to 13.6%, Tier 5 from 16.3% to 18.1%, and Tiers 3/4 from 19.3% to 21.1%. The app uses a townwide planning range of $1.4M to $1.85M above 2026, with a midpoint of $1.625M.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+
+                    Text("OSC explains that NYSLRS spreads investment gains or losses above or below the 5.9% assumed return over 8 years. That smoothing makes the 2027 rate increase a lagged cost already visible before budget adoption, not a surprise operating event.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
@@ -1109,6 +1114,8 @@ struct BudgetSimulator2027View: View {
                 detail: "Illustrative recurring levy yield: \(levyYield.formatted(.currency(code: "USD"))). OSC's levy-limit formula applies to the total levy, not directly to assessments or tax rates. It starts with the prior-year levy, reserve offset, tax-base growth factor, allowable levy growth factor, and prior vs. coming-year PILOTs, then adjusts for carryover capped at 1.5% and narrow exclusions such as pension-rate jumps above two points and qualifying tort judgments. The annual TBGF inputs themselves are published by the Department of Taxation and Finance."
             )
 
+            taxCapRiskCallout
+
             sliderBlock(
                 title: "Automatic COLA / fallback growth",
                 value: $automaticCOLAPercent,
@@ -1133,7 +1140,7 @@ struct BudgetSimulator2027View: View {
                 range: 0...3_000_000,
                 step: 25_000,
                 display: otherRecurringPressure.formatted(.currency(code: "USD")),
-                detail: "Use for inflation, insurance, pensions, utilities, or other non-payroll pressure layered on top of salary and benefit growth. NYSLRS announced average SFY 2026-27 employer rates of 17.6% for ERS and 36.5% for PFRS, and its 2024 actuarial report maintained a 2.9% inflation and 5.9% return framework, so pension pressure belongs here unless department-level retirement billing is modeled directly."
+                detail: "Use for inflation, insurance, pensions, utilities, or other non-payroll pressure layered on top of salary and benefit growth. The default now includes a published-rate pension midpoint of \(Budget2027PensionPressureModel.midpointIncrease.formatted(.currency(code: "USD"))) from the NYSLRS 2026/2027 rate schedules. The townwide pension bill is estimated at \(Budget2027PensionPressureModel.totalEstimateLowText) to \(Budget2027PensionPressureModel.totalEstimateHighText), up \(Budget2027PensionPressureModel.increaseLowText) to \(Budget2027PensionPressureModel.increaseHighText) before new hires or new contract settlements."
             )
 
             sliderBlock(
@@ -1149,6 +1156,115 @@ struct BudgetSimulator2027View: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
+    }
+
+    private var taxCapRiskCallout: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("Tax-Cap Risk: Override Conversation Likely", systemImage: "exclamationmark.triangle.fill")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.brandCoral)
+
+            Text("Short answer: very possibly, yes. A normal 2.0% levy increase on the app's current Riverhead levy base yields about \(Budget2027ScenarioModel.taxCapLevelLevyYield.formatted(.currency(code: "USD"))), while the published-rate pension increase alone is estimated at \(Budget2027PensionPressureModel.increaseLowText) to \(Budget2027PensionPressureModel.increaseHighText) townwide.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            VStack(spacing: 6) {
+                summaryRow("2.0% levy room", value: Budget2027ScenarioModel.taxCapLevelLevyYield, highlight: RiverheadTheme.brandSky)
+                summaryRow("Pension pressure midpoint", value: Budget2027PensionPressureModel.midpointIncrease, highlight: RiverheadTheme.brandCoral)
+                summaryRow("Pension gap before other costs", value: Budget2027ScenarioModel.pensionPressureAboveTwoPercentLevy, highlight: .orange)
+            }
+
+            Text("A final legal answer depends on the OSC tax-cap worksheet: tax-base growth, PILOT changes, carryover, reserve offsets, transfer adjustments, and narrow exclusions. But on the current trend, Riverhead is headed toward a tax-cap override discussion unless it offsets several hundred thousand dollars to more than $1M of recurring pressure through cuts, recurring revenue, fund-balance use, or formula room.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Police OT As A Real Offset Lever")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.primary)
+
+                Text("The strongest near-term offset to revisit is Police Uniform OT. The 2024 actual was \(Budget2027TaxCapOffsetModel.policeUniformOTActual2024.formatted(.currency(code: "USD"))) against a \(Budget2027TaxCapOffsetModel.policeUniformOTBudget2024.formatted(.currency(code: "USD"))) budget, a \(Budget2027TaxCapOffsetModel.policeUniformOTVariance.formatted(.currency(code: "USD"))) overrun, while the adopted 2026 line remains at \(Budget2027TaxCapOffsetModel.policeUniformOTAdopted2026.formatted(.currency(code: "USD"))).")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                VStack(spacing: 6) {
+                    summaryRow("2024 Uniform OT overrun", value: Budget2027TaxCapOffsetModel.policeUniformOTVariance, highlight: RiverheadTheme.brandCoral)
+                    summaryRow("Modeled recoverable target", value: Budget2027TaxCapOffsetModel.policeOvertimeRecoveryTarget, highlight: .green)
+                    HStack {
+                        Text("Share of overrun recovered")
+                            .foregroundStyle(.secondary)
+                        Spacer(minLength: 8)
+                        Text(Budget2027TaxCapOffsetModel.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1))))
+                            .monospacedDigit()
+                            .foregroundStyle(RiverheadTheme.brandSky)
+                            .fontWeight(.semibold)
+                    }
+                    .font(.subheadline)
+                }
+
+                Text("The March activity report is the workload guardrail. Criminal incidents rose to \(Budget2027PoliceWorkloadModel.march2026CriminalIncidents) from \(Budget2027PoliceWorkloadModel.march2025CriminalIncidents), total incidents rose to \(Budget2027PoliceWorkloadModel.march2026TotalIncidents.formatted()) from \(Budget2027PoliceWorkloadModel.march2025TotalIncidents.formatted()), and domestic incidents stayed high at \(Budget2027PoliceWorkloadModel.march2026DomesticIncidents). At the same time, accidents and summonses fell. That mixed picture argues for OT cause coding, not a blind cut.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                VStack(spacing: 6) {
+                    countSummaryRow("Criminal incidents", current: Budget2027PoliceWorkloadModel.march2026CriminalIncidents, prior: Budget2027PoliceWorkloadModel.march2025CriminalIncidents, highlight: RiverheadTheme.brandCoral)
+                    countSummaryRow("Total incidents", current: Budget2027PoliceWorkloadModel.march2026TotalIncidents, prior: Budget2027PoliceWorkloadModel.march2025TotalIncidents, highlight: .orange)
+                    countSummaryRow("Vehicle accidents", current: Budget2027PoliceWorkloadModel.march2026Accidents, prior: Budget2027PoliceWorkloadModel.march2025Accidents, highlight: .green)
+                    countSummaryRow("Summonses issued", current: Budget2027PoliceWorkloadModel.march2026Summonses, prior: Budget2027PoliceWorkloadModel.march2025Summonses, highlight: .green)
+                }
+
+                Text("This should not be booked as an automatic cut. It only becomes a credible recurring offset if the Police Department publishes monthly OT by cause, separates unavoidable coverage from discretionary assignments, audits court/recall/training/event OT, and shows a staffing/scheduling plan that captures part of the variance without reducing minimum patrol coverage. Because Riverhead completed its NIBRS transition in July 2024, the app treats the March offense mix as useful workload context, not a perfect long-run trend by itself.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(10)
+            .background(RiverheadTheme.Surface.inset.opacity(0.82))
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Recurring Offsets To Counter The Risk")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.primary)
+
+                ForEach(Budget2027TaxCapOffsetModel.offsets) { offset in
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(offset.title)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Spacer(minLength: 8)
+                        Text(offset.amount.formatted(.currency(code: "USD")))
+                            .font(.caption.weight(.semibold))
+                            .monospacedDigit()
+                            .foregroundStyle(offset.isStretch ? RiverheadTheme.brandGold : .green)
+                    }
+                }
+
+                Divider().opacity(0.35)
+
+                summaryRow("Practical offset package", value: Budget2027TaxCapOffsetModel.totalOffsetPackage, highlight: .green)
+
+                Text("Base management actions total about \(Budget2027TaxCapOffsetModel.baseOffsetPackage.formatted(.currency(code: "USD"))). Adding a more aggressive recurring revenue and service-cost-recovery target can push the package just over \(Budget2027TaxCapOffsetModel.totalOffsetPackage.formatted(.currency(code: "USD"))). That is enough to counter a large share of the pension-driven cap risk without treating fund balance as the recurring fix.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(10)
+            .background(RiverheadTheme.Surface.inset.opacity(0.82))
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RiverheadTheme.brandCoral.opacity(0.09))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(RiverheadTheme.brandCoral.opacity(0.22), lineWidth: 1)
+        )
     }
 
     private var exactChangesCard: some View {
@@ -1638,7 +1754,7 @@ struct BudgetSimulator2027View: View {
         case .holdLine:
             levyGrowthPercent = 1.5
             recurringRevenueAdds = 40_000
-            otherRecurringPressure = 0
+            otherRecurringPressure = Budget2027PensionPressureModel.lowIncrease
             recurringSavings = 875_000
             automaticCOLAPercent = 2.0
             includeBuildingDepartmentInvestment = true
@@ -1657,7 +1773,7 @@ struct BudgetSimulator2027View: View {
         case .serviceBuildout:
             levyGrowthPercent = 3.5
             recurringRevenueAdds = 250_000
-            otherRecurringPressure = 350_000
+            otherRecurringPressure = Budget2027PensionPressureModel.highIncrease
             recurringSavings = 806_431.97
             automaticCOLAPercent = 3.0
             includeBuildingDepartmentInvestment = true
@@ -1859,6 +1975,19 @@ struct BudgetSimulator2027View: View {
                 .foregroundStyle(.secondary)
             Spacer(minLength: 8)
             Text(value.formatted(.currency(code: "USD")))
+                .monospacedDigit()
+                .foregroundStyle(highlight)
+                .fontWeight(.semibold)
+        }
+        .font(.subheadline)
+    }
+
+    private func countSummaryRow(_ label: String, current: Int, prior: Int, highlight: Color = .primary) -> some View {
+        HStack {
+            Text(label)
+                .foregroundStyle(.secondary)
+            Spacer(minLength: 8)
+            Text("\(current.formatted()) vs. \(prior.formatted())")
                 .monospacedDigit()
                 .foregroundStyle(highlight)
                 .fontWeight(.semibold)
@@ -2455,9 +2584,12 @@ private enum FiscalConditionStatus {
 private enum Budget2027ScenarioModel {
     static let defaultAutomaticCOLAPercent = 2.5
     static let defaultLevyGrowthPercent = 2.0
-    static let defaultOtherRecurringPressure = 0.0
+    static let defaultOtherRecurringPressure = Budget2027PensionPressureModel.midpointIncrease
     static let defaultRecurringSavings = 806_431.97
     static let defaultRecurringRevenueAddsExcludingLevy = 61_500.00
+    static let illustrativeCurrentLevyBase = 48_639_479.00
+    static let taxCapLevelLevyYield = illustrativeCurrentLevyBase * 0.02
+    static let pensionPressureAboveTwoPercentLevy = Budget2027PensionPressureModel.midpointIncrease - taxCapLevelLevyYield
 
     static let modeledPBAIncreaseAtDefaultCOLA = 354_689.61
     static let modeledSOAIncreaseAtDefaultCOLA = 68_773.45
@@ -2500,6 +2632,106 @@ private enum Budget2027ScenarioModel {
             nonContractPressure: nonContractBasePayroll * safePercent
         )
     }
+}
+
+private struct Budget2027TaxCapOffset: Identifiable {
+    let title: String
+    let amount: Double
+    let isStretch: Bool
+
+    var id: String { title }
+}
+
+private enum Budget2027TaxCapOffsetModel {
+    static let policeUniformOTActual2024 = 1_401_354.00
+    static let policeUniformOTBudget2024 = 1_000_000.00
+    static let policeUniformOTAdopted2026 = 1_000_000.00
+    static let policeUniformOTVariance = policeUniformOTActual2024 - policeUniformOTBudget2024
+    static let policeOvertimeRecoveryTarget = 250_000.00
+    static let policeOvertimeRecoveryShare = policeOvertimeRecoveryTarget / policeUniformOTVariance
+
+    static let healthcareContributionSavings = 85_565.71
+    static let overtimeControlSavings = policeOvertimeRecoveryTarget
+    static let civilianVacancyFactorSavings = 124_158.19
+    static let targetedRetirementRefillSavings = 291_300.00
+    static let exemptRaiseHoldSavings = 23_094.86
+    static let electedRaiseHoldSavings = 22_278.92
+    static let recurringRevenueAdds = 61_500.00
+    static let stretchRevenueAndCostRecovery = 250_000.00
+
+    static let offsets: [Budget2027TaxCapOffset] = [
+        .init(title: "Police Uniform OT recovery target", amount: overtimeControlSavings, isStretch: false),
+        .init(title: "Targeted retirement refill control", amount: targetedRetirementRefillSavings, isStretch: false),
+        .init(title: "1% civilian vacancy factor", amount: civilianVacancyFactorSavings, isStretch: false),
+        .init(title: "20% healthcare contribution policy", amount: healthcareContributionSavings, isStretch: false),
+        .init(title: "Hold exempt and elected raises", amount: exemptRaiseHoldSavings + electedRaiseHoldSavings, isStretch: false),
+        .init(title: "Base recurring revenue adds", amount: recurringRevenueAdds, isStretch: false),
+        .init(title: "Stretch fees, rentals, and cost recovery", amount: stretchRevenueAndCostRecovery, isStretch: true)
+    ]
+
+    static let baseOffsetPackage =
+        healthcareContributionSavings +
+        overtimeControlSavings +
+        civilianVacancyFactorSavings +
+        targetedRetirementRefillSavings +
+        exemptRaiseHoldSavings +
+        electedRaiseHoldSavings +
+        recurringRevenueAdds
+
+    static let totalOffsetPackage = baseOffsetPackage + stretchRevenueAndCostRecovery
+}
+
+private enum Budget2027PoliceWorkloadModel {
+    static let march2026CriminalIncidents = 167
+    static let march2025CriminalIncidents = 144
+    static let march2026TotalIncidents = 2_994
+    static let march2025TotalIncidents = 2_922
+    static let march2026NonCriminalIncidents = 2_827
+    static let march2025NonCriminalIncidents = 2_778
+    static let march2026DomesticIncidents = 60
+    static let march2025DomesticIncidents = 60
+    static let march2026Accidents = 114
+    static let march2025Accidents = 123
+    static let march2026Summonses = 1_042
+    static let march2025Summonses = 1_076
+    static let march2026CriminalCharges = 82
+    static let march2026Arrests = 77
+    static let march2026HeldForArraignment = 47
+}
+
+private enum Budget2027PensionPressureModel {
+    static let pfrs2026Budget = 6_633_131.00
+    static let pfrsEstimateLow = 7_700_000.00
+    static let pfrsEstimateHigh = 8_000_000.00
+
+    static let a01ERS2026Budget = 2_268_352.00
+    static let a01ERSEstimateLow = 2_500_000.00
+    static let a01ERSEstimateHigh = 2_600_000.00
+
+    static let da1ERS2026Budget = 447_917.00
+    static let da1ERSEstimateLow = 490_000.00
+    static let da1ERSEstimateHigh = 520_000.00
+
+    static let utilityERS2026Budget = 499_000.00
+    static let utilityERSEstimateLow = 540_000.00
+    static let utilityERSEstimateHigh = 570_000.00
+
+    static let total2026Base =
+        pfrs2026Budget +
+        a01ERS2026Budget +
+        da1ERS2026Budget +
+        utilityERS2026Budget
+
+    static let totalEstimateLow = 11_200_000.00
+    static let totalEstimateHigh = 11_700_000.00
+    static let lowIncrease = 1_400_000.00
+    static let highIncrease = 1_850_000.00
+    static let midpointIncrease = (lowIncrease + highIncrease) / 2
+
+    static let totalEstimateLowText = "$11.2M"
+    static let totalEstimateHighText = "$11.7M"
+    static let increaseLowText = "$1.4M"
+    static let increaseHighText = "$1.85M"
 }
 
 private enum Budget2026AdoptedGeneralFundModel {

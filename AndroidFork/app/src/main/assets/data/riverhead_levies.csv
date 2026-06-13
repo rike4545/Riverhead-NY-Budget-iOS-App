@@ -1,0 +1,39 @@
+fiscal_year,fund_code,fund_name,levy_category,district_code,district_name,levy_amount_usd,tax_rate_per_1000,taxable_assessed_value,budget_phase,source_pdf_filename,source_pdf_page,notes,last_updated
+2009.0,112,Water District,Special District,,Water District,1489500.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2009.0,114,Riverhead Sewer District,Special District,,Riverhead Sewer District,470900.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2009.0,128,Rvhd Scavenger Waste,Special District,,Rvhd Scavenger Waste,157300.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2009.0,112,Water District,Special District,,Water District,1489500.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2009.0,114,Riverhead Sewer District,Special District,,Riverhead Sewer District,470900.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2009.0,128,Rvhd Scavenger Waste,Special District,,Rvhd Scavenger Waste,157300.0,,,Adopted,2009.adopted.budget.pdf,6,,2025-08-23
+2010.0,112,"Water District 6,690,100 $",Special District,,"Water District 6,690,100 $",1335100.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2010.0,114,"Riverhead Sewer District 3,475,250 $",Special District,,"Riverhead Sewer District 3,475,250 $",549400.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2010.0,128,"Rvhd Scavenger Waste 1,214,400 $",Special District,,"Rvhd Scavenger Waste 1,214,400 $",105600.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2010.0,112,"Water District 6,690,100 $",Special District,,"Water District 6,690,100 $",1335100.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2010.0,114,"Riverhead Sewer District 3,475,250 $",Special District,,"Riverhead Sewer District 3,475,250 $",549400.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2010.0,128,"Rvhd Scavenger Waste 1,214,400 $",Special District,,"Rvhd Scavenger Waste 1,214,400 $",105600.0,,,Adopted,2010.adopted.budget.pdf,6,,2025-08-23
+2012.0,112,"Water District 6,564,050 $",Special District,,"Water District 6,564,050 $",1225650.0,,,Adopted,2012.Adopted.Budget.pdf,6,,2025-08-23
+2012.0,114,"Riverhead Sewer District 3,262,350 $",Special District,,"Riverhead Sewer District 3,262,350 $",535400.0,,,Adopted,2012.Adopted.Budget.pdf,6,,2025-08-23
+2012.0,112,"Water District 6,564,050 $",Special District,,"Water District 6,564,050 $",1225650.0,,,Adopted,2012.Adopted.Budget.pdf,6,,2025-08-23
+2012.0,114,"Riverhead Sewer District 3,262,350 $",Special District,,"Riverhead Sewer District 3,262,350 $",535400.0,,,Adopted,2012.Adopted.Budget.pdf,6,,2025-08-23
+2013.0,112,"Water District 6,646,200 $",Special District,,"Water District 6,646,200 $",1287000.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+2013.0,114,"Riverhead Sewer District 3,635,050 $",Special District,,"Riverhead Sewer District 3,635,050 $",426000.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+2013.0,116,"Street Lighting Dist. 1,158,500 $",Special District,,"Street Lighting Dist. 1,158,500 $",1044900.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+2013.0,124,"Calverton Sewer District 478,600 $",Special District,,"Calverton Sewer District 478,600 $",3400.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+2015.0,112,"Water District 6,644,900 $",Special District,,"Water District 6,644,900 $",1203900.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23
+2015.0,114,"Riverhead Sewer District 3,713,400 $",Special District,,"Riverhead Sewer District 3,713,400 $",434100.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23
+2015.0,124,"Calverton Sewer District 491,300 $",Special District,,"Calverton Sewer District 491,300 $",3100.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23
+2061.0,112,"Water District 6,729,200 $",Special District,,"Water District 6,729,200 $",1425800.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+2061.0,114,"Riverhead Sewer District 3,284,950 $",Special District,,"Riverhead Sewer District 3,284,950 $",416100.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+2061.0,116,"Street Lighting Dist. 1,172,500 $",Special District,,"Street Lighting Dist. 1,172,500 $",1020500.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+2061.0,124,"Calverton Sewer District 386,000 $",Special District,,"Calverton Sewer District 386,000 $",3300.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+,112,"Water District 6,644,900 $",Special District,,"Water District 6,644,900 $",1203900.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23
+,112,"Water District 6,646,200 $",Special District,,"Water District 6,646,200 $",1287000.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+,112,"Water District 6,729,200 $",Special District,,"Water District 6,729,200 $",1425800.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+,114,"Riverhead Sewer District 3,284,950 $",Special District,,"Riverhead Sewer District 3,284,950 $",416100.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+,114,"Riverhead Sewer District 3,635,050 $",Special District,,"Riverhead Sewer District 3,635,050 $",426000.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+,114,"Riverhead Sewer District 3,713,400 $",Special District,,"Riverhead Sewer District 3,713,400 $",434100.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23
+,116,"Street Lighting Dist. 1,158,500 $",Special District,,"Street Lighting Dist. 1,158,500 $",1044900.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+,116,"Street Lighting Dist. 1,172,500 $",Special District,,"Street Lighting Dist. 1,172,500 $",1020500.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+,124,"Calverton Sewer District 386,000 $",Special District,,"Calverton Sewer District 386,000 $",3300.0,,,Adopted,document957030902120612.pdf,6,,2025-08-23
+,124,"Calverton Sewer District 478,600 $",Special District,,"Calverton Sewer District 478,600 $",3400.0,,,Adopted,document957043856112013.pdf,13,,2025-08-23
+,124,"Calverton Sewer District 491,300 $",Special District,,"Calverton Sewer District 491,300 $",3100.0,,,Adopted,document957022719050415.pdf,3,,2025-08-23

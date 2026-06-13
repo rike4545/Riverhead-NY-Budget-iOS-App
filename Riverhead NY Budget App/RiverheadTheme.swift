@@ -32,14 +32,23 @@ enum RiverheadTheme {
     /// Gold stripe from the logo (#BDAC34).
     static let brandGold: Color = Color(red: 0.741, green: 0.675, blue: 0.204)
 
+    /// Warm sand used as a low-volume complement to the shoreline blues.
+    static let brandSand: Color = Color(red: 0.812, green: 0.760, blue: 0.541)
+
+    /// Fresh civic green used sparingly for positive signals and service cards.
+    static let brandMint: Color = Color(red: 0.290, green: 0.595, blue: 0.520)
+
+    /// Warm civic accent for alerts, deadlines, and calls to action.
+    static let brandCoral: Color = Color(red: 0.775, green: 0.314, blue: 0.235)
+
     /// Light/dark adaptive page background.
     static let brandBackground: Color = Color(
         uiColor: UIColor { trait in
             if trait.userInterfaceStyle == .dark {
                 // Deep blue-gray tuned for readable dark-mode contrast.
-                return UIColor(red: 0.055, green: 0.075, blue: 0.102, alpha: 1.0)
+                return UIColor(red: 0.043, green: 0.057, blue: 0.075, alpha: 1.0)
             }
-            return UIColor(red: 0.867, green: 0.898, blue: 0.922, alpha: 1.0)
+            return UIColor(red: 0.914, green: 0.943, blue: 0.953, alpha: 1.0)
         }
     )
 
@@ -47,9 +56,9 @@ enum RiverheadTheme {
     static let brandCard: Color = Color(
         uiColor: UIColor { trait in
             if trait.userInterfaceStyle == .dark {
-                return UIColor(red: 0.102, green: 0.129, blue: 0.165, alpha: 1.0)
+                return UIColor(red: 0.094, green: 0.118, blue: 0.153, alpha: 1.0)
             }
-            return UIColor(red: 0.941, green: 0.949, blue: 0.957, alpha: 1.0)
+            return UIColor(red: 0.984, green: 0.992, blue: 0.988, alpha: 1.0)
         }
     )
 
@@ -59,7 +68,7 @@ enum RiverheadTheme {
     static let primaryBlue: Color = brandNavy
 
     /// Accent color for controls and highlights (header/nav blue).
-    static let accent: Color = brandBlue
+    static let accent: Color = brandNavy
 
     /// Legacy alias used in older views (same as `accent`).
     static let tint: Color = accent
@@ -85,6 +94,17 @@ enum RiverheadTheme {
 
         /// Card / tile background
         static var card: Color { RiverheadTheme.cardBackground }
+
+        /// More pronounced panel surface for headers and important controls.
+        static var elevated: Color {
+            Color(
+                uiColor: UIColor { trait in
+                    trait.userInterfaceStyle == .dark
+                    ? UIColor(red: 0.120, green: 0.153, blue: 0.194, alpha: 1.0)
+                    : UIColor.white
+                }
+            )
+        }
 
         /// Slightly different surface you can use for inset areas
         static var inset: Color { RiverheadTheme.background.opacity(0.985) }
@@ -125,9 +145,10 @@ enum RiverheadTheme {
     static var headerGradient: LinearGradient {
         LinearGradient(
             colors: [
-                brandSky.opacity(0.85),
-                brandSky.opacity(0.40),
-                brandBackground.opacity(0.90)
+                brandNavy,
+                brandSky.opacity(0.92),
+                brandTeal.opacity(0.78),
+                brandGold.opacity(0.62)
             ],
             startPoint: .topLeading,
             endPoint: .bottomTrailing
@@ -138,17 +159,38 @@ enum RiverheadTheme {
     static var backgroundGradient: LinearGradient {
         LinearGradient(
             colors: [
+                brandNavy.opacity(0.18),
+                brandSky.opacity(0.25),
                 brandBackground,
-                brandBackground.opacity(0.98),
+                brandTeal.opacity(0.18),
+                brandGold.opacity(0.10),
                 Color(uiColor: UIColor { trait in
                     trait.userInterfaceStyle == .dark
-                    ? UIColor(red: 0.043, green: 0.059, blue: 0.082, alpha: 1.0)
-                    : UIColor.white
+                    ? UIColor(red: 0.035, green: 0.047, blue: 0.067, alpha: 1.0)
+                    : UIColor(red: 0.976, green: 0.982, blue: 0.969, alpha: 1.0)
                 })
             ],
             startPoint: .top,
             endPoint: .bottom
         )
+    }
+
+    static let townAccentPalette: [Color] = [
+        brandNavy,
+        brandBlue,
+        brandSky,
+        brandTeal,
+        brandGold,
+        brandMint
+    ]
+
+    static func townAccent(for key: String) -> Color {
+        let scalarTotal = key.unicodeScalars.reduce(0) { $0 + Int($1.value) }
+        return townAccentPalette[abs(scalarTotal) % townAccentPalette.count]
+    }
+
+    static func cardShadow(_ scheme: ColorScheme, elevated: Bool = false) -> Color {
+        Color.black.opacity(scheme == .dark ? (elevated ? 0.42 : 0.28) : (elevated ? 0.14 : 0.08))
     }
 }
 

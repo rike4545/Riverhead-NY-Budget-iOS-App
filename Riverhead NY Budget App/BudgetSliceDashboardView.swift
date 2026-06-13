@@ -19,6 +19,12 @@ struct BudgetSliceDashboardView: View {
     private var total: Double { slices.totalAmount }
     private var categoryTotals: [(BudgetCategory, Double)] { slices.totalsByCategory }
     private var topSlices: [BudgetSlice] { Array(slices.sortedByMagnitude().prefix(8)) }
+    private var inflowTotal: Double { slices.reduce(0) { $0 + max($1.amount, 0) } }
+    private var outflowTotal: Double { slices.reduce(0) { $0 + abs(min($1.amount, 0)) } }
+    private var largestShare: Double {
+        guard let largest = topSlices.first, max(inflowTotal, outflowTotal) > 0 else { return 0 }
+        return abs(largest.amount) / max(inflowTotal, outflowTotal)
+    }
 
     private var totalColor: Color { total >= 0 ? .green : .red }
 
@@ -26,7 +32,9 @@ struct BudgetSliceDashboardView: View {
         VStack(alignment: .leading, spacing: 16) {
             header
             totalSummary
+            cashflowInfographic
             categoryChips
+            categoryDonut
             barChart
         }
         .padding(14)
@@ -72,6 +80,60 @@ struct BudgetSliceDashboardView: View {
         if total > 0 { return "Overall surplus (inflows exceed outflows)." }
         if total < 0 { return "Overall deficit (outflows exceed inflows)." }
         return "Roughly break-even."
+    }
+
+    private var cashflowInfographic: some View {
+        HStack(spacing: 10) {
+            budgetMetricTile(
+                title: "Inflow",
+                value: Formatters.currency0Short(inflowTotal),
+                systemImage: "arrow.down.forward.circle.fill",
+                tint: .green
+            )
+
+            budgetMetricTile(
+                title: "Outflow",
+                value: Formatters.currency0Short(outflowTotal),
+                systemImage: "arrow.up.forward.circle.fill",
+                tint: .red
+            )
+
+            budgetMetricTile(
+                title: "Largest slice",
+                value: largestShare.formatted(.percent.precision(.fractionLength(0))),
+                systemImage: "target",
+                tint: RiverheadTheme.brandGold
+            )
+        }
+    }
+
+    private func budgetMetricTile(title: String, value: String, systemImage: String, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Image(systemName: systemImage)
+                .font(.title3)
+                .foregroundStyle(tint)
+                .frame(width: 28, height: 28, alignment: .leading)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(value)
+                    .font(.subheadline.weight(.bold))
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+                Text(title)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(10)
+        .background(tint.opacity(0.10), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(tint.opacity(0.20), lineWidth: 0.8)
+        )
+        .accessibilityElement(children: .combine)
     }
 
     private var categoryChips: some View {
@@ -135,6 +197,63 @@ struct BudgetSliceDashboardView: View {
                 .frame(height: CGFloat(24 * max(topSlices.count, 3)))
                 .accessibilityElement(children: .contain)
             }
+        }
+    }
+
+    private var categoryDonut: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Category shape")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            if categoryTotals.isEmpty {
+                EmptyView()
+            } else {
+                HStack(alignment: .center, spacing: 14) {
+                    Chart(categoryTotals, id: \.0.id) { category, total in
+                        SectorMark(
+                            angle: .value("Amount", abs(total)),
+                            innerRadius: .ratio(0.58),
+                            angularInset: 1.8
+                        )
+                        .foregroundStyle(color(for: category))
+                        .accessibilityLabel("\(category.displayName), \(Formatters.currency0(total))")
+                    }
+                    .chartLegend(.hidden)
+                    .frame(width: 118, height: 118)
+
+                    VStack(alignment: .leading, spacing: 7) {
+                        ForEach(categoryTotals.prefix(5), id: \.0.id) { category, total in
+                            HStack(spacing: 7) {
+                                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                                    .fill(color(for: category))
+                                    .frame(width: 10, height: 10)
+                                Text(category.displayName)
+                                    .font(.caption2.weight(.semibold))
+                                    .lineLimit(1)
+                                Spacer(minLength: 4)
+                                Text(Formatters.currency0Short(total))
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                                    .monospacedDigit()
+                            }
+                        }
+                    }
+                }
+                .accessibilityElement(children: .contain)
+            }
+        }
+    }
+
+    private func color(for category: BudgetCategory) -> Color {
+        switch category {
+        case .revenue: return .green
+        case .expense: return .red
+        case .fundBalanceAdjustment: return RiverheadTheme.brandGold
+        case .capital: return .orange
+        case .debtService: return .purple
+        case .grants: return .teal
+        case .other: return RiverheadTheme.brandSky
         }
     }
 }

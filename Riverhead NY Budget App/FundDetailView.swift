@@ -36,6 +36,7 @@ public struct FundDetailView: View {
                 trendsCard
                 policyCard
                 detailsCard
+                departmentsCard
             }
             .padding(.vertical, 12)
             .padding(.horizontal)
@@ -347,6 +348,44 @@ public struct FundDetailView: View {
         .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.white.opacity(0.08)))
     }
 
+    private var departmentsCard: some View {
+        let departments = departmentRows()
+
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("Departments & Sub-Accounts")
+                    .font(.headline)
+                Spacer()
+                Text("\(departments.count)")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+
+            if departments.isEmpty {
+                ContentUnavailableView(
+                    "No department rows found",
+                    systemImage: "list.bullet.rectangle",
+                    description: Text("The bundled 2026 table data does not expose department-level rows for this fund yet.")
+                )
+                .padding(.vertical, 8)
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(departments) { department in
+                        NavigationLink {
+                            DepartmentBudgetDetailView(department: department)
+                        } label: {
+                            DepartmentLinkRow(department: department)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+        }
+        .padding(12)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14))
+        .overlay(RoundedRectangle(cornerRadius: 14).stroke(Color.white.opacity(0.08)))
+    }
+
     private func rowKV(_ k: String, _ v: String) -> some View {
         HStack {
             Text(k).foregroundStyle(.secondary)
@@ -441,6 +480,11 @@ public struct FundDetailView: View {
         return nil
     }
 
+    private func departmentRows() -> [RBDepartmentBudgetRow] {
+        guard let code = matchedSummary()?.fundCode ?? codeToken(from: displayTitle) else { return [] }
+        return Riverhead2026BudgetShift.departmentBudgets(fundCode: code)
+    }
+
     private func codeToken(from s: String) -> String? {
         let first = s.split(separator: " ").first.map(String.init) ?? ""
         return first.range(of: #"^[A-Z]{1,2}\d{1,2}$"#, options: .regularExpression) != nil ? first : nil
@@ -477,7 +521,7 @@ public struct FundDetailView: View {
 
     // MARK: Formatters
 
-    private static let moneyFormatter0: NumberFormatter = {
+    fileprivate static let moneyFormatter0: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .currency
         nf.maximumFractionDigits = 0
@@ -490,6 +534,205 @@ public struct FundDetailView: View {
         nf.maximumFractionDigits = 1
         return nf
     }()
+}
+
+private struct DepartmentLinkRow: View {
+    let department: RBDepartmentBudgetRow
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: "building.2.fill")
+                .font(.headline)
+                .foregroundStyle(RiverheadTheme.accent)
+                .frame(width: 34, height: 34)
+                .background(RiverheadTheme.accent.opacity(0.12), in: Circle())
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(department.name)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .multilineTextAlignment(.leading)
+
+                Text("\(department.fundCode) function \(department.functionCode) • \(department.subAccounts.count) sub-accounts")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer(minLength: 8)
+
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(Self.money(department.adopted2026))
+                    .font(.subheadline.weight(.semibold))
+                    .monospacedDigit()
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(10)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    private static func money(_ value: Decimal?) -> String {
+        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
+        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
+    }
+}
+
+private struct DepartmentBudgetDetailView: View {
+    let department: RBDepartmentBudgetRow
+    @State private var searchText = ""
+
+    private var filteredSubAccounts: [RBSubAccountRow] {
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !query.isEmpty else { return department.subAccounts }
+        return department.subAccounts.filter {
+            $0.accountNumber.lowercased().contains(query) ||
+            $0.description.lowercased().contains(query) ||
+            $0.objectCode.lowercased().contains(query)
+        }
+    }
+
+    var body: some View {
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(department.name)
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+
+                    Text("\(department.fundCode) function \(department.functionCode)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+
+                    HStack {
+                        Label("\(department.subAccounts.count) sub-accounts", systemImage: "list.bullet.rectangle")
+                        Spacer()
+                        Text(Self.money(department.adopted2026))
+                            .fontWeight(.semibold)
+                            .monospacedDigit()
+                    }
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 4)
+            }
+
+            Section("Sub-Accounts") {
+                ForEach(filteredSubAccounts) { account in
+                    NavigationLink {
+                        SubAccountDetailView(account: account, departmentName: department.name)
+                    } label: {
+                        SubAccountLinkRow(account: account)
+                    }
+                }
+            }
+        }
+        .navigationTitle(department.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .searchable(text: $searchText, prompt: "Search sub-account or code")
+    }
+
+    private static func money(_ value: Decimal?) -> String {
+        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
+        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
+    }
+}
+
+private struct SubAccountLinkRow: View {
+    let account: RBSubAccountRow
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(account.description.isEmpty ? "Sub-account \(account.objectCode)" : account.description)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(2)
+
+                Spacer(minLength: 8)
+
+                Text(Self.money(account.adopted2026))
+                    .font(.footnote.weight(.semibold))
+                    .monospacedDigit()
+                    .foregroundStyle(.secondary)
+            }
+
+            Text(account.accountNumber)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .textSelection(.enabled)
+        }
+        .padding(.vertical, 3)
+    }
+
+    private static func money(_ value: Decimal?) -> String {
+        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
+        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
+    }
+}
+
+private struct SubAccountDetailView: View {
+    let account: RBSubAccountRow
+    let departmentName: String
+
+    var body: some View {
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(account.description.isEmpty ? "Sub-account \(account.objectCode)" : account.description)
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+
+                    Text(account.accountNumber)
+                        .font(.footnote.monospaced())
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+
+                    Text(departmentName)
+                        .font(.subheadline)
+                        .foregroundStyle(RiverheadTheme.accent)
+                }
+                .padding(.vertical, 4)
+            }
+
+            Section("Budget Values") {
+                valueRow("2025 Budget", account.budget2025)
+                valueRow("2026 Tentative", account.tentative2026)
+                valueRow("2026 Preliminary", account.preliminary2026)
+                valueRow("2026 Adopted", account.adopted2026)
+            }
+
+            Section("Source") {
+                LabeledContent("Fund", value: account.fundCode)
+                LabeledContent("Function", value: account.functionCode)
+                LabeledContent("Object", value: account.objectCode)
+                LabeledContent("PDF page", value: "\(account.page)")
+                LabeledContent("Table row", value: "\(account.rowIndex)")
+            }
+        }
+        .navigationTitle("Sub-Account")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func valueRow(_ title: String, _ value: Decimal?) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Text(Self.money(value))
+                .fontWeight(title == "2026 Adopted" ? .semibold : .regular)
+                .monospacedDigit()
+                .foregroundStyle(title == "2026 Adopted" ? RiverheadTheme.accent : .secondary)
+        }
+    }
+
+    private static func money(_ value: Decimal?) -> String {
+        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
+        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
+    }
 }
 
 // MARK: - Preview

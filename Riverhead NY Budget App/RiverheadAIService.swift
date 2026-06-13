@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 struct RiverheadAIMessage: Identifiable, Hashable {
     enum Role: String {
@@ -28,6 +29,7 @@ enum RiverheadAIServiceError: LocalizedError {
     case missingAPIKey
     case invalidResponse
     case serviceError(String)
+    case rateLimited(TimeInterval)
 
     var errorDescription: String? {
         switch self {
@@ -37,6 +39,9 @@ enum RiverheadAIServiceError: LocalizedError {
             return "The AI service returned a response we couldn't read."
         case .serviceError(let message):
             return message
+        case .rateLimited(let remaining):
+            let secs = Int(remaining.rounded(.up))
+            return "Please wait \(secs) second\(secs == 1 ? "" : "s") before sending another message."
         }
     }
 }
@@ -45,7 +50,17 @@ struct RiverheadAIService {
     private let session: URLSession
     private let endpoint = URL(string: "https://api.openai.com/v1/responses")!
 
-    init(session: URLSession = .shared) {
+    static let maxHistoryMessages = 10
+    private static let requestTimeout: TimeInterval = 30
+
+    private static let configuredSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = requestTimeout
+        config.timeoutIntervalForResource = 60
+        return URLSession(configuration: config)
+    }()
+
+    init(session: URLSession = RiverheadAIService.configuredSession) {
         self.session = session
     }
 
@@ -62,16 +77,17 @@ struct RiverheadAIService {
             throw RiverheadAIServiceError.missingAPIKey
         }
 
-        var request = URLRequest(url: endpoint)
+        var request = URLRequest(url: endpoint, timeoutInterval: Self.requestTimeout)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(resolvedKey)", forHTTPHeaderField: "Authorization")
         let instructions = await buildInstructions(store: store)
+        let trimmedHistory = Array(history.suffix(Self.maxHistoryMessages))
 
         request.httpBody = try JSONSerialization.data(withJSONObject: [
             "model": "gpt-5-mini",
             "instructions": instructions,
-            "input": await buildInput(prompt: prompt, history: history, store: store),
+            "input": await buildInput(prompt: prompt, history: trimmedHistory, store: store),
             "max_output_tokens": 700
         ])
 
@@ -82,14 +98,14 @@ struct RiverheadAIService {
         }
 
         guard (200..<300).contains(http.statusCode) else {
-            if let message = parseErrorMessage(from: data) {
-                throw RiverheadAIServiceError.serviceError(message)
-            }
-            throw RiverheadAIServiceError.serviceError("The AI service returned HTTP \(http.statusCode).")
+            let message = parseErrorMessage(from: data)
+            RBLog.ai.error("OpenAI HTTP \(http.statusCode): \(message ?? "no message")")
+            throw RiverheadAIServiceError.serviceError(message ?? "The AI service returned HTTP \(http.statusCode).")
         }
 
         guard let text = parseOutputText(from: data)?.trimmingCharacters(in: .whitespacesAndNewlines),
               !text.isEmpty else {
+            RBLog.ai.error("OpenAI response contained no parseable output text")
             throw RiverheadAIServiceError.invalidResponse
         }
 

@@ -52,248 +52,6 @@
 			);
 			target = 93F8486E2E3F22C1002CEF92 /* Riverhead NY Budget App */;
 		};
-		9373F9ED2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				05.adopted.budget.pdf,
-				06.adopted.budget.pdf,
-				07.adopted.budget.pdf,
-				08.adopted.budget.pdf,
-				2009.adopted.budget.pdf,
-				2010.adopted.budget.pdf,
-				"2011.Adopted Budget.pdf",
-				2012.Adopted.Budget.pdf,
-				2020AdoptedBudget957121129112119PM.pdf,
-				"2021 Adopted Budget (PDF).pdf",
-				2021AdoptedBudget958090915113020AM.pdf,
-				"2022 Tentative Budget (PDF).pdf",
-				2022AdoptedBudget958105751111721AM.pdf,
-				"2023 Tentative Budget (PDF).pdf",
-				2023TentativeBudget1505035948093022PM.pdf,
-				"2024 Adopted Budget (PDF).pdf",
-				"2024 Annual Financial Report Update (PDF) (1).pdf",
-				"2024 Annual Financial Report Update (PDF).pdf",
-				"2024 Tentative Budget (PDF).pdf",
-				2024AdoptedBudget1505034817111523PM.pdf,
-				"2025 Adopted Budget (PDF).pdf",
-				"2025 Budget Supplement (PDF).pdf",
-				"2025 Tentative Budget (PDF).pdf",
-				"2025AdoptedBudget1518015509112024PM (1).pdf",
-				2025AdoptedBudget1518015509112024PM.pdf,
-				"2026 Tentative Budget Print (PDF).pdf",
-				AboutAppView.swift,
-				BHFundYearRow_MODEL.swift,
-				"Budget2026Explore+Shift.swift",
-				BudgetAudienceMode.swift,
-				BudgetDataBootstrapper.swift,
-				BudgetHistoryShift.swift,
-				BudgetPolicyInsightsView.swift,
-				BudgetSlice.swift,
-				BudgetSliceDashboardView.swift,
-				BudgetTabView.swift,
-				Channel22View.swift,
-				CivicToolkitsHubView.swift,
-				ContactView.swift,
-				ContentView.swift,
-				ContractCatalog.swift,
-				ContractImpactEngine.swift,
-				ContractImpactEstimatorView.swift,
-				ContractImpactModels.swift,
-				CostOfLivingToolkitsView.swift,
-				DepartmentsView.swift,
-				document957022719050415.pdf,
-				document957030902120612.pdf,
-				document957043856112013.pdf,
-				document957094340010417.pdf,
-				document957104317121615.pdf,
-				document958090952092917.pdf,
-				document958105748120718.pdf,
-				EnergyFocusArea.swift,
-				EnergyPolicyCostDriversView.swift,
-				ENT_COMPAT_.txt,
-				EPFocusArea.swift,
-				ExpertTabView.swift,
-				FundBalancePoliciesView.swift,
-				FundBalanceShiftView.swift,
-				FundDetailExplorerView.swift,
-				FundDetailView.swift,
-				"GoogleService-Info.plist",
-				"Gross Earnings 2018.csv",
-				"Gross Earnings 2019.csv",
-				"Gross Earnings 2020.csv",
-				"Gross Earnings 2021.csv",
-				HistoricalTabView.swift,
-				HomeView.swift,
-				HowDoIView.swift,
-				MainTabView.swift,
-				MoreView.swift,
-				MyTaxesView.swift,
-				NewsAndEventsView.swift,
-				NYTaxCapInputs.swift,
-				OverviewShiftView.swift,
-				PDFViewer.swift,
-				RBBudgetExplorerView.swift,
-				RBBudgetNode.swift,
-				RBBudgetStore.swift,
-				RBCapitalProject.swift,
-				RBCapitalProjectsMapView.swift,
-				RBCivicToolkitHostView.swift,
-				RBCivicToolkitStore.swift,
-				RBFundBalancePolicy.swift,
-				RBLocalJSONCache.swift,
-				RBMunicipality.swift,
-				RBSalaryInsightsView.swift,
-				RBSixSigmaPhase.swift,
-				RBSixSigmaStore.swift,
-				RBTownSquareHubView.swift,
-				RBTownSquareQEBudgetMathView.swift,
-				RBTownSquareSweetheartDealAuditView.swift,
-				riverhead_general_fund_2005_2025.csv,
-				riverhead_levies.csv,
-				Riverhead_NYApp.swift,
-				RiverheadBudgetDoc.swift,
-				RiverheadBudgetHubView.swift,
-				RiverheadCommitteesView.swift,
-				RiverheadFundBalanceAuditView.swift,
-				RiverheadTheme.swift,
-				RiverheadURLs.swift,
-				RootView.swift,
-				SafariView.swift,
-				salary_excerpt_2021_2026_app_ready_with_elected_officials_police_highway_2021_2026.csv,
-				"SixSigmaProcessImprovementShiftView 2.swift",
-				Tab.swift,
-				tables_flat.csv,
-				ToolRowTrailing.swift,
-				TownSquareBANImpactView.swift,
-				TownSquareCoreTerms.swift,
-				TownSquareLeaseAmendmentTerms.swift,
-				TownSquareProjectHubView.swift,
-				WebContentView.swift,
-				YearlyEarnings.swift,
-			);
-			target = 93F8487C2E3F22C2002CEF92 /* Riverhead NY Budget AppTests */;
-		};
-		9373F9EE2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				05.adopted.budget.pdf,
-				06.adopted.budget.pdf,
-				07.adopted.budget.pdf,
-				08.adopted.budget.pdf,
-				2009.adopted.budget.pdf,
-				2010.adopted.budget.pdf,
-				"2011.Adopted Budget.pdf",
-				2012.Adopted.Budget.pdf,
-				2020AdoptedBudget957121129112119PM.pdf,
-				"2021 Adopted Budget (PDF).pdf",
-				2021AdoptedBudget958090915113020AM.pdf,
-				"2022 Tentative Budget (PDF).pdf",
-				2022AdoptedBudget958105751111721AM.pdf,
-				"2023 Tentative Budget (PDF).pdf",
-				2023TentativeBudget1505035948093022PM.pdf,
-				"2024 Adopted Budget (PDF).pdf",
-				"2024 Annual Financial Report Update (PDF) (1).pdf",
-				"2024 Annual Financial Report Update (PDF).pdf",
-				"2024 Tentative Budget (PDF).pdf",
-				2024AdoptedBudget1505034817111523PM.pdf,
-				"2025 Adopted Budget (PDF).pdf",
-				"2025 Budget Supplement (PDF).pdf",
-				"2025 Tentative Budget (PDF).pdf",
-				"2025AdoptedBudget1518015509112024PM (1).pdf",
-				2025AdoptedBudget1518015509112024PM.pdf,
-				"2026 Tentative Budget Print (PDF).pdf",
-				AboutAppView.swift,
-				BHFundYearRow_MODEL.swift,
-				"Budget2026Explore+Shift.swift",
-				BudgetAudienceMode.swift,
-				BudgetDataBootstrapper.swift,
-				BudgetHistoryShift.swift,
-				BudgetPolicyInsightsView.swift,
-				BudgetSlice.swift,
-				BudgetSliceDashboardView.swift,
-				BudgetTabView.swift,
-				Channel22View.swift,
-				CivicToolkitsHubView.swift,
-				ContactView.swift,
-				ContentView.swift,
-				ContractCatalog.swift,
-				ContractImpactEngine.swift,
-				ContractImpactEstimatorView.swift,
-				ContractImpactModels.swift,
-				CostOfLivingToolkitsView.swift,
-				DepartmentsView.swift,
-				document957022719050415.pdf,
-				document957030902120612.pdf,
-				document957043856112013.pdf,
-				document957094340010417.pdf,
-				document957104317121615.pdf,
-				document958090952092917.pdf,
-				document958105748120718.pdf,
-				EnergyFocusArea.swift,
-				EnergyPolicyCostDriversView.swift,
-				ENT_COMPAT_.txt,
-				EPFocusArea.swift,
-				ExpertTabView.swift,
-				FundBalancePoliciesView.swift,
-				FundBalanceShiftView.swift,
-				FundDetailExplorerView.swift,
-				FundDetailView.swift,
-				"GoogleService-Info.plist",
-				"Gross Earnings 2018.csv",
-				"Gross Earnings 2019.csv",
-				"Gross Earnings 2020.csv",
-				"Gross Earnings 2021.csv",
-				HistoricalTabView.swift,
-				HomeView.swift,
-				HowDoIView.swift,
-				MainTabView.swift,
-				MoreView.swift,
-				MyTaxesView.swift,
-				NewsAndEventsView.swift,
-				NYTaxCapInputs.swift,
-				OverviewShiftView.swift,
-				PDFViewer.swift,
-				RBBudgetExplorerView.swift,
-				RBBudgetNode.swift,
-				RBBudgetStore.swift,
-				RBCapitalProject.swift,
-				RBCapitalProjectsMapView.swift,
-				RBCivicToolkitHostView.swift,
-				RBCivicToolkitStore.swift,
-				RBFundBalancePolicy.swift,
-				RBLocalJSONCache.swift,
-				RBMunicipality.swift,
-				RBSalaryInsightsView.swift,
-				RBSixSigmaPhase.swift,
-				RBSixSigmaStore.swift,
-				RBTownSquareHubView.swift,
-				RBTownSquareQEBudgetMathView.swift,
-				RBTownSquareSweetheartDealAuditView.swift,
-				riverhead_general_fund_2005_2025.csv,
-				riverhead_levies.csv,
-				Riverhead_NYApp.swift,
-				RiverheadBudgetDoc.swift,
-				RiverheadBudgetHubView.swift,
-				RiverheadCommitteesView.swift,
-				RiverheadFundBalanceAuditView.swift,
-				RiverheadTheme.swift,
-				RiverheadURLs.swift,
-				RootView.swift,
-				SafariView.swift,
-				salary_excerpt_2021_2026_app_ready_with_elected_officials_police_highway_2021_2026.csv,
-				"SixSigmaProcessImprovementShiftView 2.swift",
-				Tab.swift,
-				tables_flat.csv,
-				ToolRowTrailing.swift,
-				TownSquareBANImpactView.swift,
-				TownSquareCoreTerms.swift,
-				TownSquareLeaseAmendmentTerms.swift,
-				TownSquareProjectHubView.swift,
-				WebContentView.swift,
-				YearlyEarnings.swift,
-			);
-			target = 93F848862E3F22C2002CEF92 /* Riverhead NY Budget AppUITests */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -301,8 +59,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				9357D3DA2F217CD900F60EDE /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget App" target */,
-				9373F9ED2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppTests" target */,
-				9373F9EE2E5AB4A200CCA163 /* Exceptions for "Riverhead NY Budget App" folder in "Riverhead NY Budget AppUITests" target */,
 			);
 			path = "Riverhead NY Budget App";
 			sourceTree = "<group>";
@@ -689,7 +445,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 39;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -714,7 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.04.19;
+				MARKETING_VERSION = 2026.06.08;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -738,7 +494,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 39;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -763,7 +519,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.04.19;
+				MARKETING_VERSION = 2026.06.08;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -780,48 +536,40 @@
 		93F848952E3F22C2002CEF92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riverhead NY Budget App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Riverhead NY Budget App";
-				XROS_DEPLOYMENT_TARGET = 2.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		93F848962E3F22C2002CEF92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riverhead NY Budget App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Riverhead NY Budget App";
-				XROS_DEPLOYMENT_TARGET = 2.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -834,17 +582,15 @@
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Riverhead NY Budget App";
-				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
@@ -857,17 +603,15 @@
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Riverhead NY Budget App";
-				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
 		};

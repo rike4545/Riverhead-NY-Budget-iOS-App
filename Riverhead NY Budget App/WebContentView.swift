@@ -116,27 +116,23 @@ private struct WebViewRepresentable: UIViewRepresentable {
             context: UnsafeMutableRawPointer?
         ) {
             guard keyPath == "estimatedProgress", let webView = object as? WKWebView else { return }
-            parent.progress = webView.estimatedProgress
+            updateProgress(webView.estimatedProgress)
         }
 
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-            parent.lastError = nil
-            parent.isLoading = true
-            parent.progress = 0
+            updateState(isLoading: true, progress: 0, lastError: nil)
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            parent.isLoading = false
+            updateState(isLoading: false)
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-            parent.isLoading = false
-            parent.lastError = error.localizedDescription
+            updateState(isLoading: false, lastError: error.localizedDescription)
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-            parent.isLoading = false
-            parent.lastError = error.localizedDescription
+            updateState(isLoading: false, lastError: error.localizedDescription)
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -147,6 +143,28 @@ private struct WebViewRepresentable: UIViewRepresentable {
                 return
             }
             decisionHandler(.allow)
+        }
+
+        private func updateProgress(_ value: Double) {
+            Task { @MainActor [parent] in
+                parent.progress = value
+            }
+        }
+
+        private func updateState(
+            isLoading: Bool? = nil,
+            progress: Double? = nil,
+            lastError: String? = nil
+        ) {
+            Task { @MainActor [parent] in
+                if let isLoading {
+                    parent.isLoading = isLoading
+                }
+                if let progress {
+                    parent.progress = progress
+                }
+                parent.lastError = lastError
+            }
         }
     }
 }

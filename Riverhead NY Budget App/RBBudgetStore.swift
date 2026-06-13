@@ -37,8 +37,8 @@ final class RBBudgetStore {
     /// Appropriations for the budget year being analyzed (e.g., FY 2026).
     var appropriations: Double = 69_113_159
 
-    /// Estimated Unassigned Fund Balance as of 12/31 of the prior year.
-    var estimatedFundBalance: Double = 28_403_924
+    /// Unassigned General Fund balance from the 2025 Annual Financial Report.
+    var estimatedFundBalance: Double = 29_671_084
 
     /// Active fund balance policy (editable via Policies view).
     var fundBalancePolicy: RBFundBalancePolicy = .init(

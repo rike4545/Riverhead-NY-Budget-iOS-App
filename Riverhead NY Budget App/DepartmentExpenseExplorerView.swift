@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 @MainActor
 struct DepartmentExpenseExplorerView: View {
@@ -43,6 +44,31 @@ struct DepartmentExpenseExplorerView: View {
         matchedRows.reduce(0) { $0 + ($1.otherExpense ?? 0) }
     }
 
+    private var visibleCategoryTotals: [DepartmentCategoryTotal] {
+        DepartmentBudgetCategory.allCases.compactMap { category in
+            let categoryRecords = filteredRecords.filter { $0.category == category }
+            let total = categoryRecords.reduce(0) { $0 + $1.adoptedTotal }
+            guard total > 0 else { return nil }
+            return DepartmentCategoryTotal(category: category, total: total)
+        }
+    }
+
+    private var payrollLayerData: [DepartmentCostLayer] {
+        [
+            .init(name: "Salary", amount: salaryTotal, tint: .blue),
+            .init(name: "Other", amount: max(otherExpenseTotal, 0), tint: .orange)
+        ].filter { $0.amount > 0 }
+    }
+
+    private var topPersonnelShares: [DepartmentBudgetRecord] {
+        Array(
+            matchedRows
+                .filter { ($0.personnelShare ?? 0) > 0 }
+                .sorted { ($0.personnelShare ?? 0) > ($1.personnelShare ?? 0) }
+                .prefix(5)
+        )
+    }
+
     var body: some View {
         List {
             Section {
@@ -63,6 +89,12 @@ struct DepartmentExpenseExplorerView: View {
                 summaryRow(title: "Matched salary base", value: salaryTotal, tint: .blue)
                 summaryRow(title: "Adopted department totals", value: adoptedTotal, tint: .green)
                 summaryRow(title: "Implied non-salary layer", value: otherExpenseTotal, tint: .orange)
+            }
+
+            Section("Visual Snapshot") {
+                payrollSplitGraphic
+                categoryScaleChart
+                personnelShareGraphic
             }
 
             Section("Department Explorer") {
@@ -107,7 +139,11 @@ struct DepartmentExpenseExplorerView: View {
                             if let salaryBase = record.salaryBase, let otherExpense = record.otherExpense {
                                 HStack {
                                     metricPill("Salary", value: salaryBase, tint: .blue)
-                                    metricPill("Other", value: otherExpense, tint: .orange)
+                                    metricPill(
+                                        otherExpense < 0 ? "Allocation gap" : "Other",
+                                        value: otherExpense,
+                                        tint: otherExpense < 0 ? .red : .orange
+                                    )
                                 }
                             }
 
@@ -168,6 +204,140 @@ struct DepartmentExpenseExplorerView: View {
         case .utilities: return .blue
         }
     }
+
+    private var payrollSplitGraphic: some View {
+        HStack(spacing: 14) {
+            Chart(payrollLayerData) { layer in
+                SectorMark(
+                    angle: .value("Amount", layer.amount),
+                    innerRadius: .ratio(0.58),
+                    angularInset: 2
+                )
+                .foregroundStyle(layer.tint)
+                .accessibilityLabel("\(layer.name), \(layer.amount.formatted(.currency(code: "USD")))")
+            }
+            .chartLegend(.hidden)
+            .frame(width: 112, height: 112)
+
+            VStack(alignment: .leading, spacing: 10) {
+                visualAmountRow(
+                    title: "Salary base",
+                    value: salaryTotal,
+                    tint: .blue,
+                    systemImage: "person.text.rectangle.fill"
+                )
+                visualAmountRow(
+                    title: "Other layer",
+                    value: otherExpenseTotal,
+                    tint: .orange,
+                    systemImage: "shippingbox.fill"
+                )
+            }
+        }
+        .padding(.vertical, 4)
+    }
+
+    private var categoryScaleChart: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Adopted total by category")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Chart(visibleCategoryTotals) { item in
+                BarMark(
+                    x: .value("Adopted total", item.total),
+                    y: .value("Category", item.category.rawValue)
+                )
+                .foregroundStyle(color(for: item.category))
+                .annotation(position: .trailing) {
+                    Text(shortCurrency(item.total))
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .monospacedDigit()
+                }
+            }
+            .chartXAxis(.hidden)
+            .chartYAxis {
+                AxisMarks(position: .leading)
+            }
+            .frame(height: CGFloat(max(visibleCategoryTotals.count, 3) * 30))
+        }
+    }
+
+    private var personnelShareGraphic: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Most payroll-driven functions")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            ForEach(topPersonnelShares) { record in
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        Text(record.budgetDepartment)
+                            .font(.caption.weight(.semibold))
+                            .lineLimit(1)
+                        Spacer()
+                        Text((record.personnelShare ?? 0).formatted(.percent.precision(.fractionLength(0))))
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.blue)
+                            .monospacedDigit()
+                    }
+
+                    ProgressView(value: min(max(record.personnelShare ?? 0, 0), 1))
+                        .tint(.blue)
+                        .accessibilityLabel("\(record.budgetDepartment) payroll share")
+                        .accessibilityValue((record.personnelShare ?? 0).formatted(.percent.precision(.fractionLength(0))))
+                }
+            }
+        }
+    }
+
+    private func visualAmountRow(title: String, value: Double, tint: Color, systemImage: String) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: systemImage)
+                .font(.title3)
+                .foregroundStyle(tint)
+                .frame(width: 28)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text(shortCurrency(value))
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(tint)
+                    .monospacedDigit()
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    private func shortCurrency(_ value: Double) -> String {
+        let sign = value < 0 ? "-" : ""
+        let amount = abs(value)
+        if amount >= 1_000_000 {
+            return "\(sign)$\(String(format: "%.1f", amount / 1_000_000))M"
+        }
+        if amount >= 1_000 {
+            return "\(sign)$\(String(format: "%.0f", amount / 1_000))K"
+        }
+        return value.formatted(.currency(code: "USD").precision(.fractionLength(0)))
+    }
+}
+
+private struct DepartmentCategoryTotal: Identifiable {
+    let category: DepartmentBudgetCategory
+    let total: Double
+
+    var id: DepartmentBudgetCategory { category }
+}
+
+private struct DepartmentCostLayer: Identifiable {
+    let name: String
+    let amount: Double
+    let tint: Color
+
+    var id: String { name }
 }
 
 private enum DepartmentExpenseFilter: String, CaseIterable, Identifiable {
@@ -226,7 +396,11 @@ private struct DepartmentExpenseDetailView: View {
                     detailCurrencyRow("Salary base", salaryBase, tint: .blue)
                 }
                 if let otherExpense = record.otherExpense {
-                    detailCurrencyRow("Other expense", otherExpense, tint: .orange)
+                    detailCurrencyRow(
+                        otherExpense < 0 ? "Allocation gap" : "Other expense",
+                        otherExpense,
+                        tint: otherExpense < 0 ? .red : .orange
+                    )
                 }
                 if let personnelShare = record.personnelShare {
                     detailRow("Payroll share", "\(Int((personnelShare * 100).rounded()))%")

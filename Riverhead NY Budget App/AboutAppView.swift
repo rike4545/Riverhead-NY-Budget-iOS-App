@@ -24,16 +24,16 @@ struct AboutAppView: View {
                     .font(.title.bold())
                     .foregroundColor(RiverheadTheme.primaryBlue)
 
-                Text("Riverhead NY Helper is a community-made app that simply opens public information from townofriverheadny.gov in a mobile-friendly way.")
+                Text("Use this app to share, analyze, and compare public data from governmental entities throughout New York, with a particular focus on the Town of Riverhead.")
                     .font(.body)
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("What this app does")
                         .font(.headline)
 
-                    bullet("Provides quick shortcuts to town website pages like \"How Do I…\", Departments, News Flash, the town calendar, and online payment portals.")
-                    bullet("Keeps a consistent Riverhead-inspired look so it feels familiar when moving between the app and the website.")
-                    bullet("Offers a handy contact screen with a map and one-tap calling convenience.")
+                    bullet("Organizes public budget, tax, campaign-finance, procurement, project, payroll, pension, contract, and civic oversight information into easier-to-read views.")
+                    bullet("Links back to official government sources, public records, and other transparency tools so residents can check the underlying material.")
+                    bullet("Helps residents compare trends, share context, and prepare better questions before meetings, hearings, and elections.")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -42,14 +42,15 @@ struct AboutAppView: View {
 
                     bullet("It does not replace any official communication channels of the Town of Riverhead.")
                     bullet("It does not provide legal, financial, or emergency advice.")
-                    bullet("It does not modify or control any information hosted on townofriverheadny.gov.")
+                    bullet("It does not modify or control any information hosted by the Town, New York State, campaign-finance portals, or third-party transparency sites.")
+                    bullet("It cannot guarantee that source data is accurate, complete, current, or interpreted the same way an official agency would interpret it.")
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Unofficial helper, not an official app")
+                    Text("Unofficial research tool, not an official app")
                         .font(.headline)
 
-                    Text("This app is not produced by, affiliated with, or endorsed by the Town of Riverhead, its officials, or its departments. All logos, names, and website content remain the property of their respective owners. For official information or assistance, always rely on townofriverheadny.gov or direct contact with the Town.")
+                    Text("The information in this app comes from official government sources and public transparency resources, but the developer cannot guarantee data accuracy or completeness. This app is not produced by, affiliated with, or endorsed by the Town of Riverhead, its officials, or its departments. All logos, names, and website content remain the property of their respective owners. For official information or assistance, always rely on the original agency source or direct contact with the responsible government office.")
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 }

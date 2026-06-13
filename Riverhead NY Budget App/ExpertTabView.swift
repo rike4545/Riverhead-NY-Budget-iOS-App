@@ -391,15 +391,25 @@ Public reports and commentary have raised questions about how consistently the T
 
                         Text("""
 Some residents argue that the Town should revisit, clarify, and modernize its fund balance policy to better match current best practices and its own recent history.
+
+Residents are also organizing around the Long Island Science Center, arguing that Riverhead should work with the downtown STEM museum before using eminent domain. Read together, the two petitions point to the same governance question: when a public decision affects reserves, taxes, land, or civic institutions, the Town should show the policy rule, funding source, and public alternative before acting.
 """
                         )
                         .font(.callout)
                         .foregroundStyle(.secondary)
 
                         Link(
-                            destination: URL(string: "https://www.change.org/p/revise-riverhead-s-outdated-fund-balance-policy?recruiter=197137711&recruited_by_id=a41ca3f0-8409-11e4-939f-611836bc642c&utm_source=share_petition&utm_campaign=starter_onboarding_share_personal&utm_medium=copylink")!
+                            destination: TownSquareCoreTerms.fundBalancePetitionURL
                         ) {
                             Label("Petition: Revise Riverhead’s Fund Balance Policy", systemImage: "link")
+                                .font(.subheadline.weight(.semibold))
+                        }
+                        .tint(RiverheadTheme.tint)
+
+                        Link(
+                            destination: TownSquareCoreTerms.scienceCenterPetitionURL
+                        ) {
+                            Label("Petition: Save the Long Island Science Center", systemImage: "link")
                                 .font(.subheadline.weight(.semibold))
                         }
                         .tint(RiverheadTheme.tint)
@@ -786,9 +796,15 @@ fileprivate struct ReferencesPanel: View {
                 }
 
                 Link(
-                    destination: URL(string: "https://www.change.org/p/revise-riverhead-s-outdated-fund-balance-policy?recruiter=197137711&recruited_by_id=a41ca3f0-8409-11e4-939f-611836bc642c&utm_source=share_petition&utm_campaign=starter_onboarding_share_personal&utm_medium=copylink")!
+                    destination: TownSquareCoreTerms.fundBalancePetitionURL
                 ) {
                     Label("Petition: Revise Riverhead’s Fund Balance Policy", systemImage: "link")
+                }
+
+                Link(
+                    destination: TownSquareCoreTerms.scienceCenterPetitionURL
+                ) {
+                    Label("Petition: Save the Long Island Science Center", systemImage: "link")
                 }
             }
 

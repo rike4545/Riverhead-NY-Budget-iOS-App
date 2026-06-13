@@ -555,22 +555,7 @@ final class ContractScheduleIncreaseModel: ObservableObject {
     }
 
     private func inferLaborGroup(department: String, title: String) -> LaborGroup {
-        let d = department.lowercased()
-        let t = title.lowercased()
-
-        if d.contains("police") || t.contains("police") || t.contains("detective") || t.contains("patrol") || t.contains("officer") {
-            if t.contains("chief") || t.contains("captain") || t.contains("lieutenant") || t.contains("sergeant") {
-                return .soa
-            }
-            return .pba
-        }
-
-        if t.contains("deputy town supervisor") || t.contains("town attorney") || t.contains("deputy town attorney") ||
-            t.contains("town engineer") || t.contains("budget officer") || t.contains("administrator") {
-            return .exempt
-        }
-
-        return .csea
+        LaborGroup.infer(department: department, title: title, defaultGroup: .csea)
     }
 
     private func parseDouble(_ s: String) -> Double? {

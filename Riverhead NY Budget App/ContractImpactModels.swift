@@ -30,6 +30,64 @@ public enum LaborGroup: String, CaseIterable, Codable, Hashable, Identifiable {
     }
 }
 
+public extension LaborGroup {
+    static func infer(department: String, title: String, unionCode: String = "", defaultGroup: LaborGroup = .csea) -> LaborGroup {
+        let d = department.lowercased()
+        let t = title.lowercased()
+        let u = unionCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if ["ELE", "APT", "CON"].contains(u) || d.contains("elected") || d.contains("appointed") {
+            return .exempt
+        }
+
+        if isElectedOffice(title: t) || isDepartmentHead(title: t) {
+            return .exempt
+        }
+
+        if u == "SOA" { return .soa }
+        if u == "PBA" { return .pba }
+        if u == "CSE" || u == "CSEA" { return .csea }
+        if u == "NON" { return .exempt }
+
+        if d.contains("police") || t.contains("police") || t.contains("detective") || t.contains("patrol") || t.contains("officer") {
+            if t.contains("lieutenant") || t.contains("sergeant") {
+                return .soa
+            }
+            return .pba
+        }
+
+        return defaultGroup
+    }
+
+    private static func isElectedOffice(title: String) -> Bool {
+        title.contains("town supervisor") ||
+        title == "supervisor" ||
+        title.contains("council") ||
+        title.contains("town clerk") ||
+        title.contains("tax receiver") ||
+        title.contains("receiver of taxes") ||
+        title.contains("superintendent of highways") ||
+        title.contains("superintendant of highways")
+    }
+
+    private static func isDepartmentHead(title: String) -> Bool {
+        title.contains("department head") ||
+        title.contains("administrator") ||
+        title.contains("director") ||
+        title.contains("town attorney") ||
+        title.contains("deputy town attorney") ||
+        title.contains("town engineer") ||
+        title.contains("budget officer") ||
+        title.contains("assessor") ||
+        title.contains("police chief") ||
+        title.contains("chief of police") ||
+        title.contains("captain") ||
+        title.contains("chief fire marshal") ||
+        title.contains("superintendent") ||
+        title.contains("superintendant")
+    }
+}
+
 // MARK: - Wage Action
 
 /// Wage action applied to a group's base payroll for a given year.

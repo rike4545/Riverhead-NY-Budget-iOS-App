@@ -560,6 +560,32 @@ public struct RBElectedSalaryRow: Identifiable, Hashable {
     public let salary2026Proposed: Decimal?
 }
 
+public struct RBSubAccountRow: Identifiable, Hashable {
+    public var id: String { accountNumber }
+    public let fundCode: String
+    public let functionCode: String
+    public let objectCode: String
+    public let accountNumber: String
+    public let description: String
+    public let page: Int
+    public let tableIndex: Int
+    public let rowIndex: Int
+    public let budget2025: Decimal?
+    public let tentative2026: Decimal?
+    public let preliminary2026: Decimal?
+    public let adopted2026: Decimal?
+}
+
+public struct RBDepartmentBudgetRow: Identifiable, Hashable {
+    public var id: String { "\(fundCode)-\(functionCode)" }
+    public let fundCode: String
+    public let functionCode: String
+    public let name: String
+    public let page: Int
+    public let adopted2026: Decimal?
+    public let subAccounts: [RBSubAccountRow]
+}
+
 public enum Riverhead2026BudgetShift {
     // CSV file name in BUNDLE ROOT (no folders)
     private static let flatName = "tables_flat" // -> tables_flat.csv
@@ -618,6 +644,13 @@ public enum Riverhead2026BudgetShift {
         var out: [RBElectedSalaryRow] = parseElectedSalaryRows(from: onSalPage)
         if out.isEmpty { out = parseElectedSalaryRows(from: flatCells) }
         return out.unique(by: \.title)
+    }
+
+    public static func departmentBudgets(fundCode: String? = nil) -> [RBDepartmentBudgetRow] {
+        lock.lock(); defer { lock.unlock() }
+        let rows = parseDepartmentBudgetRows(from: flatCells)
+        guard let fundCode else { return rows }
+        return rows.filter { $0.fundCode.compare(fundCode, options: .caseInsensitive) == .orderedSame }
     }
 
     public static func debugSnapshot(limit: Int = 10) -> String {
@@ -691,6 +724,110 @@ public enum Riverhead2026BudgetShift {
             }
         }
         return out
+    }
+
+    private static func parseDepartmentBudgetRows(from cells: [RBSearchHit]) -> [RBDepartmentBudgetRow] {
+        let rows = groupRows(cells)
+        var departmentNames: [String: String] = [:]
+        var departmentPages: [String: Int] = [:]
+        var subAccountsByDepartment: [String: [RBSubAccountRow]] = [:]
+
+        for row in rows {
+            guard let parsed = parseDetailedAccountRow(row) else { continue }
+            let key = "\(parsed.fundCode.uppercased())-\(parsed.functionCode)"
+
+            if parsed.objectCode == "000" {
+                if !parsed.description.isEmpty {
+                    departmentNames[key] = parsed.description
+                }
+                departmentPages[key] = min(departmentPages[key] ?? parsed.page, parsed.page)
+            } else {
+                subAccountsByDepartment[key, default: []].append(parsed)
+                departmentPages[key] = min(departmentPages[key] ?? parsed.page, parsed.page)
+            }
+        }
+
+        return subAccountsByDepartment.map { key, subAccounts in
+            let first = subAccounts.first
+            let parts = key.split(separator: "-", maxSplits: 1).map(String.init)
+            let fund = first?.fundCode ?? parts.first ?? ""
+            let function = first?.functionCode ?? (parts.count > 1 ? parts[1] : "")
+            let sorted = subAccounts.sorted {
+                if $0.page != $1.page { return $0.page < $1.page }
+                if $0.tableIndex != $1.tableIndex { return $0.tableIndex < $1.tableIndex }
+                return $0.rowIndex < $1.rowIndex
+            }
+            let adoptedTotal = sorted.compactMap(\.adopted2026).reduce(nil as Decimal?) { partial, value in
+                (partial ?? 0) + value
+            }
+
+            return RBDepartmentBudgetRow(
+                fundCode: fund,
+                functionCode: function,
+                name: departmentNames[key] ?? inferredDepartmentName(from: sorted, functionCode: function),
+                page: departmentPages[key] ?? first?.page ?? 0,
+                adopted2026: adoptedTotal,
+                subAccounts: sorted
+            )
+        }
+        .sorted {
+            if $0.fundCode != $1.fundCode {
+                return $0.fundCode.localizedStandardCompare($1.fundCode) == .orderedAscending
+            }
+            return $0.functionCode.localizedStandardCompare($1.functionCode) == .orderedAscending
+        }
+    }
+
+    private static func parseDetailedAccountRow(_ row: [RBSearchHit]) -> RBSubAccountRow? {
+        let sorted = row.sorted { $0.col < $1.col }
+        guard let account = sorted.first(where: { $0.col == 0 })?.value.trimmed,
+              account.range(of: #"^[A-Z]{1,2}\d-\d-\d{4}-\d{3}-[A-Z0-9]{3}-\d{5}$"#, options: .regularExpression) != nil else {
+            return nil
+        }
+
+        let parts = account.split(separator: "-").map(String.init)
+        guard parts.count >= 4 else { return nil }
+
+        let description = sorted
+            .filter { (1...3).contains($0.col) }
+            .map(\.value.trimmed)
+            .filter { !$0.isEmpty }
+            .joined(separator: "")
+            .normalizedTitle()
+
+        let amounts = (4...7).map { column in
+            money(sorted.first(where: { $0.col == column })?.value)
+        }
+
+        return RBSubAccountRow(
+            fundCode: parts[0],
+            functionCode: parts[2],
+            objectCode: parts[3],
+            accountNumber: account,
+            description: description,
+            page: sorted.first?.page ?? 0,
+            tableIndex: sorted.first?.tableIndex ?? 0,
+            rowIndex: sorted.first?.row ?? 0,
+            budget2025: amounts[safe: 0] ?? nil,
+            tentative2026: amounts[safe: 1] ?? nil,
+            preliminary2026: amounts[safe: 2] ?? nil,
+            adopted2026: amounts[safe: 3] ?? nil
+        )
+    }
+
+    private static func inferredDepartmentName(from subAccounts: [RBSubAccountRow], functionCode: String) -> String {
+        let candidate = subAccounts
+            .first(where: { !$0.description.isEmpty })?
+            .description
+            .split(separator: "-")
+            .first
+            .map(String.init)?
+            .normalizedTitle()
+
+        if let candidate, !candidate.isEmpty {
+            return candidate
+        }
+        return "Function \(functionCode)"
     }
 
     // MARK: Loaders (bundle root only; no folders)

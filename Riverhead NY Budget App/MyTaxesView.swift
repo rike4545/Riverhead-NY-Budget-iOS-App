@@ -19,7 +19,7 @@ struct MyTaxesView: View {
     // Persisted inputs
     @AppStorage("tax_assessed_value")   private var assessedValue: Double = 450_000
     @AppStorage("tax_exemptions")       private var exemptions: Double = 0
-    @AppStorage("tax_rate_per_1000")    private var ratePerThousand: Double = 22.50
+    @AppStorage("tax_rate_per_1000")    private var ratePerThousand: Double = 61.9482
     @AppStorage("cap_prior_year_levy")  private var priorYearLevy: Double = 10_000_000
     @AppStorage("cap_cpi_percent")      private var cpiPercent: Double = 2.00
     @AppStorage("cap_tbgf")             private var tbgf: Double = 1.0072
@@ -34,14 +34,44 @@ struct MyTaxesView: View {
     private let cardBG: Material = .thinMaterial
     private let borderColor = Color(uiColor: .separator).opacity(0.25)
     private let contextLevyYear: Int = 2026
+    private let receiverGeneralTownRate: Double = 61.9482
+    private let receiverHighwayRate: Double = 8.6948
+    private let riverheadSewerRentRate: Double = 11.4606
+    private let calvertonSewerRentRate: Double = 79.2149
 
     // MARK: - Core tax math
 
-    private var sanitizedExemptions: Double { max(exemptions, 0) }
-    private var sanitizedRate: Double { max(ratePerThousand, 0) }
-    private var taxable: Double { max(assessedValue - sanitizedExemptions, 0) }
-    private var annualTax: Double { taxable / 1000.0 * sanitizedRate }
-    private var monthlyTax: Double { annualTax / 12.0 }
+    private var taxEstimate: RBPropertyTaxEstimate {
+        RBPropertyTaxEstimate(
+            assessedValue: assessedValue,
+            exemptions: exemptions,
+            ratePerThousand: ratePerThousand
+        )
+    }
+
+    private var sanitizedExemptions: Double { taxEstimate.sanitizedExemptions }
+    private var sanitizedRate: Double { taxEstimate.sanitizedRate }
+    private var taxable: Double { taxEstimate.taxableAssessedValue }
+    private var annualTax: Double { taxEstimate.annualTax }
+    private var monthlyTax: Double { taxEstimate.monthlyTax }
+    private var receiverGeneralAndHighwayRate: Double { receiverGeneralTownRate + receiverHighwayRate }
+
+    private var taxCapEstimate: RBPropertyTaxCapEstimate {
+        RBPropertyTaxCapEstimate(
+            priorYearLevy: priorYearLevy,
+            cpiPercent: cpiPercent,
+            taxBaseGrowthFactor: tbgf
+        )
+    }
+
+    private var rateSourceLabel: String {
+        RBPropertyTaxRateSource.classify(
+            rate: ratePerThousand,
+            generalTownRate: receiverGeneralTownRate,
+            highwayRate: receiverHighwayRate
+        )
+        .label
+    }
 
     // MARK: - “Receipt” shares (illustrative only)
 
@@ -65,17 +95,9 @@ struct MyTaxesView: View {
 
     // MARK: - Tax cap math (simplified demo)
 
-    private var allowableGrowthPercent: Double {
-        min(0.02, max(0.0, cpiPercent / 100.0))
-    }
-
-    private var illustrativeLevyLimit: Double {
-        max(0, priorYearLevy) * tbgf * (1.0 + allowableGrowthPercent)
-    }
-
-    private var levyChangeAmount: Double {
-        illustrativeLevyLimit - max(0, priorYearLevy)
-    }
+    private var allowableGrowthPercent: Double { taxCapEstimate.allowableGrowthPercent }
+    private var illustrativeLevyLimit: Double { taxCapEstimate.illustrativeLevyLimit }
+    private var levyChangeAmount: Double { taxCapEstimate.levyChangeAmount }
 
     // MARK: - Budget context: your slice of the levy (uses 2026 Adopted where possible)
 
@@ -171,15 +193,15 @@ struct MyTaxesView: View {
                 Label("Inputs", systemImage: "slider.horizontal.3")
                     .font(.headline)
                 Spacer()
-                Button {
-                    withAnimation {
-                        assessedValue = 450_000
-                        exemptions = 0
-                        ratePerThousand = 22.50
-                    }
-                } label: {
-                    Label("Reset", systemImage: "arrow.counterclockwise")
-                        .font(.caption)
+                    Button {
+                        withAnimation {
+                            assessedValue = 450_000
+                            exemptions = 0
+                            ratePerThousand = receiverGeneralTownRate
+                        }
+                    } label: {
+                        Label("Reset", systemImage: "arrow.counterclockwise")
+                            .font(.caption)
                 }
             }
 
@@ -206,6 +228,23 @@ struct MyTaxesView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
+
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 8) {
+                        ratePresetButton("General Town", rate: receiverGeneralTownRate)
+                        ratePresetButton("General + Highway", rate: receiverGeneralAndHighwayRate)
+                    }
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        ratePresetButton("General Town", rate: receiverGeneralTownRate)
+                        ratePresetButton("General + Highway", rate: receiverGeneralAndHighwayRate)
+                    }
+                }
+
+                Label(rateSourceLabel, systemImage: "checkmark.seal")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             Text("Tip: Assessed value and rate vary by year and property class. For an exact bill, refer to your assessment roll and the adopted tax rates.")
@@ -222,6 +261,12 @@ struct MyTaxesView: View {
             Label("Estimate", systemImage: "banknote")
                 .font(.headline)
 
+            sourceChipStrip([
+                ("User inputs", "person.crop.square", Color.accentColor),
+                ("App estimate", "function", .orange),
+                ("Not a bill", "exclamationmark.triangle", .red)
+            ])
+
             VStack(spacing: 8) {
                 statRow(label: "Taxable Assessed Value", value: taxable, style: .currency)
                 Divider().opacity(0.2)
@@ -229,6 +274,11 @@ struct MyTaxesView: View {
                 statRow(label: "Estimated Monthly", value: monthlyTax, style: .currency)
             }
             .accessibilityElement(children: .combine)
+
+            Text("Using \(rateSourceLabel.lowercased()) at \(ratePerThousand.formatted(.number.precision(.fractionLength(4)))) per $1,000.")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding()
         .background(cardBG, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -252,6 +302,11 @@ struct MyTaxesView: View {
                 """)
                 .font(.caption)
                 .foregroundStyle(.secondary)
+
+                sourceChipStrip([
+                    ("Extracted levy", "tablecells", Color.accentColor),
+                    ("Your estimate", "person.crop.square", .orange)
+                ])
 
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -303,6 +358,11 @@ struct MyTaxesView: View {
             Text("Riverhead's official 2025-2026 Receiver of Taxes sheet shows how district charges stack on top of the Town-wide bill. It lists General Town at `61.9482` per $1,000 of assessed value, Highway at `8.6948`, Riverhead Sewer Rent at `11.4606`, Calverton Sewer Rent at `79.2149`, and a single-family residential refuse-collection charge of `$482.40`. The same sheet reports a 2025 equalization rate of `8.16%` and a residential assessment ratio of `7.44%`. The Town's Receiver of Taxes archive also preserves annual tax-rate PDFs back through `2013-2014`, which makes historical year-over-year comparison possible. Town Code also makes clear that Calverton sewer rents are set annually by Town Board resolution with the sewer budget, collected by the Receiver of Taxes, and become a lien on the served property.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+
+            sourceChipStrip([
+                ("Official rate sheet", "building.columns", Color.accentColor),
+                ("2025-2026", "calendar", .secondary)
+            ])
 
             VStack(spacing: 8) {
                 statTextRow(label: "2025-2026 General Town rate", valueText: "61.9482 / $1,000")
@@ -545,6 +605,58 @@ struct MyTaxesView: View {
     // MARK: - Helpers
 
     private enum StatStyle { case currency, currencyBig }
+
+    private func ratePresetButton(_ title: String, rate: Double) -> some View {
+        Button {
+            withAnimation {
+                ratePerThousand = rate
+            }
+        } label: {
+            Label(title, systemImage: ratePerThousand.isApproximately(rate) ? "checkmark.circle.fill" : "circle")
+                .font(.caption.weight(.semibold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .buttonStyle(.bordered)
+        .tint(ratePerThousand.isApproximately(rate) ? .accentColor : .secondary)
+        .accessibilityLabel("Use \(title) tax rate")
+        .accessibilityValue(rate.formatted(.number.precision(.fractionLength(4))) + " per one thousand dollars")
+    }
+
+    private func sourceChipStrip(_ items: [(label: String, icon: String, tint: Color)]) -> some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) {
+                ForEach(Array(items.enumerated()), id: \.offset) { _, item in
+                    sourceChip(item.label, icon: item.icon, tint: item.tint)
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(Array(items.enumerated()), id: \.offset) { _, item in
+                    sourceChip(item.label, icon: item.icon, tint: item.tint)
+                }
+            }
+        }
+    }
+
+    private func sourceChip(_ label: String, icon: String, tint: Color) -> some View {
+        Label(label, systemImage: icon)
+            .font(.caption2.weight(.semibold))
+            .foregroundStyle(.primary)
+            .lineLimit(1)
+            .minimumScaleFactor(0.85)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 5)
+            .background(
+                Capsule()
+                    .fill(tint.opacity(0.13))
+            )
+            .overlay(
+                Capsule()
+                    .strokeBorder(tint.opacity(0.24), lineWidth: 1)
+            )
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(label)
+    }
 
     @ViewBuilder
     private func statRow(label: String, value: Double, style: StatStyle) -> some View {

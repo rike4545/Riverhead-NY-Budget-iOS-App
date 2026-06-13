@@ -42,7 +42,10 @@ public struct FundBalanceShiftView: View {
     private var surplus: Double { estimatedFundBalance - minimumRequired }
     private var ratio: Double {
         guard minimumRequired > 0 else { return 1 }
-        return min(max(estimatedFundBalance / minimumRequired, 0), 2) // clamp 0...2 for progress
+        return max(estimatedFundBalance / minimumRequired, 0)
+    }
+    private var progressRatio: Double {
+        min(ratio, 1)
     }
 
     public init() {}
@@ -129,7 +132,7 @@ public struct FundBalanceShiftView: View {
                         .foregroundStyle(surplus >= 0 ? .green : .red)
                 }
 
-                ProgressView(value: ratio)
+                ProgressView(value: progressRatio)
                     .tint(surplus >= 0 ? .green : .red)
                     .accessibilityLabel("Estimated balance as a fraction of minimum")
             }

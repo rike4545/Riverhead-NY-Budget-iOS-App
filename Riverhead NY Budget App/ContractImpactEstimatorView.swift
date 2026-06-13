@@ -24,14 +24,27 @@ public struct ContractImpactEstimatorView: View {
     ]
 
     private let engine = ContractImpactEngine()
+    private static let maxYearSpan = 30
 
     public init() {}
+
+    private var yearRangeWarning: String? {
+        if startYear > endYear { return "Start year must be before or equal to end year." }
+        if endYear - startYear > Self.maxYearSpan { return "Year range exceeds \(Self.maxYearSpan) years — projections this far out are highly speculative." }
+        return nil
+    }
 
     public var body: some View {
         List {
             Section("Scope") {
                 Stepper("Start Year: \(startYear)", value: $startYear, in: 2000...2100)
                 Stepper("End Year: \(endYear)", value: $endYear, in: 2000...2100)
+
+                if let warning = yearRangeWarning {
+                    Label(warning, systemImage: "exclamationmark.triangle.fill")
+                        .font(.footnote)
+                        .foregroundStyle(.orange)
+                }
 
                 Toggle("Model total town budget impact", isOn: $includeTotalBudget)
 
@@ -66,15 +79,17 @@ public struct ContractImpactEstimatorView: View {
             }
 
             Section("Results") {
-                let results = engine.estimate(
-                    groups: groups,
-                    startYear: startYear,
-                    endYear: endYear,
-                    baselineTotalBudget: includeTotalBudget ? baselineTotalBudget : nil
-                )
+                let results: [YearResult] = yearRangeWarning == nil
+                    ? engine.estimate(
+                        groups: groups.map { $0.sanitized() },
+                        startYear: startYear,
+                        endYear: endYear,
+                        baselineTotalBudget: includeTotalBudget ? baselineTotalBudget : nil
+                      )
+                    : []
 
                 if results.isEmpty {
-                    Text("No results (check year range).")
+                    Text(yearRangeWarning != nil ? "Fix the year range to see results." : "No results — check year range and group inputs.")
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(results) { r in

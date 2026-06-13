@@ -23,6 +23,7 @@ struct RiverheadCampaignContributionsView: View {
                 headerCard
                 coreRuleCard
                 aggregationCard
+                relatedPartyCard
                 thresholdCard
                 recusalDisclosureCard
                 allowedVsProhibitedCard
@@ -135,7 +136,7 @@ private extension RiverheadCampaignContributionsView {
     }
 
     var thresholdCard: some View {
-        InfoCard(title: "3. What Changes After $1,000", systemImage: "point.topleft.down.curvedto.point.bottomright.up") {
+        InfoCard(title: "4. What Changes After $1,000", systemImage: "point.topleft.down.curvedto.point.bottomright.up") {
             VStack(alignment: .leading, spacing: 12) {
                 BulletRow(text: "The donor becomes a conflict-sensitive party under the ethics code.")
                 BulletRow(text: "The official must be careful not to act in a way they know may improperly benefit that donor.")
@@ -144,8 +145,28 @@ private extension RiverheadCampaignContributionsView {
         }
     }
 
+    var relatedPartyCard: some View {
+        InfoCard(title: "3. Related-Party Watch", systemImage: "person.2.badge.gearshape") {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("The scorecard should not stop at one corporate donor name. For Petrocelli-related matters, the watch list includes Petrocelli-named companies, individual family-member donor rows, and public-profile hospitality names when those names appear in campaign filings.")
+                    .fixedSize(horizontal: false, vertical: true)
+
+                BulletRow(text: "Entity donations and individual family-member donations should be visible together for transparency.")
+                BulletRow(text: "Known public-profile names and assets include Jennifer Petrocelli, Jacqueline Phillips, Alexandra Bussi, The Preston House, Atlantis Banquets, Sea Star Ballroom, Taste the East End, Raphael Vineyard, Long Island Aquarium, and Hyatt Place East End.")
+                BulletRow(text: "Related-party matches are not automatic proof of coordination, price fixing, favoritism, or quid pro quo conduct.")
+                BulletRow(text: "They are a prompt to ask whether officials disclosed the relationship before acting on contracts, land sales, PILOTs, parking, zoning, or approvals involving the same developer interest.")
+                BulletRow(text: "Public-source basis includes Schneps / QNS and Dan's Papers profiles describing Petrocelli family roles in Riverhead hospitality businesses.")
+
+                HighlightBox(
+                    title: "Plain-English rule",
+                    message: "Do not treat one $225 check as the whole story if related entities or family members also appear in the campaign record."
+                )
+            }
+        }
+    }
+
     var recusalDisclosureCard: some View {
-        InfoCard(title: "4. Recusal vs Disclosure", systemImage: "person.text.rectangle") {
+        InfoCard(title: "5. Recusal vs Disclosure", systemImage: "person.text.rectangle") {
             VStack(spacing: 12) {
                 ComparisonRow(
                     title: "Appointed Officials",
@@ -161,7 +182,7 @@ private extension RiverheadCampaignContributionsView {
     }
 
     var allowedVsProhibitedCard: some View {
-        InfoCard(title: "5. Allowed vs Prohibited", systemImage: "checkmark.shield") {
+        InfoCard(title: "6. Allowed vs Prohibited", systemImage: "checkmark.shield") {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Still Allowed")
@@ -185,7 +206,7 @@ private extension RiverheadCampaignContributionsView {
     }
 
     var claimVsCodeCard: some View {
-        InfoCard(title: "6. Claim vs Code", systemImage: "square.split.2x2") {
+        InfoCard(title: "7. Claim vs Code", systemImage: "square.split.2x2") {
             VStack(spacing: 12) {
                 SideBySideRow(
                     leftTitle: "Claim",
@@ -219,7 +240,7 @@ private extension RiverheadCampaignContributionsView {
     }
 
     var rebuttalCard: some View {
-        InfoCard(title: "7. Rebuttal to the Issue", systemImage: "bubble.left.and.exclamationmark.bubble.right") {
+        InfoCard(title: "8. Rebuttal to the Issue", systemImage: "bubble.left.and.exclamationmark.bubble.right") {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Claim")
                     .font(.headline)
@@ -246,7 +267,7 @@ private extension RiverheadCampaignContributionsView {
     }
 
     var takeawayCard: some View {
-        InfoCard(title: "8. Bottom Line", systemImage: "text.alignleft") {
+        InfoCard(title: "9. Bottom Line", systemImage: "text.alignleft") {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Small donations do not avoid scrutiny forever. Once they aggregate to more than $1,000 from the same donor during the relevant campaign period, the ethics code treats the relationship as significant.")
                     .fixedSize(horizontal: false, vertical: true)

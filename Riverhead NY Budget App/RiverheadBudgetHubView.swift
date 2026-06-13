@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import Charts
 
 // MARK: - Root Hub View
 
@@ -28,9 +29,13 @@ struct RiverheadBudgetHubView: View {
         BudgetAudienceMode(rawValue: modeRaw) ?? .resident
     }
 
+    private var primarySections: [BudgetSection] {
+        [.overview, .proposed2027Budget, .myTaxes, .fundBalance, .capitalDebt, .tools]
+    }
+
     var body: some View {
         ZStack {
-            RiverheadTheme.Surface.page
+            RiverheadTheme.backgroundGradient
                 .ignoresSafeArea()
 
             VStack(spacing: 12) {
@@ -45,29 +50,51 @@ struct RiverheadBudgetHubView: View {
                     .opacity(0.35)
                     .padding(.horizontal, 16)
 
-                ScrollView {
-                    VStack(spacing: 16) {
-                        switch section {
-                        case .overview:
-                            OverviewStoryView(mode: mode)
-                        case .myTaxes:
-                            MyTaxesLabView(mode: mode)
-                        case .fundBalance:
-                            FundBalanceDashboardView(mode: mode)
-                        case .capitalDebt:
-                            CapitalDebtExplorerView(mode: mode)
-                        case .outliers:
-                            OutlierWatchView(mode: mode)
-                        case .employees:
-                            EmployeesHubSectionView(mode: mode)
-                        case .glossary:
-                            BudgetGlossaryView(mode: mode)
-                        case .hearing:
-                            HearingToolkitView(mode: mode)
+                if section == .supplementExplorer {
+                    BudgetSupplementExplorerView()
+                } else if section == .budget2027Summary {
+                    Budget2027ExecutiveWhiteboardView()
+                } else if section == .proposed2027Budget {
+                    Proposed2027BudgetPresentationView()
+                } else if section == .budget2027 {
+                    Budget2027LabView()
+                } else {
+                    ScrollView {
+                        VStack(spacing: 16) {
+                            switch section {
+                            case .overview:
+                                OverviewStoryView(mode: mode)
+                            case .supplementExplorer:
+                                EmptyView()
+                            case .budget2027Summary:
+                                EmptyView()
+                            case .proposed2027Budget:
+                                EmptyView()
+                            case .budget2027:
+                                EmptyView()
+                            case .executiveSummary:
+                                ExecutiveBudgetSummaryView(mode: mode)
+                            case .myTaxes:
+                                MyTaxesLabView(mode: mode)
+                            case .fundBalance:
+                                FundBalanceDashboardView(mode: mode)
+                            case .capitalDebt:
+                                CapitalDebtExplorerView(mode: mode)
+                            case .outliers:
+                                OutlierWatchView(mode: mode)
+                            case .employees:
+                                EmployeesHubSectionView(mode: mode)
+                            case .tools:
+                                BudgetToolsDirectoryView(section: $section, mode: mode)
+                            case .glossary:
+                                BudgetGlossaryView(mode: mode)
+                            case .hearing:
+                                HearingToolkitView(mode: mode)
+                            }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 24)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 24)
                 }
             }
         }
@@ -88,11 +115,11 @@ struct RiverheadBudgetHubView: View {
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.white.opacity(0.85))
 
-            Text("Resident & Expert Tools")
+            Text("Budget, Taxes & Decisions")
                 .font(.system(.title2, design: .rounded).weight(.bold))
                 .foregroundStyle(.white)
 
-            Text("Switch the audience mode, then jump into tools for taxes, fund balance, capital plans, and more.")
+            Text("2027 proposal, taxes, reserves, debt, and supporting evidence.")
                 .font(.footnote)
                 .foregroundStyle(.white.opacity(0.85))
                 .fixedSize(horizontal: false, vertical: true)
@@ -102,20 +129,32 @@ struct RiverheadBudgetHubView: View {
         .background(
             LinearGradient(
                 colors: [
-                    RiverheadTheme.primaryBlue.opacity(0.95),
-                    Color.black.opacity(0.75)
+                    RiverheadTheme.primaryBlue.opacity(0.98),
+                    RiverheadTheme.brandSky.opacity(0.86),
+                    RiverheadTheme.brandMint.opacity(0.68)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
         )
+        .overlay(alignment: .bottomTrailing) {
+            HStack(spacing: 6) {
+                ForEach(0..<8, id: \.self) { index in
+                    RoundedRectangle(cornerRadius: 2, style: .continuous)
+                        .fill(Color.white.opacity(index.isMultiple(of: 2) ? 0.22 : 0.11))
+                        .frame(width: 8, height: CGFloat(16 + index * 4))
+                }
+            }
+            .padding(16)
+            .accessibilityHidden(true)
+        }
         .overlay(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .strokeBorder(Color.white.opacity(0.18), lineWidth: 0.8)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(
-            color: .black.opacity(scheme == .dark ? 0.55 : 0.18),
+            color: RiverheadTheme.cardShadow(scheme, elevated: true),
             radius: 18,
             x: 0,
             y: 10
@@ -148,8 +187,8 @@ struct RiverheadBudgetHubView: View {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .fill(
                     scheme == .dark
-                    ? Color.black.opacity(0.85)
-                    : RiverheadTheme.Surface.card
+                    ? RiverheadTheme.Surface.elevated.opacity(0.92)
+                    : RiverheadTheme.Surface.elevated
                 )
         )
         .overlay(
@@ -159,7 +198,7 @@ struct RiverheadBudgetHubView: View {
                 )
         )
         .shadow(
-            color: .black.opacity(scheme == .dark ? 0.35 : 0.10),
+            color: RiverheadTheme.cardShadow(scheme),
             radius: 12,
             x: 0,
             y: 6
@@ -170,7 +209,7 @@ struct RiverheadBudgetHubView: View {
     private var sectionChips: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(BudgetSection.allCases) { sec in
+                ForEach(primarySections) { sec in
                     Button {
                         section = sec
                     } label: {
@@ -186,10 +225,19 @@ struct RiverheadBudgetHubView: View {
                             Group {
                                 if section == sec {
                                     RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(RiverheadTheme.accent.opacity(0.18))
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [
+                                                    RiverheadTheme.accent.opacity(0.24),
+                                                    RiverheadTheme.brandTeal.opacity(0.18)
+                                                ],
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
+                                        )
                                 } else {
                                     RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(RiverheadTheme.Surface.card.opacity(0.95))
+                                        .fill(RiverheadTheme.Surface.elevated.opacity(scheme == .dark ? 0.82 : 0.96))
                                 }
                             }
                         )
@@ -265,6 +313,155 @@ fileprivate struct GlassCard<Content: View>: View {
                 .strokeBorder(RiverheadTheme.border.opacity(scheme == .dark ? 0.35 : 0.2))
         )
         .shadow(color: .black.opacity(scheme == .dark ? 0.25 : 0.06), radius: 10, x: 0, y: 4)
+    }
+}
+
+// MARK: - Budget tools directory
+
+fileprivate struct BudgetToolShortcut: Identifiable {
+    let id = UUID()
+    let title: String
+    let subtitle: String
+    let symbol: String
+    let section: BudgetSection?
+}
+
+fileprivate struct BudgetToolGroup: Identifiable {
+    let title: String
+    let shortcuts: [BudgetToolShortcut]
+
+    var id: String { title }
+}
+
+fileprivate struct BudgetToolsDirectoryView: View {
+    @Binding var section: BudgetSection
+    let mode: BudgetAudienceMode
+
+    private let groups: [BudgetToolGroup] = [
+        .init(
+            title: "2027 Planning",
+            shortcuts: [
+                .init(title: "Budget Message", subtitle: "Unofficial proposal, levy target, surplus plan, and risks.", symbol: "doc.text.magnifyingglass", section: .proposed2027Budget),
+                .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", section: nil),
+                .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", section: .budget2027Summary),
+                .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", section: .budget2027),
+                .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", section: nil)
+            ]
+        ),
+        .init(
+            title: "Evidence And Detail",
+            shortcuts: [
+                .init(title: "Supplement Explorer", subtitle: "Annual report, surplus, tax-cut, and labor-pressure details.", symbol: "doc.text.magnifyingglass", section: .supplementExplorer),
+                .init(title: "Outliers", subtitle: "Budget accuracy, variances, and unusual lines.", symbol: "exclamationmark.triangle.fill", section: .outliers),
+                .init(title: "Employees", subtitle: "Payroll and public earnings views.", symbol: "person.2.fill", section: .employees),
+                .init(title: "Glossary", subtitle: "Plain-language definitions for budget terms.", symbol: "text.book.closed.fill", section: .glossary)
+            ]
+        ),
+        .init(
+            title: "Public Review",
+            shortcuts: [
+                .init(title: "Hearing Toolkit", subtitle: "Questions, comments, and review prompts.", symbol: "person.2.wave.2.fill", section: .hearing),
+                .init(title: "Capital And Debt", subtitle: "Projects, borrowing, BANs, and debt pressure.", symbol: "building.columns.fill", section: .capitalDebt),
+                .init(title: "Fund Balance", subtitle: "Reserve levels, policy targets, and surplus context.", symbol: "banknote.fill", section: .fundBalance),
+                .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", section: .myTaxes)
+            ]
+        )
+    ]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            GlassCard(title: "More Budget Tools", subtitle: directorySubtitle) {
+                HStack(spacing: 8) {
+                    ForEach(["2027 Planning", "Evidence", "Public Review"], id: \.self) { label in
+                        Text(label)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.brandNavy)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
+                            .background(RiverheadTheme.brandSky.opacity(0.12))
+                            .clipShape(Capsule())
+                    }
+                }
+            }
+
+            ForEach(groups) { group in
+                GlassCard(title: group.title, subtitle: nil) {
+                    VStack(spacing: 0) {
+                        ForEach(group.shortcuts) { shortcut in
+                            toolShortcutRow(shortcut)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private var directorySubtitle: String {
+        switch mode {
+        case .resident:
+            return "Deeper reference screens grouped by budget purpose."
+        case .expert:
+            return "Models, source trails, and review tools grouped by budget purpose."
+        }
+    }
+
+    @ViewBuilder
+    private func toolShortcutRow(_ shortcut: BudgetToolShortcut) -> some View {
+        if shortcut.title == "Budget Simulator" {
+            NavigationLink {
+                BudgetSimulator2027View()
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        } else if shortcut.title == "Early Retirement Model" {
+            NavigationLink {
+                EarlyRetirementIncentiveView()
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        } else if let destination = shortcut.section {
+            Button {
+                section = destination
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+
+    private func rowContent(_ shortcut: BudgetToolShortcut) -> some View {
+        HStack(alignment: .center, spacing: 12) {
+            Image(systemName: shortcut.symbol)
+                .font(.headline)
+                .foregroundStyle(RiverheadTheme.brandNavy)
+                .frame(width: 34, height: 34)
+                .background(Circle().fill(RiverheadTheme.brandSky.opacity(0.14)))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(shortcut.title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                Text(shortcut.subtitle)
+                    .font(.caption)
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer(minLength: 10)
+
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.textSecondary)
+        }
+        .padding(.vertical, 10)
+        .overlay(alignment: .bottom) {
+            Rectangle()
+                .fill(RiverheadTheme.softBorder.opacity(0.6))
+                .frame(height: 1)
+        }
+        .contentShape(Rectangle())
     }
 }
 
@@ -387,6 +584,46 @@ fileprivate struct BudgetFundingStrategyLine: Identifiable {
     let detail: String
 }
 
+fileprivate struct BudgetVisualAmount: Identifiable {
+    let id = UUID()
+    let title: String
+    let amount: Double
+    let tint: Color
+    let systemImage: String
+}
+
+fileprivate struct BudgetPlanStep: Identifiable {
+    let id = UUID()
+    let title: String
+    let amount: Double
+    let tint: Color
+}
+
+fileprivate struct ExecutiveSummaryMetric: Identifiable {
+    let id = UUID()
+    let title: String
+    let value: String
+    let caption: String
+    let symbol: String
+    let tint: Color
+}
+
+fileprivate struct ExecutiveFundMixSlice: Identifiable {
+    let id = UUID()
+    let fundCode: String
+    let fundName: String
+    let amount: Double
+    let tint: Color
+}
+
+fileprivate struct ExecutiveBridgeItem: Identifiable {
+    let id = UUID()
+    let label: String
+    let amount: Double
+    let role: String
+    let tint: Color
+}
+
 fileprivate enum BudgetRecommendations2027 {
     static let trackedPayrollRows2026 = 328
     static let modeledPersonnelBase2026 = 30_509_083.85
@@ -413,7 +650,22 @@ fileprivate enum BudgetRecommendations2027 {
     static let healthcareContributionSavings = Double(modeledEligibleHealthcarePositions) * modeledAveragePremium * 0.20
     static let exemptRaiseHoldSavings = 23_094.86
     static let electedRaiseHoldSavings = 22_278.92
+    static let policeUniformOTActual2024 = 1_401_354.00
+    static let policeUniformOTBudget2024 = 1_000_000.00
+    static let policeUniformOTAdopted2026 = 1_000_000.00
+    static let policeUniformOTVariance = policeUniformOTActual2024 - policeUniformOTBudget2024
     static let overtimeControlSavings = 250_000.00
+    static let policeOvertimeRecoveryShare = overtimeControlSavings / policeUniformOTVariance
+    static let march2026CriminalIncidents = 167
+    static let march2025CriminalIncidents = 144
+    static let march2026TotalIncidents = 2_994
+    static let march2025TotalIncidents = 2_922
+    static let march2026DomesticIncidents = 60
+    static let march2025DomesticIncidents = 60
+    static let march2026Accidents = 114
+    static let march2025Accidents = 123
+    static let march2026Summonses = 1_042
+    static let march2025Summonses = 1_076
     static let civilianVacancyFactorSavings = 124_158.19
     static let targetedRetirementRefillSavings = 291_300.00
     static let quantifiedPackageSavings = 794_717.06
@@ -435,7 +687,7 @@ fileprivate enum BudgetRecommendations2027 {
 
     static let residentSummary = "The 2027 budget should be built around a simple promise: cover salary pressure, protect core services, and keep reserves as a backstop rather than a habit. Riverhead can still invest in Building, Code Enforcement, and service delivery, but only if the recurring plan is honest about labor costs, disciplined about savings, and careful with the tax levy."
 
-    static let expertSummary = "The current 2027 model starts with about $936.7K of automatic payroll pressure, including about $907.9K of union salary growth and a fixed approved CSEA 2027 action, before layering in pension, health, or other operating pressure. The best 2027 framework is therefore a structurally balanced recurring package first, explicit service investments second, elected raises held out of the baseline, and reserve deployment only for one-time transition, capital, or debt purposes under a tighter fund-balance rule."
+    static let expertSummary = "The current 2027 model starts with about $936.7K of automatic payroll pressure, including about $907.9K of union salary growth and a fixed approved CSEA 2027 action, then adds a published-rate pension pressure range of about $1.4M to $1.85M townwide. The best 2027 framework is therefore a structurally balanced recurring package first, explicit service investments second, elected raises held out of the baseline, and reserve deployment only for one-time transition, capital, or debt purposes under a tighter fund-balance rule."
 
     static let residentLines: [BudgetRecommendationLine] = [
         .init(
@@ -511,7 +763,7 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "Tighten overtime controls",
             impact: "Accountability",
-            detail: "Require quarterly overtime recovery plans in Police, Highway, and other high-variance areas so recurring payroll does not outrun recurring revenue."
+            detail: "Start with Police Uniform OT, where 2024 actual spending was about $1.40M against a $1.0M budget and the adopted 2026 line remains $1.0M. The March activity report also shows criminal incidents rising to 167 from 144 and total incidents rising to 2,994 from 2,922, so a credible 2027 offset must come from monthly cause-of-OT reporting, scheduling review, and quarterly recovery plans, not from assuming police workload is falling."
         ),
         .init(
             title: "Budget a small civilian vacancy factor",
@@ -614,7 +866,7 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "Impose departmental overtime recovery targets",
             impact: "Accountability",
-            detail: "Adopt budget-to-actual overtime targets for Police, Highway, Justice Court, and other pressure points, with quarterly variance reports and a corrective plan when spending runs hot."
+            detail: "Adopt a Police Uniform OT recovery target first: 2024 actual spending was about $401K above the $1.0M budget, so the current model treats $250K as a recoverable portion, not a full reset. Pair that target with the March workload data: criminal incidents and total incidents were up year over year, while accidents and summonses were down. Require budget-to-actual overtime targets, cause coding for patrol/court/recall/training/event OT, quarterly variance reports, and a corrective scheduling plan when spending runs hot."
         ),
         .init(
             title: "Carry a visible contingency line",
@@ -983,6 +1235,900 @@ fileprivate enum BudgetRecommendations2027 {
             detail: "Use OSC's publication library as the technical appendix for Riverhead's 2027 process, especially the Reserve Funds guide (February 2022), Capital Projects Fund guide (September 2019), and Multiyear Financial Planning guide (September 2017), so reserve, CIP, and out-year practices are anchored to published state guidance. The Reserve Funds guide is especially clear that reserve balances need a defined purpose, written oversight, periodic reasonableness review, and visible resolutions when money is moved. The Capital Projects Fund guide is similarly clear that major projects need separate project records, project-by-project budgets, and board oversight of financing and cost containment."
         )
     ]
+}
+
+@MainActor
+fileprivate struct ExecutiveBudgetSummaryView: View {
+    let mode: BudgetAudienceMode
+
+    @Environment(\.colorScheme) private var scheme
+    @State private var loadedSummaries: [RBFundSummary] = []
+
+    private var summaries: [RBFundSummary] {
+        loadedSummaries.isEmpty ? Riverhead2026BudgetShift.fundSummaries() : loadedSummaries
+    }
+
+    private var topFunds: [ExecutiveFundMixSlice] {
+        let palette: [Color] = [
+            RiverheadTheme.accent,
+            RiverheadTheme.brandTeal,
+            RiverheadTheme.brandGold,
+            RiverheadTheme.brandCoral,
+            RiverheadTheme.brandSky,
+            .purple
+        ]
+
+        return summaries
+            .compactMap { row -> (RBFundSummary, Double)? in
+                guard let amount = double(row.appropriations2026), amount > 0 else { return nil }
+                return (row, amount)
+            }
+            .sorted { $0.1 > $1.1 }
+            .prefix(6)
+            .enumerated()
+            .map { index, item in
+                ExecutiveFundMixSlice(
+                    fundCode: item.0.fundCode,
+                    fundName: item.0.fundName,
+                    amount: item.1,
+                    tint: palette[index % palette.count]
+                )
+            }
+    }
+
+    private var totalAppropriations2026: Double {
+        summaries.compactMap { double($0.appropriations2026) }.reduce(0, +)
+    }
+
+    private var totalTaxLevy2026: Double {
+        summaries.compactMap { double($0.taxLevy2026) }.reduce(0, +)
+    }
+
+    private var totalRevenues2026: Double {
+        summaries.compactMap { double($0.estRevenues2026) }.reduce(0, +)
+    }
+
+    private var totalFundBalanceUse2026: Double {
+        summaries.compactMap { double($0.appropFundBalance2026) }.reduce(0, +)
+    }
+
+    private var generalFundAppropriations2026: Double {
+        double(summaries.first { $0.fundCode == "A01" }?.appropriations2026)
+            ?? BudgetRecommendations2027.totalBudget2026
+    }
+
+    private var headlineMetrics: [ExecutiveSummaryMetric] {
+        [
+            .init(
+                title: "2026 total budget",
+                value: moneyShort(totalAppropriations2026),
+                caption: "\(summaries.count) funds in the 2026 budget book",
+                symbol: "building.columns.fill",
+                tint: RiverheadTheme.accent
+            ),
+            .init(
+                title: "2026 tax levy",
+                value: moneyShort(totalTaxLevy2026),
+                caption: "Local property-tax support across funds",
+                symbol: "house.and.flag.fill",
+                tint: RiverheadTheme.brandTeal
+            ),
+            .init(
+                title: "General Fund",
+                value: moneyShort(generalFundAppropriations2026),
+                caption: "Core townwide operating fund",
+                symbol: "chart.pie.fill",
+                tint: RiverheadTheme.brandGold
+            ),
+            .init(
+                title: "2027 payroll pressure",
+                value: moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure),
+                caption: "Modeled automatic wage pressure before other costs",
+                symbol: "person.3.fill",
+                tint: RiverheadTheme.brandCoral
+            )
+        ]
+    }
+
+    private var bridgeItems: [ExecutiveBridgeItem] {
+        [
+            .init(label: "Automatic payroll pressure", amount: -BudgetRecommendations2027.modeledAutomaticPayrollPressure, role: "Cost driver", tint: RiverheadTheme.brandCoral),
+            .init(label: "Recurring savings package", amount: BudgetRecommendations2027.quantifiedPackageSavings, role: "Offset", tint: .green),
+            .init(label: "Revenue package", amount: BudgetRecommendations2027.modeledRevenuePackage, role: "Offset", tint: RiverheadTheme.brandTeal),
+            .init(label: "Service investments", amount: -BudgetRecommendations2027.addedServiceInvestments, role: "Policy choice", tint: RiverheadTheme.brandGold),
+            .init(label: "Modeled cushion", amount: BudgetRecommendations2027.balanceAfterRevenueAndInvestments, role: "Remaining room", tint: RiverheadTheme.accent)
+        ]
+    }
+
+    private var fundingItems: [ExecutiveBridgeItem] {
+        [
+            .init(label: "Estimated revenues", amount: totalRevenues2026, role: "2026 source", tint: .green),
+            .init(label: "Tax levy", amount: totalTaxLevy2026, role: "2026 source", tint: RiverheadTheme.brandTeal),
+            .init(label: "Fund balance use", amount: totalFundBalanceUse2026, role: "2026 source", tint: RiverheadTheme.brandGold)
+        ].filter { $0.amount > 0 }
+    }
+
+    private var totalFundingSources2026: Double {
+        fundingItems.map(\.amount).reduce(0, +)
+    }
+
+    private var largestBridgeMagnitude: Double {
+        max(bridgeItems.map { abs($0.amount) }.max() ?? 1, 1)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            executiveHero
+            metricGrid
+            fundMixCard
+            fundingCard
+            bridgeCard
+            prioritiesCard
+            SourcesStrip(links: sourceLinks)
+        }
+        .onAppear {
+            if Riverhead2026BudgetShift.lastLoadCount == 0 {
+                _ = try? Riverhead2026BudgetShift.load()
+            }
+            loadedSummaries = Riverhead2026BudgetShift.fundSummaries()
+        }
+    }
+
+    private var executiveHero: some View {
+        GlassCard(
+            title: "Executive Summary: 2026 Budget + 2027 Plan",
+            subtitle: mode == .resident
+                ? "The short version: 2026 is the current budget picture; 2027 is the planning bridge for wage pressure, savings, revenues, and targeted service investments."
+                : "A compact fiscal briefing that combines the parsed 2026 fund schedule with the app's 2027 recurring-budget model."
+        ) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(mode == .resident ? residentExecutiveSummary : expertExecutiveSummary)
+                    .font(.subheadline)
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                HStack(spacing: 10) {
+                    executiveBadge("2026", text: "Budget book", tint: RiverheadTheme.accent)
+                    executiveBadge("2027", text: "Planning model", tint: RiverheadTheme.brandCoral)
+                }
+            }
+        }
+    }
+
+    private var metricGrid: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 12)], spacing: 12) {
+            ForEach(headlineMetrics) { metric in
+                ExecutiveMetricTile(metric: metric)
+            }
+        }
+    }
+
+    private var fundMixCard: some View {
+        GlassCard(title: "2026 Budget Mix", subtitle: "Largest funds by 2026 appropriations.") {
+            if topFunds.isEmpty {
+                ContentUnavailableView("No fund data loaded", systemImage: "chart.pie")
+            } else {
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .center, spacing: 18) {
+                        ExecutiveFundMixDonut(
+                            slices: topFunds,
+                            total: totalAppropriations2026,
+                            centerValue: moneyShort(totalAppropriations2026),
+                            centerLabel: "2026 total"
+                        )
+                        .frame(width: 164, height: 164)
+
+                        fundMixLegend
+                    }
+
+                    VStack(alignment: .leading, spacing: 14) {
+                        ExecutiveFundMixDonut(
+                            slices: topFunds,
+                            total: totalAppropriations2026,
+                            centerValue: moneyShort(totalAppropriations2026),
+                            centerLabel: "2026 total"
+                        )
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 180)
+
+                        fundMixLegend
+                    }
+                }
+            }
+        }
+    }
+
+    private var fundMixLegend: some View {
+        VStack(alignment: .leading, spacing: 9) {
+            ForEach(topFunds) { slice in
+                ExecutiveLegendRow(
+                    color: slice.tint,
+                    title: "\(slice.fundCode) \(slice.fundName)",
+                    value: moneyShort(slice.amount),
+                    percent: percentShort(slice.amount, of: totalAppropriations2026)
+                )
+            }
+        }
+    }
+
+    private var fundingCard: some View {
+        GlassCard(title: "How 2026 Is Funded", subtitle: "Estimated revenues, tax levy, and appropriated fund balance.") {
+            VStack(alignment: .leading, spacing: 14) {
+                ExecutiveFundingStack(items: fundingItems, total: totalFundingSources2026)
+                    .frame(height: 58)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(fundingItems) { item in
+                        ExecutiveFundingRow(
+                            item: item,
+                            total: totalFundingSources2026,
+                            valueText: moneyShort(item.amount)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private var bridgeCard: some View {
+        GlassCard(title: "2027 Recurring Bridge", subtitle: "A planning view of what must be absorbed before Riverhead moves into 2027.") {
+            VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(bridgeItems) { item in
+                        ExecutiveBridgeImpactRow(
+                            item: item,
+                            maximum: largestBridgeMagnitude,
+                            valueText: signedMoneyShort(item.amount)
+                        )
+                    }
+                }
+
+                HStack(spacing: 10) {
+                    bridgeStat("Union wage pressure", value: BudgetRecommendations2027.modeledUnionSalaryPressure, tint: RiverheadTheme.brandCoral)
+                    bridgeStat("After investments", value: BudgetRecommendations2027.balanceAfterRevenueAndInvestments, tint: RiverheadTheme.accent)
+                }
+            }
+        }
+    }
+
+    private var prioritiesCard: some View {
+        GlassCard(
+            title: "Executive Takeaways",
+            subtitle: mode == .resident
+                ? "The decisions residents should be able to see clearly."
+                : "The controls that should govern the next budget cycle."
+        ) {
+            VStack(alignment: .leading, spacing: 10) {
+                executiveTakeaway(
+                    "Treat labor growth as structural",
+                    detail: "The 2027 model starts with \(moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure)) of payroll pressure, then layers in a published-rate pension increase that now looks closer to $1.4M to $1.85M townwide before other inflation, utility, or health-insurance pressure.",
+                    tint: RiverheadTheme.brandCoral
+                )
+                executiveTakeaway(
+                    "Use reserves for one-time purposes",
+                    detail: "The summary keeps recurring balance separate from reserve deployment so fund balance does not quietly become the way ordinary operations are paid.",
+                    tint: RiverheadTheme.brandGold
+                )
+                executiveTakeaway(
+                    "Fund visible service priorities only after the recurring test",
+                    detail: "The modeled 2027 package preserves room for Building, Code Enforcement, Town Clerk service, online tools, and police staffing after recurring offsets and revenue are counted.",
+                    tint: RiverheadTheme.brandTeal
+                )
+            }
+        }
+    }
+
+    private var sourceLinks: [BudgetSourceLink] {
+        [
+            .init(title: "2026 Tentative Budget",
+                  kind: .budgetBook,
+                  note: nil,
+                  url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/2779/2026-Tentative-Budget-PDF")),
+            .init(title: "2026 Budget Supplement",
+                  kind: .budgetBook,
+                  note: nil,
+                  url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/2780/2026-Budget-Supplement-PDF")),
+            .init(title: "2027 Simulator",
+                  kind: .other,
+                  note: nil,
+                  url: nil)
+        ]
+    }
+
+    private var residentExecutiveSummary: String {
+        "Riverhead's 2026 budget is the baseline: it shows where the money is going now, which funds carry the largest costs, and how much is supported by taxes, revenues, and fund balance. The 2027 plan should be judged by whether it pays for recurring wage pressure first, protects reserves, and then adds visible service improvements only with recurring money."
+    }
+
+    private var expertExecutiveSummary: String {
+        "The executive view frames 2026 as the budget baseline and 2027 as a recurring-balance test. The key risk is structural payroll growth: the model carries about \(moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure)) of automatic 2027 pressure before other non-payroll escalators. The recommended posture is recurring offsets and revenue first, targeted service investments second, and reserve use limited to one-time transition, capital, or debt purposes."
+    }
+
+    private func executiveBadge(_ title: String, text: String, tint: Color) -> some View {
+        HStack(spacing: 6) {
+            Text(title)
+                .font(.caption.weight(.bold))
+            Text(text)
+                .font(.caption)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
+        .background(tint.opacity(0.12), in: Capsule())
+        .overlay(Capsule().strokeBorder(tint.opacity(0.25), lineWidth: 0.8))
+    }
+
+    private func bridgeStat(_ title: String, value: Double, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(moneyShort(value))
+                .font(.subheadline.weight(.bold))
+                .monospacedDigit()
+            Text(title)
+                .font(.caption2)
+                .foregroundStyle(RiverheadTheme.textSecondary)
+                .lineLimit(2)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(10)
+        .background(tint.opacity(0.10), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    private func executiveTakeaway(_ title: String, detail: String, tint: Color) -> some View {
+        HStack(alignment: .top, spacing: 10) {
+            Circle()
+                .fill(tint)
+                .frame(width: 9, height: 9)
+                .padding(.top, 5)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.subheadline.weight(.semibold))
+                Text(detail)
+                    .font(.caption)
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+
+    private func money(_ value: Double) -> String {
+        value.formatted(.currency(code: "USD").precision(.fractionLength(0)))
+    }
+
+    private func double(_ value: Decimal?) -> Double? {
+        guard let value else { return nil }
+        return NSDecimalNumber(decimal: value).doubleValue
+    }
+
+    private func moneyShort(_ value: Double) -> String {
+        let sign = value < 0 ? "-" : ""
+        let v = abs(value)
+        let scaled: Double
+        let suffix: String
+        if v >= 1_000_000_000 {
+            scaled = v / 1_000_000_000
+            suffix = "B"
+        } else if v >= 1_000_000 {
+            scaled = v / 1_000_000
+            suffix = "M"
+        } else if v >= 1_000 {
+            scaled = v / 1_000
+            suffix = "K"
+        } else {
+            scaled = v
+            suffix = ""
+        }
+        let number = scaled >= 100 ? String(format: "%.0f", scaled) : String(format: "%.1f", scaled)
+        return "\(sign)$\(number)\(suffix)"
+    }
+
+    private func signedMoneyShort(_ value: Double) -> String {
+        value >= 0 ? "+\(moneyShort(value))" : moneyShort(value)
+    }
+
+    private func percentShort(_ value: Double, of total: Double) -> String {
+        guard total > 0 else { return "0%" }
+        return (value / total).formatted(.percent.precision(.fractionLength(0)))
+    }
+}
+
+fileprivate struct ExecutiveMetricTile: View {
+    @Environment(\.colorScheme) private var scheme
+
+    let metric: ExecutiveSummaryMetric
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top) {
+                ZStack {
+                    Circle()
+                        .fill(metric.tint.opacity(scheme == .dark ? 0.22 : 0.16))
+                    Circle()
+                        .trim(from: 0.18, to: 0.82)
+                        .stroke(
+                            metric.tint.opacity(0.9),
+                            style: StrokeStyle(lineWidth: 3, lineCap: .round)
+                        )
+                        .rotationEffect(.degrees(24))
+                        .padding(5)
+                    Image(systemName: metric.symbol)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(metric.tint)
+                }
+                .frame(width: 42, height: 42)
+                .accessibilityHidden(true)
+
+                Spacer(minLength: 8)
+
+                Image(systemName: "sparkline")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(metric.tint.opacity(0.52))
+                    .accessibilityHidden(true)
+            }
+
+            Text(metric.value)
+                .font(.system(.title3, design: .rounded).weight(.bold))
+                .monospacedDigit()
+                .lineLimit(1)
+                .minimumScaleFactor(0.72)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(metric.title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                Text(metric.caption)
+                    .font(.caption2)
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 138, alignment: .topLeading)
+        .padding(13)
+        .background(
+            LinearGradient(
+                colors: [
+                    metric.tint.opacity(scheme == .dark ? 0.22 : 0.14),
+                    RiverheadTheme.Surface.card.opacity(scheme == .dark ? 0.64 : 0.88)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ),
+            in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+        )
+        .overlay(alignment: .bottomTrailing) {
+            BudgetTileGlyph(tint: metric.tint)
+                .frame(width: 64, height: 42)
+                .opacity(scheme == .dark ? 0.22 : 0.16)
+                .padding(10)
+                .accessibilityHidden(true)
+        }
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .strokeBorder(metric.tint.opacity(scheme == .dark ? 0.36 : 0.26), lineWidth: 0.9)
+        )
+        .accessibilityElement(children: .combine)
+    }
+}
+
+fileprivate struct BudgetTileGlyph: View {
+    let tint: Color
+
+    var body: some View {
+        GeometryReader { proxy in
+            let width = proxy.size.width
+            let height = proxy.size.height
+            let barWidth = width / 9
+
+            HStack(alignment: .bottom, spacing: barWidth * 0.55) {
+                ForEach(0..<5, id: \.self) { index in
+                    RoundedRectangle(cornerRadius: barWidth / 2, style: .continuous)
+                        .fill(tint)
+                        .frame(
+                            width: barWidth,
+                            height: height * CGFloat([0.45, 0.72, 0.56, 0.9, 0.64][index])
+                        )
+                }
+            }
+        }
+    }
+}
+
+fileprivate struct ExecutiveFundMixDonut: View {
+    @Environment(\.colorScheme) private var scheme
+
+    let slices: [ExecutiveFundMixSlice]
+    let total: Double
+    let centerValue: String
+    let centerLabel: String
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(RiverheadTheme.border.opacity(scheme == .dark ? 0.42 : 0.24), lineWidth: 18)
+
+            ForEach(Array(slices.enumerated()), id: \.element.id) { index, slice in
+                let start = cumulativeValue(before: index) / max(total, 1)
+                let end = cumulativeValue(through: index) / max(total, 1)
+
+                Circle()
+                    .trim(from: start, to: end)
+                    .stroke(
+                        slice.tint,
+                        style: StrokeStyle(lineWidth: 18, lineCap: .round, lineJoin: .round)
+                    )
+                    .rotationEffect(.degrees(-90))
+                    .shadow(color: slice.tint.opacity(scheme == .dark ? 0.18 : 0.12), radius: 3, x: 0, y: 2)
+                    .accessibilityLabel("\(slice.fundName), \(slice.amount.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+            }
+
+            VStack(spacing: 2) {
+                Text(centerValue)
+                    .font(.system(.title3, design: .rounded).weight(.bold))
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+                Text(centerLabel)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+            }
+            .padding(20)
+        }
+        .padding(10)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Largest 2026 budget funds")
+    }
+
+    private func cumulativeValue(before index: Int) -> Double {
+        slices.prefix(index).map(\.amount).reduce(0, +)
+    }
+
+    private func cumulativeValue(through index: Int) -> Double {
+        slices.prefix(index + 1).map(\.amount).reduce(0, +)
+    }
+}
+
+fileprivate struct ExecutiveLegendRow: View {
+    let color: Color
+    let title: String
+    let value: String
+    let percent: String
+
+    var body: some View {
+        HStack(spacing: 9) {
+            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                .fill(color)
+                .frame(width: 12, height: 24)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                        .strokeBorder(.white.opacity(0.28), lineWidth: 0.6)
+                )
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(1)
+                HStack(spacing: 6) {
+                    Text(value)
+                    Text(percent)
+                }
+                .font(.caption2.monospacedDigit())
+                .foregroundStyle(RiverheadTheme.textSecondary)
+            }
+        }
+    }
+}
+
+fileprivate struct ExecutiveFundingStack: View {
+    @Environment(\.colorScheme) private var scheme
+
+    let items: [ExecutiveBridgeItem]
+    let total: Double
+
+    var body: some View {
+        GeometryReader { proxy in
+            let safeTotal = max(total, 1)
+            let width = proxy.size.width
+            let barHeight: CGFloat = 24
+
+            VStack(alignment: .leading, spacing: 8) {
+                HStack(spacing: 3) {
+                    ForEach(items) { item in
+                        RoundedRectangle(cornerRadius: 7, style: .continuous)
+                            .fill(
+                                LinearGradient(
+                                    colors: [item.tint.opacity(0.95), item.tint.opacity(0.66)],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
+                            .frame(width: max(width * item.amount / safeTotal - 2, 8), height: barHeight)
+                            .accessibilityLabel("\(item.label), \(item.amount.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+                    }
+                }
+                .padding(4)
+                .background(
+                    RoundedRectangle(cornerRadius: 11, style: .continuous)
+                        .fill(RiverheadTheme.background.opacity(scheme == .dark ? 0.42 : 0.72))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 11, style: .continuous)
+                        .strokeBorder(RiverheadTheme.border.opacity(0.45), lineWidth: 0.8)
+                )
+
+                HStack {
+                    Text("Funding sources")
+                    Spacer()
+                    Text(total.formatted(.currency(code: "USD").precision(.fractionLength(0))))
+                        .monospacedDigit()
+                }
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.textSecondary)
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+}
+
+fileprivate struct ExecutiveFundingRow: View {
+    let item: ExecutiveBridgeItem
+    let total: Double
+    let valueText: String
+
+    private var share: Double {
+        guard total > 0 else { return 0 }
+        return min(max(item.amount / total, 0), 1)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            HStack {
+                Label(item.label, systemImage: item.labelSymbol)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(1)
+                Spacer(minLength: 8)
+                Text(valueText)
+                    .font(.caption.monospacedDigit().weight(.semibold))
+                    .foregroundStyle(item.tint)
+            }
+
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(RiverheadTheme.border.opacity(0.22))
+                    Capsule()
+                        .fill(item.tint.opacity(0.88))
+                        .frame(width: max(proxy.size.width * share, 8))
+                }
+            }
+            .frame(height: 6)
+        }
+        .accessibilityElement(children: .combine)
+    }
+}
+
+fileprivate struct ExecutiveBridgeImpactRow: View {
+    @Environment(\.colorScheme) private var scheme
+
+    let item: ExecutiveBridgeItem
+    let maximum: Double
+    let valueText: String
+
+    private var share: Double {
+        min(max(abs(item.amount) / max(maximum, 1), 0), 1)
+    }
+
+    private var isOffset: Bool {
+        item.amount >= 0
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 7) {
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                Label(item.label, systemImage: isOffset ? "plus.circle.fill" : "minus.circle.fill")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(1)
+                Spacer(minLength: 8)
+                Text(valueText)
+                    .font(.caption.monospacedDigit().weight(.bold))
+                    .foregroundStyle(isOffset ? .green : RiverheadTheme.brandCoral)
+            }
+
+            GeometryReader { proxy in
+                let center = proxy.size.width * 0.46
+                let available = proxy.size.width * 0.46
+                let barWidth = max(available * share, 9)
+
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(RiverheadTheme.border.opacity(scheme == .dark ? 0.22 : 0.18))
+                        .frame(height: 12)
+                    Rectangle()
+                        .fill(RiverheadTheme.border.opacity(0.48))
+                        .frame(width: 1.2, height: 18)
+                        .offset(x: center)
+                    Capsule()
+                        .fill(item.tint.opacity(0.9))
+                        .frame(width: barWidth, height: 12)
+                        .offset(x: isOffset ? center : center - barWidth)
+                }
+            }
+            .frame(height: 18)
+
+            Text(item.role)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.textSecondary)
+        }
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(item.tint.opacity(scheme == .dark ? 0.12 : 0.07))
+        )
+        .accessibilityElement(children: .combine)
+    }
+}
+
+fileprivate extension ExecutiveBridgeItem {
+    var labelSymbol: String {
+        switch label {
+        case "Estimated revenues":
+            return "arrow.down.forward.circle.fill"
+        case "Tax levy":
+            return "house.and.flag.fill"
+        case "Fund balance use":
+            return "banknote.fill"
+        default:
+            return amount >= 0 ? "plus.circle.fill" : "minus.circle.fill"
+        }
+    }
+}
+
+fileprivate struct BudgetAmountDonut: View {
+    @Environment(\.colorScheme) private var scheme
+
+    let items: [BudgetVisualAmount]
+    let total: Double
+    let centerValue: String
+    let centerLabel: String
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(RiverheadTheme.border.opacity(scheme == .dark ? 0.42 : 0.24), lineWidth: 16)
+
+            ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                let start = cumulativeValue(before: index) / max(total, 1)
+                let end = cumulativeValue(through: index) / max(total, 1)
+
+                Circle()
+                    .trim(from: start, to: end)
+                    .stroke(
+                        item.tint,
+                        style: StrokeStyle(lineWidth: 16, lineCap: .round, lineJoin: .round)
+                    )
+                    .rotationEffect(.degrees(-90))
+                    .accessibilityLabel("\(item.title), \(item.amount.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+            }
+
+            VStack(spacing: 2) {
+                Text(centerValue)
+                    .font(.system(.headline, design: .rounded).weight(.bold))
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+                Text(centerLabel)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+            }
+            .padding(18)
+        }
+        .padding(9)
+        .accessibilityElement(children: .combine)
+    }
+
+    private func cumulativeValue(before index: Int) -> Double {
+        items.prefix(index).map(\.amount).reduce(0, +)
+    }
+
+    private func cumulativeValue(through index: Int) -> Double {
+        items.prefix(index + 1).map(\.amount).reduce(0, +)
+    }
+}
+
+fileprivate struct BudgetVisualBarRow: View {
+    let item: BudgetVisualAmount
+    let maximum: Double
+    let valueText: String
+
+    private var share: Double {
+        min(max(item.amount / max(maximum, 1), 0), 1)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            HStack(spacing: 8) {
+                Image(systemName: item.systemImage)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(item.tint)
+                    .frame(width: 18)
+
+                Text(item.title)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(1)
+
+                Spacer(minLength: 6)
+
+                Text(valueText)
+                    .font(.caption2.monospacedDigit().weight(.semibold))
+                    .foregroundStyle(item.tint)
+            }
+
+            GeometryReader { proxy in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(RiverheadTheme.border.opacity(0.20))
+                    Capsule()
+                        .fill(item.tint.opacity(0.86))
+                        .frame(width: max(proxy.size.width * share, 8))
+                }
+            }
+            .frame(height: 7)
+        }
+        .accessibilityElement(children: .combine)
+    }
+}
+
+fileprivate struct BudgetPlanStepRow: View {
+    let step: BudgetPlanStep
+    let maximum: Double
+    let valueText: String
+
+    private var isPositive: Bool {
+        step.amount >= 0
+    }
+
+    private var share: Double {
+        min(max(abs(step.amount) / max(maximum, 1), 0), 1)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(step.title)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .lineLimit(1)
+
+                Spacer(minLength: 8)
+
+                Text(valueText)
+                    .font(.caption2.monospacedDigit().weight(.bold))
+                    .foregroundStyle(isPositive ? .green : RiverheadTheme.brandCoral)
+            }
+
+            GeometryReader { proxy in
+                let center = proxy.size.width * 0.48
+                let available = proxy.size.width * 0.46
+                let width = max(available * share, 8)
+
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(RiverheadTheme.border.opacity(0.18))
+                        .frame(height: 10)
+                    Rectangle()
+                        .fill(RiverheadTheme.border.opacity(0.46))
+                        .frame(width: 1, height: 16)
+                        .offset(x: center)
+                    Capsule()
+                        .fill(step.tint.opacity(0.88))
+                        .frame(width: width, height: 10)
+                        .offset(x: isPositive ? center : center - width)
+                }
+            }
+            .frame(height: 16)
+        }
+        .accessibilityElement(children: .combine)
+    }
 }
 
 @MainActor
@@ -2600,6 +3746,62 @@ fileprivate struct HearingToolkitView: View {
         : BudgetRecommendations2027.expertImplementationPhases
     }
 
+    private var payrollPressureVisuals: [BudgetVisualAmount] {
+        [
+            .init(title: "PBA", amount: BudgetRecommendations2027.modeledPBAIncrease, tint: .red, systemImage: "shield.lefthalf.filled"),
+            .init(title: "SOA", amount: BudgetRecommendations2027.modeledSOAIncrease, tint: .purple, systemImage: "person.badge.shield.checkmark.fill"),
+            .init(title: "CSEA", amount: BudgetRecommendations2027.modeledCSEAIncrease, tint: .orange, systemImage: "person.3.fill"),
+            .init(title: "Non-contract", amount: BudgetRecommendations2027.modeledExemptIncrease, tint: RiverheadTheme.brandSky, systemImage: "person.crop.rectangle.stack.fill")
+        ]
+    }
+
+    private var offsetVisuals: [BudgetVisualAmount] {
+        [
+            .init(title: "Healthcare share", amount: BudgetRecommendations2027.healthcareContributionSavings, tint: .green, systemImage: "cross.case.fill"),
+            .init(title: "Exempt raise hold", amount: BudgetRecommendations2027.exemptRaiseHoldSavings, tint: RiverheadTheme.brandSky, systemImage: "pause.circle.fill"),
+            .init(title: "Elected raise hold", amount: BudgetRecommendations2027.electedRaiseHoldSavings, tint: RiverheadTheme.brandGold, systemImage: "person.crop.circle.badge.checkmark"),
+            .init(title: "Police OT recovery", amount: BudgetRecommendations2027.overtimeControlSavings, tint: .teal, systemImage: "clock.badge.checkmark.fill"),
+            .init(title: "Vacancy factor", amount: BudgetRecommendations2027.civilianVacancyFactorSavings, tint: .blue, systemImage: "person.crop.circle.dashed"),
+            .init(title: "Retirement refill", amount: BudgetRecommendations2027.targetedRetirementRefillSavings, tint: .indigo, systemImage: "arrow.triangle.2.circlepath.circle.fill")
+        ]
+    }
+
+    private var investmentVisuals: [BudgetVisualAmount] {
+        [
+            .init(title: "Building", amount: BudgetRecommendations2027.buildingDepartmentHeadcountInvestment, tint: .orange, systemImage: "building.2.fill"),
+            .init(title: "Online tools", amount: BudgetRecommendations2027.onlinePlatformUpdateCost, tint: RiverheadTheme.brandSky, systemImage: "network"),
+            .init(title: "Code enforcement", amount: BudgetRecommendations2027.codeEnforcementOfficerCost * 2, tint: .teal, systemImage: "checklist.checked"),
+            .init(title: "Town Clerk", amount: BudgetRecommendations2027.deputyTownClerkCost, tint: .purple, systemImage: "doc.text.fill"),
+            .init(title: "Police", amount: BudgetRecommendations2027.policeOfficerCost * 2, tint: .red, systemImage: "shield.fill")
+        ]
+    }
+
+    private var planStepVisuals: [BudgetPlanStep] {
+        [
+            .init(title: "Pressure", amount: -BudgetRecommendations2027.modeledAutomaticPayrollPressure, tint: .orange),
+            .init(title: "Offsets", amount: BudgetRecommendations2027.quantifiedPackageSavings, tint: .green),
+            .init(title: "Revenue", amount: BudgetRecommendations2027.modeledRevenuePackage, tint: RiverheadTheme.brandSky),
+            .init(title: "Investments", amount: -BudgetRecommendations2027.addedServiceInvestments, tint: .red),
+            .init(title: "Net room", amount: BudgetRecommendations2027.balanceAfterRevenueAndInvestments, tint: RiverheadTheme.brandGold)
+        ]
+    }
+
+    private var payrollPressureTotal: Double {
+        payrollPressureVisuals.map(\.amount).reduce(0, +)
+    }
+
+    private var investmentTotal: Double {
+        investmentVisuals.map(\.amount).reduce(0, +)
+    }
+
+    private var largestOffset: Double {
+        max(offsetVisuals.map(\.amount).max() ?? 1, 1)
+    }
+
+    private var largestPlanMagnitude: Double {
+        max(planStepVisuals.map { abs($0.amount) }.max() ?? 1, 1)
+    }
+
     @ViewBuilder
     private func recommendationGroupCard(_ group: BudgetRecommendationGroup) -> some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -2668,6 +3870,164 @@ fileprivate struct HearingToolkitView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(RiverheadTheme.Surface.inset)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+    }
+
+    private var suggestionInfographicSnapshot: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .center, spacing: 14) {
+                    BudgetAmountDonut(
+                        items: payrollPressureVisuals,
+                        total: payrollPressureTotal,
+                        centerValue: shortCurrency(payrollPressureTotal),
+                        centerLabel: "Payroll"
+                    )
+                    .frame(width: 126, height: 126)
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Payroll pressure")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.textSecondary)
+
+                        ForEach(payrollPressureVisuals) { item in
+                            visualLegendRow(item, total: payrollPressureTotal)
+                        }
+                    }
+                }
+
+                VStack(alignment: .leading, spacing: 10) {
+                    BudgetAmountDonut(
+                        items: payrollPressureVisuals,
+                        total: payrollPressureTotal,
+                        centerValue: shortCurrency(payrollPressureTotal),
+                        centerLabel: "Payroll"
+                    )
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 142)
+
+                    ForEach(payrollPressureVisuals) { item in
+                        visualLegendRow(item, total: payrollPressureTotal)
+                    }
+                }
+            }
+
+            Divider().opacity(0.25)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Offset package")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(offsetVisuals) { item in
+                        BudgetVisualBarRow(
+                            item: item,
+                            maximum: largestOffset,
+                            valueText: shortCurrency(item.amount)
+                        )
+                    }
+                }
+            }
+
+            Divider().opacity(0.25)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Modeled path to room")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(planStepVisuals) { step in
+                        BudgetPlanStepRow(
+                            step: step,
+                            maximum: largestPlanMagnitude,
+                            valueText: signedShortCurrency(step.amount)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private var investmentInfographic: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .center, spacing: 14) {
+                    BudgetAmountDonut(
+                        items: investmentVisuals,
+                        total: investmentTotal,
+                        centerValue: shortCurrency(investmentTotal),
+                        centerLabel: "Invest"
+                    )
+                    .frame(width: 120, height: 120)
+
+                    VStack(alignment: .leading, spacing: 7) {
+                        ForEach(investmentVisuals) { item in
+                            visualLegendRow(item, total: investmentTotal)
+                        }
+                    }
+                }
+
+                VStack(alignment: .leading, spacing: 10) {
+                    BudgetAmountDonut(
+                        items: investmentVisuals,
+                        total: investmentTotal,
+                        centerValue: shortCurrency(investmentTotal),
+                        centerLabel: "Invest"
+                    )
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 138)
+
+                    ForEach(investmentVisuals) { item in
+                        visualLegendRow(item, total: investmentTotal)
+                    }
+                }
+            }
+        }
+    }
+
+    private func visualLegendRow(_ item: BudgetVisualAmount, total: Double? = nil) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: item.systemImage)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(item.tint)
+                .frame(width: 18)
+
+            Text(item.title)
+                .font(.caption2.weight(.semibold))
+                .lineLimit(1)
+
+            Spacer(minLength: 4)
+
+            Text(shortCurrency(item.amount))
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .monospacedDigit()
+
+            if let total, total > 0 {
+                Text((item.amount / total).formatted(.percent.precision(.fractionLength(0))))
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+
+    private func signedShortCurrency(_ value: Double) -> String {
+        value >= 0 ? "+\(shortCurrency(value))" : shortCurrency(value)
+    }
+
+    private func shortCurrency(_ value: Double) -> String {
+        let sign = value < 0 ? "-" : ""
+        let amount = abs(value)
+        if amount >= 1_000_000 {
+            return "\(sign)$\(String(format: "%.1f", amount / 1_000_000))M"
+        }
+        if amount >= 1_000 {
+            return "\(sign)$\(String(format: "%.0f", amount / 1_000))K"
+        }
+        return value.formatted(.currency(code: "USD").precision(.fractionLength(0)))
     }
 
     var body: some View {
@@ -2805,13 +4165,13 @@ fileprivate struct HearingToolkitView: View {
                     summaryRow("20% healthcare premium contribution", value: BudgetRecommendations2027.healthcareContributionSavings)
                     summaryRow("Freeze exempt discretionary raises", value: BudgetRecommendations2027.exemptRaiseHoldSavings)
                     summaryRow("Freeze elected salary growth", value: BudgetRecommendations2027.electedRaiseHoldSavings)
-                    summaryRow("Overtime control target", value: BudgetRecommendations2027.overtimeControlSavings)
+                    summaryRow("Police Uniform OT recovery target", value: BudgetRecommendations2027.overtimeControlSavings)
                     summaryRow("1% civilian vacancy factor", value: BudgetRecommendations2027.civilianVacancyFactorSavings)
                     summaryRow("Targeted retirement refill control", value: BudgetRecommendations2027.targetedRetirementRefillSavings)
 
                     Text(mode == .resident
-                         ? "What this means in plain English: this is a phased savings package, not a promise that every dollar arrives in the first year. The overtime target is a management change, not a layoff target: Riverhead would need tighter scheduling, quarterly overtime recovery plans, and less reliance on unusually high OT as the baseline. The vacancy-factor and retirement-refill lines work the same way by using normal turnover and more selective backfilling, not broad staff cuts. Some items can be done by budget policy or management action right away, but any wider health-premium or work-rule change that touches represented employees may need bargaining, MOAs, or side letters."
-                         : "Interpret the personal-service offsets as a staged implementation package rather than a one-year certainty. Administrative items can move faster: exempt/elected pay restraint, written overtime plans, quarterly variance review, vacancy-factor discipline, and selective backfill control. Contract-sensitive items, especially any broader employee-premium contribution or work-rule change affecting represented staff, would likely require bargaining, MOAs, or side letters and may phase in over more than one budget cycle. The overtime line therefore reflects management recovery targets in Police, Highway, and other pressure points, not a service-level reduction assumption.")
+                         ? "What this means in plain English: this is a phased savings package, not a promise that every dollar arrives in the first year. The overtime target now starts with Police Uniform OT: 2024 actual spending was about $1.40M against a $1.0M budget, and the app models recovering $250K of that overrun through tighter scheduling and quarterly recovery review. The vacancy-factor and retirement-refill lines work the same way by using normal turnover and more selective backfilling, not broad staff cuts. Some items can be done by budget policy or management action right away, but any wider health-premium or work-rule change that touches represented employees may need bargaining, MOAs, or side letters."
+                         : "Interpret the personal-service offsets as a staged implementation package rather than a one-year certainty. Administrative items can move faster: exempt/elected pay restraint, Police Uniform OT cause coding, written overtime plans, quarterly variance review, vacancy-factor discipline, and selective backfill control. Contract-sensitive items, especially any broader employee-premium contribution or work-rule change affecting represented staff, would likely require bargaining, MOAs, or side letters and may phase in over more than one budget cycle. The overtime line reflects a recoverable portion of the 2024 Police Uniform OT overrun, not a service-level reduction assumption.")
                         .font(.caption)
                         .foregroundStyle(RiverheadTheme.textSecondary)
 
@@ -2838,6 +4198,15 @@ fileprivate struct HearingToolkitView: View {
             }
 
             GlassCard(
+                title: "2027 Infographic Snapshot",
+                subtitle: mode == .resident
+                    ? "A visual version of the suggestion package: what is growing, what offsets it, and what room remains."
+                    : "Charted view of payroll pressure, recurring offsets, revenue package, explicit investments, and resulting modeled room."
+            ) {
+                suggestionInfographicSnapshot
+            }
+
+            GlassCard(
                 title: "2027 Quick Read",
                 subtitle: mode == .resident
                     ? "A shorter way to understand the package before reading all the detailed line items."
@@ -2847,16 +4216,48 @@ fileprivate struct HearingToolkitView: View {
                     quickReadRow(
                         title: "What automatically gets more expensive",
                         detail: mode == .resident
-                            ? "Union and non-contract payroll already grow in the 2027 model before any new policy choice is made."
-                            : "Automatic payroll pressure of about $936.7K is already embedded before pension, health, or other operating pressure is layered in.",
+                            ? "Union and non-contract payroll already grow in the 2027 model, and published NYSLRS rates add a large pension increase before any new policy choice is made."
+                            : "Automatic payroll pressure of about $936.7K is already embedded, and published NYSLRS rates add a townwide pension-pressure range of about $1.4M to $1.85M.",
+                        tint: .orange
+                    )
+
+                    quickReadRow(
+                        title: "Will it pierce the tax cap?",
+                        detail: mode == .resident
+                            ? "Very possibly. A normal 2% levy increase produces about $973K, while the pension increase alone is estimated at $1.4M to $1.85M before other cost growth."
+                            : "The 2027 budget is headed toward an override conversation unless Riverhead offsets several hundred thousand dollars to more than $1M of recurring pressure through cuts, recurring revenue, fund-balance use, or tax-cap formula room.",
+                        tint: RiverheadTheme.brandCoral
+                    )
+
+                    quickReadRow(
+                        title: "How to counter the cap risk",
+                        detail: mode == .resident
+                            ? "The practical offset package starts with Police Uniform OT. Recovering part of the 2024 overrun, plus selective refill after retirements, a small vacancy factor, healthcare sharing for senior staff, raise holds, and better recurring fees or rentals, can cover several hundred thousand dollars and, with stronger cost recovery, just over $1M."
+                            : "A realistic recurring package is about $858K, including a $250K Police Uniform OT recovery target tied to the 2024 overrun, targeted retirement refill control, a 1% civilian vacancy factor, healthcare contribution policy, exempt/elected raise holds, and base recurring revenue adds. A $250K stretch target for fees, rentals, and service-cost recovery brings the package to roughly $1.1M.",
+                        tint: .green
+                    )
+
+                    quickReadRow(
+                        title: "Why Police OT is the first offset",
+                        detail: mode == .resident
+                            ? "Police Uniform OT came in about $401K over budget in 2024, while the adopted 2026 line still sits at $1.0M. But March workload was not down: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922. The app treats $250K as a recovery target only if the Town publishes monthly OT causes and manages scheduling tightly."
+                            : "Police Uniform OT actuals were $1.401M in 2024 versus a $1.0M budget, and the 2026 adopted baseline is still $1.0M. Recovering $250K would capture about \(BudgetRecommendations2027.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1)))) of the 2024 variance, but March activity data shows criminal incidents and total incidents up year over year. That makes cause coding and coverage constraints essential.",
+                        tint: RiverheadTheme.brandSky
+                    )
+
+                    quickReadRow(
+                        title: "March police workload check",
+                        detail: mode == .resident
+                            ? "The March report is mixed: domestic incidents stayed at 60, accidents fell to 114 from 123, and summonses fell to 1,042 from 1,076. That supports a targeted OT review, not a claim that Police can simply absorb less work."
+                            : "March 2026 activity: 167 criminal incidents, 2,994 total incidents, 60 domestic incidents, 114 accidents, and 1,042 summonses. Because the NIBRS transition was completed in July 2024, this is useful current workload context but should not be treated as a multi-year trend by itself.",
                         tint: .orange
                     )
 
                     quickReadRow(
                         title: "What the Town is trying to control",
                         detail: mode == .resident
-                            ? "The savings side leans on healthcare sharing, overtime discipline, ordinary turnover, and more selective refilling of vacancies."
-                            : "The offset package is built on healthcare contribution, overtime recovery, vacancy-factor relief, and targeted retirement-refill control rather than a broad staff reduction.",
+                            ? "The savings side leans on healthcare sharing, Police OT discipline, ordinary turnover, and more selective refilling of vacancies."
+                            : "The offset package is built on healthcare contribution, Police Uniform OT recovery, vacancy-factor relief, and targeted retirement-refill control rather than a broad staff reduction.",
                         tint: .green
                     )
 
@@ -2877,6 +4278,10 @@ fileprivate struct HearingToolkitView: View {
                     : "Policy/service additions layered on top of the baseline cost-pressure model."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
+                    investmentInfographic
+
+                    Divider().opacity(0.25)
+
                     ForEach(modeledInvestmentNotes, id: \.self) { idea in
                         bullet(idea)
                     }
@@ -3195,7 +4600,7 @@ fileprivate struct EmployeesHubSectionView: View {
                 title: "Gross Earnings Directory",
                 subtitle: mode == .resident
                     ? "Search by name or employee ID to see pay history from the Newsday earnings reports (2018–2023)."
-                    : "Filter by employment status, sort by pay, and drill into yearly regular vs. overtime breakdowns for all 1,821 employees on file."
+                    : "Filter by employment status and union, sort by pay, and drill into yearly regular vs. premium-pay breakdowns for 437 active employees and 1,145 deduplicated records on file."
             ) {
                 NavigationLink {
                     EmployeeDirectoryView()
@@ -3209,7 +4614,7 @@ fileprivate struct EmployeesHubSectionView: View {
                             Text("Open Employee Directory")
                                 .font(.subheadline.weight(.semibold))
                                 .foregroundStyle(RiverheadTheme.textPrimary)
-                            Text("1,821 employees · 2018–2023 · search by name or ID")
+                            Text("437 active employees · 1,145 deduplicated records · 2018–2023")
                                 .font(.caption)
                                 .foregroundStyle(RiverheadTheme.textSecondary)
                         }
@@ -3233,7 +4638,7 @@ fileprivate struct EmployeesHubSectionView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         expertBullet(
                             icon: "clock.badge.exclamationmark",
-                            text: "Overtime spikes — filter Active employees in PBA or SOA, sort by Highest Paid, and look for large OT-to-regular ratios."
+                            text: "Premium-pay spikes — filter PBA or SOA, sort by Highest Paid, and compare gross pay to regular pay."
                         )
                         Divider().opacity(0.2)
                         expertBullet(

@@ -37,11 +37,17 @@ enum BudgetAudienceMode: String, CaseIterable, Identifiable {
 /// High-level sections shown in the RiverheadBudgetHubView.
 enum BudgetSection: String, CaseIterable, Identifiable {
     case overview
+    case supplementExplorer
+    case budget2027Summary
+    case proposed2027Budget
+    case budget2027
+    case executiveSummary
     case myTaxes
     case fundBalance
     case capitalDebt
     case outliers
     case employees  // Newsday gross earnings directory (2018–2023)
+    case tools
     case glossary
     case hearing
 
@@ -51,11 +57,17 @@ enum BudgetSection: String, CaseIterable, Identifiable {
     var label: String {
         switch self {
         case .overview:    return "Overview"
+        case .supplementExplorer: return "Supplement"
+        case .budget2027Summary: return "2027 Summary"
+        case .proposed2027Budget: return "Proposal"
+        case .budget2027: return "2027 Lab"
+        case .executiveSummary: return "Exec Summary"
         case .myTaxes:     return "My Taxes"
         case .fundBalance: return "Fund Balance"
         case .capitalDebt: return "Capital & Debt"
         case .outliers:    return "Outliers"
         case .employees:   return "Employees"
+        case .tools:       return "More Tools"
         case .glossary:    return "Glossary"
         case .hearing:     return "Hearing Toolkit"
         }
@@ -65,11 +77,17 @@ enum BudgetSection: String, CaseIterable, Identifiable {
     var symbolName: String {
         switch self {
         case .overview:    return "chart.pie.fill"
+        case .supplementExplorer: return "doc.text.magnifyingglass"
+        case .budget2027Summary: return "pencil.and.outline"
+        case .proposed2027Budget: return "doc.text.magnifyingglass"
+        case .budget2027: return "slider.horizontal.below.sun.max.fill"
+        case .executiveSummary: return "chart.xyaxis.line"
         case .myTaxes:     return "house.and.flag.fill"
         case .fundBalance: return "banknote.fill"
         case .capitalDebt: return "building.columns.fill"
         case .outliers:    return "exclamationmark.triangle.fill"
         case .employees:   return "person.2.fill"
+        case .tools:       return "square.grid.2x2.fill"
         case .glossary:    return "text.book.closed.fill"
         case .hearing:     return "person.2.wave.2.fill"
         }

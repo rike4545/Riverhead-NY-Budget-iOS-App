@@ -27,6 +27,7 @@ struct CivicToolkitsHubView: View {
     @State private var query: String = ""
     @State private var selectedBroadband: SelectedBroadbandIssue?
     @State private var showCopiedToast: Bool = false
+    @Environment(\.colorScheme) private var scheme
 
     // MARK: - Types
 
@@ -138,6 +139,12 @@ struct CivicToolkitsHubView: View {
                 }
 
                 NavigationLink {
+                    ProcurementPolicyWatchView()
+                } label: {
+                    Label("Procurement Watch", systemImage: "doc.text.magnifyingglass")
+                }
+
+                NavigationLink {
                     LegalDefamationAnalysisView()
                 } label: {
                     Label("Defamation Risk Analysis", systemImage: "exclamationmark.bubble")
@@ -223,6 +230,9 @@ struct CivicToolkitsHubView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
+        .tint(RiverheadTheme.accent)
         .navigationTitle("Toolkits")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $query, prompt: "Search broadband issues…")
@@ -282,18 +292,20 @@ struct CivicToolkitsHubView: View {
             HStack(spacing: 10) {
                 ZStack {
                     Circle()
-                        .fill(Color.primary.opacity(0.08))
+                        .fill(Color.white.opacity(0.18))
                         .frame(width: 44, height: 44)
                     Image(systemName: "person.2.badge.gearshape")
                         .font(.title3.weight(.semibold))
+                        .foregroundStyle(Color.white)
                 }
 
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Resident-friendly tools")
                         .font(.headline.weight(.semibold))
+                        .foregroundStyle(Color.white)
                     Text("Quick access to civic toolkit, maps, issue tracking, and process improvement.")
                         .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.white.opacity(0.82))
                 }
             }
 
@@ -304,8 +316,13 @@ struct CivicToolkitsHubView: View {
             }
         }
         .padding(14)
-        .background(.thinMaterial)
+        .background(RiverheadTheme.headerGradient)
+        .overlay {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.18), lineWidth: 1)
+        }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .shadow(color: RiverheadTheme.cardShadow(scheme, elevated: true), radius: 14, x: 0, y: 8)
     }
 
     private func deleteBroadbandRows(at offsets: IndexSet) {
@@ -334,8 +351,8 @@ struct CivicToolkitsHubView: View {
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
-            .background(Color.primary.opacity(0.06))
-            .foregroundStyle(.secondary)
+            .background(Color.white.opacity(0.16))
+            .foregroundStyle(Color.white.opacity(0.9))
             .clipShape(Capsule())
         }
     }

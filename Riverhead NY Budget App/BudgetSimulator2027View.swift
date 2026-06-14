@@ -1,161 +1,53 @@
 import SwiftUI
 
-fileprivate struct FY27ChangeGroup: Identifiable {
-    let title: String
-    let subtitle: String
-    let lines: [FY27ChangeLine]
-
-    var id: String { title }
-}
-
 @MainActor
 struct BudgetSimulator2027View: View {
     @Environment(RBBudgetStore.self) private var store
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    @State private var levyGrowthPercent: Double = Budget2027ScenarioModel.defaultLevyGrowthPercent
-    @State private var recurringRevenueAdds: Double = Budget2027ScenarioModel.defaultRecurringRevenueAddsExcludingLevy
-    @State private var otherRecurringPressure: Double = Budget2027ScenarioModel.defaultOtherRecurringPressure
-    @State private var recurringSavings: Double = Budget2027ScenarioModel.defaultRecurringSavings
-    @State private var automaticCOLAPercent: Double = Budget2027ScenarioModel.defaultAutomaticCOLAPercent
-    @State private var includeBuildingDepartmentInvestment: Bool = true
-    @State private var includeOnlinePlatformInvestment: Bool = true
-    @State private var includeTownClerkInvestment: Bool = true
-    @State private var additionalCodeEnforcementOfficers: Double = 2
-    @State private var additionalPoliceOfficers: Double = 2
-    @State private var includeElectedRaisePackage: Bool = false
-    @State private var includeCapitalFleetPurchase: Bool = true
-    @State private var activeStage: BudgetFlowStage = .overview
-    @State private var reserveTargetPercent: Double = 28.8
-    @State private var oneTimeDeployment: Double = 0
-    @State private var sampleAssessment: Double = 450_000
-
-    private enum ScenarioPreset: String, CaseIterable, Identifiable {
-        case holdLine
-        case recommended
-        case serviceBuildout
-
-        var id: String { rawValue }
-
-        var title: String {
-            switch self {
-            case .holdLine: return "Hold line"
-            case .recommended: return "Best plan"
-            case .serviceBuildout: return "Service buildout"
-            }
-        }
-
-        var detail: String {
-            switch self {
-            case .holdLine: return "Lower levy, lower expansion, tighter reserve use."
-            case .recommended: return "Best-practice recurring package with service investments protected."
-            case .serviceBuildout: return "Carries more staffing and pressure openly."
-            }
-        }
-    }
-
-    private enum BudgetFlowStage: String, CaseIterable, Identifiable {
-        case overview
-        case recurring
-        case oneTime
-        case result
-
-        var id: String { rawValue }
-
-        var title: String {
-            switch self {
-            case .overview: return "1. Starting point"
-            case .recurring: return "2. Recurring plan"
-            case .oneTime: return "3. Capital & reserves"
-            case .result: return "4. Read the result"
-            }
-        }
-
-        var shortTitle: String {
-            switch self {
-            case .overview: return "Start"
-            case .recurring: return "Recurring"
-            case .oneTime: return "Capital"
-            case .result: return "Result"
-            }
-        }
-
-        var detail: String {
-            switch self {
-            case .overview: return "See the baseline and the current FY27 package before changing anything."
-            case .recurring: return "Adjust taxes, savings, labor growth, and service investments."
-            case .oneTime: return "Test the fleet purchase, reserve target, and any one-time support."
-            case .result: return "Read whether the package is structurally balanced and what it means."
-            }
-        }
-
-        var systemImage: String {
-            switch self {
-            case .overview: return "list.clipboard.fill"
-            case .recurring: return "slider.horizontal.3"
-            case .oneTime: return "car.side.fill"
-            case .result: return "checkmark.seal.fill"
-            }
-        }
-    }
-
-    private var colaBreakout: Budget2027ScenarioModel.COLABreakout {
-        Budget2027ScenarioModel.colaBreakout(percent: automaticCOLAPercent / 100)
-    }
-
-    private var automaticPayrollPressure: Double {
-        colaBreakout.totalAutomaticPressure
-    }
-
-    private var modeledUnionPressure: Double {
-        colaBreakout.unionPressure
-    }
-
-    private var modeledNonContractCOLAPressure: Double {
-        colaBreakout.nonContractPressure
-    }
+    @State private var sim = Budget2027SimulatorState()
 
     private var exactFY27Changes: [FY27ChangeLine] {
         var lines: [FY27ChangeLine] = [
             .init(
                 title: "CSEA 2027 wage action",
-                valueText: colaBreakout.cseaPressure.formatted(.currency(code: "USD")),
+                valueText: sim.colaBreakout.cseaPressure.formatted(.currency(code: "USD")),
                 detail: "Fixed approved action of +2.5% plus $1,000 in 2027."
             ),
             .init(
                 title: "PBA / SOA / non-contract fallback growth",
-                valueText: (colaBreakout.pbaPressure + colaBreakout.soaPressure + colaBreakout.nonContractPressure).formatted(.currency(code: "USD")),
-                detail: "Modeled at \(String(format: "%.1f%%", automaticCOLAPercent)) for post-2026 fallback planning."
+                valueText: (sim.colaBreakout.pbaPressure + sim.colaBreakout.soaPressure + sim.colaBreakout.nonContractPressure).formatted(.currency(code: "USD")),
+                detail: "Modeled at \(String(format: "%.1f%%", sim.automaticCOLAPercent)) for post-2026 fallback planning."
             ),
             .init(
                 title: "Recurring levy growth",
                 valueText: levyYield.formatted(.currency(code: "USD")),
-                detail: "Illustrative levy growth set at \(String(format: "%.1f%%", levyGrowthPercent))."
+                detail: "Illustrative levy growth set at \(String(format: "%.1f%%", sim.levyGrowthPercent))."
             ),
             .init(
                 title: "Other recurring revenue adds",
-                valueText: recurringRevenueAdds.formatted(.currency(code: "USD")),
+                valueText: sim.recurringRevenueAdds.formatted(.currency(code: "USD")),
                 detail: "Fees, rentals, and other recurring non-levy adds."
             ),
             .init(
                 title: "Recurring savings package",
-                valueText: recurringSavings.formatted(.currency(code: "USD")),
+                valueText: sim.recurringSavings.formatted(.currency(code: "USD")),
                 detail: "Healthcare, overtime, vacancy, and refill discipline package."
             )
         ]
 
-        if otherRecurringPressure > 0 {
+        if sim.otherRecurringPressure > 0 {
             lines.append(
                 .init(
                     title: "Other recurring operating pressure",
-                    valueText: otherRecurringPressure.formatted(.currency(code: "USD")),
+                    valueText: sim.otherRecurringPressure.formatted(.currency(code: "USD")),
                     detail: "Insurance, pension, utility, or other non-payroll pressure carried in the scenario."
                 )
             )
         }
 
-        if includeBuildingDepartmentInvestment {
+        if sim.includeBuildingDepartmentInvestment {
             lines.append(
                 .init(
                     title: "Building Department staffing investment",
@@ -165,7 +57,7 @@ struct BudgetSimulator2027View: View {
             )
         }
 
-        if includeOnlinePlatformInvestment {
+        if sim.includeOnlinePlatformInvestment {
             lines.append(
                 .init(
                     title: "Online platform modernization",
@@ -175,7 +67,7 @@ struct BudgetSimulator2027View: View {
             )
         }
 
-        if includeTownClerkInvestment {
+        if sim.includeTownClerkInvestment {
             lines.append(
                 .init(
                     title: "Town Clerk staffing investment",
@@ -185,22 +77,22 @@ struct BudgetSimulator2027View: View {
             )
         }
 
-        if additionalCodeEnforcementOfficers > 0 {
+        if sim.additionalCodeEnforcementOfficers > 0 {
             lines.append(
                 .init(
                     title: "Additional Code Enforcement Officers",
-                    valueText: (Double(Int(additionalCodeEnforcementOfficers)) * Budget2027ScenarioModel.codeEnforcementOfficerCost).formatted(.currency(code: "USD")),
-                    detail: "\(Int(additionalCodeEnforcementOfficers)) officer(s) in the FY27 recurring package."
+                    valueText: (Double(Int(sim.additionalCodeEnforcementOfficers)) * Budget2027ScenarioModel.codeEnforcementOfficerCost).formatted(.currency(code: "USD")),
+                    detail: "\(Int(sim.additionalCodeEnforcementOfficers)) officer(s) in the FY27 recurring package."
                 )
             )
         }
 
-        if additionalPoliceOfficers > 0 {
+        if sim.additionalPoliceOfficers > 0 {
             lines.append(
                 .init(
                     title: "Additional police officers",
-                    valueText: (Double(Int(additionalPoliceOfficers)) * Budget2027ScenarioModel.policeOfficerCost).formatted(.currency(code: "USD")),
-                    detail: "\(Int(additionalPoliceOfficers)) officer(s) in the FY27 recurring package."
+                    valueText: (Double(Int(sim.additionalPoliceOfficers)) * Budget2027ScenarioModel.policeOfficerCost).formatted(.currency(code: "USD")),
+                    detail: "\(Int(sim.additionalPoliceOfficers)) officer(s) in the FY27 recurring package."
                 )
             )
         }
@@ -208,8 +100,8 @@ struct BudgetSimulator2027View: View {
         lines.append(
             .init(
                 title: "Supervisor + Town Board raise package",
-                valueText: includeElectedRaisePackage ? electedRaisePackageCost.formatted(.currency(code: "USD")) : "$0",
-                detail: includeElectedRaisePackage
+                valueText: sim.includeElectedRaisePackage ? sim.electedRaisePackageCost.formatted(.currency(code: "USD")) : "$0",
+                detail: sim.includeElectedRaisePackage
                     ? "Included as a discretionary elected-pay package."
                     : "Held out of the FY27 baseline in the best-plan version."
             )
@@ -218,8 +110,8 @@ struct BudgetSimulator2027View: View {
         lines.append(
             .init(
                 title: "Planned capital fleet purchase",
-                valueText: includeCapitalFleetPurchase ? capitalFleetPurchaseCost.formatted(.currency(code: "USD")) : "$0",
-                detail: includeCapitalFleetPurchase
+                valueText: sim.includeCapitalFleetPurchase ? sim.capitalFleetPurchaseCost.formatted(.currency(code: "USD")) : "$0",
+                detail: sim.includeCapitalFleetPurchase
                     ? "Four planned vehicles at $84,000 each: two for Building and two for Code Enforcement."
                     : "No building/code fleet purchase is currently included."
             )
@@ -288,19 +180,19 @@ struct BudgetSimulator2027View: View {
                     .init(
                         title: "Approved CSEA wage action",
                         detail: "+2.5% plus $1,000 for 2027.",
-                        amount: colaBreakout.cseaPressure,
+                        amount: sim.colaBreakout.cseaPressure,
                         direction: .cost
                     ),
                     .init(
                         title: "PBA / SOA fallback growth",
                         detail: "Planning growth tied to the selected fallback COLA.",
-                        amount: colaBreakout.pbaPressure + colaBreakout.soaPressure,
+                        amount: sim.colaBreakout.pbaPressure + sim.colaBreakout.soaPressure,
                         direction: .cost
                     ),
                     .init(
                         title: "Non-contract COLA pressure",
                         detail: "Automatic salary adjustment for non-contract positions.",
-                        amount: colaBreakout.nonContractPressure,
+                        amount: sim.colaBreakout.nonContractPressure,
                         direction: .cost
                     )
                 ]
@@ -315,20 +207,20 @@ struct BudgetSimulator2027View: View {
                 rows: [
                     .init(
                         title: "Levy growth in the scenario",
-                        detail: "Illustrative recurring tax-levy support at \(String(format: "%.1f%%", levyGrowthPercent)).",
+                        detail: "Illustrative recurring tax-levy support at \(String(format: "%.1f%%", sim.levyGrowthPercent)).",
                         amount: levyYield,
                         direction: .offset
                     ),
                     .init(
                         title: "Other recurring revenue adds",
                         detail: "Fees, rentals, and other non-levy recurring support.",
-                        amount: recurringRevenueAdds,
+                        amount: sim.recurringRevenueAdds,
                         direction: .offset
                     ),
                     .init(
                         title: "Recurring savings package",
                         detail: "Healthcare, overtime, vacancy, and refill discipline.",
-                        amount: recurringSavings,
+                        amount: sim.recurringSavings,
                         direction: .offset
                     )
                 ]
@@ -336,7 +228,7 @@ struct BudgetSimulator2027View: View {
         )
 
         var serviceRows: [BudgetShowcaseRow] = []
-        if includeBuildingDepartmentInvestment {
+        if sim.includeBuildingDepartmentInvestment {
             serviceRows.append(
                 .init(
                     title: "Building Department staffing",
@@ -346,7 +238,7 @@ struct BudgetSimulator2027View: View {
                 )
             )
         }
-        if includeOnlinePlatformInvestment {
+        if sim.includeOnlinePlatformInvestment {
             serviceRows.append(
                 .init(
                     title: "Online platform modernization",
@@ -356,7 +248,7 @@ struct BudgetSimulator2027View: View {
                 )
             )
         }
-        if includeTownClerkInvestment {
+        if sim.includeTownClerkInvestment {
             serviceRows.append(
                 .init(
                     title: "Town Clerk staffing",
@@ -366,22 +258,22 @@ struct BudgetSimulator2027View: View {
                 )
             )
         }
-        if additionalCodeEnforcementOfficers > 0 {
+        if sim.additionalCodeEnforcementOfficers > 0 {
             serviceRows.append(
                 .init(
                     title: "Code Enforcement expansion",
-                    detail: "\(Int(additionalCodeEnforcementOfficers)) officer(s) added in the scenario.",
-                    amount: Double(Int(additionalCodeEnforcementOfficers)) * Budget2027ScenarioModel.codeEnforcementOfficerCost,
+                    detail: "\(Int(sim.additionalCodeEnforcementOfficers)) officer(s) added in the scenario.",
+                    amount: Double(Int(sim.additionalCodeEnforcementOfficers)) * Budget2027ScenarioModel.codeEnforcementOfficerCost,
                     direction: .investment
                 )
             )
         }
-        if additionalPoliceOfficers > 0 {
+        if sim.additionalPoliceOfficers > 0 {
             serviceRows.append(
                 .init(
                     title: "Police staffing expansion",
-                    detail: "\(Int(additionalPoliceOfficers)) officer(s) added in the scenario.",
-                    amount: Double(Int(additionalPoliceOfficers)) * Budget2027ScenarioModel.policeOfficerCost,
+                    detail: "\(Int(sim.additionalPoliceOfficers)) officer(s) added in the scenario.",
+                    amount: Double(Int(sim.additionalPoliceOfficers)) * Budget2027ScenarioModel.policeOfficerCost,
                     direction: .investment
                 )
             )
@@ -400,13 +292,13 @@ struct BudgetSimulator2027View: View {
         var policyRows: [BudgetShowcaseRow] = [
             .init(
                 title: "Building / Code vehicle purchase",
-                detail: includeCapitalFleetPurchase ? "Four planned capital vehicles: two for Building and two for Code Enforcement." : "No one-time fleet purchase in the current package.",
-                amount: capitalFleetPurchaseCost,
+                detail: sim.includeCapitalFleetPurchase ? "Four planned capital vehicles: two for Building and two for Code Enforcement." : "No one-time fleet purchase in the current package.",
+                amount: sim.capitalFleetPurchaseCost,
                 direction: .guardrail
             ),
             .init(
                 title: "Reserve target",
-                detail: "Ending reserve policy target set at \(String(format: "%.1f%%", reserveTargetPercent)).",
+                detail: "Ending reserve policy target set at \(String(format: "%.1f%%", sim.reserveTargetPercent)).",
                 amount: targetReserveDollars,
                 direction: .guardrail
             ),
@@ -421,18 +313,18 @@ struct BudgetSimulator2027View: View {
         policyRows.append(
             .init(
                 title: "Supervisor + Town Board raise package",
-                detail: includeElectedRaisePackage ? "Included as a discretionary recurring add." : "Held out of the baseline best-plan package.",
-                amount: electedRaisePackageCost,
+                detail: sim.includeElectedRaisePackage ? "Included as a discretionary recurring add." : "Held out of the baseline best-plan package.",
+                amount: sim.electedRaisePackageCost,
                 direction: .guardrail
             )
         )
 
-        if otherRecurringPressure > 0 {
+        if sim.otherRecurringPressure > 0 {
             policyRows.insert(
                 .init(
                     title: "Other operating pressure",
                     detail: "Insurance, pension, utility, or other recurring non-payroll pressure.",
-                    amount: otherRecurringPressure,
+                    amount: sim.otherRecurringPressure,
                     direction: .cost
                 ),
                 at: 0
@@ -451,33 +343,6 @@ struct BudgetSimulator2027View: View {
         return sections
     }
 
-    private var additionalRecurringInvestments: Double {
-        var total = 0.0
-
-        if includeBuildingDepartmentInvestment {
-            total += Budget2027ScenarioModel.buildingDepartmentHeadcountInvestment
-        }
-        if includeOnlinePlatformInvestment {
-            total += Budget2027ScenarioModel.onlinePlatformUpdateCost
-        }
-        if includeTownClerkInvestment {
-            total += Budget2027ScenarioModel.deputyTownClerkCost
-        }
-
-        total += Double(Int(additionalCodeEnforcementOfficers)) * Budget2027ScenarioModel.codeEnforcementOfficerCost
-        total += Double(Int(additionalPoliceOfficers)) * Budget2027ScenarioModel.policeOfficerCost
-
-        return total
-    }
-
-    private var electedRaisePackageCost: Double {
-        includeElectedRaisePackage ? Budget2027ScenarioModel.electedRaisePackageCost : 0
-    }
-
-    private var capitalFleetPurchaseCost: Double {
-        includeCapitalFleetPurchase ? Budget2027ScenarioModel.plannedFleetPurchaseCost : 0
-    }
-
     private var maxReserveTargetPercent: Double {
         max(currentReservePercent, 15)
     }
@@ -492,19 +357,15 @@ struct BudgetSimulator2027View: View {
     }
 
     private var levyYield: Double {
-        currentLevyEstimate * (levyGrowthPercent / 100)
-    }
-
-    private var totalRecurringUses: Double {
-        automaticPayrollPressure + otherRecurringPressure + additionalRecurringInvestments + electedRaisePackageCost
+        currentLevyEstimate * (sim.levyGrowthPercent / 100)
     }
 
     private var totalRecurringOffsets: Double {
-        levyYield + recurringRevenueAdds + recurringSavings
+        levyYield + sim.recurringRevenueAdds + sim.recurringSavings
     }
 
     private var recurringBalance: Double {
-        totalRecurringOffsets - totalRecurringUses
+        totalRecurringOffsets - sim.totalRecurringUses
     }
 
     private var recurringGapMagnitude: Double {
@@ -512,7 +373,7 @@ struct BudgetSimulator2027View: View {
     }
 
     private var targetReserveDollars: Double {
-        store.appropriations * (reserveTargetPercent / 100)
+        store.appropriations * (sim.reserveTargetPercent / 100)
     }
 
     private var availableOneTimeRoom: Double {
@@ -520,15 +381,15 @@ struct BudgetSimulator2027View: View {
     }
 
     private var deployableOneTimeRoomAfterCapital: Double {
-        max(availableOneTimeRoom - capitalFleetPurchaseCost, 0)
+        max(availableOneTimeRoom - sim.capitalFleetPurchaseCost, 0)
     }
 
     private var appliedOneTimeDeployment: Double {
-        min(oneTimeDeployment, deployableOneTimeRoomAfterCapital)
+        min(sim.oneTimeDeployment, deployableOneTimeRoomAfterCapital)
     }
 
     private var endingReserveDollars: Double {
-        max(store.estimatedFundBalance - appliedOneTimeDeployment - capitalFleetPurchaseCost, 0)
+        max(store.estimatedFundBalance - appliedOneTimeDeployment - sim.capitalFleetPurchaseCost, 0)
     }
 
     private var endingReservePercent: Double {
@@ -545,8 +406,8 @@ struct BudgetSimulator2027View: View {
     }
 
     private var recurringCoverageRatio: Double {
-        guard totalRecurringUses > 0 else { return 1 }
-        return min(max(totalRecurringOffsets / totalRecurringUses, 0), 2)
+        guard sim.totalRecurringUses > 0 else { return 1 }
+        return min(max(totalRecurringOffsets / sim.totalRecurringUses, 0), 2)
     }
 
     private var oneTimeCoverageRatio: Double {
@@ -555,13 +416,13 @@ struct BudgetSimulator2027View: View {
     }
 
     private var sampleTownTaxChange: Double {
-        let deltaRate = store.ratePerThousand * (levyGrowthPercent / 100)
-        return (sampleAssessment / 1_000) * deltaRate
+        let deltaRate = store.ratePerThousand * (sim.levyGrowthPercent / 100)
+        return (sim.sampleAssessment / 1_000) * deltaRate
     }
 
     private var sampleTownTaxChangePer100k: Double {
-        guard sampleAssessment > 0 else { return 0 }
-        return sampleTownTaxChange / (sampleAssessment / 100_000)
+        guard sim.sampleAssessment > 0 else { return 0 }
+        return sampleTownTaxChange / (sim.sampleAssessment / 100_000)
     }
 
     private var isCompactPhoneLayout: Bool {
@@ -616,21 +477,11 @@ struct BudgetSimulator2027View: View {
         return .gap
     }
 
-    private var serviceInvestmentCount: Int {
-        var count = 0
-        if includeBuildingDepartmentInvestment { count += 1 }
-        if includeOnlinePlatformInvestment { count += 1 }
-        if includeTownClerkInvestment { count += 1 }
-        count += Int(additionalCodeEnforcementOfficers)
-        count += Int(additionalPoliceOfficers)
-        return count
-    }
-
     private var fiscalConditionStatus: FiscalConditionStatus {
         if recurringBalance < 0 && appliedOneTimeDeployment < recurringGapMagnitude {
             return .warning
         }
-        if recurringBalance < 0 || endingReservePercent < reserveTargetPercent || appliedOneTimeDeployment > 0 {
+        if recurringBalance < 0 || endingReservePercent < sim.reserveTargetPercent || appliedOneTimeDeployment > 0 {
             return .watch
         }
         return .stable
@@ -659,13 +510,13 @@ struct BudgetSimulator2027View: View {
     }
 
     private var reserveIndicator: FiscalConditionIndicator {
-        if endingReservePercent >= reserveTargetPercent + 2 {
+        if endingReservePercent >= sim.reserveTargetPercent + 2 {
             return .init(
                 title: "Reserve resilience",
                 status: .stable,
                 detail: "Ending reserves stay above target at \(String(format: "%.1f%%", endingReservePercent)) of appropriations."
             )
-        } else if endingReservePercent >= reserveTargetPercent {
+        } else if endingReservePercent >= sim.reserveTargetPercent {
             return .init(
                 title: "Reserve resilience",
                 status: .watch,
@@ -709,7 +560,7 @@ struct BudgetSimulator2027View: View {
     }
 
     private var serviceIndicator: FiscalConditionIndicator {
-        if additionalRecurringInvestments == 0 {
+        if sim.additionalRecurringInvestments == 0 {
             return .init(
                 title: "Service commitments",
                 status: .watch,
@@ -719,19 +570,19 @@ struct BudgetSimulator2027View: View {
             return .init(
                 title: "Service commitments",
                 status: .stable,
-                detail: "The plan openly carries \(serviceInvestmentCount) named investment choices while staying recurring-balanced."
+                detail: "The plan openly carries \(sim.serviceInvestmentCount) named investment choices while staying recurring-balanced."
             )
         } else {
             return .init(
                 title: "Service commitments",
                 status: .watch,
-                detail: "The plan carries \(serviceInvestmentCount) named investment choices, but the recurring funding base is not yet fully supporting them."
+                detail: "The plan carries \(sim.serviceInvestmentCount) named investment choices, but the recurring funding base is not yet fully supporting them."
             )
         }
     }
 
     private var electedPayIndicator: FiscalConditionIndicator {
-        if !includeElectedRaisePackage {
+        if !sim.includeElectedRaisePackage {
             return .init(
                 title: "Elected pay package",
                 status: .stable,
@@ -741,13 +592,13 @@ struct BudgetSimulator2027View: View {
             return .init(
                 title: "Elected pay package",
                 status: .watch,
-                detail: "The scenario can still carry the modeled elected-pay package of \(electedRaisePackageCost.formatted(.currency(code: "USD"))) a year, but it is a discretionary choice that should be disclosed separately."
+                detail: "The scenario can still carry the modeled elected-pay package of \(sim.electedRaisePackageCost.formatted(.currency(code: "USD"))) a year, but it is a discretionary choice that should be disclosed separately."
             )
         } else {
             return .init(
                 title: "Elected pay package",
                 status: .warning,
-                detail: "The modeled elected-pay package of \(electedRaisePackageCost.formatted(.currency(code: "USD"))) is being tested while the recurring plan is not fully balanced."
+                detail: "The modeled elected-pay package of \(sim.electedRaisePackageCost.formatted(.currency(code: "USD"))) is being tested while the recurring plan is not fully balanced."
             )
         }
     }
@@ -762,39 +613,14 @@ struct BudgetSimulator2027View: View {
         ]
     }
 
-    private var activeStageSummaryTitle: String {
-        switch activeStage {
-        case .overview:
-            return "Start with the baseline"
-        case .recurring:
-            return "Build the recurring package"
-        case .oneTime:
-            return "Handle capital and reserves separately"
-        case .result:
-            return "Read the fiscal signal"
-        }
-    }
-
-    private var activeStageSummaryDetail: String {
-        switch activeStage {
-        case .overview:
-            return "This step shows Riverhead's starting budget posture and the current FY27 package in plain English before any policy changes."
-        case .recurring:
-            return "This is where the real structural work happens: levy choices, recurring savings, recurring revenue, and recurring service commitments."
-        case .oneTime:
-            return "This step keeps one-time decisions honest by separating the fleet purchase and reserve deployment from the recurring operating test."
-        case .result:
-            return "This final step shows whether the scenario actually holds together and what warning signs remain."
-        }
-    }
-
     var body: some View {
+        @Bindable var sim = sim
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 heroCard
                 flowNavigatorCard
 
-                switch activeStage {
+                switch sim.activeStage {
                 case .overview:
                     baselineCard
                     planShowcaseCard
@@ -820,12 +646,12 @@ struct BudgetSimulator2027View: View {
         .navigationTitle("2027 Simulator")
         .navigationBarTitleDisplayMode(.inline)
         .adMobBannerPlacement(showDebugPlaceholder: true)
-        .onChange(of: reserveTargetPercent) { _, newValue in
+        .onChange(of: sim.reserveTargetPercent) { _, newValue in
             let updatedRoom = max(store.estimatedFundBalance - (store.appropriations * (newValue / 100)), 0)
-            oneTimeDeployment = min(oneTimeDeployment, updatedRoom)
+            sim.oneTimeDeployment = min(sim.oneTimeDeployment, updatedRoom)
         }
-        .onChange(of: includeCapitalFleetPurchase) { _, _ in
-            oneTimeDeployment = min(oneTimeDeployment, deployableOneTimeRoomAfterCapital)
+        .onChange(of: sim.includeCapitalFleetPurchase) { _, _ in
+            sim.oneTimeDeployment = min(sim.oneTimeDeployment, deployableOneTimeRoomAfterCapital)
         }
     }
 
@@ -957,10 +783,10 @@ struct BudgetSimulator2027View: View {
             }
 
             VStack(alignment: .leading, spacing: 8) {
-                summaryRow("Automatic 2027 payroll pressure", value: automaticPayrollPressure)
-                summaryRow("Union salary pressure inside that total", value: modeledUnionPressure)
-                summaryRow("Approved CSEA 2027 action", value: colaBreakout.cseaPressure)
-                summaryRow("Non-contract COLA pressure", value: modeledNonContractCOLAPressure)
+                summaryRow("Automatic 2027 payroll pressure", value: sim.automaticPayrollPressure)
+                summaryRow("Union salary pressure inside that total", value: sim.modeledUnionPressure)
+                summaryRow("Approved CSEA 2027 action", value: sim.colaBreakout.cseaPressure)
+                summaryRow("Non-contract COLA pressure", value: sim.modeledNonContractCOLAPressure)
                 summaryRow("Published-rate pension pressure", value: Budget2027PensionPressureModel.midpointIncrease)
             }
 
@@ -998,7 +824,7 @@ struct BudgetSimulator2027View: View {
                 HStack(spacing: 10) {
                     ForEach(BudgetFlowStage.allCases) { stage in
                         Button {
-                            activeStage = stage
+                            sim.activeStage = stage
                         } label: {
                             HStack(spacing: 8) {
                                 Image(systemName: stage.systemImage)
@@ -1010,13 +836,13 @@ struct BudgetSimulator2027View: View {
                             .padding(.vertical, 10)
                             .background(
                                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                    .fill(activeStage == stage ? RiverheadTheme.accent.opacity(0.18) : RiverheadTheme.Surface.inset)
+                                    .fill(sim.activeStage == stage ? RiverheadTheme.accent.opacity(0.18) : RiverheadTheme.Surface.inset)
                             )
                             .overlay(
                                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                    .stroke(activeStage == stage ? RiverheadTheme.accent.opacity(0.45) : RiverheadTheme.softBorder, lineWidth: 1)
+                                    .stroke(sim.activeStage == stage ? RiverheadTheme.accent.opacity(0.45) : RiverheadTheme.softBorder, lineWidth: 1)
                             )
-                            .foregroundStyle(activeStage == stage ? RiverheadTheme.accent : RiverheadTheme.textPrimary)
+                            .foregroundStyle(sim.activeStage == stage ? RiverheadTheme.accent : RiverheadTheme.textPrimary)
                         }
                         .buttonStyle(.plain)
                     }
@@ -1025,18 +851,18 @@ struct BudgetSimulator2027View: View {
             }
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(activeStageSummaryTitle)
+                Text(sim.activeStageSummaryTitle)
                     .font(.headline)
 
-                Text(activeStageSummaryDetail)
+                Text(sim.activeStageSummaryDetail)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
 
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(BudgetFlowStage.allCases) { stage in
                         HStack(alignment: .top, spacing: 10) {
-                            Image(systemName: activeStage == stage ? "checkmark.circle.fill" : stage.systemImage)
-                                .foregroundStyle(activeStage == stage ? RiverheadTheme.accent : .secondary)
+                            Image(systemName: sim.activeStage == stage ? "checkmark.circle.fill" : stage.systemImage)
+                                .foregroundStyle(sim.activeStage == stage ? RiverheadTheme.accent : .secondary)
                                 .frame(width: 18)
 
                             VStack(alignment: .leading, spacing: 2) {
@@ -1048,7 +874,7 @@ struct BudgetSimulator2027View: View {
                             }
                         }
                         .padding(10)
-                        .background(activeStage == stage ? RiverheadTheme.accent.opacity(0.08) : RiverheadTheme.Surface.inset.opacity(0.85))
+                        .background(sim.activeStage == stage ? RiverheadTheme.accent.opacity(0.08) : RiverheadTheme.Surface.inset.opacity(0.85))
                         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                 }
@@ -1056,14 +882,14 @@ struct BudgetSimulator2027View: View {
                 HStack(spacing: 10) {
                     if let previousStage = previousStage {
                         Button("Back", systemImage: "chevron.left") {
-                            activeStage = previousStage
+                            sim.activeStage = previousStage
                         }
                         .buttonStyle(.bordered)
                     }
 
                     if let nextStage = nextStage {
                         Button("Continue", systemImage: "chevron.right") {
-                            activeStage = nextStage
+                            sim.activeStage = nextStage
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(RiverheadTheme.accent)
@@ -1081,7 +907,7 @@ struct BudgetSimulator2027View: View {
 
                 ForEach(ScenarioPreset.allCases) { preset in
                     Button {
-                        applyScenarioPreset(preset)
+                        sim.applyScenarioPreset(preset, currentReservePercent: currentReservePercent, maxReserveTargetPercent: maxReserveTargetPercent)
                     } label: {
                         HStack(alignment: .top) {
                             VStack(alignment: .leading, spacing: 4) {
@@ -1107,10 +933,10 @@ struct BudgetSimulator2027View: View {
 
             sliderBlock(
                 title: "Property-tax levy growth",
-                value: $levyGrowthPercent,
+                value: $sim.levyGrowthPercent,
                 range: 0...8,
                 step: 0.1,
-                display: String(format: "%.1f%%", levyGrowthPercent),
+                display: String(format: "%.1f%%", sim.levyGrowthPercent),
                 detail: "Illustrative recurring levy yield: \(levyYield.formatted(.currency(code: "USD"))). OSC's levy-limit formula applies to the total levy, not directly to assessments or tax rates. It starts with the prior-year levy, reserve offset, tax-base growth factor, allowable levy growth factor, and prior vs. coming-year PILOTs, then adjusts for carryover capped at 1.5% and narrow exclusions such as pension-rate jumps above two points and qualifying tort judgments. The annual TBGF inputs themselves are published by the Department of Taxation and Finance."
             )
 
@@ -1118,37 +944,37 @@ struct BudgetSimulator2027View: View {
 
             sliderBlock(
                 title: "Automatic COLA / fallback growth",
-                value: $automaticCOLAPercent,
+                value: $sim.automaticCOLAPercent,
                 range: 0...6,
                 step: 0.1,
-                display: String(format: "%.1f%%", automaticCOLAPercent),
+                display: String(format: "%.1f%%", sim.automaticCOLAPercent),
                 detail: "This updates 2027 fallback growth for PBA, SOA, and non-contract staff automatically. The default uses a 2.5% planning COLA to avoid understating post-2026 salary pressure. CSEA keeps the Town Board-approved 2027 action of +2.5% plus $1,000."
             )
 
             sliderBlock(
                 title: "Other recurring revenue adds",
-                value: $recurringRevenueAdds,
+                value: $sim.recurringRevenueAdds,
                 range: 0...3_000_000,
                 step: 25_000,
-                display: recurringRevenueAdds.formatted(.currency(code: "USD")),
+                display: sim.recurringRevenueAdds.formatted(.currency(code: "USD")),
                 detail: "Best-plan default is the non-levy recurring add package: fees, rentals, and small surplus recovery outside the tax-cap levy."
             )
 
             sliderBlock(
                 title: "Other recurring cost pressure",
-                value: $otherRecurringPressure,
+                value: $sim.otherRecurringPressure,
                 range: 0...3_000_000,
                 step: 25_000,
-                display: otherRecurringPressure.formatted(.currency(code: "USD")),
+                display: sim.otherRecurringPressure.formatted(.currency(code: "USD")),
                 detail: "Use for inflation, insurance, pensions, utilities, or other non-payroll pressure layered on top of salary and benefit growth. The default now includes a published-rate pension midpoint of \(Budget2027PensionPressureModel.midpointIncrease.formatted(.currency(code: "USD"))) from the NYSLRS 2026/2027 rate schedules. The townwide pension bill is estimated at \(Budget2027PensionPressureModel.totalEstimateLowText) to \(Budget2027PensionPressureModel.totalEstimateHighText), up \(Budget2027PensionPressureModel.increaseLowText) to \(Budget2027PensionPressureModel.increaseHighText) before new hires or new contract settlements."
             )
 
             sliderBlock(
                 title: "Recurring savings package",
-                value: $recurringSavings,
+                value: $sim.recurringSavings,
                 range: 0...3_000_000,
                 step: 25_000,
-                display: recurringSavings.formatted(.currency(code: "USD")),
+                display: sim.recurringSavings.formatted(.currency(code: "USD")),
                 detail: "Best-plan default treats savings as a phased implementation package, not a one-year guarantee. Administrative items can start sooner: freeze discretionary exempt/elected raises, require overtime plans and quarterly recovery review, carry a civilian vacancy factor, and refill selected retirements more selectively. Contract-sensitive items, especially any broader health-premium contribution changes or work-rule adjustments for represented staff, would likely need successor bargaining, MOAs, or side letters rather than appearing fully in year one."
             )
 
@@ -1320,8 +1146,8 @@ struct BudgetSimulator2027View: View {
         simulatorCard(title: "2027 Plan at a Glance", subtitle: "This turns the current scenario into a friendlier budget story: what is driving costs, what is paying for the plan, and what service changes residents would actually feel.") {
             LazyVGrid(columns: showcaseMetricColumns, spacing: 12) {
                 simulatorMetric("Recurring fixes", value: totalRecurringOffsets.formatted(.currency(code: "USD")), tint: .green)
-                simulatorMetric("Service adds", value: additionalRecurringInvestments.formatted(.currency(code: "USD")), tint: RiverheadTheme.brandSky)
-                simulatorMetric("Payroll pressure", value: automaticPayrollPressure.formatted(.currency(code: "USD")), tint: .orange)
+                simulatorMetric("Service adds", value: sim.additionalRecurringInvestments.formatted(.currency(code: "USD")), tint: RiverheadTheme.brandSky)
+                simulatorMetric("Payroll pressure", value: sim.automaticPayrollPressure.formatted(.currency(code: "USD")), tint: .orange)
             }
 
             VStack(alignment: .leading, spacing: 12) {
@@ -1336,28 +1162,28 @@ struct BudgetSimulator2027View: View {
         simulatorCard(title: "Targeted 2027 Investments", subtitle: "Carry the named service investments openly instead of hiding them inside a generic placeholder.") {
             investmentToggle(
                 title: "Building Department staffing investment",
-                isOn: $includeBuildingDepartmentInvestment,
+                isOn: $sim.includeBuildingDepartmentInvestment,
                 amount: Budget2027ScenarioModel.buildingDepartmentHeadcountInvestment,
                 detail: "Keeps the baseline Building Department headcount increase in the recurring plan."
             )
 
             investmentToggle(
                 title: "Online platform modernization",
-                isOn: $includeOnlinePlatformInvestment,
+                isOn: $sim.includeOnlinePlatformInvestment,
                 amount: Budget2027ScenarioModel.onlinePlatformUpdateCost,
                 detail: "Carries the resident-facing workflow and online-service upgrade cost."
             )
 
             investmentToggle(
                 title: "Town Clerk staffing investment",
-                isOn: $includeTownClerkInvestment,
+                isOn: $sim.includeTownClerkInvestment,
                 amount: Budget2027ScenarioModel.deputyTownClerkCost,
                 detail: "Uses the current deputy town clerk proxy for one added recurring position."
             )
 
             stepperBlock(
                 title: "Additional Code Enforcement Officers",
-                value: $additionalCodeEnforcementOfficers,
+                value: $sim.additionalCodeEnforcementOfficers,
                 range: 0...4,
                 step: 1,
                 detail: "Uses the current ordinance/code staff planning cost per officer.",
@@ -1366,7 +1192,7 @@ struct BudgetSimulator2027View: View {
 
             stepperBlock(
                 title: "Additional police officers",
-                value: $additionalPoliceOfficers,
+                value: $sim.additionalPoliceOfficers,
                 range: 0...4,
                 step: 1,
                 detail: "Uses the app’s current entry-level police officer planning proxy.",
@@ -1379,7 +1205,7 @@ struct BudgetSimulator2027View: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
 
-            summaryRow("Total recurring investments", value: additionalRecurringInvestments, highlight: .orange)
+            summaryRow("Total recurring investments", value: sim.additionalRecurringInvestments, highlight: .orange)
         }
     }
 
@@ -1387,7 +1213,7 @@ struct BudgetSimulator2027View: View {
         simulatorCard(title: "Elected Raise Test", subtitle: "This lets you test whether Riverhead could afford a discretionary Supervisor and Town Board raise package in 2027.") {
             investmentToggle(
                 title: "Include Supervisor + Town Board raise package",
-                isOn: $includeElectedRaisePackage,
+                isOn: $sim.includeElectedRaisePackage,
                 amount: Budget2027ScenarioModel.electedRaisePackageCost,
                 detail: "Illustrative recurring package based on the 2025 reported proposal: about +$10,000 for the Supervisor and about +$3,672 for each of four Town Board seats, or roughly \(Budget2027ScenarioModel.electedRaisePackageCost.formatted(.currency(code: "USD"))) a year before any fringe spillover."
             )
@@ -1396,8 +1222,8 @@ struct BudgetSimulator2027View: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
 
-            if includeElectedRaisePackage {
-                summaryRow("Modeled elected-pay package", value: electedRaisePackageCost, highlight: .orange)
+            if sim.includeElectedRaisePackage {
+                summaryRow("Modeled elected-pay package", value: sim.electedRaisePackageCost, highlight: .orange)
             }
         }
     }
@@ -1406,25 +1232,25 @@ struct BudgetSimulator2027View: View {
         simulatorCard(title: "Reserve Policy & One-Time Tools", subtitle: "This section shows how much one-time room exists if Riverhead resets reserves toward a 2027 target.") {
             investmentToggle(
                 title: "Planned capital fleet purchase",
-                isOn: $includeCapitalFleetPurchase,
+                isOn: $sim.includeCapitalFleetPurchase,
                 amount: Budget2027ScenarioModel.plannedFleetPurchaseCost,
                 detail: "One-time planned purchase of four vehicles at $84,000 each: two for Building Department and two for Code Enforcement."
             )
 
             sliderBlock(
                 title: "Reserve target",
-                value: $reserveTargetPercent,
+                value: $sim.reserveTargetPercent,
                 range: 15...maxReserveTargetPercent,
                 step: 0.1,
-                display: String(format: "%.1f%%", reserveTargetPercent),
+                display: String(format: "%.1f%%", sim.reserveTargetPercent),
                 detail: "Current reserve ratio is about \(String(format: "%.1f%%", currentReservePercent)). OSC's Accounting and Reporting Manual treats unrestricted fund balance, assigned appropriations, and legally restricted reserves as different buckets, so this target is a policy gauge for Riverhead's flexible cushion, not a proxy for every reserve on the books."
             )
 
             sliderBlock(
                 title: "One-time deployment",
                 value: Binding(
-                    get: { oneTimeDeployment },
-                    set: { oneTimeDeployment = min($0, deployableOneTimeRoomAfterCapital) }
+                    get: { sim.oneTimeDeployment },
+                    set: { sim.oneTimeDeployment = min($0, deployableOneTimeRoomAfterCapital) }
                 ),
                 range: 0...max(deployableOneTimeRoomAfterCapital, 1),
                 step: 25_000,
@@ -1434,10 +1260,10 @@ struct BudgetSimulator2027View: View {
 
             sliderBlock(
                 title: "Sample assessment",
-                value: $sampleAssessment,
+                value: $sim.sampleAssessment,
                 range: 250_000...1_500_000,
                 step: 10_000,
-                display: sampleAssessment.formatted(.currency(code: "USD")),
+                display: sim.sampleAssessment.formatted(.currency(code: "USD")),
                 detail: "This only changes the example Town-tax impact line below."
             )
 
@@ -1469,7 +1295,7 @@ struct BudgetSimulator2027View: View {
                     leadingLabel: "Offsets",
                     leadingValue: totalRecurringOffsets,
                     trailingLabel: "Uses",
-                    trailingValue: totalRecurringUses,
+                    trailingValue: sim.totalRecurringUses,
                     progress: recurringCoverageRatio,
                     tint: recurringBalance >= 0 ? .green : .orange
                 )
@@ -1487,9 +1313,9 @@ struct BudgetSimulator2027View: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 summaryRow("Recurring offsets", value: totalRecurringOffsets)
-                summaryRow("Recurring uses", value: totalRecurringUses)
+                summaryRow("Recurring uses", value: sim.totalRecurringUses)
                 summaryRow("Recurring balance", value: recurringBalance, highlight: recurringBalance >= 0 ? .green : .orange)
-                summaryRow("Planned capital fleet purchase", value: capitalFleetPurchaseCost)
+                summaryRow("Planned capital fleet purchase", value: sim.capitalFleetPurchaseCost)
                 summaryRow("Applied one-time deployment", value: appliedOneTimeDeployment)
                 summaryRow("Ending reserve level", value: endingReserveDollars)
             }
@@ -1499,7 +1325,7 @@ struct BudgetSimulator2027View: View {
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(.secondary)
 
-                Text("Sample Town-tax effect on a \(sampleAssessment.formatted(.currency(code: "USD"))) assessment: about \(sampleTownTaxChange.formatted(.currency(code: "USD"))) of annual Town-tax change at the selected levy growth rate.")
+                Text("Sample Town-tax effect on a \(sim.sampleAssessment.formatted(.currency(code: "USD"))) assessment: about \(sampleTownTaxChange.formatted(.currency(code: "USD"))) of annual Town-tax change at the selected levy growth rate.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -1668,7 +1494,7 @@ struct BudgetSimulator2027View: View {
     }
 
     private var resultSuggestion: String {
-        if recurringBalance >= 250_000 && endingReservePercent >= reserveTargetPercent {
+        if recurringBalance >= 250_000 && endingReservePercent >= sim.reserveTargetPercent {
             return "This mix gives Riverhead room to cover salary pressure, preserve the reserve target, and still carry the service investments openly."
         } else if recurringBalance >= 0 {
             return "This is a workable middle-path scenario. The next question is whether one-time deployment is correcting a real imbalance, debt burden, or transition cost."
@@ -1732,60 +1558,6 @@ struct BudgetSimulator2027View: View {
                 .stroke(tint.opacity(0.20), lineWidth: 1)
         )
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-    }
-
-    private func applyRecommendedScenario() {
-        levyGrowthPercent = Budget2027ScenarioModel.defaultLevyGrowthPercent
-        recurringRevenueAdds = Budget2027ScenarioModel.defaultRecurringRevenueAddsExcludingLevy
-        otherRecurringPressure = Budget2027ScenarioModel.defaultOtherRecurringPressure
-        recurringSavings = Budget2027ScenarioModel.defaultRecurringSavings
-        automaticCOLAPercent = Budget2027ScenarioModel.defaultAutomaticCOLAPercent
-        includeBuildingDepartmentInvestment = true
-        includeOnlinePlatformInvestment = true
-        includeTownClerkInvestment = true
-        additionalCodeEnforcementOfficers = 2
-        additionalPoliceOfficers = 2
-        includeElectedRaisePackage = false
-        includeCapitalFleetPurchase = true
-    }
-
-    private func applyScenarioPreset(_ preset: ScenarioPreset) {
-        switch preset {
-        case .holdLine:
-            levyGrowthPercent = 1.5
-            recurringRevenueAdds = 40_000
-            otherRecurringPressure = Budget2027PensionPressureModel.lowIncrease
-            recurringSavings = 875_000
-            automaticCOLAPercent = 2.0
-            includeBuildingDepartmentInvestment = true
-            includeOnlinePlatformInvestment = false
-            includeTownClerkInvestment = false
-            additionalCodeEnforcementOfficers = 1
-            additionalPoliceOfficers = 1
-            includeElectedRaisePackage = false
-            includeCapitalFleetPurchase = true
-            reserveTargetPercent = max(30.0, min(maxReserveTargetPercent, currentReservePercent))
-            oneTimeDeployment = 0
-        case .recommended:
-            applyRecommendedScenario()
-            reserveTargetPercent = 28.8
-            oneTimeDeployment = 0
-        case .serviceBuildout:
-            levyGrowthPercent = 3.5
-            recurringRevenueAdds = 250_000
-            otherRecurringPressure = Budget2027PensionPressureModel.highIncrease
-            recurringSavings = 806_431.97
-            automaticCOLAPercent = 3.0
-            includeBuildingDepartmentInvestment = true
-            includeOnlinePlatformInvestment = true
-            includeTownClerkInvestment = true
-            additionalCodeEnforcementOfficers = 3
-            additionalPoliceOfficers = 3
-            includeElectedRaisePackage = false
-            includeCapitalFleetPurchase = true
-            reserveTargetPercent = 25.0
-            oneTimeDeployment = 0
-        }
     }
 
     private func simulatorCard<Content: View>(title: String, subtitle: String, @ViewBuilder content: () -> Content) -> some View {
@@ -1853,14 +1625,14 @@ struct BudgetSimulator2027View: View {
     }
 
     private var previousStage: BudgetFlowStage? {
-        guard let currentIndex = BudgetFlowStage.allCases.firstIndex(of: activeStage), currentIndex > 0 else {
+        guard let currentIndex = BudgetFlowStage.allCases.firstIndex(of: sim.activeStage), currentIndex > 0 else {
             return nil
         }
         return BudgetFlowStage.allCases[currentIndex - 1]
     }
 
     private var nextStage: BudgetFlowStage? {
-        guard let currentIndex = BudgetFlowStage.allCases.firstIndex(of: activeStage),
+        guard let currentIndex = BudgetFlowStage.allCases.firstIndex(of: sim.activeStage),
               currentIndex < BudgetFlowStage.allCases.count - 1 else {
             return nil
         }
@@ -2355,21 +2127,21 @@ struct BudgetSimulator2027View: View {
 
     private func districtAssignedPressure(forFundCodePrefix prefix: String, appropriations: Double?) -> Double {
         let weight = districtWeight(for: appropriations)
-        let allocatablePressure = colaBreakout.cseaPressure + colaBreakout.nonContractPressure + otherRecurringPressure
+        let allocatablePressure = sim.colaBreakout.cseaPressure + sim.colaBreakout.nonContractPressure + sim.otherRecurringPressure
         let sharedPressure = allocatablePressure * weight
 
         if prefix == "A01" {
-            return sharedPressure + colaBreakout.pbaPressure + colaBreakout.soaPressure + additionalRecurringInvestments
+            return sharedPressure + sim.colaBreakout.pbaPressure + sim.colaBreakout.soaPressure + sim.additionalRecurringInvestments
         }
         return sharedPressure
     }
 
     private func districtAssignedSupport(forFundCodePrefix prefix: String, appropriations: Double?) -> Double {
         let weight = districtWeight(for: appropriations)
-        let sharedSupport = recurringSavings * weight
+        let sharedSupport = sim.recurringSavings * weight
 
         if prefix == "A01" {
-            return sharedSupport + levyYield + recurringRevenueAdds
+            return sharedSupport + levyYield + sim.recurringRevenueAdds
         }
         return sharedSupport
     }
@@ -2385,369 +2157,3 @@ struct BudgetSimulator2027View: View {
     }
 }
 
-private enum BudgetSimulationStatus {
-    case balanced
-    case tight
-    case gap
-
-    var title: String {
-        switch self {
-        case .balanced: return "Recurring balance"
-        case .tight: return "Tight scenario"
-        case .gap: return "Structural gap"
-        }
-    }
-
-    var message: String {
-        switch self {
-        case .balanced: return "Recurring revenues and savings currently cover recurring uses."
-        case .tight: return "The scenario is close, but still vulnerable to slippage or underbudgeted pressure."
-        case .gap: return "Recurring uses are still outrunning recurring money."
-        }
-    }
-
-    var icon: String {
-        switch self {
-        case .balanced: return "checkmark.seal.fill"
-        case .tight: return "exclamationmark.circle.fill"
-        case .gap: return "xmark.octagon.fill"
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .balanced: return .green
-        case .tight: return .orange
-        case .gap: return .red
-        }
-    }
-}
-
-private struct FiscalConditionIndicator: Identifiable {
-    let id = UUID()
-    let title: String
-    let status: FiscalConditionStatus
-    let detail: String
-}
-
-private struct DistrictSnapshot: Identifiable {
-    let id = UUID()
-    let title: String
-    let subtitle: String
-    let appropriations: Double?
-    let assignedPressure: Double
-    let assignedSupport: Double
-    let sharedGap: Double
-    let status: DistrictSnapshotStatus
-    let detail: String
-}
-
-private struct BudgetShowcaseSection: Identifiable {
-    let id = UUID()
-    let title: String
-    let subtitle: String
-    let tint: Color
-    let rows: [BudgetShowcaseRow]
-}
-
-private struct BudgetShowcaseRow: Identifiable {
-    let id = UUID()
-    let title: String
-    let detail: String
-    let amount: Double
-    let direction: BudgetShowcaseDirection
-
-    var displayAmount: String {
-        if direction == .guardrail && amount == 0 {
-            return "Off"
-        }
-        if direction == .guardrail && amount > 0 && title.contains("Reserve target") {
-            return amount.formatted(.currency(code: "USD"))
-        }
-        let prefix: String = {
-            switch direction {
-            case .offset:
-                return "+"
-            case .cost, .investment:
-                return "-"
-            case .guardrail:
-                return amount > 0 ? "-" : ""
-            }
-        }()
-        return "\(prefix)\(amount.formatted(.currency(code: "USD")))"
-    }
-}
-
-private enum BudgetShowcaseDirection {
-    case cost
-    case offset
-    case investment
-    case guardrail
-
-    var icon: String {
-        switch self {
-        case .cost:
-            return "arrow.up.circle.fill"
-        case .offset:
-            return "arrow.down.circle.fill"
-        case .investment:
-            return "hammer.fill"
-        case .guardrail:
-            return "shield.fill"
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .cost:
-            return .orange
-        case .offset:
-            return .green
-        case .investment:
-            return RiverheadTheme.brandSky
-        case .guardrail:
-            return RiverheadTheme.gold
-        }
-    }
-}
-
-private struct FY27ChangeLine: Identifiable {
-    let id = UUID()
-    let title: String
-    let valueText: String
-    let detail: String
-}
-
-private enum DistrictSnapshotStatus {
-    case stable
-    case watch
-    case warning
-
-    var title: String {
-        switch self {
-        case .stable: return "Stable"
-        case .watch: return "Watch"
-        case .warning: return "Reserve watch"
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .stable: return .green
-        case .watch: return .orange
-        case .warning: return .red
-        }
-    }
-}
-
-private enum FiscalConditionStatus {
-    case stable
-    case watch
-    case warning
-
-    var title: String {
-        switch self {
-        case .stable: return "Stable"
-        case .watch: return "Watch"
-        case .warning: return "Warning"
-        }
-    }
-
-    var detail: String {
-        switch self {
-        case .stable:
-            return "The current 2027 settings read as structurally supportable under the app's scenario assumptions."
-        case .watch:
-            return "The package is workable, but one or more warning indicators suggest Riverhead would need close monthly monitoring."
-        case .warning:
-            return "The scenario still presents a clear fiscal warning signal and likely needs a stronger recurring correction package."
-        }
-    }
-
-    var icon: String {
-        switch self {
-        case .stable: return "checkmark.shield.fill"
-        case .watch: return "exclamationmark.triangle.fill"
-        case .warning: return "xmark.shield.fill"
-        }
-    }
-
-    var color: Color {
-        switch self {
-        case .stable: return .green
-        case .watch: return .orange
-        case .warning: return .red
-        }
-    }
-}
-
-private enum Budget2027ScenarioModel {
-    static let defaultAutomaticCOLAPercent = 2.5
-    static let defaultLevyGrowthPercent = 2.0
-    static let defaultOtherRecurringPressure = Budget2027PensionPressureModel.midpointIncrease
-    static let defaultRecurringSavings = 806_431.97
-    static let defaultRecurringRevenueAddsExcludingLevy = 61_500.00
-    static let illustrativeCurrentLevyBase = 48_639_479.00
-    static let taxCapLevelLevyYield = illustrativeCurrentLevyBase * 0.02
-    static let pensionPressureAboveTwoPercentLevy = Budget2027PensionPressureModel.midpointIncrease - taxCapLevelLevyYield
-
-    static let modeledPBAIncreaseAtDefaultCOLA = 354_689.61
-    static let modeledSOAIncreaseAtDefaultCOLA = 68_773.45
-    static let modeledCSEAIncrease = 484_395.46
-    static let modeledNonContractIncreaseAtDefaultCOLA = 28_868.58
-
-    static let pbaBasePayroll = modeledPBAIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)
-    static let soaBasePayroll = modeledSOAIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)
-    static let nonContractBasePayroll = modeledNonContractIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)
-
-    static let buildingDepartmentHeadcountInvestment = 180_000.00
-    static let onlinePlatformUpdateCost = 85_000.00
-    static let codeEnforcementOfficerCost = 70_249.89
-    static let deputyTownClerkCost = 58_661.49
-    static let policeOfficerCost = 72_066.67
-    static let electedRaisePackageCost = 24_688.00
-    static let plannedFleetPurchaseCost = 336_000.00
-
-    struct COLABreakout {
-        let pbaPressure: Double
-        let soaPressure: Double
-        let cseaPressure: Double
-        let nonContractPressure: Double
-
-        var unionPressure: Double {
-            pbaPressure + soaPressure + cseaPressure
-        }
-
-        var totalAutomaticPressure: Double {
-            unionPressure + nonContractPressure
-        }
-    }
-
-    static func colaBreakout(percent: Double) -> COLABreakout {
-        let safePercent = max(percent, 0)
-        return COLABreakout(
-            pbaPressure: pbaBasePayroll * safePercent,
-            soaPressure: soaBasePayroll * safePercent,
-            cseaPressure: modeledCSEAIncrease,
-            nonContractPressure: nonContractBasePayroll * safePercent
-        )
-    }
-}
-
-private struct Budget2027TaxCapOffset: Identifiable {
-    let title: String
-    let amount: Double
-    let isStretch: Bool
-
-    var id: String { title }
-}
-
-private enum Budget2027TaxCapOffsetModel {
-    static let policeUniformOTActual2024 = 1_401_354.00
-    static let policeUniformOTBudget2024 = 1_000_000.00
-    static let policeUniformOTAdopted2026 = 1_000_000.00
-    static let policeUniformOTVariance = policeUniformOTActual2024 - policeUniformOTBudget2024
-    static let policeOvertimeRecoveryTarget = 250_000.00
-    static let policeOvertimeRecoveryShare = policeOvertimeRecoveryTarget / policeUniformOTVariance
-
-    static let healthcareContributionSavings = 85_565.71
-    static let overtimeControlSavings = policeOvertimeRecoveryTarget
-    static let civilianVacancyFactorSavings = 124_158.19
-    static let targetedRetirementRefillSavings = 291_300.00
-    static let exemptRaiseHoldSavings = 23_094.86
-    static let electedRaiseHoldSavings = 22_278.92
-    static let recurringRevenueAdds = 61_500.00
-    static let stretchRevenueAndCostRecovery = 250_000.00
-
-    static let offsets: [Budget2027TaxCapOffset] = [
-        .init(title: "Police Uniform OT recovery target", amount: overtimeControlSavings, isStretch: false),
-        .init(title: "Targeted retirement refill control", amount: targetedRetirementRefillSavings, isStretch: false),
-        .init(title: "1% civilian vacancy factor", amount: civilianVacancyFactorSavings, isStretch: false),
-        .init(title: "20% healthcare contribution policy", amount: healthcareContributionSavings, isStretch: false),
-        .init(title: "Hold exempt and elected raises", amount: exemptRaiseHoldSavings + electedRaiseHoldSavings, isStretch: false),
-        .init(title: "Base recurring revenue adds", amount: recurringRevenueAdds, isStretch: false),
-        .init(title: "Stretch fees, rentals, and cost recovery", amount: stretchRevenueAndCostRecovery, isStretch: true)
-    ]
-
-    static let baseOffsetPackage =
-        healthcareContributionSavings +
-        overtimeControlSavings +
-        civilianVacancyFactorSavings +
-        targetedRetirementRefillSavings +
-        exemptRaiseHoldSavings +
-        electedRaiseHoldSavings +
-        recurringRevenueAdds
-
-    static let totalOffsetPackage = baseOffsetPackage + stretchRevenueAndCostRecovery
-}
-
-private enum Budget2027PoliceWorkloadModel {
-    static let march2026CriminalIncidents = 167
-    static let march2025CriminalIncidents = 144
-    static let march2026TotalIncidents = 2_994
-    static let march2025TotalIncidents = 2_922
-    static let march2026NonCriminalIncidents = 2_827
-    static let march2025NonCriminalIncidents = 2_778
-    static let march2026DomesticIncidents = 60
-    static let march2025DomesticIncidents = 60
-    static let march2026Accidents = 114
-    static let march2025Accidents = 123
-    static let march2026Summonses = 1_042
-    static let march2025Summonses = 1_076
-    static let march2026CriminalCharges = 82
-    static let march2026Arrests = 77
-    static let march2026HeldForArraignment = 47
-}
-
-private enum Budget2027PensionPressureModel {
-    static let pfrs2026Budget = 6_633_131.00
-    static let pfrsEstimateLow = 7_700_000.00
-    static let pfrsEstimateHigh = 8_000_000.00
-
-    static let a01ERS2026Budget = 2_268_352.00
-    static let a01ERSEstimateLow = 2_500_000.00
-    static let a01ERSEstimateHigh = 2_600_000.00
-
-    static let da1ERS2026Budget = 447_917.00
-    static let da1ERSEstimateLow = 490_000.00
-    static let da1ERSEstimateHigh = 520_000.00
-
-    static let utilityERS2026Budget = 499_000.00
-    static let utilityERSEstimateLow = 540_000.00
-    static let utilityERSEstimateHigh = 570_000.00
-
-    static let total2026Base =
-        pfrs2026Budget +
-        a01ERS2026Budget +
-        da1ERS2026Budget +
-        utilityERS2026Budget
-
-    static let totalEstimateLow = 11_200_000.00
-    static let totalEstimateHigh = 11_700_000.00
-    static let lowIncrease = 1_400_000.00
-    static let highIncrease = 1_850_000.00
-    static let midpointIncrease = (lowIncrease + highIncrease) / 2
-
-    static let totalEstimateLowText = "$11.2M"
-    static let totalEstimateHighText = "$11.7M"
-    static let increaseLowText = "$1.4M"
-    static let increaseHighText = "$1.85M"
-}
-
-private enum Budget2026AdoptedGeneralFundModel {
-    static let retirementNonUniform = 2_268_352.00
-    static let retirementUniformPolice = 6_633_131.00
-    static let retirementTotal = retirementNonUniform + retirementUniformPolice
-
-    static let healthInsuranceNonUniform = 5_503_333.00
-    static let healthInsuranceBuybackNonUniform = 629_046.00
-    static let healthInsuranceUniformPolice = 3_971_332.00
-    static let healthInsuranceTotal =
-        healthInsuranceNonUniform +
-        healthInsuranceBuybackNonUniform +
-        healthInsuranceUniformPolice
-
-    static let ficaNonUniform = 1_157_504.00
-    static let ficaUniformPolice = 1_334_471.00
-    static let ficaTotal = ficaNonUniform + ficaUniformPolice
-}

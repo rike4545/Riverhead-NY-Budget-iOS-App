@@ -642,6 +642,7 @@ struct CouncilScorecardView: View {
             VStack(alignment: .leading, spacing: 16) {
                 headerCard
                 scorecardToolsCard
+                boardComparisonCard
                 scorecardSectionTitle("Officials", icon: "person.3.fill")
                 ForEach(members) { member in
                     memberCard(member)
@@ -1631,6 +1632,10 @@ struct CouncilScorecardView: View {
                 followUpSection(for: member)
             }
 
+            collapsibleSection(title: "Key Questions to Ask", systemImage: "questionmark.bubble") {
+                keyQuestionsSection(for: member)
+            }
+
             collapsibleSection(title: "Filings and Pay Reporting", systemImage: "doc.text.magnifyingglass") {
                 campaignDisclosureStrip(for: member)
                 electedOfficialReportingCard
@@ -2174,30 +2179,30 @@ struct CouncilScorecardView: View {
     }
 
     private func accountabilityScoreSection(for member: CouncilMember) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let memberScores = scores(for: member)
+        let memberNotes  = scoreNotes(for: member)
+        return VStack(alignment: .leading, spacing: 12) {
             Text("Explainable Scores")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.primary)
 
-            ForEach(scores(for: member)) { score in
+            radarChart(scores: memberScores)
+
+            ForEach(memberScores) { score in
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 8) {
                         Label(score.category.title, systemImage: score.category.icon)
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(RiverheadTheme.textPrimary)
-
                         Spacer(minLength: 8)
-
                         Text("\(Int(score.value.rounded()))")
                             .font(.caption.weight(.bold))
                             .monospacedDigit()
-                            .foregroundStyle(RiverheadTheme.accent)
+                            .foregroundStyle(GradeStyle.color(for: grade(for: score.value)))
                     }
-
                     ProgressView(value: score.value, total: 100)
                         .tint(GradeStyle.color(for: grade(for: score.value)))
-
-                    Text(score.note)
+                    Text(memberNotes[score.category] ?? score.note)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -2209,6 +2214,101 @@ struct CouncilScorecardView: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(Color.primary.opacity(0.04))
         )
+    }
+
+    // MARK: Radar / spider chart
+
+    private func radarChart(scores: [AccountabilityScore]) -> some View {
+        let n = scores.count
+        guard n > 2 else { return AnyView(EmptyView()) }
+        return AnyView(
+            GeometryReader { geo in
+                let cx   = geo.size.width  / 2
+                let cy   = geo.size.height / 2
+                let maxR = min(cx, cy) * 0.72
+
+                ZStack {
+                    // Reference rings at 25 / 50 / 75 / 100
+                    ForEach([0.25, 0.50, 0.75, 1.00], id: \.self) { pct in
+                        Path { p in
+                            for i in 0..<n {
+                                let angle = spokeAngle(i, of: n)
+                                let pt = CGPoint(x: cx + maxR * pct * cos(angle),
+                                                 y: cy + maxR * pct * sin(angle))
+                                i == 0 ? p.move(to: pt) : p.addLine(to: pt)
+                            }
+                            p.closeSubpath()
+                        }
+                        .stroke(Color.gray.opacity(0.18), lineWidth: 0.6)
+                    }
+
+                    // Spokes
+                    ForEach(0..<n, id: \.self) { i in
+                        Path { p in
+                            let angle = spokeAngle(i, of: n)
+                            p.move(to: CGPoint(x: cx, y: cy))
+                            p.addLine(to: CGPoint(x: cx + maxR * cos(angle),
+                                                   y: cy + maxR * sin(angle)))
+                        }
+                        .stroke(Color.gray.opacity(0.22), lineWidth: 0.6)
+                    }
+
+                    // Filled data polygon
+                    Path { p in
+                        for (i, score) in scores.enumerated() {
+                            let angle = spokeAngle(i, of: n)
+                            let r = maxR * score.value / 100
+                            let pt = CGPoint(x: cx + r * cos(angle), y: cy + r * sin(angle))
+                            i == 0 ? p.move(to: pt) : p.addLine(to: pt)
+                        }
+                        p.closeSubpath()
+                    }
+                    .fill(RiverheadTheme.accent.opacity(0.18))
+
+                    // Stroke data polygon
+                    Path { p in
+                        for (i, score) in scores.enumerated() {
+                            let angle = spokeAngle(i, of: n)
+                            let r = maxR * score.value / 100
+                            let pt = CGPoint(x: cx + r * cos(angle), y: cy + r * sin(angle))
+                            i == 0 ? p.move(to: pt) : p.addLine(to: pt)
+                        }
+                        p.closeSubpath()
+                    }
+                    .stroke(RiverheadTheme.accent, lineWidth: 1.8)
+
+                    // Dots at each vertex
+                    ForEach(Array(scores.enumerated()), id: \.offset) { i, score in
+                        let angle = spokeAngle(i, of: n)
+                        let r = maxR * score.value / 100
+                        Circle()
+                            .fill(GradeStyle.color(for: grade(for: score.value)))
+                            .frame(width: 7, height: 7)
+                            .position(x: cx + r * cos(angle), y: cy + r * sin(angle))
+                    }
+
+                    // Axis labels
+                    ForEach(Array(scores.enumerated()), id: \.offset) { i, score in
+                        let angle = spokeAngle(i, of: n)
+                        let labelR = maxR * 1.22
+                        VStack(spacing: 0) {
+                            Image(systemName: score.category.icon)
+                                .font(.system(size: 9))
+                            Text("\(Int(score.value.rounded()))")
+                                .font(.system(size: 9, weight: .bold))
+                                .monospacedDigit()
+                        }
+                        .foregroundStyle(GradeStyle.color(for: grade(for: score.value)))
+                        .position(x: cx + labelR * cos(angle), y: cy + labelR * sin(angle))
+                    }
+                }
+            }
+            .frame(height: 210)
+        )
+    }
+
+    private func spokeAngle(_ i: Int, of n: Int) -> Double {
+        (Double(i) / Double(n)) * 2 * .pi - .pi / 2
     }
 
     private func evidenceSection(for member: CouncilMember) -> some View {
@@ -2373,6 +2473,250 @@ struct CouncilScorecardView: View {
             flags.append("Watch for named senior staff, qualifications, and reporting structure for any incoming supervisor administration.")
         }
         return flags
+    }
+
+    // MARK: Member-specific score notes
+
+    private func scoreNotes(for member: CouncilMember) -> [ScoreCategory: String] {
+        if member.name.contains("Halpin") {
+            return [
+                .budget:         "New Supervisor entering mid-cycle. Watch first budget modification proposal and whether recurring vs. one-time uses are explicitly labeled.",
+                .transparency:   "First months set the tone for agenda lead time, meeting audio/video, and whether action-item follow-up is published. Score pending record.",
+                .housing:        "Downtown and workforce-housing posture TBD. Key early signal: whether IDA or CP applications include any income-restricted units.",
+                .responsiveness: "Campaign emphasized responsiveness. Monitor whether constituent emails receive dated written replies and whether public-comment periods are upheld.",
+                .ethics:         "Campaign committee contact shares Halpin name and address — standard disclosure watch. No conflict flags in first term yet.",
+                .capital:        "Town Hall BAN ($22M exposure), highway garage authorization ($1.88M), and fleet requests all need sequenced capital decision-making in 2026."
+            ]
+        } else if member.name.contains("Rothwell") {
+            return [
+                .budget:         "Longest tenure on capital and procurement. Watch whether supervisor campaign fundraising shifts vote alignment on IDA, developer agreements, or capital approvals.",
+                .transparency:   "Has asked pointed procedural questions at meetings. Score depends on whether those questions consistently produce written staff responses.",
+                .housing:        "Supported business-district revival framing. Housing score contingent on whether affordable units are required conditions or treated as optional.",
+                .responsiveness: "Veterans and traffic safety committee liaisons suggest constituent-track record. Watch meeting attendance and amendment introduction rate.",
+                .ethics:         "Largest campaign fundraiser on the board by a significant margin ($146K reported). Petrocelli and Scott Pointe contribution flags warrant watching on related land-use votes.",
+                .capital:        "Strong capital-planning instinct. Score limited by whether phasing plans include debt-service projections and CHIPS eligibility documentation."
+            ]
+        } else if member.name.contains("Waski") {
+            return [
+                .budget:         "IDA and Farmland Preservation liaisons suggest mixed budget exposure. Watch whether IDA incentive packages include quantified fiscal impact on the tax levy.",
+                .transparency:   "Downtown Revitalization liaison provides natural platform for public-facing progress reporting. Score based on how actively that platform is used.",
+                .housing:        "Landmarks and farmland preservation liaisons signal a quality-over-quantity posture. Key question: how are affordable units built into downtown projects she supports?",
+                .responsiveness: "Constituent-oriented record in first term. Personnel liaison also gives insight into staffing decisions that affect service delivery.",
+                .ethics:         "No significant campaign-finance flags. Committee to Manzella-linked treasurer is a standard watch item consistent with other Suffolk Democratic filings.",
+                .capital:        "East Creek and farmland preservation involve capital-adjacent decisions (conservation easements, infrastructure). Watch cost-per-acre and maintenance burden."
+            ]
+        } else if member.name.contains("Kern") {
+            return [
+                .budget:         "Open Space and Recreation Advisory liaisons create regular capital-pressure exposure. Watch whether he asks for actuarial or maintenance-cost analysis before adding amenities.",
+                .transparency:   "Architectural Review Board liaison involves discretionary design decisions with limited public record. Watch whether ARB minutes are published promptly.",
+                .housing:        "Alternative Transportation and Environmental Advisory suggest climate-aligned posture. Housing score depends on whether zoning changes include density and affordability.",
+                .responsiveness: "Wildlife Management and Recreation Advisory are constituent-facing roles. Meeting attendance rate and amendment-introduction frequency are the observable indicators.",
+                .ethics:         "Two-committee structure (legacy Friends of Bob Kern + current Friends of Robert Kern) warrants combined review of donor overlap. No hard conflict flags yet.",
+                .capital:        "Agriculture and open space decisions are inherently long-horizon. Score reflects whether proposals include explicit sequencing and funding-source identification."
+            ]
+        } else if member.name.contains("Merrifield") {
+            return [
+                .budget:         "Disability Advisory and Senior Citizen liaisons involve populations sensitive to service cuts. Watch whether she raises constituent impact in budget modification discussions.",
+                .transparency:   "Code Revision Committee work should produce a public change log. Score based on whether proposed revisions are published in advance with plain-English summaries.",
+                .housing:        "Climate Smart and Parking District liaisons are indirectly housing-adjacent. Watch whether she connects parking policy to missing-middle housing discussions.",
+                .responsiveness: "Highest responsiveness score reflects senior and disability constituent access focus. Sustained by consistent meeting attendance and follow-up record.",
+                .ethics:         "Committee chair shares address with candidate. Standard watch item, no hard conflict flags as of last review. TERMINATED status on committee record is consistent with post-election wind-down.",
+                .capital:        "No direct capital committee liaison. Score reflects general pattern of raising constituent service questions rather than capital-project sequencing questions."
+            ]
+        }
+        return [:]
+    }
+
+    // MARK: Board comparison leaderboard card
+
+    private var boardComparisonCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "chart.bar.xaxis")
+                    .foregroundStyle(RiverheadTheme.accent)
+                Text("Board Comparison")
+                    .font(.headline)
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                Spacer()
+                Text("All six dimensions")
+                    .font(.caption)
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+            }
+
+            Text("Score per official per category (0–100). Sorted by weighted average.")
+                .font(.caption)
+                .foregroundStyle(RiverheadTheme.textSecondary)
+
+            let sortedMembers = members.sorted { weightedScore(for: $0) > weightedScore(for: $1) }
+
+            ForEach(ScoreCategory.allCases) { category in
+                VStack(alignment: .leading, spacing: 5) {
+                    Label(category.title, systemImage: category.icon)
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+
+                    ForEach(sortedMembers) { member in
+                        let memberScore = scores(for: member).first(where: { $0.category == category })?.value ?? 75
+                        HStack(spacing: 8) {
+                            Text(shortName(for: member))
+                                .font(.caption2)
+                                .foregroundStyle(RiverheadTheme.textSecondary)
+                                .frame(width: 68, alignment: .leading)
+
+                            GeometryReader { geo in
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 3)
+                                        .fill(Color.gray.opacity(0.12))
+                                        .frame(height: 10)
+                                    RoundedRectangle(cornerRadius: 3)
+                                        .fill(GradeStyle.color(for: grade(for: memberScore)).opacity(0.75))
+                                        .frame(width: geo.size.width * memberScore / 100, height: 10)
+                                }
+                            }
+                            .frame(height: 10)
+
+                            Text("\(Int(memberScore.rounded()))")
+                                .font(.caption2.weight(.bold))
+                                .monospacedDigit()
+                                .foregroundStyle(GradeStyle.color(for: grade(for: memberScore)))
+                                .frame(width: 26, alignment: .trailing)
+                        }
+                    }
+                }
+                if category != ScoreCategory.allCases.last {
+                    Divider().opacity(0.2)
+                }
+            }
+
+            Divider().opacity(0.3)
+
+            // Weighted average summary row
+            HStack(spacing: 0) {
+                Text("Weighted avg")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textSecondary)
+                    .frame(width: 76, alignment: .leading)
+                Spacer()
+                ForEach(sortedMembers) { member in
+                    VStack(spacing: 1) {
+                        Text(shortName(for: member))
+                            .font(.caption2)
+                            .foregroundStyle(RiverheadTheme.textSecondary)
+                        Text(grade(for: weightedScore(for: member)))
+                            .font(.caption.weight(.black))
+                            .foregroundStyle(GradeStyle.color(for: grade(for: weightedScore(for: member))))
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+            }
+        }
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(RiverheadTheme.Surface.elevated)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .strokeBorder(RiverheadTheme.border.opacity(0.22), lineWidth: 0.8)
+        )
+    }
+
+    private func shortName(for member: CouncilMember) -> String {
+        if member.name.contains("Halpin") { return "Halpin" }
+        if member.name.contains("Rothwell") { return "Rothwell" }
+        if member.name.contains("Waski") { return "Waski" }
+        if member.name.contains("Kern") { return "Kern" }
+        if member.name.contains("Merrifield") { return "Merrifield" }
+        return String(member.name.split(separator: " ").last ?? "")
+    }
+
+    // MARK: Key questions per member
+
+    private func keyQuestions(for member: CouncilMember) -> [String] {
+        if member.name.contains("Halpin") {
+            return [
+                "Will the 2027 budget distinguish recurring revenues from one-time fund balance draws, and will that distinction be published in the adopted budget document?",
+                "Which senior administration roles (CFO, Town Attorney, Planning Director) have been filled, and what are their qualifications?",
+                "How does the Town plan to refinance or retire the estimated $22M in BANs coming due in 2026 for Town Hall and Town Square properties?",
+                "Will you commit to publishing Town Board meeting agendas at least 72 hours before each session with supporting documents?",
+                "What is the administration's policy on using fund balance to offset the tax levy — under what conditions and with what replenishment timeline?"
+            ]
+        } else if member.name.contains("Rothwell") {
+            return [
+                "Given that your campaign committee raised $146K — the largest on the board — have you recused yourself from any votes involving major donors?",
+                "As a Supervisor candidate, how do you separate your governing record on the current board from your campaign platform?",
+                "What specific changes to the IDA incentive package review process would you require as Supervisor?",
+                "Which of the Town's top three capital needs would you fund first, and what financing tool would you use?",
+                "How would your first 100-day budget review differ from the current Supervisor's approach?"
+            ]
+        } else if member.name.contains("Waski") {
+            return [
+                "Every IDA application you review as liaison: does the project include income-restricted housing units, and if not, what is your ask?",
+                "The East Creek Advisory Committee reports to you — what is the current capital plan for remediation, and who is paying?",
+                "The Downtown Revitalization Committee: what is the measurable 12-month goal, and how will you report progress publicly?",
+                "Farmland Preservation: what is Riverhead's current preservation target acreage, and how does the CPF drawdown rate affect future conservation capacity?",
+                "The Personnel committee liaison is a board role affecting all staff decisions. What hiring or retention policies would you change in 2026?"
+            ]
+        } else if member.name.contains("Kern") {
+            return [
+                "Open Space Committee purchases: what is the annual CPF contribution level, and is the fund actuarially sustainable at current draw rates?",
+                "Environmental Advisory: how do you translate the committee's recommendations into binding land-use conditions rather than advisory opinions?",
+                "Recreation Advisory: which Recreation Department capital requests from 2024 were completed, and which remain unfunded?",
+                "Alternative Transportation: does the Town have a completed, funded bike lane or pedestrian plan — and if not, what is the specific block?",
+                "With two overlapping campaign committees (filer IDs 527501 and 154941), have you filed a final C-7 termination with NYSBOE to close the legacy committee?"
+            ]
+        } else if member.name.contains("Merrifield") {
+            return [
+                "Disability Advisory: has the Town completed an ADA Transition Plan, and what is the current compliance backlog for public facilities?",
+                "Senior Citizen Advisory: which senior services are facing funding reductions in the 2027 budget proposal, and what is your position?",
+                "Climate Smart Community Task Force: has Riverhead adopted a formal Climate Smart resolution, and what is the binding commitment timeline?",
+                "Parking District Advisory: how does the Town's parking pricing and supply policy affect housing density in the downtown corridor?",
+                "Code Revision Committee: which code amendments proposed in 2024 or 2025 are still pending, and what is holding them up?"
+            ]
+        }
+        return [
+            "Ask which vote, amendment, or public question from the past six months best shows this official's current priority.",
+            "Ask for one measurable outcome they want published before the next budget vote.",
+            "Ask whether they have reviewed the Town's fund-balance policy and whether they support updating it in 2026."
+        ]
+    }
+
+    private func keyQuestionsSection(for member: CouncilMember) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Questions to Ask at the Next Meeting")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.primary)
+            Text("Evidence-backed, open-ended questions any resident can raise during public comment.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            ForEach(Array(keyQuestions(for: member).enumerated()), id: \.offset) { i, q in
+                HStack(alignment: .top, spacing: 8) {
+                    ZStack {
+                        Circle()
+                            .fill(RiverheadTheme.accent.opacity(0.12))
+                            .frame(width: 22, height: 22)
+                        Text("\(i + 1)")
+                            .font(.caption2.weight(.bold))
+                            .foregroundStyle(RiverheadTheme.accent)
+                    }
+                    Text(q)
+                        .font(.caption)
+                        .foregroundStyle(RiverheadTheme.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(RiverheadTheme.accent.opacity(0.05))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .strokeBorder(RiverheadTheme.accent.opacity(0.15), lineWidth: 0.8)
+        )
     }
 
     private func topContributionRow(title: String, contribution: TopContribution, tint: Color) -> some View {

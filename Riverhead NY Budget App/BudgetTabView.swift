@@ -130,6 +130,18 @@ private struct BudgetDeepDiveHubView: View {
                 NavigationLink { RiverheadFundBalanceAuditView() } label: {
                     Label("Fund Balance Audit View", systemImage: "doc.badge.magnifyingglass")
                 }
+                NavigationLink { PeerReserveBenchmarkView() } label: {
+                    Label("Peer Reserve Comparison", systemImage: "chart.bar.xaxis.ascending")
+                }
+                NavigationLink { ReserveFundBreakdownView() } label: {
+                    Label("Reserve Fund Breakdown", systemImage: "square.3.layers.3d.down.right")
+                }
+                NavigationLink { FundBalanceTrendView() } label: {
+                    Label("Reserve Trend (2014–2025)", systemImage: "chart.line.uptrend.xyaxis")
+                }
+                NavigationLink { TaxImpactCalculatorView() } label: {
+                    Label("Tax Impact Calculator", systemImage: "dollarsign.circle")
+                }
 
                 // NEW
                 NavigationLink { SixSigmaProcessImprovementShiftView() } label: {

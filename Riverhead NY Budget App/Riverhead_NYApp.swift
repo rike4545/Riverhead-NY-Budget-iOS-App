@@ -16,6 +16,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 
 #if canImport(FirebaseCore)
 import FirebaseCore
@@ -32,8 +33,32 @@ private final class RiverheadAppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         configureFirebaseIfPossible()
+        // GAD starts after ATT is resolved (see requestTrackingAndStartAds).
+        // We call start here as well so ads can load on iOS < 14 or if ATT
+        // is already determined (e.g., returning users).
         configureGoogleMobileAdsIfPossible()
         return true
+    }
+
+    // Called from the scene after the first frame has appeared so the ATT
+    // prompt has a visible window to attach to.
+    func requestTrackingAndStartAds() {
+        guard #available(iOS 14, *) else {
+            configureGoogleMobileAdsIfPossible()
+            return
+        }
+        let status = ATTrackingManager.trackingAuthorizationStatus
+        guard status == .notDetermined else {
+            // Already determined — nothing to prompt, GAD already started.
+            return
+        }
+        ATTrackingManager.requestTrackingAuthorization { [weak self] _ in
+            // Re-start (or confirm start) after the user responds.
+            // GADMobileAds.start is idempotent.
+            DispatchQueue.main.async {
+                self?.configureGoogleMobileAdsIfPossible()
+            }
+        }
     }
 
     private func configureFirebaseIfPossible() {
@@ -72,6 +97,12 @@ struct Riverhead_NYApp: App {
                 .environmentObject(civicStore)
                 .environmentObject(sixSigmaStore)
                 .environment(budgetStore)
+                .onAppear {
+                    // Delay one frame so the window is visible before the ATT sheet appears.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        appDelegate.requestTrackingAndStartAds()
+                    }
+                }
         }
     }
 }

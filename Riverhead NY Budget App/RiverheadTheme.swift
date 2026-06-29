@@ -67,8 +67,17 @@ enum RiverheadTheme {
     /// Primary Riverhead blue used across the app (deep navy).
     static let primaryBlue: Color = brandNavy
 
-    /// Accent color for controls and highlights (header/nav blue).
-    static let accent: Color = brandNavy
+    /// Adaptive accent: navy in light mode, lighter sky-blue in dark mode so it
+    /// remains readable on dark surfaces without switching to a different brand color.
+    static let accent: Color = Color(
+        uiColor: UIColor { trait in
+            trait.userInterfaceStyle == .dark
+            // Lighter variant (#4E9FC8) — readable on dark gray / near-black backgrounds.
+            ? UIColor(red: 0.306, green: 0.624, blue: 0.784, alpha: 1.0)
+            // Original navy (#19537B) — works on light backgrounds.
+            : UIColor(red: 0.098, green: 0.325, blue: 0.482, alpha: 1.0)
+        }
+    )
 
     /// Legacy alias used in older views (same as `accent`).
     static let tint: Color = accent
@@ -156,17 +165,30 @@ enum RiverheadTheme {
     }
 
     /// Subtle background gradient you can use under whole screens.
+    /// Uses UIColor-adaptive stops so dark mode gets a blue-gray ramp
+    /// instead of stacking dark navy on an already-dark background.
     static var backgroundGradient: LinearGradient {
         LinearGradient(
             colors: [
-                brandNavy.opacity(0.18),
-                brandSky.opacity(0.25),
-                brandBackground,
-                brandTeal.opacity(0.18),
-                brandGold.opacity(0.10),
                 Color(uiColor: UIColor { trait in
                     trait.userInterfaceStyle == .dark
-                    ? UIColor(red: 0.035, green: 0.047, blue: 0.067, alpha: 1.0)
+                    ? UIColor(red: 0.055, green: 0.082, blue: 0.118, alpha: 1.0)
+                    : UIColor(red: 0.098, green: 0.325, blue: 0.482, alpha: 0.14)
+                }),
+                Color(uiColor: UIColor { trait in
+                    trait.userInterfaceStyle == .dark
+                    ? UIColor(red: 0.043, green: 0.063, blue: 0.090, alpha: 1.0)
+                    : UIColor(red: 0.259, green: 0.522, blue: 0.655, alpha: 0.18)
+                }),
+                brandBackground,
+                Color(uiColor: UIColor { trait in
+                    trait.userInterfaceStyle == .dark
+                    ? UIColor(red: 0.035, green: 0.051, blue: 0.071, alpha: 1.0)
+                    : UIColor(red: 0.553, green: 0.729, blue: 0.745, alpha: 0.14)
+                }),
+                Color(uiColor: UIColor { trait in
+                    trait.userInterfaceStyle == .dark
+                    ? UIColor(red: 0.028, green: 0.039, blue: 0.055, alpha: 1.0)
                     : UIColor(red: 0.976, green: 0.982, blue: 0.969, alpha: 1.0)
                 })
             ],

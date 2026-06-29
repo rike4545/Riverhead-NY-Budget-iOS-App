@@ -99,122 +99,161 @@ struct CivicToolkitsHubView: View {
 
     var body: some View {
         List {
+            // ── Intro ────────────────────────────────────────────────────
             Section {
-                header
-                    .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 10, trailing: 16))
-                    .listRowBackground(Color.clear)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Accountability tools for Riverhead residents.")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+                    Text("Track who donated to officials, watch contracts, look up employee pay, and follow local issues — all in one place.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.vertical, 4)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 6, trailing: 16))
             }
 
-            Section("People & Earnings") {
-                NavigationLink {
-                    GrossEarningsNewsdayView()
-                } label: {
-                    Label("Gross Earnings (Newsday)", systemImage: "person.text.rectangle")
-                }
+            // ── Officials & Accountability ────────────────────────────────
+            Section {
+                toolRow(
+                    title: "Town Board Scorecard",
+                    subtitle: "Grades, campaign donations, Petrocelli watch, and accountability flags for every board member.",
+                    symbol: "checkmark.seal.fill",
+                    tint: RiverheadTheme.accent
+                ) { CouncilScorecardView() }
 
-                NavigationLink {
-                    CouncilScorecardView()
-                } label: {
-                    Label("Town Board Scorecard", systemImage: "checkmark.seal.fill")
-                }
+                toolRow(
+                    title: "Campaign Donation Ethics",
+                    subtitle: "How the $1,000 aggregation rule works and which donor names to watch in Town filings.",
+                    symbol: "checkmark.shield",
+                    tint: RiverheadTheme.brandTeal
+                ) { RiverheadCampaignContributionsView() }
 
-                NavigationLink {
-                    DepartmentsView()
-                } label: {
-                    Label("Town Departments", systemImage: "building.2.fill")
-                }
+                toolRow(
+                    title: "Procurement Watch",
+                    subtitle: "When contracts skip normal competitive bidding — sole-source exceptions and the Petrocelli Town Square deal.",
+                    symbol: "doc.text.magnifyingglass",
+                    tint: RiverheadTheme.brandCoral
+                ) { ProcurementPolicyWatchView() }
+
+                toolRow(
+                    title: "Employee Pay Lookup",
+                    subtitle: "Search Newsday's gross earnings data for Town employees from 2018–2023.",
+                    symbol: "person.text.rectangle",
+                    tint: RiverheadTheme.brandNavy
+                ) { GrossEarningsNewsdayView() }
+            } header: {
+                Label("Officials & Accountability", systemImage: "eye.fill")
             }
 
-            Section("Budget Tools") {
-                NavigationLink {
-                    BudgetExplainersView()
-                } label: {
-                    Label("Budget Explainers", systemImage: "text.book.closed.fill")
-                }
+            // ── Budget Watching ───────────────────────────────────────────
+            Section {
+                toolRow(
+                    title: "Budget Explainers",
+                    subtitle: "Plain-English breakdowns of levy, reserves, fund balance, debt, and recurring costs.",
+                    symbol: "text.book.closed.fill",
+                    tint: RiverheadTheme.brandMint
+                ) { BudgetExplainersView() }
 
-                NavigationLink {
-                    RiverheadCampaignContributionsView()
-                } label: {
-                    Label("Campaign Donation Ethics", systemImage: "checkmark.shield")
-                }
+                toolRow(
+                    title: "Budget Policy Insights",
+                    subtitle: "Resident-facing analysis of policy choices, fund-balance rules, and spending trends.",
+                    symbol: "lightbulb.fill",
+                    tint: RiverheadTheme.brandGold
+                ) { BudgetPolicyInsightsView() }
 
-                NavigationLink {
-                    ProcurementPolicyWatchView()
-                } label: {
-                    Label("Procurement Watch", systemImage: "doc.text.magnifyingglass")
-                }
+                toolRow(
+                    title: "Contract Cost Increases",
+                    subtitle: "See how recurring Town contracts have grown year over year and where costs are climbing.",
+                    symbol: "arrow.up.right.circle.fill",
+                    tint: RiverheadTheme.brandCoral
+                ) { ContractScheduleIncreaseView() }
 
-                NavigationLink {
-                    LegalDefamationAnalysisView()
-                } label: {
-                    Label("Defamation Risk Analysis", systemImage: "exclamationmark.bubble")
-                }
+                toolRow(
+                    title: "Contract Cost Estimator",
+                    subtitle: "Model the Town-wide budget impact of a contract change before it goes to a vote.",
+                    symbol: "chart.line.uptrend.xyaxis",
+                    tint: RiverheadTheme.brandSky
+                ) { ContractImpactEstimatorView() }
 
-                NavigationLink {
-                    BudgetPolicyInsightsView()
-                } label: {
-                    Label("Budget Policy Insights", systemImage: "lightbulb.fill")
-                }
+                toolRow(
+                    title: "Department Spending Forecast",
+                    subtitle: "Project where each department's budget is heading based on recent growth trends.",
+                    symbol: "chart.bar.xaxis",
+                    tint: RiverheadTheme.accent
+                ) { DepartmentSpendForecastView() }
 
-                NavigationLink {
-                    SnowRemovalOverrunView()
-                } label: {
-                    Label("Snow Removal OT Overrun", systemImage: "snowflake")
-                }
-
-                NavigationLink {
-                    ContractScheduleIncreaseView()
-                } label: {
-                    Label("Contract Schedule Increases", systemImage: "doc.text.magnifyingglass")
-                }
-
-                NavigationLink {
-                    DepartmentSpendForecastView()
-                } label: {
-                    Label("Department Spend Forecast", systemImage: "chart.bar.xaxis")
-                }
-
-                NavigationLink {
-                    ContractImpactEstimatorView()
-                } label: {
-                    Label("Contract Impact Estimator", systemImage: "chart.line.uptrend.xyaxis")
-                }
+                toolRow(
+                    title: "Snow Removal Overtime",
+                    subtitle: "How much the Town spent on snow removal overtime versus what was budgeted.",
+                    symbol: "snowflake",
+                    tint: RiverheadTheme.brandSky
+                ) { SnowRemovalOverrunView() }
+            } header: {
+                Label("Budget Watching", systemImage: "chart.bar.doc.horizontal.fill")
             }
 
-            Section("Capital & Infrastructure") {
-                NavigationLink {
-                    RBCapitalProjectsMapView()
-                } label: {
-                    Label("Capital Projects Map", systemImage: "map")
-                }
+            // ── Maps & Projects ───────────────────────────────────────────
+            Section {
+                toolRow(
+                    title: "Capital Projects Map",
+                    subtitle: "See where Town capital projects are located and what's planned in your area.",
+                    symbol: "map.fill",
+                    tint: RiverheadTheme.brandTeal
+                ) { RBCapitalProjectsMapView() }
+            } header: {
+                Label("Maps & Projects", systemImage: "map.fill")
             }
 
-            Section("Cost of Living & Services") {
-                NavigationLink {
-                    CostOfLivingToolkitsView()
-                } label: {
-                    Label("Cost of Living Toolkits", systemImage: "cart.fill")
-                }
+            // ── Town Information ──────────────────────────────────────────
+            Section {
+                toolRow(
+                    title: "Town Departments",
+                    subtitle: "Find the right office, contact, and phone number for any Town service.",
+                    symbol: "building.2.fill",
+                    tint: RiverheadTheme.brandNavy
+                ) { DepartmentsView() }
 
-                NavigationLink {
-                    Channel22View()
-                } label: {
-                    Label("Channel 22 (Town TV)", systemImage: "tv.fill")
-                }
+                toolRow(
+                    title: "Channel 22 — Town TV",
+                    subtitle: "Watch live Town Board meetings, replays, and public information programming.",
+                    symbol: "tv.fill",
+                    tint: RiverheadTheme.brandNavy
+                ) { Channel22View() }
 
-                NavigationLink {
-                    SixSigmaProcessImprovementShiftView()
-                } label: {
-                    Label("Process Improvement (Six Sigma)", systemImage: "arrow.triangle.2.circlepath.circle")
-                }
+                toolRow(
+                    title: "Cost of Living Guide",
+                    subtitle: "Resident-facing tools for comparing costs, services, and local affordability.",
+                    symbol: "cart.fill",
+                    tint: RiverheadTheme.brandMint
+                ) { CostOfLivingToolkitsView() }
+
+                toolRow(
+                    title: "Public Speech & Legal Risk",
+                    subtitle: "What residents can say at public meetings and where defamation rules apply.",
+                    symbol: "bubble.left.and.exclamationmark.bubble.right.fill",
+                    tint: RiverheadTheme.brandGold
+                ) { LegalDefamationAnalysisView() }
+
+                toolRow(
+                    title: "Efficiency Analysis",
+                    subtitle: "Apply process-improvement thinking to Town operations and service delivery.",
+                    symbol: "arrow.triangle.2.circlepath.circle.fill",
+                    tint: .purple
+                ) { SixSigmaProcessImprovementShiftView() }
+            } header: {
+                Label("Town Information", systemImage: "building.columns.fill")
             }
 
-            Section("Broadband Tracker") {
+            // ── Broadband Tracker ─────────────────────────────────────────
+            Section {
                 if filteredBroadbandRows.isEmpty {
                     ContentUnavailableView(
-                        "No broadband issues",
+                        query.isEmpty ? "No broadband issues logged yet" : "No matches for \"\(query)\"",
                         systemImage: "wifi",
-                        description: Text("No items match your search (or none added yet).")
+                        description: Text(query.isEmpty ? "Tap the search bar above to add or find issues." : "Try a different search term.")
                     )
                 } else {
                     ForEach(filteredBroadbandRows) { row in
@@ -227,13 +266,17 @@ struct CivicToolkitsHubView: View {
                     }
                     .onDelete(perform: deleteBroadbandRows)
                 }
+            } header: {
+                Label("Broadband Tracker", systemImage: "wifi")
+            } footer: {
+                Text("Search above filters these broadband issues only. Tap a row for details. Swipe left on any row to delete it.")
             }
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .tint(RiverheadTheme.accent)
-        .navigationTitle("Toolkits")
+        .navigationTitle("Tools")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $query, prompt: "Search broadband issues…")
         .sheet(item: $selectedBroadband) { sel in
@@ -273,9 +316,6 @@ struct CivicToolkitsHubView: View {
                 .accessibilityLabel("Share")
             }
 
-            ToolbarItem(placement: .topBarTrailing) {
-                EditButton()
-            }
         })
         .overlay(alignment: .top) {
             if showCopiedToast {
@@ -287,42 +327,34 @@ struct CivicToolkitsHubView: View {
         .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
-    private var header: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 10) {
-                ZStack {
-                    Circle()
-                        .fill(Color.white.opacity(0.18))
-                        .frame(width: 44, height: 44)
-                    Image(systemName: "person.2.badge.gearshape")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(Color.white)
-                }
+    @ViewBuilder
+    private func toolRow<Destination: View>(
+        title: String,
+        subtitle: String,
+        symbol: String,
+        tint: Color,
+        @ViewBuilder destination: @escaping () -> Destination
+    ) -> some View {
+        NavigationLink { destination() } label: {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: symbol)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(tint)
+                    .frame(width: 28, height: 28)
+                    .background(tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
 
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("Resident-friendly tools")
-                        .font(.headline.weight(.semibold))
-                        .foregroundStyle(Color.white)
-                    Text("Quick access to civic toolkit, maps, issue tracking, and process improvement.")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.white.opacity(0.82))
+                    Text(title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
-
-            HStack(spacing: 8) {
-                MiniPill(text: "Search", icon: "magnifyingglass")
-                MiniPill(text: "Share", icon: "square.and.arrow.up")
-                MiniPill(text: "Edit", icon: "pencil")
-            }
+            .padding(.vertical, 4)
         }
-        .padding(14)
-        .background(RiverheadTheme.headerGradient)
-        .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .strokeBorder(Color.white.opacity(0.18), lineWidth: 1)
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .shadow(color: RiverheadTheme.cardShadow(scheme, elevated: true), radius: 14, x: 0, y: 8)
     }
 
     private func deleteBroadbandRows(at offsets: IndexSet) {
@@ -340,22 +372,6 @@ struct CivicToolkitsHubView: View {
         store.scheduleSave()
     }
 
-    private struct MiniPill: View {
-        let text: String
-        let icon: String
-
-        var body: some View {
-            HStack(spacing: 6) {
-                Image(systemName: icon).font(.caption.weight(.semibold))
-                Text(text).font(.caption.weight(.semibold))
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(Color.white.opacity(0.16))
-            .foregroundStyle(Color.white.opacity(0.9))
-            .clipShape(Capsule())
-        }
-    }
 }
 
 private struct ToastBanner: View {

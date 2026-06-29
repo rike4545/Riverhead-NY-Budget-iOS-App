@@ -148,18 +148,49 @@ private extension RiverheadCampaignContributionsView {
     var relatedPartyCard: some View {
         InfoCard(title: "3. Related-Party Watch", systemImage: "person.2.badge.gearshape") {
             VStack(alignment: .leading, spacing: 12) {
-                Text("The scorecard should not stop at one corporate donor name. For Petrocelli-related matters, the watch list includes Petrocelli-named companies, individual family-member donor rows, and public-profile hospitality names when those names appear in campaign filings.")
+                Text("The scorecard should not stop at one corporate donor name. For Petrocelli-related matters, the watch list covers all Petrocelli-named business entities, individual family members, and public-profile hospitality names when any of those names appear in campaign filings from 2005 through 2026.")
                     .fixedSize(horizontal: false, vertical: true)
 
-                BulletRow(text: "Entity donations and individual family-member donations should be visible together for transparency.")
-                BulletRow(text: "Known public-profile names and assets include Jennifer Petrocelli, Jacqueline Phillips, Alexandra Bussi, The Preston House, Atlantis Banquets, Sea Star Ballroom, Taste the East End, Raphael Vineyard, Long Island Aquarium, and Hyatt Place East End.")
+                Text("Business entities to search")
+                    .font(.subheadline.bold())
+
+                BulletRow(text: "J Petrocelli Construction")
+                BulletRow(text: "J Petrocelli Construction Inc")
+                BulletRow(text: "J. Petrocelli Cont. Inc")
+                BulletRow(text: "J. Petrocelli Contracting")
+                BulletRow(text: "J. Petrocelli Contracting, Inc.")
+                BulletRow(text: "J. Petrocelli Development Inc")
+                BulletRow(text: "J Petrocelli Wine Cellars LLC")
+                BulletRow(text: "J. Petrocelli Cellars, LLC")
+                BulletRow(text: "Hp East End Riverhead LLC")
+                BulletRow(text: "J. Petrocelli Riverhead Town Square LLC")
+
+                Text("Individuals to search")
+                    .font(.subheadline.bold())
+
+                BulletRow(text: "M. Petrocelli")
+                BulletRow(text: "Marie Petrocelli")
+                BulletRow(text: "Michael Petrocelli")
+                BulletRow(text: "Jennifer Petrocelli")
+                BulletRow(text: "Jacqueline Phillips")
+                BulletRow(text: "Alexandra Bussi")
+
+                Text("Hospitality and affiliated assets")
+                    .font(.subheadline.bold())
+
+                BulletRow(text: "The Preston House, Atlantis Banquets, Sea Star Ballroom, Taste the East End, Raphael Vineyard, Long Island Aquarium, and Hyatt Place East End.")
+
+                Divider()
+
+                BulletRow(text: "Donation lookup window: 2005 through 2026. Check all filings in this range before concluding a name does not appear.")
+                BulletRow(text: "Entity donations and individual donations should be tallied together to test the $1,000 aggregation threshold.")
                 BulletRow(text: "Related-party matches are not automatic proof of coordination, price fixing, favoritism, or quid pro quo conduct.")
                 BulletRow(text: "They are a prompt to ask whether officials disclosed the relationship before acting on contracts, land sales, PILOTs, parking, zoning, or approvals involving the same developer interest.")
                 BulletRow(text: "Public-source basis includes Schneps / QNS and Dan's Papers profiles describing Petrocelli family roles in Riverhead hospitality businesses.")
 
                 HighlightBox(
                     title: "Plain-English rule",
-                    message: "Do not treat one $225 check as the whole story if related entities or family members also appear in the campaign record."
+                    message: "Do not treat one $225 check as the whole story. Search every entity and family name in this watch list across the full 2005–2026 window before drawing a conclusion."
                 )
             }
         }

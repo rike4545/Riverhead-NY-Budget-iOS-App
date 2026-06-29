@@ -226,7 +226,13 @@ struct FundBalanceTrendView: View {
                             .gesture(
                                 DragGesture(minimumDistance: 0)
                                     .onChanged { val in
-                                        let x = val.location.x - geo[proxy.plotAreaFrame].origin.x
+                                        let plotOriginX: CGFloat
+                                        if let frame = proxy.plotFrame {
+                                            plotOriginX = geo[frame].origin.x
+                                        } else {
+                                            plotOriginX = 0
+                                        }
+                                        let x = val.location.x - plotOriginX
                                         if let year: Int = proxy.value(atX: x) {
                                             let nearest = points.min(by: { abs($0.year - year) < abs($1.year - year) })
                                             selectedYear = nearest?.year

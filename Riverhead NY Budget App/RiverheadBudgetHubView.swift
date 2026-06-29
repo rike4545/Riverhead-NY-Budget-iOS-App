@@ -30,7 +30,7 @@ struct RiverheadBudgetHubView: View {
     }
 
     private var primarySections: [BudgetSection] {
-        [.overview, .proposed2027Budget, .myTaxes, .fundBalance, .capitalDebt, .tools]
+        [.myTaxes, .overview, .proposed2027Budget, .fundBalance, .capitalDebt, .tools]
     }
 
     var body: some View {
@@ -43,7 +43,6 @@ struct RiverheadBudgetHubView: View {
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
 
-                modeHeader
                 sectionChips
 
                 Divider()
@@ -98,31 +97,64 @@ struct RiverheadBudgetHubView: View {
                 }
             }
         }
-        .navigationTitle("Riverhead Budget Hub")
+        .navigationTitle("Budget")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(
             RiverheadTheme.Surface.card.opacity(scheme == .dark ? 0.95 : 1.0),
             for: .navigationBar
         )
         .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Section("Detail Level") {
+                        ForEach(BudgetAudienceMode.allCases) { m in
+                            Button {
+                                modeRaw = m.rawValue
+                            } label: {
+                                Label(
+                                    m == mode ? "\(m.label) ✓" : m.label,
+                                    systemImage: m == .resident ? "person.fill" : "brain.head.profile"
+                                )
+                            }
+                        }
+                    }
+                } label: {
+                    Label(mode == .resident ? "Resident" : "Expert", systemImage: "slider.horizontal.3")
+                        .font(.footnote.weight(.semibold))
+                        .accessibilityLabel("Budget detail level: \(mode.label)")
+                        .accessibilityHint("Tap to switch between Resident plain-language view and Expert detailed view.")
+                }
+            }
+        }
     }
 
     // MARK: - Hero Header
 
     private var hubHeader: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Budget Hub")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.white.opacity(0.85))
+        VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Riverhead Town Budget")
+                    .font(.system(.title2, design: .rounded).weight(.bold))
+                    .foregroundStyle(.white)
 
-            Text("Budget, Taxes & Decisions")
-                .font(.system(.title2, design: .rounded).weight(.bold))
-                .foregroundStyle(.white)
+                Text("Pick what you want to know — your taxes, where money goes, or what to ask at a meeting.")
+                    .font(.footnote)
+                    .foregroundStyle(.white.opacity(0.88))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
 
-            Text("2027 proposal, taxes, reserves, debt, and supporting evidence.")
-                .font(.footnote)
-                .foregroundStyle(.white.opacity(0.85))
-                .fixedSize(horizontal: false, vertical: true)
+            HStack(spacing: 8) {
+                quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
+                    section = .myTaxes
+                }
+                quickStartChip("Where $ goes", symbol: "chart.pie.fill") {
+                    section = .overview
+                }
+                quickStartChip("2027 plan", symbol: "doc.text.fill") {
+                    section = .proposed2027Budget
+                }
+            }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -163,47 +195,24 @@ struct RiverheadBudgetHubView: View {
 
     // MARK: - UI pieces
 
-    private var modeHeader: some View {
-        HStack(spacing: 12) {
-            Picker("Audience", selection: $modeRaw) {
-                ForEach(BudgetAudienceMode.allCases) { mode in
-                    Text(mode.label).tag(mode.rawValue)
-                }
-            }
-            .pickerStyle(.segmented)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Audience mode")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                Text(mode.subtitle)
+    private func quickStartChip(_ label: String, symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 5) {
+                Image(systemName: symbol)
                     .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
+                    .accessibilityHidden(true)
+                Text(label)
+                    .font(.caption.weight(.semibold))
             }
+            .foregroundStyle(.white)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color.white.opacity(0.18), in: Capsule())
+            .overlay(Capsule().strokeBorder(Color.white.opacity(0.30), lineWidth: 0.8))
         }
-        .padding(12)
-        .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(
-                    scheme == .dark
-                    ? RiverheadTheme.Surface.elevated.opacity(0.92)
-                    : RiverheadTheme.Surface.elevated
-                )
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .strokeBorder(
-                    RiverheadTheme.border.opacity(scheme == .dark ? 0.35 : 0.25)
-                )
-        )
-        .shadow(
-            color: RiverheadTheme.cardShadow(scheme),
-            radius: 12,
-            x: 0,
-            y: 6
-        )
-        .padding(.horizontal, 16)
+        .buttonStyle(.plain)
+        .accessibilityLabel(label)
+        .accessibilityHint("Jumps to the \(label) section of the budget.")
     }
 
     private var sectionChips: some View {
@@ -216,6 +225,7 @@ struct RiverheadBudgetHubView: View {
                         HStack(spacing: 6) {
                             Image(systemName: sec.symbolName)
                                 .font(.footnote)
+                                .accessibilityHidden(true)
                             Text(sec.label)
                                 .font(.footnote.weight(.medium))
                         }
@@ -258,6 +268,9 @@ struct RiverheadBudgetHubView: View {
                         )
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel(sec.label)
+                    .accessibilityAddTraits(section == sec ? [.isSelected] : [])
+                    .accessibilityHint(section == sec ? "Currently selected" : "Tap to open \(sec.label)")
                 }
             }
             .padding(.horizontal, 16)

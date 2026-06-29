@@ -33,75 +33,234 @@ struct MoreView: View {
     private let oscFinancialToolkitURL = URL(string: "https://www.osc.ny.gov/local-government/financial-toolkit")!
     private let townHallCommitteesURL = URL(string: "https://www.townofriverheadny.gov/240/Town-Hall-Committees")!
     private let downtownRevitalizationCommitteeURL = URL(string: "https://www.townofriverheadny.gov/261/Downtown-Revitalization-Committee")!
-    private let sponsoredShopSimonURL = URL(string: "http://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
-    private let sponsoredWisprURL = URL(string: "https://ref.wisprflow.ai/bryan-c")!
-    private let sponsoredTryCentsURL = URL(string: "https://comfrt.com/KLAIRE11")!
-    private let sponsoredTryCentsReferralCode = "KLAIRE11"
-    private let sponsoredTeslaFiURL = URL(string: "https://comfrt.com/KLAIRE11")!
-    private let sponsoredTeslaFiReferralCode = "KLAIRE11"
+    // MARK: - Referral / affiliate URLs (sourced from linktr.ee/teslafi)
+    private let urlComfrt       = URL(string: "https://comfrt.com/KLAIRE11")!
+    private let urlReplit       = URL(string: "https://replit.com/refer/cspankid")!
+    private let urlBuyMeCoffee  = URL(string: "https://buymeacoffee.com/myevcompanionapp")!
+    private let urlKoFi         = URL(string: "https://ko-fi.com/riker")!
+    private let urlDrift        = URL(string: "https://fbuy.io/drift/ksnd5e9b")!
+    private let urlEVBase       = URL(string: "https://www.evbase.com/?bg_ref=PdfYNb0dyV")!
+    private let urlStarlink     = URL(string: "https://starlink.com/residential?referral=RC-4509047-46429-69")!
+    private let urlTSportline   = URL(string: "https://tsportline.com/?sca_ref=9830647.pqBEvt1iTi8Kekf")!
+    private let urlTeslaDiscount = URL(string: "https://ts.la/bryan627261")!
+    private let urlTeslaFi      = URL(string: "https://www.teslafi.com/signup.php?referred=KOV2GO")!
+    private let urlBJs          = URL(string: "https://share.bjs.com/carrollcoupon!df756d740e!a")!
+    private let urlSurveySavvy  = URL(string: "https://www.surveysavvy.com/?m=7690803")!
+    private let urlUpside       = URL(string: "https://upside.app.link/GBNRJ")!
+    private let urlFirmoo       = URL(string: "https://www.firmoo.com/?invite_code=eb59917f65")!
+    private let urlRakuten      = URL(string: "http://www.rakuten.com/r/B2BRB9?eeid=28187")!
+    private let urlFetch        = URL(string: "https://referral.fetch.com/vvv3/referralsocial?code=4TC22")!
+    private let urlIbotta       = URL(string: "https://ibotta.onelink.me/iUfE/1005cd3f?friend_code=chlaojv")!
+    private let urlVisible      = URL(string: "https://www.visible.com/get/?3SL9ZDM")!
+    private let urlWispr        = URL(string: "https://ref.wisprflow.ai/bryan-c")!
+    private let urlShopSimon    = URL(string: "http://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
     private let appFeedbackURL = URL(string: "https://qualtricsxmm8q5gxrhq.qualtrics.com/jfe/form/SV_1TvkCrIKgaEYHPM")!
 
     private var discountSections: [DiscountOfferSection] {
         [
+            // ── EV & Tesla ──────────────────────────────────────────────
             DiscountOfferSection(
-                title: "Shopping",
-                subtitle: "Outlet and retail savings links that fit occasional resident use.",
-                systemImage: "bag.fill",
-                tint: .orange,
-                offers: [
-                    DiscountOffer(
-                        title: "SHOP SIMON",
-                        subtitle: "Formerly Shop Premium Outlets",
-                        detail: "Outlet shopping offers and seasonal promo campaigns.",
-                        url: sponsoredShopSimonURL,
-                        badge: "Affiliate link"
-                    )
-                ]
-            ),
-            DiscountOfferSection(
-                title: "Productivity",
-                subtitle: "Low-friction software tools and writing helpers.",
-                systemImage: "keyboard.fill",
-                tint: RiverheadTheme.brandSky,
-                offers: [
-                    DiscountOffer(
-                        title: "Wispr Flow",
-                        subtitle: "Voice-to-text productivity tool",
-                        detail: "Referral entry for a dictation-focused workflow app.",
-                        url: sponsoredWisprURL,
-                        badge: "Affiliate link"
-                    )
-                ]
-            ),
-            DiscountOfferSection(
-                title: "Household Services",
-                subtitle: "Offers tied to everyday convenience services.",
-                systemImage: "house.fill",
-                tint: RiverheadTheme.brandMint,
-                offers: [
-                    DiscountOffer(
-                        title: "Personal laundry delivery",
-                        subtitle: "Linked offer currently labeled in the app as a laundry referral",
-                        detail: "Open the partner link and apply the code at checkout if eligible.",
-                        url: sponsoredTryCentsURL,
-                        badge: "Referral code",
-                        code: sponsoredTryCentsReferralCode
-                    )
-                ]
-            ),
-            DiscountOfferSection(
-                title: "Driving & EV",
-                subtitle: "Auto-related referral entry currently included in the app.",
-                systemImage: "car.fill",
+                title: "EV & Tesla",
+                subtitle: "Discounts and referrals for Tesla owners and EV drivers.",
+                systemImage: "bolt.car.fill",
                 tint: RiverheadTheme.brandTeal,
                 offers: [
                     DiscountOffer(
-                        title: "TeslaFi",
-                        subtitle: "Vehicle analytics and charging-history tracking",
-                        detail: "Use the app's saved referral code when the destination supports it.",
-                        url: sponsoredTeslaFiURL,
+                        title: "Tesla Vehicle Discount",
+                        subtitle: "Referral discount on a new Tesla purchase",
+                        detail: "Use this referral link when ordering a new Tesla to receive a discount on your purchase. Confirm current referral program terms at tesla.com — Tesla updates referral benefits periodically.",
+                        url: urlTeslaDiscount,
+                        badge: "Referral link"
+                    ),
+                    DiscountOffer(
+                        title: "TeslaFi — $10 Off",
+                        subtitle: "Tesla data logging, trip history, and charging analytics",
+                        detail: "TeslaFi connects to your Tesla account and logs detailed driving, charging, and efficiency data — including trip history, battery degradation tracking, and Powerwall monitoring. Use this referral link to get $10 off your subscription.",
+                        url: urlTeslaFi,
+                        badge: "Referral — $10 off"
+                    ),
+                    DiscountOffer(
+                        title: "EVBASE — EV & Tesla Accessories",
+                        subtitle: "Premium accessories for Tesla and other EVs",
+                        detail: "EVBASE sells floor mats, trunk organizers, screen protectors, and other accessories for Tesla Model 3, Y, S, X, and Cybertruck. This referral link may apply a discount at checkout.",
+                        url: urlEVBase,
+                        badge: "Referral link"
+                    ),
+                    DiscountOffer(
+                        title: "T Sportline — Tesla Wheels & Accessories",
+                        subtitle: "Aftermarket wheels and performance accessories for Tesla",
+                        detail: "T Sportline specializes in aftermarket wheels, lowering springs, and accessories for Tesla Model 3, Y, S, X, and Cybertruck. This referral link credits the referrer and may offer a discount.",
+                        url: urlTSportline,
+                        badge: "Referral link"
+                    ),
+                    DiscountOffer(
+                        title: "Drift — 50% Off First Subscription",
+                        subtitle: "EV charging and smart home energy products",
+                        detail: "Drift offers energy plans and smart home products for EV owners. This referral link gives 50% off your first product subscription. Confirm current offer terms at driftenergy.com.",
+                        url: urlDrift,
+                        badge: "50% off first order"
+                    )
+                ]
+            ),
+            // ── Cash Back & Rewards ─────────────────────────────────────
+            DiscountOfferSection(
+                title: "Cash Back & Rewards",
+                subtitle: "Earn money back on everyday shopping and groceries.",
+                systemImage: "dollarsign.circle.fill",
+                tint: .green,
+                offers: [
+                    DiscountOffer(
+                        title: "Rakuten — Cash Back Shopping",
+                        subtitle: "Earn cash back at thousands of online stores",
+                        detail: "Rakuten gives you cash back when you shop at participating retailers online. Sign up through this referral link to receive a bonus after your first qualifying purchase. Cash back is paid quarterly via PayPal or check.",
+                        url: urlRakuten,
+                        badge: "Referral bonus"
+                    ),
+                    DiscountOffer(
+                        title: "Ibotta — Grocery Cash Back",
+                        subtitle: "Cash back on groceries, household items, and more",
+                        detail: "Ibotta lets you earn cash back on grocery and retail purchases by scanning your receipt or linking your loyalty account. Use this referral link to get a bonus after your first redemption.",
+                        url: urlIbotta,
+                        badge: "Referral bonus"
+                    ),
+                    DiscountOffer(
+                        title: "Fetch — Receipt Points",
+                        subtitle: "Earn points on every receipt for gift cards and rewards",
+                        detail: "Fetch rewards you with points for scanning any grocery, restaurant, or retail receipt. Points can be redeemed for gift cards. Use referral code 4TC22 when signing up for bonus points.",
+                        url: urlFetch,
                         badge: "Referral code",
-                        code: sponsoredTeslaFiReferralCode
+                        code: "4TC22"
+                    ),
+                    DiscountOffer(
+                        title: "SurveySavvy — Earn $3/Month Passively",
+                        subtitle: "Passive income app that pays for internet usage data",
+                        detail: "SurveySavvy Connect runs in the background and pays you approximately $3 per month per device for anonymized internet usage data. Sign up through this referral link to get started.",
+                        url: urlSurveySavvy,
+                        badge: "Referral link"
+                    )
+                ]
+            ),
+            // ── Gas & Groceries ─────────────────────────────────────────
+            DiscountOfferSection(
+                title: "Gas & Groceries",
+                subtitle: "Save on fuel and warehouse shopping.",
+                systemImage: "fuelpump.fill",
+                tint: .orange,
+                offers: [
+                    DiscountOffer(
+                        title: "Upside — Gas Discounts",
+                        subtitle: "Cash back on gas at stations near you",
+                        detail: "Upside gives you cash back on gas purchases at participating stations. Tap to claim an offer, fill up, and scan your receipt. Use referral code GBNRJ when signing up for a first-purchase bonus.",
+                        url: urlUpside,
+                        badge: "Referral code",
+                        code: "GBNRJ"
+                    ),
+                    DiscountOffer(
+                        title: "BJ's Wholesale Club",
+                        subtitle: "Savings on a BJ's membership",
+                        detail: "BJ's Wholesale Club offers bulk grocery, household, and general merchandise at warehouse prices. This referral link may provide a discount on a new membership. Confirm current offer terms at bjs.com.",
+                        url: urlBJs,
+                        badge: "Referral link"
+                    )
+                ]
+            ),
+            // ── Shopping & Apparel ──────────────────────────────────────
+            DiscountOfferSection(
+                title: "Shopping & Apparel",
+                subtitle: "Clothing, eyewear, and outlet deals.",
+                systemImage: "bag.fill",
+                tint: .purple,
+                offers: [
+                    DiscountOffer(
+                        title: "Comfrt — 15% Off",
+                        subtitle: "Premium hoodies and comfort apparel",
+                        detail: "Comfrt makes heavyweight, oversized hoodies designed for all-day comfort. Use code KLAIRE11 at checkout for 15% off your order.",
+                        url: urlComfrt,
+                        badge: "15% off",
+                        code: "KLAIRE11"
+                    ),
+                    DiscountOffer(
+                        title: "Firmoo — Eyeglasses",
+                        subtitle: "Prescription glasses and sunglasses at low prices",
+                        detail: "Firmoo sells prescription eyeglasses, reading glasses, and sunglasses online at affordable prices. This invite link may provide a discount on your first pair. Confirm current offer terms at firmoo.com.",
+                        url: urlFirmoo,
+                        badge: "Referral discount"
+                    ),
+                    DiscountOffer(
+                        title: "Simon Premium Outlets",
+                        subtitle: "Outlet shopping at Simon malls nationwide",
+                        detail: "Simon operates premium outlet centers across the US including Tanger and Premium Outlets locations. This affiliate link opens current promotions and seasonal offers.",
+                        url: urlShopSimon,
+                        badge: "Affiliate link"
+                    )
+                ]
+            ),
+            // ── Internet & Mobile ───────────────────────────────────────
+            DiscountOfferSection(
+                title: "Internet & Mobile",
+                subtitle: "Home internet and wireless phone savings.",
+                systemImage: "antenna.radiowaves.left.and.right",
+                tint: RiverheadTheme.brandSky,
+                offers: [
+                    DiscountOffer(
+                        title: "Starlink — 1 Month Free",
+                        subtitle: "Satellite internet for home and travel",
+                        detail: "Starlink provides high-speed satellite internet from SpaceX, available in most US locations including rural areas. Use this referral link when signing up for residential service to receive one month free. Confirm current availability and pricing at starlink.com.",
+                        url: urlStarlink,
+                        badge: "1 month free"
+                    ),
+                    DiscountOffer(
+                        title: "Visible Wireless",
+                        subtitle: "Unlimited phone plan on Verizon's network",
+                        detail: "Visible offers unlimited talk, text, and data plans running on Verizon's network starting at $25/month. Use this referral link when activating to get a discount. Confirm current plan pricing at visible.com.",
+                        url: urlVisible,
+                        badge: "Referral discount"
+                    )
+                ]
+            ),
+            // ── Tech & Software ─────────────────────────────────────────
+            DiscountOfferSection(
+                title: "Tech & Software",
+                subtitle: "Developer tools and productivity apps.",
+                systemImage: "keyboard.fill",
+                tint: RiverheadTheme.brandMint,
+                offers: [
+                    DiscountOffer(
+                        title: "Wispr Flow",
+                        subtitle: "AI-powered voice dictation for Mac and iOS",
+                        detail: "Wispr Flow converts speech to text across any app on your Mac or iPhone using AI — works in any text field without switching apps. This referral link may provide a discount on your first subscription.",
+                        url: urlWispr,
+                        badge: "Referral link"
+                    ),
+                    DiscountOffer(
+                        title: "Replit — Sign Up Bonus",
+                        subtitle: "Browser-based coding and app development platform",
+                        detail: "Replit lets you write, run, and deploy code directly in your browser without any local setup. Sign up through this referral link to receive bonus credits or Cycles (Replit's in-platform currency). Confirm current bonus terms at replit.com.",
+                        url: urlReplit,
+                        badge: "Sign up bonus"
+                    )
+                ]
+            ),
+            // ── Support the App ─────────────────────────────────────────
+            DiscountOfferSection(
+                title: "Support the App",
+                subtitle: "Help keep this free civic tool running.",
+                systemImage: "heart.fill",
+                tint: RiverheadTheme.brandCoral,
+                offers: [
+                    DiscountOffer(
+                        title: "Buy Me a Coffee",
+                        subtitle: "Support the EV Companion app developer",
+                        detail: "A one-time contribution to support the developer behind the EV tools and companion apps linked here. Any amount helps cover hosting and development costs.",
+                        url: urlBuyMeCoffee,
+                        badge: "One-time tip"
+                    ),
+                    DiscountOffer(
+                        title: "Ko-fi",
+                        subtitle: "Support the app developer with a small donation",
+                        detail: "Ko-fi is a simple platform for supporting creators with small one-time or monthly contributions. Tap to leave a tip for the developer.",
+                        url: urlKoFi,
+                        badge: "One-time tip"
                     )
                 ]
             )
@@ -128,6 +287,17 @@ struct MoreView: View {
         .tint(RiverheadTheme.accent)
         .navigationTitle("More")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape")
+                        .accessibilityLabel("Settings")
+                        .accessibilityHint("Open app settings, property values, and data options.")
+                }
+            }
+        }
         .adMobBannerPlacement(showDebugPlaceholder: false)
     }
 
@@ -545,6 +715,18 @@ struct MoreView: View {
             } label: {
                 Label("About This App", systemImage: "info.circle")
             }
+
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "hand.raised.fill")
+                    .font(.subheadline)
+                    .foregroundStyle(RiverheadTheme.accent)
+                    .padding(.top, 1)
+                Text("Not endorsed or financed by any campaign, candidate, party, or PAC. Independent community tool.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .listRowBackground(Color.clear)
         }
     }
 

@@ -335,33 +335,122 @@ private struct BudgetChangeItem: Identifiable, Hashable {
 }
 
 struct CivicImprovementsHubView: View {
+
+    // MARK: - Stored state
     @AppStorage(CivicPreferences.favoritesKey) private var favoriteRaw = ""
-    @AppStorage(CivicPreferences.recentsKey) private var recentRaw = ""
-    @Environment(\.colorScheme) private var scheme
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
+    @AppStorage(CivicPreferences.recentsKey)   private var recentRaw   = ""
+
+    // MARK: - Environment
+    @Environment(\.colorScheme)                         private var scheme
+    @Environment(\.dynamicTypeSize)                     private var dynamicTypeSize
+    @Environment(\.accessibilityReduceTransparency)     private var reduceTransparency
+
+    // MARK: - Local state
+    @State private var searchQuery = ""
+    @State private var showAllTools = false
 
     private var favorites: [CivicDestination] { CivicPreferences.decodeDestinations(from: favoriteRaw) }
-    private var recents: [CivicDestination] { CivicPreferences.decodeDestinations(from: recentRaw) }
-    private var isAccessibilityLayout: Bool { dynamicTypeSize.isAccessibilitySize }
-    private var adaptiveColumns: [GridItem] {
-        [GridItem(.adaptive(minimum: isAccessibilityLayout ? 240 : 156), spacing: 12)]
+    private var recents:   [CivicDestination] { CivicPreferences.decodeDestinations(from: recentRaw)   }
+
+    // MARK: - Goal cards
+    private struct GoalCard: Identifiable {
+        let id = UUID()
+        let goal: String
+        let subtitle: String
+        let symbol: String
+        let tint: Color
+        let destination: CivicDestination
     }
-    private var cardMinimumHeight: CGFloat { isAccessibilityLayout ? 174 : 142 }
-    private var heroTextStyle: Color { reduceTransparency ? RiverheadTheme.textPrimary : .white }
-    private var heroSecondaryTextStyle: Color { reduceTransparency ? RiverheadTheme.textSecondary : .white.opacity(0.86) }
+
+    private let goalCards: [GoalCard] = [
+        GoalCard(goal: "Hold officials accountable",
+                 subtitle: "Campaign donations, council scorecard, procurement exceptions, and Petrocelli watch.",
+                 symbol: "checkmark.seal.fill",
+                 tint: RiverheadTheme.brandNavy,
+                 destination: .scorecard),
+        GoalCard(goal: "Understand the budget",
+                 subtitle: "Where the money goes, how your tax bill is built, reserve levels, and 2027 pressure.",
+                 symbol: "chart.bar.doc.horizontal.fill",
+                 tint: RiverheadTheme.brandSky,
+                 destination: .budgetHub),
+        GoalCard(goal: "Review Town Square",
+                 subtitle: "The Petrocelli hotel deal — public land, costs, contract terms, and open questions.",
+                 symbol: "building.2.crop.circle.fill",
+                 tint: RiverheadTheme.brandCoral,
+                 destination: .townSquare),
+        GoalCard(goal: "Prepare for a meeting",
+                 subtitle: "Build sourced questions, notes, and testimony before you walk in the door.",
+                 symbol: "person.wave.2.fill",
+                 tint: RiverheadTheme.brandMint,
+                 destination: .actionToolkit),
+        GoalCard(goal: "Check a public claim",
+                 subtitle: "Open the source trail before repeating or sharing a number or statement.",
+                 symbol: "checkmark.circle.fill",
+                 tint: RiverheadTheme.brandGold,
+                 destination: .sourceTrail),
+    ]
+
+    // MARK: - Featured "right now" shortcuts
+    private let featuredDestinations: [CivicDestination] = [
+        .scorecard, .townSquare, .budget2027Summary, .myTaxes, .accuracyWatchlist
+    ]
+
+    // MARK: - All-tools directory (grouped)
+    private struct ToolGroup: Identifiable {
+        let title: String
+        let symbol: String
+        let destinations: [CivicDestination]
+        var id: String { title }
+    }
+
+    private let toolGroups: [ToolGroup] = [
+        ToolGroup(title: "Accountability", symbol: "eye.fill", destinations: [
+            .scorecard, .pluralityGovernance, .sourceTrail, .accuracyWatchlist, .trustPrivacy
+        ]),
+        ToolGroup(title: "Budget & Taxes", symbol: "chart.bar.doc.horizontal.fill", destinations: [
+            .budgetHub, .myTaxes, .fundBalance, .budgetSignals, .supplementExplorer,
+            .budget2027Summary, .budget2027Lab, .budgetSimulator, .history
+        ]),
+        ToolGroup(title: "Town Projects", symbol: "building.2.fill", destinations: [
+            .townSquare, .capitalProjects, .departmentExplorer
+        ]),
+        ToolGroup(title: "Resident Toolkit", symbol: "person.line.dotted.person.fill", destinations: [
+            .actionToolkit, .savedScenarios, .budgetDiff, .askAI, .glossary, .civicToolkits
+        ]),
+        ToolGroup(title: "Find & Export", symbol: "magnifyingglass", destinations: [
+            .search, .pdfSearch, .exportCenter, .liveRefresh
+        ]),
+    ]
+
+    // MARK: - Search filtering
+    private var searchResults: [CivicDiscoveryItem] {
+        let q = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+        return CivicDiscoveryCatalog.all.filter { item in
+            ([item.title, item.subtitle] + item.keywords)
+                .joined(separator: " ").lowercased().contains(q)
+        }
+    }
+
+    // MARK: - Body
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                hero
-                if !favorites.isEmpty { destinationRail("Favorites", favorites) }
-                if !recents.isEmpty { destinationRail("Recently Viewed", recents) }
-                section("Resident Workflow", items: CivicDiscoveryCatalog.improvements)
-                section("Budget and Oversight Tools", items: CivicDiscoveryCatalog.tools)
+            VStack(alignment: .leading, spacing: 0) {
+                headerHero
+                    .padding(.horizontal, 16)
+                    .padding(.top, 12)
+                    .padding(.bottom, 16)
+
+                // Search results overlay
+                if !searchQuery.isEmpty {
+                    searchResultsSection
+                        .padding(.horizontal, 16)
+                } else {
+                    mainContent
+                }
             }
-            .padding(16)
+            .padding(.bottom, 32)
         }
         .background {
             if reduceTransparency {
@@ -374,28 +463,49 @@ struct CivicImprovementsHubView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private var hero: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Start with the issue. Leave with a next step.")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(heroTextStyle)
-                .fixedSize(horizontal: false, vertical: true)
-            Text("Use the Command Center to move from concern to source trail to meeting-ready questions. It is built for residents who want the facts, the context, and the next action in one place.")
-                .font(.subheadline)
-                .foregroundStyle(heroSecondaryTextStyle)
-                .fixedSize(horizontal: false, vertical: true)
-            NavigationLink {
-                StartHereView()
-            } label: {
-                Label("Choose my next step", systemImage: "arrow.right.circle.fill")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
+    // MARK: - Header + search
+
+    private var headerHero: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Civic Command Center")
+                    .font(.system(.title2, design: .rounded).weight(.bold))
+                    .foregroundStyle(.white)
+                    .accessibilityAddTraits(.isHeader)
+                Text("Start with the issue. Leave with a next step.")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.88))
             }
-            .buttonStyle(.borderedProminent)
-            .tint(RiverheadTheme.brandGold)
-            .simultaneousGesture(TapGesture().onEnded { remember(.startHere) })
-            .accessibilityHint("Opens the guided goal picker.")
-            .accessibilityInputLabels(["Choose my next step", "Start here", "Goal picker"])
+
+            // Embedded search bar
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundStyle(.white.opacity(0.75))
+                    .accessibilityHidden(true)
+                TextField("Search tools, topics, budget terms…", text: $searchQuery)
+                    .foregroundStyle(.white)
+                    .tint(.white)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    .accessibilityLabel("Search tools and topics")
+                    .accessibilityHint("Type to filter all tools, budget terms, and civic topics.")
+                if !searchQuery.isEmpty {
+                    Button {
+                        searchQuery = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundStyle(.white.opacity(0.75))
+                    }
+                    .accessibilityLabel("Clear search")
+                }
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(Color.white.opacity(0.15), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .strokeBorder(Color.white.opacity(0.25), lineWidth: 1)
+            )
         }
         .padding(18)
         .background(
@@ -404,26 +514,66 @@ struct CivicImprovementsHubView: View {
             : AnyShapeStyle(RiverheadTheme.headerGradient),
             in: RoundedRectangle(cornerRadius: 22, style: .continuous)
         )
-        .overlay(RoundedRectangle(cornerRadius: 22).strokeBorder(Color.white.opacity(0.18)))
+        .overlay(
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.18), lineWidth: 0.8)
+        )
         .shadow(color: RiverheadTheme.cardShadow(scheme, elevated: true), radius: 18, x: 0, y: 10)
-        .accessibilityElement(children: .contain)
     }
 
-    private func destinationRail(_ title: String, _ destinations: [CivicDestination]) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text(title)
-                .font(.headline)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    ForEach(destinations, id: \.self) { destination in
-                        if let item = CivicDiscoveryCatalog.item(for: destination) {
-                            NavigationLink {
-                                destinationView(destination)
-                            } label: {
-                                compactCard(item)
+    // MARK: - Main content (when not searching)
+
+    private var mainContent: some View {
+        VStack(alignment: .leading, spacing: 24) {
+
+            // Recents / Favorites chip rail
+            if !recents.isEmpty || !favorites.isEmpty {
+                chipRail
+                    .padding(.horizontal, 16)
+            }
+
+            // Goal cards — the primary entry point
+            goalSection
+                .padding(.horizontal, 16)
+
+            // Featured right now — curated shortcuts
+            featuredSection
+                .padding(.horizontal, 16)
+
+            // All tools directory
+            allToolsSection
+                .padding(.horizontal, 16)
+        }
+    }
+
+    // MARK: - Chip rail (recents + favorites)
+
+    private var chipRail: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if !recents.isEmpty {
+                Label("Recently viewed", systemImage: "clock")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(recents.prefix(6), id: \.self) { dest in
+                            if let item = CivicDiscoveryCatalog.item(for: dest) {
+                                chipButton(item)
                             }
-                            .buttonStyle(.plain)
-                            .simultaneousGesture(TapGesture().onEnded { remember(destination) })
+                        }
+                    }
+                }
+            }
+            if !favorites.isEmpty {
+                Label("Favorites", systemImage: "star.fill")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(favorites.prefix(6), id: \.self) { dest in
+                            if let item = CivicDiscoveryCatalog.item(for: dest) {
+                                chipButton(item)
+                            }
                         }
                     }
                 }
@@ -431,84 +581,309 @@ struct CivicImprovementsHubView: View {
         }
     }
 
-    private func section(_ title: String, items: [CivicDiscoveryItem]) -> some View {
+    private func chipButton(_ item: CivicDiscoveryItem) -> some View {
+        NavigationLink {
+            destinationView(item.destination)
+        } label: {
+            Label(item.title, systemImage: item.icon)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.accent)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(RiverheadTheme.accent.opacity(0.08), in: Capsule())
+                .overlay(Capsule().strokeBorder(RiverheadTheme.accent.opacity(0.22), lineWidth: 0.8))
+        }
+        .buttonStyle(.plain)
+        .simultaneousGesture(TapGesture().onEnded { remember(item.destination) })
+        .accessibilityLabel(item.title)
+        .accessibilityHint("Opens \(item.title).")
+    }
+
+    // MARK: - Goal cards
+
+    private var goalSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(title)
-                .font(.headline)
-            LazyVGrid(columns: adaptiveColumns, spacing: 12) {
-                ForEach(items) { item in
+            sectionHeader("What do you want to do?", symbol: "arrow.right.circle.fill")
+
+            VStack(spacing: 10) {
+                ForEach(goalCards) { card in
                     NavigationLink {
-                        destinationView(item.destination)
+                        destinationView(card.destination)
                     } label: {
-                        improvementCard(item)
+                        goalCardView(card)
                     }
                     .buttonStyle(.plain)
-                    .simultaneousGesture(TapGesture().onEnded { remember(item.destination) })
+                    .simultaneousGesture(TapGesture().onEnded { remember(card.destination) })
                 }
             }
         }
     }
 
-    private func improvementCard(_ item: CivicDiscoveryItem) -> some View {
+    private func goalCardView(_ card: GoalCard) -> some View {
+        HStack(alignment: .center, spacing: 14) {
+            Image(systemName: card.symbol)
+                .font(.title2)
+                .foregroundStyle(card.tint)
+                .frame(width: 44, height: 44)
+                .background(card.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(card.goal)
+                    .font(.headline)
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(card.subtitle)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer(minLength: 8)
+
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(card.tint.opacity(0.6))
+        }
+        .padding(14)
+        .background(RiverheadTheme.Surface.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .strokeBorder(card.tint.opacity(0.18), lineWidth: 1)
+        )
+        .shadow(color: RiverheadTheme.cardShadow(scheme), radius: 6, x: 0, y: 3)
+        .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(card.goal)
+        .accessibilityValue(card.subtitle)
+        .accessibilityHint("Opens related tools.")
+    }
+
+    // MARK: - Featured section
+
+    private var featuredSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Image(systemName: item.icon)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(item.tint)
-                    .accessibilityHidden(true)
-                Spacer()
-                if item.isNew {
-                    if differentiateWithoutColor {
-                        Label("New", systemImage: "sparkle")
-                            .font(.caption2.weight(.bold))
-                            .foregroundStyle(item.tint)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(item.tint.opacity(0.14), in: Capsule())
-                            .accessibilityLabel("New feature")
-                    } else {
-                        Text("NEW")
-                            .font(.caption2.weight(.bold))
-                            .foregroundStyle(item.tint)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(item.tint.opacity(0.14), in: Capsule())
-                            .accessibilityLabel("New feature")
+            sectionHeader("Featured right now", symbol: "sparkle")
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(featuredDestinations, id: \.self) { dest in
+                        if let item = CivicDiscoveryCatalog.item(for: dest) {
+                            NavigationLink {
+                                destinationView(dest)
+                            } label: {
+                                featuredCard(item)
+                            }
+                            .buttonStyle(.plain)
+                            .simultaneousGesture(TapGesture().onEnded { remember(dest) })
+                        }
                     }
                 }
             }
+        }
+    }
+
+    private func featuredCard(_ item: CivicDiscoveryItem) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Image(systemName: item.icon)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(item.tint)
+                .accessibilityHidden(true)
             Text(item.title)
-                .font(.headline)
+                .font(.subheadline.weight(.semibold))
                 .foregroundStyle(RiverheadTheme.textPrimary)
+                .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
             Text(item.subtitle)
-                .font(.caption)
+                .font(.caption2)
                 .foregroundStyle(.secondary)
-                .lineLimit(isAccessibilityLayout ? nil : 3)
+                .lineLimit(3)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .padding(14)
-        .frame(maxWidth: .infinity, minHeight: cardMinimumHeight, alignment: .topLeading)
-        .background(RiverheadTheme.Surface.card, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 18).strokeBorder(RiverheadTheme.softBorder))
-        .contentShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .frame(width: 168, alignment: .topLeading)
+        .frame(minHeight: 130)
+        .background(RiverheadTheme.Surface.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .strokeBorder(item.tint.opacity(0.18), lineWidth: 1)
+        )
+        .shadow(color: RiverheadTheme.cardShadow(scheme), radius: 6, x: 0, y: 3)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(item.isNew ? "\(item.title), new" : item.title)
+        .accessibilityLabel(item.title)
         .accessibilityValue(item.subtitle)
         .accessibilityHint("Opens \(item.title).")
     }
 
-    private func compactCard(_ item: CivicDiscoveryItem) -> some View {
-        Label(item.title, systemImage: item.icon)
-            .font(.footnote.weight(.semibold))
+    // MARK: - All tools directory
+
+    private var allToolsSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Button {
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                    showAllTools.toggle()
+                }
+            } label: {
+                HStack {
+                    sectionHeader("All tools", symbol: "square.grid.2x2.fill")
+                    Spacer()
+                    Image(systemName: showAllTools ? "chevron.up" : "chevron.down")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("All tools")
+            .accessibilityHint(showAllTools ? "Tap to collapse the tools directory." : "Tap to expand the full tools directory.")
+            .accessibilityAddTraits(.isButton)
+
+            if showAllTools {
+                VStack(spacing: 0) {
+                    ForEach(toolGroups) { group in
+                        toolGroupSection(group)
+                    }
+                }
+                .background(RiverheadTheme.Surface.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .strokeBorder(RiverheadTheme.softBorder, lineWidth: 0.8)
+                )
+                .shadow(color: RiverheadTheme.cardShadow(scheme), radius: 6, x: 0, y: 3)
+            }
+        }
+    }
+
+    private func toolGroupSection(_ group: ToolGroup) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(spacing: 8) {
+                Image(systemName: group.symbol)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.accent)
+                    .accessibilityHidden(true)
+                Text(group.title)
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.horizontal, 14)
+            .padding(.top, 12)
+            .padding(.bottom, 6)
+
+            ForEach(group.destinations, id: \.self) { dest in
+                if let item = CivicDiscoveryCatalog.item(for: dest) {
+                    NavigationLink {
+                        destinationView(dest)
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: item.icon)
+                                .font(.subheadline)
+                                .foregroundStyle(item.tint)
+                                .frame(width: 28)
+                                .accessibilityHidden(true)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(item.title)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(RiverheadTheme.textPrimary)
+                                Text(item.subtitle)
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                                    .lineLimit(2)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            Spacer(minLength: 8)
+                            Image(systemName: "chevron.right")
+                                .font(.caption2.weight(.bold))
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 10)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .simultaneousGesture(TapGesture().onEnded { remember(dest) })
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(item.title)
+                    .accessibilityValue(item.subtitle)
+
+                    if dest != group.destinations.last {
+                        Divider().padding(.leading, 54)
+                    }
+                }
+            }
+
+            if group.id != toolGroups.last?.id {
+                Divider()
+            }
+        }
+    }
+
+    // MARK: - Search results
+
+    private var searchResultsSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if searchResults.isEmpty {
+                ContentUnavailableView(
+                    "No results for \"\(searchQuery)\"",
+                    systemImage: "magnifyingglass",
+                    description: Text("Try a budget term, official name, or topic.")
+                )
+            } else {
+                Text("\(searchResults.count) result\(searchResults.count == 1 ? "" : "s")")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                VStack(spacing: 0) {
+                    ForEach(searchResults) { item in
+                        NavigationLink {
+                            destinationView(item.destination)
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: item.icon)
+                                    .font(.subheadline)
+                                    .foregroundStyle(item.tint)
+                                    .frame(width: 28)
+                                    .accessibilityHidden(true)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(item.title)
+                                        .font(.subheadline.weight(.semibold))
+                                        .foregroundStyle(RiverheadTheme.textPrimary)
+                                    Text(item.subtitle)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(2)
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.caption2.weight(.bold))
+                                    .foregroundStyle(.tertiary)
+                            }
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 10)
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .simultaneousGesture(TapGesture().onEnded { remember(item.destination) })
+
+                        if item.id != searchResults.last?.id {
+                            Divider().padding(.leading, 54)
+                        }
+                    }
+                }
+                .background(RiverheadTheme.Surface.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .strokeBorder(RiverheadTheme.softBorder, lineWidth: 0.8)
+                )
+            }
+        }
+    }
+
+    // MARK: - Shared helpers
+
+    private func sectionHeader(_ title: String, symbol: String) -> some View {
+        Label(title, systemImage: symbol)
+            .font(.headline)
             .foregroundStyle(RiverheadTheme.textPrimary)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
-            .background(RiverheadTheme.Surface.card, in: Capsule())
-            .overlay(Capsule().strokeBorder(RiverheadTheme.softBorder))
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel(item.title)
-            .accessibilityHint("Opens \(item.title).")
+            .accessibilityAddTraits(.isHeader)
     }
 
     private func remember(_ destination: CivicDestination) {

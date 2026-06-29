@@ -30,9 +30,9 @@ struct MainTabView: View {
             case .budget:
                 return "Budget"
             case .discover:
-                return "Discover"
+                return "Civic"
             case .toolkits:
-                return "Toolkits"
+                return "Tools"
             case .more:
                 return "More"
             }

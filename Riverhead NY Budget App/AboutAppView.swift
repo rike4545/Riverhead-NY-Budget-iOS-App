@@ -47,6 +47,29 @@ struct AboutAppView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
+                    Text("No campaign or candidate affiliation")
+                        .font(.headline)
+
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: "hand.raised.fill")
+                            .font(.title3)
+                            .foregroundStyle(RiverheadTheme.primaryBlue)
+                        Text("This app is not endorsed by, financed by, affiliated with, or produced on behalf of any political campaign, candidate, political party, political action committee, or elected official. It is an independent, community-built civic tool. No candidate or campaign has paid for, directed, or approved any content in this app.")
+                            .font(.subheadline)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(RiverheadTheme.primaryBlue.opacity(0.07))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .strokeBorder(RiverheadTheme.primaryBlue.opacity(0.18), lineWidth: 1)
+                    )
+                }
+
+                VStack(alignment: .leading, spacing: 8) {
                     Text("Unofficial research tool, not an official app")
                         .font(.headline)
 

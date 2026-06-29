@@ -43,18 +43,18 @@ struct HomeView: View {
                 if isPadLayout {
                     VStack(spacing: 20) {
                         heroHeader
+                        dataStatusBanner
 
                         HStack(alignment: .top, spacing: 16) {
-                            VStack(spacing: 16) {
-                                dataStatusSection
-                                quickLinksSection
-                            }
-                            .frame(maxWidth: .infinity, alignment: .top)
-
                             VStack(spacing: 16) {
                                 budgetSection
                                 infoSection
                                 disclaimerSection
+                            }
+                            .frame(maxWidth: .infinity, alignment: .top)
+
+                            VStack(spacing: 16) {
+                                quickLinksSection
                             }
                             .frame(maxWidth: .infinity, alignment: .top)
                         }
@@ -65,9 +65,9 @@ struct HomeView: View {
                 } else {
                     LazyVStack(spacing: 20) {
                         heroHeader
-                        dataStatusSection
-                        quickLinksSection
                         budgetSection
+                        quickLinksSection
+                        dataStatusBanner
                         infoSection
                         disclaimerSection
                     }
@@ -117,7 +117,7 @@ struct HomeView: View {
                     .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     .foregroundStyle(Color.white)
 
-                Text("Unofficial civic & budget companion for Town residents.")
+                Text("Unofficial civic & budget companion for Riverhead Town residents.")
                     .font(.subheadline)
                     .foregroundStyle(Color.white.opacity(0.95))
                     .fixedSize(horizontal: false, vertical: true)
@@ -127,20 +127,9 @@ struct HomeView: View {
                         .font(.footnote)
                         .foregroundStyle(RiverheadTheme.brandGold)
 
-                    Text("Not an official Town app. Always verify with the Town website and adopted budget.")
+                    Text("Not an official Town app — always verify with townofriverheadny.gov.")
                         .font(.footnote)
-                        .foregroundStyle(Color.white.opacity(0.92))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-
-                HStack(spacing: 6) {
-                    Image(systemName: "calendar")
-                        .font(.caption2)
-                        .foregroundStyle(RiverheadTheme.brandGold)
-
-                    Text("Start fast: services, taxes, and clear budget facts in one place.")
-                        .font(.caption)
-                        .foregroundStyle(Color.white.opacity(0.9))
+                        .foregroundStyle(Color.white.opacity(0.88))
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
@@ -156,84 +145,53 @@ struct HomeView: View {
     }
 
     
-    // MARK: - Data Status
+    // MARK: - Data Status Banner (compact — only visible when data isn't ready)
 
-    private var dataStatusSection: some View {
+    @ViewBuilder
+    private var dataStatusBanner: some View {
         let docs = store.documents
         let fundCount = store.funds.count
-        let years = docs.map(\.year)
-        let minYear = years.min()
-        let maxYear = years.max()
 
-        return VStack(alignment: .leading, spacing: 12) {
-            sectionHeader(title: "Data Status", icon: "checkmark.seal.fill")
-
-            VStack(alignment: .leading, spacing: 8) {
-                HStack(spacing: 10) {
-                    Image(systemName: docs.isEmpty ? "exclamationmark.triangle.fill" : "checkmark.seal.fill")
-                        .font(.title3)
-                        .foregroundStyle(docs.isEmpty ? Color.orange : Color.green)
-                        .frame(width: 28)
-
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(docs.isEmpty ? "Budget documents not loaded yet" : "\(docs.count) budget documents available")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(primaryText)
-
-                        if let minYear, let maxYear, !docs.isEmpty {
-                            Text("Coverage: \(minYear)–\(maxYear)")
-                                .font(.footnote)
-                                .foregroundStyle(secondaryText)
-                        } else if docs.isEmpty {
-                            Text("If this persists, confirm the documents list is seeded in RBBudgetStore.")
-                                .font(.footnote)
-                                .foregroundStyle(secondaryText)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                    }
-
-                    Spacer()
-                }
-
-                if !docs.isEmpty {
-                    Label(
-                        fundCount == 0
-                        ? "Fund summaries are still loading in the background."
-                        : "\(fundCount) fund summaries ready for charts and drill-downs.",
-                        systemImage: fundCount == 0 ? "clock.badge" : "chart.xyaxis.line"
-                    )
+        if docs.isEmpty {
+            HStack(spacing: 10) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundStyle(.orange)
+                Text("Budget data is still loading. Charts and numbers will appear shortly.")
                     .font(.footnote)
                     .foregroundStyle(secondaryText)
-                }
-
-                sourceConfidenceRow
-
-                NavigationLink {
-                    HistoricalTabView()
-                } label: {
-                    Label("Browse Budget History", systemImage: "clock.arrow.circlepath")
-                        .font(.footnote.weight(.medium))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .buttonStyle(.bordered)
-                .tint(RiverheadTheme.accent)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 0)
             }
-            .padding(14)
+            .padding(12)
             .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(cardFill)
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(Color.orange.opacity(scheme == .dark ? 0.12 : 0.08))
             )
             .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .strokeBorder(cardBorder, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .strokeBorder(Color.orange.opacity(0.22), lineWidth: 1)
             )
-            .shadow(
-                color: .black.opacity(scheme == .dark ? 0.35 : 0.07),
-                radius: 8,
-                x: 0,
-                y: 3
+        } else if fundCount == 0 {
+            HStack(spacing: 10) {
+                Image(systemName: "clock.badge")
+                    .foregroundStyle(RiverheadTheme.accent)
+                Text("Fund details are loading in the background — charts will update automatically.")
+                    .font(.footnote)
+                    .foregroundStyle(secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 0)
+            }
+            .padding(12)
+            .background(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(RiverheadTheme.accent.opacity(scheme == .dark ? 0.10 : 0.06))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .strokeBorder(RiverheadTheme.accent.opacity(0.18), lineWidth: 1)
             )
         }
+        // When everything is ready, show nothing — no visual noise for the common case.
     }
 
 // MARK: - Town Services
@@ -402,102 +360,139 @@ struct HomeView: View {
     }
 
     private var moreBudgetToolsDisclosure: some View {
-        DisclosureGroup {
-            VStack(spacing: 10) {
-                internalFullWidthCard(
-                    title: "Ask AI",
-                    subtitle: "Get plain-English help with budget questions and hearing prep.",
-                    systemImage: "sparkles.rectangle.stack.fill",
-                    accentOverride: RiverheadTheme.brandGold
-                ) {
-                    AskAIView()
-                }
+        VStack(spacing: 10) {
+            // ── Accountability group ──────────────────────────────────────
+            DisclosureGroup {
+                VStack(spacing: 10) {
+                    internalFullWidthCard(
+                        title: "Council Scorecard",
+                        subtitle: "Grades, campaign donations, and accountability flags for every board member.",
+                        systemImage: "checkmark.seal.fill",
+                        accentOverride: RiverheadTheme.brandNavy
+                    ) {
+                        CouncilScorecardView()
+                    }
 
-                internalFullWidthCard(
-                    title: "Budget Signals",
-                    subtitle: "See funds and departments that deserve a closer look.",
-                    systemImage: "waveform.path.ecg.rectangle",
-                    accentOverride: RiverheadTheme.brandCoral
-                ) {
-                    BudgetSignalsView()
-                }
+                    internalFullWidthCard(
+                        title: "Procurement Watch",
+                        subtitle: "Check professional-service, sole-source, and master developer contract exceptions.",
+                        systemImage: "doc.text.magnifyingglass",
+                        accentOverride: RiverheadTheme.brandCoral
+                    ) {
+                        ProcurementPolicyWatchView()
+                    }
 
-                internalFullWidthCard(
-                    title: "Off-Balance Liabilities",
-                    subtitle: "Review hidden or delayed costs that can become budget pressure.",
-                    systemImage: "exclamationmark.triangle.fill",
-                    accentOverride: RiverheadTheme.brandGold
-                ) {
-                    OffBalanceLiabilitiesView()
-                }
+                    internalFullWidthCard(
+                        title: "Campaign Donation Ethics",
+                        subtitle: "Understand the $1,000 aggregation rule and the Petrocelli donor watch.",
+                        systemImage: "checkmark.shield",
+                        accentOverride: RiverheadTheme.brandSky
+                    ) {
+                        RiverheadCampaignContributionsView()
+                    }
 
-                internalFullWidthCard(
-                    title: "Procurement Watch",
-                    subtitle: "Check professional-service, sole-source, and master developer exceptions.",
-                    systemImage: "doc.text.magnifyingglass",
-                    accentOverride: RiverheadTheme.brandCoral
-                ) {
-                    ProcurementPolicyWatchView()
-                }
+                    internalFullWidthCard(
+                        title: "Off-Balance Liabilities",
+                        subtitle: "Hidden or delayed costs — debt, pensions, deferred maintenance — that become future budget pressure.",
+                        systemImage: "exclamationmark.triangle.fill",
+                        accentOverride: RiverheadTheme.brandGold
+                    ) {
+                        OffBalanceLiabilitiesView()
+                    }
 
-                internalFullWidthCard(
-                    title: "Budget Overview",
-                    subtitle: "Town-wide 2026 Adopted Budget snapshot and key trends.",
-                    systemImage: "chart.pie.fill",
-                    accentOverride: RiverheadTheme.brandSky
-                ) {
-                    BudgetOverviewShiftView()
+                    internalFullWidthCard(
+                        title: "Budget Signals",
+                        subtitle: "Funds and departments that show unusual growth, gaps, or risks worth watching.",
+                        systemImage: "waveform.path.ecg.rectangle",
+                        accentOverride: RiverheadTheme.brandCoral
+                    ) {
+                        BudgetSignalsView()
+                    }
                 }
-
-                internalFullWidthCard(
-                    title: "Budget Supplement Explorer",
-                    subtitle: "See the 2026 supplement as changes, request gaps, and 2027 scenario prompts.",
-                    systemImage: "doc.text.magnifyingglass",
-                    accentOverride: RiverheadTheme.brandMint
-                ) {
-                    BudgetSupplementExplorerView()
-                }
-
-                internalFullWidthCard(
-                    title: "2027 Executive Summary",
-                    subtitle: "A simpler whiteboard view of the potential 2027 budget story.",
-                    systemImage: "pencil.and.outline",
-                    accentOverride: RiverheadTheme.brandNavy
-                ) {
-                    Budget2027ExecutiveWhiteboardView()
-                }
-
-                internalFullWidthCard(
-                    title: "Expert View",
-                    subtitle: "Optional deeper context when you want more detail.",
-                    systemImage: "brain.head.profile",
-                    accentOverride: RiverheadTheme.brandNavy
-                ) {
-                    ExpertTabView()
-                }
+                .padding(.top, 8)
+            } label: {
+                Label("Accountability & Oversight", systemImage: "eye.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(primaryText)
             }
-            .padding(.top, 8)
-        } label: {
-            Label("More budget tools", systemImage: "wrench.and.screwdriver.fill")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(primaryText)
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(cardFill)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .strokeBorder(cardBorder, lineWidth: 1)
+            )
+            .tint(RiverheadTheme.accent)
+            .shadow(color: RiverheadTheme.cardShadow(scheme), radius: 8, x: 0, y: 3)
+
+            // ── Deep dive group ───────────────────────────────────────────
+            DisclosureGroup {
+                VStack(spacing: 10) {
+                    internalFullWidthCard(
+                        title: "Ask AI",
+                        subtitle: "Get plain-English help with budget questions and hearing prep.",
+                        systemImage: "sparkles.rectangle.stack.fill",
+                        accentOverride: RiverheadTheme.brandGold
+                    ) {
+                        AskAIView()
+                    }
+
+                    internalFullWidthCard(
+                        title: "Budget Overview",
+                        subtitle: "Town-wide 2026 Adopted Budget snapshot and spending by fund.",
+                        systemImage: "chart.pie.fill",
+                        accentOverride: RiverheadTheme.brandSky
+                    ) {
+                        BudgetOverviewShiftView()
+                    }
+
+                    internalFullWidthCard(
+                        title: "Budget Supplement Explorer",
+                        subtitle: "See the 2026 supplement as line-by-line changes and gaps versus requests.",
+                        systemImage: "text.magnifyingglass",
+                        accentOverride: RiverheadTheme.brandMint
+                    ) {
+                        BudgetSupplementExplorerView()
+                    }
+
+                    internalFullWidthCard(
+                        title: "2027 Budget Outlook",
+                        subtitle: "Whiteboard view of what the 2027 budget story could look like based on current trends.",
+                        systemImage: "pencil.and.outline",
+                        accentOverride: RiverheadTheme.brandNavy
+                    ) {
+                        Budget2027ExecutiveWhiteboardView()
+                    }
+
+                    internalFullWidthCard(
+                        title: "Expert View",
+                        subtitle: "Full analyst-level context: fund detail, debt schedules, reserve trends, and more.",
+                        systemImage: "brain.head.profile",
+                        accentOverride: RiverheadTheme.brandNavy
+                    ) {
+                        ExpertTabView()
+                    }
+                }
+                .padding(.top, 8)
+            } label: {
+                Label("Budget Deep Dive", systemImage: "chart.bar.doc.horizontal.fill")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(primaryText)
+            }
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(cardFill)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .strokeBorder(cardBorder, lineWidth: 1)
+            )
+            .tint(RiverheadTheme.accent)
+            .shadow(color: RiverheadTheme.cardShadow(scheme), radius: 8, x: 0, y: 3)
         }
-        .padding(14)
-        .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(cardFill)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .strokeBorder(cardBorder, lineWidth: 1)
-        )
-        .tint(RiverheadTheme.accent)
-        .shadow(
-            color: RiverheadTheme.cardShadow(scheme),
-            radius: 8,
-            x: 0,
-            y: 3
-        )
     }
 
     // MARK: - Official Resources

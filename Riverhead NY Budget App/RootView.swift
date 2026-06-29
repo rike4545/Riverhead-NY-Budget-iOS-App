@@ -10,8 +10,19 @@ import SwiftUI
 
 @MainActor
 struct RootView: View {
+    @AppStorage("Riverhead.colorScheme") private var colorSchemeRaw: String = "system"
+
+    private var preferredColorScheme: ColorScheme? {
+        switch colorSchemeRaw {
+        case "light": return .light
+        case "dark":  return .dark
+        default:      return nil   // follows system
+        }
+    }
+
     var body: some View {
         MainTabView()
+            .preferredColorScheme(preferredColorScheme)
     }
 }
 

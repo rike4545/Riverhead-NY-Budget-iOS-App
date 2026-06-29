@@ -134,7 +134,9 @@ private final class BannerHostViewController: UIViewController {
         view.backgroundColor = .clear
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = adUnitID
-        bannerView.rootViewController = self
+        // rootViewController is set in viewDidAppear once the window is available.
+        // Setting it to `self` here (a child VC) prevents the SDK from presenting
+        // ad overlays correctly and can silently suppress ad fills.
         bannerView.delegate = self
 
         view.addSubview(bannerView)
@@ -147,6 +149,9 @@ private final class BannerHostViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Set rootViewController to the window's actual root so the SDK can
+        // present overlays (ad detail sheets, etc.) from the correct VC.
+        bannerView.rootViewController = view.window?.rootViewController ?? self
         loadBannerIfNeeded(force: true)
     }
 

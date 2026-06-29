@@ -127,6 +127,13 @@ struct CouncilScorecardView: View {
         let currentYearFilingActivityRowCount: Int?
         let currentYearFilingActivitySchedules: String?
         let currentYearLastReported: Date?
+        // 2026-only slice
+        let latestYearDirect: Double?
+        let latestYearTransfers: Double?
+        let latestYearFilingAmount: Double?
+        let latestYearRowCount: Int?
+        let latestYearSchedules: String?
+        let latestYearLastReported: Date?
         let largestIndividualContribution: TopContribution?
         let largestBusinessContribution: TopContribution?
         let petrocelliContributions: [TopContribution]?
@@ -233,7 +240,7 @@ struct CouncilScorecardView: View {
 
     private let noUserGrade = "Not set"
     private let userGradeOptions = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F"]
-    private let campaignFilingStartYear = 2020
+    private let campaignFilingStartYear = 2005
     private let campaignFilingEndYear = 2026
     private var campaignFilingYearRangeLabel: String {
         "\(campaignFilingStartYear)-Present (\(campaignFilingEndYear))"
@@ -335,8 +342,12 @@ struct CouncilScorecardView: View {
 
     private let seeThroughNYURL = URL(string: "https://www.seethroughny.net/")!
 
+    private var allTrackedMembers: [CouncilMember] {
+        members + formerMembers
+    }
+
     private var visibleCampaignSnapshots: [(member: CouncilMember, snapshot: CampaignSnapshot)] {
-        members.compactMap { member in
+        allTrackedMembers.compactMap { member in
             guard let snapshot = campaignSnapshot(for: member) else { return nil }
             return (member, snapshot)
         }
@@ -352,6 +363,22 @@ struct CouncilScorecardView: View {
         visibleCampaignSnapshots.reduce(0) { total, item in
             total + (item.snapshot.transfersIn ?? 0)
         }
+    }
+
+    private var totalPetroCelliDonations: Double {
+        visibleCampaignSnapshots.reduce(0) { total, item in
+            let contributions = item.snapshot.petrocelliContributions ?? []
+            return total + contributions.reduce(0) { $0 + $1.amount }
+        }
+    }
+
+    private var petrocelliDonationBreakdown: [(name: String, amount: Double)] {
+        visibleCampaignSnapshots.compactMap { item in
+            let contributions = item.snapshot.petrocelliContributions ?? []
+            let total = contributions.reduce(0) { $0 + $1.amount }
+            guard total > 0 else { return nil }
+            return (name: item.member.name, amount: total)
+        }.sorted { $0.amount > $1.amount }
     }
 
     private var topDirectFundraiser: (member: CouncilMember, amount: Double)? {
@@ -587,7 +614,7 @@ struct CouncilScorecardView: View {
                         note: "COMMCAND legacy committee: County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Nancy Marks, 47 Flintlock Dr, Shirley."
                     )
                 ],
-                campaignFilingNote: "COMMCAND fields: current committee/filer ID 527501, Friends of Robert Kern, County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Shawn Hyms, 34 Arlington Road, Lake Ronkonkoma. COMMCAND also shows legacy candidate ID 154940, Robert Kern, County, TERMINATED, Council Member, Suffolk / Riverhead Town, 49 Phillips Ave, Aquebogue, and legacy committee/filer ID 154941, Friends of Bob Kern. This card includes both committee filer IDs for the 2020-present review window.",
+                campaignFilingNote: "COMMCAND fields: current committee/filer ID 527501, Friends of Robert Kern, County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Shawn Hyms, 34 Arlington Road, Lake Ronkonkoma. COMMCAND also shows legacy candidate ID 154940, Robert Kern, County, TERMINATED, Council Member, Suffolk / Riverhead Town, 49 Phillips Ave, Aquebogue, and legacy committee/filer ID 154941, Friends of Bob Kern. This card includes both committee filer IDs for the 2005–2026 review window.",
                 campaignRaised: 29_385.18,
                 campaignDirectContributions: 29_185.18,
                 campaignTransfersIn: 200.00,
@@ -636,6 +663,100 @@ struct CouncilScorecardView: View {
         ]
     }
 
+    private var formerMembers: [CouncilMember] {
+        [
+            .init(
+                name: "Tim Hubbard",
+                role: "Former Councilman",
+                responsibilitySummary: "Served on the Riverhead Town Board. No longer serving as of 2024.",
+                grade: "N/A",
+                superlative: "Former Official",
+                highlights: [
+                    "Campaign filings tracked 2005–2026 for Petrocelli-related donor review"
+                ],
+                photoURL: nil,
+                serviceStarted: nil,
+                termStarts: nil,
+                termEnds: makeDate(year: 2023, month: 12, day: 31),
+                nextElection: nil,
+                annualPay: nil,
+                committeeLiaisons: [],
+                profileURL: nil,
+                termSourceURL: URL(string: "https://www.townofriverheadny.gov/244/Town-Board"),
+                campaignFinanceURL: nyCampaignDisclosureURL,
+                campaignCommitteeName: "Friends of Tim Hubbard",
+                campaignFilerID: "154933",
+                additionalCampaignFilings: [],
+                campaignFilingNote: "Former Councilman, Riverhead Town. COMMCAND filer ID 154933 (Friends of Tim Hubbard) — verify against NY COMMCAND as records may be terminated. Included for Petrocelli-related campaign finance review across the 2005–2026 window.",
+                campaignRaised: nil,
+                campaignDirectContributions: nil,
+                campaignTransfersIn: nil,
+                campaignLastReported: nil,
+                campaignLoanAmount: nil,
+                campaignLoanLastReported: nil
+            ),
+            .init(
+                name: "Jodi Giglio",
+                role: "Former Councilwoman",
+                responsibilitySummary: "Served on the Riverhead Town Board. Later elected to the New York State Assembly (AD-2). No longer serving on the Town Board.",
+                grade: "N/A",
+                superlative: "Former Official",
+                highlights: [
+                    "Campaign filings tracked 2005–2026 for Petrocelli-related donor review"
+                ],
+                photoURL: nil,
+                serviceStarted: nil,
+                termStarts: nil,
+                termEnds: makeDate(year: 2020, month: 12, day: 31),
+                nextElection: nil,
+                annualPay: nil,
+                committeeLiaisons: [],
+                profileURL: nil,
+                termSourceURL: URL(string: "https://www.townofriverheadny.gov/244/Town-Board"),
+                campaignFinanceURL: nyCampaignDisclosureURL,
+                campaignCommitteeName: "Friends of Jodi Giglio",
+                campaignFilerID: "155155",
+                additionalCampaignFilings: [],
+                campaignFilingNote: "Former Councilwoman, Riverhead Town; later elected to NY Assembly AD-2. COMMCAND filer ID 155155 (Friends of Jodi Giglio) — verify against NY COMMCAND as records may be terminated or consolidated with her Assembly committee. Included for Petrocelli-related campaign finance review across the 2005–2026 window.",
+                campaignRaised: nil,
+                campaignDirectContributions: nil,
+                campaignTransfersIn: nil,
+                campaignLastReported: nil,
+                campaignLoanAmount: nil,
+                campaignLoanLastReported: nil
+            ),
+            .init(
+                name: "Yvette Aguiar",
+                role: "Former Supervisor",
+                responsibilitySummary: "Served as Riverhead Town Supervisor. No longer serving.",
+                grade: "N/A",
+                superlative: "Former Official",
+                highlights: [
+                    "Campaign filings tracked 2005–2026 for Petrocelli-related donor review"
+                ],
+                photoURL: nil,
+                serviceStarted: nil,
+                termStarts: nil,
+                termEnds: makeDate(year: 2017, month: 12, day: 31),
+                nextElection: nil,
+                annualPay: nil,
+                committeeLiaisons: [],
+                profileURL: nil,
+                termSourceURL: URL(string: "https://www.townofriverheadny.gov/244/Town-Board"),
+                campaignFinanceURL: nyCampaignDisclosureURL,
+                campaignCommitteeName: "Taxpayers for Aguiar",
+                campaignFilerID: "66984",
+                additionalCampaignFilings: [],
+                campaignFilingNote: "Former Supervisor, Riverhead Town. Committee name: Taxpayers for Aguiar, filer ID 66984 — verify against NY COMMCAND as records may be terminated. Included for Petrocelli-related campaign finance review across the 2005–2026 window.",
+                campaignRaised: nil,
+                campaignDirectContributions: nil,
+                campaignTransfersIn: nil,
+                campaignLastReported: nil,
+                campaignLoanAmount: nil,
+                campaignLoanLastReported: nil
+            )
+        ]
+    }
 
     var body: some View {
         ScrollView {
@@ -645,6 +766,14 @@ struct CouncilScorecardView: View {
                 boardComparisonCard
                 scorecardSectionTitle("Officials", icon: "person.3.fill")
                 ForEach(members) { member in
+                    memberCard(member)
+                }
+                scorecardSectionTitle("Former Officials — Campaign Watch", icon: "clock.arrow.circlepath")
+                Text("No longer serving but included for Petrocelli-related campaign finance review across the 2005–2026 filing window. Filer IDs are pulled from NY Open Data alongside current board members.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 4)
+                ForEach(formerMembers) { member in
                     memberCard(member)
                 }
                 scorecardSectionTitle("Context", icon: "info.circle")
@@ -1110,6 +1239,50 @@ struct CouncilScorecardView: View {
                     .foregroundStyle(RiverheadTheme.textSecondary)
             }
 
+            if totalPetroCelliDonations > 0 {
+                Divider()
+
+                HStack(spacing: 6) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.caption)
+                        .foregroundStyle(.orange)
+                    Text("Petrocelli-related donations — all current and former officials (2005–2026)")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+                }
+
+                financeMetricTile(
+                    title: "Petrocelli-related total",
+                    value: currencyFormatter.string(from: NSNumber(value: totalPetroCelliDonations)) ?? "$0",
+                    tint: .orange
+                )
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("Petrocelli-related donations total: \(currencyFormatter.string(from: NSNumber(value: totalPetroCelliDonations)) ?? "$0") across all current and former officials from 2005 to 2026.")
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Breakdown by recipient:")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                    ForEach(petrocelliDonationBreakdown, id: \.name) { entry in
+                        HStack {
+                            Text(entry.name)
+                                .font(.caption)
+                            Spacer()
+                            Text(currencyFormatter.string(from: NSNumber(value: entry.amount)) ?? "$0")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.orange)
+                        }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("\(entry.name): \(currencyFormatter.string(from: NSNumber(value: entry.amount)) ?? "$0")")
+                    }
+                }
+
+                Text("Totals reflect matched contributions fetched from NY Open Data or pre-loaded baseline data. Tap Refresh to update. These amounts are transparency context, not proof of coordination or quid pro quo.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             Text("Source: New York State Board of Elections / NY Open Data. Candidate filing totals in this scorecard use the \(campaignFilingYearRangeLabel) window; use Update Filings for the newest daily Open Data values.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
@@ -1258,9 +1431,9 @@ struct CouncilScorecardView: View {
         let search = campaignFilingSearchText
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .lowercased()
-        guard !search.isEmpty else { return members }
+        guard !search.isEmpty else { return allTrackedMembers }
 
-        return members.filter { member in
+        return allTrackedMembers.filter { member in
             campaignFilingSearchHaystack(for: member).contains(search)
         }
     }
@@ -1386,14 +1559,42 @@ struct CouncilScorecardView: View {
                 }
             }
 
-            Section("\(campaignFilingYearRangeLabel) Filing Activity") {
+            Section {
+                if let direct = snapshot?.latestYearDirect, direct > 0 {
+                    filingMetricRow("Direct contributions", direct)
+                } else {
+                    Label("No direct contribution rows found for \(campaignFilingEndYear) yet.", systemImage: "tray")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                filingMetricRow("Transfers in", snapshot?.latestYearTransfers)
+                filingMetricRow("All schedule activity", snapshot?.latestYearFilingAmount)
+                if let rows = snapshot?.latestYearRowCount, rows > 0 {
+                    Text("Filing rows: \(rows)")
+                }
+                if let schedules = snapshot?.latestYearSchedules {
+                    Text("Schedules: \(schedules)")
+                }
+                if let lastDate = snapshot?.latestYearLastReported {
+                    Label("Latest \(campaignFilingEndYear) row: \(reportDateFormatter.string(from: lastDate))", systemImage: "calendar.badge.checkmark")
+                        .foregroundStyle(RiverheadTheme.accent)
+                } else {
+                    Label("No \(campaignFilingEndYear) filings found — tap Refresh on the scorecard to pull latest data.", systemImage: "calendar.badge.exclamationmark")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            } header: {
+                Label("\(campaignFilingEndYear) Filing Activity", systemImage: "doc.badge.clock")
+            }
+
+            Section("\(campaignFilingYearRangeLabel) Full Window") {
                 filingMetricRow("Direct contributions", snapshot?.currentYearDirectContributions)
                 filingMetricRow("Transfers", snapshot?.currentYearTransfersIn)
                 filingMetricRow("All filing activity", snapshot?.currentYearFilingActivityAmount)
                 Text("Rows: \(snapshot?.currentYearFilingActivityRowCount ?? 0)")
                 Text("Schedules: \(snapshot?.currentYearFilingActivitySchedules ?? "none")")
                 if let currentYearLast = snapshot?.currentYearLastReported {
-                    Text("Latest \(campaignFilingYearRangeLabel) row date: \(reportDateFormatter.string(from: currentYearLast))")
+                    Text("Latest row date: \(reportDateFormatter.string(from: currentYearLast))")
                 }
             }
 
@@ -1550,6 +1751,8 @@ struct CouncilScorecardView: View {
 
             liaisonPreview(for: member)
 
+            latestYearFilingChip(for: member)
+
             NavigationLink {
                 memberDetailView(for: member)
             } label: {
@@ -1699,6 +1902,98 @@ struct CouncilScorecardView: View {
         .toolbarBackground(.visible, for: .navigationBar)
     }
 
+    @ViewBuilder
+    private func latestYearFilingChip(for member: CouncilMember) -> some View {
+        let snapshot = campaignSnapshot(for: member)
+        let hasLatestYear = (snapshot?.latestYearFilingAmount ?? 0) > 0 || snapshot?.latestYearLastReported != nil
+        let latestDirect = snapshot?.latestYearDirect ?? 0
+        let latestTransfers = snapshot?.latestYearTransfers ?? 0
+        let latestDate = snapshot?.latestYearLastReported
+        let schedules = snapshot?.latestYearSchedules ?? ""
+
+        NavigationLink {
+            candidateFilingDetailView(for: member)
+        } label: {
+            HStack(spacing: 10) {
+                Image(systemName: hasLatestYear ? "doc.text.fill" : "doc.text")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(hasLatestYear ? RiverheadTheme.accent : .secondary)
+                    .frame(width: 26, height: 26)
+                    .background((hasLatestYear ? RiverheadTheme.accent : Color.secondary).opacity(0.10), in: Circle())
+
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 6) {
+                        Text("2026 Filings")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(RiverheadTheme.textPrimary)
+
+                        if hasLatestYear {
+                            Text("ACTIVE")
+                                .font(.caption2.weight(.heavy))
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 5)
+                                .padding(.vertical, 2)
+                                .background(RiverheadTheme.accent, in: Capsule())
+                        } else {
+                            Text("NO 2026 DATA YET")
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+
+                    if hasLatestYear {
+                        HStack(spacing: 8) {
+                            if latestDirect > 0 {
+                                Text("Direct: \(currencyFormatter.string(from: NSNumber(value: latestDirect)) ?? "$0")")
+                                    .font(.caption)
+                                    .foregroundStyle(RiverheadTheme.textPrimary)
+                            }
+                            if latestTransfers > 0 {
+                                Text("Transfers: \(currencyFormatter.string(from: NSNumber(value: latestTransfers)) ?? "$0")")
+                                    .font(.caption)
+                                    .foregroundStyle(.orange)
+                            }
+                        }
+                        if !schedules.isEmpty {
+                            Text("Schedules: \(schedules)")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                        if let date = latestDate {
+                            Text("Latest: \(reportDateFormatter.string(from: date))")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    } else {
+                        Text("Tap to view full filing history or use Update Filings to fetch 2026 data.")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Spacer(minLength: 4)
+
+                Image(systemName: "chevron.right")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(10)
+            .background(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(hasLatestYear ? RiverheadTheme.accent.opacity(0.06) : Color.primary.opacity(0.035))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .strokeBorder(hasLatestYear ? RiverheadTheme.accent.opacity(0.20) : RiverheadTheme.border.opacity(0.14), lineWidth: 0.8)
+            )
+            .accessibilityLabel(hasLatestYear
+                ? "2026 filings active. Direct: \(currencyFormatter.string(from: NSNumber(value: latestDirect)) ?? "$0"). Tap to view details."
+                : "No 2026 filing data yet. Tap to view full history or use Update Filings.")
+            .accessibilityHint("Opens campaign filing detail view.")
+        }
+        .buttonStyle(.plain)
+    }
+
     private func campaignDisclosureStrip(for member: CouncilMember) -> some View {
         let snapshot = campaignSnapshot(for: member)
         let direct = snapshot?.directContributions ?? snapshot?.raised ?? 0
@@ -1845,6 +2140,7 @@ struct CouncilScorecardView: View {
                 Image(systemName: icon)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(RiverheadTheme.accent)
+                    .accessibilityHidden(true)
                 Text(title)
                     .font(.caption2.weight(.bold))
                     .foregroundStyle(.secondary)
@@ -1863,6 +2159,8 @@ struct CouncilScorecardView: View {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .fill(Color.primary.opacity(0.035))
         )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title): \(value)")
     }
 
     private func liaisonPreview(for member: CouncilMember) -> some View {
@@ -2780,7 +3078,7 @@ struct CouncilScorecardView: View {
             }
 
             if contributions.isEmpty {
-                Text("No Petrocelli-named individual, related business, or known venue/entity donor rows were found in NY Open Data for this mapped candidate committee.")
+                Text("No Petrocelli-named individual, related business, Hp East End Riverhead LLC, or known venue/entity donor rows were found in NY Open Data for this mapped candidate committee across the 2005–2026 filing window.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -2790,7 +3088,7 @@ struct CouncilScorecardView: View {
                     .foregroundStyle(.orange)
                     .fixedSize(horizontal: false, vertical: true)
 
-                Text("Scope: this is a corporate/project-interest watch, not candidate immediate-family support. It matches Petrocelli-named donor fields and known related business/venue watch terms from public profiles, including Jennifer Petrocelli, Jacqueline Phillips, Alexandra Bussi, The Preston House, Atlantis Banquets, Sea Star Ballroom, Taste the East End, Raphael Vineyard, Long Island Aquarium, and Hyatt Place East End. The public-source basis includes Schneps / QNS and Dan's Papers profiles. These matches are transparency context, not proof of coordination or quid pro quo.")
+                Text("Scope (2005–2026): this is a corporate/project-interest watch, not candidate immediate-family support. It matches Petrocelli-named donor fields (covering J Petrocelli Construction, J. Petrocelli Contracting, J. Petrocelli Development Inc, J. Petrocelli Cont. Inc, J Petrocelli Wine Cellars LLC, J. Petrocelli Cellars LLC, J. Petrocelli Riverhead Town Square LLC, M. Petrocelli, Marie Petrocelli, Michael Petrocelli, Jennifer Petrocelli) and Hp East End Riverhead LLC, as well as known related business/venue watch terms from public profiles, including Jacqueline Phillips, Alexandra Bussi, The Preston House, Atlantis Banquets, Sea Star Ballroom, Taste the East End, Raphael Vineyard, Long Island Aquarium, and Hyatt Place East End. The public-source basis includes Schneps / QNS and Dan's Papers profiles. These matches are transparency context, not proof of coordination or quid pro quo.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -3011,7 +3309,9 @@ struct CouncilScorecardView: View {
     }
 
     private func baselineCampaignSnapshot(for member: CouncilMember) -> CampaignSnapshot? {
-        guard member.campaignRaised != nil || member.campaignLastReported != nil else { return nil }
+        // Allow former members with only a filer ID — they have no baseline financials but
+        // still need a snapshot so live-fetched Petrocelli data enters the totals.
+        guard member.campaignRaised != nil || member.campaignLastReported != nil || member.campaignFilerID != nil else { return nil }
         return CampaignSnapshot(
             committeeName: member.campaignCommitteeName,
             filerID: member.campaignFilerID,
@@ -3034,6 +3334,12 @@ struct CouncilScorecardView: View {
             currentYearFilingActivityRowCount: nil,
             currentYearFilingActivitySchedules: nil,
             currentYearLastReported: nil,
+            latestYearDirect: nil,
+            latestYearTransfers: nil,
+            latestYearFilingAmount: nil,
+            latestYearRowCount: nil,
+            latestYearSchedules: nil,
+            latestYearLastReported: nil,
             largestIndividualContribution: nil,
             largestBusinessContribution: nil,
             petrocelliContributions: baselinePetrocelliContributions(for: member),
@@ -3236,7 +3542,7 @@ struct CouncilScorecardView: View {
 
         let relatedTerms = [
             "petrocelli",
-            "jennifer petrocelli",
+            "hp east end riverhead",
             "jacqueline phillips",
             "alexandra bussi",
             "preston house",
@@ -3409,7 +3715,7 @@ struct CouncilScorecardView: View {
         filingsUpdateStatus = nil
         defer { isUpdatingFilings = false }
 
-        let filerIDs = Array(Set(members.flatMap { campaignFilerIDs(for: $0) })).sorted()
+        let filerIDs = Array(Set(allTrackedMembers.flatMap { campaignFilerIDs(for: $0) })).sorted()
         guard !filerIDs.isEmpty else {
             filingsUpdateStatus = "No filer IDs configured."
             return
@@ -3509,7 +3815,7 @@ struct CouncilScorecardView: View {
             }
 
             var updated: [String: CampaignSnapshot] = [:]
-            for member in members {
+            for member in allTrackedMembers {
                 let filingRefs = campaignFilings(for: member)
                 let memberFilerIDs = filingRefs.map(\.filerID)
                 guard !memberFilerIDs.isEmpty else { continue }
@@ -3559,14 +3865,40 @@ struct CouncilScorecardView: View {
                 .sorted()
                 .joined(separator: ", ")
                 let currentYearReported = termJanuaryRows.compactMap { parseAPIDate($0.last_reported) }.max()
+
+                let latestYearRows = termJanuaryRows.filter { $0.election_year == "\(campaignFilingEndYear)" }
+                let latestYearDirect = latestYearRows.reduce(0) { total, row in
+                    let schedule = row.filing_sched_abbrev?.uppercased() ?? ""
+                    return ["A", "B", "C"].contains(schedule) ? total + (parseAmount(row.amount) ?? 0) : total
+                }
+                let latestYearTransfers = latestYearRows.reduce(0) { total, row in
+                    let schedule = row.filing_sched_abbrev?.uppercased() ?? ""
+                    return schedule == "G" ? total + (parseAmount(row.amount) ?? 0) : total
+                }
+                let latestYearFilingAmount = latestYearRows.reduce(0) { total, row in
+                    total + (parseAmount(row.amount) ?? 0)
+                }
+                let latestYearRowCount = latestYearRows.reduce(0) { total, row in
+                    total + (Int(row.row_count ?? "") ?? 0)
+                }
+                let latestYearSchedules = Set(
+                    latestYearRows
+                        .compactMap { $0.filing_sched_abbrev?.uppercased() }
+                        .filter { !$0.isEmpty }
+                )
+                .sorted()
+                .joined(separator: ", ")
+                let latestYearLastReported = latestYearRows.compactMap { parseAPIDate($0.last_reported) }.max()
                 let largestIndividual = memberFilerIDs
                     .compactMap { largestIndividualByFiler[$0] }
                     .max { $0.amount < $1.amount }
                 let largestBusiness = memberFilerIDs
                     .compactMap { largestBusinessByFiler[$0] }
                     .max { $0.amount < $1.amount }
-                let petrocelliContributions = memberFilerIDs
+                let petrocelliContributionsRaw = memberFilerIDs
                     .flatMap { petrocelliByFiler[$0] ?? [] }
+                    + (baselinePetrocelliContributions(for: member) ?? [])
+                let petrocelliContributions = deduplicateContributions(petrocelliContributionsRaw)
                     .sorted {
                         if let leftDate = $0.date, let rightDate = $1.date {
                             return leftDate > rightDate
@@ -3633,6 +3965,12 @@ struct CouncilScorecardView: View {
                     currentYearFilingActivityRowCount: currentYearFilingRows,
                     currentYearFilingActivitySchedules: currentYearFilingSchedules.isEmpty ? nil : currentYearFilingSchedules,
                     currentYearLastReported: currentYearReported,
+                    latestYearDirect: latestYearDirect > 0 ? latestYearDirect : nil,
+                    latestYearTransfers: latestYearTransfers > 0 ? latestYearTransfers : nil,
+                    latestYearFilingAmount: latestYearFilingAmount > 0 ? latestYearFilingAmount : nil,
+                    latestYearRowCount: latestYearRowCount > 0 ? latestYearRowCount : nil,
+                    latestYearSchedules: latestYearSchedules.isEmpty ? nil : latestYearSchedules,
+                    latestYearLastReported: latestYearLastReported,
                     largestIndividualContribution: largestIndividual,
                     largestBusinessContribution: largestBusiness,
                     petrocelliContributions: petrocelliContributions,

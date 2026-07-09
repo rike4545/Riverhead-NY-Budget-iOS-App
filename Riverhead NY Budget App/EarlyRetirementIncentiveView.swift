@@ -89,13 +89,12 @@ struct EarlyRetirementIncentiveView: View {
             VStack(alignment: .leading, spacing: 14) {
                 headerCard
 
-                panelCard(title: "Current Status", systemImage: "megaphone.fill") {
-                    bullet("On May 26, 2026, Supervisor Jerry Halpin publicly proposed an early retirement incentive and said it could potentially save taxpayers up to 3% in 2027 and create savings over five years.")
-                    bullet("A May 2026 Times Review report says the supervisor's office identified 32 eligible employees and projected up to $1.7M in annual savings, with each 1% tax decrease estimated at roughly $550,000.")
-                    bullet("Against the January 2026 salary-resolution payroll, 3% of payroll is about $915,000. That means the public $1.7M savings claim would exceed a 3% payroll target, but only if backfill, overtime, and fringe assumptions hold.")
-                    bullet("No final agreement or Town Board resolution is in place in this model. The proposal still needs union discussion, public cost details, and board review.")
-                    bullet("The proposal is expected to use an age and service filter and a one-time payout, but the exact eligibility rules, payout amount, participant count, and backfill plan have not been released.")
-                    bullet("The financial administrator said one goal is predictability: eligible employees may already be entitled to accrued-time payouts, but timing those retirements in advance would help the Town budget the obligation.")
+                panelCard(title: "Current Status: Finalized Terms", systemImage: "checkmark.seal.fill") {
+                    bullet("The Town reached final agreements with all three unions — CSEA, PBA, and SOA — for the 2026 Voluntary Retirement Incentive Program. These are executed terms, not a proposal.")
+                    bullet("CSEA members receive a flat $12,500 cash incentive.")
+                    bullet("PBA and SOA (police) members receive $1,000 per year of service, plus a payout for up to 30 accrued sick days beyond the contract maximum, at the average of 2024–2026 base salary.")
+                    bullet("An eligible employee must commit in writing by September 1, 2026 and retire by October 1, 2026.")
+                    bullet("Using hire dates and union as proxies (CSEA hired on or before 2009; police hired on or before 2006), about 78 currently active employees appear eligible (an upper bound — actual eligibility also depends on age/pension-tier rules payroll doesn't show).")
                 }
 
                 panelCard(title: "CSEA Contract Context", systemImage: "person.3.fill") {
@@ -151,12 +150,12 @@ struct EarlyRetirementIncentiveView: View {
                     bullet("Should the budgetary portion of the plan be discussed in a public work session before any executive-session labor negotiation details are resolved?")
                 }
 
-                panelCard(title: "Riverhead ERI History", systemImage: "clock.arrow.circlepath") {
-                    bullet("Riverhead previously offered early retirement incentives in 2010 for CSEA employees, 2012 for PBA members, and 2019 during CSEA contract negotiations.")
-                    bullet("RiverheadLOCAL reported the 2019 CSEA incentive applied to an estimated 15 to 20 eligible unit members, with employees choosing between 48 months of fully paid family health-insurance premiums or $600 per month for 48 months if enrolled in individual coverage.")
-                    bullet("The 2019 CSEA contract also had raises reported as 2.5% in 2019, 2.25% in 2020, 2.25% in 2021, and 1.5% in 2022 when step movement was included.")
+                panelCard(title: "Riverhead ERI History: 2019 vs. 2026", systemImage: "clock.arrow.circlepath") {
+                    bullet("Riverhead previously offered early retirement incentives in 2010 for CSEA employees, 2012 for PBA members, and 2019 during CSEA contract negotiations (resolution 2019-538).")
+                    bullet("The 2019 program was CSEA-only: 48 months of fully paid family health-insurance premiums (or $600/month for 48 months on individual coverage). Payroll records confirm 9 CSEA employees actually retired in 2019, versus a Town/union estimate of 15–20.")
+                    bullet("The 2026 program is structurally different: CSEA AND the police unions (PBA, SOA) are covered, and the benefit is CASH ($12,500 flat for CSEA; $1,000/yr of service + sick payout for police) instead of a multi-year health-premium promise.")
+                    bullet("No double-counting: 2026 eligibility is drawn only from employees still active on the 2025 payroll. A name-by-name check confirms none of the 9 CSEA employees who retired in 2019 appear in the 2026 eligible list — they already retired and can't take a second incentive.")
                     bullet("The 2010 and 2012 incentives were adopted by Town Board resolution after public hearings.")
-                    bullet("That history supports treating the current proposal as both a labor matter and a public budget decision.")
                 }
 
                 panelCard(title: "Scenario Inputs", systemImage: "slider.horizontal.3") {
@@ -205,6 +204,22 @@ struct EarlyRetirementIncentiveView: View {
                     resultRow("Net after 5 years", value: netSavings(after: 5), positiveIsGood: true)
                 }
 
+                panelCard(title: "Realistic Backfill & the Police Promotion Chain", systemImage: "arrow.triangle.branch") {
+                    bullet("A step-based backfill (refilling each vacated job at the entry step of the actual salary schedule, not a flat 20% discount) puts realistic annual salary savings at about $718,064/yr across the 20 eligible positions where an entry step is clearly identifiable.")
+                    bullet("Police are the largest single driver: a top-step police officer earns well over $146,000, while a new officer starts near $52,049 — about $94,600 saved per position, every year.")
+                    bullet("But a RANKED retirement (sergeant, lieutenant, detective) can't be backfilled by a rookie of that rank — the Town still needs a sergeant. It triggers a promotion chain: a senior officer moves up, and the rookie is hired at the bottom. The real saving is a top-step officer minus a rookie (~$94,635), not the retiree's own rank salary minus a rookie (a naive claim of ~$122,505 for a sergeant overstates it).")
+                    bullet("Across the 24 eligible police (12 rank-and-file officers + 12 ranked), realistic recurring savings total about $1,810,817/yr if every position is refilled — $675,197 from officers plus $1,135,620 from the ranked promotion chain.")
+                    bullet("A retirement isn't always \"replace with a rookie\": a vacancy can also be filled by promotion (shrinking the saving), a lateral transfer (moving the gap elsewhere), or elimination/restructuring (increasing the saving). Treat these figures as one illustrative path, not a guaranteed result.")
+                }
+
+                panelCard(title: "Retiree Healthcare (OPEB) — The Missing Piece", systemImage: "cross.case.fill") {
+                    bullet("These savings figures count SALARY only. Retirees keep Town-subsidized health coverage for life — an \"OPEB\" cost the Town already carries at $152,597,117 (2023 audit), the largest single audited liability on the books.")
+                    bullet("In 2023 the Town paid $3,552,558 for 211 retirees' health coverage — about $17,000 each per year — against 306 active employees.")
+                    bullet("Two effects shrink the salary-only savings: (1) the buyout pulls each new retiree's ~$17k/yr lifetime health cost forward, and (2) if the position is refilled, the Town pays health coverage for BOTH the retiree and the new active employee — so healthcare spending for that slot can nearly double even as salary falls.")
+                    bullet("Example: a police officer's ~$60k/yr salary saving minus ~$17k/yr of added retiree health is closer to ~$43k/yr net. For a lower-paid CSEA role, the health cost can offset most or all of the salary saving.")
+                    bullet("Tellingly, the Town's 2019 CSEA incentive WAS retiree healthcare — 48 months of paid premiums — which is exactly why this cost is so large.")
+                }
+
                 panelCard(title: "Possible Deal Structures", systemImage: "doc.text.magnifyingglass") {
                     DealStructureCard(
                         title: "Flat Buyout + Full Separation",
@@ -234,13 +249,14 @@ struct EarlyRetirementIncentiveView: View {
                 panelCard(title: "Implementation Notes", systemImage: "checklist") {
                     bullet("Validate plan design with counsel, NYSLRS/PFRS rules, and labor agreements before final terms.")
                     bullet("Model police, highway, and specialized departments separately where backfill rates may be higher.")
+                    bullet("For ranked jobs (police sergeants, lieutenants, detectives), don't credit the retiree's full salary as savings: the rank must stay filled, so a retirement sets off a promotion chain and only the bottom seat turns over. The recurring saving is a top-step officer minus a rookie (about $95k), not the sergeant's salary minus a rookie (about $123k).")
                     bullet("Include transition costs (overtime, training, equipment) in the final policy memo.")
                     bullet("Publish clear eligibility windows and governance to keep the process fair and defensible.")
                     bullet("Separate executive-session negotiation details from the public budget math so residents can see cost, funding source, payback period, and reserve impact.")
                 }
 
                 panelCard(title: "Disclaimer", systemImage: "exclamationmark.triangle.fill") {
-                    Text("This is a planning and what-if analysis only. As of May 27, 2026, the Town Board has not adopted an Early Retirement Incentive program in this app, and the released public information does not include final cost, eligibility, payout, participation, or backfill details.")
+                    Text("The 2026 Voluntary Retirement Incentive Program's terms above are final, executed union agreements — not a proposal. The eligible-employee count (78) is still an upper-bound estimate from hire date and union, since actual eligibility also depends on age and pension-tier rules payroll doesn't show, and participation is voluntary and unknown until the September 1, 2026 election deadline. The sliders below remain a what-if tool for exploring your own assumptions about participation, backfill, and cost — they do not represent an official Town projection.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)

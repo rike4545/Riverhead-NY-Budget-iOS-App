@@ -48,15 +48,15 @@ struct OffBalanceLiabilitiesView: View {
             .init(
                 title: "OPEB",
                 basis: "GASB 75 retiree health",
-                amount: "$132,417,187",
-                share: "85%",
+                amount: "$152,597,117",
+                share: "87%",
                 color: RiverheadTheme.brandCoral
             ),
             .init(
                 title: "PFRS",
                 basis: "GASB 68 police/fire pension",
                 amount: "$15,905,643",
-                share: "10%",
+                share: "9%",
                 color: RiverheadTheme.brandSky
             ),
             .init(
@@ -75,8 +75,8 @@ struct OffBalanceLiabilitiesView: View {
                 title: "Retiree health and other post-employment benefits",
                 level: .high,
                 icon: "cross.case.fill",
-                whereToLook: "2024 audited financial statements, GASB 75 OPEB actuarial notes, health-insurance trend assumptions, and retiree census changes.",
-                whyItCanHide: "The yearly budget often shows only current benefit payments, while the longer retiree-health promise sits in audit disclosures and actuarial schedules. Riverhead's 2024 audit shows OPEB at $132.4M, about 85% of the combined OPEB and pension liability snapshot.",
+                whereToLook: "2023 audited financial statements, GASB 75 OPEB actuarial notes, health-insurance trend assumptions, and retiree census changes.",
+                whyItCanHide: "The yearly budget often shows only current benefit payments, while the longer retiree-health promise sits in audit disclosures and actuarial schedules. Riverhead's 2023 audit shows OPEB at $152.6M, about 87% of the combined OPEB and pension liability snapshot. The Town paid $3.55M in 2023 for 211 retirees' health coverage — about $17,000 each — while 306 employees were still active.",
                 budgetTrigger: "Health-insurance premiums rise faster than the levy, retiree counts climb, or contribution assumptions change.",
                 question: "What is the latest actuarial liability, and how much of the annual cost is being deferred?"
             ),
@@ -203,12 +203,12 @@ struct OffBalanceLiabilitiesView: View {
 
     private var auditedSnapshot: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Label("2024 Audit Snapshot", systemImage: "checkmark.seal.fill")
+            Label("2023 Audit Snapshot", systemImage: "checkmark.seal.fill")
                 .font(.headline)
                 .foregroundStyle(RiverheadTheme.brandNavy)
 
             HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text("$154,973,574")
+                Text("$175,153,504")
                     .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     .foregroundStyle(RiverheadTheme.brandNavy)
                     .minimumScaleFactor(0.72)
@@ -220,7 +220,7 @@ struct OffBalanceLiabilitiesView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            Text("Verified as of December 31, 2024 in the Town's audited financial statements. OPEB is the dominant exposure because retiree healthcare is typically handled on a pay-as-you-go basis rather than through a funded investment trust like NYSLRS.")
+            Text("Verified as of December 31, 2023 in the Town's audited financial statements (the most recent audit available). OPEB is the dominant exposure because retiree healthcare is typically handled on a pay-as-you-go basis rather than through a funded investment trust like NYSLRS.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

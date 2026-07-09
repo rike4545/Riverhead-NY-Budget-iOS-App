@@ -35,8 +35,8 @@ struct LocalNewsEconomyView: View {
         [
             .init(
                 label: "Population",
-                value: "36,495",
-                detail: "Riverhead town population (2020 Census)."
+                value: "35,902",
+                detail: "Riverhead town population (2020 Census). A 2024 Census Bureau estimate puts it at 35,980."
             ),
             .init(
                 label: "Median Household Income",
@@ -107,6 +107,48 @@ struct LocalNewsEconomyView: View {
                 }
             }
 
+            Section("Tax Base & Largest Taxpayers") {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Implied Full Valuation")
+                        .font(.subheadline.weight(.semibold))
+                    Text("~$7.08 billion")
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(RiverheadTheme.accent)
+                    Text("Implied from the audited debt-limit disclosure: the statutory debt limit is 7% of the Town's five-year-average full (market) valuation, and that limit is $495,782,621 — so the five-year-average full valuation is about $7.08 billion.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 4)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Largest Known Commercial Taxpayers")
+                        .font(.subheadline.weight(.semibold))
+                    Text("The Town does not publish a ranked principal-taxpayers schedule in its basic financial statements, so this is a list of major known commercial ratables from public reporting, not an official ranking.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    taxpayerRow("Tanger Outlets", "Two outlet centers on Route 58 — repeatedly cited as the Town's largest single tax generator.")
+                    taxpayerRow("PSEG Long Island", "Electric transmission and distribution property is a major utility ratable.")
+                    taxpayerRow("Costco Wholesale", "Big-box anchor; has litigated its assessment (a claimed ~$20.3M over-valuation).")
+                    taxpayerRow("Walmart", "Big-box anchor; won a settlement cutting its assessed value ~$950,000 over five years.")
+                    taxpayerRow("Route 58 big-box corridor", "Home Depot, Lowe's, Target and neighbors form a concentrated commercial tax base.")
+                    taxpayerRow("EPCAL / Calverton Enterprise Park", "The former Grumman site — a large publicly-influenced parcel the Town has worked for years to return to the tax rolls.")
+                }
+                .padding(.vertical, 4)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Assessment System Under Strain")
+                        .font(.subheadline.weight(.semibold))
+                    Text("More than 300 tax-grievance lawsuits are filed against the Town every year, and settlements shift the tax burden onto other taxpayers. A decades-old assessment error tied to the Friar's Head golf property produced tax spikes of up to ~160% for some residents in 2026. Riverhead assesses property at roughly 8% of market value — an assessed value of about $50,040 corresponds to a ~$600,000 market-value home (near the Town median) — so small percentage swings move large dollar amounts.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 4)
+
+                Text("Sources: Town of Riverhead 2022 Audited Basic Financial Statements (debt-limit and assessed-value disclosures) · RiverheadLOCAL and Riverhead News-Review reporting on Tanger, big-box assessments, grievance litigation, and the Friar's Head refund (2022, 2024, 2026).")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+
             Section("Sources") {
                 Link("U.S. Census QuickFacts: Riverhead town", destination: URL(string: "https://www.census.gov/quickfacts/fact/table/riverheadtownsuffolkcountynewyork/PST045224")!)
                 Link("NYS DOL: Dec 2025 Area Unemployment Release (PDF)", destination: URL(string: "https://dol.ny.gov/state-labor-department-releases-preliminary-december-2025-area-unemployment-rates")!)
@@ -134,5 +176,22 @@ struct LocalNewsEconomyView: View {
 
     private func currency(_ amount: Double) -> String {
         Self.currency(amount)
+    }
+
+    private func taxpayerRow(_ name: String, _ note: String) -> some View {
+        HStack(alignment: .top, spacing: 8) {
+            Image(systemName: "building.2.fill")
+                .font(.caption)
+                .foregroundStyle(RiverheadTheme.accent)
+                .padding(.top, 2)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(name)
+                    .font(.caption.weight(.semibold))
+                Text(note)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 2)
     }
 }

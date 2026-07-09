@@ -270,19 +270,32 @@ struct GrossEarningsNewsdayView: View {
     private func dedupedRowsByEmployee(_ rows: [GrossEarningsEmployeeRow]) -> [GrossEarningsEmployeeRow] {
         var byEmployee: [String: GrossEarningsEmployeeRow] = [:]
         for row in rows {
-            if let current = byEmployee[row.employeeKey] {
-                switch (current.terminationDate, row.terminationDate) {
-                case let (c?, r?):
-                    if r > c { byEmployee[row.employeeKey] = row }
-                case (.none, .some):
-                    byEmployee[row.employeeKey] = row
-                case (.some, .none):
-                    break
-                case (.none, .none):
-                    if row.grossPay > current.grossPay { byEmployee[row.employeeKey] = row }
-                }
-            } else {
+            guard let current = byEmployee[row.employeeKey] else {
                 byEmployee[row.employeeKey] = row
+                continue
+            }
+            // A person can appear twice in one year's export — e.g. an active record with
+            // real pay, and a $0 retired/terminated/deceased duplicate (a rehire, or a
+            // mid-year status change). Whoever was actually PAID that year should represent
+            // the employee; check this BEFORE the termination-date tiebreaker below, since a
+            // $0 duplicate can carry a termination date that would otherwise incorrectly win
+            // and make a currently active, currently earning employee look inactive.
+            if current.grossPay > 0 && row.grossPay == 0 {
+                continue
+            }
+            if row.grossPay > 0 && current.grossPay == 0 {
+                byEmployee[row.employeeKey] = row
+                continue
+            }
+            switch (current.terminationDate, row.terminationDate) {
+            case let (c?, r?):
+                if r > c { byEmployee[row.employeeKey] = row }
+            case (.none, .some):
+                byEmployee[row.employeeKey] = row
+            case (.some, .none):
+                break
+            case (.none, .none):
+                if row.grossPay > current.grossPay { byEmployee[row.employeeKey] = row }
             }
         }
         return Array(byEmployee.values)

@@ -4243,6 +4243,14 @@ fileprivate struct HearingToolkitView: View {
                     )
 
                     quickReadRow(
+                        title: "Independent cross-check: line-by-line model",
+                        detail: mode == .resident
+                            ? "A separate model that grows every 2026 budget line item by its own category trend (not just payroll and pension) reaches the same conclusion from a different angle: 2027 spending lands near $126.2M and the tax levy near $69.3M — about $2.6M over the roughly 2% the cap allows."
+                            : "Growing all 848 2026 adopted line items by category-specific rates (Personal Services 3.5%, Employee Benefits 8% — the fastest-growing category, Contractual 3.5%, Equipment 3%, Interfund 3%, Other 0%, calibrated to the real 2024–2026 trend) projects 2027 appropriations of about $126.2M (+4.16%) and an implied levy of about $69.27M (+6.0%), roughly $2.6M above the ~2% cap ceiling (~$66.65M). Independently converges with the payroll/pension-pressure estimate above on the same qualitative answer: yes, absent an offset or an override.",
+                        tint: RiverheadTheme.brandGold
+                    )
+
+                    quickReadRow(
                         title: "How to counter the cap risk",
                         detail: mode == .resident
                             ? "The practical offset package starts with Police Uniform OT. Recovering part of the 2024 overrun, plus selective refill after retirements, a small vacancy factor, healthcare sharing for senior staff, raise holds, and better recurring fees or rentals, can cover several hundred thousand dollars and, with stronger cost recovery, just over $1M."

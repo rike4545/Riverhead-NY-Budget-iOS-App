@@ -370,12 +370,31 @@ Using only the cushion simply shrinks how much cushion you carry forward; it doe
                             .font(.headline)
 
                         Text("""
-Public reports and commentary have raised questions about how consistently the Town has followed its own fund balance policy and how often it has adopted local laws overriding the New York State property tax cap. Some sources note that earlier policy revisions were discussed but not formally adopted, and that the Town’s independent auditors have flagged cap-calculation issues in past reports.
+Riverhead exceeded the state's 2% property tax cap nine years running, 2018–2026. The first five years (2018–2022) were WITHOUT the required override local law — an auditor-confirmed violation traced to an error in the Town's 2018 tax-cap calculation that carried forward uncorrected. Every year since (2023, 2024, 2025, 2026) has used a proper override local law, adopted by the required 60% Town Board vote before the budget — so piercing the cap has become the Town's routine, not the exception.
 """
                         )
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
+
+                        VStack(alignment: .leading, spacing: 6) {
+                            taxCapYearRow(year: "2018–2022", detail: "Over cap, no override law (5 years) — auditor-confirmed violation")
+                            taxCapYearRow(year: "2023", detail: "Over cap, override law adopted — corrected")
+                            taxCapYearRow(year: "2024", detail: "Over cap, override law adopted — 4.86% levy (Supervisor Aguiar)")
+                            taxCapYearRow(year: "2025", detail: "Over cap, override law adopted — 7.89% levy, largest since the cap began in 2012 (Supervisor Hubbard)")
+                            taxCapYearRow(year: "2026", detail: "Over cap, override law adopted — 7.74% levy (Supervisor Hubbard)")
+                        }
+                        .padding(.top, 2)
+
+                        Text("The 2026 budget was Supervisor Tim Hubbard's (R): his board adopted the override local law on Nov. 18, 2025, then he narrowly lost re-election to Jerry Halpin (D) by 37 votes days later — so it was Halpin who took office in January 2026 to administer a budget he did not write.")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text("Sources: Town of Riverhead 2022 Audited Financial Statements (MD&A tax-cap note); 2021 Independent Auditor's Report (origin of the 2018 calculation error); RiverheadLOCAL and Riverhead News-Review budget coverage (2023–2025); East End Beacon, Hubbard recount/concession coverage (Nov. 2025); NYS Office of the State Comptroller levy-limit formula (General Municipal Law §3-c).")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
 
                         Text("Always confirm details directly in the Town’s adopted budgets, local laws, and audited financial statements.")
                             .font(.caption)
@@ -501,6 +520,19 @@ Residents are also organizing around the Long Island Science Center, arguing tha
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
                     .strokeBorder(Color.secondary.opacity(0.4), lineWidth: 0.5)
             )
+    }
+
+    private func taxCapYearRow(year: String, detail: String) -> some View {
+        HStack(alignment: .top, spacing: 8) {
+            Text(year)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.brandNavy)
+                .frame(width: 76, alignment: .leading)
+            Text(detail)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 }
 

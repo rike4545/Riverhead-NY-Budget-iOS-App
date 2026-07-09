@@ -358,6 +358,12 @@ struct MoreView: View {
             }
 
             NavigationLink {
+                OfficialsPensionsView()
+            } label: {
+                Label("Officials & Pensions", systemImage: "person.badge.shield.checkmark")
+            }
+
+            NavigationLink {
                 PluralityGovernanceView()
             } label: {
                 Label("Plurality & Oversight", systemImage: "person.3.sequence.fill")

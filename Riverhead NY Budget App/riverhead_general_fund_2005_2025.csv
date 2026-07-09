@@ -1,5 +1,8 @@
 year,fund_code,fund_name,appropriations,estimated_revenues,appropriated_fund_balance,tax_levy,source_doc,status
 2005,001,General Fund,30840590,8030960,1250000,21559630,05.adopted.budget.pdf,Adopted
+2006,001,General Fund,33039865,10044250,1000000,21995615,2006 Adopted Budget (PDF).pdf,Adopted
+2007,001,General Fund,35062647,10354375,900000,23808272,2007 Adopted Budget (PDF).pdf,Adopted
+2008,001,General Fund,38548475,12609075,801500,25137900,2008 Adopted Budget (PDF).pdf,Adopted
 2009,001,General Fund,39517562,11200860,2005602,26311100,2009.adopted.budget.pdf,Adopted
 2010,001,General Fund,43277978,10956345,4701200,27620433,2010.adopted.budget.pdf,Adopted
 2011,001,General Fund,42383100,10532600,2600000,29250500,2011.Adopted Budget.pdf,Adopted
@@ -16,3 +19,4 @@ year,fund_code,fund_name,appropriations,estimated_revenues,appropriated_fund_bal
 2022,A01,General Fund,52487600,11998462,0,40489138,2022AdoptedBudget958105751111721AM.pdf,Adopted
 2024,A01,General Fund,60797800,14273650,2000000,44524150,2024AdoptedBudget1505034817111523PM.pdf,Adopted
 2025,A01,General Fund,64852829,14463350,1750000,48639479,2025AdoptedBudget1518015509112024PM.pdf,Adopted
+2026,A01,General Fund,69113159,14998550,1250000,52864609,2026 Adopted Budget Summary,Adopted

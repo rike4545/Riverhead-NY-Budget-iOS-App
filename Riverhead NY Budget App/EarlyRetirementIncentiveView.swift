@@ -89,12 +89,12 @@ struct EarlyRetirementIncentiveView: View {
             VStack(alignment: .leading, spacing: 14) {
                 headerCard
 
-                panelCard(title: "Current Status: Finalized Terms", systemImage: "checkmark.seal.fill") {
-                    bullet("The Town reached final agreements with all three unions — CSEA, PBA, and SOA — for the 2026 Voluntary Retirement Incentive Program. These are executed terms, not a proposal.")
+                panelCard(title: "Current Status: Ratified", systemImage: "checkmark.seal.fill") {
+                    bullet("The Town Board voted unanimously on July 7, 2026 to ratify all three union agreements — CSEA, PBA, and SOA — for the 2026 Voluntary Retirement Incentive Program. These are executed, ratified terms, not a proposal.")
                     bullet("CSEA members receive a flat $12,500 cash incentive.")
                     bullet("PBA and SOA (police) members receive $1,000 per year of service, plus a payout for up to 30 accrued sick days beyond the contract maximum, at the average of 2024–2026 base salary.")
                     bullet("An eligible employee must commit in writing by September 1, 2026 and retire by October 1, 2026.")
-                    bullet("Using hire dates and union as proxies (CSEA hired on or before 2009; police hired on or before 2006), about 78 currently active employees appear eligible (an upper bound — actual eligibility also depends on age/pension-tier rules payroll doesn't show).")
+                    bullet("Officially, 53 employees are eligible — 29 CSEA, 18 PBA, 6 SOA — per Financial Administrator Jeannette DiPaola (RiverheadLOCAL, 7/9/2026). The Town estimates $500,000–$800,000 in savings depending on uptake, and expects all vacated positions to be refilled. (Our own hire-date/union upper-bound model below, 78 eligible, was always a ceiling — the real number came in well under it, as expected, since payroll can't reveal true retirement eligibility like age.)")
                 }
 
                 panelCard(title: "CSEA Contract Context", systemImage: "person.3.fill") {
@@ -138,14 +138,14 @@ struct EarlyRetirementIncentiveView: View {
                     bullet("Improves budget planning by making the upfront cost and multi-year payoff transparent.")
                 }
 
-                panelCard(title: "Public Questions Before Adoption", systemImage: "questionmark.circle.fill") {
-                    bullet("What is the total upfront cost, including incentive payments, accrued leave, health insurance effects, pension impacts, overtime, and transition coverage?")
-                    bullet("How many CSEA, PBA, and SOA employees are eligible under the age and service filter, and how many are assumed to participate?")
+                panelCard(title: "Public Questions Before Adoption (some now answered)", systemImage: "questionmark.circle.fill") {
+                    bullet("What is the total upfront cost, including incentive payments, accrued leave, health insurance effects, pension impacts, overtime, and transition coverage? — The Town declined to give a gross cost estimate until it knows which of the 53 eligible employees opt in.")
+                    bullet("How many CSEA, PBA, and SOA employees are eligible under the age and service filter, and how many are assumed to participate? — ANSWERED: 53 total (29 CSEA, 18 PBA, 6 SOA), per the Town's July 2026 ratification. Participation itself remains unknown until the September 1, 2026 deadline.")
                     bullet("For CSEA, how do the 2026-2029 wage actions, 25-year longevity increase, promotion guarantee, retiree buyback changes, and active/retiree health-premium rules change the payback period?")
                     bullet("Which eligible employees are ERS or PFRS, what tier are they in, and which OSC retirement-plan publication applies to each group?")
                     bullet("For police employees, which candidates are PFRS Article 14 Tier 3, which are in 20-year or 25-year plans, and which benefit formula applies?")
-                    bullet("Which positions would be refilled, held vacant, consolidated, or eliminated?")
-                    bullet("Does the claimed 3% taxpayer savings come from recurring payroll savings, one-time fund balance, surplus interest earnings, or a mix? The Times Review report cites up to $1.7M in annual savings and about $550,000 per 1% tax decrease, so the bridge between payroll savings and levy savings should be shown line by line.")
+                    bullet("Which positions would be refilled, held vacant, consolidated, or eliminated? — The Town says all vacated positions are expected to be refilled.")
+                    bullet("Does the claimed taxpayer savings come from recurring payroll savings, one-time fund balance, surplus interest earnings, or a mix? — UPDATED: the Town's official estimate at ratification is $500,000–$800,000/yr, depending on uptake — lower than the up-to-$1.7M figure floated during the May/June 2026 proposal stage. The bridge between payroll savings and levy savings still isn't shown line by line.")
                     bullet("What fund-balance level remains after the payout, and does it preserve capital projects, grant matches, and bond-rating strength?")
                     bullet("Should the budgetary portion of the plan be discussed in a public work session before any executive-session labor negotiation details are resolved?")
                 }
@@ -205,10 +205,10 @@ struct EarlyRetirementIncentiveView: View {
                 }
 
                 panelCard(title: "Realistic Backfill & the Police Promotion Chain", systemImage: "arrow.triangle.branch") {
-                    bullet("A step-based backfill (refilling each vacated job at the entry step of the actual salary schedule, not a flat 20% discount) puts realistic annual salary savings at about $718,064/yr across the 20 eligible positions where an entry step is clearly identifiable.")
-                    bullet("Police are the largest single driver: a top-step police officer earns well over $146,000, while a new officer starts near $52,049 — about $94,600 saved per position, every year.")
-                    bullet("But a RANKED retirement (sergeant, lieutenant, detective) can't be backfilled by a rookie of that rank — the Town still needs a sergeant. It triggers a promotion chain: a senior officer moves up, and the rookie is hired at the bottom. The real saving is a top-step officer minus a rookie (~$94,635), not the retiree's own rank salary minus a rookie (a naive claim of ~$122,505 for a sergeant overstates it).")
-                    bullet("Across the 24 eligible police (12 rank-and-file officers + 12 ranked), realistic recurring savings total about $1,810,817/yr if every position is refilled — $675,197 from officers plus $1,135,620 from the ranked promotion chain.")
+                    bullet("A step-based backfill (refilling each vacated job at the entry step of the actual salary schedule, not a flat 20% discount) puts realistic annual salary savings at about $702,449/yr across the 20 eligible positions where an entry step is clearly identifiable. (Uses the 2026 Academy step, $53,350, per the signed PBA contract — a rookie hired in 2026 is hired at the 2026 rate, not 2025's.)")
+                    bullet("Police are the largest single driver: a top-step police officer earns about $150,351 (2026 contract rate), while a new officer starts near $53,350 — about $97,000 saved per position, every year.")
+                    bullet("But a RANKED retirement (sergeant, lieutenant, detective) can't be backfilled by a rookie of that rank — the Town still needs a sergeant. It triggers a promotion chain: a senior officer moves up, and the rookie is hired at the bottom. The real saving is a top-step officer minus a rookie (~$97,001), not the retiree's own rank salary minus a rookie (a naive claim of ~$131,677 for a sergeant, using the SOA contract's 2026 top step of $185,027, overstates it).")
+                    bullet("Across the 24 eligible police (12 rank-and-file officers + 12 ranked), realistic recurring savings total about $1,823,597/yr if every position is refilled — $659,585 from officers plus $1,164,012 from the ranked promotion chain.")
                     bullet("A retirement isn't always \"replace with a rookie\": a vacancy can also be filled by promotion (shrinking the saving), a lateral transfer (moving the gap elsewhere), or elimination/restructuring (increasing the saving). Treat these figures as one illustrative path, not a guaranteed result.")
                 }
 
@@ -249,14 +249,14 @@ struct EarlyRetirementIncentiveView: View {
                 panelCard(title: "Implementation Notes", systemImage: "checklist") {
                     bullet("Validate plan design with counsel, NYSLRS/PFRS rules, and labor agreements before final terms.")
                     bullet("Model police, highway, and specialized departments separately where backfill rates may be higher.")
-                    bullet("For ranked jobs (police sergeants, lieutenants, detectives), don't credit the retiree's full salary as savings: the rank must stay filled, so a retirement sets off a promotion chain and only the bottom seat turns over. The recurring saving is a top-step officer minus a rookie (about $95k), not the sergeant's salary minus a rookie (about $123k).")
+                    bullet("For ranked jobs (police sergeants, lieutenants, detectives), don't credit the retiree's full salary as savings: the rank must stay filled, so a retirement sets off a promotion chain and only the bottom seat turns over. The recurring saving is a top-step officer minus a rookie (about $97k), not the sergeant's salary minus a rookie (about $132k).")
                     bullet("Include transition costs (overtime, training, equipment) in the final policy memo.")
                     bullet("Publish clear eligibility windows and governance to keep the process fair and defensible.")
                     bullet("Separate executive-session negotiation details from the public budget math so residents can see cost, funding source, payback period, and reserve impact.")
                 }
 
                 panelCard(title: "Disclaimer", systemImage: "exclamationmark.triangle.fill") {
-                    Text("The 2026 Voluntary Retirement Incentive Program's terms above are final, executed union agreements — not a proposal. The eligible-employee count (78) is still an upper-bound estimate from hire date and union, since actual eligibility also depends on age and pension-tier rules payroll doesn't show, and participation is voluntary and unknown until the September 1, 2026 election deadline. The sliders below remain a what-if tool for exploring your own assumptions about participation, backfill, and cost — they do not represent an official Town projection.")
+                    Text("The 2026 Voluntary Retirement Incentive Program was ratified by the Town Board on July 7, 2026. The official eligible count is 53 (29 CSEA, 18 PBA, 6 SOA); the 78-employee figure elsewhere on this page is our own hire-date/union upper-bound model, kept for comparison. Participation is voluntary and unknown until the September 1, 2026 election deadline. The sliders below remain a what-if tool for exploring your own assumptions about participation, backfill, and cost — they do not represent an official Town projection.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)

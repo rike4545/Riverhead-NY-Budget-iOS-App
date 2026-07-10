@@ -19,13 +19,15 @@ public enum ContractCatalog {
                 2023: .percent(0.06, note: "Signed PBA contract, Article XXXI/XXXVI: term runs 1/1/2023-12/31/2026; 2023 salary schedule is the first contract-year schedule."),
                 2024: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2024 salary schedule is +2.5% over the 2023 schedule."),
                 2025: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2025 salary schedule is +2.5% over the 2024 schedule."),
-                2026: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2026 salary schedule is +2.5% over the 2025 schedule.")
+                2026: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2026 salary schedule is +2.5% over the 2025 schedule."),
+                2027: .percent(0.0336, note: "PLACEHOLDER: the PBA contract expires 12/31/2026 with no successor yet public. Uses PBA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2.5%, 2.5%, 2.5%) as a forward estimate — not a signed rate. Replace once a new PBA contract is ratified.")
             ],
             .soa: [
                 2023: .percent(0.06, note: "SOA base agreement Article I covers Sergeants, Detective Sergeants, and Lieutenants; signed SOA MOA Articles XXVI/XXXII set the 1/1/2023-12/31/2026 term and increased those schedules 6.0% effective 7/30/2023."),
                 2024: .percent(0.02, note: "Signed SOA MOA, Article XXXII: 2024 salary schedules are +2.0% over the 7/30/2023 schedules."),
                 2025: .percent(0.04, note: "Signed SOA MOA, Article XXXII: 2025 salary schedules are +4.0% over the 2024 schedules."),
-                2026: .percent(0.06, note: "Signed SOA MOA, Article XXXII: 2026 salary schedules are +6.0% over the 2025 schedules.")
+                2026: .percent(0.06, note: "Signed SOA MOA, Article XXXII: 2026 salary schedules are +6.0% over the 2025 schedules."),
+                2027: .percent(0.0449, note: "PLACEHOLDER: the SOA contract expires 12/31/2026 with no successor yet public. Uses SOA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2%, 4%, 6%) as a forward estimate — not a signed rate. Replace once a new SOA contract is ratified.")
             ],
             .csea: [
                 2023: .percentPlusFlat(0.05, flatPerFTE: 1500, note: "Executed CSEA CBA 2023-2025, Article 15: +5.0% retroactive to 1/1/2023 plus a one-time, non-recurring $1,500 salary-schedule adjustment."),

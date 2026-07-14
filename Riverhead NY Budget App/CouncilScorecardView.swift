@@ -143,6 +143,27 @@ struct CouncilScorecardView: View {
         let lastReported: Date?
         let loanAmount: Double?
         let loanLastReported: Date?
+        let filingEvents: [CampaignFilingEvent]?
+    }
+
+    // A single filing SUBMISSION (e.g. "January Periodic, Original, Itemized, State/Local"),
+    // as opposed to an individual itemized transaction inside it. The bulk Open Data feed has
+    // no "date filed" timestamp — only sched_date per transaction, which for a recurring
+    // liability (an outstanding loan re-reported every period) can carry a stale original
+    // date. lastActivity is the latest transaction date found in that filing, not a
+    // submission date.
+    private struct CampaignFilingEvent: Codable, Identifiable {
+        var id: String { "\(filerID)|\(electionYear)|\(filingDesc)|\(isAmendment)" }
+        let filerID: String
+        let committeeName: String
+        let electionYear: String
+        let filingDesc: String
+        let isAmendment: Bool
+        let category: String
+        let electionType: String
+        let amount: Double
+        let transactionCount: Int
+        let lastActivity: Date?
     }
 
     private struct CampaignFilingSnapshot: Codable {
@@ -203,6 +224,18 @@ struct CouncilScorecardView: View {
         let amount: String?
         let last_reported: String?
         let row_count: String?
+    }
+
+    private struct FilingEventRow: Decodable {
+        let filer_id: String
+        let election_year: String?
+        let filing_desc: String?
+        let r_amend: String?
+        let filing_cat_desc: String?
+        let election_type: String?
+        let amount: String?
+        let row_count: String?
+        let last_activity: String?
     }
 
     private struct ContributionRow: Decodable {
@@ -1639,6 +1672,23 @@ struct CouncilScorecardView: View {
                 }
             }
 
+            if let events = snapshot?.filingEvents, !events.isEmpty {
+                Section("Campaign Filings") {
+                    let hasMultipleCommittees = Set(events.map(\.filerID)).count > 1
+                    ForEach(groupedFilingEvents(events), id: \.bucket) { group in
+                        DisclosureGroup(group.bucket) {
+                            ForEach(group.events) { event in
+                                campaignFilingRow(event, showCommitteeName: hasMultipleCommittees)
+                            }
+                        }
+                    }
+                    Text("\"Latest activity\" is the newest transaction date reported inside that filing, not the date the filing was submitted — the bulk Open Data feed doesn't carry a submission timestamp, only per-transaction dates (which can be old for a recurring loan balance re-reported each period). This list also only shows filings that reported at least one itemized transaction — a filing with no reportable activity for that period won't appear here at all, since the bulk data has no row for it.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+
             Section("Top Donors") {
                 if let topIndividual = snapshot?.largestIndividualContribution {
                     topContributionRow(title: "Largest individual", contribution: topIndividual, tint: RiverheadTheme.brandSky)
@@ -2338,6 +2388,48 @@ struct CouncilScorecardView: View {
         Text("\(title): \(currencyFormatter.string(from: NSNumber(value: amount ?? 0)) ?? "$0")")
             .font(.caption)
             .foregroundStyle(.secondary)
+    }
+
+    // "2026" / "2025" / "Prior" — the two most recent years on their own, everything else lumped.
+    private func filingYearBucket(_ electionYear: String) -> String {
+        guard let year = Int(electionYear) else { return "Prior" }
+        if year == campaignFilingEndYear { return "\(campaignFilingEndYear)" }
+        if year == campaignFilingEndYear - 1 { return "\(campaignFilingEndYear - 1)" }
+        return "Prior"
+    }
+
+    private func groupedFilingEvents(_ events: [CampaignFilingEvent]) -> [(bucket: String, events: [CampaignFilingEvent])] {
+        let buckets = ["\(campaignFilingEndYear)", "\(campaignFilingEndYear - 1)", "Prior"]
+        return buckets.compactMap { bucket in
+            let matches = events
+                .filter { filingYearBucket($0.electionYear) == bucket }
+                .sorted { ($0.lastActivity ?? .distantPast) > ($1.lastActivity ?? .distantPast) }
+            return matches.isEmpty ? nil : (bucket, matches)
+        }
+    }
+
+    private func campaignFilingRow(_ event: CampaignFilingEvent, showCommitteeName: Bool) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(event.filingDesc)
+                .font(.subheadline.weight(.semibold))
+            Text("\(event.category), \(event.isAmendment ? "Amendment" : "Original"), \(event.electionType)"
+                 + (showCommitteeName ? " · \(event.committeeName)" : ""))
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            HStack {
+                Text(currencyFormatter.string(from: NSNumber(value: event.amount)) ?? "$0")
+                    .fontWeight(.semibold)
+                    .monospacedDigit()
+                Text("· \(event.transactionCount) row\(event.transactionCount == 1 ? "" : "s")")
+                    .foregroundStyle(.secondary)
+                if let lastActivity = event.lastActivity {
+                    Text("· through \(reportDateFormatter.string(from: lastActivity))")
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .font(.caption)
+        }
+        .padding(.vertical, 3)
     }
 
     private func relatedPartyFlagLabels(for snapshot: CampaignSnapshot?) -> [String] {
@@ -3348,7 +3440,8 @@ struct CouncilScorecardView: View {
             candidateFamilyLoans: baselineCandidateFamilyFinancing(for: member),
             lastReported: member.campaignLastReported,
             loanAmount: member.campaignLoanAmount,
-            loanLastReported: member.campaignLoanLastReported
+            loanLastReported: member.campaignLoanLastReported,
+            filingEvents: nil
         )
     }
 
@@ -3653,6 +3746,14 @@ struct CouncilScorecardView: View {
                 "patrick halpin",
                 "kristen halpin"
             ]
+        } else if member.name.contains("Rothwell") {
+            // A $2,500 loan each from Werner Rothwell and Alexander Rothwell to "Friends of Ken
+            // Rothwell" (filer 154927), originally dated 2021-03-21, re-reported as an
+            // outstanding liability (schedule N) in every periodic/pre-election filing since.
+            return [
+                "werner rothwell",
+                "alexander rothwell"
+            ]
         }
         return []
     }
@@ -3730,13 +3831,18 @@ struct CouncilScorecardView: View {
         let loanFilter = "(filing_sched_abbrev in('J','K','N') or lower(filing_sched_desc) like '%loan%' or lower(loan_other_desc) like '%loan%')"
         let loanQuery = "$select=filer_id,sum(coalesce(owed_amt, org_amt)) as loan_amt,max(sched_date) as last_reported_loan&$where=filer_id in (\(inClause)) and \(filingYearFilter) and \(loanFilter)&$group=filer_id"
         let loanDetailQuery = "$select=filer_id,election_year,filing_abbrev,filing_desc,filing_sched_abbrev,filing_sched_desc,cntrbr_type_desc,flng_ent_name,flng_ent_first_name,flng_ent_middle_name,flng_ent_last_name,org_amt,owed_amt,sched_date,loan_lib_number,loan_other_desc&$where=filer_id in (\(inClause)) and \(filingYearFilter) and \(loanFilter)&$limit=5000"
+        // Grouped by filing (not by schedule), so each row here is one filing SUBMISSION —
+        // e.g. "January Periodic, Original, Itemized, State/Local" — rather than one
+        // itemized transaction within it.
+        let filingEventsQuery = "$select=filer_id,election_year,filing_desc,r_amend,filing_cat_desc,election_type,sum(org_amt) as amount,count(*) as row_count,max(sched_date) as last_activity&$where=filer_id in (\(inClause)) and \(filingYearFilter)&$group=filer_id,election_year,filing_desc,r_amend,filing_cat_desc,election_type&$order=election_year DESC&$limit=2000"
 
         guard let raisedURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(raisedQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
               let breakdownURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(breakdownQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
               let currentYearBreakdownURL = URL(string: "https://data.ny.gov/resource/e9ss-239a.json?\(currentYearBreakdownQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
               let contributionURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(contributionQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
               let loanURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(loanQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
-              let loanDetailURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(loanDetailQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else {
+              let loanDetailURL = URL(string: "https://data.ny.gov/resource/4j2b-6a2j.json?\(loanDetailQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"),
+              let filingEventsURL = URL(string: "https://data.ny.gov/resource/e9ss-239a.json?\(filingEventsQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else {
             filingsUpdateStatus = "Could not build filings query URL."
             return
         }
@@ -3748,8 +3854,9 @@ struct CouncilScorecardView: View {
             async let contributionRowsReq: [ContributionRow] = fetchCampaignRows(from: contributionURL)
             async let loanRowsReq: [LoanRow] = fetchCampaignRows(from: loanURL)
             async let loanDetailRowsReq: [LoanDetailRow] = fetchCampaignRows(from: loanDetailURL)
+            async let filingEventsRowsReq: [FilingEventRow] = fetchCampaignRows(from: filingEventsURL)
 
-            let (raisedRows, breakdownRows, currentYearBreakdownRows, contributionRows, loanRows, loanDetailRows) = try await (raisedRowsReq, breakdownRowsReq, currentYearBreakdownRowsReq, contributionRowsReq, loanRowsReq, loanDetailRowsReq)
+            let (raisedRows, breakdownRows, currentYearBreakdownRows, contributionRows, loanRows, loanDetailRows, filingEventsRows) = try await (raisedRowsReq, breakdownRowsReq, currentYearBreakdownRowsReq, contributionRowsReq, loanRowsReq, loanDetailRowsReq, filingEventsRowsReq)
 
             var raisedByFiler: [String: RaisedRow] = [:]
             for row in raisedRows { raisedByFiler[row.filer_id] = row }
@@ -3782,6 +3889,11 @@ struct CouncilScorecardView: View {
             var currentYearBreakdownRowsByFiler: [String: [ScheduleBreakdownRow]] = [:]
             for row in currentYearBreakdownRows {
                 currentYearBreakdownRowsByFiler[row.filer_id, default: []].append(row)
+            }
+
+            var filingEventRowsByFiler: [String: [FilingEventRow]] = [:]
+            for row in filingEventsRows {
+                filingEventRowsByFiler[row.filer_id, default: []].append(row)
             }
 
             var largestIndividualByFiler: [String: TopContribution] = [:]
@@ -3952,6 +4064,33 @@ struct CouncilScorecardView: View {
                     )
                 }
 
+                var committeeNameByFilerID: [String: String] = [:]
+                for ref in filingRefs {
+                    committeeNameByFilerID[ref.filerID] = ref.committeeName
+                }
+                var filingEvents: [CampaignFilingEvent] = []
+                for fid in memberFilerIDs {
+                    let rowsForFiler: [FilingEventRow] = filingEventRowsByFiler[fid] ?? []
+                    for row in rowsForFiler {
+                        let event = CampaignFilingEvent(
+                            filerID: row.filer_id,
+                            committeeName: committeeNameByFilerID[row.filer_id] ?? row.filer_id,
+                            electionYear: row.election_year ?? "",
+                            filingDesc: row.filing_desc ?? "Unlabeled filing",
+                            isAmendment: (row.r_amend ?? "").uppercased() == "Y",
+                            category: row.filing_cat_desc ?? "—",
+                            electionType: row.election_type ?? "—",
+                            amount: parseAmount(row.amount) ?? 0,
+                            transactionCount: Int(row.row_count ?? "") ?? 0,
+                            lastActivity: parseAPIDate(row.last_activity)
+                        )
+                        filingEvents.append(event)
+                    }
+                }
+                filingEvents.sort { lhs, rhs in
+                    (lhs.lastActivity ?? .distantPast) > (rhs.lastActivity ?? .distantPast)
+                }
+
                 updated[member.id] = CampaignSnapshot(
                     committeeName: filingRefs.map(\.committeeName).joined(separator: " + "),
                     filerID: memberFilerIDs.joined(separator: ", "),
@@ -3979,7 +4118,8 @@ struct CouncilScorecardView: View {
                     candidateFamilyLoans: dedupedCandidateFamilyLoans,
                     lastReported: reported,
                     loanAmount: loanAmt > 0 ? loanAmt : nil,
-                    loanLastReported: loanDate
+                    loanLastReported: loanDate,
+                    filingEvents: filingEvents
                 )
             }
 

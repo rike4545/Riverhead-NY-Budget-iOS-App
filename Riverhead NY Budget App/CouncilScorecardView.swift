@@ -166,6 +166,24 @@ struct CouncilScorecardView: View {
         let lastActivity: Date?
     }
 
+    // A Town payroll employee whose name matches an individual campaign donor to one of the
+    // tracked committees. Disclosure context, not an accusation — modest personal donations
+    // from Town employees to sitting or former officials are common and legal. Matched by
+    // normalized (last, first) name only, so a shared name with a different person is
+    // possible and not verified beyond the name match itself.
+    private struct EmployeeDonorMatch: Identifiable {
+        var id: String { "\(employeeName)|\(officialName)|\(electionYear)|\(filingDesc)|\(amount)" }
+        let employeeName: String
+        let department: String?
+        let title: String?
+        let officialName: String
+        let committeeName: String
+        let electionYear: String
+        let filingDesc: String
+        let amount: Double
+        let date: Date?
+    }
+
     private struct CampaignFilingSnapshot: Codable {
         let committeeName: String
         let filerID: String
@@ -286,6 +304,38 @@ struct CouncilScorecardView: View {
     }
     private let currentDate = Date()
 
+    private struct FilingDeadline {
+        let label: String
+        let dateLabel: String
+        let date: Date
+        let periodNote: String
+    }
+
+    // NY State Board of Elections 2026 filing calendar (State/Local candidates), source:
+    // https://elections.ny.gov/system/files/documents/2025/12/2026-filing-calendar-12112025-approved.secure.accessible.pdf
+    private var nyFilingDeadlines2026: [FilingDeadline] {
+        let entries: [(String, String, String)] = [
+            ("July Periodic Report", "2026-07-15", "activity Jan 12 – Jul 11"),
+            ("32-Day Pre-General Report", "2026-10-02", "period ends Sep 28"),
+            ("11-Day Pre-General Report", "2026-10-23", "period ends Oct 19"),
+            ("General Election Day", "2026-11-03", "Election Day, not a filing deadline"),
+            ("27-Day Post-General Report", "2026-11-30", "period ends Nov 26"),
+        ]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.timeZone = TimeZone(identifier: "America/New_York")
+        return entries.compactMap { label, dateString, note in
+            guard let date = formatter.date(from: "\(dateString) 23:59:59") else { return nil }
+            return FilingDeadline(label: label, dateLabel: dateString, date: date, periodNote: note)
+        }
+    }
+
+    private var nextFilingDeadline: FilingDeadline? {
+        nyFilingDeadlines2026
+            .filter { $0.date >= currentDate }
+            .min { $0.date < $1.date }
+    }
+
     @AppStorage("council_scorecard_user_ratings_json") private var userRatingsJSON: String = ""
     @AppStorage("council_scorecard_fetched_campaign_snapshots_json") private var fetchedSnapshotsJSON: String = ""
     @AppStorage("council_scorecard_previous_campaign_snapshots_json") private var previousSnapshotsJSON: String = ""
@@ -302,6 +352,7 @@ struct CouncilScorecardView: View {
     @State private var previousCampaignSnapshots: [String: CampaignSnapshot] = [:]
     @State private var isUpdatingFilings: Bool = false
     @State private var filingsUpdateStatus: String?
+    @State private var employeeDonorMatches: [EmployeeDonorMatch] = []
     @State private var filingsLastUpdatedAt: Date?
     @State private var campaignFilingSearchText: String = ""
 
@@ -1314,6 +1365,64 @@ struct CouncilScorecardView: View {
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+            }
+
+            if !employeeDonorMatches.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Label("Town Employee Donors", systemImage: "person.badge.shield.checkmark")
+                        .font(.subheadline.weight(.bold))
+                    Text("Town payroll employees whose name matches an individual campaign donor to a tracked committee. Disclosure context, not an accusation — modest personal donations from Town employees to sitting or former officials are common and legal. Matched by name only.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    financeMetricTile(
+                        title: "Matched contributions",
+                        value: "\(employeeDonorMatches.count) totaling \(currencyFormatter.string(from: NSNumber(value: employeeDonorMatches.reduce(0) { $0 + $1.amount })) ?? "$0")",
+                        tint: RiverheadTheme.brandGold
+                    )
+
+                    ForEach(Array(Dictionary(grouping: employeeDonorMatches, by: \.officialName).sorted(by: { $0.key < $1.key })), id: \.key) { officialName, matches in
+                        DisclosureGroup("\(officialName) (\(matches.count))") {
+                            ForEach(matches) { match in
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(match.employeeName)
+                                        .font(.caption.weight(.semibold))
+                                    if let title = match.title {
+                                        Text([title, match.department].compactMap { $0 }.joined(separator: ", "))
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    HStack {
+                                        Text(currencyFormatter.string(from: NSNumber(value: match.amount)) ?? "$0")
+                                            .font(.caption.weight(.semibold))
+                                        Text("· \(match.electionYear) \(match.filingDesc)")
+                                            .foregroundStyle(.secondary)
+                                        if let date = match.date {
+                                            Text("· \(reportDateFormatter.string(from: date))")
+                                                .foregroundStyle(.secondary)
+                                        }
+                                    }
+                                    .font(.caption2)
+                                }
+                                .padding(.vertical, 2)
+                            }
+                        }
+                        .font(.caption)
+                    }
+                }
+            }
+
+            if let deadline = nextFilingDeadline, deadline.label != "General Election Day" {
+                VStack(alignment: .leading, spacing: 3) {
+                    Label("Next filing deadline: \(deadline.label) — due \(deadline.dateLabel)", systemImage: "calendar.badge.clock")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.brandGold)
+                    Text("\(deadline.periodNote). Every committee tracked in this scorecard is required to file by this date. Source: NY BOE 2026 filing calendar.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
 
             Text("Source: New York State Board of Elections / NY Open Data. Candidate filing totals in this scorecard use the \(campaignFilingYearRangeLabel) window; use Update Filings for the newest daily Open Data values.")
@@ -3738,6 +3847,34 @@ struct CouncilScorecardView: View {
         return names
     }
 
+    // Normalized "last|first" key used to match a payroll employee against a campaign donor
+    // by name only (case-insensitive, first name reduced to its first token, no middle names).
+    private func donorNameKey(last: String?, first: String?) -> String? {
+        let l = (last ?? "").trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let f = (first ?? "").trimmingCharacters(in: .whitespacesAndNewlines).lowercased().split(separator: " ").first.map(String.init) ?? ""
+        guard !l.isEmpty, !f.isEmpty else { return nil }
+        return "\(l)|\(f)"
+    }
+
+    // Payroll names are "Last, First Middle" — split on the first comma.
+    private func payrollNameKey(_ name: String) -> String? {
+        let parts = name.split(separator: ",", maxSplits: 1)
+        guard parts.count == 2 else { return nil }
+        let first = parts[1].trimmingCharacters(in: .whitespacesAndNewlines).split(separator: " ").first.map(String.init)
+        return donorNameKey(last: String(parts[0]), first: first)
+    }
+
+    // A council member draws a Town salary too, so without this a candidate donating to
+    // their own committee would show up as a "town employee donor" — trivially true and not
+    // a meaningful finding. Reuses candidateSelfNames (space-separated "first last" strings).
+    private func selfDonorNameKeys(for member: CouncilMember) -> Set<String> {
+        Set(candidateSelfNames(for: member).compactMap { full -> String? in
+            let parts = full.split(separator: " ")
+            guard parts.count >= 2, let first = parts.first, let last = parts.last else { return nil }
+            return donorNameKey(last: String(last), first: String(first))
+        })
+    }
+
     private func candidateFamilyNames(for member: CouncilMember) -> Set<String> {
         if member.name.contains("Jerome Halpin") {
             return [
@@ -4122,6 +4259,46 @@ struct CouncilScorecardView: View {
                     filingEvents: filingEvents
                 )
             }
+
+            var employeeByDonorKey: [String: Employee] = [:]
+            for employee in EmployeeStore.shared.employees {
+                guard let key = payrollNameKey(employee.name) else { continue }
+                employeeByDonorKey[key] = employee
+            }
+            var newEmployeeDonorMatches: [EmployeeDonorMatch] = []
+            for member in allTrackedMembers {
+                let filingRefs = campaignFilings(for: member)
+                let memberFilerIDs = filingRefs.map(\.filerID)
+                guard !memberFilerIDs.isEmpty else { continue }
+                var committeeNameByFilerID: [String: String] = [:]
+                for ref in filingRefs { committeeNameByFilerID[ref.filerID] = ref.committeeName }
+                let selfKeys = selfDonorNameKeys(for: member)
+                for fid in memberFilerIDs {
+                    let rows: [ContributionRow] = contributionRowsByFiler[fid] ?? []
+                    for row in rows {
+                        let contributorType = (row.cntrbr_type_desc ?? "").trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                        guard contributorType == "individual" else { continue }
+                        guard let key = donorNameKey(last: row.flng_ent_last_name, first: row.flng_ent_first_name) else { continue }
+                        guard let employee = employeeByDonorKey[key] else { continue }
+                        if selfKeys.contains(key) { continue }
+                        guard let amount = parseAmount(row.org_amt) else { continue }
+                        let match = EmployeeDonorMatch(
+                            employeeName: employee.name,
+                            department: employee.department.isEmpty ? nil : employee.department,
+                            title: employee.jobTitle.isEmpty ? nil : employee.jobTitle,
+                            officialName: member.name,
+                            committeeName: committeeNameByFilerID[fid] ?? fid,
+                            electionYear: row.election_year ?? "",
+                            filingDesc: row.filing_desc ?? "Unlabeled filing",
+                            amount: amount,
+                            date: parseAPIDate(row.sched_date)
+                        )
+                        newEmployeeDonorMatches.append(match)
+                    }
+                }
+            }
+            newEmployeeDonorMatches.sort { ($0.date ?? .distantPast) > ($1.date ?? .distantPast) }
+            employeeDonorMatches = newEmployeeDonorMatches
 
             if !fetchedCampaignSnapshots.isEmpty {
                 previousCampaignSnapshots = fetchedCampaignSnapshots

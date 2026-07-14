@@ -331,12 +331,18 @@ fileprivate struct GlassCard<Content: View>: View {
 
 // MARK: - Budget tools directory
 
+fileprivate enum BudgetToolDestination {
+    case section(BudgetSection)
+    case budgetSimulator
+    case earlyRetirementModel
+}
+
 fileprivate struct BudgetToolShortcut: Identifiable {
     let id = UUID()
     let title: String
     let subtitle: String
     let symbol: String
-    let section: BudgetSection?
+    let destination: BudgetToolDestination
 }
 
 fileprivate struct BudgetToolGroup: Identifiable {
@@ -354,29 +360,29 @@ fileprivate struct BudgetToolsDirectoryView: View {
         .init(
             title: "2027 Planning",
             shortcuts: [
-                .init(title: "Budget Message", subtitle: "Unofficial proposal, levy target, surplus plan, and risks.", symbol: "doc.text.magnifyingglass", section: .proposed2027Budget),
-                .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", section: nil),
-                .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", section: .budget2027Summary),
-                .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", section: .budget2027),
-                .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", section: nil)
+                .init(title: "Budget Message", subtitle: "Unofficial proposal, levy target, surplus plan, and risks.", symbol: "doc.text.magnifyingglass", destination: .section(.proposed2027Budget)),
+                .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", destination: .earlyRetirementModel),
+                .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
+                .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", destination: .section(.budget2027)),
+                .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", destination: .budgetSimulator)
             ]
         ),
         .init(
             title: "Evidence And Detail",
             shortcuts: [
-                .init(title: "Supplement Explorer", subtitle: "Annual report, surplus, tax-cut, and labor-pressure details.", symbol: "doc.text.magnifyingglass", section: .supplementExplorer),
-                .init(title: "Outliers", subtitle: "Budget accuracy, variances, and unusual lines.", symbol: "exclamationmark.triangle.fill", section: .outliers),
-                .init(title: "Employees", subtitle: "Payroll and public earnings views.", symbol: "person.2.fill", section: .employees),
-                .init(title: "Glossary", subtitle: "Plain-language definitions for budget terms.", symbol: "text.book.closed.fill", section: .glossary)
+                .init(title: "Supplement Explorer", subtitle: "Annual report, surplus, tax-cut, and labor-pressure details.", symbol: "doc.text.magnifyingglass", destination: .section(.supplementExplorer)),
+                .init(title: "Outliers", subtitle: "Budget accuracy, variances, and unusual lines.", symbol: "exclamationmark.triangle.fill", destination: .section(.outliers)),
+                .init(title: "Employees", subtitle: "Payroll and public earnings views.", symbol: "person.2.fill", destination: .section(.employees)),
+                .init(title: "Glossary", subtitle: "Plain-language definitions for budget terms.", symbol: "text.book.closed.fill", destination: .section(.glossary))
             ]
         ),
         .init(
             title: "Public Review",
             shortcuts: [
-                .init(title: "Hearing Toolkit", subtitle: "Questions, comments, and review prompts.", symbol: "person.2.wave.2.fill", section: .hearing),
-                .init(title: "Capital And Debt", subtitle: "Projects, borrowing, BANs, and debt pressure.", symbol: "building.columns.fill", section: .capitalDebt),
-                .init(title: "Fund Balance", subtitle: "Reserve levels, policy targets, and surplus context.", symbol: "banknote.fill", section: .fundBalance),
-                .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", section: .myTaxes)
+                .init(title: "Hearing Toolkit", subtitle: "Questions, comments, and review prompts.", symbol: "person.2.wave.2.fill", destination: .section(.hearing)),
+                .init(title: "Capital And Debt", subtitle: "Projects, borrowing, BANs, and debt pressure.", symbol: "building.columns.fill", destination: .section(.capitalDebt)),
+                .init(title: "Fund Balance", subtitle: "Reserve levels, policy targets, and surplus context.", symbol: "banknote.fill", destination: .section(.fundBalance)),
+                .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", destination: .section(.myTaxes))
             ]
         )
     ]
@@ -412,7 +418,7 @@ fileprivate struct BudgetToolsDirectoryView: View {
     private var directorySubtitle: String {
         switch mode {
         case .resident:
-            return "Deeper reference screens grouped by budget purpose."
+            return "More tools, grouped by what you're trying to figure out."
         case .expert:
             return "Models, source trails, and review tools grouped by budget purpose."
         }
@@ -420,21 +426,22 @@ fileprivate struct BudgetToolsDirectoryView: View {
 
     @ViewBuilder
     private func toolShortcutRow(_ shortcut: BudgetToolShortcut) -> some View {
-        if shortcut.title == "Budget Simulator" {
+        switch shortcut.destination {
+        case .budgetSimulator:
             NavigationLink {
                 BudgetSimulator2027View()
             } label: {
                 rowContent(shortcut)
             }
             .buttonStyle(.plain)
-        } else if shortcut.title == "Early Retirement Model" {
+        case .earlyRetirementModel:
             NavigationLink {
                 EarlyRetirementIncentiveView()
             } label: {
                 rowContent(shortcut)
             }
             .buttonStyle(.plain)
-        } else if let destination = shortcut.section {
+        case .section(let destination):
             Button {
                 section = destination
             } label: {
@@ -1391,7 +1398,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
         GlassCard(
             title: "Executive Summary: 2026 Budget + 2027 Plan",
             subtitle: mode == .resident
-                ? "The short version: 2026 is the current budget picture; 2027 is the planning bridge for wage pressure, savings, revenues, and targeted service investments."
+                ? "Here's the short version: 2026 is where things stand today; 2027 is the bridge — wage pressure, savings, revenue, and a few targeted investments."
                 : "A compact fiscal briefing that combines the parsed 2026 fund schedule with the app's 2027 recurring-budget model."
         ) {
             VStack(alignment: .leading, spacing: 12) {
@@ -1508,7 +1515,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
         GlassCard(
             title: "Executive Takeaways",
             subtitle: mode == .resident
-                ? "The decisions residents should be able to see clearly."
+                ? "The decisions you should be able to see clearly."
                 : "The controls that should govern the next budget cycle."
         ) {
             VStack(alignment: .leading, spacing: 10) {
@@ -2210,7 +2217,7 @@ fileprivate struct OverviewStoryView: View {
             GlassCard(
                 title: "Budget story at a glance",
                 subtitle: mode == .resident
-                    ? "Quick cards that explain the big questions in plain language."
+                    ? "A few quick cards that walk you through the big questions, in plain language."
                     : "Key fiscal metrics for the 2026 Tentative Budget. Tap a section chip above to drill deeper."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -2272,29 +2279,33 @@ struct PropertyTaxEstimate {
 struct PropertyTaxScenario {
     var marketValue: Double
     var inVillage: Bool
-    var hasBasicSTAR: Bool
     var levyChangePercent: Double
 }
 
 fileprivate enum PropertyTaxEngine {
-    // Riverhead 2026 Tentative Budget – General Fund town-wide tax rate.
-    // Suffolk County uses full-value (100%) assessment, so the rate applies to full market value.
-    // 2026 Tentative General Fund appropriations: $69,113,159.
-    // Town-wide portion rate: ~$2.25 per $1,000 of full market value (outside village).
-    // Village residents pay the same town rate; separate village levies are not included here.
-    // Basic STAR exempts the first $30,000 of full value for qualifying owner-occupied primary residences.
-    static let townRatePerThousand: Double = 2.25
-    static let basicSTARExemptionFMV: Double = 30_000.0
+    // Riverhead 2026 Adopted Budget, rate table p. 6 ("Total Town Wide") — the Town's own
+    // published rate is per $1,000 of ASSESSED value, not full market value:
+    // General Fund 61.948 + Highway 8.695 + Street Lighting 0.955 = 71.598.
+    // Suffolk County towns assess residential property at a small fraction of full market
+    // value rather than at 100%; MyTaxesView.swift's sourced Receiver of Taxes sheet cites a
+    // 7.44% residential assessment ratio, which this reuses to convert a resident's market
+    // value into an assessed value before applying the real rate.
+    //
+    // A prior version of this calculator assumed ~$2.25 per $1,000 of full market value, which
+    // does not reconcile with the Town's published numbers — converting the real rate via the
+    // residential assessment ratio gives ~$5.33 per $1,000 of full value, more than double.
+    //
+    // Basic STAR is a New York SCHOOL tax exemption (RPTL 425) and does not reduce this
+    // Town-only bill, so unlike an earlier version, it is not modeled here.
+    static let totalTownWideRatePerThousandAssessed: Double = 71.598
+    static let residentialAssessmentRatio: Double = 0.0744
 
     static func estimate(for scenario: PropertyTaxScenario) -> PropertyTaxEstimate {
-        let effectiveMarketValue = max(
-            scenario.marketValue - (scenario.hasBasicSTAR ? basicSTARExemptionFMV : 0.0),
-            0.0
-        )
-        let assessedThousand = effectiveMarketValue / 1_000.0
+        let assessedValue = max(scenario.marketValue, 0.0) * residentialAssessmentRatio
+        let assessedThousand = assessedValue / 1_000.0
 
         // Current-year bill already reflects the levy change baked into the 2026 rate.
-        let currentBill = assessedThousand * townRatePerThousand
+        let currentBill = assessedThousand * totalTownWideRatePerThousandAssessed
 
         // Back-calculate prior-year bill by removing the levy change.
         let priorBill = currentBill / (1.0 + scenario.levyChangePercent / 100.0)
@@ -2311,9 +2322,12 @@ fileprivate enum PropertyTaxEngine {
         scenario: PropertyTaxScenario,
         altLevyChangePercent: Double
     ) -> Double {
-        var copy = scenario
-        copy.levyChangePercent = altLevyChangePercent
-        return estimate(for: copy).currentBill
+        // currentBill is derived from market value alone, not levyChangePercent, so swapping
+        // levyChangePercent in a copy of the scenario has no effect on it. The correct question
+        // ("what if last year's bill had grown by X% instead of the actual amount?") is answered
+        // by applying the alternative levy change to the same prior-year baseline bill.
+        let priorBill = estimate(for: scenario).priorBill
+        return priorBill * (1.0 + altLevyChangePercent / 100.0)
     }
 }
 
@@ -2325,14 +2339,12 @@ fileprivate struct MyTaxesLabView: View {
 
     @State private var marketValue: Double = 550_000.0
     @State private var inVillage: Bool = false
-    @State private var hasBasicSTAR: Bool = true
     @State private var levyChangePercent: Double = 3.0
     @State private var altLevyChangePercent: Double = 1.0
 
     private var scenario: PropertyTaxScenario {
         .init(marketValue: marketValue,
               inVillage: inVillage,
-              hasBasicSTAR: hasBasicSTAR,
               levyChangePercent: levyChangePercent)
     }
 
@@ -2347,8 +2359,8 @@ fileprivate struct MyTaxesLabView: View {
             GlassCard(
                 title: "My sample tax bill",
                 subtitle: mode == .resident
-                    ? "Enter a property value to estimate how the 2026 town levy affects your bill."
-                    : "2026 General Fund appropriations: $69,113,159 · Town-wide rate: ~$2.25 per $1,000 FMV. Adjust levy change to model different adoption scenarios."
+                    ? "Enter your property value and see how the 2026 town levy affects your bill. This estimates the General Fund, Highway, and Street Lighting charges together — not county, school, or special-district taxes, and not a school-tax STAR exemption, which doesn't apply to these town charges."
+                    : "2026 Total Town Wide rate: $71.598 per $1,000 of assessed value (General Fund $61.948 + Highway $8.695 + Street Lighting $0.955, per the 2026 Adopted Budget). Market value is converted to assessed value using the 7.44% residential assessment ratio. Adjust levy change to model different adoption scenarios."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
@@ -2362,7 +2374,6 @@ fileprivate struct MyTaxesLabView: View {
                            step: 10_000.0)
 
                     Toggle("Inside a village", isOn: $inVillage)
-                    Toggle("Has Basic STAR exemption", isOn: $hasBasicSTAR)
 
                     HStack {
                         Text("2026 levy change vs 2025")
@@ -2408,7 +2419,7 @@ fileprivate struct MyTaxesLabView: View {
                         Text(
                             mode == .resident
                             ? "This is only the Town's portion of your bill. County, school, and special district levies are separate."
-                            : "Town-wide rate ~$2.25/$1,000 FMV (2026 tentative). About $\(estimate.levyImpact, format: .currency(code: "USD")) of the change is attributable to the proposed levy increase."
+                            : "Total Town Wide rate $71.598/$1,000 assessed (2026 adopted). About \(estimate.levyImpact, format: .currency(code: "USD")) of the change is attributable to the proposed levy increase."
                         )
                         .font(.caption)
                         .foregroundStyle(RiverheadTheme.textSecondary)
@@ -2664,7 +2675,7 @@ fileprivate struct FundBalanceDashboardView: View {
             GlassCard(
                 title: "Policy compliance at a glance",
                 subtitle: mode == .resident
-                    ? "How the Town's savings account compares to its own minimum reserve policy."
+                    ? "How the Town's savings stack up against its own reserve rules."
                     : "Unassigned fund balance vs. adopted 15% minimum and 20% upper target."
             ) {
                 VStack(spacing: 10) {
@@ -2795,7 +2806,7 @@ fileprivate struct FundBalanceDashboardView: View {
             GlassCard(
                 title: mode == .resident ? "How 28.8% compares nearby" : "Peer reserve comparison",
                 subtitle: mode == .resident
-                    ? "Riverhead's proposed target sits below Brookhaven and Smithtown's current budget posture, but above Southampton's codified general-fund policy."
+                    ? "Riverhead's target lands below what Brookhaven and Smithtown are doing today, but above Southampton's official policy."
                     : "Peer check using official 2026 documents where available. Brookhaven and Smithtown are shown as current budget-position benchmarks; Southampton is shown as an adopted policy benchmark."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -2842,7 +2853,7 @@ fileprivate struct FundBalanceDashboardView: View {
             GlassCard(
                 title: mode == .resident ? "What if Riverhead matched its peers?" : "Peer-alignment scenarios",
                 subtitle: mode == .resident
-                    ? "This shows how much one-time room Riverhead would have if it copied a peer town's reserve posture, or the average of its peers."
+                    ? "See how much one-time room Riverhead would have if it matched a neighboring town's reserve levels — or the average of them all."
                     : "Scenario math using Riverhead's current General Fund balance and peer percentages from official 2026 documents or adopted policy."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -3136,7 +3147,7 @@ fileprivate struct CapitalDebtExplorerView: View {
             GlassCard(
                 title: "Current debt picture",
                 subtitle: mode == .resident
-                    ? "What the Town currently owes on bonds and notes, and for how long."
+                    ? "What the Town owes on bonds and notes right now, and how long it'll take to pay off."
                     : "Outstanding principal by debt type. Debt service appropriations appear across General, Highway, and Capital funds in the 2026 tentative budget."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -3175,7 +3186,7 @@ fileprivate struct CapitalDebtExplorerView: View {
             GlassCard(
                 title: mode == .resident ? "How would a new project affect my taxes?" : "Project funding lab",
                 subtitle: mode == .resident
-                    ? "Try different project costs and see the estimated annual debt service impact."
+                    ? "Try out different project costs and see what that would add to the Town's yearly debt payments."
                     : "Model BAN vs. bond vs. cash funding and compare annual payment vs. total financing cost."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -3358,7 +3369,7 @@ fileprivate struct OutlierWatchView: View {
             GlassCard(
                 title: "What changed the most?",
                 subtitle: mode == .resident
-                    ? "Departments with the biggest spending increases from 2025 to 2026."
+                    ? "Which departments' spending jumped the most from 2025 to 2026."
                     : "Year-over-year appropriation changes by department. Source: 2026 Tentative Budget vs. 2025 Adopted Budget."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -3404,7 +3415,7 @@ fileprivate struct OutlierWatchView: View {
             GlassCard(
                 title: mode == .resident ? "Questions to ask" : "Analytical talking points",
                 subtitle: mode == .resident
-                    ? "Plain-language questions based on the top budget moves."
+                    ? "Plain-language questions you can ask about the biggest budget moves."
                     : "Technically-framed questions for budget hearings and OSC compliance review."
             ) {
                 VStack(alignment: .leading, spacing: 6) {
@@ -3555,7 +3566,7 @@ fileprivate struct BudgetGlossaryView: View {
             GlassCard(
                 title: "Search terms & concepts",
                 subtitle: mode == .resident
-                    ? "Type a word like BAN, fund balance, or levy."
+                    ? "Try typing a word like BAN, fund balance, or levy."
                     : "Type a term like GASB 54, tax cap, or structural balance for technical definitions."
             ) {
                 HStack {
@@ -3589,7 +3600,7 @@ fileprivate struct BudgetGlossaryView: View {
             }
 
             if filtered.isEmpty {
-                Text("No terms found yet. Try a simpler keyword.")
+                Text("No terms found. Try a simpler word, like \"levy\" or \"reserve.\"")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .padding(.top, 6)
@@ -4048,7 +4059,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: mode == .resident ? "Notes for tonight's hearing" : "Hearing prep notes",
                 subtitle: mode == .resident
-                    ? "Capture questions and comments, then share or email them to yourself."
+                    ? "Jot down questions and comments, then share them or email them to yourself."
                     : "Draft testimony points, cite specific line items, and share with colleagues or the Town Clerk."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -4213,7 +4224,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "2027 Infographic Snapshot",
                 subtitle: mode == .resident
-                    ? "A visual version of the suggestion package: what is growing, what offsets it, and what room remains."
+                    ? "A visual take on the suggested plan: what's growing, what offsets it, and how much room is left."
                     : "Charted view of payroll pressure, recurring offsets, revenue package, explicit investments, and resulting modeled room."
             ) {
                 suggestionInfographicSnapshot
@@ -4222,7 +4233,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "2027 Quick Read",
                 subtitle: mode == .resident
-                    ? "A shorter way to understand the package before reading all the detailed line items."
+                    ? "The short version — before you dive into all the line-item detail."
                     : "A one-screen translation of the model into pressure, offsets, and service choices."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -4295,7 +4306,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "Added 2027 Investments",
                 subtitle: mode == .resident
-                    ? "These are added costs the plan should carry openly, not bury elsewhere in the budget."
+                    ? "These are added costs the plan should own up to — not bury somewhere else in the budget."
                     : "Policy/service additions layered on top of the baseline cost-pressure model."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -4346,7 +4357,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "Fairness, Transparency & Accountability Plan",
                 subtitle: mode == .resident
-                    ? "A resident-facing budget plan that focuses on who pays, what gets explained clearly, and which costs need tighter oversight."
+                    ? "A budget plan built for residents — focused on who pays, what gets explained clearly, and which costs need closer watching."
                     : "A control framework for the budget build: fair cost sharing, transparent reserve use, and enforceable management accountability."
             ) {
                 VStack(alignment: .leading, spacing: 14) {
@@ -4378,7 +4389,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: mode == .resident ? "Day One Agenda" : "Phased implementation agenda",
                 subtitle: mode == .resident
-                    ? "Immediate actions, first-100-days rules, and year-one priorities arranged in an order that lowers pressure and builds trust."
+                    ? "What happens right away, in the first 100 days, and through year one — ordered to ease pressure and build trust."
                     : "A sequenced implementation path that matches urgency to administrative capacity, fiscal guardrails, and political timing."
             ) {
                 VStack(alignment: .leading, spacing: 12) {
@@ -4447,7 +4458,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "2026 Correction Watch",
                 subtitle: mode == .resident
-                    ? "Based on the 2026 Budget Supplement, these are the funds residents should expect the board to explain or correct openly."
+                    ? "Based on the 2026 Budget Supplement, here are the funds the board should be explaining — or fixing — in the open."
                     : "Fund-level issues pulled from the 2026 Budget Supplement that warrant reconciliation, reserve-use disclosure, or explicit board findings."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -4484,7 +4495,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: mode == .resident ? "State Funding & Tax Burden Plan" : "Grant capture and levy-relief playbook",
                 subtitle: mode == .resident
-                    ? "A simple way to protect taxpayers: keep operations disciplined, fund big infrastructure through grants where possible, and use reimbursements to shrink debt."
+                    ? "A simple way to protect taxpayers: keep day-to-day spending disciplined, pay for big infrastructure with grants where possible, and use reimbursements to pay down debt faster."
                     : "A policy structure for treating infrastructure as a funding-stack problem and using state dollars to reduce local share, future debt service, and levy pressure."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -4509,7 +4520,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "Revenue Increases To Pair With Offsets",
                 subtitle: mode == .resident
-                    ? "Illustrative recurring revenue ideas that can close the last gap without using reserves, plus one dedicated housing-fund tool that is shown separately for now."
+                    ? "A few illustrative revenue ideas that could close the last gap without touching reserves, plus one housing-fund tool shown separately for now."
                     : "Illustrative recurring revenue package sized to sit alongside the modeled expenditure offsets, with the CHF transfer-tax option displayed separately until local sales-volume assumptions are modeled."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -4560,7 +4571,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: "Additional Offsets To Evaluate",
                 subtitle: mode == .resident
-                    ? "These are not yet modeled in dollars, but they are reasonable next places to look."
+                    ? "We haven't modeled these in dollars yet, but they're worth a look next."
                     : "Unmodeled recurring offset candidates that can be sized in the next pass."
             ) {
                 VStack(alignment: .leading, spacing: 6) {
@@ -4573,7 +4584,7 @@ fileprivate struct HearingToolkitView: View {
             GlassCard(
                 title: mode == .resident ? "Questions to ask tonight" : "Technically-framed talking points",
                 subtitle: mode == .resident
-                    ? "Based on the actual 2026 tentative budget figures — tailored for residents."
+                    ? "Based on the real 2026 tentative budget numbers — written for residents, not accountants."
                     : "Framed around OSC guidance, NY Local Finance Law, and GASB 54 compliance."
             ) {
                 VStack(alignment: .leading, spacing: 6) {

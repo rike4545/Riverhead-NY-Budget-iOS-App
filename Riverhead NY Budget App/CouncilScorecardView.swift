@@ -529,10 +529,10 @@ struct CouncilScorecardView: View {
                     )
                 ],
                 campaignFilingNote: "COMMCAND fields: candidate ID 154926, Kenneth T Rothwell, County, ACTIVE, Supervisor, Suffolk / Riverhead Town, 20 Dasiy Court, Wading River. Committee/filer ID 154927, Friends of Ken Rothwell, County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Neil A. Manzella, PO Box 277, Selden. This card combines filer IDs 154927 and 154926 because Rothwell is running for Supervisor.",
-                campaignRaised: 146_423.93,
-                campaignDirectContributions: 146_423.93,
+                campaignRaised: 163_624.61,
+                campaignDirectContributions: 163_624.61,
                 campaignTransfersIn: 0,
-                campaignLastReported: makeDate(year: 2025, month: 11, day: 24),
+                campaignLastReported: makeDate(year: 2026, month: 6, day: 3),
                 campaignLoanAmount: nil,
                 campaignLoanLastReported: nil
             ),
@@ -615,8 +615,8 @@ struct CouncilScorecardView: View {
                     )
                 ],
                 campaignFilingNote: "COMMCAND fields: current committee/filer ID 527501, Friends of Robert Kern, County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Shawn Hyms, 34 Arlington Road, Lake Ronkonkoma. COMMCAND also shows legacy candidate ID 154940, Robert Kern, County, TERMINATED, Council Member, Suffolk / Riverhead Town, 49 Phillips Ave, Aquebogue, and legacy committee/filer ID 154941, Friends of Bob Kern. This card includes both committee filer IDs for the 2005–2026 review window.",
-                campaignRaised: 29_385.18,
-                campaignDirectContributions: 29_185.18,
+                campaignRaised: 62_838.80,
+                campaignDirectContributions: 62_638.80,
                 campaignTransfersIn: 200.00,
                 campaignLastReported: makeDate(year: 2025, month: 10, day: 14),
                 campaignLoanAmount: nil,

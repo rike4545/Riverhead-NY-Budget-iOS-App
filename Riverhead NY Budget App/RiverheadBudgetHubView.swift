@@ -2319,15 +2319,14 @@ fileprivate enum PropertyTaxEngine {
     }
 
     static func billForAlternativeLevy(
-        scenario: PropertyTaxScenario,
+        priorBill: Double,
         altLevyChangePercent: Double
     ) -> Double {
-        // currentBill is derived from market value alone, not levyChangePercent, so swapping
-        // levyChangePercent in a copy of the scenario has no effect on it. The correct question
         // ("what if last year's bill had grown by X% instead of the actual amount?") is answered
-        // by applying the alternative levy change to the same prior-year baseline bill.
-        let priorBill = estimate(for: scenario).priorBill
-        return priorBill * (1.0 + altLevyChangePercent / 100.0)
+        // by applying the alternative levy change to the same prior-year baseline bill. Takes
+        // priorBill directly rather than a scenario so callers that already have an estimate()
+        // result don't pay for computing it twice.
+        priorBill * (1.0 + altLevyChangePercent / 100.0)
     }
 }
 
@@ -2351,7 +2350,7 @@ fileprivate struct MyTaxesLabView: View {
     var body: some View {
         let estimate = PropertyTaxEngine.estimate(for: scenario)
         let altBill = PropertyTaxEngine.billForAlternativeLevy(
-            scenario: scenario,
+            priorBill: estimate.priorBill,
             altLevyChangePercent: altLevyChangePercent
         )
 

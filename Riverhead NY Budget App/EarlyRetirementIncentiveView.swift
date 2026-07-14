@@ -33,6 +33,17 @@ struct EarlyRetirementIncentiveView: View {
         EligibilitySlice(union: "SOA", count: 6)
     ]
 
+    private var totalEligible: Int {
+        eligibilityBreakdown.reduce(0) { $0 + $1.count }
+    }
+
+    // KeyValuePairs, not Dictionary — .chartForegroundStyleScale requires this exact type.
+    private let unionColors: KeyValuePairs<String, Color> = [
+        "CSEA": RiverheadTheme.brandNavy,
+        "PBA": RiverheadTheme.brandGold,
+        "SOA": RiverheadTheme.brandTeal
+    ]
+
     private let backfillComparison: [SalaryBar] = [
         SalaryBar(role: "Rookie hire", salary: 53_350),
         SalaryBar(role: "Top-step officer", salary: 150_351),
@@ -358,16 +369,12 @@ struct EarlyRetirementIncentiveView: View {
                 .cornerRadius(3)
                 .foregroundStyle(by: .value("Union", slice.union))
             }
-            .chartForegroundStyleScale([
-                "CSEA": RiverheadTheme.brandNavy,
-                "PBA": RiverheadTheme.brandGold,
-                "SOA": RiverheadTheme.brandTeal
-            ])
+            .chartForegroundStyleScale(unionColors)
             .chartLegend(.hidden)
             .frame(width: 108, height: 108)
             .overlay {
                 VStack(spacing: 0) {
-                    Text("53").font(.title3.weight(.bold))
+                    Text("\(totalEligible)").font(.title3.weight(.bold))
                     Text("eligible").font(.caption2).foregroundStyle(.secondary)
                 }
             }
@@ -389,11 +396,7 @@ struct EarlyRetirementIncentiveView: View {
     }
 
     private func colorForUnion(_ union: String) -> Color {
-        switch union {
-        case "CSEA": return RiverheadTheme.brandNavy
-        case "PBA": return RiverheadTheme.brandGold
-        default: return RiverheadTheme.brandTeal
-        }
+        unionColors.first(where: { $0.key == union })?.value ?? RiverheadTheme.brandTeal
     }
 
     private var savingsTrajectoryChart: some View {
@@ -419,7 +422,7 @@ struct EarlyRetirementIncentiveView: View {
                 AxisMarks { val in
                     AxisValueLabel {
                         if let v = val.as(Double.self) {
-                            Text("$\(v, format: .number.precision(.fractionLength(0)))k").font(.caption2)
+                            axisKLabel(v)
                         }
                     }
                 }
@@ -435,16 +438,49 @@ struct EarlyRetirementIncentiveView: View {
         .padding(.bottom, 6)
     }
 
+    /// Shared axis-value label for "$Xk"-style chart axes. Sign-aware so negative values
+    /// render as "-$17k" rather than "$-17k".
+    @ViewBuilder
+    private func axisKLabel(_ thousands: Double) -> some View {
+        let sign = thousands < 0 ? "-" : ""
+        Text("\(sign)$\(abs(thousands).formatted(.number.precision(.fractionLength(0))))k")
+            .font(.caption2)
+    }
+
     private var backfillChart: some View {
+        salaryBarChart(
+            backfillComparison,
+            colorFor: { RiverheadTheme.townAccent(for: $0.role) },
+            annotationPosition: { _ in .trailing },
+            caption: "Recurring gap: top-step officer minus rookie ≈ $97,000/yr. A ranked retirement (sergeant) still needs a promotion chain, not a rookie hire."
+        )
+    }
+
+    private var opebChart: some View {
+        salaryBarChart(
+            opebComparison,
+            colorFor: { $0.salary >= 0 ? RiverheadTheme.brandMint : RiverheadTheme.brandCoral },
+            annotationPosition: { $0.salary >= 0 ? .trailing : .leading },
+            caption: "Illustrative example for one refilled police position: salary saving is offset by the new retiree's health coverage."
+        )
+    }
+
+    @ViewBuilder
+    private func salaryBarChart(
+        _ data: [SalaryBar],
+        colorFor: @escaping (SalaryBar) -> Color,
+        annotationPosition: @escaping (SalaryBar) -> AnnotationPosition,
+        caption: String
+    ) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Chart(backfillComparison) { bar in
+            Chart(data) { bar in
                 BarMark(
                     x: .value("Salary", bar.salary),
                     y: .value("Role", bar.role)
                 )
-                .foregroundStyle(RiverheadTheme.townAccent(for: bar.role))
+                .foregroundStyle(colorFor(bar))
                 .cornerRadius(4)
-                .annotation(position: .trailing) {
+                .annotation(position: annotationPosition(bar)) {
                     Text(bar.salary, format: .currency(code: "USD").precision(.fractionLength(0)))
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(.secondary)
@@ -454,47 +490,14 @@ struct EarlyRetirementIncentiveView: View {
                 AxisMarks { val in
                     AxisValueLabel {
                         if let v = val.as(Double.self) {
-                            Text("$\(v / 1_000, format: .number.precision(.fractionLength(0)))k").font(.caption2)
+                            axisKLabel(v / 1_000)
                         }
                     }
                 }
             }
             .frame(height: 110)
 
-            Text("Recurring gap: top-step officer minus rookie ≈ $97,000/yr. A ranked retirement (sergeant) still needs a promotion chain, not a rookie hire.")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-        }
-        .padding(.bottom, 6)
-    }
-
-    private var opebChart: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Chart(opebComparison) { bar in
-                BarMark(
-                    x: .value("Amount", bar.salary),
-                    y: .value("Category", bar.role)
-                )
-                .foregroundStyle(bar.salary >= 0 ? RiverheadTheme.brandMint : RiverheadTheme.brandCoral)
-                .cornerRadius(4)
-                .annotation(position: bar.salary >= 0 ? .trailing : .leading) {
-                    Text(bar.salary, format: .currency(code: "USD").precision(.fractionLength(0)))
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .chartXAxis {
-                AxisMarks { val in
-                    AxisValueLabel {
-                        if let v = val.as(Double.self) {
-                            Text("$\(v / 1_000, format: .number.precision(.fractionLength(0)))k").font(.caption2)
-                        }
-                    }
-                }
-            }
-            .frame(height: 110)
-
-            Text("Illustrative example for one refilled police position: salary saving is offset by the new retiree's health coverage.")
+            Text(caption)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
         }
@@ -564,31 +567,23 @@ struct EarlyRetirementIncentiveView: View {
         title: String,
         systemImage: String,
         isExpanded: Binding<Bool>,
-        @ViewBuilder content: () -> Content
+        @ViewBuilder content: @escaping () -> Content
     ) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Button {
-                withAnimation(.snappy(duration: 0.2)) { isExpanded.wrappedValue.toggle() }
-            } label: {
-                HStack(spacing: 8) {
-                    Image(systemName: systemImage)
-                        .foregroundStyle(RiverheadTheme.accent)
-                    Text(title)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.textPrimary)
-                    Spacer(minLength: 0)
-                    Image(systemName: "chevron.down")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                        .rotationEffect(.degrees(isExpanded.wrappedValue ? 180 : 0))
-                }
-            }
-            .buttonStyle(.plain)
-
-            if isExpanded.wrappedValue {
+        DisclosureGroup(isExpanded: isExpanded) {
+            VStack(alignment: .leading, spacing: 10) {
                 content()
             }
+            .padding(.top, 8)
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                    .foregroundStyle(RiverheadTheme.accent)
+                Text(title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+            }
         }
+        .tint(RiverheadTheme.accent)
         .padding(14)
         .background(
             RoundedRectangle(cornerRadius: 18, style: .continuous)

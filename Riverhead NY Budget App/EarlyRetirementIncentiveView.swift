@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 @MainActor
 struct EarlyRetirementIncentiveView: View {
@@ -20,6 +21,33 @@ struct EarlyRetirementIncentiveView: View {
     @State private var replacementBenefitsRate: Double = 0.34
     @State private var incentivePerParticipant: Double = 30_000
     @State private var accruedLeavePayoutPerParticipant: Double = 18_000
+
+    @State private var showCSEAContext = false
+    @State private var showOSCRules = false
+    @State private var showERIHistory = false
+    @State private var showImplementationNotes = false
+
+    private let eligibilityBreakdown: [EligibilitySlice] = [
+        EligibilitySlice(union: "CSEA", count: 29),
+        EligibilitySlice(union: "PBA", count: 18),
+        EligibilitySlice(union: "SOA", count: 6)
+    ]
+
+    private let backfillComparison: [SalaryBar] = [
+        SalaryBar(role: "Rookie hire", salary: 53_350),
+        SalaryBar(role: "Top-step officer", salary: 150_351),
+        SalaryBar(role: "Top-step sergeant", salary: 185_027)
+    ]
+
+    private let opebComparison: [SalaryBar] = [
+        SalaryBar(role: "Gross salary saving", salary: 60_000),
+        SalaryBar(role: "Added retiree health cost", salary: -17_000),
+        SalaryBar(role: "Net saving", salary: 43_000)
+    ]
+
+    private var savingsTrajectory: [SavingsPoint] {
+        (0...7).map { SavingsPoint(year: $0, cumulativeNet: netSavings(after: Double($0))) }
+    }
 
     private var annualCurrentCost: Double {
         participants * averageSalary * (1 + averageCurrentBenefitsRate)
@@ -89,28 +117,30 @@ struct EarlyRetirementIncentiveView: View {
             VStack(alignment: .leading, spacing: 14) {
                 headerCard
 
-                panelCard(title: "Current Status: Finalized Terms", systemImage: "checkmark.seal.fill") {
-                    bullet("The Town reached final agreements with all three unions — CSEA, PBA, and SOA — for the 2026 Voluntary Retirement Incentive Program. These are executed terms, not a proposal.")
+                panelCard(title: "Current Status: Ratified", systemImage: "checkmark.seal.fill") {
+                    eligibilityChart
+
+                    bullet("The Town Board voted unanimously on July 7, 2026 to ratify all three union agreements — CSEA, PBA, and SOA — for the 2026 Voluntary Retirement Incentive Program. These are executed, ratified terms, not a proposal.")
                     bullet("CSEA members receive a flat $12,500 cash incentive.")
                     bullet("PBA and SOA (police) members receive $1,000 per year of service, plus a payout for up to 30 accrued sick days beyond the contract maximum, at the average of 2024–2026 base salary.")
                     bullet("An eligible employee must commit in writing by September 1, 2026 and retire by October 1, 2026.")
-                    bullet("Using hire dates and union as proxies (CSEA hired on or before 2009; police hired on or before 2006), about 78 currently active employees appear eligible (an upper bound — actual eligibility also depends on age/pension-tier rules payroll doesn't show).")
+                    bullet("Officially, 53 employees are eligible — 29 CSEA, 18 PBA, 6 SOA — per Financial Administrator Jeannette DiPaola (RiverheadLOCAL, 7/9/2026). The Town estimates $500,000–$800,000 in savings depending on uptake, and expects all vacated positions to be refilled. (Our own hire-date/union upper-bound model below, 78 eligible, was always a ceiling — the real number came in well under it, as expected, since payroll can't reveal true retirement eligibility like age.)")
                 }
 
-                panelCard(title: "CSEA Contract Context", systemImage: "person.3.fill") {
+                collapsiblePanelCard(title: "CSEA Contract Context", systemImage: "person.3.fill", isExpanded: $showCSEAContext) {
                     bullet("The 2026-2029 CSEA agreement adds scheduled wage actions of 2.0% in 2026, 2.5% in 2027, 3.0% in 2028, and 3.5% in 2029, plus supplemental annual payments of $1,500 in 2026, $1,000 in 2027, and $500 in 2028.")
                     bullet("The agreement increases longevity after 25 years of continuous service from 7% to 8% of annual salary, so long-tenured CSEA employees may carry higher recurring costs than base salary alone shows.")
                     bullet("The agreement increases retiree health-insurance buyback amounts for retirees who decline town-sponsored coverage, which can reduce future premium exposure but must be modeled separately from salary savings.")
                     bullet("For active CSEA employees, the premium-share structure remains important: depending on hire date and service threshold, the town may move from a 75% premium contribution to paying 100% of the premium amount.")
                 }
 
-                panelCard(title: "OSC Retirement Rules Context", systemImage: "building.columns.fill") {
+                collapsiblePanelCard(title: "OSC Retirement Rules Context", systemImage: "building.columns.fill", isExpanded: $showOSCRules) {
                     bullet("OSC's publications page says NYSLRS administers two distinct systems: ERS and PFRS. The employee's system, tier, and retirement plan determine benefits.")
                     bullet("OSC Publication 1505 covers the ERS Tier 2 Basic Plan, not every retirement tier and not police PFRS plans. The Town should separate CSEA/ERS assumptions from PBA and SOA assumptions.")
                     bullet("The Town should use OSC's publication library or plan-publication lookup to match each eligible employee to the correct ERS or PFRS publication before estimating pension-related savings.")
                     bullet("For ERS Tier 2, OSC says final average salary is generally the highest 36 consecutive months of wages. Regular salary, overtime earned in the FAS period, holiday pay, noncompensatory overtime, and limited longevity payments may count.")
                     bullet("OSC also says unused sick leave, termination pay, payments made in anticipation of retirement, deferred-compensation lump sums, and payments for time not worked generally do not count toward FAS.")
-                    bullet("For ERS Tier 2 Age 55 plan members, retirement before 62 with less than 30 years of service produces a permanent reduction. At age 55, the listed reduction is 27%; at age 60, 12%; at age 61, 6%.")
+                    pensionReductionChart
                     bullet("If the employer has adopted RSSL Section 41(j), unused unpaid sick leave may create additional service credit at retirement, but OSC says it cannot be used to qualify for vesting or a better benefit calculation.")
                     bullet("For PFRS Tier 3 Article 14 members, OSC says early retirement may be available with 20 years of service regardless of age. That benefit equals 42% of FAS for 20 years plus 4% of FAS for each additional year, capped at 50% of FAS, with a Social Security reduction at age 62 and no escalation.")
                 }
@@ -138,19 +168,19 @@ struct EarlyRetirementIncentiveView: View {
                     bullet("Improves budget planning by making the upfront cost and multi-year payoff transparent.")
                 }
 
-                panelCard(title: "Public Questions Before Adoption", systemImage: "questionmark.circle.fill") {
-                    bullet("What is the total upfront cost, including incentive payments, accrued leave, health insurance effects, pension impacts, overtime, and transition coverage?")
-                    bullet("How many CSEA, PBA, and SOA employees are eligible under the age and service filter, and how many are assumed to participate?")
+                panelCard(title: "Public Questions Before Adoption (some now answered)", systemImage: "questionmark.circle.fill") {
+                    bullet("What is the total upfront cost, including incentive payments, accrued leave, health insurance effects, pension impacts, overtime, and transition coverage? — The Town declined to give a gross cost estimate until it knows which of the 53 eligible employees opt in.")
+                    bullet("How many CSEA, PBA, and SOA employees are eligible under the age and service filter, and how many are assumed to participate? — ANSWERED: 53 total (29 CSEA, 18 PBA, 6 SOA), per the Town's July 2026 ratification. Participation itself remains unknown until the September 1, 2026 deadline.")
                     bullet("For CSEA, how do the 2026-2029 wage actions, 25-year longevity increase, promotion guarantee, retiree buyback changes, and active/retiree health-premium rules change the payback period?")
                     bullet("Which eligible employees are ERS or PFRS, what tier are they in, and which OSC retirement-plan publication applies to each group?")
                     bullet("For police employees, which candidates are PFRS Article 14 Tier 3, which are in 20-year or 25-year plans, and which benefit formula applies?")
-                    bullet("Which positions would be refilled, held vacant, consolidated, or eliminated?")
-                    bullet("Does the claimed 3% taxpayer savings come from recurring payroll savings, one-time fund balance, surplus interest earnings, or a mix? The Times Review report cites up to $1.7M in annual savings and about $550,000 per 1% tax decrease, so the bridge between payroll savings and levy savings should be shown line by line.")
+                    bullet("Which positions would be refilled, held vacant, consolidated, or eliminated? — The Town says all vacated positions are expected to be refilled.")
+                    bullet("Does the claimed taxpayer savings come from recurring payroll savings, one-time fund balance, surplus interest earnings, or a mix? — UPDATED: the Town's official estimate at ratification is $500,000–$800,000/yr, depending on uptake — lower than the up-to-$1.7M figure floated during the May/June 2026 proposal stage. The bridge between payroll savings and levy savings still isn't shown line by line.")
                     bullet("What fund-balance level remains after the payout, and does it preserve capital projects, grant matches, and bond-rating strength?")
                     bullet("Should the budgetary portion of the plan be discussed in a public work session before any executive-session labor negotiation details are resolved?")
                 }
 
-                panelCard(title: "Riverhead ERI History: 2019 vs. 2026", systemImage: "clock.arrow.circlepath") {
+                collapsiblePanelCard(title: "Riverhead ERI History: 2019 vs. 2026", systemImage: "clock.arrow.circlepath", isExpanded: $showERIHistory) {
                     bullet("Riverhead previously offered early retirement incentives in 2010 for CSEA employees, 2012 for PBA members, and 2019 during CSEA contract negotiations (resolution 2019-538).")
                     bullet("The 2019 program was CSEA-only: 48 months of fully paid family health-insurance premiums (or $600/month for 48 months on individual coverage). Payroll records confirm 9 CSEA employees actually retired in 2019, versus a Town/union estimate of 15–20.")
                     bullet("The 2026 program is structurally different: CSEA AND the police unions (PBA, SOA) are covered, and the benefit is CASH ($12,500 flat for CSEA; $1,000/yr of service + sick payout for police) instead of a multi-year health-premium promise.")
@@ -196,6 +226,8 @@ struct EarlyRetirementIncentiveView: View {
                 }
 
                 panelCard(title: "Town Savings Snapshot", systemImage: "chart.line.uptrend.xyaxis.circle.fill") {
+                    savingsTrajectoryChart
+
                     resultRow("Current annual cost (exiting staff)", value: annualCurrentCost)
                     resultRow("Annual replacement cost", value: annualReplacementCost)
                     resultRow("Gross annual savings", value: annualGrossSavings, emphasize: true)
@@ -205,14 +237,18 @@ struct EarlyRetirementIncentiveView: View {
                 }
 
                 panelCard(title: "Realistic Backfill & the Police Promotion Chain", systemImage: "arrow.triangle.branch") {
-                    bullet("A step-based backfill (refilling each vacated job at the entry step of the actual salary schedule, not a flat 20% discount) puts realistic annual salary savings at about $718,064/yr across the 20 eligible positions where an entry step is clearly identifiable.")
-                    bullet("Police are the largest single driver: a top-step police officer earns well over $146,000, while a new officer starts near $52,049 — about $94,600 saved per position, every year.")
-                    bullet("But a RANKED retirement (sergeant, lieutenant, detective) can't be backfilled by a rookie of that rank — the Town still needs a sergeant. It triggers a promotion chain: a senior officer moves up, and the rookie is hired at the bottom. The real saving is a top-step officer minus a rookie (~$94,635), not the retiree's own rank salary minus a rookie (a naive claim of ~$122,505 for a sergeant overstates it).")
-                    bullet("Across the 24 eligible police (12 rank-and-file officers + 12 ranked), realistic recurring savings total about $1,810,817/yr if every position is refilled — $675,197 from officers plus $1,135,620 from the ranked promotion chain.")
+                    backfillChart
+
+                    bullet("A step-based backfill (refilling each vacated job at the entry step of the actual salary schedule, not a flat 20% discount) puts realistic annual salary savings at about $702,449/yr across the 20 eligible positions where an entry step is clearly identifiable. (Uses the 2026 Academy step, $53,350, per the signed PBA contract — a rookie hired in 2026 is hired at the 2026 rate, not 2025's.)")
+                    bullet("Police are the largest single driver: a top-step police officer earns about $150,351 (2026 contract rate), while a new officer starts near $53,350 — about $97,000 saved per position, every year.")
+                    bullet("But a RANKED retirement (sergeant, lieutenant, detective) can't be backfilled by a rookie of that rank — the Town still needs a sergeant. It triggers a promotion chain: a senior officer moves up, and the rookie is hired at the bottom. The real saving is a top-step officer minus a rookie (~$97,001), not the retiree's own rank salary minus a rookie (a naive claim of ~$131,677 for a sergeant, using the SOA contract's 2026 top step of $185,027, overstates it).")
+                    bullet("Across the 24 eligible police (12 rank-and-file officers + 12 ranked), realistic recurring savings total about $1,823,597/yr if every position is refilled — $659,585 from officers plus $1,164,012 from the ranked promotion chain.")
                     bullet("A retirement isn't always \"replace with a rookie\": a vacancy can also be filled by promotion (shrinking the saving), a lateral transfer (moving the gap elsewhere), or elimination/restructuring (increasing the saving). Treat these figures as one illustrative path, not a guaranteed result.")
                 }
 
                 panelCard(title: "Retiree Healthcare (OPEB) — The Missing Piece", systemImage: "cross.case.fill") {
+                    opebChart
+
                     bullet("These savings figures count SALARY only. Retirees keep Town-subsidized health coverage for life — an \"OPEB\" cost the Town already carries at $152,597,117 (2023 audit), the largest single audited liability on the books.")
                     bullet("In 2023 the Town paid $3,552,558 for 211 retirees' health coverage — about $17,000 each per year — against 306 active employees.")
                     bullet("Two effects shrink the salary-only savings: (1) the buyout pulls each new retiree's ~$17k/yr lifetime health cost forward, and (2) if the position is refilled, the Town pays health coverage for BOTH the retiree and the new active employee — so healthcare spending for that slot can nearly double even as salary falls.")
@@ -246,17 +282,17 @@ struct EarlyRetirementIncentiveView: View {
                     )
                 }
 
-                panelCard(title: "Implementation Notes", systemImage: "checklist") {
+                collapsiblePanelCard(title: "Implementation Notes", systemImage: "checklist", isExpanded: $showImplementationNotes) {
                     bullet("Validate plan design with counsel, NYSLRS/PFRS rules, and labor agreements before final terms.")
                     bullet("Model police, highway, and specialized departments separately where backfill rates may be higher.")
-                    bullet("For ranked jobs (police sergeants, lieutenants, detectives), don't credit the retiree's full salary as savings: the rank must stay filled, so a retirement sets off a promotion chain and only the bottom seat turns over. The recurring saving is a top-step officer minus a rookie (about $95k), not the sergeant's salary minus a rookie (about $123k).")
+                    bullet("For ranked jobs (police sergeants, lieutenants, detectives), don't credit the retiree's full salary as savings: the rank must stay filled, so a retirement sets off a promotion chain and only the bottom seat turns over. The recurring saving is a top-step officer minus a rookie (about $97k), not the sergeant's salary minus a rookie (about $132k).")
                     bullet("Include transition costs (overtime, training, equipment) in the final policy memo.")
                     bullet("Publish clear eligibility windows and governance to keep the process fair and defensible.")
                     bullet("Separate executive-session negotiation details from the public budget math so residents can see cost, funding source, payback period, and reserve impact.")
                 }
 
                 panelCard(title: "Disclaimer", systemImage: "exclamationmark.triangle.fill") {
-                    Text("The 2026 Voluntary Retirement Incentive Program's terms above are final, executed union agreements — not a proposal. The eligible-employee count (78) is still an upper-bound estimate from hire date and union, since actual eligibility also depends on age and pension-tier rules payroll doesn't show, and participation is voluntary and unknown until the September 1, 2026 election deadline. The sliders below remain a what-if tool for exploring your own assumptions about participation, backfill, and cost — they do not represent an official Town projection.")
+                    Text("The 2026 Voluntary Retirement Incentive Program was ratified by the Town Board on July 7, 2026. The official eligible count is 53 (29 CSEA, 18 PBA, 6 SOA); the 78-employee figure elsewhere on this page is our own hire-date/union upper-bound model, kept for comparison. Participation is voluntary and unknown until the September 1, 2026 election deadline. The sliders below remain a what-if tool for exploring your own assumptions about participation, backfill, and cost — they do not represent an official Town projection.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -311,6 +347,192 @@ struct EarlyRetirementIncentiveView: View {
         .shadow(color: .black.opacity(scheme == .dark ? 0.5 : 0.16), radius: 12, x: 0, y: 8)
     }
 
+    private var eligibilityChart: some View {
+        HStack(alignment: .center, spacing: 16) {
+            Chart(eligibilityBreakdown) { slice in
+                SectorMark(
+                    angle: .value("Eligible", slice.count),
+                    innerRadius: .ratio(0.62),
+                    angularInset: 1.5
+                )
+                .cornerRadius(3)
+                .foregroundStyle(by: .value("Union", slice.union))
+            }
+            .chartForegroundStyleScale([
+                "CSEA": RiverheadTheme.brandNavy,
+                "PBA": RiverheadTheme.brandGold,
+                "SOA": RiverheadTheme.brandTeal
+            ])
+            .chartLegend(.hidden)
+            .frame(width: 108, height: 108)
+            .overlay {
+                VStack(spacing: 0) {
+                    Text("53").font(.title3.weight(.bold))
+                    Text("eligible").font(.caption2).foregroundStyle(.secondary)
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 6) {
+                ForEach(eligibilityBreakdown) { slice in
+                    HStack(spacing: 6) {
+                        Circle()
+                            .fill(colorForUnion(slice.union))
+                            .frame(width: 8, height: 8)
+                        Text("\(slice.union): \(slice.count)")
+                            .font(.caption.weight(.medium))
+                        Spacer(minLength: 0)
+                    }
+                }
+            }
+        }
+        .padding(.bottom, 6)
+    }
+
+    private func colorForUnion(_ union: String) -> Color {
+        switch union {
+        case "CSEA": return RiverheadTheme.brandNavy
+        case "PBA": return RiverheadTheme.brandGold
+        default: return RiverheadTheme.brandTeal
+        }
+    }
+
+    private var savingsTrajectoryChart: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Chart(savingsTrajectory) { point in
+                BarMark(
+                    x: .value("Year", point.year),
+                    y: .value("Net", point.cumulativeNet / 1_000)
+                )
+                .foregroundStyle(point.cumulativeNet >= 0 ? RiverheadTheme.accent : Color.red.opacity(0.75))
+                .cornerRadius(4)
+
+                RuleMark(y: .value("Break-even", 0))
+                    .lineStyle(StrokeStyle(lineWidth: 1))
+                    .foregroundStyle(.secondary.opacity(0.5))
+            }
+            .chartXAxis {
+                AxisMarks(values: savingsTrajectory.map(\.year)) { val in
+                    AxisValueLabel { if let y = val.as(Int.self) { Text("Yr \(y)").font(.caption2) } }
+                }
+            }
+            .chartYAxis {
+                AxisMarks { val in
+                    AxisValueLabel {
+                        if let v = val.as(Double.self) {
+                            Text("$\(v, format: .number.precision(.fractionLength(0)))k").font(.caption2)
+                        }
+                    }
+                }
+            }
+            .frame(height: 150)
+
+            Text(breakEvenYears.isFinite
+                ? "Cumulative net position by year, assuming current inputs. Crosses zero around year \(breakEvenYears.formatted(.number.precision(.fractionLength(1))))."
+                : "Cumulative net position by year, assuming current inputs. Never breaks even at these settings.")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+        .padding(.bottom, 6)
+    }
+
+    private var backfillChart: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Chart(backfillComparison) { bar in
+                BarMark(
+                    x: .value("Salary", bar.salary),
+                    y: .value("Role", bar.role)
+                )
+                .foregroundStyle(RiverheadTheme.townAccent(for: bar.role))
+                .cornerRadius(4)
+                .annotation(position: .trailing) {
+                    Text(bar.salary, format: .currency(code: "USD").precision(.fractionLength(0)))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .chartXAxis {
+                AxisMarks { val in
+                    AxisValueLabel {
+                        if let v = val.as(Double.self) {
+                            Text("$\(v / 1_000, format: .number.precision(.fractionLength(0)))k").font(.caption2)
+                        }
+                    }
+                }
+            }
+            .frame(height: 110)
+
+            Text("Recurring gap: top-step officer minus rookie ≈ $97,000/yr. A ranked retirement (sergeant) still needs a promotion chain, not a rookie hire.")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+        .padding(.bottom, 6)
+    }
+
+    private var opebChart: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Chart(opebComparison) { bar in
+                BarMark(
+                    x: .value("Amount", bar.salary),
+                    y: .value("Category", bar.role)
+                )
+                .foregroundStyle(bar.salary >= 0 ? RiverheadTheme.brandMint : RiverheadTheme.brandCoral)
+                .cornerRadius(4)
+                .annotation(position: bar.salary >= 0 ? .trailing : .leading) {
+                    Text(bar.salary, format: .currency(code: "USD").precision(.fractionLength(0)))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .chartXAxis {
+                AxisMarks { val in
+                    AxisValueLabel {
+                        if let v = val.as(Double.self) {
+                            Text("$\(v / 1_000, format: .number.precision(.fractionLength(0)))k").font(.caption2)
+                        }
+                    }
+                }
+            }
+            .frame(height: 110)
+
+            Text("Illustrative example for one refilled police position: salary saving is offset by the new retiree's health coverage.")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+        .padding(.bottom, 6)
+    }
+
+    private var pensionReductionChart: some View {
+        let points: [(age: Int, reduction: Double)] = [(55, 0.27), (60, 0.12), (61, 0.06)]
+        return VStack(alignment: .leading, spacing: 6) {
+            Chart(points, id: \.age) { point in
+                BarMark(
+                    x: .value("Age", "\(point.age)"),
+                    y: .value("Reduction", point.reduction * 100)
+                )
+                .foregroundStyle(RiverheadTheme.brandCoral)
+                .cornerRadius(4)
+                .annotation(position: .top) {
+                    Text("\(Int(point.reduction * 100))%").font(.caption2.weight(.semibold))
+                }
+            }
+            .chartYAxis {
+                AxisMarks { val in
+                    AxisValueLabel {
+                        if let v = val.as(Double.self) {
+                            Text("\(v, format: .number.precision(.fractionLength(0)))%").font(.caption2)
+                        }
+                    }
+                }
+            }
+            .frame(height: 100)
+
+            Text("ERS Tier 2 Age 55 plan: permanent benefit reduction for retiring before 62 with under 30 years of service.")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+        .padding(.bottom, 6)
+    }
+
     @ViewBuilder
     private func panelCard<Content: View>(
         title: String,
@@ -325,6 +547,47 @@ struct EarlyRetirementIncentiveView: View {
                     .font(.subheadline.weight(.semibold))
             }
             content()
+        }
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(cardFill)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .strokeBorder(cardBorder)
+        )
+    }
+
+    @ViewBuilder
+    private func collapsiblePanelCard<Content: View>(
+        title: String,
+        systemImage: String,
+        isExpanded: Binding<Bool>,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Button {
+                withAnimation(.snappy(duration: 0.2)) { isExpanded.wrappedValue.toggle() }
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: systemImage)
+                        .foregroundStyle(RiverheadTheme.accent)
+                    Text(title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.down")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .rotationEffect(.degrees(isExpanded.wrappedValue ? 180 : 0))
+                }
+            }
+            .buttonStyle(.plain)
+
+            if isExpanded.wrappedValue {
+                content()
+            }
         }
         .padding(14)
         .background(
@@ -437,6 +700,24 @@ private enum ERIScenarioPreset: String, CaseIterable, Identifiable {
         case .aggressive: return "Aggressive"
         }
     }
+}
+
+private struct EligibilitySlice: Identifiable {
+    let id = UUID()
+    let union: String
+    let count: Int
+}
+
+private struct SavingsPoint: Identifiable {
+    let id = UUID()
+    let year: Int
+    var cumulativeNet: Double
+}
+
+private struct SalaryBar: Identifiable {
+    let id = UUID()
+    let role: String
+    let salary: Double
 }
 
 private struct MoneyField: View {

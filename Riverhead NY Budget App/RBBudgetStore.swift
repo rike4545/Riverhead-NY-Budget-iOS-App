@@ -59,10 +59,12 @@ final class RBBudgetStore {
         return max(0, appropriations * up)
     }
 
-    // MARK: - Quick Taxes (used by MyTaxesView)
+    // MARK: - Quick Taxes (used by the Expert tab, Budget 2027 tools, and the AI assistant —
+    // NOT by MyTaxesView, which keeps its own persisted rate via @AppStorage("tax_rate_per_1000"))
 
-    /// Town-wide tax rate per $1,000 (illustrative; override when you have adopted rates).
-    var ratePerThousand: Double = 22.50
+    /// Town-wide tax rate per $1,000 of ASSESSED value. 2026 Adopted Budget, rate table p.6:
+    /// Total Town Wide = General Fund 61.948 + Highway 8.695 + Street Lighting 0.955 = 71.598.
+    var ratePerThousand: Double = 71.598
 
     // MARK: - NY Property Tax Cap (simplified inputs)
 

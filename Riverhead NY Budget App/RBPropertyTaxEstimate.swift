@@ -20,6 +20,7 @@ struct RBPropertyTaxEstimate: Equatable {
 enum RBPropertyTaxRateSource: Equatable {
     case generalTown
     case generalTownAndHighway
+    case totalTownWide
     case custom
 
     var label: String {
@@ -28,6 +29,8 @@ enum RBPropertyTaxRateSource: Equatable {
             return "2025-2026 Receiver of Taxes: General Town"
         case .generalTownAndHighway:
             return "2025-2026 Receiver of Taxes: General Town + Highway"
+        case .totalTownWide:
+            return "2026 Adopted Budget: Total Town Wide (General + Highway + Street Lighting)"
         case .custom:
             return "Custom user-entered rate"
         }
@@ -36,7 +39,8 @@ enum RBPropertyTaxRateSource: Equatable {
     static func classify(
         rate: Double,
         generalTownRate: Double,
-        highwayRate: Double
+        highwayRate: Double,
+        streetLightingRate: Double
     ) -> RBPropertyTaxRateSource {
         if rate.isApproximately(generalTownRate) {
             return .generalTown
@@ -44,6 +48,10 @@ enum RBPropertyTaxRateSource: Equatable {
 
         if rate.isApproximately(generalTownRate + highwayRate) {
             return .generalTownAndHighway
+        }
+
+        if rate.isApproximately(generalTownRate + highwayRate + streetLightingRate) {
+            return .totalTownWide
         }
 
         return .custom

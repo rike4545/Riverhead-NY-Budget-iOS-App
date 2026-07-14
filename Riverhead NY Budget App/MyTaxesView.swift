@@ -36,6 +36,10 @@ struct MyTaxesView: View {
     private let contextLevyYear: Int = 2026
     private let receiverGeneralTownRate: Double = 61.9482
     private let receiverHighwayRate: Double = 8.6948
+    // Street Lighting isn't broken out on the Receiver of Taxes sheet this view otherwise
+    // cites, so this uses the 2026 Adopted Budget's own published rate table (p.6) instead,
+    // matching the "Total Town Wide" rate used by the Hub's tax calculator (RiverheadBudgetHubView.swift).
+    private let receiverStreetLightingRate: Double = 0.955
     private let riverheadSewerRentRate: Double = 11.4606
     private let calvertonSewerRentRate: Double = 79.2149
 
@@ -55,6 +59,7 @@ struct MyTaxesView: View {
     private var annualTax: Double { taxEstimate.annualTax }
     private var monthlyTax: Double { taxEstimate.monthlyTax }
     private var receiverGeneralAndHighwayRate: Double { receiverGeneralTownRate + receiverHighwayRate }
+    private var receiverTotalTownWideRate: Double { receiverGeneralTownRate + receiverHighwayRate + receiverStreetLightingRate }
 
     private var taxCapEstimate: RBPropertyTaxCapEstimate {
         RBPropertyTaxCapEstimate(
@@ -68,7 +73,8 @@ struct MyTaxesView: View {
         RBPropertyTaxRateSource.classify(
             rate: ratePerThousand,
             generalTownRate: receiverGeneralTownRate,
-            highwayRate: receiverHighwayRate
+            highwayRate: receiverHighwayRate,
+            streetLightingRate: receiverStreetLightingRate
         )
         .label
     }
@@ -233,11 +239,13 @@ struct MyTaxesView: View {
                     HStack(spacing: 8) {
                         ratePresetButton("General Town", rate: receiverGeneralTownRate)
                         ratePresetButton("General + Highway", rate: receiverGeneralAndHighwayRate)
+                        ratePresetButton("Total Town Wide", rate: receiverTotalTownWideRate)
                     }
 
                     VStack(alignment: .leading, spacing: 8) {
                         ratePresetButton("General Town", rate: receiverGeneralTownRate)
                         ratePresetButton("General + Highway", rate: receiverGeneralAndHighwayRate)
+                        ratePresetButton("Total Town Wide", rate: receiverTotalTownWideRate)
                     }
                 }
 

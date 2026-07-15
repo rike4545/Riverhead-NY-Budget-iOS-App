@@ -1830,6 +1830,30 @@ struct CouncilScorecardView: View {
                 }
             }
 
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    contributionLimitNote(
+                        title: "Most donors",
+                        detail: "capped at the number of registered voters in the district × $0.05 — a limit that scales with the size of the race, not a flat dollar figure."
+                    )
+                    contributionLimitNote(
+                        title: "Family donors",
+                        detail: "child, parent, grandparent, sibling, or the spouse of any of those get a higher cap — the greater of (registered voters × $0.25) or $1,250."
+                    )
+                    contributionLimitNote(
+                        title: "The candidate's own money",
+                        detail: "no cap at all. New York's self-funding limit only applies to candidates in the state's public campaign-financing program — local town races aren't part of it, so a candidate (or, per the cap above, their family) can put in far more than any ordinary donor could."
+                    )
+                    Text("Every dollar amount above is real. The specific legal cap for this committee isn't computed here — it depends on the registered-voter count for the exact race and year, which we haven't verified. This is the general shape of the law (NY Election Law § 14-114), not a pass/fail verdict. Confirm specifics with the NY State or Suffolk County Board of Elections before treating any number as authoritative.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.vertical, 4)
+            } header: {
+                Label("What NY Law Actually Limits", systemImage: "checkmark.shield.fill")
+            }
+
             Section("Project-Interest Flags") {
                 if let snapshot {
                     petrocelliDisclosureNote(for: snapshot)
@@ -2497,6 +2521,17 @@ struct CouncilScorecardView: View {
         Text("\(title): \(currencyFormatter.string(from: NSNumber(value: amount ?? 0)) ?? "$0")")
             .font(.caption)
             .foregroundStyle(.secondary)
+    }
+
+    private func contributionLimitNote(title: String, detail: String) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(title)
+                .font(.subheadline.weight(.semibold))
+            Text(detail)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
     }
 
     // "2026" / "2025" / "Prior" — the two most recent years on their own, everything else lumped.

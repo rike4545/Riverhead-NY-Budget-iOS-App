@@ -2166,7 +2166,7 @@ fileprivate struct OverviewStoryView: View {
                   tag: "Big picture"),
             .init(symbol: "banknote.fill",
                   title: "Is the savings account healthy?",
-                  blurb: "Riverhead's 2024 audited financial statements show the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $67.18M, leaving Riverhead with a large cushion well above the 15% policy floor.",
+                  blurb: "Riverhead's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $65.82M, leaving Riverhead with a large cushion well above the 15% policy floor.",
                   tag: "Fund balance"),
             .init(symbol: "list.bullet.rectangle.fill",
                   title: "What's changing in 2026?",
@@ -2191,7 +2191,7 @@ fileprivate struct OverviewStoryView: View {
                   tag: "Fiscal summary"),
             .init(symbol: "banknote.fill",
                   title: "Fund balance: $28,403,924 unassigned",
-                  blurb: "Riverhead's 2024 audited financial statements show the General Fund ended 2024 with about $28.4M in fund balance and total governmental funds rose to about $67.18M. That still reads as a very large operating cushion relative to Riverhead's 15% floor and 20% upper target.",
+                  blurb: "Riverhead's 2024 Annual Financial Report shows the General Fund ended 2024 with about $28.4M in fund balance and total governmental funds rose to about $65.82M. That still reads as a very large operating cushion relative to Riverhead's 15% floor and 20% upper target.",
                   tag: "Fund balance"),
             .init(symbol: "arrow.up.right.circle.fill",
                   title: "Key cost drivers",
@@ -3489,8 +3489,8 @@ fileprivate struct BudgetGlossaryView: View {
             .init(term: "Unassigned Fund Balance",
                   shortDefinition: "The freely spendable portion of the Town's reserves.",
                   longExplanation: mode == .resident
-                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The Town's 2024 audited financial statements show the General Fund finished 2024 with about $28.4M in fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
-                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy sets a 15% floor and 20% upper target. The Town's 2024 audited financial statements show the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $67.18M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
+                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The Town's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
+                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy sets a 15% floor and 20% upper target. The Town's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $65.82M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
                   tags: ["fund balance", "policy", "GASB 54"]),
             .init(term: "Capital Projects Fund",
                   shortDefinition: "The fund used for major one-time construction and acquisition work.",

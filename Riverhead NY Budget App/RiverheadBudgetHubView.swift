@@ -335,6 +335,7 @@ fileprivate enum BudgetToolDestination {
     case section(BudgetSection)
     case budgetSimulator
     case earlyRetirementModel
+    case spendingReduction
 }
 
 fileprivate struct BudgetToolShortcut: Identifiable {
@@ -364,7 +365,8 @@ fileprivate struct BudgetToolsDirectoryView: View {
                 .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", destination: .earlyRetirementModel),
                 .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
                 .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", destination: .section(.budget2027)),
-                .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", destination: .budgetSimulator)
+                .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", destination: .budgetSimulator),
+                .init(title: "Spending Reduction", subtitle: "Toggle a real, sourced \(Budget2027TaxCapOffsetModel.fullRecurringReductionPackage.formatted(.currency(code: "USD").precision(.fractionLength(0)))) savings package against the modeled payroll-pressure gap.", symbol: "scissors.circle", destination: .spendingReduction)
             ]
         ),
         .init(
@@ -437,6 +439,13 @@ fileprivate struct BudgetToolsDirectoryView: View {
         case .earlyRetirementModel:
             NavigationLink {
                 EarlyRetirementIncentiveView()
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        case .spendingReduction:
+            NavigationLink {
+                Budget2027SpendingReductionView()
             } label: {
                 rowContent(shortcut)
             }

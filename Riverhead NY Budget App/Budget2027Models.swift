@@ -296,6 +296,15 @@ enum Budget2027ScenarioModel {
     static let modeledCSEAIncrease = 484_395.46
     static let modeledNonContractIncreaseAtDefaultCOLA = 28_868.58
 
+    /// Canonical 2027 automatic payroll pressure: PBA + SOA + CSEA + non-contract increases at the
+    /// default COLA assumption. Matches BudgetRecommendations2027.modeledAutomaticPayrollPressure in
+    /// RiverheadBudgetHubView.swift, which references this value rather than re-declaring it.
+    static let modeledAutomaticPayrollPressure =
+        modeledPBAIncreaseAtDefaultCOLA +
+        modeledSOAIncreaseAtDefaultCOLA +
+        modeledCSEAIncrease +
+        modeledNonContractIncreaseAtDefaultCOLA
+
     static let pbaBasePayroll = modeledPBAIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)
     static let soaBasePayroll = modeledSOAIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)
     static let nonContractBasePayroll = modeledNonContractIncreaseAtDefaultCOLA / (defaultAutomaticCOLAPercent / 100)

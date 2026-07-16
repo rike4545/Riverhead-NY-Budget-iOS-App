@@ -649,7 +649,7 @@ fileprivate enum BudgetRecommendations2027 {
     static let modeledPersonnelBase2026 = 30_509_083.85
     static let totalBudget2026 = 69_113_159.00
     static let personnelShareOfBudget = 0.4414
-    static let modeledAutomaticPayrollPressure = 936_727.10
+    static let modeledAutomaticPayrollPressure = Budget2027ScenarioModel.modeledAutomaticPayrollPressure
     static let modeledUnionSalaryPressure = modeledPBAIncrease + modeledSOAIncrease + modeledCSEAIncrease
     static let modeledPBAIncrease = Budget2027ScenarioModel.modeledPBAIncreaseAtDefaultCOLA
     static let modeledSOAIncrease = Budget2027ScenarioModel.modeledSOAIncreaseAtDefaultCOLA

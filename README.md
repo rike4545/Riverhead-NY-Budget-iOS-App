@@ -6,13 +6,15 @@ An independent public fiscal intelligence app for exploring Riverhead Town budge
 
 ### ▶ **[Riverhead NY Budget App on the App Store](https://apps.apple.com/us/app/riverhead-ny-budget-app/id6751372951)**
 
-An Android release is in progress — see `AndroidFork/` in this repo for the in-progress native port.
+An Android release is in early development — see
+**[Riverhead-NY-Budget-Android-App](https://github.com/rike4545/Riverhead-NY-Budget-Android-App)**,
+split out from this repo's former `AndroidFork/` folder into its own repository.
 
 GitHub Repository:
-https://github.com/rike4545/Riverhead-NY-Budget-App
+https://github.com/rike4545/Riverhead-NY-Budget-iOS-App
 
 Also available on the web:
-**[Riverhead Budget Live](https://rike4545.github.io/rike4545-riverhead-budget-live/)** — the browser-based companion platform, covering much of the same ground plus live campaign-finance data and peer-town benchmarking. Repo: https://github.com/rike4545/rike4545-riverhead-budget-live
+**[Riverhead Budget Live](https://rike4545.github.io/Riverhead-NY-Budget-Web-App/)** — the browser-based companion platform, covering much of the same ground plus live campaign-finance data and peer-town benchmarking. Repo: https://github.com/rike4545/Riverhead-NY-Budget-Web-App
 
 ---
 
@@ -175,10 +177,10 @@ Built using:
 Riverhead NY Budget App/       Main SwiftUI app target (views, models, stores)
 Riverhead NY Budget AppTests/  Unit tests
 Riverhead NY Budget AppUITests/ UI tests
-AndroidFork/                   In-progress native Android port (Kotlin + Jetpack Compose)
 ```
 
-See `AndroidFork/README.md` for the Android port's current status.
+The native Android port lives in its own repository:
+[Riverhead-NY-Budget-Android-App](https://github.com/rike4545/Riverhead-NY-Budget-Android-App).
 
 ---
 

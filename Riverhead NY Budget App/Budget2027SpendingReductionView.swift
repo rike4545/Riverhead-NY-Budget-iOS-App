@@ -40,7 +40,7 @@ struct Budget2027SpendingReductionView: View {
                 title: "Police Uniform OT recovery target",
                 amount: Budget2027TaxCapOffsetModel.overtimeControlSavings,
                 source: "2024 actual ($\(Int(Budget2027TaxCapOffsetModel.policeUniformOTActual2024).formatted())) vs. $\(Int(Budget2027TaxCapOffsetModel.policeUniformOTBudget2024).formatted()) budget — a $\(Int(Budget2027TaxCapOffsetModel.policeUniformOTVariance).formatted()) variance",
-                rationale: "Only credible with published monthly OT-by-cause reporting and a scheduling plan — not a booked cut."
+                rationale: "Southampton's 2026 adopted Police OT is $13,069.50/officer for 113 officers; at that regional rate Riverhead's ~100 officers would need about $1,306,950 — meaning most of the variance is likely real coverage need, not scheduling waste. Zero OT isn't realistic, so this targets only the residual above that peer benchmark."
             ),
             .init(
                 id: "retirementRefill",

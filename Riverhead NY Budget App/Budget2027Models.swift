@@ -367,7 +367,14 @@ enum Budget2027TaxCapOffsetModel {
     static let policeUniformOTBudget2024 = 1_000_000.00
     static let policeUniformOTAdopted2026 = 1_000_000.00
     static let policeUniformOTVariance = policeUniformOTActual2024 - policeUniformOTBudget2024
-    static let policeOvertimeRecoveryTarget = 250_000.00
+
+    // Peer benchmark: Southampton's 2026 adopted Town Police OT (account 6101) is $1,476,854 for
+    // 113 officers — $13,069.50/officer. Applied to Riverhead's ~100 officers, that implies a
+    // regionally-normal OT budget of ~$1,306,950.44, meaning only the actual's excess over that
+    // (not the full variance over Riverhead's own $1M budget) is credibly "recoverable."
+    static let peerBenchmarkOvertimePerOfficer = 1_476_854.00 / 113.0
+    static let peerBenchmarkNormalizedBudget = peerBenchmarkOvertimePerOfficer * 100.0
+    static let policeOvertimeRecoveryTarget = policeUniformOTActual2024 - peerBenchmarkNormalizedBudget
     static let policeOvertimeRecoveryShare = policeOvertimeRecoveryTarget / policeUniformOTVariance
 
     // 20% healthcare-premium-contribution policy: 22 eligible senior-staff/elected positions, using the

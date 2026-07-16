@@ -157,7 +157,7 @@ struct Budget2027SpendingReductionView: View {
             }
 
             Section {
-                Text("This is not $2.75M. Union wage growth ($907.9K of modeled PBA/SOA/CSEA pressure) is the single largest driver in the 2027 model, but it's contractually locked and cannot be treated as a spending-reduction lever without a successor labor agreement — it stays on the pressure side of the budget, not here. Every dollar below is traceable to either a named formula input or an actual 2025→2026 account-level change in the Town's own 2026 Budget Supplement. Tap any item to test a package that leaves it out.")
+                Text("Union wage growth ($907.9K of modeled PBA/SOA/CSEA pressure) is the single largest driver in the 2027 model, but it's contractually locked and cannot be treated as a spending-reduction lever without a successor labor agreement — it stays on the pressure side of the budget, not here. Every dollar below is traceable to either a named formula input or an actual 2025→2026 account-level change in the Town's own 2026 Budget Supplement. Tap any item to test a package that leaves it out.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
 
@@ -175,7 +175,7 @@ struct Budget2027SpendingReductionView: View {
             } header: {
                 Text("Personnel & Policy Savings — \(personnelPolicySelectedTotal, format: .currency(code: "USD").precision(.fractionLength(0))) of \(personnelPolicyFullTotal, format: .currency(code: "USD").precision(.fractionLength(0)))")
             } footer: {
-                Text("Six categories reconciled across the app's three 2027 planning models (RiverheadBudgetHubView, Budget2027 simulator, and executive whiteboard), which previously disagreed on this total by up to $12K.")
+                Text("Six categories: policy or formula-driven savings that would require Board or contract action to actually capture.")
             }
 
             Section {

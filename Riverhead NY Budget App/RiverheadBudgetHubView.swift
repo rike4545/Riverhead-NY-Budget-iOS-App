@@ -2166,7 +2166,7 @@ fileprivate struct OverviewStoryView: View {
                   tag: "Big picture"),
             .init(symbol: "banknote.fill",
                   title: "Is the savings account healthy?",
-                  blurb: "Riverhead's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $65.82M, leaving Riverhead with a large cushion well above the 15% policy floor.",
+                  blurb: "Riverhead's 2025 Annual Financial Report shows the General Fund finished 2025 with about $33.4M in fund balance and total governmental funds ended 2025 at about $76.55M, leaving Riverhead with a large cushion well above the 15% policy floor.",
                   tag: "Fund balance"),
             .init(symbol: "list.bullet.rectangle.fill",
                   title: "What's changing in 2026?",
@@ -2190,8 +2190,8 @@ fileprivate struct OverviewStoryView: View {
                   blurb: "+6.5% over 2025 adopted ($64,895,000). General Fund carries most of the growth via personal services and benefits. Tax cap compliance: verify levy does not exceed the calculated limit.",
                   tag: "Fiscal summary"),
             .init(symbol: "banknote.fill",
-                  title: "Fund balance: $28,403,924 unassigned",
-                  blurb: "Riverhead's 2024 Annual Financial Report shows the General Fund ended 2024 with about $28.4M in fund balance and total governmental funds rose to about $65.82M. That still reads as a very large operating cushion relative to Riverhead's 15% floor and 20% upper target.",
+                  title: "Fund balance: $29,671,084 unassigned",
+                  blurb: "Riverhead's 2025 Annual Financial Report shows the General Fund ended 2025 with about $33.4M in fund balance and total governmental funds rose to about $76.55M. That still reads as a very large operating cushion relative to Riverhead's 15% floor and 20% upper target.",
                   tag: "Fund balance"),
             .init(symbol: "arrow.up.right.circle.fill",
                   title: "Key cost drivers",
@@ -2539,14 +2539,14 @@ fileprivate struct FundBalanceDashboardView: View {
     private let targetReservePercent = 0.288
 
     // Real 2026 Tentative Budget figures from RBBudgetStore.
-    // General Fund: appropriations $69,113,159 · estimated unassigned fund balance $28,403,924.
+    // General Fund: appropriations $69,113,159 · estimated unassigned fund balance $29,671,084.
     // Policy: 15% minimum, 20% upper target.
     private var snapshots: [FundBalanceSnapshot] {
         [
             .init(
                 fundName: "General Fund",
                 expenditures: store.appropriations,          // $69,113,159
-                totalFundBalance: store.estimatedFundBalance, // $28,403,924
+                totalFundBalance: store.estimatedFundBalance, // $29,671,084
                 unassigned: store.estimatedFundBalance,
                 policyMinimumPercent: store.fundBalancePolicy.minimumPercent  // 0.15
             )
@@ -3489,8 +3489,8 @@ fileprivate struct BudgetGlossaryView: View {
             .init(term: "Unassigned Fund Balance",
                   shortDefinition: "The freely spendable portion of the Town's reserves.",
                   longExplanation: mode == .resident
-                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The Town's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
-                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy sets a 15% floor and 20% upper target. The Town's 2024 Annual Financial Report shows the General Fund finished 2024 with about $28.4M in fund balance and total governmental funds ended 2024 at about $65.82M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
+                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The Town's 2025 Annual Financial Report shows the General Fund finished 2025 with about $29.67M in unassigned fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
+                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy sets a 15% floor and 20% upper target. The Town's 2025 Annual Financial Report shows the General Fund finished 2025 with about $29.67M in unassigned fund balance and total governmental funds ended 2025 at about $76.55M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
                   tags: ["fund balance", "policy", "GASB 54"]),
             .init(term: "Capital Projects Fund",
                   shortDefinition: "The fund used for major one-time construction and acquisition work.",
@@ -3665,7 +3665,7 @@ fileprivate struct HearingToolkitView: View {
     private var residentTalkingPoints: [String] {
         [
             "Is the Town's savings account staying above the 15% minimum policy after this budget?",
-            "How much of the $28.4M surplus above the upper reserve target is being used, and why?",
+            "How much of the $15.85M surplus above the upper reserve target is being used, and why?",
             "Police personal services are up $1.65M — is that from new hires, raises, or overtime?",
             "OSC said Riverhead's CPF spending and debt payments were proper, but some CPF collections were not logged or deposited on time — what changed to fix that before the next audit?",
             "If the Supervisor recommends an exempt Budget Officer, what financial training or accounting experience does that person have?",
@@ -3685,7 +3685,7 @@ fileprivate struct HearingToolkitView: View {
     // Expert talking points: technically framed for OSC/fiscal compliance context
     private var expertTalkingPoints: [String] {
         [
-            "The tentative budget appropriates no explicit fund balance draw, yet the $28.4M unassigned balance is $14.6M above the 20% upper target — what is the Board's plan to deploy or return that surplus?",
+            "The tentative budget appropriates no explicit fund balance draw, yet the $29.67M unassigned balance is $15.85M above the 20% upper target — what is the Board's plan to deploy or return that surplus?",
             "Personnel services growth (Police +6.8%, Highway +4.9%) outpaces CPI. What contract provisions drive this, and how does it affect the out-year levy cap forecast?",
             "OSC's February 2024 CPF audit found Riverhead's CPF disbursements and debt service were proper, but some collections were not date-stamped and nine deposits totaling $5.3 million were not deposited within 10 days. What written control changes, training, and receipt-tracking steps have been implemented since then?",
             "If the Supervisor designates or recommends an exempt Budget Officer, what minimum qualifications in accounting, municipal finance, or budget administration does the Board require to preserve independent budget scrutiny and effective pluralism?",

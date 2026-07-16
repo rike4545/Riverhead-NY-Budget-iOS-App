@@ -245,12 +245,12 @@ struct OffBalanceLiabilitiesView: View {
                     .font(.subheadline.weight(.semibold))
 
                 HStack(spacing: 10) {
-                    debtMetric(title: "Outstanding", value: "$43.96M", tint: RiverheadTheme.brandNavy)
-                    debtMetric(title: "YoY Change", value: "+$2.68M", tint: RiverheadTheme.brandGold)
-                    debtMetric(title: "Growth", value: "+6.5%", tint: RiverheadTheme.brandCoral)
+                    debtMetric(title: "Outstanding", value: "$38.42M", tint: RiverheadTheme.brandNavy)
+                    debtMetric(title: "YoY Change", value: "-$5.54M", tint: RiverheadTheme.brandGold)
+                    debtMetric(title: "Change", value: "-12.6%", tint: RiverheadTheme.brandCoral)
                 }
 
-                Text("The 2024 audit also shows total bonded debt outstanding rising by about $2.68M, or 6.5%. Governmental debt fell by about $3.9M, while business-type water and sewer debt grew by about $6.6M, so the shift toward enterprise-fund debt deserves monitoring alongside reserve drawdowns.")
+                Text("Riverhead's 2025 Annual Financial Report shows total bonded debt outstanding falling by about $5.54M, or 12.6%, since no new bonds were issued during the year — every existing bond and BAN, including the enterprise-fund water and sewer debt that had driven 2024's increase, simply paid down principal on its existing schedule.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

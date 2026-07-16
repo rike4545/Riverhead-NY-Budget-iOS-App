@@ -43,26 +43,26 @@ struct RiverheadDebtSavingsView: View {
         [
             .init(
                 title: "Bonded debt",
-                value: "$43.96M",
-                note: "2024 Annual Financial Report (Statement of Indebtedness), excluding BANs and premiums.",
+                value: "$38.42M",
+                note: "2025 Annual Financial Report (Statement of Indebtedness), excluding BANs and premiums.",
                 tint: RiverheadTheme.brandNavy
             ),
             .init(
                 title: "Debt incl. BANs",
-                value: "$66.76M",
-                note: "Adds $22.8M of bond anticipation notes.",
+                value: "$60.40M",
+                note: "Adds $21.98M of bond anticipation notes.",
                 tint: RiverheadTheme.brandSky
             ),
             .init(
                 title: "Debt limit used",
-                value: "6.74%",
-                note: "Capacity is not the same as affordability.",
+                value: "3.78%",
+                note: "From the 2023 audit, the last year this disclosure is available. Capacity is not the same as affordability.",
                 tint: RiverheadTheme.brandMint
             ),
             .init(
                 title: "General Fund cushion",
-                value: "$28.40M",
-                note: "Total General Fund balance at year-end 2024.",
+                value: "$33.41M",
+                note: "Total General Fund balance at year-end 2025.",
                 tint: RiverheadTheme.brandGold
             )
         ]
@@ -402,7 +402,7 @@ struct RiverheadDebtSavingsView: View {
             Text("Source Note")
                 .font(.headline)
 
-            Text("Debt figures are based on the Statement of Indebtedness in Riverhead's 2024 Annual Financial Report (filed with the NY State Comptroller): $43,959,898 bonded debt excluding BANs and premiums, $22,800,000 in BANs, $66,759,898 total including BANs, and 6.74% of debt limit exhausted. The General Fund cushion figure is confirmed from the same report's General Fund balance sheet ($28,407,676 total fund balance at 12/31/2024). Policy framing is based on GASB debt and OPEB disclosure concepts, GASB 54-style fund-balance discipline, and GFOA debt-management and capital-planning best practices.")
+            Text("Debt figures are based on the Statement of Indebtedness in Riverhead's 2025 Annual Financial Report (filed with the NY State Comptroller): $38,423,858 bonded debt excluding BANs and premiums, $21,975,000 in BANs, $60,398,858 total including BANs. The debt-limit-exhausted figure (3.78%) is from the 2023 Audited Basic Financial Statement's Management's Discussion and Analysis — the last year that disclosure was filed — so it predates the debt totals above by two years. The General Fund cushion figure is confirmed from the 2025 report's General Fund balance sheet ($33,407,251 total fund balance at 12/31/2025). Policy framing is based on GASB debt and OPEB disclosure concepts, GASB 54-style fund-balance discipline, and GFOA debt-management and capital-planning best practices.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

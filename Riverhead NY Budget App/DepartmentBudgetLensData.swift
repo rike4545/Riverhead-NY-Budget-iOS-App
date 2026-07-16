@@ -49,6 +49,10 @@ struct RebalanceRecommendation: Identifiable, Hashable {
     let adopted2026: Double
     let changeLabel: String?
     let rationale: String
+    /// True when the 2025→2026 change is a same-fund reclassification (offset elsewhere in the same
+    /// fund's total) rather than genuine net-new or net-reduced spending. Excluded from any rollup that
+    /// claims real dollar savings/growth, since counting it would double up against its own offset.
+    let isFundNeutralReclassification: Bool
 
     var id: String { "\(fundFunction)-\(account)" }
 
@@ -61,7 +65,8 @@ struct RebalanceRecommendation: Identifiable, Hashable {
         adopted2025: Double,
         adopted2026: Double,
         changeLabel: String? = nil,
-        rationale: String
+        rationale: String,
+        isFundNeutralReclassification: Bool = false
     ) {
         self.fundFunction = fundFunction
         self.account = account
@@ -70,6 +75,7 @@ struct RebalanceRecommendation: Identifiable, Hashable {
         self.adopted2026 = adopted2026
         self.changeLabel = changeLabel
         self.rationale = rationale
+        self.isFundNeutralReclassification = isFundNeutralReclassification
     }
 }
 
@@ -367,7 +373,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 0,
             adopted2026: 167_742,
             changeLabel: "New",
-            rationale: "Absorbed into Town Hall utilities with no cost recovery plan."
+            rationale: "Absorbed into Town Hall utilities with no cost recovery plan. Fund-neutral: the general Town Hall electricity line (A01-1620-472) drops by the same $167,742, so this is a reclassification within the existing utilities budget, not net-new spending.",
+            isFundNeutralReclassification: true
         ),
         .init(
             fundFunction: "ES5 Scavenger Waste 8189",
@@ -386,6 +393,33 @@ enum DepartmentBudgetLensData {
             adopted2026: 13_500,
             changeLabel: "+800%",
             rationale: "Review billing process changes vs. actual mailing volume."
+        ),
+        .init(
+            fundFunction: "A01 Other General Government 1989",
+            account: "Other Gen Govt - Miscellaneous",
+            direction: .tighten,
+            adopted2025: 3_200,
+            adopted2026: 53_200,
+            changeLabel: "+1,563%",
+            rationale: "A catchall 'Miscellaneous' line tripling with no stated driver deserves an itemized explanation before adoption."
+        ),
+        .init(
+            fundFunction: "A01 Community Development Admin 8686",
+            account: "CDA - Special Events",
+            direction: .tighten,
+            adopted2025: 0,
+            adopted2026: 43_200,
+            changeLabel: "New",
+            rationale: "Brand-new discretionary program line with no prior-year baseline or stated participation target."
+        ),
+        .init(
+            fundFunction: "A01 Town Attorney 1420",
+            account: "Atty - Pers Svcs Mgmt Buy Back",
+            direction: .tighten,
+            adopted2025: 104_700,
+            adopted2026: 137_300,
+            changeLabel: "+31.1%",
+            rationale: "Management buy-back growth should be tied to a specific staffing or policy change, not carried forward automatically."
         ),
         .init(
             fundFunction: "A01 Buildings & Grounds 1625",
@@ -424,4 +458,11 @@ enum DepartmentBudgetLensData {
             rationale: "Deferred maintenance is costlier long-term. Restore if complaints are rising."
         )
     ]
+
+    /// Real, account-level growth in the 2026 Adopted Budget (per the 2026 Budget Supplement) flagged for
+    /// audit before being carried forward as a permanent 2027 baseline. Excludes any fund-neutral
+    /// reclassification, so this is genuine incremental spending, not a relabeling of existing cost.
+    static let operationalGrowthControlTotal: Double = rebalancedSpending
+        .filter { $0.direction == .tighten && !$0.isFundNeutralReclassification }
+        .reduce(0) { $0 + $1.change }
 }

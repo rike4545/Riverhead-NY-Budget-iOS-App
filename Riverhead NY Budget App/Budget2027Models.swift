@@ -285,8 +285,8 @@ enum Budget2027ScenarioModel {
     static let defaultAutomaticCOLAPercent = 2.5
     static let defaultLevyGrowthPercent = 2.0
     static let defaultOtherRecurringPressure = Budget2027PensionPressureModel.midpointIncrease
-    static let defaultRecurringSavings = 806_431.97
-    static let defaultRecurringRevenueAddsExcludingLevy = 61_500.00
+    static let defaultRecurringSavings = Budget2027TaxCapOffsetModel.recurringSavingsPackageTotal
+    static let defaultRecurringRevenueAddsExcludingLevy = Budget2027TaxCapOffsetModel.recurringRevenueAdds
     static let illustrativeCurrentLevyBase = 48_639_479.00
     static let taxCapLevelLevyYield = illustrativeCurrentLevyBase * 0.02
     static let pensionPressureAboveTwoPercentLevy = Budget2027PensionPressureModel.midpointIncrease - taxCapLevelLevyYield
@@ -307,6 +307,17 @@ enum Budget2027ScenarioModel {
     static let policeOfficerCost = 72_066.67
     static let electedRaisePackageCost = 24_688.00
     static let plannedFleetPurchaseCost = 336_000.00
+
+    /// Recurring service-investment total: 2 Code Enforcement Officers + 1 Town Clerk position + 2 police
+    /// officers + Building Department headcount + online platform modernization. Excludes the one-time
+    /// community-improvement grant series ($50K) and Legal Aid grant application ($15K), which are
+    /// nonrecurring. Matches BudgetRecommendations2027.addedServiceInvestments in RiverheadBudgetHubView.swift.
+    static let recurringServiceInvestmentsTotal =
+        buildingDepartmentHeadcountInvestment +
+        onlinePlatformUpdateCost +
+        (codeEnforcementOfficerCost * 2) +
+        deputyTownClerkCost +
+        (policeOfficerCost * 2)
 
     struct COLABreakout {
         let pbaPressure: Double
@@ -350,7 +361,13 @@ enum Budget2027TaxCapOffsetModel {
     static let policeOvertimeRecoveryTarget = 250_000.00
     static let policeOvertimeRecoveryShare = policeOvertimeRecoveryTarget / policeUniformOTVariance
 
-    static let healthcareContributionSavings = 85_565.71
+    // 20% healthcare-premium-contribution policy: 22 eligible senior-staff/elected positions, using the
+    // NYSHIP Empire Plan participating-agency individual premium rate as a conservative per-position floor.
+    static let modeledEligibleHealthcarePositions = 22
+    static let nyshipPlanPrimeIndividualMonthlyPremium = 1_611.46
+    static let modeledAveragePremium = nyshipPlanPrimeIndividualMonthlyPremium * 12
+    static let healthcareContributionSavings = Double(modeledEligibleHealthcarePositions) * modeledAveragePremium * 0.20
+
     static let overtimeControlSavings = policeOvertimeRecoveryTarget
     static let civilianVacancyFactorSavings = 124_158.19
     static let targetedRetirementRefillSavings = 291_300.00
@@ -369,16 +386,28 @@ enum Budget2027TaxCapOffsetModel {
         .init(title: "Stretch fees, rentals, and cost recovery", amount: stretchRevenueAndCostRecovery, isStretch: true)
     ]
 
-    static let baseOffsetPackage =
+    /// The six personnel-side recurring savings categories only (excludes recurring revenue, which is a
+    /// separate concept). This is the canonical "recurring savings package" total referenced by
+    /// BudgetRecommendations2027 (RiverheadBudgetHubView.swift) and every other 2027 planning view.
+    static let recurringSavingsPackageTotal =
         healthcareContributionSavings +
         overtimeControlSavings +
         civilianVacancyFactorSavings +
         targetedRetirementRefillSavings +
         exemptRaiseHoldSavings +
-        electedRaiseHoldSavings +
-        recurringRevenueAdds
+        electedRaiseHoldSavings
+
+    static let baseOffsetPackage = recurringSavingsPackageTotal + recurringRevenueAdds
 
     static let totalOffsetPackage = baseOffsetPackage + stretchRevenueAndCostRecovery
+
+    /// The full 2027 recurring spending-reduction package: the six HR/policy savings categories above,
+    /// plus real, account-level operational growth flagged in the 2026 Budget Supplement
+    /// (DepartmentBudgetLensData.operationalGrowthControlTotal). Excludes recurring revenue (a separate
+    /// concept) and excludes contractually-locked union wage growth, which sits on the pressure side of
+    /// the model (Budget2027ScenarioModel.modeledCSEAIncrease, etc.) and cannot be treated as a savings
+    /// lever without a successor labor agreement.
+    static let fullRecurringReductionPackage = recurringSavingsPackageTotal + DepartmentBudgetLensData.operationalGrowthControlTotal
 }
 
 enum Budget2027PoliceWorkloadModel {

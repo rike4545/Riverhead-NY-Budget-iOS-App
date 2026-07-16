@@ -103,6 +103,9 @@ private struct BudgetDeepDiveHubView: View {
                 NavigationLink { Proposed2027BudgetPresentationView() } label: {
                     Label("Unofficial 2027 Budget Proposal", systemImage: "doc.text.magnifyingglass")
                 }
+                NavigationLink { Budget2027SpendingReductionView() } label: {
+                    Label("2027 Spending Reduction", systemImage: "scissors.circle")
+                }
                 NavigationLink { Budget2027LabView() } label: {
                     Label("2027 Budget Lab", systemImage: "slider.horizontal.below.sun.max")
                 }

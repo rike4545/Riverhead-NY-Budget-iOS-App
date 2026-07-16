@@ -136,7 +136,7 @@ final class Budget2027SimulatorState {
             levyGrowthPercent = 3.5
             recurringRevenueAdds = 250_000
             otherRecurringPressure = Budget2027PensionPressureModel.highIncrease
-            recurringSavings = 806_431.97
+            recurringSavings = Budget2027ScenarioModel.defaultRecurringSavings
             automaticCOLAPercent = 3.0
             includeBuildingDepartmentInvestment = true
             includeOnlinePlatformInvestment = true

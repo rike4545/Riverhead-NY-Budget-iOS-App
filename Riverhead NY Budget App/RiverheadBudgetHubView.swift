@@ -651,31 +651,33 @@ fileprivate enum BudgetRecommendations2027 {
     static let personnelShareOfBudget = 0.4414
     static let modeledAutomaticPayrollPressure = 936_727.10
     static let modeledUnionSalaryPressure = modeledPBAIncrease + modeledSOAIncrease + modeledCSEAIncrease
-    static let modeledPBAIncrease = 354_689.61
-    static let modeledSOAIncrease = 68_773.45
-    static let modeledCSEAIncrease = 484_395.46
-    static let modeledExemptIncrease = 28_868.58
+    static let modeledPBAIncrease = Budget2027ScenarioModel.modeledPBAIncreaseAtDefaultCOLA
+    static let modeledSOAIncrease = Budget2027ScenarioModel.modeledSOAIncreaseAtDefaultCOLA
+    static let modeledCSEAIncrease = Budget2027ScenarioModel.modeledCSEAIncrease
+    static let modeledExemptIncrease = Budget2027ScenarioModel.modeledNonContractIncreaseAtDefaultCOLA
     static let gfoaMinimumReservePercent = 2.0 / 12.0
     static let fundBalancePolicyFloorPercent = 0.15
     static let fundBalancePolicyOperatingTargetPercent = 0.20
     static let fundBalancePolicyDeploymentCapPercent = 0.25
-    static let modeledUnassignedFundBalance2026 = 28_403_924.00
+    // Matches RBBudgetStore.estimatedFundBalance: the 2025 Annual Financial Report's actual unassigned
+    // General Fund balance ($29,671,084.17), the newest year-end figure available.
+    static let modeledUnassignedFundBalance2026 = 29_671_084.00
     static let cpfOutstandingDebt2024 = 12_290_000.00
     static let cpfAccelerationPayment = 2_000_000.00
 
-    static let modeledEligibleHealthcarePositions = 22
-    static let nyshipPlanPrimeIndividualMonthlyPremium = 1_611.46
+    static let modeledEligibleHealthcarePositions = Budget2027TaxCapOffsetModel.modeledEligibleHealthcarePositions
+    static let nyshipPlanPrimeIndividualMonthlyPremium = Budget2027TaxCapOffsetModel.nyshipPlanPrimeIndividualMonthlyPremium
     static let nyshipPlanPrimeFamilyMonthlyPremium = 3_663.79
-    static let modeledAveragePremium = nyshipPlanPrimeIndividualMonthlyPremium * 12
-    static let healthcareContributionSavings = Double(modeledEligibleHealthcarePositions) * modeledAveragePremium * 0.20
-    static let exemptRaiseHoldSavings = 23_094.86
-    static let electedRaiseHoldSavings = 22_278.92
-    static let policeUniformOTActual2024 = 1_401_354.00
-    static let policeUniformOTBudget2024 = 1_000_000.00
-    static let policeUniformOTAdopted2026 = 1_000_000.00
-    static let policeUniformOTVariance = policeUniformOTActual2024 - policeUniformOTBudget2024
-    static let overtimeControlSavings = 250_000.00
-    static let policeOvertimeRecoveryShare = overtimeControlSavings / policeUniformOTVariance
+    static let modeledAveragePremium = Budget2027TaxCapOffsetModel.modeledAveragePremium
+    static let healthcareContributionSavings = Budget2027TaxCapOffsetModel.healthcareContributionSavings
+    static let exemptRaiseHoldSavings = Budget2027TaxCapOffsetModel.exemptRaiseHoldSavings
+    static let electedRaiseHoldSavings = Budget2027TaxCapOffsetModel.electedRaiseHoldSavings
+    static let policeUniformOTActual2024 = Budget2027TaxCapOffsetModel.policeUniformOTActual2024
+    static let policeUniformOTBudget2024 = Budget2027TaxCapOffsetModel.policeUniformOTBudget2024
+    static let policeUniformOTAdopted2026 = Budget2027TaxCapOffsetModel.policeUniformOTAdopted2026
+    static let policeUniformOTVariance = Budget2027TaxCapOffsetModel.policeUniformOTVariance
+    static let overtimeControlSavings = Budget2027TaxCapOffsetModel.overtimeControlSavings
+    static let policeOvertimeRecoveryShare = Budget2027TaxCapOffsetModel.policeOvertimeRecoveryShare
     static let march2026CriminalIncidents = 167
     static let march2025CriminalIncidents = 144
     static let march2026TotalIncidents = 2_994
@@ -686,24 +688,28 @@ fileprivate enum BudgetRecommendations2027 {
     static let march2025Accidents = 123
     static let march2026Summonses = 1_042
     static let march2025Summonses = 1_076
-    static let civilianVacancyFactorSavings = 124_158.19
-    static let targetedRetirementRefillSavings = 291_300.00
-    static let quantifiedPackageSavings = 794_717.06
-    static let remainingRecurringGap = 142_010.04
+    static let civilianVacancyFactorSavings = Budget2027TaxCapOffsetModel.civilianVacancyFactorSavings
+    static let targetedRetirementRefillSavings = Budget2027TaxCapOffsetModel.targetedRetirementRefillSavings
+    // Canonical recurring savings package total - computed as the sum of the six categories above so it
+    // can never drift out of sync with them the way a separately hardcoded figure could.
+    static let quantifiedPackageSavings = Budget2027TaxCapOffsetModel.recurringSavingsPackageTotal
+    static let remainingRecurringGap = modeledAutomaticPayrollPressure - quantifiedPackageSavings
     static let latestLocalGeneralFundLevy = 48_639_479.00
     static let taxCapLevyIncreaseRate = 0.02
     static let taxCapLevyIncreaseRevenue = 972_789.58
     static let modeledRevenuePackage = 1_034_289.58
-    static let balanceAfterRevenuePackage = 892_279.54
-    static let buildingDepartmentHeadcountInvestment = 180_000.00
-    static let onlinePlatformUpdateCost = 85_000.00
-    static let codeEnforcementOfficerCost = 70_249.89
-    static let deputyTownClerkCost = 58_661.49
-    static let policeOfficerCost = 72_066.67
+    static let balanceAfterRevenuePackage = modeledRevenuePackage - remainingRecurringGap
+    static let buildingDepartmentHeadcountInvestment = Budget2027ScenarioModel.buildingDepartmentHeadcountInvestment
+    static let onlinePlatformUpdateCost = Budget2027ScenarioModel.onlinePlatformUpdateCost
+    static let codeEnforcementOfficerCost = Budget2027ScenarioModel.codeEnforcementOfficerCost
+    static let deputyTownClerkCost = Budget2027ScenarioModel.deputyTownClerkCost
+    static let policeOfficerCost = Budget2027ScenarioModel.policeOfficerCost
     static let communityImprovementGrantSeries = 50_000.00
     static let legalAidGrantApplication = 15_000.00
-    static let addedServiceInvestments = 608_294.61
-    static let balanceAfterRevenueAndInvestments = 283_983.93
+    // Canonical recurring service-investment total, shared with Budget2027ScenarioModel so both models
+    // stay in sync (excludes the one-time community-improvement and Legal Aid grants below).
+    static let addedServiceInvestments = Budget2027ScenarioModel.recurringServiceInvestmentsTotal
+    static let balanceAfterRevenueAndInvestments = balanceAfterRevenuePackage - addedServiceInvestments
 
     static let residentSummary = "The 2027 budget should be built around a simple promise: cover salary pressure, protect core services, and keep reserves as a backstop rather than a habit. Riverhead can still invest in Building, Code Enforcement, and service delivery, but only if the recurring plan is honest about labor costs, disciplined about savings, and careful with the tax levy."
 

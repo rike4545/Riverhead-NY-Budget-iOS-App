@@ -17,7 +17,7 @@ import Foundation
 public struct FundBalanceShiftView: View {
     // Inputs (you can seed these from real data later)
     @State private var appropriations: Double = 69_113_159
-    @State private var estimatedFundBalance: Double = 28_403_924
+    @State private var estimatedFundBalance: Double = 29_671_084
     @State private var minPercent: Double = 0.15   // 15%
     @State private var policyNotes: String = "Minimum unassigned fund balance of 15% of next-year appropriations."
     @State private var replenishYears: Int = 3

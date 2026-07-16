@@ -535,12 +535,14 @@ private struct Budget2027WhiteboardSummary {
     let store: RBBudgetStore
 
     let levyGrowthPercent = 3.0
-    let cseaPressure = 484_395.46
-    let publicSafetyAndNonContractPressure = 452_331.64
-    let otherPressure = 1_260_000.0
-    let recurringSavings = 806_431.97
-    let recurringRevenueAdds = 61_500.0
-    let serviceInvestments = 612_928.06
+    let cseaPressure = Budget2027ScenarioModel.modeledCSEAIncrease
+    let publicSafetyAndNonContractPressure = Budget2027ScenarioModel.modeledPBAIncreaseAtDefaultCOLA
+        + Budget2027ScenarioModel.modeledSOAIncreaseAtDefaultCOLA
+        + Budget2027ScenarioModel.modeledNonContractIncreaseAtDefaultCOLA
+    let otherPressure = Budget2027PensionPressureModel.midpointIncrease
+    let recurringSavings = Budget2027TaxCapOffsetModel.recurringSavingsPackageTotal
+    let recurringRevenueAdds = Budget2027TaxCapOffsetModel.recurringRevenueAdds
+    let serviceInvestments = Budget2027ScenarioModel.recurringServiceInvestmentsTotal
     let aimPayment = 107_028.0
     let currentTemporaryMunicipalAssistance = 7_487.0
 

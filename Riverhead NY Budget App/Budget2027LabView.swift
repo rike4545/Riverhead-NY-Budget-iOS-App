@@ -1004,19 +1004,21 @@ private enum SliderValueFormat {
 
 private enum Budget2027LabModel {
     static let defaultLevyGrowthPercent = 3.0
-    static let defaultRecurringSavings = 806_431.97
-    static let defaultRecurringRevenueAdds = 61_500.0
-    static let defaultOtherRecurringPressure = 1_260_000.0
+    static let defaultRecurringSavings = Budget2027TaxCapOffsetModel.recurringSavingsPackageTotal
+    static let defaultRecurringRevenueAdds = Budget2027TaxCapOffsetModel.recurringRevenueAdds
+    static let defaultOtherRecurringPressure = Budget2027PensionPressureModel.midpointIncrease
     static let defaultReserveTargetPercent = 28.8
-    static let cseaPressure = 484_395.46
-    static let pbaSOANonContractPressure = 452_331.64
-    static let buildingDepartmentInvestment = 180_000.0
-    static let onlinePlatformCost = 85_000.0
-    static let deputyTownClerkCost = 58_661.49
-    static let codeOfficerCost = 70_249.89
-    static let policeOfficerCost = 72_066.67
-    static let electedRaisePackageCost = 24_688.0
-    static let fleetPurchaseCost = 336_000.0
+    static let cseaPressure = Budget2027ScenarioModel.modeledCSEAIncrease
+    static let pbaSOANonContractPressure = Budget2027ScenarioModel.modeledPBAIncreaseAtDefaultCOLA
+        + Budget2027ScenarioModel.modeledSOAIncreaseAtDefaultCOLA
+        + Budget2027ScenarioModel.modeledNonContractIncreaseAtDefaultCOLA
+    static let buildingDepartmentInvestment = Budget2027ScenarioModel.buildingDepartmentHeadcountInvestment
+    static let onlinePlatformCost = Budget2027ScenarioModel.onlinePlatformUpdateCost
+    static let deputyTownClerkCost = Budget2027ScenarioModel.deputyTownClerkCost
+    static let codeOfficerCost = Budget2027ScenarioModel.codeEnforcementOfficerCost
+    static let policeOfficerCost = Budget2027ScenarioModel.policeOfficerCost
+    static let electedRaisePackageCost = Budget2027ScenarioModel.electedRaisePackageCost
+    static let fleetPurchaseCost = Budget2027ScenarioModel.plannedFleetPurchaseCost
 }
 
 private enum Budget2027CustomItemKind: String, CaseIterable, Identifiable {

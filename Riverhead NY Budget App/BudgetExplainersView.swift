@@ -350,7 +350,6 @@ struct BudgetExplainersView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("Budget Explainers")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
     private var headerCard: some View {

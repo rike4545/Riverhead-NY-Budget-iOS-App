@@ -173,7 +173,6 @@ struct OffBalanceLiabilitiesView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("Off-Balance Liabilities")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
     private var headerCard: some View {

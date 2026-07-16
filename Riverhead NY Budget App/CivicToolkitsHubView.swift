@@ -324,7 +324,6 @@ struct CivicToolkitsHubView: View {
                     .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
-        .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
     @ViewBuilder

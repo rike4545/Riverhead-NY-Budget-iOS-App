@@ -48,7 +48,6 @@ struct FunnySidenoteView: View {
         .tint(RiverheadTheme.accent)
         .navigationTitle("Funny Sidenote")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: false)
     }
 
     private var header: some View {

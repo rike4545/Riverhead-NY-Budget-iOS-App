@@ -195,7 +195,6 @@ struct RiverheadDebtSavingsView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("Debt Savings")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
     private var headerCard: some View {

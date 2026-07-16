@@ -645,7 +645,6 @@ struct BudgetSimulator2027View: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("2027 Simulator")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: true)
         .onChange(of: sim.reserveTargetPercent) { _, newValue in
             let updatedRoom = max(store.estimatedFundBalance - (store.appropriations * (newValue / 100)), 0)
             sim.oneTimeDeployment = min(sim.oneTimeDeployment, updatedRoom)

@@ -46,7 +46,6 @@ struct NewsAndEventsView: View {
         }
         .navigationTitle("News & Events")
         .navigationBarTitleDisplayMode(.inline)
-        .adMobBannerPlacement(showDebugPlaceholder: true)
     }
 
     @ViewBuilder

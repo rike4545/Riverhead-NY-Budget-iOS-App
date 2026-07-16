@@ -10,7 +10,6 @@
 		9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC62F71A48000246CF7 /* FirebaseAnalytics */; };
 		9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */; };
 		9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */; };
-		A1B2C3D42FAD100000000001 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42FAD100000000002 /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +82,6 @@
 				9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
 				9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */,
 				9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */,
-				A1B2C3D42FAD100000000001 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +148,6 @@
 			);
 			name = "Riverhead NY Budget App";
 			packageProductDependencies = (
-				A1B2C3D42FAD100000000002 /* GoogleMobileAds */,
 				9338FCC62F71A48000246CF7 /* FirebaseAnalytics */,
 				9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */,
 				9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */,
@@ -239,7 +236,6 @@
 			mainGroup = 93F848662E3F22C1002CEF92;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -445,7 +441,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -455,7 +451,6 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Riverhead NY Budget App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Riverhead Budget";
-				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-9917450718827221~2743419962";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -470,7 +465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.07.10;
+				MARKETING_VERSION = 2026.07.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -494,7 +489,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -504,7 +499,6 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Riverhead NY Budget App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Riverhead Budget";
-				INFOPLIST_KEY_GADApplicationIdentifier = "ca-app-pub-9917450718827221~2743419962";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -519,7 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.07.10;
+				MARKETING_VERSION = 2026.07.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -665,14 +659,6 @@
 				minimumVersion = 12.11.0;
 			};
 		};
-		A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -690,11 +676,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsIdentitySupport;
-		};
-		A1B2C3D42FAD100000000002 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1B2C3D42FAD100000000003 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

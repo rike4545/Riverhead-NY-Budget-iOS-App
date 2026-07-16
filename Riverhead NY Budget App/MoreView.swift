@@ -298,7 +298,6 @@ struct MoreView: View {
                 }
             }
         }
-        .adMobBannerPlacement(showDebugPlaceholder: false)
     }
 
     // MARK: - Sections

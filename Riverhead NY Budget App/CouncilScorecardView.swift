@@ -568,12 +568,12 @@ struct CouncilScorecardView: View {
                 campaignFilerID: "506796",
                 additionalCampaignFilings: [],
                 campaignFilingNote: "COMMCAND fields: candidate ID 506792, Jerome Halpin, County, TERMINATED, Supervisor, Suffolk / Riverhead Town, 91 Rabbit Run, Riverhead. Committee/filer ID 506796, Friends of Jerry Halpin, County, ACTIVE, Authorized Single Candidate Committee, Suffolk / Riverhead Town, contact Kristen Halpin, 91 Rabbit Run, Riverhead. Because the contact shares the Halpin name and address, Kristen is included in the Halpin family-financing watch list.",
-                campaignRaised: 12_953.74,
-                campaignDirectContributions: 12_953.74,
+                campaignRaised: 18_440.74,
+                campaignDirectContributions: 18_440.74,
                 campaignTransfersIn: 0,
-                campaignLastReported: makeDate(year: 2025, month: 11, day: 25),
-                campaignLoanAmount: nil,
-                campaignLoanLastReported: nil
+                campaignLastReported: makeDate(year: 2026, month: 6, day: 12),
+                campaignLoanAmount: 5_600.00,
+                campaignLoanLastReported: makeDate(year: 2026, month: 4, day: 22)
             ),
             .init(
                 name: "Kenneth Rothwell",

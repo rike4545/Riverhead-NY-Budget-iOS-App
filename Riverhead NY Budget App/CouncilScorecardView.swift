@@ -144,6 +144,9 @@ struct CouncilScorecardView: View {
         let loanAmount: Double?
         let loanLastReported: Date?
         let filingEvents: [CampaignFilingEvent]?
+        let donorCount: Int?
+        let avgDonationPerDonor: Double?
+        let contributorTypeBreakdown: [ContributorTypeAmount]?
     }
 
     // A single filing SUBMISSION (e.g. "January Periodic, Original, Itemized, State/Local"),
@@ -200,6 +203,12 @@ struct CouncilScorecardView: View {
         let contributorType: String?
         let schedule: String?
         let filingLabel: String?
+    }
+
+    private struct ContributorTypeAmount: Codable {
+        let type: String
+        let amount: Double
+        let donorCount: Int
     }
 
     private struct RaisedRow: Decodable {
@@ -1698,6 +1707,42 @@ struct CouncilScorecardView: View {
                     Label("Latest filing date: \(reportDateFormatter.string(from: reported))", systemImage: "calendar")
                 } else {
                     Label("Latest filing date: not updated", systemImage: "calendar.badge.exclamationmark")
+                }
+            }
+
+            Section("Key Metrics") {
+                if let nextElection = member.nextElection {
+                    let days = Calendar.current.dateComponents([.day], from: Date(), to: nextElection).day ?? 0
+                    Label(
+                        days > 0 ? "\(days) day\(days == 1 ? "" : "s") to next election" : (days == 0 ? "Election is today" : "Election has passed"),
+                        systemImage: "calendar.badge.clock"
+                    )
+                }
+                if let donorCount = snapshot?.donorCount, let avg = snapshot?.avgDonationPerDonor {
+                    filingMetricRow("Avg. donation per donor", avg)
+                    Text("\(donorCount) donor\(donorCount == 1 ? "" : "s")")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                if let raised = snapshot?.raised {
+                    let perResident = raised / Double(riverheadPopulationEstimate2024)
+                    filingMetricRow("Raised per resident", perResident)
+                    Text("of \(riverheadPopulationEstimate2024.formatted()) residents (2024 Census estimate)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            if let breakdown = snapshot?.contributorTypeBreakdown, !breakdown.isEmpty {
+                Section("Who's Giving") {
+                    ForEach(breakdown, id: \.type) { bucket in
+                        HStack {
+                            Text("\(bucket.type) (\(bucket.donorCount))")
+                            Spacer()
+                            Text(bucket.amount, format: .currency(code: "USD"))
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                 }
             }
 
@@ -3585,8 +3630,23 @@ struct CouncilScorecardView: View {
             lastReported: member.campaignLastReported,
             loanAmount: member.campaignLoanAmount,
             loanLastReported: member.campaignLoanLastReported,
-            filingEvents: nil
+            filingEvents: nil,
+            donorCount: nil,
+            avgDonationPerDonor: nil,
+            contributorTypeBreakdown: nil
         )
+    }
+
+    /// Riverhead town population — U.S. Census Bureau QuickFacts 2024 estimate. Used only to
+    /// contextualize a committee's raised total as a "per resident" figure, not a per-capita claim
+    /// about spending or services.
+    private let riverheadPopulationEstimate2024 = 35_980
+
+    private func contributorTypeBucket(_ desc: String?) -> String {
+        let lower = (desc ?? "").lowercased()
+        if lower.contains("individual") { return "Individual" }
+        if lower.contains("committee") || lower.contains("party") || lower.contains("pac") { return "PAC / Committee" }
+        return "Business / Other"
     }
 
     private func baselinePetrocelliContributions(for member: CouncilMember) -> [TopContribution]? {
@@ -4263,6 +4323,20 @@ struct CouncilScorecardView: View {
                     (lhs.lastActivity ?? .distantPast) > (rhs.lastActivity ?? .distantPast)
                 }
 
+                let memberContributionRows = memberFilerIDs.flatMap { contributionRowsByFiler[$0] ?? [] }
+                let donorCount = memberContributionRows.count
+                let avgDonationPerDonor = donorCount > 0 ? (raised ?? 0) / Double(donorCount) : nil
+                var typeTotals: [String: (amount: Double, count: Int)] = [:]
+                for row in memberContributionRows {
+                    let bucket = contributorTypeBucket(row.cntrbr_type_desc)
+                    let amount = parseAmount(row.org_amt) ?? 0
+                    let existing = typeTotals[bucket] ?? (0, 0)
+                    typeTotals[bucket] = (existing.amount + amount, existing.count + 1)
+                }
+                let contributorTypeBreakdown = typeTotals
+                    .map { ContributorTypeAmount(type: $0.key, amount: $0.value.amount, donorCount: $0.value.count) }
+                    .sorted { $0.amount > $1.amount }
+
                 updated[member.id] = CampaignSnapshot(
                     committeeName: filingRefs.map(\.committeeName).joined(separator: " + "),
                     filerID: memberFilerIDs.joined(separator: ", "),
@@ -4291,7 +4365,10 @@ struct CouncilScorecardView: View {
                     lastReported: reported,
                     loanAmount: loanAmt > 0 ? loanAmt : nil,
                     loanLastReported: loanDate,
-                    filingEvents: filingEvents
+                    filingEvents: filingEvents,
+                    donorCount: donorCount > 0 ? donorCount : nil,
+                    avgDonationPerDonor: avgDonationPerDonor,
+                    contributorTypeBreakdown: contributorTypeBreakdown.isEmpty ? nil : contributorTypeBreakdown
                 )
             }
 

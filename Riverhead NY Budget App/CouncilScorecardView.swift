@@ -149,6 +149,16 @@ struct CouncilScorecardView: View {
         let contributorTypeBreakdown: [ContributorTypeAmount]?
         let outstandingLoanAmount: Double?
         let outstandingLoanYear: String?
+        /// Direct contributions by election year, most recent first, excluding the current cycle.
+        let historicalByYear: [YearBreakdown]?
+    }
+
+    private struct YearBreakdown: Codable {
+        let year: String
+        let raised: Double
+        let donorCount: Int
+        let avgDonationPerDonor: Double?
+        let typeBreakdown: [ContributorTypeAmount]
     }
 
     // A single filing SUBMISSION (e.g. "January Periodic, Original, Itemized, State/Local"),
@@ -1757,6 +1767,14 @@ struct CouncilScorecardView: View {
                 }
             }
 
+            if let byYear = snapshot?.historicalByYear, !byYear.isEmpty {
+                Section("Direct Contributions by Year") {
+                    ForEach(byYear, id: \.year) { year in
+                        yearDisclosureRow(year)
+                    }
+                }
+            }
+
             if (snapshot?.loanAmount ?? 0) > 0 || (snapshot?.outstandingLoanAmount ?? 0) > 0 {
                 Section("Loans") {
                     if let received = snapshot?.loanAmount, received > 0 {
@@ -2594,6 +2612,31 @@ struct CouncilScorecardView: View {
         Text("\(title): \(currencyFormatter.string(from: NSNumber(value: amount ?? 0)) ?? "$0")")
             .font(.caption)
             .foregroundStyle(.secondary)
+    }
+
+    private func currencyText(_ amount: Double) -> String {
+        currencyFormatter.string(from: NSNumber(value: amount)) ?? "$0"
+    }
+
+    @ViewBuilder
+    private func yearDisclosureRow(_ year: YearBreakdown) -> some View {
+        let title = "\(year.year) — \(currencyText(year.raised))"
+        DisclosureGroup(title) {
+            let donorLabel = "\(year.donorCount) donor" + (year.donorCount == 1 ? "" : "s")
+            let avgLabel = year.avgDonationPerDonor.map { ", avg " + currencyText($0) } ?? ""
+            Text(donorLabel + avgLabel)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            ForEach(year.typeBreakdown, id: \.type) { bucket in
+                HStack {
+                    Text("\(bucket.type) (\(bucket.donorCount))")
+                    Spacer()
+                    Text(currencyText(bucket.amount))
+                        .foregroundStyle(.secondary)
+                }
+                .font(.caption)
+            }
+        }
     }
 
     private func contributionLimitNote(title: String, detail: String) -> some View {
@@ -3663,7 +3706,8 @@ struct CouncilScorecardView: View {
             avgDonationPerDonor: nil,
             contributorTypeBreakdown: nil,
             outstandingLoanAmount: nil,
-            outstandingLoanYear: nil
+            outstandingLoanYear: nil,
+            historicalByYear: nil
         )
     }
 
@@ -4374,24 +4418,46 @@ struct CouncilScorecardView: View {
                     (lhs.lastActivity ?? .distantPast) > (rhs.lastActivity ?? .distantPast)
                 }
 
-                // Scoped to the current election cycle only (not the full 2005-2026 window) —
-                // lumping 20 years of donors together understates how concentrated recent giving
-                // actually is.
-                let memberContributionRows = memberFilerIDs.flatMap { contributionRowsByFiler[$0] ?? [] }
-                    .filter { $0.election_year == String(campaignFilingEndYear) }
-                let donorCount = memberContributionRows.count
-                let currentCycleRaised = memberContributionRows.reduce(0) { $0 + (parseAmount($1.org_amt) ?? 0) }
-                let avgDonationPerDonor = donorCount > 0 ? currentCycleRaised / Double(donorCount) : nil
-                var typeTotals: [String: (amount: Double, count: Int)] = [:]
-                for row in memberContributionRows {
-                    let bucket = contributorTypeBucket(row.cntrbr_type_desc)
-                    let amount = parseAmount(row.org_amt) ?? 0
-                    let existing = typeTotals[bucket] ?? (0, 0)
-                    typeTotals[bucket] = (existing.amount + amount, existing.count + 1)
+                // Full window here (not scoped to one year) so both the current-cycle breakdown
+                // AND the by-year historical breakdown below can be built from a single pass.
+                let allMemberContributionRows = memberFilerIDs.flatMap { contributionRowsByFiler[$0] ?? [] }
+
+                func typeBreakdown(for rows: [ContributionRow]) -> [ContributorTypeAmount] {
+                    var typeTotals: [String: (amount: Double, count: Int)] = [:]
+                    for row in rows {
+                        let bucket = contributorTypeBucket(row.cntrbr_type_desc)
+                        let amount = parseAmount(row.org_amt) ?? 0
+                        let existing = typeTotals[bucket] ?? (0, 0)
+                        typeTotals[bucket] = (existing.amount + amount, existing.count + 1)
+                    }
+                    return typeTotals
+                        .map { ContributorTypeAmount(type: $0.key, amount: $0.value.amount, donorCount: $0.value.count) }
+                        .sorted { $0.amount > $1.amount }
                 }
-                let contributorTypeBreakdown = typeTotals
-                    .map { ContributorTypeAmount(type: $0.key, amount: $0.value.amount, donorCount: $0.value.count) }
-                    .sorted { $0.amount > $1.amount }
+
+                let currentCycleRows = allMemberContributionRows.filter { $0.election_year == String(campaignFilingEndYear) }
+                let donorCount = currentCycleRows.count
+                let currentCycleRaised = currentCycleRows.reduce(0) { $0 + (parseAmount($1.org_amt) ?? 0) }
+                let avgDonationPerDonor = donorCount > 0 ? currentCycleRaised / Double(donorCount) : nil
+                let contributorTypeBreakdown = typeBreakdown(for: currentCycleRows)
+
+                let historicalByYear: [YearBreakdown] = Dictionary(
+                    grouping: allMemberContributionRows.filter { $0.election_year != String(campaignFilingEndYear) },
+                    by: { $0.election_year ?? "Unknown" }
+                )
+                .map { year, rows in
+                    let yearBreakdown = typeBreakdown(for: rows)
+                    let yearRaised = yearBreakdown.reduce(0) { $0 + $1.amount }
+                    let yearDonorCount = yearBreakdown.reduce(0) { $0 + $1.donorCount }
+                    return YearBreakdown(
+                        year: year,
+                        raised: yearRaised,
+                        donorCount: yearDonorCount,
+                        avgDonationPerDonor: yearDonorCount > 0 ? yearRaised / Double(yearDonorCount) : nil,
+                        typeBreakdown: yearBreakdown
+                    )
+                }
+                .sorted { $0.year > $1.year }
 
                 let outstandingRow = memberFilerIDs.compactMap { outstandingByFiler[$0] }.max { ($0.election_year ?? "") < ($1.election_year ?? "") }
                 let outstandingLoanAmount = outstandingRow.flatMap { parseAmount($0.amount) }
@@ -4430,7 +4496,8 @@ struct CouncilScorecardView: View {
                     avgDonationPerDonor: avgDonationPerDonor,
                     contributorTypeBreakdown: contributorTypeBreakdown.isEmpty ? nil : contributorTypeBreakdown,
                     outstandingLoanAmount: outstandingLoanAmount,
-                    outstandingLoanYear: outstandingLoanYear
+                    outstandingLoanYear: outstandingLoanYear,
+                    historicalByYear: historicalByYear.isEmpty ? nil : historicalByYear
                 )
             }
 

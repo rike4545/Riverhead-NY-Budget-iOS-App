@@ -17,11 +17,11 @@ enum RiverheadTheme {
 
     // MARK: - Brand Palette (sampled from townofriverheadny.gov)
 
-    /// Deep navy used in the logo & some header elements (#19537B).
-    static let brandNavy: Color = Color(red: 0.098, green: 0.325, blue: 0.482)
+    /// Deep navy — extracted directly from townofriverheadny.gov's own CSS variables (#284A69).
+    static let brandNavy: Color = Color(red: 0.157, green: 0.290, blue: 0.412)
 
-    /// Medium header/nav blue (#4E7595).
-    static let brandBlue: Color = Color(red: 0.306, green: 0.459, blue: 0.584)
+    /// Medium header/nav blue — extracted directly from townofriverheadny.gov's own CSS variables (#4A7297).
+    static let brandBlue: Color = Color(red: 0.290, green: 0.447, blue: 0.592)
 
     /// Shoreline / pie-chart blue accent (#4285A7).
     static let brandSky: Color = Color(red: 0.259, green: 0.522, blue: 0.655)
@@ -75,7 +75,7 @@ enum RiverheadTheme {
             // Lighter variant (#4E9FC8) — readable on dark gray / near-black backgrounds.
             ? UIColor(red: 0.306, green: 0.624, blue: 0.784, alpha: 1.0)
             // Original navy (#19537B) — works on light backgrounds.
-            : UIColor(red: 0.098, green: 0.325, blue: 0.482, alpha: 1.0)
+            : UIColor(red: 0.157, green: 0.290, blue: 0.412, alpha: 1.0)
         }
     )
 
@@ -173,7 +173,7 @@ enum RiverheadTheme {
                 Color(uiColor: UIColor { trait in
                     trait.userInterfaceStyle == .dark
                     ? UIColor(red: 0.055, green: 0.082, blue: 0.118, alpha: 1.0)
-                    : UIColor(red: 0.098, green: 0.325, blue: 0.482, alpha: 0.14)
+                    : UIColor(red: 0.157, green: 0.290, blue: 0.412, alpha: 0.14)
                 }),
                 Color(uiColor: UIColor { trait in
                     trait.userInterfaceStyle == .dark

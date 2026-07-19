@@ -1722,6 +1722,12 @@ struct CouncilScorecardView: View {
                 .padding(.vertical, 4)
             }
 
+            Section {
+                Text(candidateSummary(for: member, snapshot: snapshot))
+                    .font(.subheadline)
+                    .padding(.vertical, 4)
+            }
+
             Section("\(campaignFilingEndYear) Election Cycle") {
                 if let nextElection = member.nextElection {
                     let days = Calendar.current.dateComponents([.day], from: Date(), to: nextElection).day ?? 0
@@ -3715,6 +3721,56 @@ struct CouncilScorecardView: View {
     /// contextualize a committee's raised total as a "per resident" figure, not a per-capita claim
     /// about spending or services.
     private let riverheadPopulationEstimate2024 = 35_980
+
+    /// A deterministic, template-based summary of a candidate's fundraising — not an
+    /// LLM-generated take. Every clause restates a number already shown elsewhere on the
+    /// filing detail screen, so nothing here can say something the underlying data doesn't support.
+    private func candidateSummary(for member: CouncilMember, snapshot: CampaignSnapshot?) -> String {
+        let shortName = member.name.replacingOccurrences(of: "Honorable ", with: "")
+        let cycleRaised = snapshot?.latestYearDirect ?? 0
+        let donorCount = snapshot?.donorCount ?? 0
+
+        var electionClause = ""
+        if let nextElection = member.nextElection {
+            let days = Calendar.current.dateComponents([.day], from: Date(), to: nextElection).day ?? 0
+            if days > 0 {
+                electionClause = ", with \(days) day\(days == 1 ? "" : "s") until the election"
+            } else if days == 0 {
+                electionClause = ", with the election today"
+            }
+        }
+
+        var sentences: [String] = []
+        if donorCount > 0 {
+            sentences.append("\(shortName) has raised \(currencyText(cycleRaised)) from \(donorCount) donor\(donorCount == 1 ? "" : "s") this cycle\(electionClause).")
+        } else {
+            sentences.append("\(shortName) has no reported contributions for the \(campaignFilingEndYear) cycle yet\(electionClause).")
+        }
+
+        if let breakdown = snapshot?.contributorTypeBreakdown, let dominant = breakdown.max(by: { $0.amount < $1.amount }), cycleRaised > 0 {
+            let share = Int((dominant.amount / cycleRaised) * 100)
+            if share >= 50 {
+                sentences.append("\(dominant.type) donors account for \(share)% of this cycle's fundraising.")
+            }
+        }
+
+        if let outstanding = snapshot?.outstandingLoanAmount, outstanding > 0 {
+            let yearClause = snapshot?.outstandingLoanYear.map { " as of the \($0) filing." } ?? "."
+            sentences.append("The campaign is carrying \(currencyText(outstanding)) in outstanding loans\(yearClause)")
+        } else if let received = snapshot?.loanAmount, received > 0 {
+            sentences.append("The campaign has taken loans totaling \(currencyText(received)) over time, none currently outstanding.")
+        } else {
+            sentences.append("No campaign loans on file.")
+        }
+
+        let watchlistTotal = (snapshot?.petrocelliContributions?.reduce(0) { $0 + $1.amount } ?? 0)
+            + (snapshot?.scottPointeContributions?.reduce(0) { $0 + $1.amount } ?? 0)
+        if watchlistTotal > 0 {
+            sentences.append("Flagged for transparency: \(currencyText(watchlistTotal)) from related-party watch-list donors.")
+        }
+
+        return sentences.joined(separator: " ")
+    }
 
     private func contributorTypeBucket(_ desc: String?) -> String {
         let lower = (desc ?? "").lowercased()

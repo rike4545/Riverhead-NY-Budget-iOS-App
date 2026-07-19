@@ -336,6 +336,7 @@ fileprivate enum BudgetToolDestination {
     case budgetSimulator
     case earlyRetirementModel
     case spendingReduction
+    case communityPreservationFund
 }
 
 fileprivate struct BudgetToolShortcut: Identifiable {
@@ -384,7 +385,8 @@ fileprivate struct BudgetToolsDirectoryView: View {
                 .init(title: "Hearing Toolkit", subtitle: "Questions, comments, and review prompts.", symbol: "person.2.wave.2.fill", destination: .section(.hearing)),
                 .init(title: "Capital And Debt", subtitle: "Projects, borrowing, BANs, and debt pressure.", symbol: "building.columns.fill", destination: .section(.capitalDebt)),
                 .init(title: "Fund Balance", subtitle: "Reserve levels, policy targets, and surplus context.", symbol: "banknote.fill", destination: .section(.fundBalance)),
-                .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", destination: .section(.myTaxes))
+                .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", destination: .section(.myTaxes)),
+                .init(title: "Community Preservation Fund", subtitle: "The CPF's real revenue swings, debt, and the rate-increase question.", symbol: "leaf.fill", destination: .communityPreservationFund)
             ]
         )
     ]
@@ -446,6 +448,13 @@ fileprivate struct BudgetToolsDirectoryView: View {
         case .spendingReduction:
             NavigationLink {
                 Budget2027SpendingReductionView()
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        case .communityPreservationFund:
+            NavigationLink {
+                CommunityPreservationFundView()
             } label: {
                 rowContent(shortcut)
             }
@@ -714,7 +723,15 @@ fileprivate enum BudgetRecommendations2027 {
     static let deputyTownClerkCost = Budget2027ScenarioModel.deputyTownClerkCost
     static let policeOfficerCost = Budget2027ScenarioModel.policeOfficerCost
     static let communityImprovementGrantSeries = 50_000.00
-    static let legalAidGrantApplication = 15_000.00
+    // Illustrative one-time grant amounts, sized like the deployment plan's other
+    // single-nonprofit grants - not an official Town commitment or budget line.
+    static let communityBlockGrants: [CommunityGrant] = [
+        .init(organization: "Legal Aid Society of Suffolk County", focus: "Civil legal services for low-income Suffolk County residents", amount: 15_000),
+        .init(organization: "Helping Hands of the East End", focus: "Emergency assistance for East End families and individuals in crisis", amount: 10_000),
+        .init(organization: "RISE", focus: "Long Island community and social-services nonprofit", amount: 10_000),
+        .init(organization: "Long Island Housing Partnership (LIHP)", focus: "Regional affordable-housing development and homebuyer counseling", amount: 15_000),
+    ]
+    static let communityBlockGrantsTotal = communityBlockGrants.reduce(0) { $0 + $1.amount }
     // Canonical recurring service-investment total, shared with Budget2027ScenarioModel so both models
     // stay in sync (excludes the one-time community-improvement and Legal Aid grants below).
     static let addedServiceInvestments = Budget2027ScenarioModel.recurringServiceInvestmentsTotal
@@ -2521,6 +2538,13 @@ struct FundBalanceSnapshot: Identifiable {
     }
 }
 
+struct CommunityGrant: Identifiable {
+    let id = UUID()
+    let organization: String
+    let focus: String
+    let amount: Double
+}
+
 fileprivate struct FundBalanceDeploymentOption: Identifiable {
     let id = UUID()
     let number: Int
@@ -2600,9 +2624,9 @@ fileprivate struct FundBalanceDashboardView: View {
             ),
             .init(
                 number: 5,
-                title: "File a one-time Legal Aid support grant",
-                amount: BudgetRecommendations2027.legalAidGrantApplication,
-                detail: "Reserve a one-time $15,000 grant application to the Legal Aid Society of Suffolk County as a targeted community-support investment that does not create a recurring operating obligation."
+                title: "File a round of community block grants",
+                amount: BudgetRecommendations2027.communityBlockGrantsTotal,
+                detail: "Reserve one-time grant applications to four community-service nonprofits serving Riverhead and the East End as targeted community-support investments that do not create a recurring operating obligation. See the breakdown below."
             ),
             .init(
                 number: 6,
@@ -2814,6 +2838,33 @@ fileprivate struct FundBalanceDashboardView: View {
                          : "Remaining capacity could be assigned by board resolution to innovation, policy modernization, programmatic pilots, or additional debt reduction while preserving a materially stronger reserve position than the current policy floor.")
                         .font(.caption2)
                         .foregroundStyle(RiverheadTheme.textSecondary)
+                }
+            }
+
+            GlassCard(
+                title: "Community block grants — who would get funded",
+                subtitle: "The breakdown behind deployment option #5 above: four nonprofits serving Riverhead and the East End. These amounts are the app's own illustrative sizing, not an official Town budget line or commitment."
+            ) {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(BudgetRecommendations2027.communityBlockGrants) { grant in
+                        HStack(alignment: .top, spacing: 10) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(grant.organization)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(RiverheadTheme.textPrimary)
+                                Text(grant.focus)
+                                    .font(.caption)
+                                    .foregroundStyle(RiverheadTheme.textSecondary)
+                            }
+                            Spacer()
+                            Text(grant.amount, format: .currency(code: "USD"))
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(RiverheadTheme.gold)
+                        }
+                        if grant.id != BudgetRecommendations2027.communityBlockGrants.last?.id {
+                            Divider().opacity(0.18)
+                        }
+                    }
                 }
             }
 

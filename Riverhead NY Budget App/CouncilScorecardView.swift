@@ -208,6 +208,24 @@ struct CouncilScorecardView: View {
         let lastReported: Date?
     }
 
+    // Riverhead Town-race contribution limits under NY Election Law § 14-114, computed by
+    // the Business Council of NYS from the registered-voter-count formula. Published August
+    // 2022, so it reflects that cycle's registered-voter count, not necessarily the current
+    // one - voter rolls (and therefore these dollar caps) shift over time, so treat this as a
+    // concrete recent reference point rather than this exact cycle's number.
+    private enum RiverheadContributionLimits {
+        struct Limit {
+            let individual: Double
+            let family: Double
+        }
+
+        static let asOfYear = 2022
+        static let source = "Business Council of New York State, \"NYS Campaign Contribution Limits\""
+        static let general = Limit(individual: 1109.30, family: 5546.50)
+        static let democraticPrimary = Limit(individual: 1000, family: 1538.00)
+        static let republicanPrimary = Limit(individual: 1000, family: 2000.75)
+    }
+
     private struct TopContribution: Codable {
         let donorName: String
         let amount: Double
@@ -1415,33 +1433,41 @@ struct CouncilScorecardView: View {
                         tint: RiverheadTheme.brandGold
                     )
 
-                    ForEach(Array(Dictionary(grouping: employeeDonorMatches, by: \.officialName).sorted(by: { $0.key < $1.key })), id: \.key) { officialName, matches in
-                        DisclosureGroup("\(officialName) (\(matches.count))") {
-                            ForEach(matches) { match in
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(match.employeeName)
-                                        .font(.caption.weight(.semibold))
-                                    if let title = match.title {
-                                        Text([title, match.department].compactMap { $0 }.joined(separator: ", "))
+                    ForEach(Array(Dictionary(grouping: employeeDonorMatches, by: \.electionYear).sorted(by: { $0.key > $1.key })), id: \.key) { year, yearMatches in
+                        let yearTotal = yearMatches.reduce(0) { $0 + $1.amount }
+                        let yearEmployeeCount = Set(yearMatches.map(\.employeeName)).count
+                        DisclosureGroup {
+                            ForEach(Array(Dictionary(grouping: yearMatches, by: \.officialName).sorted(by: { $0.key < $1.key })), id: \.key) { officialName, matches in
+                                DisclosureGroup("\(officialName) (\(matches.count))") {
+                                    ForEach(matches) { match in
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(match.employeeName)
+                                                .font(.caption.weight(.semibold))
+                                            if let title = match.title {
+                                                Text([title, match.department].compactMap { $0 }.joined(separator: ", "))
+                                                    .font(.caption2)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                            HStack {
+                                                Text(currencyFormatter.string(from: NSNumber(value: match.amount)) ?? "$0")
+                                                    .font(.caption.weight(.semibold))
+                                                Text("· \(match.electionYear) \(match.filingDesc)")
+                                                    .foregroundStyle(.secondary)
+                                                if let date = match.date {
+                                                    Text("· \(reportDateFormatter.string(from: date))")
+                                                        .foregroundStyle(.secondary)
+                                                }
+                                            }
                                             .font(.caption2)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                    HStack {
-                                        Text(currencyFormatter.string(from: NSNumber(value: match.amount)) ?? "$0")
-                                            .font(.caption.weight(.semibold))
-                                        Text("· \(match.electionYear) \(match.filingDesc)")
-                                            .foregroundStyle(.secondary)
-                                        if let date = match.date {
-                                            Text("· \(reportDateFormatter.string(from: date))")
-                                                .foregroundStyle(.secondary)
                                         }
+                                        .padding(.vertical, 2)
                                     }
-                                    .font(.caption2)
                                 }
-                                .padding(.vertical, 2)
+                                .font(.caption)
                             }
+                        } label: {
+                            yearDonorSummaryLabel(year: year, count: yearMatches.count, employeeCount: yearEmployeeCount, total: yearTotal)
                         }
-                        .font(.caption)
                     }
                 }
             }
@@ -1929,9 +1955,18 @@ struct CouncilScorecardView: View {
 
             Section {
                 VStack(alignment: .leading, spacing: 8) {
+                    Text("This is the general shape of the law (NY Election Law § 14-114) — those formulas produce an actual dollar cap once you know the district's registered-voter count. For a Riverhead Town race, the Business Council of New York State computed that cap as of \(String(RiverheadContributionLimits.asOfYear)):")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    riverheadLimitRow(label: "General election", limit: RiverheadContributionLimits.general)
+                    riverheadLimitRow(label: "Democratic primary", limit: RiverheadContributionLimits.democraticPrimary)
+                    riverheadLimitRow(label: "Republican primary", limit: RiverheadContributionLimits.republicanPrimary)
+
                     contributionLimitNote(
                         title: "Most donors",
-                        detail: "capped at the number of registered voters in the district × $0.05 — a limit that scales with the size of the race, not a flat dollar figure."
+                        detail: "capped at the number of registered voters in the district × $0.05, minimum $1,000 — a limit that scales with the size of the race, not a flat dollar figure."
                     )
                     contributionLimitNote(
                         title: "Family donors",
@@ -1941,7 +1976,7 @@ struct CouncilScorecardView: View {
                         title: "The candidate's own money",
                         detail: "no cap at all. New York's self-funding limit only applies to candidates in the state's public campaign-financing program — local town races aren't part of it, so a candidate (or, per the cap above, their family) can put in far more than any ordinary donor could."
                     )
-                    Text("Every dollar amount above is real. The specific legal cap for this committee isn't computed here — it depends on the registered-voter count for the exact race and year, which we haven't verified. This is the general shape of the law (NY Election Law § 14-114), not a pass/fail verdict. Confirm specifics with the NY State or Suffolk County Board of Elections before treating any number as authoritative.")
+                    Text("Registered-voter counts (and therefore these dollar caps) shift over time, so treat these as a concrete, real reference point rather than a guarantee for the current cycle — confirm the up-to-date figure with the Suffolk County Board of Elections' own Comprehensive Limits Report before treating any specific donor or committee as over or under the line. Source: \(RiverheadContributionLimits.source).")
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -2624,6 +2659,17 @@ struct CouncilScorecardView: View {
         currencyFormatter.string(from: NSNumber(value: amount)) ?? "$0"
     }
 
+    private func yearDonorSummaryLabel(year: String, count: Int, employeeCount: Int, total: Double) -> some View {
+        HStack {
+            Text(year.isEmpty ? "Unlabeled year" : year)
+                .font(.caption.weight(.semibold))
+            Spacer()
+            Text("\(count) \(count == 1 ? "contribution" : "contributions") · \(employeeCount) \(employeeCount == 1 ? "employee" : "employees") · \(currencyText(total))")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+    }
+
     @ViewBuilder
     private func yearDisclosureRow(_ year: YearBreakdown) -> some View {
         let title = "\(year.year) — \(currencyText(year.raised))"
@@ -2653,6 +2699,20 @@ struct CouncilScorecardView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private func riverheadLimitRow(label: String, limit: RiverheadContributionLimits.Limit) -> some View {
+        HStack {
+            Text(label)
+                .font(.caption.weight(.semibold))
+            Spacer()
+            VStack(alignment: .trailing, spacing: 1) {
+                Text("Individual: \(currencyText(limit.individual))")
+                Text("Family: \(currencyText(limit.family))")
+            }
+            .font(.caption2)
+            .foregroundStyle(.secondary)
         }
     }
 

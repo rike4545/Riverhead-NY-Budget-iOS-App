@@ -132,6 +132,13 @@ struct CivicToolkitsHubView: View {
                 ) { RiverheadCampaignContributionsView() }
 
                 toolRow(
+                    title: "Candidate Watch",
+                    subtitle: "Who's running in November 2026, their campaign links, and their stated platforms.",
+                    symbol: "person.crop.circle.badge.checkmark",
+                    tint: RiverheadTheme.accent
+                ) { CandidateWatchView() }
+
+                toolRow(
                     title: "Procurement Watch",
                     subtitle: "When contracts skip normal competitive bidding — sole-source exceptions and the Petrocelli Town Square deal.",
                     symbol: "doc.text.magnifyingglass",

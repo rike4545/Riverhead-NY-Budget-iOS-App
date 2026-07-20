@@ -363,6 +363,12 @@ struct MoreView: View {
             }
 
             NavigationLink {
+                CandidateWatchView()
+            } label: {
+                Label("Candidate Watch", systemImage: "person.crop.circle.badge.checkmark")
+            }
+
+            NavigationLink {
                 PluralityGovernanceView()
             } label: {
                 Label("Plurality & Oversight", systemImage: "person.3.sequence.fill")

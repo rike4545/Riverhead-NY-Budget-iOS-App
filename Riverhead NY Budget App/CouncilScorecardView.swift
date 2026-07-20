@@ -802,8 +802,8 @@ struct CouncilScorecardView: View {
         [
             .init(
                 name: "Tim Hubbard",
-                role: "Former Councilman",
-                responsibilitySummary: "Served on the Riverhead Town Board. No longer serving as of 2024.",
+                role: "Former Town Supervisor; previously an 8-year Councilman",
+                responsibilitySummary: "Sworn in as the Town's 64th Supervisor on January 1, 2024; lost the November 2025 election to Jerry Halpin by 37 votes after a recount, so Halpin took office January 2026. No longer serving.",
                 grade: "N/A",
                 superlative: "Former Official",
                 highlights: [
@@ -812,7 +812,7 @@ struct CouncilScorecardView: View {
                 photoURL: nil,
                 serviceStarted: nil,
                 termStarts: nil,
-                termEnds: makeDate(year: 2023, month: 12, day: 31),
+                termEnds: makeDate(year: 2025, month: 12, day: 31),
                 nextElection: nil,
                 annualPay: nil,
                 committeeLiaisons: [],
@@ -822,7 +822,7 @@ struct CouncilScorecardView: View {
                 campaignCommitteeName: "Friends of Tim Hubbard",
                 campaignFilerID: "154933",
                 additionalCampaignFilings: [],
-                campaignFilingNote: "Former Councilman, Riverhead Town. COMMCAND filer ID 154933 (Friends of Tim Hubbard) — verify against NY COMMCAND as records may be terminated. Included for Petrocelli-related campaign finance review across the 2005–2026 window.",
+                campaignFilingNote: "Former Town Supervisor (2024–2025), Riverhead Town; previously an 8-year Town Councilman. COMMCAND filer ID 154933 (Friends of Tim Hubbard) — verify against NY COMMCAND as records may be terminated. Included for Petrocelli-related campaign finance review across the 2005–2026 window.",
                 campaignRaised: nil,
                 campaignDirectContributions: nil,
                 campaignTransfersIn: nil,

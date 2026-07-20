@@ -50,18 +50,27 @@ struct OfficialsPensionsView: View {
             office: "Town Clerk",
             party: "R",
             status: .pension,
-            background: "Retired Riverhead Town police officer (retired after 23 years) and a former Town Councilman (12 years, term-limited).",
-            pension: "Collects a New York State Police & Fire Retirement System (PFRS) pension. The Empire Center's SeeThroughNY reported it at about $45,556 in 2015, while he was serving on the Town Board; the current figure (with cost-of-living adjustments) is public on SeeThroughNY.",
-            sources: "RiverheadLOCAL, “Former councilman James Wooten returns to Riverhead Town Hall” (Dec. 2020) · Riverhead News-Review, “Town Board member calls for a raise” (Dec. 2015) — cites SeeThroughNY pension of $45,556 · Empire Center, SeeThroughNY pension database."
+            background: "Retired Riverhead Town police officer on 7/4/2005 (retired after 23 years) and a former Town Councilman (12 years, term-limited).",
+            pension: "Collects a New York State Police & Fire Retirement System (PFRS) pension. The Empire Center's SeeThroughNY reported it at about $45,556 in 2015, while he was serving on the Town Board; SeeThroughNY reports it at $48,454 in 2025.",
+            sources: "RiverheadLOCAL, “Former councilman James Wooten returns to Riverhead Town Hall” (Dec. 2020) · Riverhead News-Review, “Town Board member calls for a raise” (Dec. 2015) — cites SeeThroughNY pension of $45,556 · Empire Center, SeeThroughNY pension database — James M Wooten, Town of Riverhead, NYS Police and Fire Retirement System, retirement date 7/4/2005, $48,454 (2025)."
         ),
         .init(
             name: "Denise Merrifield",
             office: "Councilwoman",
             party: "R",
             status: .pension,
-            background: "Retired in 2018 after about 30 years as a Suffolk County prosecutor — Assistant District Attorney, 11 years in the Homicide Bureau, and Deputy Bureau Chief of the Child Abuse & Domestic Violence Bureau. Now also an adjunct law professor.",
-            pension: "As a 30-year county employee who retired in 2018, she collects a New York State & Local Employees' Retirement System (ERS) pension. The amount is public on SeeThroughNY.",
-            sources: "Rocky Point Rotary, “From Courtroom to Council: Denise Merrifield’s Path to Leadership” · Committee to Elect Denise Merrifield — candidate biography · Empire Center, SeeThroughNY pension database."
+            background: "Retired January 2, 2018 after about 30 years as a Suffolk County prosecutor — Assistant District Attorney, 11 years in the Homicide Bureau, and Deputy Bureau Chief of the Child Abuse & Domestic Violence Bureau. Now also an adjunct law professor.",
+            pension: "As a 30-year county employee who retired January 2, 2018, she collects a New York State & Local Employees' Retirement System (ERS) pension. SeeThroughNY reported it at $99,818 in 2025.",
+            sources: "Rocky Point Rotary, “From Courtroom to Council: Denise Merrifield’s Path to Leadership” · Committee to Elect Denise Merrifield — candidate biography · Empire Center, SeeThroughNY pension database — Denise M Merrifield, retirement date 1/2/2018, $99,818 (2025)."
+        ),
+        .init(
+            name: "Timothy C. Hubbard",
+            office: "Former Town Supervisor (2024–2025); previously an 8-year Councilman",
+            party: "R",
+            status: .pension,
+            background: "A 32-year career with the Riverhead Town Police Department, retiring 12/28/2014 as a Detective 1st Grade. Served 8 years as Town Councilman, then was sworn in as the Town's 64th Supervisor on January 1, 2024. Lost the November 2025 election to Jerry Halpin by 37 votes after a recount.",
+            pension: "As a retired 32-year Riverhead police officer, he collects a New York State Police & Fire Retirement System (PFRS) pension — meaning he was drawing it throughout his time as both Councilman and Supervisor. SeeThroughNY reported it at $92,195 in 2025.",
+            sources: "RiverheadLOCAL, “A new day in Riverhead: Tim Hubbard… sworn in as the county seat's 64th town supervisor” (Jan. 2, 2024) · East End Beacon, “With Recount Complete, Riverhead Town Supervisor Tim Hubbard Concedes” · Dan's Papers, “Timothy Hubbard: Riverhead's Homegrown Town Supervisor” (April 2024) · Empire Center, SeeThroughNY pension database — Timothy C Hubbard, Town of Riverhead, NYS Police and Fire Retirement System, retirement date 12/28/2014, $92,195 (2025)."
         ),
         .init(
             name: "Sean M. Walter",
@@ -185,7 +194,7 @@ struct OfficialsPensionsView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Elected Officials & Public Pensions")
                         .font(.headline)
-                    Text("Some of Riverhead's elected officials spent long careers in government, retired, and now serve in elected office while collecting a New York State pension. This page reviews every current elected official and says plainly which ones do — a straightforward transparency question, since both the pension and the salary are public money.")
+                    Text("Some of Riverhead's elected officials spent long careers in government, retired, and then served in elected office while collecting a New York State pension. This page reviews every current elected official — plus recently former ones with a notable pension story — and says plainly which ones do: a straightforward transparency question, since both the pension and the salary are public money.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }

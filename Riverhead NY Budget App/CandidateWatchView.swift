@@ -87,7 +87,17 @@ struct CandidateWatchView: View {
                 .padding(.vertical, 4)
             }
 
-            Section("Election Calendar") {
+            Section {
+                ForEach(CandidateWatchData.townSupervisorCandidates) { candidate in
+                    candidateRow(candidate)
+                }
+            } header: {
+                Text("Town Supervisor")
+            } footer: {
+                Text("1 seat · \(CandidateWatchData.townSupervisorCandidates.count) candidates · Election Nov 3, 2026")
+            }
+
+            Section("Key Dates") {
                 ForEach(CandidateWatchData.electionCalendar, id: \.label) { item in
                     HStack {
                         Text(item.label)
@@ -100,53 +110,57 @@ struct CandidateWatchView: View {
                 }
             }
 
-            Section("Page Legend") {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("**Bold** = Active Candidate · * = Incumbent")
-                        .font(.footnote)
-                    Text("Incumbent party listed first.")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(.vertical, 2)
-            }
-
-            Section("Town Supervisor") {
-                ForEach(CandidateWatchData.townSupervisorCandidates) { candidate in
-                    candidateRow(candidate)
-                }
-            }
-
             Section {
                 Text(CandidateWatchData.noRaceNote)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             } header: {
-                Text("Why there's only one race")
+                Text("Only the Supervisor seat is on this ballot")
             }
         }
         .navigationTitle("Candidate Watch")
         .navigationBarTitleDisplayMode(.inline)
     }
 
+    // Spell out the party code so a reader never has to decode "R/C" or a bare letter.
+    private func partyName(_ code: String) -> String {
+        switch code {
+        case "D": return "Democrat"
+        case "R": return "Republican"
+        case "R/C": return "Republican · Conservative"
+        case "C": return "Conservative"
+        default: return code
+        }
+    }
+
     @ViewBuilder
     private func candidateRow(_ candidate: CandidateWatchCandidate) -> some View {
-        let nameLine = "\(candidate.name)\(candidate.incumbent ? " *" : "")"
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(nameLine)
-                    .font(.subheadline.weight(.bold))
-                    .foregroundStyle(RiverheadTheme.brandNavy)
-                Text("· \(candidate.party)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+        let isDem = candidate.party == "D"
+        VStack(alignment: .leading, spacing: 8) {
+            Text(candidate.name)
+                .font(.headline)
+                .foregroundStyle(RiverheadTheme.brandNavy)
+
+            HStack(spacing: 6) {
+                Text(candidate.incumbent ? "Incumbent" : "Challenger")
+                    .font(.caption2.weight(.bold))
+                    .padding(.horizontal, 9).padding(.vertical, 3)
+                    .background(candidate.incumbent ? RiverheadTheme.brandNavy : RiverheadTheme.brandNavy.opacity(0.12))
+                    .foregroundStyle(candidate.incumbent ? .white : RiverheadTheme.brandNavy)
+                    .clipShape(Capsule())
+                Text(partyName(candidate.party))
+                    .font(.caption2.weight(.bold))
+                    .padding(.horizontal, 9).padding(.vertical, 3)
+                    .background((isDem ? Color.blue : Color.red).opacity(0.14))
+                    .foregroundStyle(isDem ? Color.blue : Color.red)
+                    .clipShape(Capsule())
             }
 
-            HStack(spacing: 10) {
+            HStack(spacing: 14) {
                 if let url = candidate.websiteURL {
                     Link(destination: url) {
-                        Label("Website", systemImage: "globe")
+                        Label("Campaign site", systemImage: "globe")
                             .font(.caption.weight(.semibold))
                     }
                 }
@@ -163,7 +177,7 @@ struct CandidateWatchView: View {
                 .font(.caption)
                 .foregroundStyle(RiverheadTheme.textSecondary)
 
-            Text("Stated platform:")
+            Text("What they say they'll do")
                 .font(.caption.weight(.bold))
                 .padding(.top, 2)
             ForEach(candidate.platform, id: \.self) { line in

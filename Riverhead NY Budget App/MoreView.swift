@@ -369,6 +369,12 @@ struct MoreView: View {
             }
 
             NavigationLink {
+                BoardElectionsView()
+            } label: {
+                Label("How the Board Was Elected", systemImage: "chart.bar.doc.horizontal")
+            }
+
+            NavigationLink {
                 PluralityGovernanceView()
             } label: {
                 Label("Plurality & Oversight", systemImage: "person.3.sequence.fill")

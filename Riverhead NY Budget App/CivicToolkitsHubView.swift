@@ -139,6 +139,13 @@ struct CivicToolkitsHubView: View {
                 ) { CandidateWatchView() }
 
                 toolRow(
+                    title: "How the Board Was Elected",
+                    subtitle: "Each member's actual winning vote count vs. the town's population and registered voters.",
+                    symbol: "chart.bar.doc.horizontal",
+                    tint: RiverheadTheme.brandBlue
+                ) { BoardElectionsView() }
+
+                toolRow(
                     title: "Procurement Watch",
                     subtitle: "When contracts skip normal competitive bidding — sole-source exceptions and the Petrocelli Town Square deal.",
                     symbol: "doc.text.magnifyingglass",

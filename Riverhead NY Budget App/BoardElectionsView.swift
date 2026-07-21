@@ -95,16 +95,37 @@ struct BoardElectionsView: View {
                             .font(.caption)
                             .foregroundStyle(.secondary)
 
-                        HStack(alignment: .top, spacing: 18) {
-                            voteFigure("\(m.votes.formatted())", "votes to win", big: true)
-                            voteFigure(pct(m.votes, BoardElectionsData.population), "of population")
-                            voteFigure(pct(m.votes, BoardElectionsData.registeredVoters), "of reg. voters")
+                        HStack(alignment: .firstTextBaseline, spacing: 6) {
+                            Text(m.votes.formatted())
+                                .font(.title2.weight(.heavy))
+                                .foregroundStyle(RiverheadTheme.brandNavy)
+                            Text("votes won the seat")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
                         }
-                        .padding(.vertical, 2)
+                        .padding(.top, 2)
+
+                        Text("That's \(pct(m.votes, BoardElectionsData.registeredVoters)) of the town's \(BoardElectionsData.registeredVoters.formatted()) registered voters — and \(pct(m.votes, BoardElectionsData.population)) of its \(BoardElectionsData.population.formatted()) residents.")
+                            .font(.caption)
+                            .foregroundStyle(RiverheadTheme.textSecondary)
+
+                        // Bar: share of registered voters (the meaningful yardstick).
+                        GeometryReader { geo in
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(RiverheadTheme.Surface.card)
+                                .frame(height: 8)
+                                .overlay(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .fill(RiverheadTheme.accent)
+                                        .frame(width: geo.size.width * (Double(m.votes) / Double(BoardElectionsData.registeredVoters)), height: 8)
+                                }
+                        }
+                        .frame(height: 8)
 
                         Text(m.result)
                             .font(.caption)
                             .foregroundStyle(RiverheadTheme.textSecondary)
+                            .padding(.top, 2)
                     }
                     .padding(.vertical, 4)
                 }
@@ -128,15 +149,6 @@ struct BoardElectionsView: View {
             Text(label).font(.caption2).foregroundStyle(.secondary)
             Text(value).font(.title3.weight(.bold)).foregroundStyle(RiverheadTheme.brandNavy)
             Text(sub).font(.caption2).foregroundStyle(.secondary)
-        }
-    }
-
-    private func voteFigure(_ value: String, _ label: String, big: Bool = false) -> some View {
-        VStack(alignment: .leading, spacing: 1) {
-            Text(value)
-                .font(big ? .title3.weight(.heavy) : .headline.weight(.heavy))
-                .foregroundStyle(big ? RiverheadTheme.brandNavy : RiverheadTheme.accent)
-            Text(label).font(.caption2).foregroundStyle(.secondary)
         }
     }
 }

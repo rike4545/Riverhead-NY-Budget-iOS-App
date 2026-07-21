@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC62F71A48000246CF7 /* FirebaseAnalytics */; };
 		9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */; };
-		9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9338FCCB2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
 				9338FCC72F71A48000246CF7 /* FirebaseAnalytics in Frameworks */,
 				9338FCC92F71A48000246CF7 /* FirebaseAnalyticsCore in Frameworks */,
 			);
@@ -150,7 +148,6 @@
 			packageProductDependencies = (
 				9338FCC62F71A48000246CF7 /* FirebaseAnalytics */,
 				9338FCC82F71A48000246CF7 /* FirebaseAnalyticsCore */,
-				9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */,
 			);
 			productName = "Riverhead NY Budget App";
 			productReference = 93F8486F2E3F22C1002CEF92 /* Riverhead NY Budget App.app */;
@@ -671,11 +668,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsCore;
-		};
-		9338FCCA2F71A48000246CF7 /* FirebaseAnalyticsIdentitySupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9338FCC52F71A48000246CF7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsIdentitySupport;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

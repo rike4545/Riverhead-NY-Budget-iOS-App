@@ -22,6 +22,9 @@ struct SettingsView: View {
     @AppStorage("tax_exemptions")      private var exemptions: Double      = 0
     @AppStorage("tax_rate_per_1000")   private var ratePerThousand: Double = 61.9482
 
+    // MARK: - Privacy
+    @AppStorage(AnalyticsConsent.defaultsKey) private var analyticsEnabled: Bool = true
+
     // MARK: - Cached data (Council Scorecard)
     @AppStorage("council_scorecard_fetched_campaign_snapshots_json")  private var fetchedSnapshotsJSON: String  = ""
     @AppStorage("council_scorecard_previous_campaign_snapshots_json") private var previousSnapshotsJSON: String = ""
@@ -200,6 +203,16 @@ struct SettingsView: View {
 
     private var dataSection: some View {
         Section {
+            // Analytics opt-out
+            Toggle(isOn: $analyticsEnabled) {
+                Label("Share anonymous usage analytics", systemImage: "chart.bar.xaxis")
+            }
+            .onChange(of: analyticsEnabled) { _, newValue in
+                AnalyticsConsent.set(newValue)
+            }
+            .accessibilityLabel("Share anonymous usage analytics")
+            .accessibilityHint("When on, the app sends anonymous, non-advertising usage data to help improve it. Turn off to stop all analytics collection.")
+
             // Campaign filings cache
             Button {
                 showClearFilingsConfirm = true
@@ -252,7 +265,7 @@ struct SettingsView: View {
         } header: {
             Text("Data & Privacy")
         } footer: {
-            Text("All data is stored on this device only. No personal information is sent to external servers. Campaign finance data is fetched directly from NY Open Data (data.ny.gov).")
+            Text("Your property values, scorecard ratings, and cached filings stay on this device. If usage analytics is on, the app sends anonymous, non-advertising usage data (via Firebase) to help improve it — never linked to your identity, and with no advertising identifier. Campaign-finance data is fetched directly from NY Open Data (data.ny.gov).")
         }
     }
 

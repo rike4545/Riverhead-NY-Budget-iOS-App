@@ -22,6 +22,14 @@
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.utilities</string>
+    <!-- Firebase Analytics privacy hardening: keep analytics first-party only.
+         Disable Google "ad personalization" signals and any advertising-ID
+         collection, so usage data is never used for advertising. Collection
+         itself stays runtime-controllable via the Settings opt-out. -->
+    <key>GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS</key>
+    <false/>
+    <key>GOOGLE_ANALYTICS_ADID_COLLECTION_ENABLED</key>
+    <false/>
     <key>UIApplicationSceneManifest</key>
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>

@@ -36,6 +36,8 @@ private final class RiverheadAppDelegate: NSObject, UIApplicationDelegate {
         guard FirebaseApp.app() == nil else { return }
         guard Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else { return }
         FirebaseApp.configure()
+        // Honor the resident's analytics opt-out choice as early as possible.
+        AnalyticsConsent.applyStoredPreference()
         #endif
     }
 }

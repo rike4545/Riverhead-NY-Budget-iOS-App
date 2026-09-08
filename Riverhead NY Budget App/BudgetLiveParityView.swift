@@ -3,8 +3,8 @@
 //  Riverhead NY Budget App
 //
 //  Mirrors every user-facing route in Riverhead Budget Live's current SiteNav.
-//  The live web implementation is the parity fallback so newly-added web tools
-//  remain usable in iOS while native equivalents can continue to evolve.
+//  The live web implementation remains the parity fallback so newly-added web
+//  tools stay usable while route-by-route native SwiftUI parity continues.
 //
 
 import SwiftUI
@@ -43,6 +43,14 @@ enum BudgetLiveRouteGroup: String, CaseIterable, Identifiable, Sendable {
 }
 
 enum BudgetLiveParityCatalog {
+    /// Routes that now open a native SwiftUI implementation from this parity hub.
+    /// All other routes continue to use the live web fallback.
+    static let nativePaths: Set<String> = [
+        "/funds/",
+        "/compare/",
+        "/general-fund/"
+    ]
+
     static let routes: [BudgetLiveRouteGroup: [BudgetLiveRoute]] = [
         .startHere: [
             .init(title: "My Taxes", path: "/tax-bill/", systemImage: "house.and.flag.fill", detail: "Estimate a property tax bill from assessed value."),
@@ -107,6 +115,10 @@ enum BudgetLiveParityCatalog {
     static var hasUniquePaths: Bool {
         Set(orderedRoutes.map(\.path)).count == orderedRoutes.count
     }
+
+    static func isNative(_ route: BudgetLiveRoute) -> Bool {
+        nativePaths.contains(route.path)
+    }
 }
 
 @MainActor
@@ -136,9 +148,13 @@ struct BudgetLiveParityView: View {
                         .font(.headline)
                         .foregroundStyle(RiverheadTheme.accent)
 
-                    Text("All \(BudgetLiveParityCatalog.routeCount) current Riverhead Budget Live navigation destinations are available here. Each opens the live implementation inside the app, so newly published web data and behavior stay in sync while native iOS screens continue to evolve.")
+                    Text("All \(BudgetLiveParityCatalog.routeCount) current Riverhead Budget Live navigation destinations are available here. Native SwiftUI routes are used where parity is complete; the live web implementation remains the fallback everywhere else.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+
+                    Label("\(BudgetLiveParityCatalog.nativePaths.count) routes currently open natively from this parity hub", systemImage: "iphone")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.brandTeal)
 
                     if !BudgetLiveParityCatalog.hasUniquePaths {
                         Label("Parity catalog contains a duplicate route.", systemImage: "exclamationmark.triangle.fill")
@@ -155,7 +171,7 @@ struct BudgetLiveParityView: View {
                     Section {
                         ForEach(groupRoutes) { route in
                             NavigationLink {
-                                WebContentView(url: route.url, title: route.title)
+                                parityDestination(for: route)
                             } label: {
                                 BudgetLiveParityRouteRow(route: route)
                             }
@@ -176,6 +192,20 @@ struct BudgetLiveParityView: View {
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) web features")
     }
+
+    @ViewBuilder
+    private func parityDestination(for route: BudgetLiveRoute) -> some View {
+        switch route.path {
+        case "/funds/":
+            FundDetailExplorerView()
+        case "/compare/":
+            NativeBudgetCompareView()
+        case "/general-fund/":
+            NativeGeneralFundHistoryView()
+        default:
+            WebContentView(url: route.url, title: route.title)
+        }
+    }
 }
 
 private struct BudgetLiveParityRouteRow: View {
@@ -190,9 +220,20 @@ private struct BudgetLiveParityRouteRow: View {
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text(route.title)
-                    .font(.body.weight(.semibold))
-                    .foregroundStyle(RiverheadTheme.textPrimary)
+                HStack(spacing: 6) {
+                    Text(route.title)
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+
+                    if BudgetLiveParityCatalog.isNative(route) {
+                        Text("NATIVE")
+                            .font(.system(size: 9, weight: .bold, design: .rounded))
+                            .foregroundStyle(RiverheadTheme.brandTeal)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(RiverheadTheme.brandTeal.opacity(0.10), in: Capsule())
+                    }
+                }
 
                 Text(route.detail)
                     .font(.caption)
@@ -204,12 +245,17 @@ private struct BudgetLiveParityRouteRow: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(route.title)
         .accessibilityValue(route.detail)
-        .accessibilityHint("Opens the live Riverhead Budget Live feature inside the app.")
+        .accessibilityHint(
+            BudgetLiveParityCatalog.isNative(route)
+            ? "Opens the native iOS implementation."
+            : "Opens the live Riverhead Budget Live feature inside the app."
+        )
     }
 }
 
 #Preview {
     NavigationStack {
         BudgetLiveParityView()
+            .environment(RBBudgetStore())
     }
 }

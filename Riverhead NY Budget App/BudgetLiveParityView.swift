@@ -46,6 +46,7 @@ enum BudgetLiveParityCatalog {
     /// Routes that now open a native SwiftUI implementation from this parity hub.
     /// All other routes continue to use the live web fallback.
     static let nativePaths: Set<String> = [
+        "/search/",
         "/funds/",
         "/programs/",
         "/compare/",
@@ -197,6 +198,8 @@ struct BudgetLiveParityView: View {
     @ViewBuilder
     private func parityDestination(for route: BudgetLiveRoute) -> some View {
         switch route.path {
+        case "/search/":
+            NativeUnifiedSearchView()
         case "/funds/":
             FundDetailExplorerView()
         case "/programs/":

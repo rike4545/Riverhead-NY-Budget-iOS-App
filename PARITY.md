@@ -15,13 +15,32 @@ navigation groups used by the web product:
 - Research — 9
 - Evidence — 7
 
-The Budget tab exposes this catalog from the navigation bar. Each destination
-uses the existing `WebContentView` / `WKWebView` implementation and therefore
-loads the current GitHub Pages version of the feature, including data and
-behavior published after the native app was built.
+The Budget tab exposes this catalog from the navigation bar. Routes with a
+verified native counterpart open SwiftUI directly; every other destination uses
+the existing `WebContentView` / `WKWebView` implementation and therefore keeps
+loading the current GitHub Pages version until its native replacement is ready.
 
 This is **complete functional access parity**, not a claim that all 45 features
 have already been rewritten as native SwiftUI screens.
+
+## Native routes in the parity hub
+
+The first native parity slice is now active:
+
+- `/funds/` → `FundDetailExplorerView` / `FundDetailView`
+- `/programs/` → `NativeProgramBudgetView`
+- `/compare/` → `NativeBudgetCompareView`
+- `/general-fund/` → `NativeGeneralFundHistoryView`
+
+`/compare/` and `/general-fund/` decode the same normalized history JSON files
+consumed by the web app rather than maintaining a separate Swift copy of the
+web calculations.
+
+`/programs/` follows the same rule. Its material allocation logic remains in
+`web/lib/programs.ts`; web PR #41 publishes those already-computed values as a
+static `/data/programs.json` contract. Until that asset is deployed, the native
+Program Budget screen automatically falls back to the live web page instead of
+breaking access.
 
 ## Existing native coverage
 
@@ -65,6 +84,10 @@ The existing `scripts/sync-shared-data.mjs` workflow verifies copied files by
 SHA-256. Native parity work should extend this contract instead of introducing
 new hand-maintained copies of web data.
 
+For computed datasets that are better served live than bundled, the preferred
+pattern is a versioned static JSON contract generated from the same web module
+that renders the page. Program Budget is the first use of this pattern.
+
 ## Native parity definition of done
 
 A web route is fully native-parity only when the SwiftUI implementation matches
@@ -84,7 +107,6 @@ The next pass should concentrate first on routes that do not have an obvious
 full native equivalent, or whose native data contract may lag the web version:
 
 - Search
-- Program Budget
 - Community Housing Plan
 - Supervisors & Council History
 - Source Library
@@ -95,6 +117,6 @@ full native equivalent, or whose native data contract may lag the web version:
 - Officials on Social Media
 - Know Your Rights (ICE)
 
-Then audit the existing native implementations of Funds, Compare, General Fund,
-Annual Report, Campaign Finance, Outlier Watch, Budget Accuracy, and Fiscal
-Impact against their current web behavior and canonical datasets.
+Then audit the existing native implementations of Annual Report, Campaign
+Finance, Outlier Watch, Budget Accuracy, and Fiscal Impact against their current
+web behavior and canonical datasets.

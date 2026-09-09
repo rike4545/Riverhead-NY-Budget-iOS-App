@@ -52,7 +52,8 @@ enum BudgetLiveParityCatalog {
         "/programs/",
         "/compare/",
         "/general-fund/",
-        "/workforce-by-title/"
+        "/workforce-by-title/",
+        "/outliers/"
     ]
 
     static let routes: [BudgetLiveRouteGroup: [BudgetLiveRoute]] = [
@@ -214,6 +215,8 @@ struct BudgetLiveParityView: View {
             NativeGeneralFundHistoryView()
         case "/workforce-by-title/":
             WorkforceByTitleView()
+        case "/outliers/":
+            NativeOutlierWatchView()
         default:
             WebContentView(url: route.url, title: route.title)
         }

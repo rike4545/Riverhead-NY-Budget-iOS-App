@@ -9,9 +9,12 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/programs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/compare/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/general-fund/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/meetings/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/search/"))
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/meetings/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/funds/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/programs/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/compare/"))

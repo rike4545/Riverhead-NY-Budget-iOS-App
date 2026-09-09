@@ -11,9 +11,11 @@
 
 import SwiftUI
 
+@MainActor
 struct TownBoardVotesView: View {
-    private let index = RBMeetingsData.index
-    private let upcoming = RBMeetingsData.upcoming
+    @State private var index: MeetingsIndex? = RBMeetingsData.index
+    @State private var upcoming: [UpcomingMeeting] = RBMeetingsData.upcoming
+    @State private var isRefreshing = false
 
     // Card greens (match the web / Android "Coming up" card).
     private let cardGreen = Color(red: 0.941, green: 0.992, blue: 0.957)   // #F0FDF4
@@ -31,6 +33,13 @@ struct TownBoardVotesView: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
+
+                    Label(
+                        isRefreshing ? "Checking the canonical meeting record…" : "Canonical web record · bundled offline fallback",
+                        systemImage: isRefreshing ? "arrow.triangle.2.circlepath" : "checkmark.seal.fill"
+                    )
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 4)
                 .listRowBackground(Color.clear)
@@ -74,6 +83,25 @@ struct TownBoardVotesView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("Town Board Votes")
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await refreshCanonicalData()
+        }
+        .refreshable {
+            await refreshCanonicalData()
+        }
+    }
+
+    private func refreshCanonicalData() async {
+        guard !isRefreshing else { return }
+        isRefreshing = true
+
+        async let refreshedIndex = RBMeetingsData.currentIndex()
+        async let refreshedUpcoming = RBMeetingsData.currentUpcoming()
+        let (resolvedIndex, resolvedUpcoming) = await (refreshedIndex, refreshedUpcoming)
+
+        index = resolvedIndex
+        upcoming = resolvedUpcoming
+        isRefreshing = false
     }
 
     // MARK: - Coming up

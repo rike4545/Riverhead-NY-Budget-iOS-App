@@ -17,8 +17,6 @@ private struct Wage: Decodable {
     let hrMax: Double?
     let annMin: Int?
     let annMax: Int?
-    // Present only where the resolution prints an annual salary and leaves the
-    // hourly column blank: the annual bracketed between the two CSEA workweeks.
     let hrBasisLow: Int?
     let hrBasisHigh: Int?
     let hrLowLabel: String?
@@ -41,9 +39,6 @@ private struct Wage: Decodable {
         return parts.isEmpty ? "" : "2026 authorized rate · " + parts.joined(separator: " · ")
     }
 
-    /// The computed hourly bracket for titles the Town publishes only an annual
-    /// salary for — deliberately kept out of `line` so it never reads as a rate
-    /// the Board authorized.
     var derivedLine: String {
         guard hrMin == nil, let lo = hrDerivedMin, let hi = hrDerivedMax,
               let loLabel = hrLowLabel, let hiLabel = hrHighLabel else { return "" }
@@ -62,8 +57,14 @@ private struct TitleRow: Decodable, Identifiable {
 }
 
 private struct TitlesFile: Decodable {
+    struct Source: Decodable {
+        let title: String
+        let url: String
+    }
+
     let years: [Int]
     let note: String
+    let source: Source
     let titles: [TitleRow]
 }
 
@@ -90,11 +91,12 @@ struct WorkforceByTitleView: View {
     }
 
     private var years: [Int] { file?.years ?? [] }
-    private var latestYear: String { years.last.map(String.init) ?? "" }
+    private var latestYear: Int? { years.last }
+    private var latestYearLabel: String { latestYear.map(String.init) ?? "" }
 
     private var rows: [TitleRow] {
         let all = file?.titles ?? []
-        let q = query.trimmingCharacters(in: .whitespaces).lowercased()
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         let filtered = q.isEmpty ? all : all.filter { $0.title.lowercased().contains(q) }
         switch sort {
         case .latest: return filtered.sorted { $0.latest != $1.latest ? $0.latest > $1.latest : $0.title < $1.title }
@@ -104,6 +106,18 @@ struct WorkforceByTitleView: View {
         }
     }
 
+    private var distinctLatestTitles: Int {
+        (file?.titles ?? []).filter { $0.latest > 0 }.count
+    }
+
+    private var latestTitledEmployees: Int {
+        (file?.titles ?? []).reduce(0) { $0 + $1.latest }
+    }
+
+    private var biggestGain: TitleRow? {
+        (file?.titles ?? []).max { $0.delta < $1.delta }
+    }
+
     var body: some View {
         List {
             Section {
@@ -111,14 +125,29 @@ struct WorkforceByTitleView: View {
                     Text("Workforce by Title")
                         .font(.title3.weight(.bold))
                         .foregroundStyle(RiverheadTheme.textPrimary)
-                    Text("How many people hold each job title, and how each title's headcount has changed. Titles are available 2022 onward; seasonal roles (lifeguards, recreation aides) run high in summer.")
+                    Text("How many people hold each job title, and how each title's headcount has changed. Titles are available 2022 onward; seasonal roles such as lifeguards and recreation aides run high because everyone paid during the season counts for that year.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.vertical, 4)
                 .listRowBackground(Color.clear)
+            }
 
+            if file != nil {
+                Section("Snapshot") {
+                    LabeledContent("Distinct titles (\(latestYearLabel))", value: "\(distinctLatestTitles)")
+                    LabeledContent("Employees titled (\(latestYearLabel))", value: "\(latestTitledEmployees)")
+                    if let first = years.first, let last = years.last {
+                        LabeledContent("Years covered", value: "\(first)–\(last)")
+                    }
+                    if let gain = biggestGain {
+                        LabeledContent("Biggest gain", value: "\(gain.delta > 0 ? "+" : "")\(gain.delta) \(gain.title)")
+                    }
+                }
+            }
+
+            Section {
                 Picker("Sort", selection: $sort) {
                     ForEach(Sort.allCases) { Text($0.rawValue).tag($0) }
                 }
@@ -132,7 +161,7 @@ struct WorkforceByTitleView: View {
                         .font(.footnote).foregroundStyle(.secondary)
                 } else {
                     ForEach(rows) { row in
-                        TitleRowView(row: row, years: years, latestYear: latestYear)
+                        TitleRowView(row: row, years: years, latestYear: latestYearLabel)
                     }
                 }
             } header: {
@@ -140,7 +169,11 @@ struct WorkforceByTitleView: View {
             } footer: {
                 VStack(alignment: .leading, spacing: 8) {
                     if let note = file?.note { Text(note) }
-                    Text("The teal line is what the Board's January 2026 salary resolutions actually print. Those rosters have an ANNUAL SALARY column and an HOURLY column, but the Town fills the hourly one in only for part-time staff and for the Water District — the one department that publishes both. For every other full-time title no hourly rate is published, so the grey ≈ line brackets it: the annual over 2,088 hours (a 40-hour week) to over 1,827 hours (a 35-hour week). Those are the two regular workweeks in the CSEA agreement on Riverhead's 261-workday year, and all 16 of the Water District's published rates land on exactly one or the other. The Town pays biweekly, but the rate is struck on that 261-day year, not on 26 × 80 hours. Police Officers and Detectives are bracketed on their own contract: the PBA agreement sets an eight-hour tour and a duty chart of 238 work days a year, or 260 during an officer's first 30 months. The rosters don't say which schedule each title is on — that's why it's a range, and why it's arithmetic by this app rather than a rate the Board voted on. No hourly figure at all is shown for elected officials, board members (paid a stipend, not a wage), or sergeants and above, a separate Superior Officers unit whose duty chart we don't hold.")
+                    Text("Counts are distinct employees paid under each title that year. The teal line is what the Board's January 2026 salary resolutions actually print. Where the Town publishes only an annual salary, the grey ≈ line is arithmetic by this app rather than a Board-authorized hourly rate: it brackets the annual amount using the applicable workweek assumptions documented by the web app. No inferred hourly figure is presented as an official rate.")
+                    if let source = file?.source, let url = URL(string: source.url) {
+                        Link("Source: \(source.title) ↗", destination: url)
+                            .fontWeight(.semibold)
+                    }
                 }
             }
         }

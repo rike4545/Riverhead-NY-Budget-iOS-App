@@ -47,6 +47,7 @@ enum BudgetLiveParityCatalog {
     /// All other routes continue to use the live web fallback.
     static let nativePaths: Set<String> = [
         "/search/",
+        "/meetings/",
         "/funds/",
         "/programs/",
         "/compare/",
@@ -200,6 +201,8 @@ struct BudgetLiveParityView: View {
         switch route.path {
         case "/search/":
             NativeUnifiedSearchView()
+        case "/meetings/":
+            TownBoardVotesView()
         case "/funds/":
             FundDetailExplorerView()
         case "/programs/":

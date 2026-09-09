@@ -53,6 +53,7 @@ enum BudgetLiveParityCatalog {
         "/compare/",
         "/general-fund/",
         "/workforce-by-title/",
+        "/board-elections/",
         "/outliers/"
     ]
 
@@ -215,6 +216,8 @@ struct BudgetLiveParityView: View {
             NativeGeneralFundHistoryView()
         case "/workforce-by-title/":
             WorkforceByTitleView()
+        case "/board-elections/":
+            NativeBoardElectionsParityView()
         case "/outliers/":
             NativeOutlierWatchView()
         default:

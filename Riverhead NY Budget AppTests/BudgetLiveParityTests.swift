@@ -11,6 +11,7 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/general-fund/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/meetings/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/workforce-by-title/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/outliers/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {
@@ -21,6 +22,7 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/compare/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/general-fund/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/workforce-by-title/"))
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/outliers/"))
     }
 
     @Test func routeGroupsStillTotalFortyFive() {

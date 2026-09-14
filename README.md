@@ -93,6 +93,10 @@ The app is organized into five tabs: **Home**, **Budget**, **Civic**, **Tools**,
 - **Public Review** — Hearing Toolkit, Capital & Debt, Fund Balance, Tax
   Impact — each with sub-views for reserve trends, peer-town benchmarking,
   and historical fund-balance detail.
+- **Program Budget** — the adopted budget regrouped out of funds and into the
+  seven services New York's Uniform System of Accounts says the Town performs,
+  with pension and health insurance pushed back onto the programs whose staff
+  earned them, the fees each service earns back, and what the tax levy carries.
 
 ## Civic (Command Center)
 A searchable, task-oriented hub grouped by what you're trying to do:
@@ -164,10 +168,17 @@ data, and New York State Board of Elections campaign-finance disclosures.
 
 Built using:
 
-- Swift 6, SwiftUI (iOS 18.5+ deployment target)
+- SwiftUI, targeting iOS 26.0 (the project currently builds in Swift 5 language
+  mode; most source files are written to Swift 6 conventions)
 - `@Observable` / `ObservableObject` state stores injected via environment
-- Firebase Analytics (usage analytics only — no ad SDK)
-- Local CSV/PDF assets bundled for offline-first budget and payroll data
+- **No third-party SDKs and no analytics.** Nothing is linked into the app but
+  Apple's own frameworks, and nothing about how you use it leaves your device.
+- Local CSV/PDF/JSON assets bundled for offline-first budget and payroll data
+- Canonical datasets (budget supplement, payroll, program budget, Town Board
+  meetings) are generated once by the web app's ETL and mirrored into this
+  bundle, so the iOS, web and Android editions cannot disagree about a figure —
+  see `shared-data/manifest.json` in the
+  [web repo](https://github.com/rike4545/Riverhead-NY-Budget-Web-App)
 
 ---
 

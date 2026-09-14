@@ -333,6 +333,7 @@ fileprivate enum BudgetToolDestination {
     case spendingReduction
     case communityPreservationFund
     case lineItemLedger
+    case programBudget
 }
 
 fileprivate struct BudgetToolShortcut: Identifiable {
@@ -383,6 +384,7 @@ fileprivate struct BudgetToolsDirectoryView: View {
                 .init(title: "Capital And Debt", subtitle: "Projects, borrowing, BANs, and debt pressure.", symbol: "building.columns.fill", destination: .section(.capitalDebt)),
                 .init(title: "Fund Balance", subtitle: "Reserve levels, policy targets, and surplus context.", symbol: "banknote.fill", destination: .section(.fundBalance)),
                 .init(title: "Tax Impact", subtitle: "Resident-facing tax view and assumptions.", symbol: "house.and.flag.fill", destination: .section(.myTaxes)),
+                .init(title: "Program Budget", subtitle: "The adopted budget regrouped by what the Town does — full cost with benefits loaded, fees earned back, and what the levy carries.", symbol: "chart.pie.fill", destination: .programBudget),
                 .init(title: "Community Preservation Fund", subtitle: "The CPF's real revenue swings, debt, and the rate-increase question.", symbol: "leaf.fill", destination: .communityPreservationFund)
             ]
         )
@@ -459,6 +461,13 @@ fileprivate struct BudgetToolsDirectoryView: View {
         case .lineItemLedger:
             NavigationLink {
                 SupplementLineExplorerView()
+            } label: {
+                rowContent(shortcut)
+            }
+            .buttonStyle(.plain)
+        case .programBudget:
+            NavigationLink {
+                ProgramBudgetView()
             } label: {
                 rowContent(shortcut)
             }

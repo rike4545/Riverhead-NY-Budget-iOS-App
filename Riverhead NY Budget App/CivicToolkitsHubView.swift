@@ -186,6 +186,13 @@ struct CivicToolkitsHubView: View {
             // ── Budget Watching ───────────────────────────────────────────
             Section {
                 toolRow(
+                    title: "Program Budget",
+                    subtitle: "What the Town actually does, what each service costs once pension and health insurance are counted, and how much of it fees pay for.",
+                    symbol: "chart.pie.fill",
+                    tint: RiverheadTheme.brandSky
+                ) { ProgramBudgetView() }
+
+                toolRow(
                     title: "Budget Explainers",
                     subtitle: "Plain-English breakdowns of levy, reserves, fund balance, debt, and recurring costs.",
                     symbol: "text.book.closed.fill",

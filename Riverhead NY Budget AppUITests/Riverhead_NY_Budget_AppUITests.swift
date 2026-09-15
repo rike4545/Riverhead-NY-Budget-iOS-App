@@ -18,13 +18,13 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
 
         XCTAssertTrue(app.tabBars.buttons["Home"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.tabBars.buttons["Budget"].exists)
-        XCTAssertTrue(app.tabBars.buttons["Discover"].exists)
-        XCTAssertTrue(app.tabBars.buttons["Toolkits"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Civic"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Tools"].exists)
         XCTAssertTrue(app.tabBars.buttons["More"].exists)
 
-        app.tabBars.buttons["Discover"].tap()
-        XCTAssertTrue(app.staticTexts["Find the right civic move faster"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.buttons["Start with my goal"].exists)
+        app.tabBars.buttons["Civic"].tap()
+        XCTAssertTrue(app.staticTexts["Start with the issue. Leave with a next step."].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Start Here"].exists)
     }
 
     @MainActor
@@ -32,7 +32,7 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        app.tabBars.buttons["Discover"].tap()
+        app.tabBars.buttons["Civic"].tap()
         app.staticTexts["Search"].tap()
         XCTAssertTrue(app.navigationBars["Search"].waitForExistence(timeout: 5))
 
@@ -46,7 +46,7 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        app.tabBars.buttons["Discover"].tap()
+        app.tabBars.buttons["Civic"].tap()
         app.staticTexts["PDF Search"].tap()
         XCTAssertTrue(app.navigationBars["PDF Search"].waitForExistence(timeout: 5))
 

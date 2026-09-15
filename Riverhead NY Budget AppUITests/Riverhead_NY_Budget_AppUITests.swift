@@ -24,7 +24,7 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
 
         app.tabBars.buttons["Civic"].tap()
         XCTAssertTrue(app.staticTexts["Start with the issue. Leave with a next step."].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.buttons["Start Here"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["All tools"].waitForExistence(timeout: 5))
     }
 
     @MainActor
@@ -62,23 +62,51 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         }
     }
 
-    /// Catalog rows on the Civic hub are NavigationLinks whose children are
-    /// combined into a single accessibility element labelled with the row title
-    /// (CivicImprovementsView.swift:712), so they surface as buttons rather than
-    /// static text. Several sit below the fold — Trust & Privacy is the twelfth
-    /// row — and XCUITest does not scroll to an element before tapping it, so
-    /// scroll until the row is hittable rather than assuming it is on screen.
+    /// Scrolls until `element` can be tapped, or gives up. Returns whether it is
+    /// hittable, so callers can report which step actually failed.
     @MainActor
-    private func tapCatalogRow(_ title: String, in app: XCUIApplication) {
-        let row = app.buttons[title]
-        XCTAssertTrue(row.waitForExistence(timeout: 5), "No catalog row labelled \(title)")
-
+    @discardableResult
+    private func scrollUntilHittable(_ element: XCUIElement, in app: XCUIApplication) -> Bool {
         var swipes = 0
-        while !row.isHittable && swipes < 12 {
+        while !element.isHittable && swipes < 12 {
             app.swipeUp()
             swipes += 1
         }
-        XCTAssertTrue(row.isHittable, "Catalog row \(title) never scrolled into view")
+        return element.isHittable
+    }
+
+    /// The tools directory is collapsed on launch — CivicImprovementsView.swift:350
+    /// declares `@State private var showAllTools = false`, and line 740 builds the
+    /// rows only `if showAllTools`. While it is closed the rows do not exist in the
+    /// accessibility tree at all, so a missing row means "not expanded" rather than
+    /// "mislabelled" or "off screen". It sits below the goal cards and the featured
+    /// shortcuts, so reaching it means scrolling first.
+    @MainActor
+    private func expandAllTools(in app: XCUIApplication) {
+        let toggle = app.buttons["All tools"]
+        guard toggle.waitForExistence(timeout: 5) else { return }
+        guard scrollUntilHittable(toggle, in: app) else { return }
+        toggle.tap()
+    }
+
+    /// Catalog rows are NavigationLinks carrying .accessibilityElement(children:
+    /// .combine) with .accessibilityLabel(item.title) (CivicImprovementsView.swift:803),
+    /// so they surface as buttons labelled with the row title — once the directory
+    /// that contains them has been opened.
+    @MainActor
+    private func tapCatalogRow(_ title: String, in app: XCUIApplication) {
+        let row = app.buttons[title]
+        if !row.exists {
+            expandAllTools(in: app)
+        }
+        XCTAssertTrue(
+            row.waitForExistence(timeout: 5),
+            "No catalog row labelled \(title) after expanding the All tools directory"
+        )
+        XCTAssertTrue(
+            scrollUntilHittable(row, in: app),
+            "Catalog row \(title) exists but never scrolled into view"
+        )
         row.tap()
     }
 

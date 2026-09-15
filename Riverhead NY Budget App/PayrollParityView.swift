@@ -449,8 +449,13 @@ private struct NativePayrollExplorerView: View {
         return trimmed.isEmpty ? "0" : String(trimmed)
     }
 
+    // LabeledContent(_:value:) with a non-literal title does not resolve: the
+    // title slot wants a LocalizedStringKey, a String variable is not a string
+    // literal, and the compiler falls through to init(content:label:). The
+    // trailing-closure form takes a StringProtocol title and is what the rest of
+    // this target already uses.
     private func stat(_ label: String, _ value: String) -> some View {
-        LabeledContent(label, value: value)
+        LabeledContent(label) { Text(value) }
     }
 }
 
@@ -478,7 +483,7 @@ private struct NativePayrollRecordDetailView: View {
             if !row.otherComponents.isEmpty {
                 Section("Other pay breakdown") {
                     ForEach(row.otherComponents) { component in
-                        LabeledContent(component.label, value: money(component.amount))
+                        LabeledContent(component.label) { Text(money(component.amount)) }
                     }
                 } footer: {
                     Text("The named components plus any residual ‘Other pay & adjustments’ reconcile to gross minus regular minus overtime.")
@@ -649,7 +654,7 @@ private struct NativeAuthorizedSalaryView: View {
         isLoading = false
     }
 
-    private func stat(_ label: String, _ value: String) -> some View { LabeledContent(label, value: value) }
+    private func stat(_ label: String, _ value: String) -> some View { LabeledContent(label) { Text(value) } }
 }
 
 // MARK: - Raises
@@ -810,7 +815,7 @@ private struct NativeSalaryRaisesView: View {
         isLoading = false
     }
 
-    private func stat(_ label: String, _ value: String) -> some View { LabeledContent(label, value: value) }
+    private func stat(_ label: String, _ value: String) -> some View { LabeledContent(label) { Text(value) } }
 }
 
 private func money(_ value: Double) -> String {

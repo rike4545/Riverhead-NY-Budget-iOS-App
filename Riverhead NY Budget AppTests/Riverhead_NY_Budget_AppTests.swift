@@ -3,6 +3,7 @@
 //  Riverhead NY Budget AppTests
 //
 
+import Foundation
 import Testing
 @testable import Riverhead_NY_Budget_App
 

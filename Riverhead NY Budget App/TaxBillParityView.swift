@@ -160,7 +160,10 @@ struct NativeTaxBillParityView: View {
                             range: 200_000...1_500_000,
                             step: 10_000,
                             displayValue: currency(marketValue),
-                            hint: "Estimated assessed value: \(currency(effectiveAssessed)) using Riverhead's \(data.equalization.residentialAssessmentRatio, specifier: "%.2f")% residential assessment ratio. This conversion is an approximation."
+                            // `hint` is a String, not a LocalizedStringKey, so the
+                            // `specifier:` interpolation SwiftUI provides for Text
+                            // does not exist here. Format it before interpolating.
+                            hint: "Estimated assessed value: \(currency(effectiveAssessed)) using Riverhead's \(String(format: "%.2f", data.equalization.residentialAssessmentRatio))% residential assessment ratio. This conversion is an approximation."
                         )
                     }
 

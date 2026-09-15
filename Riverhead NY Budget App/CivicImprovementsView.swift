@@ -862,6 +862,9 @@ struct CivicImprovementsHubView: View {
                         }
                         .buttonStyle(.plain)
                         .simultaneousGesture(TapGesture().onEnded { remember(item.destination) })
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel(item.title)
+                        .accessibilityValue(item.subtitle)
 
                         if item.id != searchResults.last?.id {
                             Divider().padding(.leading, 54)

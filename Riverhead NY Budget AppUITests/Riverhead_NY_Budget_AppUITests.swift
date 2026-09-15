@@ -33,11 +33,11 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         app.launch()
 
         app.tabBars.buttons["Civic"].tap()
-        tapCatalogRow("Search", in: app)
+        openCatalogRow("Search", in: app)
         XCTAssertTrue(app.navigationBars["Search"].waitForExistence(timeout: 5))
 
         app.navigationBars.buttons.element(boundBy: 0).tap()
-        tapCatalogRow("Budget Scorecard", in: app)
+        openCatalogRow("Budget Scorecard", in: app)
         XCTAssertTrue(app.navigationBars["Budget Scorecard"].waitForExistence(timeout: 5))
     }
 
@@ -47,11 +47,11 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         app.launch()
 
         app.tabBars.buttons["Civic"].tap()
-        tapCatalogRow("PDF Search", in: app)
+        openCatalogRow("PDF Search", in: app)
         XCTAssertTrue(app.navigationBars["PDF Search"].waitForExistence(timeout: 5))
 
         app.navigationBars.buttons.element(boundBy: 0).tap()
-        tapCatalogRow("Trust & Privacy", in: app)
+        openCatalogRow("Trust & Privacy", in: app)
         XCTAssertTrue(app.navigationBars["Trust & Privacy"].waitForExistence(timeout: 5))
     }
 
@@ -75,37 +75,44 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         return element.isHittable
     }
 
-    /// The tools directory is collapsed on launch — CivicImprovementsView.swift:350
-    /// declares `@State private var showAllTools = false`, and line 740 builds the
-    /// rows only `if showAllTools`. While it is closed the rows do not exist in the
-    /// accessibility tree at all, so a missing row means "not expanded" rather than
-    /// "mislabelled" or "off screen". It sits below the goal cards and the featured
-    /// shortcuts, so reaching it means scrolling first.
+    /// Opens a catalog destination through the Civic Command Center's embedded
+    /// search field (CivicImprovementsView.swift:485), which is the shortest
+    /// deterministic path to any tool.
+    ///
+    /// The alternative — the "All tools" directory — is a poor test target: it
+    /// is collapsed on launch (`showAllTools = false`, line 350) and its rows
+    /// are built only `if showAllTools` (line 740), so they are absent from the
+    /// accessibility tree until it is expanded, and the toggle itself sits
+    /// below the goal and featured sections and has to be scrolled to first.
+    ///
+    /// The search field has none of that: it lives in the header hero at the
+    /// top of the scroll view, so it is on screen the moment the tab appears.
+    /// A non-empty query swaps `mainContent` for `searchResultsSection`
+    /// (line 446), which means the featured cards are gone too and exactly one
+    /// element carries the row's title as its label.
     @MainActor
-    private func expandAllTools(in app: XCUIApplication) {
-        let toggle = app.buttons["All tools"]
-        guard toggle.waitForExistence(timeout: 5) else { return }
-        guard scrollUntilHittable(toggle, in: app) else { return }
-        toggle.tap()
-    }
+    private func openCatalogRow(_ title: String, in app: XCUIApplication) {
+        let field = app.textFields["Search tools and topics"]
+        XCTAssertTrue(
+            field.waitForExistence(timeout: 10),
+            "Civic Command Center search field never appeared"
+        )
 
-    /// Catalog rows are NavigationLinks carrying .accessibilityElement(children:
-    /// .combine) with .accessibilityLabel(item.title) (CivicImprovementsView.swift:803),
-    /// so they surface as buttons labelled with the row title — once the directory
-    /// that contains them has been opened.
-    @MainActor
-    private func tapCatalogRow(_ title: String, in app: XCUIApplication) {
+        // Returning from a pushed destination leaves the previous query in place.
+        let clear = app.buttons["Clear search"]
+        if clear.exists { clear.tap() }
+
+        field.tap()
+        field.typeText(title)
+
         let row = app.buttons[title]
-        if !row.exists {
-            expandAllTools(in: app)
-        }
         XCTAssertTrue(
             row.waitForExistence(timeout: 5),
-            "No catalog row labelled \(title) after expanding the All tools directory"
+            "Searching for \"\(title)\" produced no result row labelled \(title)"
         )
         XCTAssertTrue(
             scrollUntilHittable(row, in: app),
-            "Catalog row \(title) exists but never scrolled into view"
+            "Result row \(title) exists but never scrolled clear of the keyboard"
         )
         row.tap()
     }

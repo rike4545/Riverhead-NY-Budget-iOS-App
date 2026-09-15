@@ -190,7 +190,7 @@ struct CivicToolkitsHubView: View {
                     subtitle: "What the Town actually does, what each service costs once pension and health insurance are counted, and how much of it fees pay for.",
                     symbol: "chart.pie.fill",
                     tint: RiverheadTheme.brandSky
-                ) { ProgramBudgetView() }
+                ) { NativeProgramBudgetView() }
 
                 toolRow(
                     title: "Budget Explainers",

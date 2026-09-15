@@ -467,7 +467,7 @@ fileprivate struct BudgetToolsDirectoryView: View {
             .buttonStyle(.plain)
         case .programBudget:
             NavigationLink {
-                ProgramBudgetView()
+                NativeProgramBudgetView()
             } label: {
                 rowContent(shortcut)
             }

@@ -132,7 +132,9 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
     let diagnostics: Diagnostics
 }
 
-private enum ProgramBudgetParityClient {
+/// Internal rather than private so the contract tests can decode the same
+/// bundled file through the same code path the app uses.
+enum ProgramBudgetParityClient {
     static let dataURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data/programs.json")!
     static let livePageURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/programs/")!
 

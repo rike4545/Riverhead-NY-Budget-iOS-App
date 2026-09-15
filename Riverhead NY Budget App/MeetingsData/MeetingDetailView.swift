@@ -11,17 +11,18 @@
 
 import SwiftUI
 
+@MainActor
 struct MeetingDetailView: View {
     let slug: String
     let date: String
 
     @State private var contestedOnly = false
-    private let detail: MeetingDetail?
+    @State private var detail: MeetingDetail?
 
     init(slug: String, date: String) {
         self.slug = slug
         self.date = date
-        self.detail = RBMeetingsData.meeting(slug)
+        _detail = State(initialValue: RBMeetingsData.meeting(slug))
     }
 
     var body: some View {
@@ -68,6 +69,18 @@ struct MeetingDetailView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle(date)
         .navigationBarTitleDisplayMode(.inline)
+        .task(id: slug) {
+            await refreshCanonicalDetail()
+        }
+        .refreshable {
+            await refreshCanonicalDetail()
+        }
+    }
+
+    private func refreshCanonicalDetail() async {
+        if let current = await RBMeetingsData.currentMeeting(slug) {
+            detail = current
+        }
     }
 
     // MARK: - Preliminary (agenda docket, no votes yet)

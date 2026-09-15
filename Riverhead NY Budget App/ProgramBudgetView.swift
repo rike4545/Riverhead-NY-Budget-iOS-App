@@ -529,7 +529,10 @@ struct ProgramBudgetView: View {
 
 // MARK: - One service
 
-struct ProgramBudgetDetailView: View {
+/// File-scoped: ProgramBudgetParityView.swift declares its own private type of
+/// the same name for the parity-hub route. Both are internal implementation
+/// detail of their screen, and neither should be reachable from the other.
+private struct ProgramBudgetDetailView: View {
     let program: ProgramBudgetProgram
     let budget: ProgramBudget
 

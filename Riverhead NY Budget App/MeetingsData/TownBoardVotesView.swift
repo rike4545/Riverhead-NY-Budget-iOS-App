@@ -16,11 +16,23 @@
 
 import SwiftUI
 
+@MainActor
 struct TownBoardVotesView: View {
-    private let index = RBMeetingsData.index
-    private let schedule = RBMeetingsData.schedule
-    private let upcoming = RBMeetingsData.upcoming
-    private let awaitingVoteRecord = RBMeetingsData.awaitingVoteRecord
+    // Seeded from the bundled snapshot so the first frame is instant and works
+    // offline, then replaced by the web app's canonical copy if one is reachable
+    // — the bundle only refreshes on an App Store release, and the Board meets
+    // twice a month.
+    @State private var index: MeetingsIndex? = RBMeetingsData.index
+    @State private var schedule: MeetingSchedule? = RBMeetingsData.schedule
+    @State private var isRefreshing = false
+
+    private var upcoming: [UpcomingMeeting] {
+        RBMeetingsData.upcomingMeetings(in: schedule)
+    }
+
+    private var awaitingVoteRecord: UpcomingMeeting? {
+        RBMeetingsData.meetingAwaitingVoteRecord(in: schedule, index: index)
+    }
 
     // Card greens (match the web / Android "Coming up" card).
     private let cardGreen = Color(red: 0.941, green: 0.992, blue: 0.957)   // #F0FDF4
@@ -44,6 +56,13 @@ struct TownBoardVotesView: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
+
+                    Label(
+                        isRefreshing ? "Checking the canonical meeting record…" : "Canonical web record · bundled offline fallback",
+                        systemImage: isRefreshing ? "arrow.triangle.2.circlepath" : "checkmark.seal.fill"
+                    )
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 4)
                 .listRowBackground(Color.clear)
@@ -91,6 +110,28 @@ struct TownBoardVotesView: View {
         .background(RiverheadTheme.backgroundGradient.ignoresSafeArea())
         .navigationTitle("Town Board Votes")
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await refreshCanonicalData()
+        }
+        .refreshable {
+            await refreshCanonicalData()
+        }
+    }
+
+    /// Prefers the web app's published copy, falling back to what is already on
+    /// screen. Both halves are fetched together because the "held, but no roll
+    /// call yet" card is derived from the schedule and the index agreeing.
+    private func refreshCanonicalData() async {
+        guard !isRefreshing else { return }
+        isRefreshing = true
+
+        async let refreshedIndex = RBMeetingsData.currentIndex()
+        async let refreshedSchedule = RBMeetingsData.currentSchedule()
+        let (resolvedIndex, resolvedSchedule) = await (refreshedIndex, refreshedSchedule)
+
+        if let resolvedIndex { index = resolvedIndex }
+        if let resolvedSchedule { schedule = resolvedSchedule }
+        isRefreshing = false
     }
 
     // MARK: - Coming up

@@ -82,6 +82,17 @@ struct MainTabView: View {
             Tab(AppTab.budget.title, systemImage: AppTab.budget.systemImage, value: AppTab.budget) {
                 NavigationStack {
                     RiverheadBudgetHubView()
+                        .toolbar {
+                            ToolbarItem(placement: .topBarLeading) {
+                                NavigationLink {
+                                    BudgetLiveParityView()
+                                } label: {
+                                    Image(systemName: "network")
+                                }
+                                .accessibilityLabel("Budget Live")
+                                .accessibilityHint("Opens every feature currently available in the Riverhead Budget Live web app.")
+                            }
+                        }
                 }
             }
 

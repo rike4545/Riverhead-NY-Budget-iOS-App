@@ -13,6 +13,17 @@ struct ContractImpactEngineTests {
 
     private let engine = ContractImpactEngine()
 
+    /// The default engine is constructed with ContractCatalog.defaultWageActions(),
+    /// so it carries Riverhead's real, executed union schedules — and the engine
+    /// applies a contractual action in preference to fallbackWageGrowth, which it
+    /// consults only for years no contract covers (ContractImpactEngine.swift:152).
+    ///
+    /// Tests below that are about the engine's own mechanics run against an empty
+    /// catalog. Otherwise they are not testing fallback growth at all; they are
+    /// accidentally asserting on the CSEA contract, and every raise the Town
+    /// negotiates breaks them.
+    private let bareEngine = ContractImpactEngine(wageActions: [:])
+
     private func singleGroup(
         payroll: Double = 1_000_000,
         fte: Double = 10,
@@ -56,16 +67,30 @@ struct ContractImpactEngineTests {
 
     @Test func estimateNoGrowthHoldsConstant() {
         let g = singleGroup(payroll: 1_000_000, fallbackGrowth: 0)
-        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2027)
+        let results = bareEngine.estimate(groups: [g], startYear: 2024, endYear: 2027)
         #expect(results.count == 4)
         for r in results {
             #expect(abs(r.totalPersonnelCost - 1_000_000) < 1)
         }
     }
 
+    /// The behaviour the Contract Cost Estimator actually ships, and the reason the
+    /// tests above needed a bare engine: an executed contract governs, and the
+    /// fallback is ignored for any year it covers. Figures are the CSEA CBA and the
+    /// 2026-2029 MOA applied to $1,000,000 across 10 FTE.
+    @Test func executedContractScheduleOverridesFallbackGrowth() {
+        let g = singleGroup(payroll: 1_000_000, fallbackGrowth: 0.10)
+        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2027)
+        #expect(results.count == 4)
+        #expect(abs(results[0].totalPersonnelCost - 1_000_000) < 1)   // base year
+        #expect(abs(results[1].totalPersonnelCost - 1_020_000) < 1)   // 2025 +2.0%
+        #expect(abs(results[2].totalPersonnelCost - 1_055_400) < 1)   // 2026 +2.0% + $1,500/FTE
+        #expect(abs(results[3].totalPersonnelCost - 1_091_785) < 1)   // 2027 +2.5% + $1,000/FTE
+    }
+
     @Test func estimateFallbackGrowthCompounds() {
         let g = singleGroup(payroll: 1_000_000, fallbackGrowth: 0.10)
-        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2026)
+        let results = bareEngine.estimate(groups: [g], startYear: 2024, endYear: 2026)
         // 2024: base = 1_000_000
         // 2025: 1_000_000 * 1.10 = 1_100_000
         // 2026: 1_100_000 * 1.10 = 1_210_000
@@ -83,7 +108,7 @@ struct ContractImpactEngineTests {
 
     @Test func estimateBenefitsInflateByYear() {
         let g = singleGroup(payroll: 0, fte: 10, benefitsPerFTE: 10_000, benefitsInflationRate: 0.06)
-        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2025)
+        let results = bareEngine.estimate(groups: [g], startYear: 2024, endYear: 2025)
         // 2024 (base year): 10 * 10_000 * 1.0 = 100_000
         // 2025 (1 year out): 100_000 * 1.06 = 106_000
         #expect(abs(results[0].totalPersonnelCost - 100_000) < 1)
@@ -92,7 +117,7 @@ struct ContractImpactEngineTests {
 
     @Test func estimateYoYDeltaIsCorrect() {
         let g = singleGroup(payroll: 1_000_000, fallbackGrowth: 0.05)
-        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2025)
+        let results = bareEngine.estimate(groups: [g], startYear: 2024, endYear: 2025)
         let delta = results[1].yoyPersonnelDelta ?? 0
         #expect(abs(delta - 50_000) < 1)
         let pct = results[1].yoyPersonnelPct ?? 0
@@ -101,7 +126,7 @@ struct ContractImpactEngineTests {
 
     @Test func estimateZeroPayrollProducesZeroCost() {
         let g = singleGroup(payroll: 0, fte: 5)
-        let results = engine.estimate(groups: [g], startYear: 2024, endYear: 2026)
+        let results = bareEngine.estimate(groups: [g], startYear: 2024, endYear: 2026)
         for r in results {
             #expect(r.totalPersonnelCost == 0)
         }

@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct TaxBillParityDocument: Decodable, Sendable {
-    let schemaVersion: Int
+    /// Absent from the canonical `tax-bill.json`; kept optional so a future
+    /// ETL revision can add it without breaking this decoder.
+    let schemaVersion: Int?
     let title: String
     let asOf: String
     let intro: String
@@ -9,8 +11,12 @@ struct TaxBillParityDocument: Decodable, Sendable {
     let rates2026: Rates
     let rates2025: Rates
     let equalization: Equalization
-    let levyFunds: [LevyFund]
-    let levyTotal: Double
+    /// The web page builds its levy-by-fund breakdown from `lib/all-funds`,
+    /// not from this document, so the canonical file carries neither of these.
+    /// Optional rather than required: a missing breakdown hides one card
+    /// instead of failing the whole decode and dropping the screen to a web view.
+    let levyFunds: [LevyFund]?
+    let levyTotal: Double?
 
     struct Source: Decodable, Sendable {
         let title: String
@@ -66,7 +72,7 @@ struct NativeTaxBillParityView: View {
     @State private var marketValue = 550_000.0
     @State private var starReduction = 0.0
 
-    private static let contractURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data/tax-bill-parity.json")!
+    private static let contractURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data/tax-bill.json")!
     private static let webFallbackURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tax-bill/")!
 
     var body: some View {
@@ -217,6 +223,7 @@ struct NativeTaxBillParityView: View {
                 }
                 .parityCard()
 
+                if let levyFunds = data.levyFunds, !levyFunds.isEmpty, let levyTotal = data.levyTotal {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("How the 2026 Town-wide property-tax levy is allocated")
                         .font(.headline)
@@ -224,8 +231,8 @@ struct NativeTaxBillParityView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
 
-                    ForEach(data.levyFunds) { fund in
-                        let share = data.levyTotal > 0 ? fund.taxLevy2026 / data.levyTotal : 0
+                    ForEach(levyFunds) { fund in
+                        let share = levyTotal > 0 ? fund.taxLevy2026 / levyTotal : 0
                         VStack(alignment: .leading, spacing: 5) {
                             HStack(alignment: .firstTextBaseline) {
                                 VStack(alignment: .leading, spacing: 2) {
@@ -254,11 +261,12 @@ struct NativeTaxBillParityView: View {
                             .font(.caption)
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Text(currency(data.levyTotal))
+                        Text(currency(levyTotal))
                             .font(.subheadline.weight(.bold))
                     }
                 }
                 .parityCard()
+                }
 
                 VStack(alignment: .leading, spacing: 8) {
                     Label("Use assessed value when you can", systemImage: "house.fill")

@@ -46,6 +46,8 @@ enum BudgetLiveParityCatalog {
     /// Routes that now open a native SwiftUI implementation from this parity hub.
     /// All other routes continue to use the live web fallback.
     static let nativePaths: Set<String> = [
+        "/tax-bill/",
+        "/payroll/",
         "/search/",
         "/meetings/",
         "/funds/",
@@ -148,29 +150,6 @@ struct BudgetLiveParityView: View {
 
     var body: some View {
         List {
-            Section {
-                VStack(alignment: .leading, spacing: 10) {
-                    Label("Complete web feature access", systemImage: "checkmark.seal.fill")
-                        .font(.headline)
-                        .foregroundStyle(RiverheadTheme.accent)
-
-                    Text("All \(BudgetLiveParityCatalog.routeCount) current Riverhead Budget Live navigation destinations are available here. Native SwiftUI routes are used where parity is complete; the live web implementation remains the fallback everywhere else.")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-
-                    Label("\(BudgetLiveParityCatalog.nativePaths.count) routes currently open natively from this parity hub", systemImage: "iphone")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.brandTeal)
-
-                    if !BudgetLiveParityCatalog.hasUniquePaths {
-                        Label("Parity catalog contains a duplicate route.", systemImage: "exclamationmark.triangle.fill")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.orange)
-                    }
-                }
-                .padding(.vertical, 4)
-            }
-
             ForEach(BudgetLiveRouteGroup.allCases) { group in
                 let groupRoutes = visibleRoutes(in: group)
                 if !groupRoutes.isEmpty {
@@ -196,12 +175,16 @@ struct BudgetLiveParityView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("Budget Live")
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) web features")
+        .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) tools")
     }
 
     @ViewBuilder
     private func parityDestination(for route: BudgetLiveRoute) -> some View {
         switch route.path {
+        case "/tax-bill/":
+            NativeTaxBillParityView()
+        case "/payroll/":
+            NativePayrollParityView()
         case "/search/":
             NativeUnifiedSearchView()
         case "/meetings/":

@@ -1,27 +1,210 @@
 {
  "source": {
-  "title": "Town of Riverhead Town Board \u2014 upcoming meetings (CivicClerk)",
+  "title": "Town of Riverhead Town Board schedule and published meeting items",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "generatedAt": "2026-08-24",
- "meetings": [
+ "scheduleSource": {
+  "title": "Town of Riverhead Town Board Meeting Schedule",
+  "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
+ },
+ "generatedAt": "2026-09-14",
+ "officialScheduleDates": [
+  "2026-01-06",
+  "2026-01-21",
+  "2026-02-03",
+  "2026-02-18",
+  "2026-03-03",
+  "2026-03-17",
+  "2026-04-07",
+  "2026-04-21",
+  "2026-05-05",
+  "2026-05-20",
+  "2026-06-02",
+  "2026-06-16",
+  "2026-07-07",
+  "2026-07-21",
+  "2026-08-04",
+  "2026-08-18",
+  "2026-09-01",
+  "2026-09-15",
+  "2026-10-06",
+  "2026-10-20",
+  "2026-11-05",
+  "2026-11-17",
+  "2026-12-01",
+  "2026-12-15"
+ ],
+ "recent": [
   {
    "slug": "2026-09-01",
    "date": "2026-09-01",
    "startDateTime": "2026-09-01T14:00:00Z",
    "type": "Town Board Meeting",
-   "agendaPublished": false,
-   "docket": [],
-   "hearings": []
-  },
+   "agendaPublished": true,
+   "itemsSource": "published-agenda+official-calendar",
+   "docket": [
+    {
+     "seq": 1,
+     "number": "2026-814",
+     "title": "Ratifies Budget Adjustment for Air Conditioning Units Replacement At Justice Court and Police Department"
+    },
+    {
+     "seq": 2,
+     "number": "2026-815",
+     "title": "Authorization For An Appraisal"
+    },
+    {
+     "seq": 3,
+     "number": "2026-816",
+     "title": "Police Department Vehicle Transfer to Code Enforcement"
+    },
+    {
+     "seq": 4,
+     "number": "2026-817",
+     "title": "Accepts Donation of T-Shirts For Annual Snapper Tournament"
+    },
+    {
+     "seq": 5,
+     "number": "2026-818",
+     "title": "Removes Fixed Assets"
+    },
+    {
+     "seq": 6,
+     "number": "2026-819",
+     "title": "Ratifies the Authorization for Police Department Employees to Attend a Training"
+    },
+    {
+     "seq": 7,
+     "number": "2026-820",
+     "title": "Accepts the Retirement of a Police Detective Anderson"
+    },
+    {
+     "seq": 8,
+     "number": "2026-821",
+     "title": "Accepts the Retirement of a Police Officer Troyan"
+    },
+    {
+     "seq": 9,
+     "number": "2026-822",
+     "title": "Accepts the Retirement of a Senior Justice Court Clerk"
+    },
+    {
+     "seq": 10,
+     "number": "2026-823",
+     "title": "Ratifies the Resignation of a Wastewater Treatment Plant Operator Trainee"
+    },
+    {
+     "seq": 11,
+     "number": "2026-824",
+     "title": "Approves Request for Military Leave of Absence"
+    },
+    {
+     "seq": 12,
+     "number": "2026-825",
+     "title": "Authorizes Attendance At Seminar By Fire Marshalls"
+    },
+    {
+     "seq": 13,
+     "number": "2026-826",
+     "title": "Authorizes Employee to Attend Civil Service Employees Association 116th Annual Delegates Meeting"
+    },
+    {
+     "seq": 14,
+     "number": "2026-827",
+     "title": "Ratifies the Authorization for the Supervisor to Execute and Agreement with a Town Employee"
+    },
+    {
+     "seq": 15,
+     "number": "2026-828",
+     "title": "Authorizes Amendment #9 of the Agreement with U.S. Department of The Interior-U.S. Geological Survey"
+    },
+    {
+     "seq": 16,
+     "number": "2026-829",
+     "title": "Authorizes the Supervisor to Execute a Professional Services Agreement for Engineering Services for Installation of Water Mains and Appurtenances for Boundary Extension Nos. 95, 96, and 97 - Riverhead Water District"
+    },
+    {
+     "seq": 17,
+     "number": "2026-830",
+     "title": "Authorizes the Supervisor to Execute a License Agreement with Darkside Productions, Inc. 2026"
+    },
+    {
+     "seq": 18,
+     "number": "2026-831",
+     "title": "Grants Administrative Approval for the Site Plan application entitled Peconic Bay Medical Center / Northwell Health \u2014 Maternity Expansion and Facade Improvements, 1 Heroes Way, SCTM No. 600-108-3-22.1"
+    },
+    {
+     "seq": 19,
+     "number": "2026-832",
+     "title": "Accepts and Approves the Appraisal of Goodman-Marks Associates, INC., Establishing Just Compensation and Authorizing the Transmission of a Written Offer for the Acquisition of the Property Located at 111 East Main Street, Riverhead, New York, Suffolk County Tax Map # 129-1-11"
+    },
+    {
+     "seq": 20,
+     "number": "2026-833",
+     "title": "Adopts Bond Resolution for Ambulance Building Project"
+    },
+    {
+     "seq": 21,
+     "number": "2026-834",
+     "title": "Acceptance of 2025 Audited Financial Statements"
+    },
+    {
+     "seq": 22,
+     "number": "2026-835",
+     "title": "Authorizes 2026 Bow Hunting For Deer On Town Property At Enterprise Park At Calverton (SCTM No. 600-135-1-7.33, Et Al.); 1751 Sound Avenue, Calverton (SCTM No. 600-60-1-2) And Middle Road, Riverhead (SCTM No. 600-80-2-10.1)"
+    },
+    {
+     "seq": 23,
+     "number": "2026-836",
+     "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 115 of the Riverhead Town Code titled \u201cProcurement Policy\u201d"
+    },
+    {
+     "seq": 24,
+     "number": "2026-837",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Extension No. 97 Forge Road - Riverhead Water District"
+    },
+    {
+     "seq": 25,
+     "number": "2026-838",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Summerwind - Riverhead Water District"
+    },
+    {
+     "seq": 26,
+     "number": "2026-839",
+     "title": "Approves Special Event Chapter 255 Application for Riverhead Athletic Club (Riverhead Atheltic Club Run the Wave 5K)"
+    },
+    {
+     "seq": 27,
+     "number": "2026-840",
+     "title": "Pays Bills"
+    }
+   ],
+   "hearings": [
+    "Increase and Improvement of Facilities of Riverhead Ambulance District",
+    "Sewer District Extension, 840 Old Country Rd",
+    "SCWA \"Monroe Balancing Test\"",
+    "Increase and Improvement of Facilities of Riverhead",
+    "Extend Sewer Connection at 840 Old Country Road",
+    "SCWA Monroe Balancing Test"
+   ]
+  }
+ ],
+ "meetings": [
   {
    "slug": "2026-09-15",
    "date": "2026-09-15",
    "startDateTime": "2026-09-15T18:00:00Z",
    "type": "Town Board Meeting",
-   "agendaPublished": false,
+   "agendaPublished": true,
+   "itemsSource": "published-agenda",
    "docket": [],
-   "hearings": []
+   "hearings": [
+    "Amend Chapter 231, Art. XIII, \"Fireworks and Pyrotechnics\"",
+    "Amend Chapter 255, Art.II, \"Special Events\"",
+    "Amend Chapter 115, \"Procurement Policy\"",
+    "Amend Chapter 231, Art XIII, \"Fireworks and",
+    "Amend Chapter 255, Art II, \" Special Events\""
+   ]
   },
   {
    "slug": "2026-10-06",
@@ -29,6 +212,7 @@
    "startDateTime": "2026-10-06T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   },
@@ -38,6 +222,7 @@
    "startDateTime": "2026-10-20T18:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   },
@@ -47,6 +232,7 @@
    "startDateTime": "2026-11-05T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   },
@@ -56,6 +242,7 @@
    "startDateTime": "2026-11-17T18:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   },
@@ -65,6 +252,7 @@
    "startDateTime": "2026-12-01T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   },
@@ -74,24 +262,7 @@
    "startDateTime": "2026-12-15T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
-   "docket": [],
-   "hearings": []
-  },
-  {
-   "slug": "2027-01-05",
-   "date": "2027-01-05",
-   "startDateTime": "2027-01-05T14:00:00Z",
-   "type": "Town Board Meeting",
-   "agendaPublished": false,
-   "docket": [],
-   "hearings": []
-  },
-  {
-   "slug": "2027-01-19",
-   "date": "2027-01-19",
-   "startDateTime": "2027-01-19T18:00:00Z",
-   "type": "Town Board Meeting",
-   "agendaPublished": false,
+   "itemsSource": null,
    "docket": [],
    "hearings": []
   }

@@ -1,25 +1,25 @@
 {
- "slug": "2026-07-21",
- "meetingDate": "2026-07-21",
+ "slug": "2026-09-01",
+ "meetingDate": "2026-09-01",
  "source": {
-  "title": "Town of Riverhead Town Board Agenda Packet, 2026-07-21 (Fiscal Impact Statements)",
+  "title": "Town of Riverhead Town Board Agenda Packet, 2026-09-01 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
  "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
  "summary": {
-  "total": 30,
-  "markedNo": 25,
-  "markedYes": 5,
-  "understated": 8,
-  "understatedMarkedNo": 3,
+  "total": 27,
+  "markedNo": 21,
+  "markedYes": 6,
+  "understated": 5,
+  "understatedMarkedNo": 1,
   "identifiedDollarsAtStake": 0,
   "largestUnderstatedMarkedNo": null
  },
  "resolutions": [
   {
-   "number": "2026-686",
+   "number": "2026-814",
    "seq": 1,
-   "title": "Water District Capital Project 82517 Summerwind Farm Subdivision Budget",
+   "title": "Ratifies Budget Adjustment for Air Conditioning Units Replacement At",
    "category": "capital",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
@@ -37,17 +37,17 @@
    }
   },
   {
-   "number": "2026-687",
+   "number": "2026-815",
    "seq": 2,
-   "title": "Sewer District Capital Project 82613 Peconic River Hotel 127 E Main St",
-   "category": "capital",
+   "title": "Authorization For An Appraisal",
+   "category": "procedural",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated \u2014 'absorbed by existing budget'",
-    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
-    "flag": "reserve-draw"
+    "verdict": "Administrative / offsetting",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
    },
    "vote": {
     "adopted": null,
@@ -57,17 +57,17 @@
    }
   },
   {
-   "number": "2026-688",
+   "number": "2026-816",
    "seq": 3,
-   "title": "Ratifies Acceptance of Donation of Life Ring For Grangebel Park",
-   "category": "donation",
+   "title": "Police Department Vehicle Transfer to Code Enforcement",
+   "category": "procedural",
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Revenue in / offsetting",
-    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
-    "flag": "neutral"
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
    },
    "vote": {
     "adopted": null,
@@ -77,9 +77,9 @@
    }
   },
   {
-   "number": "2026-689",
+   "number": "2026-817",
    "seq": 4,
-   "title": "Ratifies Acceptance of Donation from Various Local Businesses For Annual",
+   "title": "Accepts Donation of T-Shirts For Annual Snapper Tournament",
    "category": "donation",
    "townFiscalImpact": "No",
    "townTreatment": "described",
@@ -97,9 +97,9 @@
    }
   },
   {
-   "number": "2026-690",
+   "number": "2026-818",
    "seq": 5,
-   "title": "Authorizes Financial Administrator to Deposit Funds for Road Restoration",
+   "title": "Removes Fixed Assets",
    "category": "procedural",
    "townFiscalImpact": "No",
    "townTreatment": "described",
@@ -117,9 +117,9 @@
    }
   },
   {
-   "number": "2026-691",
+   "number": "2026-819",
    "seq": 6,
-   "title": "Authorizes Attendance at Training Seminar by Deputy Chief Fire Marshal",
+   "title": "Ratifies the Authorization for Police Department Employees to Attend a",
    "category": "procedural",
    "townFiscalImpact": "No",
    "townTreatment": "described",
@@ -137,17 +137,17 @@
    }
   },
   {
-   "number": "2026-692",
+   "number": "2026-820",
    "seq": 7,
-   "title": "Appoints Seasonal Pump-out Boat Operator",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
+   "title": "Accepts the Retirement of a Police Detective Anderson",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Real, recurring cost",
-    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
-    "flag": "reserve-draw"
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving"
    },
    "vote": {
     "adopted": null,
@@ -157,17 +157,17 @@
    }
   },
   {
-   "number": "2026-693",
+   "number": "2026-821",
    "seq": 8,
-   "title": "Appoints a Maintenance Mechanic III HVAC Concentration",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
+   "title": "Accepts the Retirement of a Police Officer Troyan",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Real, recurring cost",
-    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
-    "flag": "reserve-draw"
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving"
    },
    "vote": {
     "adopted": null,
@@ -177,17 +177,17 @@
    }
   },
   {
-   "number": "2026-694",
+   "number": "2026-822",
    "seq": 9,
-   "title": "Appoints a Water Treatment Plant Operator Trainee",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
+   "title": "Accepts the Retirement of a Senior Justice Court Clerk",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Real, recurring cost",
-    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
-    "flag": "reserve-draw"
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving"
    },
    "vote": {
     "adopted": null,
@@ -197,10 +197,90 @@
    }
   },
   {
-   "number": "2026-695",
+   "number": "2026-823",
    "seq": 10,
-   "title": "Ratifies Appointment Of Recreation Superintendent And Sets Terms And",
-   "category": "personnel",
+   "title": "Ratifies the Resignation of a Wastewater Treatment Plant Operator Trainee",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-824",
+   "seq": 11,
+   "title": "Approves Request for Military Leave of Absence",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-825",
+   "seq": 12,
+   "title": "Authorizes Attendance At Seminar By Fire Marshalls",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-826",
+   "seq": 13,
+   "title": "Authorizes Employee to Attend Civil Service Employees Association 116th",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-827",
+   "seq": 14,
+   "title": "Ratifies the Authorization for the Supervisor to Execute and Agreement with",
+   "category": "contract",
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": null,
@@ -217,88 +297,188 @@
    }
   },
   {
-   "number": "2026-696",
-   "seq": 11,
-   "title": "Authorizes the Riverhead Police Department to Apply for DHS FEMA",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-697",
-   "seq": 12,
-   "title": "Acceptance of 2025 Justice Court Audit",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-698",
-   "seq": 13,
-   "title": "Ratifies the Resignation of a Part-time Code Enforcement Officer",
-   "category": "personnel-out",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
-    "flag": "saving"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-699",
-   "seq": 14,
-   "title": "Accepts the Retirement of a Police Officer Michael Mowdy",
-   "category": "personnel-out",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
-    "flag": "saving"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-700",
+   "number": "2026-828",
    "seq": 15,
+   "title": "Authorizes Amendment #9 of the Agreement with U.S. Department of The",
+   "category": "contract",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-829",
+   "seq": 16,
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement for",
+   "category": "contract",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-830",
+   "seq": 17,
+   "title": "Authorizes the Supervisor to Execute a License Agreement with Darkside",
+   "category": "permit",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-831",
+   "seq": 18,
+   "title": "Grants Administrative Approval for the Site Plan application entitled Peconic",
+   "category": "grant",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "Revenue in / offsetting",
+    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
+    "flag": "neutral"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-832",
+   "seq": 19,
+   "title": "Accepts and Approves the Appraisal of Goodman-Marks Associates, INC.,",
+   "category": "procedural",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "Administrative / offsetting",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-833",
+   "seq": 20,
+   "title": "Adopts Bond Resolution for Ambulance Building Project",
+   "category": "debt",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
+    "flag": "reserve-draw"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-834",
+   "seq": 21,
+   "title": "Acceptance of 2025 Audited Financial Statements",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-835",
+   "seq": 22,
+   "title": "Authorizes 2026 Bow Hunting For Deer On Town Property At Enterprise",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-836",
+   "seq": 23,
+   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair"
+   },
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-837",
+   "seq": 24,
    "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -317,190 +497,10 @@
    }
   },
   {
-   "number": "2026-701",
-   "seq": 16,
-   "title": "Ratifies Authorization for Town Clerk to Publish and Post Public Notice for",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-702",
-   "seq": 17,
-   "title": "Adopts Local Law to Amend Chapter 301 Zoning and Land Development to",
-   "category": "legislative",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-703",
-   "seq": 18,
-   "title": "Adopts Local Law to Amend Chapter 105 Boards, Commission and",
-   "category": "appointment-volunteer",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "Appointment to an unpaid advisory board, committee, or task force \u2014 no salary attached.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-704",
-   "seq": 19,
-   "title": "Adopts Local Law to Amend Chapter 219 Coastal Erosion Hazard Areas,",
-   "category": "legislative",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-705",
-   "seq": 20,
-   "title": "Adopts Local Law to Amend Chapter 295 Wetlands, \u00a7295-6 Application for",
-   "category": "legislative",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-706",
-   "seq": 21,
-   "title": "Sets Planning Division Fees",
-   "category": "fees",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
-    "flag": "understated"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-707",
-   "seq": 22,
-   "title": "Adopts a Local Law to Amend Chapter 289 of the Riverhead Town Code",
-   "category": "legislative",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-708",
-   "seq": 23,
-   "title": "Adopts a Local Law to Amend Chapter 289-17 of the Riverhead Town Code",
-   "category": "legislative",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-709",
-   "seq": 24,
-   "title": "Ratifies Designation of Alcohol Service Vendor To Serve Alcohol At The",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-710",
+   "number": "2026-837",
    "seq": 25,
-   "title": "Approves Special Event Chapter 255 Application for Daniel Cox (Akliral",
-   "category": "permit",
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for",
+   "category": "procedural",
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": null,
@@ -517,9 +517,9 @@
    }
   },
   {
-   "number": "2026-711",
+   "number": "2026-839",
    "seq": 26,
-   "title": "Approves Special Event Chapter 255 Application for Protection Sports",
+   "title": "Approves Special Event Chapter 255 Application for Riverhead Athletic Club",
    "category": "permit",
    "townFiscalImpact": "No",
    "townTreatment": "described",
@@ -537,7 +537,7 @@
    }
   },
   {
-   "number": "2026-712",
+   "number": "2026-840",
    "seq": 27,
    "title": "Pays Bills",
    "category": "procedural",
@@ -548,66 +548,6 @@
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-713",
-   "seq": 28,
-   "title": "Amends Resolution 2026-673 Approves Fireworks Application for Jamesport",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-714",
-   "seq": 29,
-   "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider a",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair"
-   },
-   "vote": {
-    "adopted": null,
-    "tag": null,
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-715",
-   "seq": 30,
-   "title": "Resolution To Authorize And Approve Agreement With Riverhead",
-   "category": "contract",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
-    "flag": "understated"
    },
    "vote": {
     "adopted": null,

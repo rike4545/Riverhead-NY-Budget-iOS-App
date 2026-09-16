@@ -1,0 +1,120 @@
+name: iOS
+
+# This repo is private, so macOS runner minutes bill at a 10x multiplier.
+# The triggers are deliberately narrow to avoid paying twice for one commit:
+# pull_request covers branch work, push covers only main. Nothing runs twice.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT: Riverhead NY Budget App.xcodeproj
+  SCHEME: Riverhead NY Budget App
+  UI_BUNDLE: Riverhead NY Budget AppUITests
+
+jobs:
+  # Compile plus the unit suite. This is the job that matters: every one of the
+  # four compile errors fixed on the parity branch would have been caught here,
+  # at PR time, months before anyone opened Xcode.
+  build-and-unit-test:
+    name: Build + unit tests
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select and warm up Xcode
+        run: bash .github/scripts/select-xcode.sh
+
+      - name: Pick a simulator destination
+        id: dest
+        run: |
+          set -euo pipefail
+          udid="$(bash .github/scripts/pick-destination.sh "$PROJECT" "$SCHEME")"
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+          echo "Simulator: $udid"
+
+      - name: Build and run unit tests
+        run: |
+          set -euo pipefail
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "id=${{ steps.dest.outputs.udid }}" \
+            -skip-testing:"$UI_BUNDLE" \
+            CODE_SIGNING_ALLOWED=NO \
+            2>&1 | tee unit.log
+
+      # Runs even when the build fails: a red run should explain itself in the
+      # check summary rather than making the next reader scroll a 20k-line log.
+      # Three of the four compile errors on this branch were misdiagnosed
+      # because the tail of the log was sampled instead of the `error:` lines.
+      - name: Summarise
+        if: always()
+        run: bash .github/scripts/summarise.sh unit.log "Unit run" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-log
+          path: unit.log
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # Split out because it is the expensive half: the UI bundle spends roughly two
+  # minutes booting and driving a simulator for 4 tests, against 0.3s for 47
+  # unit tests. It only needs to gate a merge, so it skips pushes to main.
+  ui-test:
+    name: UI tests
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select and warm up Xcode
+        run: bash .github/scripts/select-xcode.sh
+
+      - name: Pick a simulator destination
+        id: dest
+        run: |
+          set -euo pipefail
+          udid="$(bash .github/scripts/pick-destination.sh "$PROJECT" "$SCHEME")"
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
+
+      - name: Run UI tests
+        run: |
+          set -euo pipefail
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -only-testing:"$UI_BUNDLE" \
+            -destination "id=${{ steps.dest.outputs.udid }}" \
+            -resultBundlePath ui.xcresult \
+            CODE_SIGNING_ALLOWED=NO \
+            2>&1 | tee ui.log
+
+      - name: Summarise
+        if: always()
+        run: bash .github/scripts/summarise.sh ui.log "UI run" >> "$GITHUB_STEP_SUMMARY"
+
+      # The result bundle carries the failure screenshots. Worth the storage:
+      # a picture of the screen at the moment of the assertion is exactly what
+      # was missing while these tests were being debugged blind.
+      - name: Upload logs and result bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-logs
+          path: |
+            ui.log
+            ui.xcresult
+          retention-days: 7
+          if-no-files-found: ignore

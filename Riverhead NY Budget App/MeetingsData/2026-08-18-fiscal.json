@@ -5,7 +5,7 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-08-18 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet — they live in interleaved backup tables that don't reliably tie to a single resolution — so they are left blank rather than guessed.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
  "summary": {
   "total": 49,
   "markedNo": 37,
@@ -25,11 +25,16 @@
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — 'absorbed by existing budget'",
-    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing — not truly cost-free even if 'absorbed'.",
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-766",
@@ -40,11 +45,16 @@
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — 'absorbed by existing budget'",
-    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing — not truly cost-free even if 'absorbed'.",
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-767",
@@ -55,11 +65,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-768",
@@ -70,11 +85,16 @@
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — 'absorbed by existing budget'",
-    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing — not truly cost-free even if 'absorbed'.",
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-769",
@@ -85,11 +105,16 @@
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — 'absorbed by existing budget'",
-    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing — not truly cost-free even if 'absorbed'.",
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-770",
@@ -104,7 +129,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-771",
@@ -115,11 +145,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-772",
@@ -134,7 +169,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-773",
@@ -146,10 +186,15 @@
    "amount": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
-    "reason": "Money flows, but from a grant, donation, or a developer's own escrow — not the tax levy.",
+    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
     "flag": "neutral"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-774",
@@ -164,7 +209,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-775",
@@ -179,7 +229,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-776",
@@ -194,7 +249,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-777",
@@ -209,7 +269,12 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-778",
@@ -220,11 +285,16 @@
    "townTreatment": "absorbed",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-779",
@@ -239,7 +309,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-780",
@@ -251,10 +326,15 @@
    "amount": null,
    "realistic": {
     "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll — the opposite of a cost.",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
     "flag": "saving"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-781",
@@ -266,10 +346,15 @@
    "amount": null,
    "realistic": {
     "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll — the opposite of a cost.",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
     "flag": "saving"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-782",
@@ -281,10 +366,15 @@
    "amount": null,
    "realistic": {
     "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll — the opposite of a cost.",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
     "flag": "saving"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-783",
@@ -296,10 +386,15 @@
    "amount": null,
    "realistic": {
     "verdict": "Actually a saving",
-    "reason": "A departure reduces payroll — the opposite of a cost.",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
     "flag": "saving"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-784",
@@ -310,11 +405,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-785",
@@ -325,11 +425,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-786",
@@ -340,11 +445,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-787",
@@ -355,11 +465,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-788",
@@ -370,11 +485,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-789",
@@ -385,11 +505,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-790",
@@ -400,11 +525,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-791",
@@ -415,11 +545,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-792",
@@ -434,7 +569,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-793",
@@ -445,11 +585,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-794",
@@ -464,7 +609,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-795",
@@ -479,7 +629,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-796",
@@ -494,10 +649,15 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
-   "number": "2026-797",
+   "number": "2026-796",
    "seq": 33,
    "title": "Authorizes the Supervisor to Execute a License Agreement Between the",
    "category": "permit",
@@ -509,7 +669,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-798",
@@ -524,7 +689,12 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-799",
@@ -539,7 +709,12 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-800",
@@ -554,7 +729,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-801",
@@ -569,7 +749,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-802",
@@ -580,11 +765,16 @@
    "townTreatment": "described",
    "amount": null,
    "realistic": {
-    "verdict": "Understated — the form says 'no fiscal impact'",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-803",
@@ -599,10 +789,15 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
-   "number": "2026-804",
+   "number": "2026-803",
    "seq": 40,
    "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local",
    "category": "procedural",
@@ -614,7 +809,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-805",
@@ -629,7 +829,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-806",
@@ -644,7 +849,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-807",
@@ -659,7 +869,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-808",
@@ -674,7 +889,12 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-809",
@@ -689,7 +909,12 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-810",
@@ -704,7 +929,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-811",
@@ -719,7 +949,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-812",
@@ -734,7 +969,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   },
   {
    "number": "2026-813",
@@ -749,7 +989,12 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair"
    },
-   "vote": null
+   "vote": {
+    "adopted": null,
+    "tag": null,
+    "ayes": null,
+    "nays": null
+   }
   }
  ]
 }

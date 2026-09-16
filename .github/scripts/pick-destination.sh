@@ -16,14 +16,27 @@ set -euo pipefail
 PROJECT="${1:?usage: pick-destination.sh <project> <scheme>}"
 SCHEME="${2:?usage: pick-destination.sh <project> <scheme>}"
 
-raw="$(xcodebuild -project "$PROJECT" -scheme "$SCHEME" -showdestinations 2>&1 || true)"
-
+# CoreSimulator can report an empty destination list on a freshly selected
+# Xcode and then report a full one moments later, so an empty result is retried
+# before the runner is declared unusable. Seen on a UI-test job where this
+# returned nothing after 32 seconds while the sibling job, which had already
+# run another xcodebuild command, resolved a destination in four.
+#
 # Entries look like:
 #   { platform:iOS Simulator, id:D1B2..., OS:26.0, name:iPhone 17 }
 # The generic entry carries a placeholder id and cannot be booted.
-sims="$(printf '%s\n' "$raw" \
-  | grep 'platform:iOS Simulator' \
-  | grep -vi 'placeholder' || true)"
+raw=""
+sims=""
+for attempt in 1 2 3 4; do
+  raw="$(xcodebuild -project "$PROJECT" -scheme "$SCHEME" -showdestinations 2>&1 || true)"
+  sims="$(printf '%s\n' "$raw" \
+    | grep 'platform:iOS Simulator' \
+    | grep -vi 'placeholder' || true)"
+  [ -n "$sims" ] && break
+  echo "No iOS Simulator destination on attempt $attempt; warming CoreSimulator and retrying." >&2
+  xcrun simctl list devices >/dev/null 2>&1 || true
+  sleep 5
+done
 
 # `|| true` matters: with `set -e` and `pipefail`, a grep that matches nothing
 # fails the whole substitution and aborts the script, so the fallback below

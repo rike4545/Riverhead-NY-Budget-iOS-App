@@ -175,7 +175,7 @@ struct BudgetLiveParityView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("Budget Live")
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) web features")
+        .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) tools")
     }
 
     @ViewBuilder

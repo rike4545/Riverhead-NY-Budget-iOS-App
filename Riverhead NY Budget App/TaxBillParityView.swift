@@ -224,48 +224,48 @@ struct NativeTaxBillParityView: View {
                 .parityCard()
 
                 if let levyFunds = data.levyFunds, !levyFunds.isEmpty, let levyTotal = data.levyTotal {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("How the 2026 Town-wide property-tax levy is allocated")
-                        .font(.headline)
-                    Text("This is a levy-by-fund view, not a claim that the Town spends the same percentage on a particular service. Funds can also receive fees, grants, other revenues, or fund balance.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-
-                    ForEach(levyFunds) { fund in
-                        let share = levyTotal > 0 ? fund.taxLevy2026 / levyTotal : 0
-                        VStack(alignment: .leading, spacing: 5) {
-                            HStack(alignment: .firstTextBaseline) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(fund.name)
-                                        .font(.subheadline.weight(.semibold))
-                                    Text("\(fund.code) · \(fund.description)")
-                                        .font(.caption2)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer(minLength: 10)
-                                Text(currency(fund.taxLevy2026))
-                                    .font(.caption.weight(.bold))
-                                    .monospacedDigit()
-                            }
-                            ProgressView(value: share)
-                            Text("\(share * 100, specifier: "%.1f")% of levy")
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                        }
-                        .padding(.vertical, 4)
-                    }
-
-                    Divider()
-                    HStack {
-                        Text("Total tax levy represented above")
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("How the 2026 Town-wide property-tax levy is allocated")
+                            .font(.headline)
+                        Text("This is a levy-by-fund view, not a claim that the Town spends the same percentage on a particular service. Funds can also receive fees, grants, other revenues, or fund balance.")
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                        Spacer()
-                        Text(currency(levyTotal))
-                            .font(.subheadline.weight(.bold))
+
+                        ForEach(levyFunds) { fund in
+                            let share = levyTotal > 0 ? fund.taxLevy2026 / levyTotal : 0
+                            VStack(alignment: .leading, spacing: 5) {
+                                HStack(alignment: .firstTextBaseline) {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(fund.name)
+                                            .font(.subheadline.weight(.semibold))
+                                        Text("\(fund.code) · \(fund.description)")
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Spacer(minLength: 10)
+                                    Text(currency(fund.taxLevy2026))
+                                        .font(.caption.weight(.bold))
+                                        .monospacedDigit()
+                                }
+                                ProgressView(value: share)
+                                Text("\(share * 100, specifier: "%.1f")% of levy")
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .padding(.vertical, 4)
+                        }
+
+                        Divider()
+                        HStack {
+                            Text("Total tax levy represented above")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(currency(levyTotal))
+                                .font(.subheadline.weight(.bold))
+                        }
                     }
-                }
-                .parityCard()
+                    .parityCard()
                 }
 
                 VStack(alignment: .leading, spacing: 8) {

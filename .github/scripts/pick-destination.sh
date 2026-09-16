@@ -25,8 +25,11 @@ sims="$(printf '%s\n' "$raw" \
   | grep 'platform:iOS Simulator' \
   | grep -vi 'placeholder' || true)"
 
-line="$(printf '%s\n' "$sims" | grep 'name:iPhone' | head -1)"
-[ -n "$line" ] || line="$(printf '%s\n' "$sims" | head -1)"
+# `|| true` matters: with `set -e` and `pipefail`, a grep that matches nothing
+# fails the whole substitution and aborts the script, so the fallback below
+# could never run on a runner that had simulators but no iPhone.
+line="$(printf '%s\n' "$sims" | grep 'name:iPhone' | head -1 || true)"
+[ -n "$line" ] || line="$(printf '%s\n' "$sims" | head -1 || true)"
 
 udid="$(printf '%s\n' "$line" | sed -n 's/.*id:\([^,}]*\).*/\1/p' | head -1 | tr -d '[:space:]')"
 

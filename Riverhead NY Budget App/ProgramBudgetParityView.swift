@@ -168,6 +168,7 @@ struct NativeProgramBudgetView: View {
     @State private var isLoading = false
     @State private var didLoad = false
     @State private var useWebFallback = false
+    @State private var isShowingBundledCopy = false
 
     var body: some View {
         Group {
@@ -192,6 +193,15 @@ struct NativeProgramBudgetView: View {
     private func nativeContent(_ document: ProgramBudgetParityDocument) -> some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 14) {
+                if isShowingBundledCopy {
+                    Label(
+                        "Offline copy shipped with the app. Pull to refresh for the published figures.",
+                        systemImage: "wifi.slash"
+                    )
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                }
                 overviewCard(document)
                 programCostChart(document)
                 ForEach(document.programs) { program in
@@ -482,10 +492,19 @@ struct NativeProgramBudgetView: View {
             document = try await ProgramBudgetParityClient.load()
             didLoad = true
             useWebFallback = false
+            isShowingBundledCopy = false
         } catch {
-            // The web page is the guaranteed parity fallback. This is especially
-            // important while the static JSON contract is rolling out.
-            useWebFallback = true
+            // Offline is the usual reason this fails, and the web page needs the
+            // same network that just failed. bundled() ships the same contract,
+            // so prefer it and fall through to the web page only when even the
+            // bundled copy cannot be decoded.
+            if let offline = ProgramBudgetParityClient.bundled() {
+                document = offline
+                isShowingBundledCopy = true
+                useWebFallback = false
+            } else {
+                useWebFallback = true
+            }
         }
         isLoading = false
     }

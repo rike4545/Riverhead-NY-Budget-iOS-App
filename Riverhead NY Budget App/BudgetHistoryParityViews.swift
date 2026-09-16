@@ -358,6 +358,19 @@ struct NativeBudgetCompareView: View {
         .parityCard()
     }
 
+    /// Orders by descending magnitude, keeping funds with no comparable value
+    /// last. Coalescing a missing value to `-.infinity` and then taking `abs`
+    /// turns it into `+.infinity`, which sorted every incomplete row — the ones
+    /// that render "—" — ahead of the largest real change under both magnitude
+    /// sorts. A fund with only part of its history is not the biggest mover.
+    private func byDescendingMagnitude(_ lhs: Double?, _ rhs: Double?) -> Bool {
+        switch (lhs, rhs) {
+        case let (lhs?, rhs?): return abs(lhs) > abs(rhs)
+        case (_?, nil): return true
+        case (nil, _?), (nil, nil): return false
+        }
+    }
+
     private func sortedRows(_ document: BudgetHistoryParityDocument) -> [BudgetCompareParityRow] {
         let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
 
@@ -378,9 +391,9 @@ struct NativeBudgetCompareView: View {
 
         switch sortMode {
         case .dollars:
-            rows.sort { abs($0.delta ?? -.infinity) > abs($1.delta ?? -.infinity) }
+            rows.sort { byDescendingMagnitude($0.delta, $1.delta) }
         case .percent:
-            rows.sort { abs($0.percent ?? -.infinity) > abs($1.percent ?? -.infinity) }
+            rows.sort { byDescendingMagnitude($0.percent, $1.percent) }
         case .name:
             rows.sort { $0.fund.name.localizedCaseInsensitiveCompare($1.fund.name) == .orderedAscending }
         }

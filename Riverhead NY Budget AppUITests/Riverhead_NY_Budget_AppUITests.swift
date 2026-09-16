@@ -16,13 +16,14 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        XCTAssertTrue(app.tabBars.buttons["Home"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.tabBars.buttons["Budget"].exists)
-        XCTAssertTrue(app.tabBars.buttons["Civic"].exists)
-        XCTAssertTrue(app.tabBars.buttons["Tools"].exists)
-        XCTAssertTrue(app.tabBars.buttons["More"].exists)
+        for title in ["Home", "Budget", "Civic", "Tools", "More"] {
+            XCTAssertNotNil(
+                tabElement(title, in: app),
+                "No tab labelled \(title).\n\(app.debugDescription)"
+            )
+        }
 
-        app.tabBars.buttons["Civic"].tap()
+        tapTab("Civic", in: app)
         XCTAssertTrue(app.staticTexts["Start with the issue. Leave with a next step."].waitForExistence(timeout: 5))
         XCTAssertTrue(app.buttons["All tools"].waitForExistence(timeout: 5))
     }
@@ -32,7 +33,7 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        app.tabBars.buttons["Civic"].tap()
+        tapTab("Civic", in: app)
         openCatalogRow("Search", in: app)
         XCTAssertTrue(app.navigationBars["Search"].waitForExistence(timeout: 5))
 
@@ -46,7 +47,7 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        app.tabBars.buttons["Civic"].tap()
+        tapTab("Civic", in: app)
         openCatalogRow("PDF Search", in: app)
         XCTAssertTrue(app.navigationBars["PDF Search"].waitForExistence(timeout: 5))
 
@@ -60,6 +61,39 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         measure(metrics: [XCTApplicationLaunchMetric()]) {
             XCUIApplication().launch()
         }
+    }
+
+    /// Locates a primary tab without assuming which element type it resolves to.
+    ///
+    /// iOS 26 renders a SwiftUI `TabView` as a floating tab bar whose items are
+    /// `_UIFloatingTabBarItemCell`, which XCUITest resolves as cells. The app
+    /// then has no `TabBar` descendants at all, so `app.tabBars.buttons[title]`
+    /// cannot match. CI on 8c1ef86 failed exactly that way:
+    ///
+    ///     Failed to tap "Civic" Button: No matches found for Descendants
+    ///     matching type TabBar from input {( Application, pid: 9224 )}
+    ///     Automation type mismatch: computed Button from legacy attributes
+    ///     vs Cell from modern attribute ... "_UIFloatingTabBarItemCell"
+    ///
+    /// The classic tab bar is still what a local run against an older runtime
+    /// produces, so all three shapes are tried rather than trading one
+    /// assumption for another.
+    @MainActor
+    private func tabElement(_ title: String, in app: XCUIApplication) -> XCUIElement? {
+        let shapes = [app.cells[title], app.buttons[title], app.tabBars.buttons[title]]
+        return shapes.first { $0.waitForExistence(timeout: 2) }
+    }
+
+    @MainActor
+    private func tapTab(_ title: String, in app: XCUIApplication) {
+        guard let tab = tabElement(title, in: app) else {
+            XCTFail("""
+                No tab labelled "\(title)" as a cell, a button, or a tab-bar button.
+                \(app.debugDescription)
+                """)
+            return
+        }
+        tab.tap()
     }
 
     /// Scrolls until `element` can be tapped, or gives up. Returns whether it is
@@ -105,11 +139,15 @@ final class Riverhead_NY_Budget_AppUITests: XCTestCase {
         field.tap()
         field.typeText(title)
 
-        let row = app.buttons[title]
-        XCTAssertTrue(
-            row.waitForExistence(timeout: 5),
-            "Searching for \"\(title)\" produced no result row labelled \(title)"
-        )
+        let row = [app.buttons[title], app.cells[title]]
+            .first { $0.waitForExistence(timeout: 5) }
+        guard let row else {
+            XCTFail("""
+                Searching for "\(title)" produced no result row labelled \(title).
+                \(app.debugDescription)
+                """)
+            return
+        }
         XCTAssertTrue(
             scrollUntilHittable(row, in: app),
             "Result row \(title) exists but never scrolled clear of the keyboard"

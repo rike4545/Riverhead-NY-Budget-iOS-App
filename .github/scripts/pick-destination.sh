@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 #
-# Prints the UDID of a simulator this project can actually build for.
+# Prints the UDID of a simulator this project can actually build for, and
+# reports the full destination line on stderr so the job log records which
+# device and runtime the run actually used.
 #
 # Device names are a bad thing to hardcode in CI: runner images rotate them,
 # and this project sets IPHONEOS_DEPLOYMENT_TARGET = 26.0, so a runner whose
 # newest runtime is older than that has no usable simulator at all. Asking
-# xcodebuild what it is willing to build for avoids guessing on both counts,
-# and failing here — loudly, with the runtime list attached — is much easier
-# to read than the destination error xcodebuild emits later.
+# xcodebuild what it is willing to build for avoids guessing on both counts.
+#
+# iPhone is preferred deliberately. The UI tests assert on a phone layout, and
+# a silent fall back to an iPad would change the tab bar out from under them.
 set -euo pipefail
 
 PROJECT="${1:?usage: pick-destination.sh <project> <scheme>}"
@@ -18,12 +21,14 @@ raw="$(xcodebuild -project "$PROJECT" -scheme "$SCHEME" -showdestinations 2>&1 |
 # Entries look like:
 #   { platform:iOS Simulator, id:D1B2..., OS:26.0, name:iPhone 17 }
 # The generic entry carries a placeholder id and cannot be booted.
-udid="$(printf '%s\n' "$raw" \
+sims="$(printf '%s\n' "$raw" \
   | grep 'platform:iOS Simulator' \
-  | grep -vi 'placeholder' \
-  | sed -n 's/.*id:\([^,}]*\).*/\1/p' \
-  | head -1 \
-  | tr -d '[:space:]')"
+  | grep -vi 'placeholder' || true)"
+
+line="$(printf '%s\n' "$sims" | grep 'name:iPhone' | head -1)"
+[ -n "$line" ] || line="$(printf '%s\n' "$sims" | head -1)"
+
+udid="$(printf '%s\n' "$line" | sed -n 's/.*id:\([^,}]*\).*/\1/p' | head -1 | tr -d '[:space:]')"
 
 if [ -z "$udid" ]; then
   {
@@ -39,4 +44,5 @@ if [ -z "$udid" ]; then
   exit 1
 fi
 
+echo "Chosen destination:$(printf '%s' "$line" | sed 's/^[[:space:]]*//')" >&2
 printf '%s\n' "$udid"

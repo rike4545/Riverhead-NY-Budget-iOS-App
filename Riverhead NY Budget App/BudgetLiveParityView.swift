@@ -48,6 +48,7 @@ enum BudgetLiveParityCatalog {
     static let nativePaths: Set<String> = [
         "/tax-bill/",
         "/payroll/",
+        "/road-spending/",
         "/search/",
         "/meetings/",
         "/funds/",
@@ -183,6 +184,8 @@ struct BudgetLiveParityView: View {
         switch route.path {
         case "/tax-bill/":
             NativeTaxBillParityView()
+        case "/road-spending/":
+            NativeRoadSpendingParityView()
         case "/payroll/":
             NativePayrollParityView()
         case "/search/":

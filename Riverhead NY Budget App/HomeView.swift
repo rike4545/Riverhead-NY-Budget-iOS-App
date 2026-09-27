@@ -261,6 +261,18 @@ struct HomeView: View {
 
             VStack(spacing: 10) {
                 internalFullWidthCard(
+                    title: "Read the 2027 Tentative Budget",
+                    subtitle: "Open the current tentative budget and its source-backed analysis.",
+                    systemImage: "doc.text.fill",
+                    accentOverride: RiverheadTheme.brandSky
+                ) {
+                    WebContentView(
+                        url: URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tentative-2027/")!,
+                        title: "2027 Tentative Budget"
+                    )
+                }
+
+                internalFullWidthCard(
                     title: "Translate budget words into pictures",
                     subtitle: "Whiteboard-style explainers for levy, reserves, fund balance, debt, and recurring costs.",
                     systemImage: "rectangle.on.rectangle.angled",

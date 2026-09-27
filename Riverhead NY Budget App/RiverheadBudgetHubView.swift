@@ -146,7 +146,7 @@ struct RiverheadBudgetHubView: View {
                 quickStartChip("Where $ goes", symbol: "chart.pie.fill") {
                     section = .overview
                 }
-                quickStartChip("2027 plan", symbol: "doc.text.fill") {
+                quickStartChip("2027 analysis", symbol: "doc.text.fill") {
                     section = .proposed2027Budget
                 }
             }

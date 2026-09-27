@@ -232,8 +232,7 @@ struct TaxImpactCalculatorView: View {
             VStack(alignment: .leading, spacing: 14) {
 
                 HStack(alignment: .firstTextBaseline) {
-                    Text(annualImpact >= 0 ? "+" : "")
-                    + Text(annualImpact, format: .currency(code: "USD").precision(.fractionLength(2)))
+                    Text("\(annualImpact >= 0 ? "+" : "")\(annualImpact, format: .currency(code: "USD").precision(.fractionLength(2)))")
                     Spacer()
                     Text("per year")
                         .font(.title3)
@@ -243,9 +242,7 @@ struct TaxImpactCalculatorView: View {
                 .foregroundStyle(annualImpact > 0 ? .red : (annualImpact < 0 ? .green : RiverheadTheme.textSecondary))
 
                 HStack {
-                    Text(monthlyImpact >= 0 ? "+" : "")
-                    + Text(monthlyImpact, format: .currency(code: "USD").precision(.fractionLength(2)))
-                    + Text(" / month")
+                    Text("\(monthlyImpact >= 0 ? "+" : "")\(monthlyImpact, format: .currency(code: "USD").precision(.fractionLength(2))) / month")
                 }
                 .font(.subheadline)
                 .foregroundStyle(annualImpact > 0 ? .red.opacity(0.8) : .green.opacity(0.8))

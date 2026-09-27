@@ -424,13 +424,13 @@ private struct ProjectRow: View {
 
             HStack(spacing: 10) {
                 if let budget = project.budget {
-                    (Text("Budget ") + Text(budget, format: .currency(code: "USD")))
+                    Text("Budget \(budget, format: .currency(code: "USD"))")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .monospacedDigit()
                 }
                 if let spent = project.spent {
-                    (Text("Spent ") + Text(spent, format: .currency(code: "USD")))
+                    Text("Spent \(spent, format: .currency(code: "USD"))")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .monospacedDigit()

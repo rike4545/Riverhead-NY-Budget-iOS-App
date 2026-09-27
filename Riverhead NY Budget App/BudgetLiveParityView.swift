@@ -185,6 +185,7 @@ struct BudgetLiveParityView: View {
         .navigationTitle("Budget Live")
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) tools")
+        .riverheadToolbarMinimization()
     }
 
     @ViewBuilder
@@ -267,5 +268,17 @@ private struct BudgetLiveParityRouteRow: View {
     NavigationStack {
         BudgetLiveParityView()
             .environment(RBBudgetStore())
+    }
+}
+
+
+private extension View {
+    @ViewBuilder
+    func riverheadToolbarMinimization() -> some View {
+        if #available(iOS 27.0, *) {
+            toolbarMinimizationBehavior(.onScrollDown, for: .navigationBar)
+        } else {
+            self
+        }
     }
 }

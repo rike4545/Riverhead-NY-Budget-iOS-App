@@ -1,0 +1,44 @@
+name: Sync canonical web data
+
+on:
+  schedule:
+    - cron: '17 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-canonical-web-data
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out iOS app
+        uses: actions/checkout@v4
+        with:
+          path: mobile
+
+      - name: Check out canonical web source
+        uses: actions/checkout@v4
+        with:
+          repository: rike4545/Riverhead-NY-Budget-Web-App
+          path: web-source
+
+      - name: Sync datasets from web ETL
+        run: node web-source/web/scripts/sync-shared-data.mjs --consumer ios --root mobile
+
+      - name: Commit canonical data changes
+        working-directory: mobile
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "Already in sync with web source."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Riverhead NY Budget App/MeetingsData"                   "Riverhead NY Budget App/supplement-lines.json"                   "Riverhead NY Budget App/supplement-outliers.json"                   "Riverhead NY Budget App/reductions.json"                   "Riverhead NY Budget App/payroll-records.json"                   "Riverhead NY Budget App/titles-by-year.json"
+          git commit -m "Sync canonical data from web source"
+          git push

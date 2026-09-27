@@ -13,13 +13,13 @@
    "titles": [
     "Supervisor"
    ],
-   "party": "Democrat",
+   "party": "Unaffiliated",
    "years": [
     "2026"
    ],
    "moved": 0,
    "seconded": 0,
-   "meetingsVoted": 14,
+   "meetingsVoted": 18,
    "dissents": [
     {
      "slug": "2026-04-07",
@@ -41,6 +41,13 @@
      "number": "2026-406",
      "title": "Authorizes Town Clerk to Publish and Post Notice of Public Hearing to Amend Town Code Chapter 301, Attachment 3 of the Riverhead Town Code Entitled \"Commercial Districts of Dimensional Regulations\"",
      "result": "ADOPTED [4 - 1]"
+    },
+    {
+     "slug": "2026-09-01",
+     "date": "September 1, 2026",
+     "number": "2026-838",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Summerwind - Riverhead Water District",
+     "result": "Adopted"
     }
    ],
    "abstentions": [
@@ -61,15 +68,15 @@
    ],
    "byYear": {
     "2026": {
-     "aye": 728,
+     "aye": 870,
      "abstain": 2,
-     "nay": 3
+     "nay": 4
     }
    },
    "career": {
-    "aye": 728,
+    "aye": 870,
     "abstain": 2,
-    "nay": 3
+    "nay": 4
    },
    "ayePct": 99.3
   },
@@ -81,13 +88,21 @@
    ],
    "party": "Republican",
    "years": [
+    "2024",
     "2025",
     "2026"
    ],
-   "moved": 439,
-   "seconded": 443,
-   "meetingsVoted": 40,
+   "moved": 491,
+   "seconded": 497,
+   "meetingsVoted": 45,
    "dissents": [
+    {
+     "slug": "2024-01-03",
+     "date": "January 3, 2024",
+     "number": "2024-63",
+     "title": "Adopts a Local Law Amending Chapter 301 of the Riverhead Town Code Entitled, \u201cZoning and Land Development, Article LXIII. Planned Development (PD) Zoning Use District\u201d",
+     "result": "ADOPTED [4 TO 1]"
+    },
     {
      "slug": "2025-01-07",
      "date": "January 7, 2025",
@@ -176,19 +191,23 @@
     }
    ],
    "byYear": {
+    "2024": {
+     "aye": 72,
+     "nay": 1
+    },
     "2025": {
      "aye": 1025,
      "nay": 9,
      "abstain": 2
     },
     "2026": {
-     "aye": 732,
+     "aye": 875,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 1757,
-    "nay": 9,
+    "aye": 1972,
+    "nay": 10,
     "abstain": 3
    },
    "ayePct": 99.3
@@ -201,12 +220,13 @@
    ],
    "party": "Republican",
    "years": [
+    "2024",
     "2025",
     "2026"
    ],
-   "moved": 427,
-   "seconded": 442,
-   "meetingsVoted": 40,
+   "moved": 479,
+   "seconded": 495,
+   "meetingsVoted": 45,
    "dissents": [
     {
      "slug": "2025-01-07",
@@ -223,21 +243,34 @@
      "result": "ADOPTED [3 TO 2]"
     }
    ],
-   "abstentions": [],
+   "abstentions": [
+    {
+     "slug": "2024-01-03",
+     "date": "January 3, 2024",
+     "number": "2024-40",
+     "title": "Appoints New Member Ken Zilnicki to the Planning Board",
+     "result": "ADOPTED [4 TO 0]"
+    }
+   ],
    "byYear": {
+    "2024": {
+     "aye": 72,
+     "abstain": 1
+    },
     "2025": {
      "aye": 1034,
      "nay": 2
     },
     "2026": {
-     "aye": 733
+     "aye": 876
     }
    },
    "career": {
-    "aye": 1767,
+    "aye": 1982,
+    "abstain": 1,
     "nay": 2
    },
-   "ayePct": 99.9
+   "ayePct": 99.8
   },
   {
    "key": "Rothwell",
@@ -247,13 +280,23 @@
    ],
    "party": "Republican",
    "years": [
+    "2022",
+    "2023",
+    "2024",
     "2025",
     "2026"
    ],
-   "moved": 458,
-   "seconded": 421,
-   "meetingsVoted": 38,
+   "moved": 539,
+   "seconded": 498,
+   "meetingsVoted": 45,
    "dissents": [
+    {
+     "slug": "2023-01-04",
+     "date": "January 4, 2023",
+     "number": "2023-39",
+     "title": "Schedules a Public Hearing and Authorizes Town Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B, and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead Resolution #39 Councilman Hubbard: \u201cSchedules a Public Hearing and Authorizes Tow n Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead so moved.\u201d Councilman Beyrodt: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern.\u201d Councilman Kern : \u201cI going to vote no on this, and I want to be clear from the beginning that I will look at a code with exceptions. I will not do a blanket even for six months moratorium:\u201d Vote Continued: \u201cRothwell.\u201d Councilman Rothwell : \u201cI think a lot of the problem with development is smore involved with the variances that are given and not necessarily staying within the standards of the current code in place. I just don\u2019t feel like it\u2019s proper for us to take the property rights of owners away by imposing a moratorium. I think the town does need to bring in high-tech jobs and I think it will pl ay outside of the EPCAL facility and the fenced property and the surrounding areas of Calverton, it is the industrial area. I just think voting on a six month moratorium is just a setup for asking developers to pause and to not come to the town and to put off any investments here. Nothing is going to be completed in six months, this we know. I don\u2019t feel anything is going to be completed in a year. If you\u2019re standing by the comprehensive plan, I think eighteen months is a minimum, so I don\u2019t understand and I don\u2019t want to send the wrong message. I know I have absolutely stood up here and I\u2019ve actually said that I\u2019m always open to the public\u2019s input, but I also think that at the same point we have to do our due diligence and I think we\u2019re going to put ourselv es in a very poor legal position as well by stopping moratoriums. We have to, we do listen to the Suffolk County Planning Commission and other aspects of law that is in fact in place and so I know there\u2019s passion behind it and that is a great reason why pe ople would like to see a moratorium. I do like hearing, and I always ask for the publics input but I think this time doing my due diligence and doing my own research I don\u2019t think it\u2019s the right way to proceed and therefore I vote no.\u201d Vote Continued: \u201cBeyrodt.\u201d Councilman Beyrodt : \u201cI would like a little clarification from the town attorney that we\u2019re voting on scheduling a public hearing on a potential six month moratorium only.\u201d Erik Howard: \u201cYes, that is correct.\u201d Councilman Beyrodt: \u201cI vote yes to give the public hearings.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cI somewhat offered this. I strongly believe that six months is not long enough, but it was a starting point. I believe we are paying in excess of eight hundred thousand dollars for a comp plan between what we\u2019ve already paid out with one contract and what we\u2019re going to pay out with a future contract. To me you\u2019re just wasting your money if you don\u2019t listen to the comprehensive plan. The last plan was done in 2003. Times have change d drastically since then. Why we need the new comprehensive plan, the new comprehensive plan, nobody is hiding behind it. It will be a way to guide us to proper planning for the Town of Riverhead. Our own Planning Board has recommended this to us. The fact that we don\u2019t want to go at least six months to wait for the comprehensive plan to take a look at the Calverton area first and foremost in regards to Industrial A, B and C, I think that\u2019s a shame that the Board doesn\u2019t want to wait at least six months. Th e developers are sitting out here with bated breath. Six months is not going to hurt them. They\u2019re not going away. Some of these projects even with the comprehensive plan will be coming into town people. I will tell you that. There are going to be certain projects that are going to be coming into town. We are going to have anaerobic digesters in some point in time. We are going to have battery energy storage systems. I\u2019m not against either one of those. What I\u2019m against particularly with this resolution is the massive amounts of development that have come in all at once to one particular area of our town. That\u2019s why the moratorium is needed to pump the brakes, take a look at this, let the experts take a look at it and let us come up with a cohesive comprehen sive plan that will satisfy both the developers and the residents of this town. I absolutely and strongly vote yes to this publish and post.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cWell, I\u2019m always open to hearing from the public and I hope that I continue hearing from the public. These projects should never injure our residents, our villages and I am fully supportive of what\u2019s going on but we need the Planning Board and it is their responsibility, that\u2019s why it\u2019s called planning board, and they sh ould be guided by their own commission memos. Again, they punted it to us. One particular person punted it to us and they took a vote on it. I will be sending them their planning commission memo where one member of the planning board is on there. This is n ot researched. This is a faulty resolution. I\u2019ve looked at other resolutions from other towns and there are significant differences. You also have to always put exceptions on it, hardships, that\u2019s not even included here and so given that, I\u2019m not going to vote to hear from the public on a faulty resolution. This should be dealt with and can be dealt with right now through code. That\u2019s what eventually is going to happen. We have a comprehensive plan. They\u2019re telling us fourteen months, that\u2019s going to turn i nto eighteen months, that\u2019s going to turn into two years. After that what\u2019s going to happen we have to do the same thing we could have done today, go to code, change the code and then adopt it, have public hearings and then adopt it. Nothing changes. All w e\u2019re doing is stopping progress here, letting the people know and not handling the problem ourselves. I\u2019m handling the problem. I\u2019m not Densieski who decided to throw it back to us without consulting with us and us working on this. It could be changed righ t now through code. It\u2019s a faulty resolution. It\u2019s (inaudible) by the Suffolk County Planning Commission, advising memo, volume two, issue one, Spring of 1998 and one of the planning members, Richard Dea from Riverhead Town is on that. Be guided by your ow n memo and let\u2019s work together. Let\u2019s get this done and make sure that our communities are not injured, and I\u2019ll be the first one behind you guys supporting you. We don\u2019t want this. We don\u2019t want an over saturation, but we can\u2019t stop progress and it\u2019s real easy. I brought this before all the towns, all the Supervisors, all ten of us are sitting there and there\u2019s that\u2019s (inaudible). You should deal with it, it\u2019s your code, it\u2019s your planning Board. Every single one was saying, how do you do that in Riverhead . Yes, other towns have moratoriums but it\u2019s very limited and it\u2019s not to wait two years, three years. For example, Southampton did a moratorium because all the hotel rooms were turning into condos. So, they had to put a stop just on some items specific, i t was short and they needed the code and they moved forward. I was talking to Hempstead Supervisor. He said we have one in place because we\u2019re ninety -seven percent built out. That\u2019s when you really need a moratorium, when there\u2019s a danger to us and to our town. In our case I\u2019m going to recommend going back to the Planning Board, work with us, help us change our code, continue doing your job. I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is not adopted.\u201d Councilman Hubbard : \u201cJust for the record I want to say there is nothing illegal about this resolution.\u201d",
+     "result": "NOT ADOPTED [2 TO 3]"
+    },
     {
      "slug": "2025-01-07",
      "date": "January 7, 2025",
@@ -314,6 +357,16 @@
     }
    ],
    "byYear": {
+    "2022": {
+     "aye": 55
+    },
+    "2023": {
+     "aye": 42,
+     "nay": 1
+    },
+    "2024": {
+     "aye": 73
+    },
     "2025": {
      "aye": 996,
      "nay": 3,
@@ -321,19 +374,19 @@
      "absent": 1
     },
     "2026": {
-     "aye": 728,
+     "aye": 871,
      "abstain": 3,
      "nay": 1,
      "absent": 1
     }
    },
    "career": {
-    "aye": 1724,
-    "nay": 4,
+    "aye": 2037,
+    "nay": 5,
     "abstain": 4,
     "absent": 2
    },
-   "ayePct": 99.5
+   "ayePct": 99.6
   },
   {
    "key": "Kern",
@@ -343,13 +396,30 @@
    ],
    "party": "Republican",
    "years": [
+    "2022",
+    "2023",
+    "2024",
     "2025",
     "2026"
    ],
-   "moved": 434,
-   "seconded": 454,
-   "meetingsVoted": 38,
+   "moved": 510,
+   "seconded": 535,
+   "meetingsVoted": 45,
    "dissents": [
+    {
+     "slug": "2023-01-04",
+     "date": "January 4, 2023",
+     "number": "2023-39",
+     "title": "Schedules a Public Hearing and Authorizes Town Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B, and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead Resolution #39 Councilman Hubbard: \u201cSchedules a Public Hearing and Authorizes Tow n Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead so moved.\u201d Councilman Beyrodt: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern.\u201d Councilman Kern : \u201cI going to vote no on this, and I want to be clear from the beginning that I will look at a code with exceptions. I will not do a blanket even for six months moratorium:\u201d Vote Continued: \u201cRothwell.\u201d Councilman Rothwell : \u201cI think a lot of the problem with development is smore involved with the variances that are given and not necessarily staying within the standards of the current code in place. I just don\u2019t feel like it\u2019s proper for us to take the property rights of owners away by imposing a moratorium. I think the town does need to bring in high-tech jobs and I think it will pl ay outside of the EPCAL facility and the fenced property and the surrounding areas of Calverton, it is the industrial area. I just think voting on a six month moratorium is just a setup for asking developers to pause and to not come to the town and to put off any investments here. Nothing is going to be completed in six months, this we know. I don\u2019t feel anything is going to be completed in a year. If you\u2019re standing by the comprehensive plan, I think eighteen months is a minimum, so I don\u2019t understand and I don\u2019t want to send the wrong message. I know I have absolutely stood up here and I\u2019ve actually said that I\u2019m always open to the public\u2019s input, but I also think that at the same point we have to do our due diligence and I think we\u2019re going to put ourselv es in a very poor legal position as well by stopping moratoriums. We have to, we do listen to the Suffolk County Planning Commission and other aspects of law that is in fact in place and so I know there\u2019s passion behind it and that is a great reason why pe ople would like to see a moratorium. I do like hearing, and I always ask for the publics input but I think this time doing my due diligence and doing my own research I don\u2019t think it\u2019s the right way to proceed and therefore I vote no.\u201d Vote Continued: \u201cBeyrodt.\u201d Councilman Beyrodt : \u201cI would like a little clarification from the town attorney that we\u2019re voting on scheduling a public hearing on a potential six month moratorium only.\u201d Erik Howard: \u201cYes, that is correct.\u201d Councilman Beyrodt: \u201cI vote yes to give the public hearings.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cI somewhat offered this. I strongly believe that six months is not long enough, but it was a starting point. I believe we are paying in excess of eight hundred thousand dollars for a comp plan between what we\u2019ve already paid out with one contract and what we\u2019re going to pay out with a future contract. To me you\u2019re just wasting your money if you don\u2019t listen to the comprehensive plan. The last plan was done in 2003. Times have change d drastically since then. Why we need the new comprehensive plan, the new comprehensive plan, nobody is hiding behind it. It will be a way to guide us to proper planning for the Town of Riverhead. Our own Planning Board has recommended this to us. The fact that we don\u2019t want to go at least six months to wait for the comprehensive plan to take a look at the Calverton area first and foremost in regards to Industrial A, B and C, I think that\u2019s a shame that the Board doesn\u2019t want to wait at least six months. Th e developers are sitting out here with bated breath. Six months is not going to hurt them. They\u2019re not going away. Some of these projects even with the comprehensive plan will be coming into town people. I will tell you that. There are going to be certain projects that are going to be coming into town. We are going to have anaerobic digesters in some point in time. We are going to have battery energy storage systems. I\u2019m not against either one of those. What I\u2019m against particularly with this resolution is the massive amounts of development that have come in all at once to one particular area of our town. That\u2019s why the moratorium is needed to pump the brakes, take a look at this, let the experts take a look at it and let us come up with a cohesive comprehen sive plan that will satisfy both the developers and the residents of this town. I absolutely and strongly vote yes to this publish and post.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cWell, I\u2019m always open to hearing from the public and I hope that I continue hearing from the public. These projects should never injure our residents, our villages and I am fully supportive of what\u2019s going on but we need the Planning Board and it is their responsibility, that\u2019s why it\u2019s called planning board, and they sh ould be guided by their own commission memos. Again, they punted it to us. One particular person punted it to us and they took a vote on it. I will be sending them their planning commission memo where one member of the planning board is on there. This is n ot researched. This is a faulty resolution. I\u2019ve looked at other resolutions from other towns and there are significant differences. You also have to always put exceptions on it, hardships, that\u2019s not even included here and so given that, I\u2019m not going to vote to hear from the public on a faulty resolution. This should be dealt with and can be dealt with right now through code. That\u2019s what eventually is going to happen. We have a comprehensive plan. They\u2019re telling us fourteen months, that\u2019s going to turn i nto eighteen months, that\u2019s going to turn into two years. After that what\u2019s going to happen we have to do the same thing we could have done today, go to code, change the code and then adopt it, have public hearings and then adopt it. Nothing changes. All w e\u2019re doing is stopping progress here, letting the people know and not handling the problem ourselves. I\u2019m handling the problem. I\u2019m not Densieski who decided to throw it back to us without consulting with us and us working on this. It could be changed righ t now through code. It\u2019s a faulty resolution. It\u2019s (inaudible) by the Suffolk County Planning Commission, advising memo, volume two, issue one, Spring of 1998 and one of the planning members, Richard Dea from Riverhead Town is on that. Be guided by your ow n memo and let\u2019s work together. Let\u2019s get this done and make sure that our communities are not injured, and I\u2019ll be the first one behind you guys supporting you. We don\u2019t want this. We don\u2019t want an over saturation, but we can\u2019t stop progress and it\u2019s real easy. I brought this before all the towns, all the Supervisors, all ten of us are sitting there and there\u2019s that\u2019s (inaudible). You should deal with it, it\u2019s your code, it\u2019s your planning Board. Every single one was saying, how do you do that in Riverhead . Yes, other towns have moratoriums but it\u2019s very limited and it\u2019s not to wait two years, three years. For example, Southampton did a moratorium because all the hotel rooms were turning into condos. So, they had to put a stop just on some items specific, i t was short and they needed the code and they moved forward. I was talking to Hempstead Supervisor. He said we have one in place because we\u2019re ninety -seven percent built out. That\u2019s when you really need a moratorium, when there\u2019s a danger to us and to our town. In our case I\u2019m going to recommend going back to the Planning Board, work with us, help us change our code, continue doing your job. I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is not adopted.\u201d Councilman Hubbard : \u201cJust for the record I want to say there is nothing illegal about this resolution.\u201d",
+     "result": "NOT ADOPTED [2 TO 3]"
+    },
+    {
+     "slug": "2024-01-03",
+     "date": "January 3, 2024",
+     "number": "2024-62",
+     "title": "Adopts a Local Law to Include Chapter 303: Calverton Industrial Moratorium",
+     "result": "ADOPTED [4 TO 1]"
+    },
     {
      "slug": "2025-01-07",
      "date": "January 7, 2025",
@@ -426,6 +496,13 @@
      "number": "2026-404",
      "title": "Authorizes Town Clerk to Publish and Post Public Notice Setting a Public Hearing for the Condemnation of a Parcel for General Municipal Purposes Located at 111 East Main Street, Riverhead, New York, Suffolk County Tax Map # 129-1-11",
      "result": "ADOPTED [3 - 2]"
+    },
+    {
+     "slug": "2026-09-15",
+     "date": "September 15, 2026",
+     "number": "2026-859",
+     "title": "Authorizes Commencement of Action - 47 Bayside Avenue",
+     "result": "Adopted"
     }
    ],
    "abstentions": [
@@ -438,20 +515,31 @@
     }
    ],
    "byYear": {
+    "2022": {
+     "aye": 55
+    },
+    "2023": {
+     "aye": 42,
+     "nay": 1
+    },
+    "2024": {
+     "aye": 72,
+     "nay": 1
+    },
     "2025": {
      "aye": 1001,
      "nay": 7
     },
     "2026": {
-     "aye": 727,
-     "nay": 4,
+     "aye": 869,
+     "nay": 5,
      "absent": 1,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 1728,
-    "nay": 11,
+    "aye": 2039,
+    "nay": 14,
     "absent": 1,
     "abstain": 1
    },
@@ -465,11 +553,14 @@
    ],
    "party": "Republican",
    "years": [
+    "2022",
+    "2023",
+    "2024",
     "2025"
    ],
-   "moved": 10,
-   "seconded": 8,
-   "meetingsVoted": 25,
+   "moved": 37,
+   "seconded": 31,
+   "meetingsVoted": 28,
    "dissents": [
     {
      "slug": "2025-01-07",
@@ -480,6 +571,13 @@
     }
    ],
    "abstentions": [
+    {
+     "slug": "2022-01-04",
+     "date": "January 4, 2022",
+     "number": "2022-19",
+     "title": "Approves Salary Increase for Deputy Town Attorney Howard Resolution #19 Councilman Rothwell: \u201cApproves Salary Increase for Deputy Town Attorney Howard, so moved.\u201d Councilman Kern: \u201cSecond\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard: \u201cI abstain as Deputy Town Attorney Howard is my son-in-law.\u201d Vote Continued: \u201cAguiar, yes. Resolution adopted.\u201d",
+     "result": "ADOPTED [4 TO 0]"
+    },
     {
      "slug": "2025-01-07",
      "date": "January 7, 2025",
@@ -496,6 +594,16 @@
     }
    ],
    "byYear": {
+    "2022": {
+     "aye": 54,
+     "abstain": 1
+    },
+    "2023": {
+     "aye": 43
+    },
+    "2024": {
+     "aye": 73
+    },
     "2025": {
      "aye": 1001,
      "abstain": 2,
@@ -504,12 +612,87 @@
     }
    },
    "career": {
-    "aye": 1001,
-    "abstain": 2,
+    "aye": 1171,
+    "abstain": 3,
     "nay": 1,
     "absent": 32
    },
    "ayePct": 99.7
+  },
+  {
+   "key": "Aguiar",
+   "name": "Yvette Aguiar",
+   "titles": [
+    "Supervisor"
+   ],
+   "party": null,
+   "years": [
+    "2022",
+    "2023"
+   ],
+   "moved": 0,
+   "seconded": 0,
+   "meetingsVoted": 2,
+   "dissents": [
+    {
+     "slug": "2023-01-04",
+     "date": "January 4, 2023",
+     "number": "2023-10",
+     "title": "Approves a Salary Increase for Legislative Secretary Resolution #10 Councilman Beyrodt: \u201cApproves a Salary Increase for Legislative Secretary, so moved.\u201d Councilman Rothwell: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt : \u201cThank you to Ca rol. She does a great job and it\u2019s well deserved, yes.\u201d Vote Continued: \u201cHubbard, yes; Aguiar.\u201d Supervisor Aguiar : \u201cBill, I have a question. This raise, does that include the five percent we gave the town, every employee? Where\u2019s Bill? Every employee got a five percent raise. I want to know if this is an additional raise because this did not go through the process. This did not go through the budgetary process, myself, Bill. Yeah go ahead.\u201d Bill Rothaar : \u201cThis is just a straight seven and a half percent increase over the 2022 salary filing.\u201d Supervisor Aguiar: \u201cRight, so it\u2019s not, she doesn\u2019t get an additional five percent?\u201d Bill Rothaar: \u2018She did not get the step we spoke about earlier.\u201d Supervisor Aguiar : \u201cOkay so seventy -five. I\u2019m going to vote no. This did not go through the process. You weren\u2019t aware of it. The labor attorney wasn\u2019t aware of it, myself as the budget officer, so I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is adopted.\u201d",
+     "result": "ADOPTED [4 TO 1]"
+    },
+    {
+     "slug": "2023-01-04",
+     "date": "January 4, 2023",
+     "number": "2023-39",
+     "title": "Schedules a Public Hearing and Authorizes Town Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B, and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead Resolution #39 Councilman Hubbard: \u201cSchedules a Public Hearing and Authorizes Tow n Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead so moved.\u201d Councilman Beyrodt: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern.\u201d Councilman Kern : \u201cI going to vote no on this, and I want to be clear from the beginning that I will look at a code with exceptions. I will not do a blanket even for six months moratorium:\u201d Vote Continued: \u201cRothwell.\u201d Councilman Rothwell : \u201cI think a lot of the problem with development is smore involved with the variances that are given and not necessarily staying within the standards of the current code in place. I just don\u2019t feel like it\u2019s proper for us to take the property rights of owners away by imposing a moratorium. I think the town does need to bring in high-tech jobs and I think it will pl ay outside of the EPCAL facility and the fenced property and the surrounding areas of Calverton, it is the industrial area. I just think voting on a six month moratorium is just a setup for asking developers to pause and to not come to the town and to put off any investments here. Nothing is going to be completed in six months, this we know. I don\u2019t feel anything is going to be completed in a year. If you\u2019re standing by the comprehensive plan, I think eighteen months is a minimum, so I don\u2019t understand and I don\u2019t want to send the wrong message. I know I have absolutely stood up here and I\u2019ve actually said that I\u2019m always open to the public\u2019s input, but I also think that at the same point we have to do our due diligence and I think we\u2019re going to put ourselv es in a very poor legal position as well by stopping moratoriums. We have to, we do listen to the Suffolk County Planning Commission and other aspects of law that is in fact in place and so I know there\u2019s passion behind it and that is a great reason why pe ople would like to see a moratorium. I do like hearing, and I always ask for the publics input but I think this time doing my due diligence and doing my own research I don\u2019t think it\u2019s the right way to proceed and therefore I vote no.\u201d Vote Continued: \u201cBeyrodt.\u201d Councilman Beyrodt : \u201cI would like a little clarification from the town attorney that we\u2019re voting on scheduling a public hearing on a potential six month moratorium only.\u201d Erik Howard: \u201cYes, that is correct.\u201d Councilman Beyrodt: \u201cI vote yes to give the public hearings.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cI somewhat offered this. I strongly believe that six months is not long enough, but it was a starting point. I believe we are paying in excess of eight hundred thousand dollars for a comp plan between what we\u2019ve already paid out with one contract and what we\u2019re going to pay out with a future contract. To me you\u2019re just wasting your money if you don\u2019t listen to the comprehensive plan. The last plan was done in 2003. Times have change d drastically since then. Why we need the new comprehensive plan, the new comprehensive plan, nobody is hiding behind it. It will be a way to guide us to proper planning for the Town of Riverhead. Our own Planning Board has recommended this to us. The fact that we don\u2019t want to go at least six months to wait for the comprehensive plan to take a look at the Calverton area first and foremost in regards to Industrial A, B and C, I think that\u2019s a shame that the Board doesn\u2019t want to wait at least six months. Th e developers are sitting out here with bated breath. Six months is not going to hurt them. They\u2019re not going away. Some of these projects even with the comprehensive plan will be coming into town people. I will tell you that. There are going to be certain projects that are going to be coming into town. We are going to have anaerobic digesters in some point in time. We are going to have battery energy storage systems. I\u2019m not against either one of those. What I\u2019m against particularly with this resolution is the massive amounts of development that have come in all at once to one particular area of our town. That\u2019s why the moratorium is needed to pump the brakes, take a look at this, let the experts take a look at it and let us come up with a cohesive comprehen sive plan that will satisfy both the developers and the residents of this town. I absolutely and strongly vote yes to this publish and post.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cWell, I\u2019m always open to hearing from the public and I hope that I continue hearing from the public. These projects should never injure our residents, our villages and I am fully supportive of what\u2019s going on but we need the Planning Board and it is their responsibility, that\u2019s why it\u2019s called planning board, and they sh ould be guided by their own commission memos. Again, they punted it to us. One particular person punted it to us and they took a vote on it. I will be sending them their planning commission memo where one member of the planning board is on there. This is n ot researched. This is a faulty resolution. I\u2019ve looked at other resolutions from other towns and there are significant differences. You also have to always put exceptions on it, hardships, that\u2019s not even included here and so given that, I\u2019m not going to vote to hear from the public on a faulty resolution. This should be dealt with and can be dealt with right now through code. That\u2019s what eventually is going to happen. We have a comprehensive plan. They\u2019re telling us fourteen months, that\u2019s going to turn i nto eighteen months, that\u2019s going to turn into two years. After that what\u2019s going to happen we have to do the same thing we could have done today, go to code, change the code and then adopt it, have public hearings and then adopt it. Nothing changes. All w e\u2019re doing is stopping progress here, letting the people know and not handling the problem ourselves. I\u2019m handling the problem. I\u2019m not Densieski who decided to throw it back to us without consulting with us and us working on this. It could be changed righ t now through code. It\u2019s a faulty resolution. It\u2019s (inaudible) by the Suffolk County Planning Commission, advising memo, volume two, issue one, Spring of 1998 and one of the planning members, Richard Dea from Riverhead Town is on that. Be guided by your ow n memo and let\u2019s work together. Let\u2019s get this done and make sure that our communities are not injured, and I\u2019ll be the first one behind you guys supporting you. We don\u2019t want this. We don\u2019t want an over saturation, but we can\u2019t stop progress and it\u2019s real easy. I brought this before all the towns, all the Supervisors, all ten of us are sitting there and there\u2019s that\u2019s (inaudible). You should deal with it, it\u2019s your code, it\u2019s your planning Board. Every single one was saying, how do you do that in Riverhead . Yes, other towns have moratoriums but it\u2019s very limited and it\u2019s not to wait two years, three years. For example, Southampton did a moratorium because all the hotel rooms were turning into condos. So, they had to put a stop just on some items specific, i t was short and they needed the code and they moved forward. I was talking to Hempstead Supervisor. He said we have one in place because we\u2019re ninety -seven percent built out. That\u2019s when you really need a moratorium, when there\u2019s a danger to us and to our town. In our case I\u2019m going to recommend going back to the Planning Board, work with us, help us change our code, continue doing your job. I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is not adopted.\u201d Councilman Hubbard : \u201cJust for the record I want to say there is nothing illegal about this resolution.\u201d",
+     "result": "NOT ADOPTED [2 TO 3]"
+    }
+   ],
+   "abstentions": [],
+   "byYear": {
+    "2022": {
+     "aye": 55
+    },
+    "2023": {
+     "aye": 41,
+     "nay": 2
+    }
+   },
+   "career": {
+    "aye": 96,
+    "nay": 2
+   },
+   "ayePct": 98.0
+  },
+  {
+   "key": "Jr.",
+   "name": "Beyrodt Jr.",
+   "titles": [
+    "Councilmember"
+   ],
+   "party": null,
+   "years": [
+    "2022",
+    "2023"
+   ],
+   "moved": 25,
+   "seconded": 26,
+   "meetingsVoted": 0,
+   "dissents": [],
+   "abstentions": [],
+   "byYear": {
+    "2022": {
+     "absent": 55
+    },
+    "2023": {
+     "absent": 43
+    }
+   },
+   "career": {
+    "absent": 98
+   },
+   "ayePct": null
   }
  ]
 }

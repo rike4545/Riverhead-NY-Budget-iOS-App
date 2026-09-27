@@ -6,16 +6,16 @@ This document defines parity against the current user-facing navigation in
 ## Current parity layer
 
 `BudgetLiveParityView` exposes every current web navigation destination inside
-the iOS app. The catalog contains **45 unique routes** across the same five
+the iOS app. The catalog contains **54 unique routes** across the same five
 navigation groups used by the web product:
 
 - Start Here — 4
-- Explore — 16
-- Government — 9
-- Research — 9
+- Explore — 18
+- Government — 14
+- Research — 11
 - Evidence — 7
 
-The Budget tab exposes this catalog from the navigation bar. Routes with a
+The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (54 routes as of 2026-09-27), including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. Routes with a
 verified native counterpart open SwiftUI directly; every other destination uses
 the existing `WebContentView` / `WKWebView` implementation and therefore keeps
 loading the current GitHub Pages version until its native replacement is ready.

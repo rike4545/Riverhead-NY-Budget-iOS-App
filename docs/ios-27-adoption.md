@@ -32,7 +32,7 @@ Worth stating plainly, because two of these are not what the README says:
 | Third-party SDKs | **none** — zero package references, empty Frameworks phases | `project.pbxproj` |
 | AI assistant | BYOK OpenAI Responses API, `gpt-5-mini` | `RiverheadAIService.swift`, `OpenAIKeychain.swift` |
 | "ML" | hand-calibrated deterministic scorers | `BudgetNeuralNetwork.swift`, `BudgetRLTrainer.swift` |
-| CI | none | no `.github/workflows` |
+| CI | **GitHub Actions build + unit + UI tests** | `.github/workflows/ios.yml` |
 
 Three things fell out of establishing that. Two are fixed in the same commit as
 this document; the third is the cheapest valuable change on the whole list.
@@ -62,6 +62,13 @@ framework like Foundation Models on top. It needs no iOS 27 API at all: flip
 `SWIFT_VERSION` to 6.0 on a branch, see what the compiler says, and decide.
 
 ---
+
+
+## Implemented in the 2026-09-27 parity pass
+
+- `toolbarMinimizationBehavior(_:for:)` is verified in Apple’s iOS 27 documentation and is a good fit for the 54-route parity catalog, but it is intentionally deferred until CI has an Xcode 27 SDK. The current GitHub runner selects Xcode 26.6, and availability checks cannot compile a symbol that the SDK does not contain.
+- Building with Xcode 27 automatically benefits from SwiftUI's new lazy class initialization for `@State` and the updated content-builder implementation; no compatibility shim is needed in app code.
+- The app keeps system-provided materials and navigation styling rather than replacing them with custom UIKit appearance proxies, preserving the current platform look.
 
 ## 1. Foundation Models — the highest-value change available
 

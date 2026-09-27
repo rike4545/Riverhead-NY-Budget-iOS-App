@@ -83,8 +83,8 @@ struct ContactView: View {
     }
 
     private func openInMaps() {
-        let placemark = MKPlacemark(coordinate: townHallCoordinate)
-        let item = MKMapItem(placemark: placemark)
+        let location = CLLocation(latitude: townHallCoordinate.latitude, longitude: townHallCoordinate.longitude)
+        let item = MKMapItem(location: location, address: nil)
         item.name = "Riverhead Town Hall"
         item.openInMaps(launchOptions: [
             MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving

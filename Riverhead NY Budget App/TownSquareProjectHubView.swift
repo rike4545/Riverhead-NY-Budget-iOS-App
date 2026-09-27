@@ -204,6 +204,6 @@ struct TownSquareProjectHubView: View {
     }
 
     private func bullet(_ text: String) -> Text {
-        Text("• ") + Text(.init(text))
+        Text("• \(Text(.init(text)))")
     }
 }

@@ -159,8 +159,7 @@ struct TownBoardVotesView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     if !next.hearings.isEmpty {
-                        (Text("Officially noticed public hearings: ").font(.caption.weight(.bold))
-                            + Text(next.hearings.joined(separator: " · ")).font(.caption))
+                        Text("\(Text("Officially noticed public hearings: ").font(.caption.weight(.bold)))\(Text(next.hearings.joined(separator: " · ")).font(.caption))")
                             .foregroundStyle(RiverheadTheme.textPrimary)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -170,8 +169,7 @@ struct TownBoardVotesView: View {
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(midGreen)
                         ForEach(next.docket.prefix(12)) { r in
-                            (Text("\(r.number)  ").font(.caption.weight(.bold)).foregroundColor(RiverheadTheme.brandBlue)
-                                + Text(r.title).font(.caption).foregroundColor(RiverheadTheme.textPrimary))
+                            Text("\(Text("\(r.number)  ").font(.caption.weight(.bold)).foregroundColor(RiverheadTheme.brandBlue))\(Text(r.title).font(.caption).foregroundColor(RiverheadTheme.textPrimary))")
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                         if next.docket.count > 12 {
@@ -213,8 +211,7 @@ struct TownBoardVotesView: View {
                         .font(.caption2.weight(.bold))
                         .foregroundStyle(midGreen)
                     ForEach(rest.prefix(8)) { m in
-                        (Text(RBMeetingsData.formatMeeting(m.startDateTime))
-                            + Text(publishedItemsNote(m)).foregroundColor(.secondary))
+                        Text("\(RBMeetingsData.formatMeeting(m.startDateTime))\(Text(publishedItemsNote(m)).foregroundColor(.secondary))")
                             .font(.caption)
                             .foregroundStyle(deepGreen)
                             .fixedSize(horizontal: false, vertical: true)
@@ -278,8 +275,7 @@ struct TownBoardVotesView: View {
                     .fixedSize(horizontal: false, vertical: true)
 
                 if !held.hearings.isEmpty {
-                    (Text("Public hearings held: ").font(.caption.weight(.bold))
-                        + Text(held.hearings.joined(separator: " · ")).font(.caption))
+                    Text("\(Text("Public hearings held: ").font(.caption.weight(.bold)))\(Text(held.hearings.joined(separator: " · ")).font(.caption))")
                         .foregroundStyle(RiverheadTheme.textPrimary)
                         .fixedSize(horizontal: false, vertical: true)
                 }

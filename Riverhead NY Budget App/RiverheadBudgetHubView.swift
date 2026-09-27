@@ -4402,23 +4402,7 @@ fileprivate struct HearingToolkitView: View {
                             .font(.caption.weight(.semibold))
                     }
 
-                    Text("Current model uses about ")
-                        .font(.caption2)
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(BudgetRecommendations2027.modeledPersonnelBase2026, format: .currency(code: "USD"))
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(" in tracked 2026 payroll against ")
-                        .font(.caption2)
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(BudgetRecommendations2027.totalBudget2026, format: .currency(code: "USD"))
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(" in total appropriations.")
+                    Text("Current model uses about \(Text(BudgetRecommendations2027.modeledPersonnelBase2026, format: .currency(code: "USD")).fontWeight(.semibold)) in tracked 2026 payroll against \(Text(BudgetRecommendations2027.totalBudget2026, format: .currency(code: "USD")).fontWeight(.semibold)) in total appropriations.")
                         .font(.caption2)
                         .foregroundStyle(RiverheadTheme.textSecondary)
 
@@ -4445,15 +4429,7 @@ fileprivate struct HearingToolkitView: View {
                             .font(.caption.weight(.semibold))
                     }
 
-                    Text("Current unassigned fund balance in the app model is ")
-                        .font(.caption2)
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(BudgetRecommendations2027.modeledUnassignedFundBalance2026, format: .currency(code: "USD"))
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.textSecondary)
-                    +
-                    Text(", so the policy question is not whether reserves exist, but how much can be deployed without normalizing one-time money into recurring operations.")
+                    Text("Current unassigned fund balance in the app model is \(Text(BudgetRecommendations2027.modeledUnassignedFundBalance2026, format: .currency(code: "USD")).fontWeight(.semibold)), so the policy question is not whether reserves exist, but how much can be deployed without normalizing one-time money into recurring operations.")
                         .font(.caption2)
                         .foregroundStyle(RiverheadTheme.textSecondary)
 

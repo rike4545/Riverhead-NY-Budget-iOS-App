@@ -4,7 +4,7 @@ import Testing
 
 struct BudgetLiveParityCatalogTests {
     @Test func routeCatalogMatchesCurrentWebNavigation() {
-        #expect(BudgetLiveParityCatalog.routeCount == 45)
+        #expect(BudgetLiveParityCatalog.routeCount == 54)
         #expect(BudgetLiveParityCatalog.hasUniquePaths)
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/programs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/compare/"))
@@ -12,6 +12,15 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/meetings/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/workforce-by-title/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/outliers/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/revenue/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/fund-balance-draws/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/management-compensation/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/police-crime/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/school-resource-officers/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/supervisor-promises/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/open-meetings/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/tentative-2027/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/budget-adoption/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {
@@ -27,11 +36,11 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/outliers/"))
     }
 
-    @Test func routeGroupsStillTotalFortyFive() {
+    @Test func routeGroupsStillTotalFiftyFour() {
         let groupedCount = BudgetLiveRouteGroup.allCases.reduce(into: 0) { total, group in
             total += BudgetLiveParityCatalog.routes[group, default: []].count
         }
-        #expect(groupedCount == 45)
+        #expect(groupedCount == 54)
     }
 
     @Test func programBudgetContractDecodes() throws {

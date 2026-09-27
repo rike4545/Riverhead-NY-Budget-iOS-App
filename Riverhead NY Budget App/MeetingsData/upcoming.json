@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-09-14",
+ "generatedAt": "2026-09-26",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -36,168 +36,204 @@
  ],
  "recent": [
   {
-   "slug": "2026-09-01",
-   "date": "2026-09-01",
-   "startDateTime": "2026-09-01T14:00:00Z",
-   "type": "Town Board Meeting",
+   "slug": "2026-09-24",
+   "date": "2026-09-24",
+   "startDateTime": "2026-09-24T10:00:00Z",
+   "type": "Special Town Board Meeting",
    "agendaPublished": true,
-   "itemsSource": "published-agenda+official-calendar",
-   "docket": [
-    {
-     "seq": 1,
-     "number": "2026-814",
-     "title": "Ratifies Budget Adjustment for Air Conditioning Units Replacement At Justice Court and Police Department"
-    },
-    {
-     "seq": 2,
-     "number": "2026-815",
-     "title": "Authorization For An Appraisal"
-    },
-    {
-     "seq": 3,
-     "number": "2026-816",
-     "title": "Police Department Vehicle Transfer to Code Enforcement"
-    },
-    {
-     "seq": 4,
-     "number": "2026-817",
-     "title": "Accepts Donation of T-Shirts For Annual Snapper Tournament"
-    },
-    {
-     "seq": 5,
-     "number": "2026-818",
-     "title": "Removes Fixed Assets"
-    },
-    {
-     "seq": 6,
-     "number": "2026-819",
-     "title": "Ratifies the Authorization for Police Department Employees to Attend a Training"
-    },
-    {
-     "seq": 7,
-     "number": "2026-820",
-     "title": "Accepts the Retirement of a Police Detective Anderson"
-    },
-    {
-     "seq": 8,
-     "number": "2026-821",
-     "title": "Accepts the Retirement of a Police Officer Troyan"
-    },
-    {
-     "seq": 9,
-     "number": "2026-822",
-     "title": "Accepts the Retirement of a Senior Justice Court Clerk"
-    },
-    {
-     "seq": 10,
-     "number": "2026-823",
-     "title": "Ratifies the Resignation of a Wastewater Treatment Plant Operator Trainee"
-    },
-    {
-     "seq": 11,
-     "number": "2026-824",
-     "title": "Approves Request for Military Leave of Absence"
-    },
-    {
-     "seq": 12,
-     "number": "2026-825",
-     "title": "Authorizes Attendance At Seminar By Fire Marshalls"
-    },
-    {
-     "seq": 13,
-     "number": "2026-826",
-     "title": "Authorizes Employee to Attend Civil Service Employees Association 116th Annual Delegates Meeting"
-    },
-    {
-     "seq": 14,
-     "number": "2026-827",
-     "title": "Ratifies the Authorization for the Supervisor to Execute and Agreement with a Town Employee"
-    },
-    {
-     "seq": 15,
-     "number": "2026-828",
-     "title": "Authorizes Amendment #9 of the Agreement with U.S. Department of The Interior-U.S. Geological Survey"
-    },
-    {
-     "seq": 16,
-     "number": "2026-829",
-     "title": "Authorizes the Supervisor to Execute a Professional Services Agreement for Engineering Services for Installation of Water Mains and Appurtenances for Boundary Extension Nos. 95, 96, and 97 - Riverhead Water District"
-    },
-    {
-     "seq": 17,
-     "number": "2026-830",
-     "title": "Authorizes the Supervisor to Execute a License Agreement with Darkside Productions, Inc. 2026"
-    },
-    {
-     "seq": 18,
-     "number": "2026-831",
-     "title": "Grants Administrative Approval for the Site Plan application entitled Peconic Bay Medical Center / Northwell Health \u2014 Maternity Expansion and Facade Improvements, 1 Heroes Way, SCTM No. 600-108-3-22.1"
-    },
-    {
-     "seq": 19,
-     "number": "2026-832",
-     "title": "Accepts and Approves the Appraisal of Goodman-Marks Associates, INC., Establishing Just Compensation and Authorizing the Transmission of a Written Offer for the Acquisition of the Property Located at 111 East Main Street, Riverhead, New York, Suffolk County Tax Map # 129-1-11"
-    },
-    {
-     "seq": 20,
-     "number": "2026-833",
-     "title": "Adopts Bond Resolution for Ambulance Building Project"
-    },
-    {
-     "seq": 21,
-     "number": "2026-834",
-     "title": "Acceptance of 2025 Audited Financial Statements"
-    },
-    {
-     "seq": 22,
-     "number": "2026-835",
-     "title": "Authorizes 2026 Bow Hunting For Deer On Town Property At Enterprise Park At Calverton (SCTM No. 600-135-1-7.33, Et Al.); 1751 Sound Avenue, Calverton (SCTM No. 600-60-1-2) And Middle Road, Riverhead (SCTM No. 600-80-2-10.1)"
-    },
-    {
-     "seq": 23,
-     "number": "2026-836",
-     "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 115 of the Riverhead Town Code titled \u201cProcurement Policy\u201d"
-    },
-    {
-     "seq": 24,
-     "number": "2026-837",
-     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Extension No. 97 Forge Road - Riverhead Water District"
-    },
-    {
-     "seq": 25,
-     "number": "2026-838",
-     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Summerwind - Riverhead Water District"
-    },
-    {
-     "seq": 26,
-     "number": "2026-839",
-     "title": "Approves Special Event Chapter 255 Application for Riverhead Athletic Club (Riverhead Atheltic Club Run the Wave 5K)"
-    },
-    {
-     "seq": 27,
-     "number": "2026-840",
-     "title": "Pays Bills"
-    }
-   ],
-   "hearings": [
-    "Increase and Improvement of Facilities of Riverhead Ambulance District",
-    "Sewer District Extension, 840 Old Country Rd",
-    "SCWA \"Monroe Balancing Test\"",
-    "Increase and Improvement of Facilities of Riverhead",
-    "Extend Sewer Connection at 840 Old Country Road",
-    "SCWA Monroe Balancing Test"
-   ]
-  }
- ],
- "meetings": [
+   "itemsSource": null,
+   "docket": [],
+   "hearings": []
+  },
   {
    "slug": "2026-09-15",
    "date": "2026-09-15",
    "startDateTime": "2026-09-15T18:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": true,
-   "itemsSource": "published-agenda",
-   "docket": [],
+   "itemsSource": "published-agenda+official-calendar",
+   "docket": [
+    {
+     "seq": 1,
+     "number": "2026-841",
+     "title": "Adopts Sewer District Capital Project #82619 - NYS SECURE Grant Infrastructure Improvements"
+    },
+    {
+     "seq": 2,
+     "number": "2026-842",
+     "title": "Ambulance District Budget Adjustment for Repairs to the Armory Building"
+    },
+    {
+     "seq": 3,
+     "number": "2026-843",
+     "title": "Budget Adoption for Capital Project #12620 Restoration of Wading River Duck Ponds"
+    },
+    {
+     "seq": 4,
+     "number": "2026-844",
+     "title": "Budget Adjustment for Replacement of HVAC System at George Young Community Center"
+    },
+    {
+     "seq": 5,
+     "number": "2026-845",
+     "title": "Sets the Fees for the 2026 Fall Recreation Brochure"
+    },
+    {
+     "seq": 6,
+     "number": "2026-846",
+     "title": "Extends Internship for Town Board Councilman Robert Kern"
+    },
+    {
+     "seq": 7,
+     "number": "2026-847",
+     "title": "Appoints an Automotive Equipment Operator to the Highway Department"
+    },
+    {
+     "seq": 8,
+     "number": "2026-848",
+     "title": "Changes the Status and Sets Salaries of Current Seasonal Employees to Call-In Employees in the Recreation Department"
+    },
+    {
+     "seq": 9,
+     "number": "2026-849",
+     "title": "Accepts the Retirement of a Police Officer Brogan"
+    },
+    {
+     "seq": 10,
+     "number": "2026-850",
+     "title": "Accepts the Retirement of a Police Officer_Lipinsky"
+    },
+    {
+     "seq": 11,
+     "number": "2026-851",
+     "title": "Accepts the Retirement of a Police Detective_Schmidt"
+    },
+    {
+     "seq": 12,
+     "number": "2026-852",
+     "title": "Accepts the Retirement of An Account Clerk"
+    },
+    {
+     "seq": 13,
+     "number": "2026-853",
+     "title": "Ratifies the Resignation of a Fire Marshal I"
+    },
+    {
+     "seq": 14,
+     "number": "2026-854",
+     "title": "Authorizing an Award of Contract to M&J Engineering, D.P.C. Engineering Assessment for the Restoration of the Wading River Duck Ponds, Wading River, NY Riverhead Sewer District To Serve 840 Old Country Road, Riverhead (SCTM# 0600-82- 03-9.1)"
+    },
+    {
+     "seq": 16,
+     "number": "2026-856",
+     "title": "Ratifies Authorization For The Supervisor To Execute Renewal And Amendment Agreement For The Riverhead Central School District School Resource Officer Program"
+    },
+    {
+     "seq": 17,
+     "number": "2026-857",
+     "title": "Authorizes Supervisor To Execute An Agreement With NYS Environmental Facilities Corporation (NYSEFC)"
+    },
+    {
+     "seq": 18,
+     "number": "2026-858",
+     "title": "Authorizes Submission of Letter of Intent and Execution of Contract by the Supervisor for Operation and Maintenance Grant Program to New York State Environmental Facilities Corporation (EFC)"
+    },
+    {
+     "seq": 19,
+     "number": "2026-859",
+     "title": "Authorizes Commencement of Action - 47 Bayside Avenue"
+    },
+    {
+     "seq": 20,
+     "number": "2026-860",
+     "title": "Ratifies Authorization for the Riverhead Police Department to Apply for Grant Funding through the Department of Justice's Office of Community Oriented Policing Services Technology and Equipment Program"
+    },
+    {
+     "seq": 21,
+     "number": "2026-861",
+     "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 289 of the Riverhead Town Code Titled \u201cVehicles, Traffic and Parking Regulations\u201d, Article II \u201cTraffic Regulations\u201d"
+    },
+    {
+     "seq": 22,
+     "number": "2026-862",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice for Public Hearing Regarding US HUD Community Development Block Grant (\"CDBG\") 2027 Funds"
+    },
+    {
+     "seq": 23,
+     "number": "2026-863",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Hydraulic Control Valve - Riverhead Water District"
+    },
+    {
+     "seq": 24,
+     "number": "2026-864",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Distribution System - Riverhead Water District"
+    },
+    {
+     "seq": 25,
+     "number": "2026-865",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Directional Drilling - Riverhead Water District"
+    },
+    {
+     "seq": 26,
+     "number": "2026-866",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Electrical - Riverhead Water District"
+    },
+    {
+     "seq": 27,
+     "number": "2026-867",
+     "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Process Control Systems - Riverhead Water District"
+    },
+    {
+     "seq": 28,
+     "number": "2026-868",
+     "title": "Extends Bid 2024-27 Nunc Pro Tunc for Highway Department Grinding of Yard Waste On-Site at South Side Young's Avenue Yard Waste Facility"
+    },
+    {
+     "seq": 29,
+     "number": "2026-869",
+     "title": "Awards Bid for Replacement of HVAC System at George Young Community Center"
+    },
+    {
+     "seq": 30,
+     "number": "2026-870",
+     "title": "Extends Bid 2024-22 for Well and Pump Testing for Riverhead Water District"
+    },
+    {
+     "seq": 31,
+     "number": "2026-871",
+     "title": "Extends Bid 2025-24 Nunc Pro Tunc for Fertilizer and Lawn Chemicals"
+    },
+    {
+     "seq": 32,
+     "number": "2026-872",
+     "title": "Approves Special Event Chapter 255 Application for DMS Apex Holdings, LLC (Skip Barber Advanced Autocross\")"
+    },
+    {
+     "seq": 33,
+     "number": "2026-873",
+     "title": "Authorizes Designated Alcohol Service Vendor To Serve Alcohol At The Riverhead Chamber Of Commerce \u201cConcerts In The Park\u201d"
+    },
+    {
+     "seq": 34,
+     "number": "2026-874",
+     "title": "Authorizes Designated Alcohol Service Vendors To Serve Alcohol At The \u201cVillage Vibe\u201d"
+    },
+    {
+     "seq": 35,
+     "number": "2026-875",
+     "title": "Adopts the Suffolk County 2026 Hazard Mitigation Plan"
+    },
+    {
+     "seq": 36,
+     "number": "2026-876",
+     "title": "Pays Bills"
+    },
+    {
+     "seq": 37,
+     "number": "2026-877",
+     "title": "Budget Adjustment for 2026 Records Management and Digital Conversion"
+    }
+   ],
    "hearings": [
     "Amend Chapter 231, Art. XIII, \"Fireworks and Pyrotechnics\"",
     "Amend Chapter 255, Art.II, \"Special Events\"",
@@ -205,16 +241,21 @@
     "Amend Chapter 231, Art XIII, \"Fireworks and",
     "Amend Chapter 255, Art II, \" Special Events\""
    ]
-  },
+  }
+ ],
+ "meetings": [
   {
    "slug": "2026-10-06",
    "date": "2026-10-06",
    "startDateTime": "2026-10-06T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": false,
-   "itemsSource": null,
+   "itemsSource": "official-calendar",
    "docket": [],
-   "hearings": []
+   "hearings": [
+    "2:00 PM- Public Hearing- Community Block Grant (CDBG)",
+    "2:15 PM- Public Hearing- Amend Chapter 289, Art.II, Vehicle,Traffic and Parking Regulations"
+   ]
   },
   {
    "slug": "2026-10-20",

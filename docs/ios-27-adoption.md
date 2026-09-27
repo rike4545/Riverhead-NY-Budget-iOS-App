@@ -66,7 +66,7 @@ framework like Foundation Models on top. It needs no iOS 27 API at all: flip
 
 ## Implemented in the 2026-09-27 parity pass
 
-- The 54-route parity catalog now uses the verified iOS 27 `toolbarMinimizationBehavior(_:for:)` API with `.onScrollDown` for the navigation bar, guarded by `#available(iOS 27.0, *)` so iOS 26 remains supported.
+- `toolbarMinimizationBehavior(_:for:)` is verified in Apple’s iOS 27 documentation and is a good fit for the 54-route parity catalog, but it is intentionally deferred until CI has an Xcode 27 SDK. The current GitHub runner selects Xcode 26.6, and availability checks cannot compile a symbol that the SDK does not contain.
 - Building with Xcode 27 automatically benefits from SwiftUI's new lazy class initialization for `@State` and the updated content-builder implementation; no compatibility shim is needed in app code.
 - The app keeps system-provided materials and navigation styling rather than replacing them with custom UIKit appearance proxies, preserving the current platform look.
 

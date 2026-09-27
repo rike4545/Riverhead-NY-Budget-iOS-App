@@ -1,0 +1,1749 @@
+{
+ "slug": "2026-09-15",
+ "meetingDate": "2026-09-15",
+ "source": {
+  "title": "Town of Riverhead Town Board Agenda Packet, 2026-09-15 (Fiscal Impact Statements)",
+  "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
+ },
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
+ "summary": {
+  "total": 37,
+  "markedNo": 22,
+  "markedYes": 15,
+  "understated": 17,
+  "understatedMarkedNo": 7,
+  "identifiedDollarsAtStake": 1038285.0,
+  "pricedResolutions": 5,
+  "largestUnderstatedMarkedNo": null,
+  "withAccounts": 10,
+  "accountEvidence": 6,
+  "fundBalanceDraws": 4,
+  "fundBalanceDrawTotal": 760000.0
+ },
+ "resolutions": [
+  {
+   "number": "2026-841",
+   "seq": 1,
+   "title": "Adopts Sewer District Capital Project #82619 - NYS SECURE Grant Infrastructure Improvements",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": 278285.0,
+   "funding": {
+    "source": "grant",
+    "sources": [
+     "grant"
+    ],
+    "sourceText": ": : : ES2-3901-000-82619-8 Sewer \u2013 NYS SECURE Grant $ 278,285.00 : ES2-8-8130-250-000-82619 Sewer \u2013 Infrastructure $ 229,775.00 ES2-8-8130-435-000-82619 Sewer \u2013 Prof Svcs - Engineering $ 48,510.00",
+    "fundCodes": [
+     "ES2"
+    ],
+    "funds": [
+     "Sewer \u2014 developer fees"
+    ],
+    "amount": 278285.0,
+    "accounts": [
+     {
+      "code": "ES2-3901-000-82619-8",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "ES2",
+      "name": "Sewer \u2013 NYS SECURE Grant",
+      "amount": 278285.0,
+      "createdHere": false
+     },
+     {
+      "code": "ES2-8-8130-250-000-82619",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "ES2",
+      "name": "Sewer \u2013 Infrastructure",
+      "amount": 229775.0,
+      "createdHere": true
+     },
+     {
+      "code": "ES2-8-8130-435-000-82619",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "ES2",
+      "name": "Sewer \u2013 Prof Svcs - Engineering",
+      "amount": 48510.0,
+      "createdHere": true
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 2,
+    "createsAccounts": [
+     "ES2-8-8130-250-000-82619",
+     "ES2-8-8130-435-000-82619"
+    ]
+   },
+   "realistic": {
+    "verdict": "Capital fund \u2014 no draw on an operating balance",
+    "reason": "Every account named in section G sits in the Sewer \u2014 developer fees. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
+    "flag": "neutral",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-842",
+   "seq": 2,
+   "title": "Ambulance District Budget Adjustment for Repairs to the Armory Building",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": 45000.0,
+   "funding": {
+    "source": "fund-balance",
+    "sources": [
+     "fund-balance"
+    ],
+    "sourceText": "Covered by Ambulance District Fund Balance",
+    "fundCodes": [
+     "SM1"
+    ],
+    "funds": [
+     "Ambulance District"
+    ],
+    "amount": 45000.0,
+    "accounts": [
+     {
+      "code": "SM1-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "SM1",
+      "name": "Ambulance District Fund Balance",
+      "amount": 45000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "SM1-4-4540-402-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "SM1",
+      "name": "Amb \u2013 R&M \u2013 Buildings",
+      "amount": 45000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "SM1-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "Ambulance District"
+    ],
+    "fundBalanceDraw": 45000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Draws fund balance \u2014 stated on the Town's own form",
+    "reason": "Section G charges $45,000 to Appropriated Fund Balance in the Ambulance District. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
+    "flag": "reserve-draw",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-843",
+   "seq": 3,
+   "title": "Budget Adoption for Capital Project #12620 Restoration of Wading River Duck Ponds",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": 40000.0,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": "General Fund's fund balance",
+    "fundCodes": [
+     "A01",
+     "H01"
+    ],
+    "funds": [
+     "General Fund",
+     "Capital Projects Fund"
+    ],
+    "amount": 40000.0,
+    "accounts": [
+     {
+      "code": "A01-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Appropriated Fund Balance",
+      "amount": 40000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "H01-1-1940-435-000-12620",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "H01",
+      "name": "Professional Services - Engineering",
+      "amount": 40000.0,
+      "createdHere": true
+     }
+    ],
+    "fundBalanceAccounts": [
+     "A01-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "General Fund"
+    ],
+    "fundBalanceDraw": 40000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": [
+     "H01-1-1940-435-000-12620"
+    ]
+   },
+   "realistic": {
+    "verdict": "Draws fund balance \u2014 stated on the Town's own form",
+    "reason": "Section G charges $40,000 to Appropriated Fund Balance in the General Fund. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
+    "flag": "reserve-draw",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-844",
+   "seq": 4,
+   "title": "Budget Adjustment for Replacement of HVAC System at George Young Community Center",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": 375000.0,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": "General Fund's fund balance",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": 375000.0,
+    "accounts": [
+     {
+      "code": "A01-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Appropriated Fund Balance",
+      "amount": 375000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "A01-1-1620-402-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Town Hall \u2013 R&M \u2013 Buildings",
+      "amount": 375000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "A01-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "General Fund"
+    ],
+    "fundBalanceDraw": 375000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Draws fund balance \u2014 stated on the Town's own form",
+    "reason": "Section G charges $375,000 to Appropriated Fund Balance in the General Fund. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
+    "flag": "reserve-draw",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-845",
+   "seq": 5,
+   "title": "Sets the Fees for the 2026 Fall Recreation Brochure",
+   "category": "fees",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : NA : NA : NA",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-846",
+   "seq": 6,
+   "title": "Extends Internship for Town Board Councilman Robert Kern",
+   "category": "appointment-volunteer",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "Appointment to an unpaid advisory board, committee, or task force \u2014 no salary attached.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-847",
+   "seq": 7,
+   "title": "Appoints an Automotive Equipment Operator to the Highway Department",
+   "category": "personnel",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : DA1-5-5110-101-NON-00000 - Highway - F/T : :",
+    "fundCodes": [
+     "DA1"
+    ],
+    "funds": [
+     "Highway Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "DA1-5-5110-101-NON-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "DA1",
+      "name": "Highway - F/T",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost \u2014 funded by the levy",
+    "reason": "Section G charges this to an appropriation account (Highway - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
+    "flag": "recurring",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-848",
+   "seq": 8,
+   "title": "Changes the Status and Sets Salaries of Current Seasonal Employees to Call-In Employees in the Recreation Department",
+   "category": "personnel",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : Various depending on Program and Facility : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-849",
+   "seq": 9,
+   "title": "Accepts the Retirement of a Police Officer Brogan",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-850",
+   "seq": 10,
+   "title": "Accepts the Retirement of a Police Officer_Lipinsky",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-851",
+   "seq": 11,
+   "title": "Accepts the Retirement of a Police Detective_Schmidt",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-852",
+   "seq": 12,
+   "title": "Accepts the Retirement of An Account Clerk",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-853",
+   "seq": 13,
+   "title": "Ratifies the Resignation of a Fire Marshal I",
+   "category": "personnel-out",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Actually a saving",
+    "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
+    "flag": "saving",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-854",
+   "seq": 14,
+   "title": "Authorizing an Award of Contract to M&J Engineering, D.P.C. Engineering Assessment for the Restoration of the Wading River Duck Ponds, Wading River, NY",
+   "category": "contract",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": "see separate resolution",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-855",
+   "seq": 15,
+   "title": "Town Of Riverhead Resolution 2026- Order Establishing Extension To Riverhead Sewer District To Serve 840 Old Country Road, Riverhead (SCTM# 0600-82-03-9.1)",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-856",
+   "seq": 16,
+   "title": "Ratifies Authorization For The Supervisor To Execute Renewal And Amendment Agreement For The Riverhead Central School District School Resource Officer Program",
+   "category": "contract",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": false,
+    "tag": "tabled",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-857",
+   "seq": 17,
+   "title": "Authorizes Supervisor To Execute An Agreement With NYS Environmental Facilities Corporation (NYSEFC)",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-858",
+   "seq": 18,
+   "title": "Authorizes Submission of Letter of Intent and Execution of Contract by the Supervisor for Operation and Maintenance Grant Program to New York State Environmental Facilities Corporation (EFC)",
+   "category": "grant",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Revenue in / offsetting",
+    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
+    "flag": "neutral",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-859",
+   "seq": 19,
+   "title": "Authorizes Commencement of Action - 47 Bayside Avenue",
+   "category": "contract",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Real, recurring cost",
+    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "split",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-860",
+   "seq": 20,
+   "title": "Ratifies Authorization for the Riverhead Police Department to Apply for Grant Funding through the Department of Justice's Office of Community Oriented Policing Services Technology and Equipment Program",
+   "category": "grant",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Revenue in / offsetting",
+    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
+    "flag": "neutral",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-861",
+   "seq": 21,
+   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 289 of the Riverhead Town Code Titled \u201cVehicles, Traffic and Parking Regulations\u201d, Article II \u201cTraffic Regulations\u201d",
+   "category": "legislative",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-862",
+   "seq": 22,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice for Public Hearing Regarding US HUD Community Development Block Grant (\"CDBG\") 2027 Funds",
+   "category": "grant",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Revenue in / offsetting",
+    "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
+    "flag": "neutral",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-863",
+   "seq": 23,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Hydraulic Control Valve - Riverhead Water District",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-864",
+   "seq": 24,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Distribution System - Riverhead Water District",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-865",
+   "seq": 25,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Directional Drilling - Riverhead Water District",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-866",
+   "seq": 26,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Electrical - Riverhead Water District",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-867",
+   "seq": 27,
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Annual Emergency Maintenance Contract \u2013 Process Control Systems - Riverhead Water District",
+   "category": "contract",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-868",
+   "seq": 28,
+   "title": "Extends Bid 2024-27 Nunc Pro Tunc for Highway Department Grinding of Yard Waste On-Site at South Side Young's Avenue Yard Waste Facility",
+   "category": "procedural",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : DA1-5-5140-483-000-00000 : :",
+    "fundCodes": [
+     "DA1"
+    ],
+    "funds": [
+     "Highway Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "DA1-5-5140-483-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "DA1",
+      "name": null,
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Administrative / offsetting",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-869",
+   "seq": 29,
+   "title": "Awards Bid for Replacement of HVAC System at George Young Community Center",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-1-1620-402-000-00000 : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-1-1620-402-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": null,
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
+    "flag": "reserve-draw",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-870",
+   "seq": 30,
+   "title": "Extends Bid 2024-22 for Well and Pump Testing for Riverhead Water District",
+   "category": "procedural",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : EW1-8-8320-230-000-00000 : :",
+    "fundCodes": [
+     "EW1"
+    ],
+    "funds": [
+     "Water District"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "EW1-8-8320-230-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "EW1",
+      "name": null,
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Administrative / offsetting",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-871",
+   "seq": 31,
+   "title": "Extends Bid 2025-24 Nunc Pro Tunc for Fertilizer and Lawn Chemicals",
+   "category": "procedural",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-1-1625-404-000-00000 : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-1-1625-404-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": null,
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Administrative / offsetting",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-872",
+   "seq": 32,
+   "title": "Approves Special Event Chapter 255 Application for DMS Apex Holdings, LLC (Skip Barber Advanced Autocross\")",
+   "category": "permit",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-873",
+   "seq": 33,
+   "title": "Authorizes Designated Alcohol Service Vendor To Serve Alcohol At The Riverhead Chamber Of Commerce \u201cConcerts In The Park\u201d",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-874",
+   "seq": 34,
+   "title": "Authorizes Designated Alcohol Service Vendors To Serve Alcohol At The \u201cVillage Vibe\u201d",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-875",
+   "seq": 35,
+   "title": "Adopts the Suffolk County 2026 Hazard Mitigation Plan",
+   "category": "procedural",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-876",
+   "seq": 36,
+   "title": "Pays Bills",
+   "category": "warrant",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Authorizes payment \u2014 the money leaves here",
+    "reason": "A warrant is the Board signing off on actual disbursement: checks written and funds transferred. The obligations were incurred earlier, so this is not new spending \u2014 but it is the moment the cash goes out, and the resolution that releases it is the one place the total is put in front of the Board.",
+    "flag": "disbursement",
+    "evidence": "category"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  },
+  {
+   "number": "2026-877",
+   "seq": 37,
+   "title": "Budget Adjustment for 2026 Records Management and Digital Conversion",
+   "category": "capital",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": 300000.0,
+   "funding": {
+    "source": "fund-balance",
+    "sources": [
+     "fund-balance"
+    ],
+    "sourceText": "General Fund's fund balance",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": 300000.0,
+    "accounts": [
+     {
+      "code": "A01-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Appropriated Fund Balance",
+      "amount": 300000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "A01-1-1680-436-210-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "I.T. \u2013 Prof Svcs \u2013 Other",
+      "amount": 265000.0,
+      "createdHere": false
+     },
+     {
+      "code": "A01-1-1680-430-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "I.T. \u2013 License Support & Maintenance",
+      "amount": 35000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "A01-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "General Fund"
+    ],
+    "fundBalanceDraw": 300000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 2,
+    "createsAccounts": []
+   },
+   "realistic": {
+    "verdict": "Draws fund balance \u2014 stated on the Town's own form",
+    "reason": "Section G charges $300,000 to Appropriated Fund Balance in the General Fund. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
+    "flag": "reserve-draw",
+    "evidence": "account-code"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": null
+   }
+  }
+ ]
+}

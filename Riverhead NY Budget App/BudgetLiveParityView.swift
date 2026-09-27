@@ -26,7 +26,7 @@ enum BudgetLiveRouteGroup: String, CaseIterable, Identifiable, Sendable {
     case startHere = "Start Here"
     case explore = "Explore"
     case government = "Government"
-    case research = "Research"
+    case research = "2027 & Analysis"
     case evidence = "Evidence"
 
     var id: String { rawValue }
@@ -103,9 +103,9 @@ enum BudgetLiveParityCatalog {
             .init(title: "Open Meetings Law", path: "/open-meetings/", systemImage: "person.2.wave.2.fill", detail: "Review New York Open Meetings Law guidance and Riverhead meeting context.")
         ],
         .research: [
-            .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
-            .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection for the next adopted budget."),
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
+            .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection for the next adopted budget."),
+            .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
             .init(title: "How Budgets Get Adopted", path: "/budget-adoption/", systemImage: "arrow.triangle.branch", detail: "Review how tentative, preliminary, and adopted budgets change through the process."),
             .init(title: "Scenario Lab", path: "/scenarios/", systemImage: "slider.horizontal.3", detail: "Model alternative fiscal assumptions and tradeoffs."),
             .init(title: "2027 Spending Reduction", path: "/spending-reduction-2027/", systemImage: "scissors.circle.fill", detail: "Review sourced recurring spending-reduction candidates."),
@@ -182,9 +182,9 @@ struct BudgetLiveParityView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("Budget Live")
+        .navigationTitle("All Budget Topics")
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $searchText, prompt: "Search \(BudgetLiveParityCatalog.routeCount) tools")
+        .searchable(text: $searchText, prompt: "Search budget and civic topics")
     }
 
     @ViewBuilder

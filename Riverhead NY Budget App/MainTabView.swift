@@ -83,14 +83,24 @@ struct MainTabView: View {
                 NavigationStack {
                     RiverheadBudgetHubView()
                         .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                NavigationLink {
-                                    BudgetLiveParityView()
+                            ToolbarItem(placement: .topBarTrailing) {
+                                Menu {
+                                    NavigationLink {
+                                        WebContentView(
+                                            url: URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tentative-2027/")!,
+                                            title: "2027 Tentative Budget"
+                                        )
+                                    } label: {
+                                        Label("2027 Tentative Budget", systemImage: "doc.text")
+                                    }
+                                    NavigationLink {
+                                        BudgetLiveParityView()
+                                    } label: {
+                                        Label("Browse all topics", systemImage: "square.grid.2x2")
+                                    }
                                 } label: {
-                                    Image(systemName: "network")
+                                    Label("More budget topics", systemImage: "line.3.horizontal")
                                 }
-                                .accessibilityLabel("Budget Live")
-                                .accessibilityHint("Opens every feature currently available in the Riverhead Budget Live web app.")
                             }
                         }
                 }

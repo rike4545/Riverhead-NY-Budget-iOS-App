@@ -1,7 +1,7 @@
 {
- "date": "June 17, 2025",
+ "date": "January 3, 2024",
  "type": "Regular Meeting",
- "calledToOrder": "6:02 PM",
+ "calledToOrder": "2:05 PM",
  "roster": [
   {
    "last": "Hubbard",
@@ -37,8 +37,8 @@
  "resolutions": [
   {
    "seq": 1,
-   "number": "2025-511",
-   "title": "Ratifies Acceptance of Donation of Mulch from Delea Sod Farms",
+   "number": "2024-1",
+   "title": "Sets Elected Official's Salaries for 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -52,14 +52,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 2,
-   "number": "2025-512",
-   "title": "Ratifies Acceptance of Donation of Flowers from Gabrielsen Farms",
+   "number": "2024-2",
+   "title": "Sets Salaries of General Town Employees for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -73,14 +71,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 3,
-   "number": "2025-513",
-   "title": "Ratifies Acceptance of Donation of Flagpole from Bianchi- Davis Greenhouse",
+   "number": "2024-3",
+   "title": "Sets Salaries of Highway Department for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -94,14 +90,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 4,
-   "number": "2025-514",
-   "title": "Capital Project #82002 Town of Riverhead Comprehensive Master Plan Closure",
+   "number": "2024-4",
+   "title": "Sets Salaries of Police Officers for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -115,14 +109,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 5,
-   "number": "2025-515",
-   "title": "Capital Project #72325 Wading River Swing Set Closure",
+   "number": "2024-5",
+   "title": "Sets Salaries of Sewer/Scavenger Waste District for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -136,14 +128,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 6,
-   "number": "2025-516",
-   "title": "Capital Project #72220 Cupola at George Young Community Center Closure",
+   "number": "2024-6",
+   "title": "Sets Salaries of Street Lighting District for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -157,14 +147,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 7,
-   "number": "2025-517",
-   "title": "Capital Project #71907 Weeping Willow Park Closure",
+   "number": "2024-7",
+   "title": "Sets Salaries of Water District Employees for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -178,14 +166,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 8,
-   "number": "2025-518",
-   "title": "Capital Project #44035 Downtown Revitalization Led Lighting Closure",
+   "number": "2024-8",
+   "title": "Sets Salaries of Various Boards for the Year 2024",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -199,14 +185,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 9,
-   "number": "2025-519",
-   "title": "Capital Project #44036 Downtown Revitalization Led Lighting Closure",
+   "number": "2024-9",
+   "title": "Approves Salary Increase for a Code Enforcement Officer",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -220,14 +204,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 10,
-   "number": "2025-520",
-   "title": "Capital Project #31901 Security Cameras Closure",
+   "number": "2024-10",
+   "title": "Approves Salary Increase for a Code Enforcement Officer",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -241,14 +223,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 11,
-   "number": "2025-521",
-   "title": "Sewer District Capital Project #82230 \u2013 Commercial Car Wash Closure",
+   "number": "2024-11",
+   "title": "Approves Salary Increase for an Account Clerk",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -262,14 +242,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 12,
-   "number": "2025-522",
-   "title": "Sewer Capital Project #20017 \u2013 EPCAL Sewer Improvement Closure",
+   "number": "2024-12",
+   "title": "Approves Salary Increase for a Maintenance Mechanic III",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -283,14 +261,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 13,
-   "number": "2025-523",
-   "title": "Town Hall Improvements Project #12223 4-6 West Second Street Closure",
+   "number": "2024-13",
+   "title": "Approves Salary Increase for a Principal Account Clerk",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -304,14 +280,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 14,
-   "number": "2025-524",
-   "title": "Water Capital Project #82411 \u2013 East End Food Institute Closure",
+   "number": "2024-14",
+   "title": "Approves Salary Increase for the Payroll Supervisor",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -325,14 +299,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 15,
-   "number": "2025-525",
-   "title": "Water Capital Project #82327 \u2013 105 Pier Ave Hydrant Closure",
+   "number": "2024-15",
+   "title": "Approves Salary Increase for a Heavy Equipment Operator",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -346,14 +318,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 16,
-   "number": "2025-526",
-   "title": "Water Capital Project #82224 \u2013 Holly Tree Subdivision Closure",
+   "number": "2024-16",
+   "title": "Approves Salary Increase for a Personnel Assistant",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -367,14 +337,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 17,
-   "number": "2025-527",
-   "title": "Water Capital Project #60092 \u2013 Bolla Edwards Avenue Realty LLC Closure",
+   "number": "2024-17",
+   "title": "Approves Salary Increase for a Custodial Worker I",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -388,14 +356,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 18,
-   "number": "2025-528",
-   "title": "Water District Capital Project #82408 \u2013 1792 Middle Rd Calverton \u2013 Breezy Hill Industrial Closure",
+   "number": "2024-18",
+   "title": "Approves Salary Increase for a Wastewater Treatment Plant Operator IIIA",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -409,14 +375,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 19,
-   "number": "2025-529",
-   "title": "Water District Capital Project #82318 \u2013 360 West Lane Closure",
+   "number": "2024-19",
+   "title": "Approves Salary Increase for a Construction Equipment Operator",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -430,14 +394,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 20,
-   "number": "2025-530",
-   "title": "Water District Capital Project #82334 \u2013 4195 Middle Country Rd Closure",
+   "number": "2024-20",
+   "title": "Approves Salary Increase for a Part-Time Clerk",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -451,14 +413,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 21,
-   "number": "2025-531",
-   "title": "Water District Capital Project #82336 \u2013 992 E. Main St. Closure",
+   "number": "2024-21",
+   "title": "Approves Salary Increase for a Senior Account Clerk",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -472,14 +432,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 22,
-   "number": "2025-532",
-   "title": "Water District Capital Project #82319 \u2013 Merritts Creek Townhouses Closure",
+   "number": "2024-22",
+   "title": "Approves Salary Increase for a Wastewater Treatment Plant Operator IIIA",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -493,14 +451,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 23,
-   "number": "2025-533",
-   "title": "Water District Capital Project #82221 \u2013 Riverhead Dodge Closure",
+   "number": "2024-23",
+   "title": "Approves Salary Increase for a Construction Equipment Operator",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -514,14 +470,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 24,
-   "number": "2025-534",
-   "title": "Water District Capital Project #82207 \u2013 U-Haul Facility Closure",
+   "number": "2024-24",
+   "title": "Approves a Salary Increase for Town Engineer",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -535,14 +489,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 25,
-   "number": "2025-535",
-   "title": "Water District Capital Project #82205 \u2013 North Point Development Closure",
+   "number": "2024-25",
+   "title": "Approves Salary Increase for a Heavy Equipment Operator",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -556,14 +508,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 26,
-   "number": "2025-536",
-   "title": "Water District Capital Project #82202 \u2013 Purple Beech Realty LLC Closure",
+   "number": "2024-26",
+   "title": "Approves Salary Increase for a Wastewater Treatment Plant Operator IIIA",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -577,14 +527,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 27,
-   "number": "2025-537",
-   "title": "Water District Capital Project #82116 \u2013 Calverton Industrial Park Closure",
+   "number": "2024-27",
+   "title": "Approves Salary Increase for a Wastewater Treatment Plant Operator IIIA",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -598,14 +546,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 28,
-   "number": "2025-538",
-   "title": "Water District Capital Project #82051 \u2013 4285 Middle Country Road Closure",
+   "number": "2024-28",
+   "title": "Approves Salary Increase for an Account Clerk",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -619,14 +565,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 29,
-   "number": "2025-539",
-   "title": "Appoints an Intern to the Supervisor\u2019s Office",
+   "number": "2024-29",
+   "title": "Approves a Salary Increase for a Heavy Equipment Operator",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -640,14 +584,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 30,
-   "number": "2025-540",
-   "title": "Appoints New Seasonal Employees to the Recreation Department",
+   "number": "2024-30",
+   "title": "Approves Salary Adjustments for Named Highway Employees",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -661,14 +603,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 31,
-   "number": "2025-541",
-   "title": "Ratifies the Promotion of a Wastewater Treatment Plant Operator 3A to a Senior Wastewater Treatment Plant Operator 3A",
+   "number": "2024-31",
+   "title": "Ratifies the Appointment of a Call-In Recreation Aide to the Recreation Department",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -682,14 +622,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 32,
-   "number": "2025-542",
-   "title": "Ratifies the Resignation of an Automotive Equipment Operator",
+   "number": "2024-32",
+   "title": "Ratifies the Appointment of a Recreation Aide II to the Recreation Department",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -703,14 +641,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 33,
-   "number": "2025-543",
-   "title": "Reappoints Brian Mills to Service as Chairman of the Board of Assessment Review",
+   "number": "2024-33",
+   "title": "Reappoints Town Attorney Erik C. Howard",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -724,14 +660,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 34,
-   "number": "2025-544",
-   "title": "Approves Special Event Chapter 255 Application for New Beginnings Community Inc. (Harvest Fair)",
+   "number": "2024-34",
+   "title": "Acknowledges Appointment of Joann Cannon (Secretary to Town Supervisor) and Sets Terms and Conditions of Employment",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -745,14 +679,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 35,
-   "number": "2025-545",
-   "title": "Approves Fireworks Application for Baiting Hollow Club (July 19, 2025)",
+   "number": "2024-35",
+   "title": "Acknowledges Appointment of Chief of Staff (Debi Burkowsky) and Sets Terms and Conditions of Employment",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -766,14 +698,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 36,
-   "number": "2025-546",
-   "title": "Approves Fireworks Application for Riverhead Raceway (June 28, 2025)",
+   "number": "2024-36",
+   "title": "Acknowledges Appointment of Deputy Supervisor (Devon Higgins) and Sets Terms and Conditions of Employment",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -787,14 +717,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 37,
-   "number": "2025-547",
-   "title": "Designates a Parcel at 48 Willow Street Sctm# 600-87-1-14 Located in the Town of Riverhead as Open Space, Expends Community Preservation Funds Pursuant to Town Law 64-E in the Amount of $75,000.00 and Approves Budget Transfer to Restore Trust & Agency Funds Designated for Wetland Restoration and Remediation in the Amount of $75,000.00",
+   "number": "2024-37",
+   "title": "Accepts the Resignation of Planning Board Member Waski",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -808,14 +736,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 38,
-   "number": "2025-548",
-   "title": "Authorizes Purchase of Dump Truck for Highway Department",
+   "number": "2024-38",
+   "title": "Appoints Edward Densieski to Serve as Chairperson of the Planning Board of the Town of Riverhead",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -829,14 +755,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 39,
-   "number": "2025-549",
-   "title": "Awards Bid for Annual Fire and Security Alarm Contract",
+   "number": "2024-39",
+   "title": "Appoints John Hogan to Service as Vice Chairperson of the Planning Board of the Town of RIverhead",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -850,18 +774,16 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 40,
-   "number": "2025-550",
-   "title": "Rescinds Resolution #2025-487 ReBid 203-213 East Main Street Sewer Improvements",
-   "result": "ADOPTED [UNANIMOUS]",
+   "number": "2024-40",
+   "title": "Appoints New Member Ken Zilnicki to the Planning Board",
+   "result": "ADOPTED [4 TO 0]",
    "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
+   "tag": "split",
+   "ayesCount": 4,
    "naysCount": 0,
    "mover": "Joann Waski",
    "seconder": "Kenneth Rothwell",
@@ -870,15 +792,13 @@
     "Rothwell": "aye",
     "Kern": "aye",
     "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+    "Waski": "abstain"
+   }
   },
   {
    "seq": 41,
-   "number": "2025-551",
-   "title": "Rejects Bid for Lubricants and Authorizes Town Clerk to Publish and Post Notice to Bidders for Rebid for Lubricants",
+   "number": "2024-41",
+   "title": "Appoints Legal Representation for the Planning Board",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -892,14 +812,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 42,
-   "number": "2025-552",
-   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Liquid Sludge Removal and Disposal",
+   "number": "2024-42",
+   "title": "Accepts the Resignation of Zoning Board of Appeals Member McLaughlin",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -913,14 +831,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 43,
-   "number": "2025-553",
-   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Grit Screen Waste Removal and Disposal",
+   "number": "2024-43",
+   "title": "Appoints Otto Wittmeier to Service as Chairman of the Zoning Board of Appeals of the Town of Riverhead",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -934,14 +850,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 44,
-   "number": "2025-554",
-   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Sludgecake Removal and Disposal",
+   "number": "2024-44",
+   "title": "Ratifies Reappointment of Ralph Gazzillo to Service as Member of the Zoning Board of Appeals of the Town of Riverhead and Appoints as Vice Chairman",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -955,14 +869,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 45,
-   "number": "2025-555",
-   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Disposal and Recycling of Municipal Solid Waste",
+   "number": "2024-45",
+   "title": "Appoints Legal Representation for the Zoning Board of Appeals",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -976,14 +888,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 46,
-   "number": "2025-556",
-   "title": "Adopts a Local Law to Amend Chapter 251, Article II of the Riverhead Town Code Titled \u201cPublic Nuisances\u201d",
+   "number": "2024-46",
+   "title": "Amends Resolution #2023-852 Authorizing the Supervisor to Execute and Agreement with BJH Advisors, LLC",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -997,14 +907,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 47,
-   "number": "2025-557",
-   "title": "Adopts a Local Law to Amend Chapter 301 of the Riverhead Town Code Titled \u201cZoning and Land Development\u201d Section 3 Thereof Titled \u201cDefinitions; Word Usage\u201d",
+   "number": "2024-47",
+   "title": "Authorizes Assignment of Employment Labor Matter to Keane & Beane, P.C.",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1018,14 +926,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 48,
-   "number": "2025-558",
-   "title": "Declares Emergency and Authorizes Purchasing Agent to Enter into Temporary Purchasing Agreement for Liquid Sludge Removal and Disposal Services for Sewer District",
+   "number": "2024-48",
+   "title": "Adopts 2024 Investment Policy",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1039,14 +945,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 49,
-   "number": "2025-559",
-   "title": "Authorizes Supervisor to Execute Agreement with Riverhead Volunteer Ambulance Corps, Inc.",
+   "number": "2024-49",
+   "title": "Sets the 2024 Beach Sticker and East Creek Facility Fees",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1060,14 +964,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 50,
-   "number": "2025-560",
-   "title": "Authorizes the Supervisor to Execute an Agreement with Family Service League Regarding the Employee Assistance Program",
+   "number": "2024-50",
+   "title": "Sets Fees for the 2024 Winter Brochure",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1081,14 +983,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 51,
-   "number": "2025-561",
-   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Zebrowski",
+   "number": "2024-51",
+   "title": "Acceptance of Grant from FM Global",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1102,14 +1002,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 52,
-   "number": "2025-562",
-   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Smith, J.",
+   "number": "2024-52",
+   "title": "Supervisor's Office Budget Transfer",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1123,14 +1021,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 53,
-   "number": "2025-563",
-   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Merker",
+   "number": "2024-53",
+   "title": "Water District Capital Project #82336 992 E. Main St. Budget Adoption",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1144,14 +1040,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 54,
-   "number": "2025-564",
-   "title": "Authorizes the Community Development Division to Apply for Funding through U.S. Department of Justice",
+   "number": "2024-54",
+   "title": "Water District Capital Project #82335 437-483 Youngs Ave Landfill Solar Project",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1165,14 +1059,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 55,
-   "number": "2025-565",
-   "title": "Authorizes the Removal of All Weeds in Excess of 10 Inches, Yard Waste, Litter, Garbage/Refuse, Rubbish, Rubbish, Upon the Premises Known as 262 Hulse Avenue, Wading River, New York, Suffolk County Tax Map#: 0600-033.00-05.00-027.000 Pursuant to Riverhead Town Code Chapter 251",
+   "number": "2024-55",
+   "title": "Purchasing 9 Unit Portable Restroom for Use at Veterans Memorial Park",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1186,14 +1078,12 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 56,
-   "number": "2025-566",
-   "title": "Authorizes the Removal of All Weeds in Excess of 10 Inches, Yard Waste, Litter, Garbage/Refuse, Rubbish, Rubbish, Upon the Premises Known as 219 Hubbard Avenue, Riverhead, New York, Suffolk County Tax Map#: 0600-111.00-04.00-022.000 Pursuant to Riverhead Town Code Chapter 251",
+   "number": "2024-56",
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Class a Biosolids Improvements for Riverhead Sewer District",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1207,13 +1097,315 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   },
   {
    "seq": 57,
-   "number": "2025-567",
+   "number": "2024-57",
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Chemicals for the Riverhead Sewer District",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 58,
+   "number": "2024-58",
+   "title": "Authorizes Jason Hodge to Provide Additional Services, Nunc Pro Tunc",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 59,
+   "number": "2024-59",
+   "title": "Authorizes the Town Supervisor to Execute an Agreement with Sports Facilities Advisory, LLC",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 60,
+   "number": "2024-60",
+   "title": "Ratifies Possession and Use Agreement of Composting Equipment from Dungster, LLC at No Cost to the Town of Riverhead",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 61,
+   "number": "2024-61",
+   "title": "Amends Resolution #2022-202 Adopted on March 1, 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 62,
+   "number": "2024-62",
+   "title": "Adopts a Local Law to Include Chapter 303: Calverton Industrial Moratorium",
+   "result": "ADOPTED [4 TO 1]",
+   "adopted": true,
+   "tag": "split",
+   "ayesCount": 4,
+   "naysCount": 1,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "nay",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 63,
+   "number": "2024-63",
+   "title": "Adopts a Local Law Amending Chapter 301 of the Riverhead Town Code Entitled, \u201cZoning and Land Development, Article LXIII. Planned Development (PD) Zoning Use District\u201d",
+   "result": "ADOPTED [4 TO 1]",
+   "adopted": true,
+   "tag": "split",
+   "ayesCount": 4,
+   "naysCount": 1,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "nay",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 64,
+   "number": "2024-64",
+   "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 293, Entitled \u201cWaterways and Water-Related Activities\u201d, of the Riverhead Town Code",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 65,
+   "number": "2024-65",
+   "title": "Approves Salary Increase for Paralegal",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 66,
+   "number": "2024-66",
+   "title": "Ratifies the Reclassification of a Heavy Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 67,
+   "number": "2024-67",
+   "title": "Ratifies the Reclassification of a Heavy Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 68,
+   "number": "2024-68",
+   "title": "Appoints an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 69,
+   "number": "2024-69",
+   "title": "Appoints an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 70,
+   "number": "2024-70",
+   "title": "Assigns Administrative Oversight of the Office of the Fire Marshal",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 71,
+   "number": "2024-71",
+   "title": "Accepts the Resignation of Planning Board Special Counsel",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 72,
+   "number": "2024-72",
+   "title": "Water District Fund Balance Budget Transfer",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Hubbard": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   }
+  },
+  {
+   "seq": 73,
+   "number": "2024-73",
    "title": "Pays Bills",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
@@ -1228,226 +1420,14 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 58,
-   "number": "2025-568",
-   "title": "Sets Terms & Conditions of Employment for a Payroll Supervisor",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Robert Kern",
-   "seconder": "Denise Merrifield",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 59,
-   "number": "2025-569",
-   "title": "Ratifies Resolution for Home Rule Request in Support of Bill (Senate Bill #S.8378-B/Assembly Bill #A.8809-B) for \u201cAn Act to Amend Chapter 495 of the Laws of 2011 Relating to the Conveyance of Land Formerly Used as an Armory to the Town of Riverhead, County of Suffolk in Relation to the Use of Such Property\u201d",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Denise Merrifield",
-   "seconder": "Joann Waski",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 60,
-   "number": "2025-570",
-   "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider an Amendment to Chapter 289-10 Entitled \"Parking Prohibited\"",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Joann Waski",
-   "seconder": "Kenneth Rothwell",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 61,
-   "number": "2025-571",
-   "title": "Grants Final Site Plan Approval for the Site Plan Amendment Application of Island Water Park (D/B/A Scott's Pointe) 5835 Middle Country Road, Calverton, NY SCTM No. 600-135-1-7.34",
-   "result": "ADOPTED [4 TO 1]",
-   "adopted": true,
-   "tag": "split",
-   "ayesCount": 4,
-   "naysCount": 1,
-   "mover": "Kenneth Rothwell",
-   "seconder": "Robert Kern",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "nay",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 62,
-   "number": "2025-572",
-   "title": "Sewer District Capital Project 82317 Budget Adjustment",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Robert Kern",
-   "seconder": "Denise Merrifield",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 63,
-   "number": "2025-573",
-   "title": "Awards Rebid 203-213 East Main Street Sewer Improvements, Contract S - Sewers",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Denise Merrifield",
-   "seconder": "Joann Waski",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 64,
-   "number": "2025-574",
-   "title": "Amends Town Board Resolution 2022-263",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Joann Waski",
-   "seconder": "Kenneth Rothwell",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 65,
-   "number": "2025-575",
-   "title": "Authorizes the Supervisor to Execute an Agreement with the Riverhead Business Improvement District Management Association, Inc. Regarding 2025 Calendar Year Events",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Kenneth Rothwell",
-   "seconder": "Robert Kern",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 66,
-   "number": "2025-576",
-   "title": "Authorizes the Riverhead Police Department to Apply for Grant from USDOJ for Body Cameras Software for Language Translation",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Joann Waski",
-   "seconder": "Kenneth Rothwell",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 67,
-   "number": "2025-577",
-   "title": "Authorizes the Riverhead Police Department to Apply for USDOJ Grant to Hire Police Officers",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Kenneth Rothwell",
-   "seconder": "Robert Kern",
-   "votes": {
-    "Hubbard": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
+   }
   }
  ],
- "slug": "2025-06-17",
+ "slug": "2024-01-03",
  "stats": {
-  "total": 67,
-  "unanimous": 66,
-  "contested": 1,
+  "total": 73,
+  "unanimous": 70,
+  "contested": 3,
   "failed": 0,
   "tabled": 0
  },
@@ -1455,7 +1435,7 @@
   "Hubbard": {
    "name": "Tim Hubbard",
    "title": "Supervisor",
-   "aye": 67,
+   "aye": 73,
    "nay": 0,
    "abstain": 0,
    "absent": 0,
@@ -1465,76 +1445,42 @@
   "Rothwell": {
    "name": "Kenneth Rothwell",
    "title": "Councilman",
-   "aye": 67,
+   "aye": 73,
    "nay": 0,
    "abstain": 0,
    "absent": 0,
-   "moved": 18,
-   "seconded": 17
+   "moved": 20,
+   "seconded": 18
   },
   "Kern": {
    "name": "Robert Kern",
    "title": "Councilman",
-   "aye": 67,
-   "nay": 0,
+   "aye": 72,
+   "nay": 1,
    "abstain": 0,
    "absent": 0,
-   "moved": 16,
-   "seconded": 18
+   "moved": 18,
+   "seconded": 19
   },
   "Merrifield": {
    "name": "Denise Merrifield",
    "title": "Councilwoman",
-   "aye": 66,
+   "aye": 72,
    "nay": 1,
    "abstain": 0,
    "absent": 0,
-   "moved": 16,
-   "seconded": 16
+   "moved": 17,
+   "seconded": 18
   },
   "Waski": {
    "name": "Joann Waski",
    "title": "Councilwoman",
-   "aye": 67,
+   "aye": 72,
    "nay": 0,
-   "abstain": 0,
+   "abstain": 1,
    "absent": 0,
-   "moved": 17,
-   "seconded": 16
+   "moved": 18,
+   "seconded": 18
   }
- },
- "officialRecord": {
-  "status": "vote-record-parsed",
-  "sourceVersionAt": "2026-09-08T01:22:26Z",
-  "minutes": {
-   "fileId": 4806,
-   "type": "Minutes",
-   "name": "2025-06-17 Town Board - Full Minutes",
-   "sha256": "0019e132e29a31166acc4028806f4230e8b8d827b1e1bb3be1e6c1ffd11b820d",
-   "bytes": 24572204,
-   "pages": 284,
-   "changedAt": "2026-09-08T01:22:26Z",
-   "revisionCount": 0,
-   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4806,plainText=false)",
-   "hasVoteSummary": true
-  },
-  "votePacket": null,
-  "voteSourceKind": "minutes",
-  "voteSource": {
-   "fileId": 4806,
-   "type": "Minutes",
-   "name": "2025-06-17 Town Board - Full Minutes",
-   "sha256": "0019e132e29a31166acc4028806f4230e8b8d827b1e1bb3be1e6c1ffd11b820d",
-   "bytes": 24572204,
-   "pages": 284,
-   "changedAt": "2026-09-08T01:22:26Z",
-   "revisionCount": 0,
-   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4806,plainText=false)",
-   "hasVoteSummary": true
-  },
-  "minutesRevisionCount": 0,
-  "resolutionSourceCount": 0,
-  "verifiedResolutionCount": 0,
-  "resolutionSources": []
  }
 }

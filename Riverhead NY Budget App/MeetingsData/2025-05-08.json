@@ -52,7 +52,9 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   }
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 2,
@@ -71,7 +73,9 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   }
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 3,
@@ -90,7 +94,9 @@
     "Kern": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   }
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   }
  ],
  "slug": "2025-05-08",
@@ -152,5 +158,39 @@
    "moved": 0,
    "seconded": 1
   }
+ },
+ "officialRecord": {
+  "status": "vote-record-parsed",
+  "sourceVersionAt": "2026-09-08T01:21:26Z",
+  "minutes": {
+   "fileId": 4300,
+   "type": "Minutes",
+   "name": "2025-05-08 Town Board - Full Minutes",
+   "sha256": "b3ad6d64849e44a372bfe2d7425221043e1f7bbf0013b257e214c3ab4d5f54e0",
+   "bytes": 1253988,
+   "pages": 16,
+   "changedAt": "2026-09-08T01:21:26Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4300,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "votePacket": null,
+  "voteSourceKind": "minutes",
+  "voteSource": {
+   "fileId": 4300,
+   "type": "Minutes",
+   "name": "2025-05-08 Town Board - Full Minutes",
+   "sha256": "b3ad6d64849e44a372bfe2d7425221043e1f7bbf0013b257e214c3ab4d5f54e0",
+   "bytes": 1253988,
+   "pages": 16,
+   "changedAt": "2026-09-08T01:21:26Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=4300,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "minutesRevisionCount": 0,
+  "resolutionSourceCount": 0,
+  "verifiedResolutionCount": 0,
+  "resolutionSources": []
  }
 }

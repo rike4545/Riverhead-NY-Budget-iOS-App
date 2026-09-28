@@ -145,6 +145,18 @@
    "excess": 64926.59
   },
   {
+   "account": "ES5-8-8189-472-000-00000",
+   "fund": "ES5",
+   "name": "Scav Waste - Utl - Electricit y",
+   "control": "controllable",
+   "actual2024": 142457.34,
+   "budget2025": 192000.0,
+   "ytd2025": 66333.74,
+   "tentative2026": 200000.0,
+   "flag": "over-budget",
+   "excess": 57542.66
+  },
+  {
    "account": "ST1-5-5650-400-000-00000",
    "fund": "ST1",
    "name": "Pub Prk - Contractual",
@@ -1265,6 +1277,6 @@
    "excess": 10000.0
   }
  ],
- "recoverablePoolControllable": 2358934.57,
+ "recoverablePoolControllable": 2416477.23,
  "note": "Over-budget = 2026 Tentative above the trailing full-year run-rate (max of 2024 Actual and annualized 2025 YTD), restricted to controllable non-personnel lines. Mandated costs (pension, workers comp, insurance, debt service, payroll taxes) and revenue lines are excluded \u2014 their variance is obligation or timing, not waste."
 }

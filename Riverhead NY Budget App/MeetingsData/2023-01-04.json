@@ -1,0 +1,916 @@
+{
+ "date": "January 4, 2023",
+ "type": "Regular Meeting",
+ "calledToOrder": "2:04 PM",
+ "roster": [
+  {
+   "last": "Aguiar",
+   "name": "Yvette Aguiar",
+   "title": "Supervisor",
+   "party": null
+  },
+  {
+   "last": "Hubbard",
+   "name": "Tim Hubbard",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Jr.",
+   "name": "Beyrodt Jr.",
+   "title": "Councilmember",
+   "party": null
+  },
+  {
+   "last": "Rothwell",
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Kern",
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "party": "Republican"
+  }
+ ],
+ "resolutions": [
+  {
+   "seq": 1,
+   "number": "2023-1",
+   "title": "Sets Elected Official's Salaries for 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 2,
+   "number": "2023-2",
+   "title": "Sets Salaries of General Town Employees for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 3,
+   "number": "2023-3",
+   "title": "Sets Salaries of Highway Department for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 4,
+   "number": "2023-4",
+   "title": "Sets Salaries of Police Officers for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 5,
+   "number": "2023-5",
+   "title": "Sets Salaries of Sewer/Scavenger Waste District for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 6,
+   "number": "2023-6",
+   "title": "Sets Salaries of Street Lighting District for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 7,
+   "number": "2023-7",
+   "title": "Sets Salaries of Various Boards for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 8,
+   "number": "2023-8",
+   "title": "Sets Salaries of Water District Employees for the Year 2023",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 9,
+   "number": "2023-9",
+   "title": "Approves Salary Increase for a Network and Systems Specialist II",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 10,
+   "number": "2023-10",
+   "title": "Approves a Salary Increase for Legislative Secretary Resolution #10 Councilman Beyrodt: \u201cApproves a Salary Increase for Legislative Secretary, so moved.\u201d Councilman Rothwell: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt : \u201cThank you to Ca rol. She does a great job and it\u2019s well deserved, yes.\u201d Vote Continued: \u201cHubbard, yes; Aguiar.\u201d Supervisor Aguiar : \u201cBill, I have a question. This raise, does that include the five percent we gave the town, every employee? Where\u2019s Bill? Every employee got a five percent raise. I want to know if this is an additional raise because this did not go through the process. This did not go through the budgetary process, myself, Bill. Yeah go ahead.\u201d Bill Rothaar : \u201cThis is just a straight seven and a half percent increase over the 2022 salary filing.\u201d Supervisor Aguiar: \u201cRight, so it\u2019s not, she doesn\u2019t get an additional five percent?\u201d Bill Rothaar: \u2018She did not get the step we spoke about earlier.\u201d Supervisor Aguiar : \u201cOkay so seventy -five. I\u2019m going to vote no. This did not go through the process. You weren\u2019t aware of it. The labor attorney wasn\u2019t aware of it, myself as the budget officer, so I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is adopted.\u201d",
+   "result": "ADOPTED [4 TO 1]",
+   "adopted": true,
+   "tag": "split",
+   "ayesCount": 4,
+   "naysCount": 1,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "nay",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 11,
+   "number": "2023-11",
+   "title": "Approves Salary Increase for a Part-Time Office Assistant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 12,
+   "number": "2023-12",
+   "title": "Approves Salary Increase for Senior Wastewater Treatment Plant Operator II",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 13,
+   "number": "2023-13",
+   "title": "Approves Salary Increase for a Part-Time Housing Inspector",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 14,
+   "number": "2023-14",
+   "title": "Approves Salary Increase for Town Building and Planning Administrator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 15,
+   "number": "2023-15",
+   "title": "Approves Salary Increase for Superintendent of Recreation",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 16,
+   "number": "2023-16",
+   "title": "Approves Salary Increase for an Accountant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 17,
+   "number": "2023-17",
+   "title": "Approves Salary Increase for an Account Clerk",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 18,
+   "number": "2023-18",
+   "title": "Approves Salary Increase for Mini-Bus Driver",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 19,
+   "number": "2023-19",
+   "title": "Approves Salary Increase for a Cook",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 20,
+   "number": "2023-20",
+   "title": "Approves Salary Increase for Assistant Town Engineer Resolution #20 Councilman Kern: \u201cApproves Salary Increase for Assistant Town Engineer, so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt: \u201cI\u2019d like to take a moment to echo the words of Mike who spoke eloquently about the great work that happens with our town employees every single day. I got a text message from Ken Testa this morning saying that the fire negotiated increase was not reflected in this resolution and he was promised something other than what this resolution says. Unless Bill can come up and say otherwise, I\u2019d like to vote no on this, but I\u2019d like to hear your input before and I only bring it up as liaison to the engineering department and we have a great engineering department led by Drew Dillingham. They do great work and by the way we\u2019re about to incumber on the town square which the engineering department is intimately working with and the conversion of Second Street which they are intimately working on it. So, I just want to make sure that what he was promised is in this resolution.\u201d Bill Rothaar : \u201cSo this resoluti on does not get him to the twelve thousand, the potential increase in the CSCA contract which he will benefit from would get him to that twelve thousand that he was told.\u201d Councilman Beyrodt : \u201cAnd during budget negotiations that was explained to him?\u201d Bill Rothaar : \u201cNo, budget negotiations, that wasn\u2019t explained to him. He wasn\u2019t in on the budget negotiations but there was a conversation after that where he asked about it and we explained to him that with the three, with the step with the five percent and with the union increase he\u2019s also entitled to, he will get to that twelve thousand.\u201d Councilman Beyrodt: \u201cUnderstood. I vote no, thank you.\u201d Vote Continued: \u201cHubbard, yes; Aguiar.\u201d Supervisor Aguiar: Yes, it\u2019s built in and I researched it last night. We have to wait for the contract. He wanted close to twelve thousand dollars. I think it comes up to eleven thousand eight hundred which is pretty substantial raise. I think it\u2019s actually the highest or one of the highest received so it is built into it. We just have to settle our contract negotiations and he misunderstood. He did text everybody. Bill did explain it to him yesterday. I think he\u2019s going to be reaching eleven thousand eight hundred so I\u2019m going to vote yes.\u201d Councilman Rothwell : \u201c(Inaudible ) KEN Testa is just absolutely incredible. He\u2019s one of the town\u2019s top employees and Frank and I\u2019m absolutely looking out to make sure that he\u2019s protected. I did have a meeting with him, and Councilman Hubbard was on the cell phone when we discussed this an d when we calculated everything right now we are still in negotiations with the union contract but should it fall in the market of five thousand he\u2019ll be receiving twelve thousand two hundred and fifty-eight dollars so he gets his raise and that\u2019s part of the conversation we had with him so he will receive what was promised.\u201d Julie O\u2019Neill: \u201cResolution was adopted.\u201d",
+   "result": "ADOPTED [4 TO 1]",
+   "adopted": true,
+   "tag": "split",
+   "ayesCount": 4,
+   "naysCount": 1,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 21,
+   "number": "2023-21",
+   "title": "Approves a Salary Increase for Town Engineer",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 22,
+   "number": "2023-22",
+   "title": "Approves Salary Increase for Tax Cashier",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 23,
+   "number": "2023-23",
+   "title": "Promotion of a Sewer District Employee to Wastewater Treatment Plant Operator IIA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 24,
+   "number": "2023-24",
+   "title": "Promotion of a Sewer District Employee to Wastewater Treatment Plant Operator IIA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 25,
+   "number": "2023-25",
+   "title": "Ratifies the Promotion of a Police Officer to the Position of Detective Grade III",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 26,
+   "number": "2023-26",
+   "title": "Reappoints Town Historian Resolution #26 Councilman Beyrodt; \u201cReappoints Town Historian, so moved.\u201d Councilman Rothwell: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell.\u201d Councilman Rothwell: \u201cAlways a great job Georgette, yes.\u201d Vote Continued: \u201cBeyrodt.\u201d Councilman Beyrodt : \u201cOne of the unheralded employees of the town and does a dynamite job. Thank you for everything, yes.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cWell said my colleagues, yes.\u201d Vote Continued: \u201cAguiar, yes, absolutely. Resolution is adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 27,
+   "number": "2023-27",
+   "title": "Approves Special Event Chapter 255 Application for Andrews Top Gun 5K Run",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 28,
+   "number": "2023-28",
+   "title": "Authorizes Grant Application to NYSDEC for Municipal Food Scraps Recycling Initiative Resolution #28 Councilman Kern: \u201cAuthorizes Grant Application to NYSDEC for Municipal Food Scraps Recycling Initiative, Mark, yes.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote : \u201cKern, yes; Rothwell, yes; Beyrodt, yes, of course; Hubbard.\u201d Councilman Hubbard : Thank you Mark and the committee. We really appreciate it, great job also (inaudible), yes.\u201d Mark Haubner : \u201cI want to thank everybody on the team, that\u2019s Drew Dillingham, Jason Blizzard, Shannon from engineering, I don\u2019t remember her las t name jumped in on this thing, Dawn and Frank jumped in on this thing from the great writing department. Frank is our liaison, my entire environmental advisory committee including George Bartnick who kicked this off with the NYSERTA work over the last two years and the civics, Taqui Turchin for Greater Calverton Civic. The engagement of the community has been amazing. I see nothing but better things coming from this, and we have set the trend, thank you.\u201d Julie O\u2019Neill: \u201cResolution is adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 29,
+   "number": "2023-29",
+   "title": "Authorizes the Supervisor to Execute a Musical Works License Agreement with SESAC",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 30,
+   "number": "2023-30",
+   "title": "Authorizes the Supervisor to Execute an Agreement with D & B Engineers and Architects, P.C., Regarding a Portion of the Town of Riverhead\u2019s Stormwater Management Program",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 31,
+   "number": "2023-31",
+   "title": "Authorizes Supervisor to Sign License Agreement with Dress for Success Brookhaven, Inc.",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 32,
+   "number": "2023-32",
+   "title": "Appoints Financial Advisor Resolution #32 Councilman Kern: \u201cAppoints Financial Advisor, so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes Aguiar.\u201d Supervisor Aguiar : \u201cBill, can you ju st give me a little bit of a background. Is Bill here, on this resolution please? Who is this person and what are they charging us? What is their purpose? I know there was a prior resolution right on this.\u201d Bill Rothaar : \u201cSo we put out a RFP last year for a financial advisor. Our financial advisor was one who goes out and sells our bonds, files our SEC reports and offering statements in order to sell bonds. So, we went out and did a RFP last year in August or September appointed them and this is just a rea ppointment for the year. Every year we do this for a financial advisor.\u201d Supervisor Aguiar: \u201cOkay.\u201d Vote Continued: \u201cAguiar, yes. Resolution is adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 33,
+   "number": "2023-33",
+   "title": "Adopts 2023 Investment Policy",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 34,
+   "number": "2023-34",
+   "title": "Establishes Standard Work Day for Elected and Appointed Official",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 35,
+   "number": "2023-35",
+   "title": "Appoints Official Newspaper for the Town of Riverhead",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 36,
+   "number": "2023-36",
+   "title": "Adopts Workplace Violence Protection Program Resolution #36 Councilman Kern: \u201cAdopts Workplace Violence Protection Program, so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes; Aguiar.\u201d Supervisor Aguiar: \u201cYes, and I see that we have this plan in place. Erik, so we\u2019re, can you, now that we\u2019re dealing and catching up with the required federal law saying that we need a workplace violence, we also need the sexual harassment part in place. I think we have that, right that the employees get and we also need to possibly adopt a code of ethics yes.\u201d Erik Howard: \u201cWe have that (Inaudible).\u201d Supervisor Aguiar: \u201cUnder Article 18 of the general municipal law updating, that\u2019s what all the towns, they update this state contr oller code of ethics and I think we\u2019re the only ones in the town lagging behind and I think we have the OSHEA.\u201d Erik Howard: \u201c(Inaudible).\u201d Supervisor Aguiar: \u201cAll the towns won\u2019t be adopting it. Our plan, I actually looked at it today, our ethics code, let me finish. I actually looked at it today before I came here and it\u2019s old. The last amendment was 2004. So, I actually called, I called Southold right before the meeting. I called a bunch of, they\u2019re all adopted, the controller\u2019s, the state controller\u2019s model, so maybe you have to just look at it and update it. I\u2019m going to vote yes but we have to update our codes and our other plans, yes. Resolution is adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 37,
+   "number": "2023-37",
+   "title": "Extends Bid for Dense Soda Ash 58% Under the Bid for Chemicals for Riverhead Sewer District",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 38,
+   "number": "2023-38",
+   "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Sewer Chemicals",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 39,
+   "number": "2023-39",
+   "title": "Schedules a Public Hearing and Authorizes Town Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B, and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead Resolution #39 Councilman Hubbard: \u201cSchedules a Public Hearing and Authorizes Tow n Clerk to Publish and Post a Public Notice of Public Hearing to Consider a Local Law Imposing a Six (6) Month Moratorium on the Development of Properties Located Within the Industrial A, Industrial B and Industrial C Zoning Use Districts Within the Hamlet of Calverton (Zip Code 11933) Within the Town of Riverhead so moved.\u201d Councilman Beyrodt: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern.\u201d Councilman Kern : \u201cI going to vote no on this, and I want to be clear from the beginning that I will look at a code with exceptions. I will not do a blanket even for six months moratorium:\u201d Vote Continued: \u201cRothwell.\u201d Councilman Rothwell : \u201cI think a lot of the problem with development is smore involved with the variances that are given and not necessarily staying within the standards of the current code in place. I just don\u2019t feel like it\u2019s proper for us to take the property rights of owners away by imposing a moratorium. I think the town does need to bring in high-tech jobs and I think it will pl ay outside of the EPCAL facility and the fenced property and the surrounding areas of Calverton, it is the industrial area. I just think voting on a six month moratorium is just a setup for asking developers to pause and to not come to the town and to put off any investments here. Nothing is going to be completed in six months, this we know. I don\u2019t feel anything is going to be completed in a year. If you\u2019re standing by the comprehensive plan, I think eighteen months is a minimum, so I don\u2019t understand and I don\u2019t want to send the wrong message. I know I have absolutely stood up here and I\u2019ve actually said that I\u2019m always open to the public\u2019s input, but I also think that at the same point we have to do our due diligence and I think we\u2019re going to put ourselv es in a very poor legal position as well by stopping moratoriums. We have to, we do listen to the Suffolk County Planning Commission and other aspects of law that is in fact in place and so I know there\u2019s passion behind it and that is a great reason why pe ople would like to see a moratorium. I do like hearing, and I always ask for the publics input but I think this time doing my due diligence and doing my own research I don\u2019t think it\u2019s the right way to proceed and therefore I vote no.\u201d Vote Continued: \u201cBeyrodt.\u201d Councilman Beyrodt : \u201cI would like a little clarification from the town attorney that we\u2019re voting on scheduling a public hearing on a potential six month moratorium only.\u201d Erik Howard: \u201cYes, that is correct.\u201d Councilman Beyrodt: \u201cI vote yes to give the public hearings.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cI somewhat offered this. I strongly believe that six months is not long enough, but it was a starting point. I believe we are paying in excess of eight hundred thousand dollars for a comp plan between what we\u2019ve already paid out with one contract and what we\u2019re going to pay out with a future contract. To me you\u2019re just wasting your money if you don\u2019t listen to the comprehensive plan. The last plan was done in 2003. Times have change d drastically since then. Why we need the new comprehensive plan, the new comprehensive plan, nobody is hiding behind it. It will be a way to guide us to proper planning for the Town of Riverhead. Our own Planning Board has recommended this to us. The fact that we don\u2019t want to go at least six months to wait for the comprehensive plan to take a look at the Calverton area first and foremost in regards to Industrial A, B and C, I think that\u2019s a shame that the Board doesn\u2019t want to wait at least six months. Th e developers are sitting out here with bated breath. Six months is not going to hurt them. They\u2019re not going away. Some of these projects even with the comprehensive plan will be coming into town people. I will tell you that. There are going to be certain projects that are going to be coming into town. We are going to have anaerobic digesters in some point in time. We are going to have battery energy storage systems. I\u2019m not against either one of those. What I\u2019m against particularly with this resolution is the massive amounts of development that have come in all at once to one particular area of our town. That\u2019s why the moratorium is needed to pump the brakes, take a look at this, let the experts take a look at it and let us come up with a cohesive comprehen sive plan that will satisfy both the developers and the residents of this town. I absolutely and strongly vote yes to this publish and post.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cWell, I\u2019m always open to hearing from the public and I hope that I continue hearing from the public. These projects should never injure our residents, our villages and I am fully supportive of what\u2019s going on but we need the Planning Board and it is their responsibility, that\u2019s why it\u2019s called planning board, and they sh ould be guided by their own commission memos. Again, they punted it to us. One particular person punted it to us and they took a vote on it. I will be sending them their planning commission memo where one member of the planning board is on there. This is n ot researched. This is a faulty resolution. I\u2019ve looked at other resolutions from other towns and there are significant differences. You also have to always put exceptions on it, hardships, that\u2019s not even included here and so given that, I\u2019m not going to vote to hear from the public on a faulty resolution. This should be dealt with and can be dealt with right now through code. That\u2019s what eventually is going to happen. We have a comprehensive plan. They\u2019re telling us fourteen months, that\u2019s going to turn i nto eighteen months, that\u2019s going to turn into two years. After that what\u2019s going to happen we have to do the same thing we could have done today, go to code, change the code and then adopt it, have public hearings and then adopt it. Nothing changes. All w e\u2019re doing is stopping progress here, letting the people know and not handling the problem ourselves. I\u2019m handling the problem. I\u2019m not Densieski who decided to throw it back to us without consulting with us and us working on this. It could be changed righ t now through code. It\u2019s a faulty resolution. It\u2019s (inaudible) by the Suffolk County Planning Commission, advising memo, volume two, issue one, Spring of 1998 and one of the planning members, Richard Dea from Riverhead Town is on that. Be guided by your ow n memo and let\u2019s work together. Let\u2019s get this done and make sure that our communities are not injured, and I\u2019ll be the first one behind you guys supporting you. We don\u2019t want this. We don\u2019t want an over saturation, but we can\u2019t stop progress and it\u2019s real easy. I brought this before all the towns, all the Supervisors, all ten of us are sitting there and there\u2019s that\u2019s (inaudible). You should deal with it, it\u2019s your code, it\u2019s your planning Board. Every single one was saying, how do you do that in Riverhead . Yes, other towns have moratoriums but it\u2019s very limited and it\u2019s not to wait two years, three years. For example, Southampton did a moratorium because all the hotel rooms were turning into condos. So, they had to put a stop just on some items specific, i t was short and they needed the code and they moved forward. I was talking to Hempstead Supervisor. He said we have one in place because we\u2019re ninety -seven percent built out. That\u2019s when you really need a moratorium, when there\u2019s a danger to us and to our town. In our case I\u2019m going to recommend going back to the Planning Board, work with us, help us change our code, continue doing your job. I\u2019m going to vote no.\u201d Julie O\u2019Neill: \u201cResolution is not adopted.\u201d Councilman Hubbard : \u201cJust for the record I want to say there is nothing illegal about this resolution.\u201d",
+   "result": "NOT ADOPTED [2 TO 3]",
+   "adopted": false,
+   "tag": "failed",
+   "ayesCount": 2,
+   "naysCount": 3,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "nay",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "nay",
+    "Kern": "nay"
+   }
+  },
+  {
+   "seq": 40,
+   "number": "2023-40",
+   "title": "Authorizes the Supervisor to Execute Third Amendment to Agreement with Property Registration Champions D/B/A PROCHAMPS",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 41,
+   "number": "2023-41",
+   "title": "Authorizes Settlement of Legal Action by Judith Ann Lee Against the Town of Riverhead",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 42,
+   "number": "2023-42",
+   "title": "Pays Bills",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 43,
+   "number": "2023-43",
+   "title": "Appointment of a Probationary Police Officer to the Police Department.",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  }
+ ],
+ "slug": "2023-01-04",
+ "stats": {
+  "total": 43,
+  "unanimous": 40,
+  "contested": 3,
+  "failed": 1,
+  "tabled": 0
+ },
+ "memberTallies": {
+  "Aguiar": {
+   "name": "Yvette Aguiar",
+   "title": "Supervisor",
+   "aye": 41,
+   "nay": 2,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 0,
+   "seconded": 0
+  },
+  "Hubbard": {
+   "name": "Tim Hubbard",
+   "title": "Councilman",
+   "aye": 43,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 12,
+   "seconded": 10
+  },
+  "Jr.": {
+   "name": "Beyrodt Jr.",
+   "title": "Councilmember",
+   "aye": 0,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 43,
+   "moved": 11,
+   "seconded": 12
+  },
+  "Rothwell": {
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "aye": 42,
+   "nay": 1,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 11,
+   "seconded": 11
+  },
+  "Kern": {
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "aye": 42,
+   "nay": 1,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 9,
+   "seconded": 10
+  }
+ }
+}

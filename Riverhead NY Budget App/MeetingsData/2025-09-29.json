@@ -15,7 +15,9 @@
    "naysCount": 1,
    "mover": "Kenneth Rothwell",
    "seconder": "Robert Kern",
-   "votes": {}
+   "votes": {},
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   }
  ],
  "slug": "2025-09-29",
@@ -26,5 +28,39 @@
   "failed": 0,
   "tabled": 0
  },
- "memberTallies": {}
+ "memberTallies": {},
+ "officialRecord": {
+  "status": "vote-record-parsed",
+  "sourceVersionAt": "2026-09-08T01:22:38Z",
+  "minutes": {
+   "fileId": 10215,
+   "type": "Minutes",
+   "name": "Minutes for Special TBM 9.29.25",
+   "sha256": "216826f076ba69f62e966c8a267b5c36fd9225a2717c3aace873376dc306cd5c",
+   "bytes": 127406,
+   "pages": 2,
+   "changedAt": "2026-09-08T01:22:38Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10215,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "votePacket": null,
+  "voteSourceKind": "minutes",
+  "voteSource": {
+   "fileId": 10215,
+   "type": "Minutes",
+   "name": "Minutes for Special TBM 9.29.25",
+   "sha256": "216826f076ba69f62e966c8a267b5c36fd9225a2717c3aace873376dc306cd5c",
+   "bytes": 127406,
+   "pages": 2,
+   "changedAt": "2026-09-08T01:22:38Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10215,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "minutesRevisionCount": 0,
+  "resolutionSourceCount": 0,
+  "verifiedResolutionCount": 0,
+  "resolutionSources": []
+ }
 }

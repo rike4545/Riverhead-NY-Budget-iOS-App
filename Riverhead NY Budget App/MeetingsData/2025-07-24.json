@@ -1,0 +1,65 @@
+{
+ "slug": "2025-07-24",
+ "date": "July 24, 2025",
+ "type": "Special Meeting",
+ "calledToOrder": null,
+ "roster": [],
+ "resolutions": [],
+ "preliminary": true,
+ "docket": [
+  {
+   "seq": 1,
+   "number": "2025-643",
+   "title": "Authorizes Funding Application to New York State for Consolidated Funding Application (CFA) 2025 - Pro Housing Program CDA Director Dawn Thomas gave overview of grant application and its usage.",
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
+  }
+ ],
+ "stats": {
+  "total": 0,
+  "unanimous": 0,
+  "contested": 0,
+  "failed": 0,
+  "tabled": 0
+ },
+ "officialRecord": {
+  "status": "minutes-published-vote-detail-omitted",
+  "sourceVersionAt": "2026-09-08T16:54:29Z",
+  "minutes": {
+   "fileId": 194,
+   "type": "Minutes",
+   "name": "Minutes",
+   "sha256": "c861dcd06b08db6ae89cfd718b581031b3beefc55a624912a8003c949aff671f",
+   "bytes": 121192,
+   "pages": 1,
+   "changedAt": "2026-09-08T01:22:35Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=194,plainText=false)",
+   "hasVoteSummary": false
+  },
+  "votePacket": {
+   "fileId": 191,
+   "type": "Agenda Packet",
+   "name": "Agenda Packet",
+   "sha256": "43da83fd09a3aca276714ffb0fd8af34e3af6fd8dfe4867a7d435c65e91f1375",
+   "bytes": 424335,
+   "pages": 5,
+   "changedAt": "2026-09-08T16:54:29Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=191,plainText=false)",
+   "portalUrl": "https://riverheadny.portal.civicclerk.com/event/195/files/agenda/191",
+   "hasVoteBlocks": true,
+   "voteBlockCount": 1,
+   "resolutionNumbers": [
+    "2025-643"
+   ],
+   "current": true
+  },
+  "voteSourceKind": null,
+  "voteSource": null,
+  "minutesRevisionCount": 0,
+  "resolutionSourceCount": 0,
+  "verifiedResolutionCount": 0,
+  "resolutionSources": []
+ }
+}

@@ -1,11 +1,11 @@
 {
  "gapToClose": 936727.0,
  "gapSource": "Modeled 2027 automatic payroll pressure (PBA+SOA+CSEA+non-contract at default COLA)",
- "total": 2358934.57,
+ "total": 2416477.23,
  "byConfidence": {
   "firm": 828209.94,
   "moderate": 1036271.53,
-  "volatile": 494453.1
+  "volatile": 551995.76
  },
  "items": [
   {
@@ -138,6 +138,17 @@
    "ytd2025": 1202.12,
    "tentative2026": 70000.0,
    "target": 64926.59,
+   "confidence": "volatile"
+  },
+  {
+   "account": "ES5-8-8189-472-000-00000",
+   "name": "Scav Waste - Utl - Electricit y",
+   "fund": "ES5",
+   "fundName": "Scavenger Waste",
+   "actual2024": 142457.34,
+   "ytd2025": 66333.74,
+   "tentative2026": 200000.0,
+   "target": 57542.66,
    "confidence": "volatile"
   },
   {

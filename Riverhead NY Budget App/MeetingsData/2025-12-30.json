@@ -38,7 +38,9 @@
     "Hubbard": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   }
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 2,
@@ -55,7 +57,9 @@
     "Hubbard": "aye",
     "Merrifield": "aye",
     "Waski": "aye"
-   }
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   }
  ],
  "slug": "2025-12-30",
@@ -97,5 +101,39 @@
    "moved": 1,
    "seconded": 1
   }
+ },
+ "officialRecord": {
+  "status": "vote-record-parsed",
+  "sourceVersionAt": "2026-09-08T01:22:42Z",
+  "minutes": {
+   "fileId": 10489,
+   "type": "Minutes",
+   "name": "Minutes TBM Special 12/30/25",
+   "sha256": "d2eb749d547dc52b4b441762d29e6630695e923322c0f9c8fe8041e1deb95d04",
+   "bytes": 128248,
+   "pages": 2,
+   "changedAt": "2026-09-08T01:22:42Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10489,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "votePacket": null,
+  "voteSourceKind": "minutes",
+  "voteSource": {
+   "fileId": 10489,
+   "type": "Minutes",
+   "name": "Minutes TBM Special 12/30/25",
+   "sha256": "d2eb749d547dc52b4b441762d29e6630695e923322c0f9c8fe8041e1deb95d04",
+   "bytes": 128248,
+   "pages": 2,
+   "changedAt": "2026-09-08T01:22:42Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10489,plainText=false)",
+   "hasVoteSummary": true
+  },
+  "minutesRevisionCount": 0,
+  "resolutionSourceCount": 0,
+  "verifiedResolutionCount": 0,
+  "resolutionSources": []
  }
 }

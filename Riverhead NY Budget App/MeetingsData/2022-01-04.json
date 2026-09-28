@@ -1,0 +1,1144 @@
+{
+ "date": "January 4, 2022",
+ "type": "Regular Meeting",
+ "calledToOrder": "2:06 PM",
+ "roster": [
+  {
+   "last": "Aguiar",
+   "name": "Yvette Aguiar",
+   "title": "Supervisor",
+   "party": null
+  },
+  {
+   "last": "Hubbard",
+   "name": "Tim Hubbard",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Jr.",
+   "name": "Beyrodt Jr.",
+   "title": "Councilmember",
+   "party": null
+  },
+  {
+   "last": "Rothwell",
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Kern",
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "party": "Republican"
+  }
+ ],
+ "resolutions": [
+  {
+   "seq": 1,
+   "number": "2022-1",
+   "title": "Sets Salaries of Elected Officials for 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 2,
+   "number": "2022-2",
+   "title": "Sets Salaries of General Town Employees for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 3,
+   "number": "2022-3",
+   "title": "Sets Salaries of Highway Department for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 4,
+   "number": "2022-4",
+   "title": "Sets Salaries of Police Officers for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 5,
+   "number": "2022-5",
+   "title": "Sets Salaries of Sewer/Scavenger Waste District for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 6,
+   "number": "2022-6",
+   "title": "Sets Salaries of Street Lighting District for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 7,
+   "number": "2022-7",
+   "title": "Sets Salaries of Various Boards for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 8,
+   "number": "2022-8",
+   "title": "Sets Salaries of Water District Employees for the Year 2022",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 9,
+   "number": "2022-9",
+   "title": "Accepts Resignation of Michael Zaleski as Deputy Highway Superintendent Resolution #9 Councilman Hubbard: \u201cAccepts Resignation of Michael Zaleski as Deputy Highway Superintendent, so moved.\u201d Councilman Beyrodt: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard : \u201cI just want to explain he has to resign from his old post to take his newly elected post. When I first saw all these I said all these people are leaving us but that\u2019s what it is so the people out there know, yes.\u201d Vote Continued: \u201cAguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 10,
+   "number": "2022-10",
+   "title": "Ratifies Appointment of Deputy Highway Superintendent",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 11,
+   "number": "2022-11",
+   "title": "Setting Terms and Conditions of Employment for Deputy Highway Superintendent",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 12,
+   "number": "2022-12",
+   "title": "Reappoints Town Historian Resolution #12 Councilman Kern: \u201cReappoints Town Historian, so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt: \u201cWhat a great job she does and I\u2019m glad to reappoint her and I\u2019m glad she\u2019ll continue the job, yes.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard : \u201cI see a lot of these things on the Remembering Riverhead website about who remembers, blah, blah, blah. If you go to our town historian or you go to Richard Wines, I know of two better people, I don\u2019 t know of two better people that have the history right on the top of their head and if they don\u2019t they\u2019ll find it for you, so I definitely vote yes. Ms. Case does a great job for us.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cYes, absolutely. She\u2019s always in my office and finding things and sharing stories and I had a nice tour not too long ago of the facility and thank you for everything you do for so many years here.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 13,
+   "number": "2022-13",
+   "title": "Appoints a Temporary Office Assistant to the Town Supervisor's Office",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 14,
+   "number": "2022-14",
+   "title": "Approves Salary Increase for Deputy Tax Receiver Lisa Richards",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 15,
+   "number": "2022-15",
+   "title": "Approves Salary Increase for Town Attorney Kozakiewicz",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 16,
+   "number": "2022-16",
+   "title": "Approves Salary Increase for Chief Accountant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 17,
+   "number": "2022-17",
+   "title": "Approves Salary Increase for Community Development Administrator Thomas Resolution #17 Councilman Hubbard: \u201cApproves Salary Increase for Community Development Administrator Thomas, so moved.\u201d Councilman Beyrodt: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt : \u201cMay be one of the most important people in this town\u2019s administration, yes, absolutely.\u201d Vote Continued: \u201cHubbard, yes; Aguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 18,
+   "number": "2022-18",
+   "title": "Approves Salary Increase for Principal Accountant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 19,
+   "number": "2022-19",
+   "title": "Approves Salary Increase for Deputy Town Attorney Howard Resolution #19 Councilman Rothwell: \u201cApproves Salary Increase for Deputy Town Attorney Howard, so moved.\u201d Councilman Kern: \u201cSecond\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard: \u201cI abstain as Deputy Town Attorney Howard is my son-in-law.\u201d Vote Continued: \u201cAguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [4 TO 0]",
+   "adopted": true,
+   "tag": "split",
+   "ayesCount": 4,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "abstain",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 20,
+   "number": "2022-20",
+   "title": "Approves Salary Increase for Deputy Town Attorney McCormick",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 21,
+   "number": "2022-21",
+   "title": "Approves Salary Increase for Deputy Town Attorney Prudenti Resolution #21 Councilman Hubbard: \u201cApproves Salary Increase for Deputy Town Attorney Prudenti, so moved.\u201d Councilman Beyrodt: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt : \u201cAgain I would like to say this is a very important person to ou r administration and to what we do here at the Town Board, and I overwhelmingly say yes.\u201d Vote Continued: \u201cHubbard, yes; Aguiar.\u201d Supervisor Aguiar: \u201cYes and I hope with what\u2019s going in the attorney\u2019s office that everybody can work cohesively and that\u2019s a substantial raise and I\u2019m sure she\u2019s going to come up to the plate on that, yes.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 22,
+   "number": "2022-22",
+   "title": "Approves Salary Increase for Town Engineer Drew Dillingham Resolution #22 Councilman Beyrodt: \u201cApproves Salary Increase for Town Engineer Drew Dillingham, so moved.\u201d Councilman Rothwell: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard: \u201cMoney well spent, yes.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar: \u201cYes, well deserved, Drew.\u201d Diane Wilhelm: \u201cResolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 23,
+   "number": "2022-23",
+   "title": "Authorizes Stipend with Town Engineer",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 24,
+   "number": "2022-24",
+   "title": "Reassigns the Salary of a Tax Cashier",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 25,
+   "number": "2022-25",
+   "title": "Reassigns the Salary of an Account Clerk",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 26,
+   "number": "2022-26",
+   "title": "Reassigns the Salary of a Maintenance Mechanic I",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 27,
+   "number": "2022-27",
+   "title": "Reassigns the Salary of a Chief Office Assistant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 28,
+   "number": "2022-28",
+   "title": "Reassigns the Salary of an Account Clerk",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 29,
+   "number": "2022-29",
+   "title": "Reassigns the Salary of the Assistant Community Development Supervisor Resolution #29 Councilman Hubbard: \u201cReassigns the Salary of the Assistant Community Development Supervisor, so moved.\u201d Councilman Beyrodt: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard: \u201cPart of that hard working group in there, yes.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar: \u201cI never saw such a team working under those conditions and everybody is so cohesive, pleasant even under the stress especially during covid. They asked to come in on their own without getting compensated to move (inaudible) forward. So, I com mend it. I think this is so well -deserved and I hope you live up, continue to live up to it, you\u2019re doing a great job.\u201d Diane Wilhelm: \u201cResolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 30,
+   "number": "2022-30",
+   "title": "Reassigns the Salary of an Assessment Clerk",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 31,
+   "number": "2022-31",
+   "title": "Reassigns the Salary of a Recreation Leader Resolution #31 Councilman Rothwell: \u201cReassigns the Salary of a Recreation Leader, so moved.\u201d Councilman Kerns: \u201cSecond.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard : \u201cAgain, very well deserved here. Jordan does a great job for us up at the rec department, yes.\u201d Vote Continued: \u201cAguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 32,
+   "number": "2022-32",
+   "title": "Reassigns the Salary of a Recreation Supervisor Resolution #32 Councilman Kern: \u201cReassigns the Salary of a Recreation Supervisor, so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard : \u201cSame thing with Colleen Eastwood. Very hard working up there, they do a great job, yes.\u201d Vote Continued: \u201cAguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 33,
+   "number": "2022-33",
+   "title": "Reassigns the Salary of a Principal Office Assistant",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 34,
+   "number": "2022-34",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 35,
+   "number": "2022-35",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 36,
+   "number": "2022-36",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote a Heavy Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 37,
+   "number": "2022-37",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 38,
+   "number": "2022-38",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote a Heavy Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 39,
+   "number": "2022-39",
+   "title": "Accepts Highway Superintendent's Personnel Report & Request for Town Board Resolution to Promote a Heavy Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 40,
+   "number": "2022-40",
+   "title": "Accepts Highway Superintendent\u2019s Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 41,
+   "number": "2022-41",
+   "title": "Accepts Highway Superintendent\u2019s Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 42,
+   "number": "2022-42",
+   "title": "Accepts Highway Superintendent\u2019s Personnel Report & Request for Town Board Resolution to Promote an Automotive Equipment Operator Resolution #42 Councilman Beyrodt: \u201cAccepts Highway Superintendent\u2019s Personnel Report and Request for Town Board Resolution to Promote an Automotive Equipment Operator, so moved.\u201d Councilman Rothwell: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard.\u201d Councilman Hubbard: \u201cI just want to say as a group for all of these instead of individually, they are a har dworking crew up at the highway department. The ladies and men up there get stuck in the worse weather conditions possible and they keep our roads clear in the snow and they put asphalt down in the ninety -five degree heat, so I vote yes and I\u2019m very proud of our highway department.\u201d Vote Continued: \u201cAguiar, yes, absolutely. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 43,
+   "number": "2022-43",
+   "title": "Buildings & Grounds Department Budget Transfer",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 44,
+   "number": "2022-44",
+   "title": "Reappoints Member to the Town of Riverhead Zoning Board of Appeals (Leroy Barnes) Resolution #44 Councilman Kern: \u201cReappoints Member to the Town of Riverhead Zoning Board of Appeals (Leroy Barnes), so moved.\u201d Councilman Hubbard: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt: \u201cLeroy is an asset to the ZBA, and a wealth of history and knowledge and I say yes overwhelmingly.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cExactly what Frank said, yes.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar : \u201cLeroy, we look forward to you. I know you served us very well on the ZBA. Your knowledge is impressive, your smile is infectious as we see he\u2019s always smiling and thank you for staying on board.\u201d Diane Wilhelm: \u201cResolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 45,
+   "number": "2022-45",
+   "title": "Ratifies Appointment of Joann Waski to Serve as Chairperson of the Planning Board of the Town of Riverhead Resolution #45 Councilman Hubbard: \u201cRatifies Appointment of Joann Waski to Serve as Chairperson of the Planning Board of the Town of Riverhead, so moved.\u201d Councilman Beyrodt: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt.\u201d Councilman Beyrodt : \u201cAgain such a wealth of knowledge, information, history. Couldn\u2019t be a better person for this spot, yes.\u201d Vote Continued: \u201cHubbard.\u201d Councilman Hubbard: \u201cI agree with what Frank said, absolutely yes.\u201d Vote Continued: \u201cAguiar.\u201d Supervisor Aguiar: \u201cYes, I\u2019ve gotten to know her throughout the years and her ethics are beyond reproach. She\u2019s smart, she\u2019s not scared to take a stance and follow through and I commend her ability to work with the commu nity. She\u2019s well known in the community. She\u2019s a businesswoman. She has a business in the community, and I can\u2019t think of a better person to serve in this position.\u201d Diane Wilhelm: \u201cResolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 46,
+   "number": "2022-46",
+   "title": "Appoints Official Newspaper for the Town of Riverhead Resolution #46 Councilman Beyrodt: \u201cAppoints Official Newspaper for the Town of Riverhead, so moved.\u201d Councilman Rothwell:\u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes; Aguiar.\u201d Supervisor Aguiar: \u201cYes, and this year we added Dan\u2019s newspaper which is readily available, and we welcome them on board, and we\u2019ll be sending you our press releases also, so welcome aboard and all the other newspapers and I vote yes.\u201d Diane Wilhelm: \u201cResolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 47,
+   "number": "2022-47",
+   "title": "Appoints Bond Counsel",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 48,
+   "number": "2022-48",
+   "title": "Appoints Financial Advisor",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 49,
+   "number": "2022-49",
+   "title": "Maintains Policy of Non-Discrimination Resolution #49 Councilman Hubbard: \u201cMaintains Policy of Non-Discrimination, so moved.\u201d Councilman Beyrodt: \u201cSeconded.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes; Aguiar.\u201d Supervisor Aguiar: \u201cI would like to amend this resolution. It says here Yvette Aguiar, Supervisor will be the person to coordinate and comply with this requirement. In general, and usually in civil service and in the public facilities, the person in charge with making s ure discriminatory or sexual harassment training and anything along that nature is the personnel director. They know how to reach the individual. So, I would like to be able to amend this to make it personnel director. They\u2019re the ones who have all the rec ords, the ability and that is their job to manage personnel and concerning training. It\u2019s not the Supervisor\u2019s officer to personally get involved and dictate training and keep data basis. So, I hope I have the support of the Board to amend this to the personnel director.\u201d Councilman Rothwell: \u201cI\u2019ll second your motion to amend.\u201d Supervisor Aguiar: \u201cDiane, can you take a vote?\u201d Diane Wilhelm: \u201cAll over again?\u201d Councilman Rothwell: \u201cTo amend.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes to amend; Hubbard, yes to amend; Aguiar, yes to amend. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 50,
+   "number": "2022-50",
+   "title": "Adopts 2022 Living Wage",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 51,
+   "number": "2022-51",
+   "title": "Adopts Provisions of Executive Order 11.1 Suspending the Requirements of Renewal Applications as a Condition to Granting Exemptions Under Sections 459-C and 467 of The Real Property Tax Law",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 52,
+   "number": "2022-52",
+   "title": "Extends Contract for Implementation of Insurance for 2020 Resolution #52 Councilman Kern: \u201cExtends Contract for Implementation of Insurance for 2020, so moved.\u201d Anne Marie Prudenti: \u201cIt should be 2022.\u201d Supervisor Aguiar: \u201cOkay, we hav e to amend this resolution? Okay, let\u2019s do an amendment.\u201d Councilman Hubbard: \u201cI make a motion to amend it to 2022.\u201d Councilman Kern: \u201cSecond.\u201d Supervisor Aguiar: \u201cOkay, take the vote.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard , yes; Aguiar, yes. Resolution adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Tim Hubbard",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 53,
+   "number": "2022-53",
+   "title": "Adopts 2022 Investment Policy",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Frank Beyrodt Jr.",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 54,
+   "number": "2022-54",
+   "title": "Pays Bills",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Frank Beyrodt Jr.",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  },
+  {
+   "seq": 55,
+   "number": "2022-55",
+   "title": "Reassigns the Salary of an Account Clerk Resolution #55 Councilman Hubbard: \u201cResolution 55 I would like to bring up from the floor. I would like to make a motion to reassign the salary of a n account clerk. The reason this is being brought off the floor is that it was inadvertently left out. It should have been in with all the others so I would like to make a motion to Reassign the Salary of an Account Clerk, so moved.\u201d Supervisor Aguiar: \u201cI second it.\u201d Supervisor Aguiar: \u201cVote please.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes; Aguiar.\u201d Supervisor Agui ar: \u201cYes, and just so you know, to move something off the floor you need five votes and if one person is missing you don\u2019t have your five votes and I know there\u2019s been some confusion here. You need five to move it and if one person is missing or two are, it does not come off the floor, but now that we have the five votes Diane, can you please take the vote on this resolution?\u201d Diane Wilhelm: \"Resolution 55 is taken off the floor.\u201d Councilman Hubbard: \u201cReassigns the Salary of an Account Clerk, so moved.\u201d Councilman Rothwell:\u201cSeconded.\u201d The Vote: \u201cKern, yes; Rothwell, yes; Beyrodt, yes; Hubbard, yes; Aguiar, yes. Resolution 55 is adopted.\u201d",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Tim Hubbard",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Aguiar": "aye",
+    "Hubbard": "aye",
+    "Jr.": "absent",
+    "Rothwell": "aye",
+    "Kern": "aye"
+   }
+  }
+ ],
+ "slug": "2022-01-04",
+ "stats": {
+  "total": 55,
+  "unanimous": 54,
+  "contested": 1,
+  "failed": 0,
+  "tabled": 0
+ },
+ "memberTallies": {
+  "Aguiar": {
+   "name": "Yvette Aguiar",
+   "title": "Supervisor",
+   "aye": 55,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 0,
+   "seconded": 0
+  },
+  "Hubbard": {
+   "name": "Tim Hubbard",
+   "title": "Councilman",
+   "aye": 54,
+   "nay": 0,
+   "abstain": 1,
+   "absent": 0,
+   "moved": 15,
+   "seconded": 13
+  },
+  "Jr.": {
+   "name": "Beyrodt Jr.",
+   "title": "Councilmember",
+   "aye": 0,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 55,
+   "moved": 14,
+   "seconded": 14
+  },
+  "Rothwell": {
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "aye": 55,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 13,
+   "seconded": 15
+  },
+  "Kern": {
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "aye": 55,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 13,
+   "seconded": 13
+  }
+ }
+}

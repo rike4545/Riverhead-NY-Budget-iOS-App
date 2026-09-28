@@ -39,6 +39,57 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : EW1-9999-000-00000-0 Appropriated Fund Balance $14,368.00 : EW3-8-8320-435-000-82301 Water - Prof Svcs - Engineering $14,368.00",
+    "fundCodes": [
+     "EW1",
+     "EW3"
+    ],
+    "funds": [
+     "Water District",
+     "Water District \u2014 developer fees"
+    ],
+    "amount": 14368.0,
+    "accounts": [
+     {
+      "code": "EW1-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "EW1",
+      "name": "Appropriated Fund Balance",
+      "amount": 14368.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "EW3-8-8320-435-000-82301",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "EW3",
+      "name": "Water - Prof Svcs - Engineering",
+      "amount": 14368.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "EW1-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "Water District"
+    ],
+    "fundBalanceDraw": 14368.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -60,6 +111,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -81,6 +151,48 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": "Project expenditures funded by developer fees",
+    "fundCodes": [
+     "EW3"
+    ],
+    "funds": [
+     "Water District \u2014 developer fees"
+    ],
+    "amount": 13990.17,
+    "accounts": [
+     {
+      "code": "EW3-2130-000-82605-8",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "EW3",
+      "name": "Developer Fees",
+      "amount": 13990.17,
+      "createdHere": false
+     },
+     {
+      "code": "EW3-8-8320-250-000-82605",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "EW3",
+      "name": "Water \u2013 Infrastructure",
+      "amount": 13990.17,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -102,6 +214,50 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : EW3-2130-000-82612-8 Developer Fees $ 7,500.00 : EW3-8-8320-435-000-82612 Water - Prof Svcs - Engineering $ 7,500.00",
+    "fundCodes": [
+     "EW3"
+    ],
+    "funds": [
+     "Water District \u2014 developer fees"
+    ],
+    "amount": 7500.0,
+    "accounts": [
+     {
+      "code": "EW3-2130-000-82612-8",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "EW3",
+      "name": "Developer Fees",
+      "amount": 7500.0,
+      "createdHere": false
+     },
+     {
+      "code": "EW3-8-8320-435-000-82612",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "EW3",
+      "name": "Water - Prof Svcs - Engineering",
+      "amount": 7500.0,
+      "createdHere": true
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": [
+     "EW3-8-8320-435-000-82612"
+    ]
    }
   },
   {
@@ -123,6 +279,48 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : H01-5-5110-240-000-52513 General Repairs Equip. $45,322.29 : : H01-5-5110-250-000-52513 General Repairs Infrastructure $45,322.29",
+    "fundCodes": [
+     "H01"
+    ],
+    "funds": [
+     "Capital Projects Fund"
+    ],
+    "amount": 45322.29,
+    "accounts": [
+     {
+      "code": "H01-5-5110-240-000-52513",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "H01",
+      "name": "General Repairs Equip.",
+      "amount": 45322.29,
+      "createdHere": false
+     },
+     {
+      "code": "H01-5-5110-250-000-52513",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "H01",
+      "name": "General Repairs Infrastructure",
+      "amount": 45322.29,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 2,
+    "createsAccounts": []
    }
   },
   {
@@ -144,6 +342,55 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : SL1-9999-000-00000-0 - Appropriated Fund Balance $257,000.00 : SL1-5-5182-240-000-00000 \u2013 Street - Equipment $257,000.00",
+    "fundCodes": [
+     "SL1"
+    ],
+    "funds": [
+     "Street Lighting District"
+    ],
+    "amount": 257000.0,
+    "accounts": [
+     {
+      "code": "SL1-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "SL1",
+      "name": "Appropriated Fund Balance",
+      "amount": 257000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "SL1-5-5182-240-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "SL1",
+      "name": "Street - Equipment",
+      "amount": 257000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "SL1-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "Street Lighting District"
+    ],
+    "fundBalanceDraw": 257000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -165,6 +412,55 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : CM2-9999-000-00000-0 Appropriated Fund Balance $ 60,000.00 : CM2-7-7230-230-000-00000 Docs - Improvements $ 60,000.00",
+    "fundCodes": [
+     "CM2"
+    ],
+    "funds": [
+     "East Creek Docking Facility"
+    ],
+    "amount": 60000.0,
+    "accounts": [
+     {
+      "code": "CM2-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "CM2",
+      "name": "Appropriated Fund Balance",
+      "amount": 60000.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "CM2-7-7230-230-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "CM2",
+      "name": "Docs - Improvements",
+      "amount": 60000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "CM2-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "East Creek Docking Facility"
+    ],
+    "fundBalanceDraw": 60000.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -186,6 +482,50 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "grant",
+    "sources": [
+     "grant"
+    ],
+    "sourceText": ": : : EW1-4989-000-00000-5 Federal Aid $ 3,575,000.00 : EW1-8-8320-490-000-00000 Water \u2013 Miscellaneous $ 3,575,000.00",
+    "fundCodes": [
+     "EW1"
+    ],
+    "funds": [
+     "Water District"
+    ],
+    "amount": 3575000.0,
+    "accounts": [
+     {
+      "code": "EW1-4989-000-00000-5",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "EW1",
+      "name": "Federal Aid",
+      "amount": 3575000.0,
+      "createdHere": false
+     },
+     {
+      "code": "EW1-8-8320-490-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "EW1",
+      "name": "Water \u2013 Miscellaneous",
+      "amount": 3575000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -207,6 +547,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -216,7 +575,7 @@
    "category": "debt",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
-   "amount": null,
+   "amount": 7212941.0,
    "note": "Pays down the 2018 Series B refunding \u2014 booked as present-value debt-service savings.",
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
@@ -228,6 +587,77 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "fund-balance",
+    "sources": [
+     "fund-balance"
+    ],
+    "sourceText": ": : : A01-2660-000-00000-1 Sale of Real Property-Town Properties $ 92,059.00 CM4-9999-000-00000-0 Fund Balance $ 7,212,941.00 : A01-9-9901-900-V01-00000 Interfund Transfers \u2013 V01 $ 92,059.00 CM4-9-9901-900-V01-00000 Interfund Transfers \u2013 V01 $ 7,212,941.00",
+    "fundCodes": [
+     "A01",
+     "CM4"
+    ],
+    "funds": [
+     "General Fund",
+     "Community Preservation Fund"
+    ],
+    "amount": 7212941.0,
+    "accounts": [
+     {
+      "code": "A01-2660-000-00000-1",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Sale of Real Property-Town Properties",
+      "amount": 92059.0,
+      "createdHere": false
+     },
+     {
+      "code": "CM4-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "CM4",
+      "name": "Fund Balance",
+      "amount": 7212941.0,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "A01-9-9901-900-V01-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Interfund Transfers \u2013 V01",
+      "amount": 92059.0,
+      "createdHere": false
+     },
+     {
+      "code": "CM4-9-9901-900-V01-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "CM4",
+      "name": "Interfund Transfers \u2013 V01",
+      "amount": 7212941.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "CM4-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "Community Preservation Fund"
+    ],
+    "fundBalanceDraw": 7212941.0,
+    "fundBalanceClasses": [
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 2,
+    "createsAccounts": []
    }
   },
   {
@@ -249,6 +679,50 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "donation",
+    "sources": [
+     "donation"
+    ],
+    "sourceText": ": : : A06-2705-000-00000-J \u2013 Gifts and Donations $1,000.00 : A06-7-7310-415-00000 \u2013 Yth Prg \u2013 Supplies $1,000.00",
+    "fundCodes": [
+     "A06"
+    ],
+    "funds": [
+     "Recreation Program Fund"
+    ],
+    "amount": 1000.0,
+    "accounts": [
+     {
+      "code": "A06-2705-000-00000-J",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A06",
+      "name": "Gifts and Donations",
+      "amount": 1000.0,
+      "createdHere": false
+     },
+     {
+      "code": "A06-7-7310-415-00000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A06",
+      "name": "Yth Prg \u2013 Supplies",
+      "amount": 1000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -270,6 +744,50 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "donation",
+    "sources": [
+     "donation"
+    ],
+    "sourceText": ": : : A04-2705-000-00000-7 \u2013 Gifts and Donations $313.00 : A04-3-3120-417-000-00000 \u2013 Police - Supplies - Program $313.00",
+    "fundCodes": [
+     "A04"
+    ],
+    "funds": [
+     "Police Athletic League"
+    ],
+    "amount": 313.0,
+    "accounts": [
+     {
+      "code": "A04-2705-000-00000-7",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A04",
+      "name": "Gifts and Donations",
+      "amount": 313.0,
+      "createdHere": false
+     },
+     {
+      "code": "A04-3-3120-417-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A04",
+      "name": "Police - Supplies - Program",
+      "amount": 313.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -291,6 +809,70 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "fund-balance",
+    "sources": [
+     "fund-balance"
+    ],
+    "sourceText": ": : : A01-9999-000-00000-0 \u2013 Assigned Fund Balance $48,128.53 A01-9999-000-00000-0 - Appropriated Fund Balance $31,871.47 : A01-6-6772-280-000-00000 \u2013 Seniors-Vehicles $80,000.00",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": 80000.0,
+    "accounts": [
+     {
+      "code": "A01-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Assigned Fund Balance",
+      "amount": 48128.53,
+      "fundBalanceClass": "Assigned",
+      "createdHere": false
+     },
+     {
+      "code": "A01-9999-000-00000-0",
+      "role": "revenue",
+      "kind": "revenue",
+      "fund": "A01",
+      "name": "Appropriated Fund Balance",
+      "amount": 31871.47,
+      "fundBalanceClass": null,
+      "createdHere": false
+     },
+     {
+      "code": "A01-6-6772-280-000-00000",
+      "role": "transfer",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Seniors-Vehicles",
+      "amount": 80000.0,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [
+     "A01-9999-000-00000-0",
+     "A01-9999-000-00000-0"
+    ],
+    "fundBalanceFunds": [
+     "General Fund",
+     "General Fund"
+    ],
+    "fundBalanceDraw": 80000.0,
+    "fundBalanceClasses": [
+     "Assigned",
+     null
+    ],
+    "drawsFundBalance": true,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 1,
+    "createsAccounts": []
    }
   },
   {
@@ -312,6 +894,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -333,6 +934,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -354,6 +974,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -375,6 +1014,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -396,6 +1054,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : Various Depending on work being done/facility/program : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -417,6 +1094,41 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "grant",
+    "sources": [
+     "grant"
+    ],
+    "sourceText": ": Appropriation Account to be Charged: Personnel A01-3-3120-102-000-00000 Grant or other Revenue Source: Appropriation Transfer (list account(s) and amount):",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-3-3120-102-000-00000",
+      "role": "unspecified",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Grant or other Revenue Source: Appropriation Transfer (list account(s) and amoun",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -438,6 +1150,39 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-3-3620-102-000-00000 - Building Safety Inspection - P/T : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-3-3620-102-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Building Safety Inspection - P/T",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -480,6 +1225,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -501,6 +1265,39 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-1-1625-101-NON-00000 - Building & Grounds - F/T : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-1-1625-101-NON-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Building & Grounds - F/T",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -522,6 +1319,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -543,6 +1359,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -564,6 +1399,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -585,6 +1439,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -606,6 +1479,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -627,6 +1519,39 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-6-6772-101-NON-00000 - Prog For The Aging - Nutrition F/T : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-6-6772-101-NON-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Prog For The Aging - Nutrition F/T",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -648,6 +1573,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -669,6 +1613,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -690,6 +1653,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -711,6 +1693,25 @@
     "tag": "tabled",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -732,6 +1733,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -753,6 +1773,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -774,6 +1813,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -795,6 +1853,39 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A06-7-7310-443-000-00000 : :",
+    "fundCodes": [
+     "A06"
+    ],
+    "funds": [
+     "Recreation Program Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A06-7-7310-443-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A06",
+      "name": null,
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -816,6 +1907,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -837,6 +1947,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -858,6 +1987,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -879,6 +2027,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -900,6 +2067,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -921,6 +2107,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -942,6 +2147,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -963,6 +2187,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -984,6 +2227,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1005,6 +2267,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1026,6 +2307,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1047,6 +2347,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1068,6 +2387,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1089,6 +2427,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1110,6 +2467,27 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": "grant",
+    "sources": [
+     "grant"
+    ],
+    "sourceText": "Costs funded by NYS DRI award",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   },
   {
@@ -1131,6 +2509,25 @@
     "tag": "unanimous",
     "ayes": null,
     "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
    }
   }
  ]

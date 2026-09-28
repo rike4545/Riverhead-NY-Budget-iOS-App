@@ -3,261 +3,1320 @@
  "date": "August 18, 2026",
  "type": "Regular Meeting",
  "calledToOrder": null,
- "roster": [],
- "resolutions": [],
- "preliminary": true,
- "docket": [
+ "roster": [
+  {
+   "last": "Halpin",
+   "name": "Jerry Halpin",
+   "title": "Supervisor",
+   "party": "Unaffiliated"
+  },
+  {
+   "last": "Rothwell",
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Kern",
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "party": "Republican"
+  },
+  {
+   "last": "Merrifield",
+   "name": "Denise Merrifield",
+   "title": "Councilwoman",
+   "party": "Republican"
+  },
+  {
+   "last": "Waski",
+   "name": "Joann Waski",
+   "title": "Councilwoman",
+   "party": "Republican"
+  }
+ ],
+ "resolutions": [
   {
    "seq": 1,
    "number": "2026-765",
-   "title": "Budget Transfer for 2026 Legal Fees"
+   "title": "Budget Transfer for 2026 Legal Fees",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 2,
    "number": "2026-766",
-   "title": "Adopts Highway Department Budget Transfer for Duck Pond Estates Paving"
+   "title": "Adopts Highway Department Budget Transfer for Duck Pond Estates Paving",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 3,
    "number": "2026-767",
-   "title": "Authorizes Budget Transfer For Sewer District VACTOR Truck"
+   "title": "Authorizes Budget Transfer For Sewer District VACTOR Truck",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 4,
    "number": "2026-768",
-   "title": "CHIPS & EWR 2026-2027 Grant Funds for Highway Barn Capital Project"
+   "title": "CHIPS & EWR 2026-2027 Grant Funds for Highway Barn Capital Project",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 5,
    "number": "2026-769",
-   "title": "Authorizes Budget Adoption for Water District Capital Project #82618 - 1001 Scott Avenue, Calverton, NY"
+   "title": "Authorizes Budget Adoption for Water District Capital Project #82618 - 1001 Scott Avenue, Calverton, NY",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 6,
    "number": "2026-770",
-   "title": "Authorizing the Acceptance of Civil Asset Forfeiture Funds"
+   "title": "Authorizing the Acceptance of Civil Asset Forfeiture Funds",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 7,
    "number": "2026-771",
-   "title": "Further Amends Resolution #2026-107 Setting Fees for Riverhead Sewer District"
+   "title": "Further Amends Resolution #2026-107 Setting Fees for Riverhead Sewer District",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 8,
    "number": "2026-772",
-   "title": "Approves Live Music At Wading River Beach 2026"
+   "title": "Approves Live Music At Wading River Beach 2026",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 9,
    "number": "2026-773",
-   "title": "Ratifies the Authorization for the Police Department to apply for a Grant"
+   "title": "Ratifies the Authorization for the Police Department to apply for a Grant",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 10,
    "number": "2026-774",
-   "title": "Authorizes The Community Development Department to Offer Assistance to Eligible First-Time Homebuyers"
+   "title": "Authorizes The Community Development Department to Offer Assistance to Eligible First-Time Homebuyers",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 11,
    "number": "2026-775",
-   "title": "Authorizes Fire Marshal To Attend NYS Fire Academy Training"
+   "title": "Authorizes Fire Marshal To Attend NYS Fire Academy Training",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 12,
    "number": "2026-776",
-   "title": "Rescinds Resolution 2026-605 and Resolution 2026-656"
+   "title": "Rescinds Resolution 2026-605 and Resolution 2026-656",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 13,
    "number": "2026-777",
-   "title": "Approves Salary Increase for a Part-Time Office Assistant"
+   "title": "Approves Salary Increase for a Part-Time Office Assistant",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 14,
    "number": "2026-778",
-   "title": "Ratifies the Provisional Appointment of a Senior Accountant"
+   "title": "Ratifies the Provisional Appointment of a Senior Accountant",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 15,
    "number": "2026-779",
-   "title": "Removes Provisonal Status for a Principal Account Clerk"
+   "title": "Removes Provisonal Status for a Principal Account Clerk",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 16,
    "number": "2026-780",
-   "title": "Ratifies the Termination of a Part-Time Office Assistant"
+   "title": "Ratifies the Termination of a Part-Time Office Assistant",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 17,
    "number": "2026-781",
-   "title": "Ratifies the Termination of a Maintenance Mechanic II"
+   "title": "Ratifies the Termination of a Maintenance Mechanic II",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 18,
    "number": "2026-782",
-   "title": "Accepts the Resignation of a Public Safety Dispatcher"
+   "title": "Accepts the Resignation of a Public Safety Dispatcher",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 19,
    "number": "2026-783",
-   "title": "Accepts the Retirement of a Network & Systems Specialist II"
+   "title": "Accepts the Retirement of a Network & Systems Specialist II",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 20,
    "number": "2026-784",
-   "title": "Appoints Robert Dilworth to the Wildlife Management Advisory Committee"
+   "title": "Appoints Robert Dilworth to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 21,
    "number": "2026-785",
-   "title": "Appoints George Salzman to the Wildlife Management Advisory Committee"
+   "title": "Appoints George Salzman to the Wildlife Management Advisory Committee",
+   "result": "MOVER: Councilman Kenneth Rothwell",
+   "adopted": false,
+   "tag": "failed",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 22,
    "number": "2026-786",
-   "title": "Reappoints David Cote to the Wildlife Management Advisory Committee"
+   "title": "Reappoints David Cote to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 23,
    "number": "2026-787",
-   "title": "Reappoints Justin Winter, Sr. to the Recreation Advisory Committee"
+   "title": "Reappoints Justin Winter, Sr. to the Recreation Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 24,
    "number": "2026-788",
-   "title": "Reappoints Tom Gabrielsen to the Wildlife Management Advisory Committee"
+   "title": "Reappoints Tom Gabrielsen to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 25,
    "number": "2026-789",
-   "title": "Reappoints Chris Witt to the Wildlife Management Advisory Committee"
+   "title": "Reappoints Chris Witt to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 26,
    "number": "2026-790",
-   "title": "Reappoints Robert Gabrielsen to the Wildlife Management Advisory Committee"
+   "title": "Reappoints Robert Gabrielsen to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 27,
    "number": "2026-791",
-   "title": "Reappoints John Kramer to the Wildlife Management Advisory Committee"
+   "title": "Reappoints John Kramer to the Wildlife Management Advisory Committee",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 28,
    "number": "2026-792",
-   "title": "Resolution Establishing The Town Of Riverhead Hazardous Materials Response Team And Adopting The Town Of Riverhead Hazardous Materials Emergency Response Plan And Resource Guide"
+   "title": "Resolution Establishing The Town Of Riverhead Hazardous Materials Response Team And Adopting The Town Of Riverhead Hazardous Materials Emergency Response Plan And Resource Guide",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 29,
    "number": "2026-793",
-   "title": "Amends Agreement With Main Street Agency For Alive On 25"
+   "title": "Amends Agreement With Main Street Agency For Alive On 25",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 30,
    "number": "2026-794",
-   "title": "Ratifies Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC"
+   "title": "Ratifies Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 31,
    "number": "2026-795",
-   "title": "Authorizes License Agreement with Riverhead Volunteer Ambulance Corps. for the Use of Riverhead Town Hall Basement for EMT Course Instruction"
+   "title": "Authorizes License Agreement with Riverhead Volunteer Ambulance Corps. for the Use of Riverhead Town Hall Basement for EMT Course Instruction",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 32,
    "number": "2026-796",
-   "title": "Authorizes the Supervisor to Execute A License Agreement Between The Town Of Riverhead And Riverhead Volunteer Ambulance Corps., Inc. for Temporary Use Of Annex Building Lower Level/Basement For Medical Billing And Storage Of Medical Billing Records"
+   "title": "Authorizes the Supervisor to Execute A License Agreement Between The Town Of Riverhead And Riverhead Volunteer Ambulance Corps., Inc. for Temporary Use Of Annex Building Lower Level/Basement For Medical Billing And Storage Of Medical Billing Records",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 33,
    "number": "2026-797",
-   "title": "Authorizes the Supervisor to Execute a License Agreement Between the Town of Riverhead and Riverhead Volunteer Ambulance Corps., INC. for the Temporary Use of Armory Building Vehicle Bays and Area Adjacent to West (Modular Office Trailer) and East (Heating Equipment Location) for Ambulance Storage"
+   "title": "Authorizes the Supervisor to Execute a License Agreement Between the Town of Riverhead and Riverhead Volunteer Ambulance Corps., INC. for the Temporary Use of Armory Building Vehicle Bays and Area Adjacent to West (Modular Office Trailer) and East (Heating Equipment Location) for Ambulance Storage",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 34,
    "number": "2026-798",
-   "title": "Authorizes Supervisor to Sign a Consultant/Professional Services Agreement with D&B Engineers and Architects"
+   "title": "Authorizes Supervisor to Sign a Consultant/Professional Services Agreement with D&B Engineers and Architects",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 35,
    "number": "2026-799",
-   "title": "Authorizes Supervisor to Execute an Agreement with Riverhead Youth Sports, Inc for the Referee/Umpire Services for Town of Riverhead Police Athletic League Football Program for 2026 Calendar Year"
+   "title": "Authorizes Supervisor to Execute an Agreement with Riverhead Youth Sports, Inc for the Referee/Umpire Services for Town of Riverhead Police Athletic League Football Program for 2026 Calendar Year",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 36,
    "number": "2026-800",
-   "title": "Amends 289-2(A)  Chapter 289 of the Riverhead Town Code to Memorialize an Already Existing Stop Intersection Between Doctors Path and County Road 43 (Northville Tpke)"
+   "title": "Amends 289-2(A)  Chapter 289 of the Riverhead Town Code to Memorialize an Already Existing Stop Intersection Between Doctors Path and County Road 43 (Northville Tpke)",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 37,
    "number": "2026-801",
-   "title": "Authorizes A Public Hearing For The Purpose Of Conducting The \"Monroe Balancing Test\" For The Suffolk County Water Authority\u2019s Proposed North Fork Water Main Extension Project"
+   "title": "Authorizes A Public Hearing For The Purpose Of Conducting The \"Monroe Balancing Test\" For The Suffolk County Water Authority\u2019s Proposed North Fork Water Main Extension Project",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 38,
    "number": "2026-802",
-   "title": "Resolution Calling Public Hearing Regarding Extension of The Riverhead Sewer District to Include 840 Old Country Road, Riverhead, New York"
+   "title": "Resolution Calling Public Hearing Regarding Extension of The Riverhead Sewer District to Include 840 Old Country Road, Riverhead, New York",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 39,
    "number": "2026-803",
-   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 255 of the Riverhead Town Code titled \u201cParades, Assemblies, and Block Parties\u201d, Article II \u201cSpecial Events\u201d"
+   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 255 of the Riverhead Town Code titled \u201cParades, Assemblies, and Block Parties\u201d, Article II \u201cSpecial Events\u201d",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 40,
    "number": "2026-804",
-   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 231 of the Riverhead Town Code Titled \u201cFire Prevention\u201d, Article XIII \u201cFireworks and Pyrotechnics Displays\u201d"
+   "title": "Authorize Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 231 of the Riverhead Town Code Titled \u201cFire Prevention\u201d, Article XIII \u201cFireworks and Pyrotechnics Displays\u201d",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 41,
    "number": "2026-805",
-   "title": "Adopts a Local Law to Amend Chapter 207 of the Riverhead Town Code titled \u201cAnimals\u201d, Article IV \u201cProhibition on Sales of Commercially Bred Dogs, Cats and Rabbits in Pet Stores\u201d"
+   "title": "Adopts a Local Law to Amend Chapter 207 of the Riverhead Town Code titled \u201cAnimals\u201d, Article IV \u201cProhibition on Sales of Commercially Bred Dogs, Cats and Rabbits in Pet Stores\u201d",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 42,
    "number": "2026-806",
-   "title": "Authorizes the Town Clerk to Publish and Post a Notice to Bidders for One (1) New Altec AT40G Telescopic Articulating Aerial Device with ISO-BOOM on 2028 Ford F550 Chassis, or Equal"
+   "title": "Authorizes the Town Clerk to Publish and Post a Notice to Bidders for One (1) New Altec AT40G Telescopic Articulating Aerial Device with ISO-BOOM on 2028 Ford F550 Chassis, or Equal",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 43,
    "number": "2026-807",
-   "title": "Awards Bid for CUES Flexitrax C550C Portable Video Pipe Inspection Camera, or Equal"
+   "title": "Awards Bid for CUES Flexitrax C550C Portable Video Pipe Inspection Camera, or Equal",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 44,
    "number": "2026-808",
-   "title": "Extends Bids for 2025 Annual Procurement Contract"
+   "title": "Extends Bids for 2025 Annual Procurement Contract",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 45,
    "number": "2026-809",
-   "title": "Extends Bids for 2025 Annual Construction Contract"
+   "title": "Extends Bids for 2025 Annual Construction Contract",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 46,
    "number": "2026-810",
-   "title": "Approves Special Event Chapter 255 Application for Cutchogue Lions Club (Blues by the River)"
+   "title": "Approves Special Event Chapter 255 Application for Cutchogue Lions Club (Blues by the River)",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 47,
    "number": "2026-811",
-   "title": "Ratifies Designation Of Alcohol Service Vendor To Service Alcohol At The \u201cPolish Independent Hall Festival 2026\u201d"
+   "title": "Ratifies Designation Of Alcohol Service Vendor To Service Alcohol At The \u201cPolish Independent Hall Festival 2026\u201d",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Denise Merrifield",
+   "seconder": "Joann Waski",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 48,
    "number": "2026-812",
-   "title": "Authorizes Designated Alcohol Service Vendor To Serve Alcohol At The Blues By The Bay Event In Grangebel Park"
+   "title": "Authorizes Designated Alcohol Service Vendor To Serve Alcohol At The Blues By The Bay Event In Grangebel Park",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Joann Waski",
+   "seconder": "Kenneth Rothwell",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   },
   {
    "seq": 49,
    "number": "2026-813",
-   "title": "Pays Bills"
+   "title": "Pays Bills",
+   "result": "Adopted",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": null,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
   }
  ],
  "stats": {
-  "total": 0,
-  "unanimous": 0,
-  "contested": 0,
-  "failed": 0,
+  "total": 49,
+  "unanimous": 48,
+  "contested": 1,
+  "failed": 1,
   "tabled": 0
+ },
+ "voteSource": "agenda-packet",
+ "memberTallies": {
+  "Halpin": {
+   "name": "Jerry Halpin",
+   "title": "Supervisor",
+   "aye": 49,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 0,
+   "seconded": 0
+  },
+  "Rothwell": {
+   "name": "Kenneth Rothwell",
+   "title": "Councilman",
+   "aye": 49,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 12,
+   "seconded": 12
+  },
+  "Kern": {
+   "name": "Robert Kern",
+   "title": "Councilman",
+   "aye": 49,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 12,
+   "seconded": 13
+  },
+  "Merrifield": {
+   "name": "Denise Merrifield",
+   "title": "Councilwoman",
+   "aye": 49,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 12,
+   "seconded": 12
+  },
+  "Waski": {
+   "name": "Joann Waski",
+   "title": "Councilwoman",
+   "aye": 49,
+   "nay": 0,
+   "abstain": 0,
+   "absent": 0,
+   "moved": 12,
+   "seconded": 12
+  }
+ },
+ "officialRecord": {
+  "status": "vote-record-parsed",
+  "sourceVersionAt": "2026-09-08T16:56:10Z",
+  "minutes": {
+   "fileId": 12329,
+   "type": "Minutes",
+   "name": "Minutes",
+   "sha256": "27c67c17f4c175c4a937d97ed026b346647553887b524471778ac56a8676d571",
+   "bytes": 219248,
+   "pages": 7,
+   "changedAt": "2026-09-08T16:54:24Z",
+   "revisionCount": 1,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12329,plainText=false)",
+   "hasVoteSummary": false
+  },
+  "votePacket": {
+   "fileId": 12255,
+   "type": "Agenda Packet",
+   "name": "Agenda Packet",
+   "sha256": "ea74b482dba2aa2251fd36005a628cc95076bd7cfb1198f6a72057078c2bd5a1",
+   "bytes": 33573833,
+   "pages": 237,
+   "changedAt": "2026-09-08T16:56:10Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)",
+   "portalUrl": "https://riverheadny.portal.civicclerk.com/event/6454/files/agenda/12255",
+   "hasVoteBlocks": true,
+   "voteBlockCount": 49,
+   "resolutionNumbers": [
+    "2019-328",
+    "2019-777",
+    "2025-243",
+    "2025-26",
+    "2025-741",
+    "2025-742",
+    "2025-852",
+    "2026-05",
+    "2026-107",
+    "2026-2027",
+    "2026-27",
+    "2026-357",
+    "2026-518",
+    "2026-605",
+    "2026-656",
+    "2026-667",
+    "2026-678",
+    "2026-714",
+    "2026-732",
+    "2026-734",
+    "2026-765",
+    "2026-766",
+    "2026-767",
+    "2026-768",
+    "2026-769",
+    "2026-770",
+    "2026-771",
+    "2026-772",
+    "2026-773",
+    "2026-774",
+    "2026-775",
+    "2026-776",
+    "2026-777",
+    "2026-778",
+    "2026-779",
+    "2026-780",
+    "2026-781",
+    "2026-782",
+    "2026-783",
+    "2026-784",
+    "2026-785",
+    "2026-786",
+    "2026-787",
+    "2026-788",
+    "2026-789",
+    "2026-790",
+    "2026-791",
+    "2026-792",
+    "2026-793",
+    "2026-794",
+    "2026-795",
+    "2026-796",
+    "2026-797",
+    "2026-798",
+    "2026-799",
+    "2026-800",
+    "2026-801",
+    "2026-802",
+    "2026-803",
+    "2026-804",
+    "2026-805",
+    "2026-806",
+    "2026-807",
+    "2026-808",
+    "2026-809",
+    "2026-810",
+    "2026-811",
+    "2026-812",
+    "2026-813"
+   ],
+   "current": true
+  },
+  "voteSourceKind": "agenda-packet",
+  "voteSource": {
+   "fileId": 12255,
+   "type": "Agenda Packet",
+   "name": "Agenda Packet",
+   "sha256": "ea74b482dba2aa2251fd36005a628cc95076bd7cfb1198f6a72057078c2bd5a1",
+   "bytes": 33573833,
+   "pages": 237,
+   "changedAt": "2026-09-08T16:56:10Z",
+   "revisionCount": 0,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)",
+   "portalUrl": "https://riverheadny.portal.civicclerk.com/event/6454/files/agenda/12255",
+   "hasVoteBlocks": true,
+   "voteBlockCount": 49,
+   "resolutionNumbers": [
+    "2019-328",
+    "2019-777",
+    "2025-243",
+    "2025-26",
+    "2025-741",
+    "2025-742",
+    "2025-852",
+    "2026-05",
+    "2026-107",
+    "2026-2027",
+    "2026-27",
+    "2026-357",
+    "2026-518",
+    "2026-605",
+    "2026-656",
+    "2026-667",
+    "2026-678",
+    "2026-714",
+    "2026-732",
+    "2026-734",
+    "2026-765",
+    "2026-766",
+    "2026-767",
+    "2026-768",
+    "2026-769",
+    "2026-770",
+    "2026-771",
+    "2026-772",
+    "2026-773",
+    "2026-774",
+    "2026-775",
+    "2026-776",
+    "2026-777",
+    "2026-778",
+    "2026-779",
+    "2026-780",
+    "2026-781",
+    "2026-782",
+    "2026-783",
+    "2026-784",
+    "2026-785",
+    "2026-786",
+    "2026-787",
+    "2026-788",
+    "2026-789",
+    "2026-790",
+    "2026-791",
+    "2026-792",
+    "2026-793",
+    "2026-794",
+    "2026-795",
+    "2026-796",
+    "2026-797",
+    "2026-798",
+    "2026-799",
+    "2026-800",
+    "2026-801",
+    "2026-802",
+    "2026-803",
+    "2026-804",
+    "2026-805",
+    "2026-806",
+    "2026-807",
+    "2026-808",
+    "2026-809",
+    "2026-810",
+    "2026-811",
+    "2026-812",
+    "2026-813"
+   ],
+   "current": true
+  },
+  "minutesRevisionCount": 1,
+  "resolutionSourceCount": 0,
+  "verifiedResolutionCount": 0,
+  "resolutionSources": []
  }
 }

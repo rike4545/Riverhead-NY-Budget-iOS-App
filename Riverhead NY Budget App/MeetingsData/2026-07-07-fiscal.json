@@ -10,14 +10,23 @@
   "total": 53,
   "markedNo": 31,
   "markedYes": 22,
-  "understated": 29,
-  "understatedMarkedNo": 11,
-  "identifiedDollarsAtStake": 3622209,
+  "understated": 26,
+  "understatedMarkedNo": 10,
+  "identifiedDollarsAtStake": 7843796.14,
   "largestUnderstatedMarkedNo": [
-   227683,
-   "2026-634",
-   "Water Capital Project #81851 \u2013 USGS Test Wells Closure"
-  ]
+   113497.14,
+   "2026-655",
+   "Appoints Maintenance Mechanic II's to the Engineering Department"
+  ],
+  "withAccounts": 17,
+  "accountEvidence": 0,
+  "fundBalanceDraws": 5,
+  "fundBalanceDrawTotal": 7624309.0,
+  "statedCostResolutions": 3,
+  "statementBelowTable": 0,
+  "statedCostMarkedNo": 0,
+  "largestStatedCostMarkedNo": null,
+  "pricedResolutions": 18
  },
  "resolutions": [
   {
@@ -90,7 +99,18 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 14368.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO EW1-9999-000-00000-0 Appropriated Fund Balance $14,368.00 EW3-8-8320-435-000-82301 Water - Prof\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-634",
@@ -100,11 +120,11 @@
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": 227683,
-   "note": "Closure of the USGS test wells \u2014 a real capital cost, yet the form marks 'no fiscal impact.'",
+   "note": "Closes the USGS test wells capital project and takes the $227,683 left unspent out of its budget.",
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "Understated \u2014 but it commits capital dollars (~$227,683), typically drawn from reserves, fund balance, or borrowing.",
-    "flag": "understated"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "Closes Capital Project #81851 and takes the $227,683 left unspent out of its budget, against the bond proceeds that paid for it. That releases money rather than committing it, so the Town's 'no fiscal impact' is fair.",
+    "flag": "fair"
    },
    "vote": {
     "adopted": true,
@@ -130,7 +150,48 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 227683.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026of the Water District has determined Capital Project #81851 to be complete with unspent funds of $227,683.00. Now, therefore be it RESOLVED,\u2026"
+    },
+    {
+     "amount": 5975.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO EW3-8-8320-230-000-81851 Water - Improvements \u2013 Test Well Phase 1 $ 5,975.00 EW3-8-8320-230-100-81851 Water -\u2026"
+    },
+    {
+     "amount": 163700.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026\u2013 Test Well Phase 1 $ 5,975.00 EW3-8-8320-230-100-81851 Water - Improvements \u2013 Test Well Phase 2 $163,700.00 EW3-8-8320-435-000-81851 Water - Prof.\u2026"
+    },
+    {
+     "amount": 19700.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026Well Phase 2 $163,700.00 EW3-8-8320-435-000-81851 Water - Prof. Svcs. \u2013 Engineering $19,700.00 EW3-8-8320-484-000-81851 Water -\u2026"
+    },
+    {
+     "amount": 38308.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026$19,700.00 EW3-8-8320-484-000-81851 Water - Contingencies \u2013 Test Well Ph.1 $38,308.00 EW3-5710-000-81851-8 Bond\u2026"
+    },
+    {
+     "amount": 227683.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026EW3-5710-000-81851-8 Bond Proceeds $227,683.00 And be it further RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-635",
@@ -193,7 +254,24 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 13990.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026the Riverhead Water District has received check #196792 from Bancker Construction Corp., in the amount of $13,990.17, representing the remaining\u2026"
+    },
+    {
+     "amount": 13990.17,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO EW3-2130-000-82605-8 Developer Fees $13,990.17 EW3-8-8320-250-000-82605 Water \u2013\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-636",
@@ -258,7 +336,24 @@
     "createsAccounts": [
      "EW3-8-8320-435-000-82612"
     ]
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 7500.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026Water District has received check #11711 from J. Petrocelli Development Associates, in the amount of $7,500.00 representing engineering fees for the\u2026"
+    },
+    {
+     "amount": 7500.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO EW3-2130-000-82612-8 Developer Fees $ 7,500.00 EW3-8-8320-435-000-82612 Water - Prof\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-637",
@@ -267,12 +362,12 @@
    "category": "capital",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
-   "amount": 118919,
+   "amount": 45322.29,
    "note": "EWR 2025\u201326 highway capital project adjustment.",
    "realistic": {
-    "verdict": "Understated \u2014 'absorbed by existing budget'",
-    "reason": "Understated \u2014 but it commits capital dollars (~$118,919), typically drawn from reserves, fund balance, or borrowing.",
-    "flag": "reserve-draw"
+    "verdict": "Capital fund \u2014 no draw on an operating balance",
+    "reason": "Moves $45,322.29 between two lines of Capital Project #52513, which State Extreme Winter Recovery funds pay for. Every account named sits in the Capital Projects Fund, so nothing comes out of an operating fund's surplus.",
+    "flag": "neutral"
    },
    "vote": {
     "adopted": true,
@@ -321,7 +416,30 @@
     "reimbursementBasis": false,
     "splitAcross": 2,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 118919.04,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026# 2025-707, adopted on August 19, 2025, established Capital Project #52513 with an initial budget of $118,919.04 as part of the NYS Department of\u2026"
+    },
+    {
+     "amount": 45322.29,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026truck, and WHEREAS, after the purchase of said equipment, Capital Project #52513 has unspent funds of $45,322.29. The Highway department is requesting\u2026"
+    },
+    {
+     "amount": 45322.29,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO H01-5-5110-240-000-52513 General Repairs Equipment $45,322.29 H01-5-5110-250-000-52513 General\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-638",
@@ -391,7 +509,24 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 257000.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026that the Town Board authorizes the purchase of one Bucket Truck, ALTEC Model AT40G, in the amount of $257,000.00, to be used for Street Lighting\u2026"
+    },
+    {
+     "amount": 257000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026To SL1-9999-000-00000-0 - Appropriated Fund Balance $ 257,000.00 SL1-5-5182-240-000-00000 \u2013 Street -\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-639",
@@ -461,7 +596,24 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 60000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the Engineering Department is requesting a budget transfer to cover the estimated $60,000.00 repair expenditures. Now, therefore,\u2026"
+    },
+    {
+     "amount": 60000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustment; FROM TO CM2-9999-000-00000-0 Appropriated Fund Balance $ 60,000.00 CM2-7-7230-230-000-00000 Docs -\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-640",
@@ -470,7 +622,7 @@
    "category": "grant",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
-   "amount": 2275000,
+   "amount": 3575000.0,
    "note": "Suffolk County Water Authority federal pass-through grant \u2014 offsetting outside revenue.",
    "realistic": {
     "verdict": "Revenue in / offsetting",
@@ -526,7 +678,36 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 3500000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026in the Manorville Area; and WHEREAS, the Town was notified that it would receive approximately $3.5 Million dollars of pass-through grant\u2026"
+    },
+    {
+     "amount": 2275000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026to cover the costs of this congressionally mandated project, known as Extension 94, with final awards of $2,275,000 for 2022 and $1,300,000 for 2023;\u2026"
+    },
+    {
+     "amount": 1300000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026this congressionally mandated project, known as Extension 94, with final awards of $2,275,000 for 2022 and $1,300,000 for 2023; WHEREAS, The Suffolk\u2026"
+    },
+    {
+     "amount": 3575000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026for 2025; FROM TO EW1-4989-000-00000-5 Federal Aid $ 3,575,000.00 EW1-8-8320-490-000-00000 Water \u2013\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-641",
@@ -535,12 +716,12 @@
    "category": "debt",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
-   "amount": 2625000,
-   "note": "Uses fund balance to pay down the Town Square bond anticipation note.",
+   "amount": null,
+   "note": "Pays down the Town Square bond anticipation note with rent from the pre-possession lease and the net proceeds of the 127 East Main Street sale. When the sale was delayed, 2026-762 (August 4) paid it from fund balance in the interim.",
    "realistic": {
-    "verdict": "Understated \u2014 'absorbed by existing budget'",
-    "reason": "Understated \u2014 but it spends fund balance (~$2,625,000) to retire debt \u2014 a real use of reserves.",
-    "flag": "reserve-draw"
+    "verdict": "Sale proceeds retire debt",
+    "reason": "Pays down the Town Square BAN with the net proceeds of the $2,625,000 sale of 127 East Main Street, after $660,000 committed to Town Square projects, plus the site's rent. One-time money retiring debt, not a draw on fund balance; the resolution does not total the paydown.",
+    "flag": "neutral"
    },
    "vote": {
     "adopted": true,
@@ -566,7 +747,43 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 2625000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026to J. Petrocelli Riverhead Town Square LLC is expected to close in July 2026 with a sales price of $2,625,000.00 with adjustments for real property\u2026"
+    },
+    {
+     "amount": 25000.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026price of $2,625,000.00 with adjustments for real property taxes and anticipated utilities, not to exceed $25,000.00. Of the gross proceeds, $660,000.00\u2026"
+    },
+    {
+     "amount": 660000.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026for real property taxes and anticipated utilities, not to exceed $25,000.00. Of the gross proceeds, $660,000.00 is contractually designated to various\u2026"
+    },
+    {
+     "amount": 32000.0,
+     "role": "debt",
+     "clause": "whereas",
+     "quote": "\u2026due on August 14, 2026, by utilizing rental income from the Pre-possession and Lease Agreement of at least $32,000.00 but not to exceed $57,000.00, as well\u2026"
+    },
+    {
+     "amount": 57000.0,
+     "role": "debt",
+     "clause": "whereas",
+     "quote": "\u2026rental income from the Pre-possession and Lease Agreement of at least $32,000.00 but not to exceed $57,000.00, as well as the remaining net\u2026"
+    }
+   ],
+   "statedCost": 25000.0,
+   "statementBelowTable": null,
+   "amountNote": "No amount: the resolution does not total the paydown, which is the net proceeds of the $2,625,000 sale plus $32,000 to $57,000 of rent."
   },
   {
    "number": "2026-642",
@@ -576,7 +793,7 @@
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
    "amount": 7212941.0,
-   "note": "Pays down the 2018 Series B refunding \u2014 booked as present-value debt-service savings.",
+   "note": "Pays down the 2018 Series B refunding bonds with $7,212,941 of Community Preservation Fund balance and $92,059 from the sale of the Vail-Leavitt Music Hall.",
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "Understated \u2014 but it spends fund balance to retire debt \u2014 a real use of reserves.",
@@ -658,7 +875,24 @@
     "reimbursementBasis": false,
     "splitAcross": 2,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 92059.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-2660-000-00000-1 Sale of Real Property \u2013 Town Properties $ 92,059.00 A01-9-9901-900-V01-00000 Interfund\u2026"
+    },
+    {
+     "amount": 7212941.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026\u2013V01 \u2013 Debt Service $ 92,059.00 CM4-9999-000-00000-0 Appropriated Fund Balance $ 7,212,941.00 CM4-9-9901-900-V01-00000 Interfund\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-643",
@@ -723,7 +957,49 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 500.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026one being flowers and plants for the beautification of the Town Beach with an approximate value of $500 (Five Hundred Dollars) and the second\u2026"
+    },
+    {
+     "amount": 2000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026approximate value of $500 (Five Hundred Dollars) and the second being a monetary donation in the amount of $2,000 in Memory of Kristina Gabrielsen for\u2026"
+    },
+    {
+     "amount": 2000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026of the residents of the Town of Riverhead; and WHEREAS, the Town Board finds that acceptance of the $2,000 check to the Town for the Riverhead\u2026"
+    },
+    {
+     "amount": 1000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026finds that acceptance of the $2,000 check to the Town for the Riverhead Recreation Department of which $1,000 will be put towards recreation\u2026"
+    },
+    {
+     "amount": 1000.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026THEREFORE, BE IT RESOLVED, the Town of Riverhead Financial Administrator hereby has the authority to place $1,000 in funds into the Town\u2019s Gifts and\u2026"
+    },
+    {
+     "amount": 1000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026place $1,000 in funds into the Town\u2019s Gifts and Donations Account A06-2705-000-00000-J for the revenue and $1,000 in Yth Prg - Supplies Account\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
+   "amountNote": "A $2,000 gift: $1,000 placed now (the statement's figure) and $1,000 set aside for a future capital project."
   },
   {
    "number": "2026-644",
@@ -788,7 +1064,24 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 313.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026from Charles Mauceri (President) and The Riverhead Police Benevolent Association, in the amount of $313.00; and WHEREAS, pursuant to Town\u2026"
+    },
+    {
+     "amount": 313.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO A04-2705-000-00000-7 \u2013 Gifts and Donations $313.00 A04-3-3120-417-000-00000 \u2013 Police -\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-645",
@@ -873,7 +1166,48 @@
     "reimbursementBasis": false,
     "splitAcross": 1,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 48128.53,
+     "role": "fund-balance",
+     "clause": "whereas",
+     "quote": "\u2026Senior Department Fund\u2019s, to wit: Assigned Fund Balance for Senior Day Care has funds in the amount of $48,128.53 and that said funds together with\u2026"
+    },
+    {
+     "amount": 31871.47,
+     "role": "fund-balance",
+     "clause": "whereas",
+     "quote": "\u2026Fund Balance for Senior Day Care has funds in the amount of $48,128.53 and that said funds together with $31,871.47 from the General Fund\u2019s Appropriated\u2026"
+    },
+    {
+     "amount": 800000.0,
+     "role": "fund-balance",
+     "clause": "whereas",
+     "quote": "\u2026the General Fund\u2019s Appropriated Fund Balance are available to fund the estimated total purchase price of $80,0000.00. NOW, THEREFORE, BE IT RESOLVED,\u2026"
+    },
+    {
+     "amount": 48128.53,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026To A01-9999-000-00000-0 \u2013 Assigned Fund Balance $48,128.53 A01-9999-000-00000-0 - Appropriated\u2026"
+    },
+    {
+     "amount": 31871.47,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026Balance $48,128.53 A01-9999-000-00000-0 - Appropriated Fund Balance $31,871.47 A01-6-6772-280-000-00000 \u2013\u2026"
+    },
+    {
+     "amount": 80000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026A01-6-6772-280-000-00000 \u2013 Seniors-Vehicles $80,000.00 And be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-646",
@@ -913,7 +1247,36 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 2000.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026BE IT RESOLVED, that the Showmobile will be available for use by for-profit entities for a fee of $2,000 for four (4) hours and $100 per\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026the Showmobile will be available for use by for-profit entities for a fee of $2,000 for four (4) hours and $100 per additional hour; and will be\u2026"
+    },
+    {
+     "amount": 1000.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026(4) hours and $100 per additional hour; and will be available for not-for-profit entities for a fee of $1,000 for four (4) hours and $50 per\u2026"
+    },
+    {
+     "amount": 50.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026hour; and will be available for not-for-profit entities for a fee of $1,000 for four (4) hours and $50 per additional hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-647",
@@ -953,7 +1316,24 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 300.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026the provisions of Town Code Chapter 265 as follows: Riverhead Scavenger Waste Plant Annual License Fee $300.00 Carter\u2019s haul/truck license $300.00\u2026"
+    },
+    {
+     "amount": 300.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026as follows: Riverhead Scavenger Waste Plant Annual License Fee $300.00 Carter\u2019s haul/truck license $300.00 per vehicle Disposal of Scavenger\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-648",
@@ -993,7 +1373,24 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 17.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026hereby appoints Nicholas Deieso as a Student Intern II in the Engineering Department at the hourly rate of $17.00 and no more than 30.0 hours per week;\u2026"
+    },
+    {
+     "amount": 4000.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Administrator hereby has the authority to establish the appropriate budget adjustment in the amount of $4,000.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": 4000.0,
+   "statementBelowTable": null
   },
   {
    "number": "2026-649",
@@ -1033,7 +1430,24 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 17.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026appoints Ava Occhiogrosso as a Student Intern II in the Engineering Department at the hourly rate of $17.00 and no more than 30.0 hours per week;\u2026"
+    },
+    {
+     "amount": 4000.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Administrator hereby has the authority to establish the appropriate budget adjustment in the amount of $4,000.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": 4000.0,
+   "statementBelowTable": null
   },
   {
    "number": "2026-650",
@@ -1073,7 +1487,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-651",
@@ -1129,12 +1547,81 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-652",
    "seq": 20,
    "title": "Ratifies the Appointment of a Part-time Office Assistant",
+   "category": "personnel",
+   "townFiscalImpact": "Yes",
+   "townTreatment": "absorbed",
+   "amount": null,
+   "note": null,
+   "realistic": {
+    "verdict": "Understated \u2014 'absorbed by existing budget'",
+    "reason": "Understated \u2014 but it adds recurring or seasonal payroll that continues in future budgets.",
+    "flag": "reserve-draw"
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   },
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : A01-3-3625-102-000-00000 - Code Enforcement - P/T : :",
+    "fundCodes": [
+     "A01"
+    ],
+    "funds": [
+     "General Fund"
+    ],
+    "amount": null,
+    "accounts": [
+     {
+      "code": "A01-3-3625-102-000-00000",
+      "role": "charge",
+      "kind": "appropriation",
+      "fund": "A01",
+      "name": "Code Enforcement - P/T",
+      "amount": null,
+      "createdHere": false
+     }
+    ],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 20.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026hereby appoints Chloe Williams to the position of part-time Office Assistant, to be paid the rate of $20.00 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
+  },
+  {
+   "number": "2026-653",
+   "seq": 21,
+   "title": "Ratifies the Appointment of a Part-Time Office Assistant",
    "category": "personnel",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
@@ -1183,28 +1670,18 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
-  },
-  {
-   "number": "2026-653",
-   "seq": 21,
-   "title": "Ratifies the Appointment of a Part-Time Office Assistant",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
-   "amount": null,
-   "note": null,
-   "realistic": {
-    "verdict": "Understated \u2014 'absorbed by existing budget'",
-    "reason": "Understated \u2014 but it adds recurring or seasonal payroll that continues in future budgets.",
-    "flag": "reserve-draw"
    },
-   "vote": {
-    "adopted": true,
-    "tag": "unanimous",
-    "ayes": null,
-    "nays": 0
-   }
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 17.25,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026of Economic Development and Planning through August 28, 2026 at no change to her current hourly rate of $17.25 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-654",
@@ -1244,7 +1721,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-655",
@@ -1253,11 +1734,11 @@
    "category": "personnel",
    "townFiscalImpact": "No",
    "townTreatment": "absorbed",
-   "amount": 56749,
-   "note": "Maintenance Mechanic II \u2014 recurring salary each, yet marked 'no fiscal impact.'",
+   "amount": 113497.14,
+   "note": "Appoints two Maintenance Mechanic IIs at $56,748.57 each: recurring salaries, marked 'no fiscal impact.'",
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "Understated \u2014 but it adds recurring or seasonal payroll (~$56,749/yr) that continues in future budgets.",
+    "reason": "Understated \u2014 but it adds recurring payroll (~$113,497/yr: two Maintenance Mechanic IIs at $56,748.57 each) that continues in future budgets.",
     "flag": "understated"
    },
    "vote": {
@@ -1298,7 +1779,18 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 56748.57,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026a rate of pay as found on Group 7, Step P of the CSEA Operational and Technical Salary Schedule which is $56,748.57 per annum; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-656",
@@ -1338,7 +1830,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-657",
@@ -1378,7 +1874,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-658",
@@ -1418,7 +1918,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-659",
@@ -1458,7 +1962,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-660",
@@ -1498,7 +2006,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-661",
@@ -1552,7 +2064,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-662",
@@ -1592,7 +2108,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-663",
@@ -1632,7 +2152,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-664",
@@ -1672,7 +2196,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-665",
@@ -1712,7 +2240,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-666",
@@ -1752,7 +2284,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-667",
@@ -1792,7 +2328,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-668",
@@ -1832,7 +2372,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-669",
@@ -1886,7 +2430,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-670",
@@ -1926,7 +2474,18 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-671",
@@ -1966,7 +2525,18 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 187.5,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026pm to 7:00 pm with no rain date; and WHEREAS, the applicable Chapter 255 Application Non-Profit fee of $187.50 has been paid; and NOW, THEREFORE,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-672",
@@ -2006,7 +2576,24 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 375.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026with a rain date of August 8, 2026; and WHEREAS, the applicant has paid the required application fee of $375.00 and; and WHEREAS, a certificate of\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-673",
@@ -2046,7 +2633,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-674",
@@ -2086,7 +2677,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-675",
@@ -2126,7 +2721,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-676",
@@ -2166,7 +2765,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-677",
@@ -2206,7 +2809,18 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 76500.0,
+     "role": "context",
+     "clause": "resolved",
+     "quote": "\u2026BE IT RESOLVED, that LVF Landscape Architects, PLLC shall be entitled to additional compensation totaling $76,500.00 to complete the relocation of the\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-678",
@@ -2215,11 +2829,11 @@
    "category": "labor-contract",
    "townFiscalImpact": "No",
    "townTreatment": "described",
-   "amount": 76500,
+   "amount": null,
    "note": "CSEA stipulation \u2014 a labor settlement with real cost, yet marked 'no fiscal impact.'",
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "Understated \u2014 but a union stipulation carries real, often recurring, labor cost (~$76,500).",
+    "reason": "Understated \u2014 but a union stipulation carries real, often recurring, labor cost, which the resolution does not state.",
     "flag": "understated"
    },
    "vote": {
@@ -2246,7 +2860,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-679",
@@ -2286,7 +2904,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-680",
@@ -2326,7 +2948,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-681",
@@ -2335,7 +2961,7 @@
    "category": "escrow-neutral",
    "townFiscalImpact": "No",
    "townTreatment": "described",
-   "amount": 283000,
+   "amount": 112000.0,
    "note": "Release of a developer's performance security \u2014 not Town money.",
    "realistic": {
     "verdict": "Net-neutral to taxpayers",
@@ -2366,7 +2992,42 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 283000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u202616, 2024, accepted a performance security for the Overlook Homes major subdivision, in the amount of $283,000.00; and WHERAS, by\u2026"
+    },
+    {
+     "amount": 69000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026by Town Board Resolution No. 2025-157, adopted on February 4, 2025, the Town Board authorized a $69,000.00 reduction in the performance security\u2026"
+    },
+    {
+     "amount": 214000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u20264, 2025, the Town Board authorized a $69,000.00 reduction in the performance security from $283,000.00 to $214,000.00; and WHEREAS, by\u2026"
+    },
+    {
+     "amount": 102000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026authorized a further reduction in the performance security from $214,000.00 to 112,000.00, a reduction of $102,000.00; and WHEREAS, by\u2026"
+    },
+    {
+     "amount": 112000.0,
+     "role": "security",
+     "clause": "resolved",
+     "quote": "\u2026Riverhead Town Board hereby approves the release of the remaining performance security in the amount of $112,000.00 back to the project sponsor; and be\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-682",
@@ -2375,7 +3036,7 @@
    "category": "escrow-neutral",
    "townFiscalImpact": "No",
    "townTreatment": "described",
-   "amount": 501000,
+   "amount": 205000.0,
    "note": "Release of a developer's letter of credit \u2014 not Town money.",
    "realistic": {
     "verdict": "Net-neutral to taxpayers",
@@ -2406,7 +3067,24 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [
+    {
+     "amount": 501000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026plat approval resolution, Birchwood at Wading River, LLC and National Birchwood Corp. in the amount of $501,000.00; and WHEREAS, the Town\u2026"
+    },
+    {
+     "amount": 205000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026was advised that the security paper is a Letter of Credit and not a Bond and that the amount remaining is $205,000.00. NOW, THEREFORE, BE IT\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-683",
@@ -2446,7 +3124,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-684",
@@ -2488,7 +3170,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   },
   {
    "number": "2026-685",
@@ -2528,7 +3214,11 @@
     "reimbursementBasis": false,
     "splitAcross": 0,
     "createsAccounts": []
-   }
+   },
+   "numberSource": "printed",
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null
   }
  ]
 }

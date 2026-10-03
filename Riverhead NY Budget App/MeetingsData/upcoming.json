@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-10-02",
+ "generatedAt": "2026-10-03",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -52,12 +52,14 @@
    "date": "2026-10-06",
    "startDateTime": "2026-10-06T14:00:00Z",
    "type": "Town Board Meeting",
-   "agendaPublished": false,
-   "itemsSource": "official-calendar",
+   "agendaPublished": true,
+   "itemsSource": "published-agenda",
    "docket": [],
    "hearings": [
     "2:00 PM- Public Hearing- Community Block Grant (CDBG)",
-    "2:15 PM- Public Hearing- Amend Chapter 289, Art.II, Vehicle,Traffic and Parking Regulations"
+    "2:15 PM- Public Hearing- Amend Chapter 289, Art.II, Vehicle,Traffic and Parking Regulations",
+    "Community Development Block Grant (CDBG)",
+    "Amend Chapter 289 - Vehicles, Traffic and Parking, Art.II"
    ]
   },
   {

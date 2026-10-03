@@ -5,24 +5,29 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-06-16 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 66,
   "markedNo": 55,
   "markedYes": 11,
-  "understated": 42,
-  "understatedMarkedNo": 39,
+  "understated": 10,
+  "understatedMarkedNo": 7,
   "identifiedDollarsAtStake": 0,
   "pricedResolutions": 0,
   "largestUnderstatedMarkedNo": null,
   "withAccounts": 7,
   "accountEvidence": 6,
   "fundBalanceDraws": 0,
-  "fundBalanceDrawTotal": 0
+  "fundBalanceDrawTotal": 0,
+  "statedCostResolutions": 1,
+  "statementBelowTable": 0,
+  "statedCostMarkedNo": 0,
+  "largestStatedCostMarkedNo": null
  },
  "resolutions": [
   {
    "number": "2026-566",
+   "numberSource": "printed",
    "seq": 1,
    "title": "Capital Project #12101 - Town Square Properties Closure",
    "category": "capital",
@@ -48,11 +53,69 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 5500000.0,
+     "role": "debt",
+     "clause": "whereas",
+     "quote": "\u2026River; and WHEREAS, Town Board Resolution 2020-400, adopted on August 4, 2020, authorized the issuance of $5,500,000.00 bonds to pay the cost of the\u2026"
+    },
+    {
+     "amount": 497855.57,
+     "role": "debt",
+     "clause": "whereas",
+     "quote": "\u2026of parcels of land and demolition of existing structures at the locations listed above with an additional $497,855.57 of funding borrowed from the General\u2026"
+    },
+    {
+     "amount": 800000.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, Town Board Resolution 2021-185, adopted on March 16, 2021, authorized the use of $800,000 of CFA Round 9 Empire State\u2026"
+    },
+    {
+     "amount": 8500.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Project #12101; and WHEREAS, Town Board Resolution 2023-693, adopted on October 3,2023, authorized $8,500 of funding borrowed from the General\u2026"
+    },
+    {
+     "amount": 525000.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026March 19, 2024, authorized the sale of 201 Howell Avenue, Riverhead, NY (SCTM #0600-127-4.00-034- 000) for $525,000.00; and WHEREAS, Town Board\u2026"
+    },
+    {
+     "amount": 2144.43,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026Capital Project #12101; and WHEREAS, all improvements have been completed and the unspent funds of $2,144.43 remaining from this project can now be\u2026"
+    },
+    {
+     "amount": 2115.43,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO H01-1-1940-210-000-12101 Purchase of Land \u2013 Town Square $2,115.43 H01-1-1940-436-000-12101 Prof Svcs \u2013\u2026"
+    },
+    {
+     "amount": 29.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026H01-1-1940-436-000-12101 Prof Svcs \u2013 Other $29.00 H01-5031-A01-12101-K Transfers from\u2026"
+    },
+    {
+     "amount": 2144.43,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026H01-5031-A01-12101-K Transfers from Other Funds-A01 $2,144.43 And be it further RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -63,6 +126,7 @@
   },
   {
    "number": "2026-567",
+   "numberSource": "printed",
    "seq": 2,
    "title": "Capital Project #32218 - ARPA Security Camera Installations Closure",
    "category": "capital",
@@ -88,11 +152,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 200000.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026Town Board Resolution 2022-621, adopted on August 16, 2022, established Capital Project #32218 to provide $200,000 for the installation and operation of\u2026"
+    },
+    {
+     "amount": 52265.25,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u20262024, the Town Board adopted Resolution #2024-792 to authorize excess funds remaining in the Project of $52,265.25 to be transferred back to the General\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -103,6 +183,7 @@
   },
   {
    "number": "2026-568",
+   "numberSource": "printed",
    "seq": 3,
    "title": "Capital Project #44037 - Downtown Revitalization Round 18 Closure",
    "category": "capital",
@@ -128,11 +209,51 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 68000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026Board Resolution #2020-324, adopted on July 7, 2020, accepted Downtown Revitalization Round 18 Grant of $68,000 and established Capital Project #44037\u2026"
+    },
+    {
+     "amount": 14000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026under Town Board Resolution 2024-383, adopted on May 7, 2024, BIDMA provided a matching grant up to $14,000 in addition to Downtown Revitalization\u2026"
+    },
+    {
+     "amount": 79750.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026to Downtown Revitalization Round 18 funding; and WHEREAS, the project was completed at a cost of $79,750 leaving $2,250 of unspent funds. Due\u2026"
+    },
+    {
+     "amount": 2250.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026Revitalization Round 18 funding; and WHEREAS, the project was completed at a cost of $79,750 leaving $2,250 of unspent funds. Due to reduced\u2026"
+    },
+    {
+     "amount": 11750.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026$2,250 of unspent funds. Due to reduced spending on the project, the total BIDMA grant received was $11,750; and WHEREAS, the Community\u2026"
+    },
+    {
+     "amount": 2250.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO H01-7-7110-230-000-44037 Parks Improvements - DTR Round 18 $2,250.00 H01-2705-100-44037-6 - BIDMA\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -143,6 +264,7 @@
   },
   {
    "number": "2026-569",
+   "numberSource": "printed",
    "seq": 4,
    "title": "Capital Project #52311 - EPCAL Emergency Access Road Project",
    "category": "capital",
@@ -168,11 +290,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 25000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026and can now be closed; and WHEREAS, anticipated post-construction remediation and cleanup costs of $25,000 were funded by the Community Benefit\u2026"
+    },
+    {
+     "amount": 17972.55,
+     "role": "fund-balance",
+     "clause": "whereas",
+     "quote": "\u2026as adopted under Town Board Resolution #2024-311 on April 2, 2024; and WHEREAS, the unspent funds of $17,972.55 remaining from this project can now\u2026"
+    },
+    {
+     "amount": 17972.55,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO H01-5-5110-250-CBF-52311 General Repairs - Infrastructure $17,972.55 A01-9999-000-00000-0 Assigned\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -183,6 +327,7 @@
   },
   {
    "number": "2026-570",
+   "numberSource": "printed",
    "seq": 5,
    "title": "Capital Project #52312 2023-24 CHIPS Closure",
    "category": "capital",
@@ -208,11 +353,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 539387.97,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026the 2023-24 Consolidated Local Street and Highway Improvement Program (CHIPS) Grant, where state funds of $539,387.97 were to be made available for road\u2026"
+    },
+    {
+     "amount": 530995.37,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026road resurfacing in the Town of Riverhead; and WHEREAS, the 2023-24 project was completed at a cost of $530,995.37 with unspent funds of $8,392.60. The\u2026"
+    },
+    {
+     "amount": 8392.6,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the 2023-24 project was completed at a cost of $530,995.37 with unspent funds of $8,392.60. The Town Board adopted Resolution\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -223,6 +390,7 @@
   },
   {
    "number": "2026-571",
+   "numberSource": "printed",
    "seq": 6,
    "title": "Capital Project #52313 2023-24 PAVE NY Closure",
    "category": "capital",
@@ -248,11 +416,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 163404.33,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026#2023-389 established Capital Project #52313 as part of the 2023-24 PAVE-NY Program, where state funds of $163,404.33 were made available for road\u2026"
+    },
+    {
+     "amount": 160268.91,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026road resurfacing in the Town of Riverhead; and, WHEREAS, the 2023-24 project was completed at a cost of $160,268.91 with unspent funds of $3,135.42. The\u2026"
+    },
+    {
+     "amount": 3135.42,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and, WHEREAS, the 2023-24 project was completed at a cost of $160,268.91 with unspent funds of $3,135.42. The Town Board adopted Resolution\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -263,6 +453,7 @@
   },
   {
    "number": "2026-572",
+   "numberSource": "printed",
    "seq": 7,
    "title": "Capital Project #52314 2023-24 EWR Closure",
    "category": "capital",
@@ -288,11 +479,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 129320.83,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026Capital Project #52314 as part of the 2023-24 Extreme Winter Recovery (EWR) Program, where state funds of $129,320.83 were made available for road\u2026"
+    },
+    {
+     "amount": 115167.39,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026road resurfacing in the Town of Riverhead; and, WHEREAS, the 2023-24 project was completed at a cost of $115,167.39 with unspent funds of $14,153.44. The\u2026"
+    },
+    {
+     "amount": 14153.44,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and, WHEREAS, the 2023-24 project was completed at a cost of $115,167.39 with unspent funds of $14,153.44. The Town Board adopted Resolution\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -303,6 +516,7 @@
   },
   {
    "number": "2026-573",
+   "numberSource": "printed",
    "seq": 8,
    "title": "Capital Project #52315 2023-24 POP Closure",
    "category": "capital",
@@ -328,11 +542,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 149429.31,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026established Capital Project #52315 for the 2023-24 Pave Our Potholes (POP) Program, where state funds of $149,429.31 were made available for road\u2026"
+    },
+    {
+     "amount": 61853.17,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026on April 16, 2024, Town Board Resolution #2024-357, decreased the budget on Capital Project #52315 by $61,853.17 to correct the budget for state\u2026"
+    },
+    {
+     "amount": 87576.14,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026per the Highway Department, Capital Project #52315 is hereby considered to be complete at a cost of $87,576.14. Now, therefore be it RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -343,6 +579,7 @@
   },
   {
    "number": "2026-574",
+   "numberSource": "printed",
    "seq": 9,
    "title": "Capital Project #52413 2024-25 PAVE NY Closure",
    "category": "capital",
@@ -368,11 +605,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 127646.68,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026#2024-518 established Capital Project #52413 as part of the 2024-25 PAVE-NY Program, where state funds of $127,646.68 were made available for road\u2026"
+    },
+    {
+     "amount": 127646.68,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026WHEREAS, per the Highway Department, Capital Project #52413 is hereby considered complete at a cost of $127,646.68. Now, therefore be it RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -383,6 +636,7 @@
   },
   {
    "number": "2026-575",
+   "numberSource": "printed",
    "seq": 10,
    "title": "Capital Project #52414 2024-25 EWR Closure",
    "category": "capital",
@@ -408,11 +662,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 104639.86,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026Capital Project #52414 as part of the 2024-25 Extreme Winter Recovery (EWR) Program, where state funds of $104,639.86 were made available for road\u2026"
+    },
+    {
+     "amount": 104514.12,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026road resurfacing in the Town of Riverhead; and, WHEREAS, the 2024-25 project was completed at a cost of $104,514.12 with unspent funds of $125.74. The\u2026"
+    },
+    {
+     "amount": 125.74,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and, WHEREAS, the 2024-25 project was completed at a cost of $104,514.12 with unspent funds of $125.74. The Town Board adopted Resolution\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -423,6 +699,7 @@
   },
   {
    "number": "2026-576",
+   "numberSource": "printed",
    "seq": 11,
    "title": "Capital Project #52415 2024-25 POP Closure",
    "category": "capital",
@@ -448,11 +725,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 85097.79,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026established Capital Project #52415 for the 2024-25 Pave Our Potholes (POP) Program, where state funds of $85,097.79 were made available for road\u2026"
+    },
+    {
+     "amount": 79398.55,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026road resurfacing in the Town of Riverhead; and WHEREAS, the 2024-25 project was completed at a cost of $79,398.55 with unspent funds of $5,699.24. The\u2026"
+    },
+    {
+     "amount": 5699.24,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the 2024-25 project was completed at a cost of $79,398.55 with unspent funds of $5,699.24. The Town Board adopted Resolution\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -463,6 +762,7 @@
   },
   {
    "number": "2026-577",
+   "numberSource": "printed",
    "seq": 12,
    "title": "Capital Project #72323 - Stotzky Park Basketball Court Closure",
    "category": "capital",
@@ -488,11 +788,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 35000.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026authorized on August 1, 2023 under Town Board Resolution #2023-566 has been completed for a total cost of $35,000 and can now be closed; and WHEREAS,\u2026"
+    },
+    {
+     "amount": 1500.0,
+     "role": "fund-balance",
+     "clause": "whereas",
+     "quote": "\u2026has been completed for a total cost of $35,000 and can now be closed; and WHEREAS, the unspent funds of $1,500.00 remaining from this project can be\u2026"
+    },
+    {
+     "amount": 1500.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026budget adjustments; FROM TO H01-7-7110-230-CBF-72323 Parks Improvements - Stotzky $1,500.00 A01-9999-000-00000-0 Assigned\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -503,6 +825,7 @@
   },
   {
    "number": "2026-578",
+   "numberSource": "printed",
    "seq": 13,
    "title": "Capital Project #72406 Parking Lot At Veteran's Memorial Park Closure",
    "category": "capital",
@@ -528,11 +851,33 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 389926.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026Memorial Park in Calverton, New York; and WHEREAS, anticipated costs for Capital Project #72406 of $389,926.00 were funded by the American Rescue\u2026"
+    },
+    {
+     "amount": 182.61,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the Town Engineer has determined this project to be complete, with unspent funds of $182.61 that can be returned to the General\u2026"
+    },
+    {
+     "amount": 182.61,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO H01-7-7110-230-000-72406 Parks - Improvements $ 182.61 H01-5031-A01-72406-K Transfers from\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -543,6 +888,7 @@
   },
   {
    "number": "2026-579",
+   "numberSource": "printed",
    "seq": 14,
    "title": "Capital Project #72509 - Pickleball Courts at Veteran's Memorial Park Closure",
    "category": "capital",
@@ -568,11 +914,39 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 25000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026Memorial Park in Wading River, New York; and WHEREAS, the projected cost for Capital Project #72509 was $25,000.00 funded by the General Fund\u2019s Tax on\u2026"
+    },
+    {
+     "amount": 16220.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the Town Engineer has determined this project to be complete, with a final cost of $16,220, leaving $8,780.00 that can be returned\u2026"
+    },
+    {
+     "amount": 8780.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026the Town Engineer has determined this project to be complete, with a final cost of $16,220, leaving $8,780.00 that can be returned to the General\u2026"
+    },
+    {
+     "amount": 8780.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO H01-7-7110-230-000-72509 Parks - Improvements $ 8,780.00 H01-5031-A01-72509-K Transfers from\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -583,6 +957,7 @@
   },
   {
    "number": "2026-580",
+   "numberSource": "printed",
    "seq": 15,
    "title": "Capital Project #72519 - Improvements At Bayberry Park Closure",
    "category": "capital",
@@ -608,11 +983,63 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 323000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026Park located in Wading River, New York; and WHEREAS, projected costs for Capital Project #72519 were $323,000.00 funded by $256,000 of the General\u2026"
+    },
+    {
+     "amount": 256000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026River, New York; and WHEREAS, projected costs for Capital Project #72519 were $323,000.00 funded by $256,000 of the General Fund\u2019s Tax on Adult-Use\u2026"
+    },
+    {
+     "amount": 67000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026#72519 were $323,000.00 funded by $256,000 of the General Fund\u2019s Tax on Adult-Use Cannabis balance and $67,000 of the CM3 Parks and Recreation\u2026"
+    },
+    {
+     "amount": 96132.05,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026Fund; and WHEREAS, the Town Engineer has determined this project to be complete, with unspent funds of $96,132.05 remaining in the Project. Now,\u2026"
+    },
+    {
+     "amount": 38132.05,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO H01-7-7110-230-000-72519 Parks - Improvements $ 38,132.05 H01-7-7110-484-000-72519 Parks -\u2026"
+    },
+    {
+     "amount": 58000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026$ 38,132.05 H01-7-7110-484-000-72519 Parks - Contingencies $ 58,000.00 H01-5031-A01-72519-K \u2013 Transfers from\u2026"
+    },
+    {
+     "amount": 29132.05,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026$ 58,000.00 H01-5031-A01-72519-K \u2013 Transfers from Other Funds-A01 $ 29,132.05 H01-5031-CM3-72519-K \u2013 Transfers from\u2026"
+    },
+    {
+     "amount": 67000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026Funds-A01 $ 29,132.05 H01-5031-CM3-72519-K \u2013 Transfers from Other Funds-CM3 $ 67,000.00 And be it further RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -623,6 +1050,7 @@
   },
   {
    "number": "2026-581",
+   "numberSource": "printed",
    "seq": 16,
    "title": "Sewer District Capital Project #82227 DeFriest Pump Station Closure",
    "category": "capital",
@@ -648,11 +1076,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 2470.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026the Superintendent of the Sewer District has determined this project to be complete with unspent funds of $2,470. Now, therefore be it RESOLVED,\u2026"
+    },
+    {
+     "amount": 2470.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO ES2-8-8130-230-000-82227 Sewer Treatment - Improvements $2,470.00 ES2-5031-ES1-82227-K Transfers to\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -663,6 +1107,7 @@
   },
   {
    "number": "2026-582",
+   "numberSource": "printed",
    "seq": 17,
    "title": "Sewer District Capital Project #82231 Odor Control System Closure",
    "category": "capital",
@@ -688,11 +1133,39 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 18814.69,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026the Superintendent of the Sewer District has determined this project to be complete with unspent funds of $18,814.69. Now, therefore be it RESOLVED,\u2026"
+    },
+    {
+     "amount": 15000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustments; FROM TO ES6-8-8130-230-000-82231 Sewer Treatment - Improvements $15,000.00 ES6-8-8130-435-000-82231 Sewer \u2013 Prof\u2026"
+    },
+    {
+     "amount": 3814.69,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026- Improvements $15,000.00 ES6-8-8130-435-000-82231 Sewer \u2013 Prof Svcs - Engineering $ 3,814.69 ES6-5031-ES5-82231-K Transfers to\u2026"
+    },
+    {
+     "amount": 18814.69,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026$ 3,814.69 ES6-5031-ES5-82231-K Transfers to Other Funds-ES5 $18,814.69 And be it further RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -703,6 +1176,7 @@
   },
   {
    "number": "2026-583",
+   "numberSource": "printed",
    "seq": 18,
    "title": "Water District Capital Project #82117 \u2013 Peconic Farms LLC Closure",
    "category": "capital",
@@ -728,11 +1202,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -743,6 +1220,7 @@
   },
   {
    "number": "2026-584",
+   "numberSource": "printed",
    "seq": 19,
    "title": "Water District Capital Project #82225 \u2013 Ostad Subdivision Closure",
    "category": "capital",
@@ -768,11 +1246,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -783,6 +1264,7 @@
   },
   {
    "number": "2026-585",
+   "numberSource": "printed",
    "seq": 20,
    "title": "Water District Capital Project #82304 \u2013 1001 Scott Ave Closure",
    "category": "capital",
@@ -808,11 +1290,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -823,6 +1308,7 @@
   },
   {
    "number": "2026-586",
+   "numberSource": "printed",
    "seq": 21,
    "title": "Water District Capital Project #82320 \u2013 Maris Subdivision Closure",
    "category": "capital",
@@ -848,11 +1334,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -863,6 +1352,7 @@
   },
   {
    "number": "2026-587",
+   "numberSource": "printed",
    "seq": 22,
    "title": "Water District Capital Project #82328 \u2013 TOD Railroad Ave Closure",
    "category": "capital",
@@ -888,11 +1378,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -903,6 +1396,7 @@
   },
   {
    "number": "2026-588",
+   "numberSource": "printed",
    "seq": 23,
    "title": "Water District Capital Project #82330 \u2013 Riverhead Self Storage 817 Pulaski St Closure",
    "category": "capital",
@@ -928,11 +1422,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 6829.6,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026S.C.T.M 0600- 124-02-024, is considered complete; and WHEREAS, the Project has unspent Developer Fees of $6,829.60 that can be returned to 817 Pulaski\u2026"
+    },
+    {
+     "amount": 6829.6,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO EW3-8-8320-250-000-82330 Water \u2013 Infrastructure $6,829.60 EW3-2130-000-82330-8 Developer\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -943,6 +1453,7 @@
   },
   {
    "number": "2026-589",
+   "numberSource": "printed",
    "seq": 24,
    "title": "Water District Capital Project #82332 \u2013 41 Manor Lane Hydrant Closure",
    "category": "capital",
@@ -968,11 +1479,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 2979.34,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Lane, Jamesport, NY, is considered complete; and WHEREAS, the Project has unspent Developer Fees of $2,979.34 that can be returned to Jamesport\u2026"
+    },
+    {
+     "amount": 2979.34,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustment; FROM TO EW3-8-8320-250-000-82332 Water \u2013 Infrastructure $2,979.34 EW3-2130-000-82332-8 Developer\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -983,6 +1510,7 @@
   },
   {
    "number": "2026-590",
+   "numberSource": "printed",
    "seq": 25,
    "title": "Water District Capital Project #82333 \u2013 38 E Main Street Closure",
    "category": "capital",
@@ -1008,11 +1536,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1023,6 +1554,7 @@
   },
   {
    "number": "2026-591",
+   "numberSource": "printed",
    "seq": 26,
    "title": "Water District Capital Project #82401 \u2013 901-923 Burman Blvd Closure",
    "category": "capital",
@@ -1048,11 +1580,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1063,6 +1598,7 @@
   },
   {
    "number": "2026-592",
+   "numberSource": "printed",
    "seq": 27,
    "title": "Water District Capital Project #82409 \u2013 901-903 Scott Ave Closure",
    "category": "capital",
@@ -1088,11 +1624,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1103,6 +1642,7 @@
   },
   {
    "number": "2026-593",
+   "numberSource": "printed",
    "seq": 28,
    "title": "Water District Capital Project #82410 \u2013 Route 25A Wading River - Venezia Square Closure",
    "category": "capital",
@@ -1128,11 +1668,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1143,6 +1686,7 @@
   },
   {
    "number": "2026-594",
+   "numberSource": "printed",
    "seq": 29,
    "title": "Water District Capital Project #82501 \u2013 Kent Animal Shelter - 2259 River Rd, Calverton Closure",
    "category": "capital",
@@ -1168,11 +1712,14 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1183,6 +1730,7 @@
   },
   {
    "number": "2026-595",
+   "numberSource": "printed",
    "seq": 30,
    "title": "Water District Capital Project #82504 \u2013 Naugles Barn - Hallockville Closure",
    "category": "capital",
@@ -1208,11 +1756,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 133.55,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Ave., Riverhead, NY, is considered complete; and WHEREAS, the Project has unspent Developer Fees of $133.55 that can be returned to Hallockville\u2026"
+    },
+    {
+     "amount": 133.55,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustment; FROM TO EW3-8-8320-250-000-82504 Water \u2013 Infrastructure $133.55 EW3-2130-000-82504-8 Developer\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1223,6 +1787,7 @@
   },
   {
    "number": "2026-596",
+   "numberSource": "printed",
    "seq": 31,
    "title": "Water District Capital Project #82508 \u2013 LICA Cauliflower Square Closure",
    "category": "capital",
@@ -1248,11 +1813,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 212.67,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Mill Rd., Riverhead, NY, is considered complete; and WHEREAS, the Project has unspent Developer Fees of $212.67 that can be returned to Learsi\u2026"
+    },
+    {
+     "amount": 212.67,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026adjustment; FROM TO EW3-8-8320-250-000-82508 Water \u2013 Infrastructure $212.67 EW3-2130-000-82508-8 Developer\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1263,6 +1844,7 @@
   },
   {
    "number": "2026-597",
+   "numberSource": "printed",
    "seq": 32,
    "title": "Water District Capital Project #82516 \u2013 Washville - 1535 Old Country Rd Closure",
    "category": "capital",
@@ -1288,11 +1870,27 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1699.74,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Riverhead, NY, is considered complete; and WHEREAS, the Capital Project has unspent Developer Fees of $1,699.74 that can be returned to Garnett\u2026"
+    },
+    {
+     "amount": 1699.74,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026FROM TO EW3-8-8320-250-000-82516 Water \u2013 Infrastructure $1,699.74 EW3-2130-000-82516-8 Developer\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
-    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
-    "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
-    "flag": "understated",
-    "evidence": "category"
+    "verdict": "No new cost \u2014 the project is closed",
+    "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
+    "flag": "fair",
+    "evidence": "resolution-text"
    },
    "vote": {
     "adopted": true,
@@ -1303,6 +1901,7 @@
   },
   {
    "number": "2026-598",
+   "numberSource": "printed",
    "seq": 33,
    "title": "2025 Budget Transfers",
    "category": "capital",
@@ -1328,6 +1927,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -1343,6 +1945,7 @@
   },
   {
    "number": "2026-599",
+   "numberSource": "printed",
    "seq": 34,
    "title": "Police Department Transfer of Vehicles",
    "category": "procedural",
@@ -1368,6 +1971,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1383,6 +1989,7 @@
   },
   {
    "number": "2026-600",
+   "numberSource": "printed",
    "seq": 35,
    "title": "Approves Riverhead Beach Advisory Committee Recommendation And Request For Live Music At South Jamesport Beach",
    "category": "appointment-volunteer",
@@ -1408,6 +2015,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "Appointment to an unpaid advisory board, committee, or task force \u2014 no salary attached.",
@@ -1423,6 +2033,7 @@
   },
   {
    "number": "2026-601",
+   "numberSource": "printed",
    "seq": 36,
    "title": "Sets Fire Prevention Operating Permit Fees 2026",
    "category": "fees",
@@ -1448,6 +2059,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1463,6 +2077,7 @@
   },
   {
    "number": "2026-602",
+   "numberSource": "printed",
    "seq": 37,
    "title": "Promotes two Police Officers to the Rank of Sergeant",
    "category": "personnel",
@@ -1504,6 +2119,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Grant or other Revenue Source: Appropriation Transfer (list account(s) and amoun) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1519,6 +2137,7 @@
   },
   {
    "number": "2026-603",
+   "numberSource": "printed",
    "seq": 38,
    "title": "Appoints Seasonal Personnel to the Recreation Department",
    "category": "personnel",
@@ -1544,6 +2163,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1559,6 +2181,7 @@
   },
   {
    "number": "2026-604",
+   "numberSource": "printed",
    "seq": 39,
    "title": "Appoints an Intern for Town Board Councilman Robert Kern",
    "category": "personnel",
@@ -1584,6 +2207,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1599,6 +2225,7 @@
   },
   {
    "number": "2026-605",
+   "numberSource": "printed",
    "seq": 40,
    "title": "Appoints an Automotive Equipment Operator to the Highway Department",
    "category": "personnel",
@@ -1638,6 +2265,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 57912.7,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026and sets his salary at Group 6, Step 4A of the CSEA Operational and Technical Salary Schedule which is $57,912.70 per annum; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Highway - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1653,6 +2290,7 @@
   },
   {
    "number": "2026-606",
+   "numberSource": "printed",
    "seq": 41,
    "title": "Appoints a Maintenance Mechanic II to the Water District",
    "category": "personnel",
@@ -1692,6 +2330,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 65449.64,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026a rate of pay as found on Group 7, Step 9 of the CSEA Operational and Technical salary schedule which is $65,449.64 per annum. RESOLVED, all\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Water - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1707,6 +2355,7 @@
   },
   {
    "number": "2026-607",
+   "numberSource": "printed",
    "seq": 42,
    "title": "Ratifies Amendment Of Resolution #2026-486 Appointing A Student Intern II To The Town Attorney\u2019s Office",
    "category": "personnel",
@@ -1746,6 +2395,34 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 3100.0,
+     "role": "rate",
+     "clause": "whereas",
+     "quote": "\u2026the Resolution erroneously limited the hours no more than 17.5 hours per week and the budget adjustment to $3,100.00; and WHEREAS, the Town\u2026"
+    },
+    {
+     "amount": 4500.0,
+     "role": "rate",
+     "clause": "whereas",
+     "quote": "\u2026internship shall be no more than 28 hours per week and the budget adjustment shall be in the amount of $4,500.00. NOW, THEREFORE, BE IT RESOLVED,\u2026"
+    },
+    {
+     "amount": 18.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026ratifies the appointment of Edward Belanger to the position of Student Intern II at the hourly rate of $18.00 and Belanger\u2019s hours shall be no more\u2026"
+    },
+    {
+     "amount": 4500.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Administrator hereby has the authority to establish the appropriate budget adjustment in the amount of $4,500.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": 4500.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Atty-Personal Svcs - Part-Time) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1761,6 +2438,7 @@
   },
   {
    "number": "2026-608",
+   "numberSource": "printed",
    "seq": 43,
    "title": "Ratifies the Appointment of a Water Treatment Plant Operator IIB (Calderon)",
    "category": "personnel",
@@ -1786,6 +2464,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 68360.99,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026and changes his salary from Group 13, Step 6A of the Operational and Technical Salary Schedule, which is $68,360.99 per annum to Group 16, Step 6A of the\u2026"
+    },
+    {
+     "amount": 71575.69,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Salary Schedule, which is $68,360.99 per annum to Group 16, Step 6A of the same schedule which is $71,575.69 per annum; and be it further,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1801,6 +2495,7 @@
   },
   {
    "number": "2026-609",
+   "numberSource": "printed",
    "seq": 44,
    "title": "Ratifies the Appointment of an Automotive Equipment Operator",
    "category": "personnel",
@@ -1840,6 +2535,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 57912.7,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026and sets his salary at Group 6, Step 4A of the CSEA Operational and Technical Salary Schedule which is $57,912.70 per annum; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Highway - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1855,6 +2560,7 @@
   },
   {
    "number": "2026-610",
+   "numberSource": "printed",
    "seq": 45,
    "title": "Amends Terms and Condition of Employment for Senior Citizens Program Director, Sewer District Superintendent and Payroll Supervisor",
    "category": "procedural",
@@ -1880,6 +2586,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Administrative / offsetting",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1895,6 +2604,7 @@
   },
   {
    "number": "2026-611",
+   "numberSource": "printed",
    "seq": 46,
    "title": "Extends Bid for Corrosion Control Chemical (PO4) for Riverhead Water District",
    "category": "procedural",
@@ -1934,6 +2644,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Administrative / offsetting",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1949,6 +2662,7 @@
   },
   {
    "number": "2026-612",
+   "numberSource": "printed",
    "seq": 47,
    "title": "Approves Special Event Chapter 255 Application for We are Live LLC (We are Live Summerfest)",
    "category": "permit",
@@ -1974,6 +2688,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 375.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026date of June 28th, 2026 and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $375.00 and late submission fees of $750.00;\u2026"
+    },
+    {
+     "amount": 750.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026the applicant has paid the requisite Chapter 255 Application fee of $375.00 and late submission fees of $750.00; and WHEREAS, A Comprehensive\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1989,6 +2719,7 @@
   },
   {
    "number": "2026-613",
+   "numberSource": "printed",
    "seq": 48,
    "title": "Approves Special Event Chapter 255 Special Event Application for Friends of Ken Rothwell (Concert Event)",
    "category": "permit",
@@ -2014,6 +2745,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 375.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026pm without a rain date; and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $375.00; and WHEREAS, a certificate of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2029,6 +2770,7 @@
   },
   {
    "number": "2026-614",
+   "numberSource": "printed",
    "seq": 49,
    "title": "Approves Special Event Chapter 255 Application for Northeast State (Shakespeare in the Park: All's Well Ends Well)",
    "category": "permit",
@@ -2054,6 +2796,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2069,6 +2821,7 @@
   },
   {
    "number": "2026-615",
+   "numberSource": "printed",
    "seq": 50,
    "title": "Ratifies Amendment to Resolution 549-2026 Fireworks Application for Riverhead Raceway (Rain Date Change to June 13, 2026)",
    "category": "procedural",
@@ -2094,6 +2847,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2109,6 +2865,7 @@
   },
   {
    "number": "2026-616",
+   "numberSource": "printed",
    "seq": 51,
    "title": "Approves Fireworks Application for Riverhead Raceway (July 3, 2026)",
    "category": "procedural",
@@ -2134,6 +2891,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 500.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u20269:30 p.m. having a rain date of July 11, 2026 at approximately 9:30 p.m.; and WHEREAS, the $500.00 administrative fee has been paid to\u2026"
+    },
+    {
+     "amount": 200.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026and WHEREAS, the $500.00 administrative fee has been paid to the Office of the Fire Marshal; and the $200.00 Fireworks Permit Application fee has\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2149,6 +2922,7 @@
   },
   {
    "number": "2026-617",
+   "numberSource": "printed",
    "seq": 52,
    "title": "Temporarily Waives Sign Provisions of the Riverhead Town Code for East End Disability Associates, Inc.",
    "category": "procedural",
@@ -2174,6 +2948,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2189,6 +2966,7 @@
   },
   {
    "number": "2026-618",
+   "numberSource": "printed",
    "seq": 53,
    "title": "Authorizes the Community Development Department to Apply for a Cinderella Grant Through National Grid",
    "category": "grant",
@@ -2214,6 +2992,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 125000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026efforts of Downtown Riverhead; and WHEREAS, if awarded, the Town of Riverhead is eligible to receive up to $125,000 in funding based on eligible project\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Grant with a local share \u2014 not cost-free",
     "reason": "The statement says this award requires a local match. The grant covers most of the cost, but the Town's share is its own money, and it comes from the levy or from fund balance like any other spending.",
@@ -2229,6 +3017,7 @@
   },
   {
    "number": "2026-619",
+   "numberSource": "printed",
    "seq": 54,
    "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 289 of the Riverhead Town Code Titled \u201cVehicles, Traffic and Parking Regulations\u201d, Article IV \u201cParking, Standing and Stopping\u201d",
    "category": "legislative",
@@ -2254,6 +3043,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2269,6 +3061,7 @@
   },
   {
    "number": "2026-620",
+   "numberSource": "printed",
    "seq": 55,
    "title": "Adopts a Local Law to Amend Chapter 213 of the Riverhead Town Code titled \u201cBicycles and Electric Scooters\u201d, Article II \u201cElectric Scooters\u201d",
    "category": "legislative",
@@ -2294,6 +3087,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2309,6 +3105,7 @@
   },
   {
    "number": "2026-621",
+   "numberSource": "printed",
    "seq": 56,
    "title": "Authorizes The Supervisor To Execute A License Agreement With Stein Seafoods, LLC To Allow The Operation Of Floating Upweller Systems (Flupsy) In East Creek, Nunc Pro Tunc",
    "category": "permit",
@@ -2334,6 +3131,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2349,6 +3149,7 @@
   },
   {
    "number": "2026-622",
+   "numberSource": "printed",
    "seq": 57,
    "title": "Ratifies the Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
    "category": "contract",
@@ -2388,6 +3189,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Atty - Prof Svcs - Legal) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -2403,6 +3207,7 @@
   },
   {
    "number": "2026-623",
+   "numberSource": "printed",
    "seq": 58,
    "title": "Authorizes the Supervisor to Execute Short Term Runway use Agreement for Race Track Not Street 2026 Summer Motorsports Classic",
    "category": "contract",
@@ -2428,6 +3233,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2443,6 +3251,7 @@
   },
   {
    "number": "2026-624",
+   "numberSource": "printed",
    "seq": 59,
    "title": "Authorizes the Supervisor to Execute Short Term Runway use Agreement for Race Track Not Street 2026 Fall Motorsports Classic",
    "category": "contract",
@@ -2468,6 +3277,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2483,6 +3295,7 @@
   },
   {
    "number": "2026-625",
+   "numberSource": "printed",
    "seq": 60,
    "title": "Authorizes The Supervisor to Execute an Agreement Authorizing the Town to Accept Funds from Suffolk County Office for The Aging to Supplement the Town\u2019s Expanded In-Home Services for the Elderly Program",
    "category": "contract",
@@ -2508,6 +3321,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 23.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026terms of the agreement for the elderly residents of Riverhead on a fee-for-service basis at the rate of $23.00 per unit of service for 2026/2027;\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2523,6 +3346,7 @@
   },
   {
    "number": "2026-626",
+   "numberSource": "printed",
    "seq": 61,
    "title": "Authorize Supervisor to Execute a License Agreement with Antoine Maaiki to Utilize Concession Stand at South Jamesport Beach",
    "category": "permit",
@@ -2548,6 +3372,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2563,6 +3390,7 @@
   },
   {
    "number": "2026-627",
+   "numberSource": "printed",
    "seq": 62,
    "title": "Approves Agreement Between Town Of Riverhead And Winship Media LLC (Utilize Parking Police Personnel And Police Cars - 2026 Jazz In The Vines)",
    "category": "contract",
@@ -2588,6 +3416,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2603,6 +3434,7 @@
   },
   {
    "number": "2026-628",
+   "numberSource": "printed",
    "seq": 63,
    "title": "Ratifies the Authorization to Commence Legal Action Against 400 David Court LLC",
    "category": "procedural",
@@ -2628,6 +3460,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2643,6 +3478,7 @@
   },
   {
    "number": "2026-629",
+   "numberSource": "printed",
    "seq": 64,
    "title": "Authorizes Speed Limit Changes on Northville Turnpike (CR 43), Riverhead, NY",
    "category": "procedural",
@@ -2668,6 +3504,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2683,6 +3522,7 @@
   },
   {
    "number": "2026-630",
+   "numberSource": "printed",
    "seq": 65,
    "title": "Pays Bills",
    "category": "warrant",
@@ -2708,6 +3548,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Authorizes payment \u2014 the money leaves here",
     "reason": "A warrant is the Board signing off on actual disbursement: checks written and funds transferred. The obligations were incurred earlier, so this is not new spending \u2014 but it is the moment the cash goes out, and the resolution that releases it is the one place the total is put in front of the Board.",
@@ -2723,6 +3566,7 @@
   },
   {
    "number": "2026-631",
+   "numberSource": "printed",
    "seq": 66,
    "title": "Issues Negative Declaration Pursuant to SEQR, Grants In-Part, Denies In- Part, Site Plan Amendment Application for Scott's Pointe (d/b/a Island Water Park) 5835 Middle Country Road, Calverton, NY SCTM No. 600-135-1-7.34",
    "category": "grant",
@@ -2748,6 +3592,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",

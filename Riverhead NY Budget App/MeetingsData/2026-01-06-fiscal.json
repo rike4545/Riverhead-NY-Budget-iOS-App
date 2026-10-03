@@ -5,7 +5,7 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-01-06 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 60,
   "markedNo": 28,
@@ -18,11 +18,19 @@
   "withAccounts": 15,
   "accountEvidence": 11,
   "fundBalanceDraws": 0,
-  "fundBalanceDrawTotal": 0
+  "fundBalanceDrawTotal": 0,
+  "statedCostResolutions": 3,
+  "statementBelowTable": 0,
+  "statedCostMarkedNo": 1,
+  "largestStatedCostMarkedNo": {
+   "number": "2026-23",
+   "amount": 500.0
+  }
  },
  "resolutions": [
   {
    "number": "2026-1",
+   "numberSource": "printed",
    "seq": 1,
    "title": "Sets Salaries of Elected Officials for the Year 2026",
    "category": "personnel",
@@ -48,6 +56,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -63,6 +74,7 @@
   },
   {
    "number": "2026-2",
+   "numberSource": "printed",
    "seq": 2,
    "title": "Sets Salaries of General Town Employees for the Year 2026",
    "category": "personnel",
@@ -88,6 +100,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -103,6 +118,7 @@
   },
   {
    "number": "2026-3",
+   "numberSource": "printed",
    "seq": 3,
    "title": "Sets Salaries of the Highway Department for the Year 2026",
    "category": "personnel",
@@ -142,6 +158,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Highway - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -157,6 +176,7 @@
   },
   {
    "number": "2026-4",
+   "numberSource": "printed",
    "seq": 4,
    "title": "Sets Salaries of Police Officers for the Year of 2026",
    "category": "personnel",
@@ -196,6 +216,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Police Dept - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -211,6 +234,7 @@
   },
   {
    "number": "2026-5",
+   "numberSource": "printed",
    "seq": 5,
    "title": "Sets Salaries of Sewer/Scavenger Waste District for the Year 2026",
    "category": "personnel",
@@ -236,6 +260,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -251,6 +278,7 @@
   },
   {
    "number": "2026-6",
+   "numberSource": "printed",
    "seq": 6,
    "title": "Sets Salaries of Street Lighting District for the Year 2026",
    "category": "personnel",
@@ -276,6 +304,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -291,6 +322,7 @@
   },
   {
    "number": "2026-7",
+   "numberSource": "printed",
    "seq": 7,
    "title": "Sets Salaries of the Water District for the Year 2026",
    "category": "personnel",
@@ -316,6 +348,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -331,6 +366,7 @@
   },
   {
    "number": "2026-8",
+   "numberSource": "printed",
    "seq": 8,
    "title": "Sets Salaries of Various Boards for the Year 2026",
    "category": "personnel",
@@ -356,6 +392,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -371,6 +410,7 @@
   },
   {
    "number": "2026-9",
+   "numberSource": "printed",
    "seq": 9,
    "title": "Sets Salaries for 2026 Call-In and Seasonal Recreation Personnel",
    "category": "personnel",
@@ -396,6 +436,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -411,6 +454,7 @@
   },
   {
    "number": "2026-10",
+   "numberSource": "printed",
    "seq": 10,
    "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
    "category": "personnel",
@@ -436,6 +480,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -451,6 +498,7 @@
   },
   {
    "number": "2026-11",
+   "numberSource": "printed",
    "seq": 11,
    "title": "Appoints Financial Advisor",
    "category": "personnel",
@@ -476,6 +524,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -491,6 +542,7 @@
   },
   {
    "number": "2026-12",
+   "numberSource": "printed",
    "seq": 12,
    "title": "Appoints a Water Treatment Plant Operator Trainee",
    "category": "personnel",
@@ -530,6 +582,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 58734.15,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u202620, 2026 at a rate as found at Group 9 step P on the CSEA Operational & Technical salary schedule at $58,734.15 per annum. RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Water - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -545,6 +607,7 @@
   },
   {
    "number": "2026-13",
+   "numberSource": "printed",
    "seq": 13,
    "title": "Appoints a Wastewater Treatment Plant Operator 4A, Internally designated as Deputy Sewer District Superintendent",
    "category": "personnel",
@@ -570,6 +633,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -585,6 +651,7 @@
   },
   {
    "number": "2026-14",
+   "numberSource": "printed",
    "seq": 14,
    "title": "Ratifies the Appointment of a Wastewater Treatment Plant Operator 2A",
    "category": "personnel",
@@ -624,6 +691,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 67792.71,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u20262A and changes his salary to Group 14, Step 5A of the Operational & Technical salary schedule which is $67,792.71 per annum. RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Sewer - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -639,6 +716,7 @@
   },
   {
    "number": "2026-15",
+   "numberSource": "printed",
    "seq": 15,
    "title": "Amends/Corrects Resolution #2025-981 Appointing Deputy Highway Superintendent",
    "category": "personnel",
@@ -664,6 +742,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 92147.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Dick to the position of Deputy Highway Superintendent effective December 27, 2025 at an annual salary of $92,147.00 prorated for the calendar year 2025\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -679,6 +767,7 @@
   },
   {
    "number": "2026-16",
+   "numberSource": "printed",
    "seq": 16,
    "title": "Ratifies the Reclassification of a Maintenance Mechanic III to a Maintenance Mechanic IV (Berry)",
    "category": "personnel",
@@ -729,6 +818,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 69663.78,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026placing his salary at Group 12 Step 8 of the CSEA Operational and Technical Salary Schedule which is $69,663.78 per annum; and RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Sewer - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -744,6 +843,7 @@
   },
   {
    "number": "2026-17",
+   "numberSource": "printed",
    "seq": 17,
    "title": "Water District Capital Project 82520 The Zenith Group Budget Adoption",
    "category": "capital",
@@ -794,6 +894,22 @@
      "EW3-8-8320-435-000-82520"
     ]
    },
+   "statedAmounts": [
+    {
+     "amount": 3000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026WHEREAS, the Riverhead Water District has received a check from The Zenith Group, LLC in the amount of $3,000 representing engineering fees\u2026"
+    },
+    {
+     "amount": 3000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO EW3-2130-000-82520-8 Developer Fees $3,000.00 EW3-8-8320-435-000-82520 Water \u2013 Prof\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Capital fund \u2014 no draw on an operating balance",
     "reason": "Every account named in section G sits in the Water District \u2014 developer fees. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
@@ -809,6 +925,7 @@
   },
   {
    "number": "2026-18",
+   "numberSource": "printed",
    "seq": 18,
    "title": "Budget Transfer for 2025 Legal Fees",
    "category": "capital",
@@ -857,6 +974,16 @@
     "splitAcross": 2,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 105000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-9-9040-888-000-00000 WC - Claim Payments $105,000 A01-1-1420-433-000-00000 Atty - Prof\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -872,6 +999,7 @@
   },
   {
    "number": "2026-19",
+   "numberSource": "printed",
    "seq": 19,
    "title": "Budget Adjustment for Final Demolition Costs at 39 Pye Lane, Jamesport, New York",
    "category": "capital",
@@ -920,6 +1048,34 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 46009.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u20262025-809 ratified the budget adjustment for the estimated cost of rehabilitation in the amount of $46,009.00. However, final total costs for the\u2026"
+    },
+    {
+     "amount": 46488.08,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026amount of $46,009.00. However, final total costs for the demolition and removal of said structure came to $46,488.08. An additional budget adjustment of\u2026"
+    },
+    {
+     "amount": 479.08,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026for the demolition and removal of said structure came to $46,488.08. An additional budget adjustment of $479.08 is required. NOW THEREFORE BE IT\u2026"
+    },
+    {
+     "amount": 479.08,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-1001-002-00000-A Property Taxes-Chap 217-251 $479.08 A01-8-8666-400-000-00000\u2026"
+    }
+   ],
+   "statedCost": 46488.08,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -935,6 +1091,7 @@
   },
   {
    "number": "2026-20",
+   "numberSource": "printed",
    "seq": 20,
    "title": "Approves Sewer District Request For Change Order No. 1 Related To The Class A Biosolids Upgrade Project",
    "category": "capital",
@@ -960,6 +1117,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
@@ -975,6 +1135,7 @@
   },
   {
    "number": "2026-21",
+   "numberSource": "printed",
    "seq": 21,
    "title": "Approves Sewer District Request For Change Order No. 2 Related To The Class A Biosolids Upgrade Project",
    "category": "capital",
@@ -1000,6 +1161,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
@@ -1015,6 +1179,7 @@
   },
   {
    "number": "2026-22",
+   "numberSource": "printed",
    "seq": 22,
    "title": "Authorizes the Removal of Fixed Assets",
    "category": "procedural",
@@ -1040,6 +1205,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1055,6 +1223,7 @@
   },
   {
    "number": "2026-23",
+   "numberSource": "printed",
    "seq": 23,
    "title": "Authorizes Eagle Scout Project",
    "category": "procedural",
@@ -1080,6 +1249,28 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 500.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026Town of Riverhead, approved expenditures using a portion of the Community Benefit Funds in the amount of $500.00 for the purchase of materials to\u2026"
+    },
+    {
+     "amount": 500.0,
+     "role": "context",
+     "clause": "whereas",
+     "quote": "\u2026to support the kiosk; and WHEREAS, due to the delay in finishing and installing this project, the $500.00 budget adjustment authorized by\u2026"
+    },
+    {
+     "amount": 500.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026the following budget adjustments; FROM A01-917-000-00000 Unassigned Fund Balance $500.00 TO A01-7-7110-415-000-00000 Parks\u2026"
+    }
+   ],
+   "statedCost": 500.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1095,6 +1286,7 @@
   },
   {
    "number": "2026-24",
+   "numberSource": "printed",
    "seq": 24,
    "title": "Accepts Donation from Polish Town Civic Association",
    "category": "donation",
@@ -1120,6 +1312,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026WHEREAS, the Polish Town Civic Association, 300 Lincoln Street, Riverhead, New York 11901 donated $1,000.00 (One Thousand Dollars) to the Town of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -1135,6 +1337,7 @@
   },
   {
    "number": "2026-25",
+   "numberSource": "printed",
    "seq": 25,
    "title": "Authorizes the Attendance at the 2026 Annual Meeting & Training School Held by the Association of Towns (February 15 - 18, 2026)",
    "category": "training",
@@ -1174,6 +1377,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 185.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026to attend such Annual Meeting and associated courses; and WHEREAS, the cost of the conference is $185.00, in addition to related expenses\u2026"
+    },
+    {
+     "amount": 185.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026RESOLVED, that the Town Board hereby authorizes payment of the course attendance fee totaling $185.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": 185.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Small real cost \u2014 and the Town says so",
     "reason": "Registration or tuition plus mileage and travel, charged to a conference or training line. Individually minor; the Town answered honestly here.",
@@ -1189,6 +1408,7 @@
   },
   {
    "number": "2026-26",
+   "numberSource": "printed",
    "seq": 26,
    "title": "Authorization for One Police Department Employee to attend a Training",
    "category": "training",
@@ -1216,6 +1436,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 138.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026reimbursement of travel fees upon submission of proper receipts, which shall not exceed a total cost of $138.00. BE IT FURTHER\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Small real cost \u2014 and the Town says so",
     "reason": "Registration or tuition plus mileage and travel, charged to a conference or training line. Individually minor; the Town answered honestly here.",
@@ -1231,6 +1461,7 @@
   },
   {
    "number": "2026-27",
+   "numberSource": "printed",
    "seq": 27,
    "title": "Ratifies the Authorization for Police Department Employees to Attend a Training",
    "category": "training",
@@ -1258,6 +1489,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "Attending a training, seminar or conference carries a registration fee and mileage or travel reimbursement. Both are charged to a budget line. On other, near-identical attendance resolutions the Town answered \u201cYes\u201d.",
@@ -1273,6 +1507,7 @@
   },
   {
    "number": "2026-28",
+   "numberSource": "printed",
    "seq": 28,
    "title": "Authorizes Attendance at Seminar by Fire Marshal",
    "category": "training",
@@ -1298,6 +1533,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "Attending a training, seminar or conference carries a registration fee and mileage or travel reimbursement. Both are charged to a budget line. On other, near-identical attendance resolutions the Town answered \u201cYes\u201d.",
@@ -1313,6 +1551,7 @@
   },
   {
    "number": "2026-29",
+   "numberSource": "printed",
    "seq": 29,
    "title": "Reappoints John M. Porchia As Member to the Zoning Board of Appeals",
    "category": "personnel",
@@ -1338,6 +1577,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1353,6 +1595,7 @@
   },
   {
    "number": "2026-30",
+   "numberSource": "printed",
    "seq": 30,
    "title": "Reappoints Ralph Gazzillo to Serve as Vice-Chairman of the Zoning Board of Appeals of the Town of Riverhead",
    "category": "personnel",
@@ -1378,6 +1621,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1393,6 +1639,7 @@
   },
   {
    "number": "2026-31",
+   "numberSource": "printed",
    "seq": 31,
    "title": "Reappoints Otto Wittmeier to Serve as Chairman of the Zoning Board of Appeals of the Town of Riverhead",
    "category": "personnel",
@@ -1418,6 +1665,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1433,6 +1683,7 @@
   },
   {
    "number": "2026-32",
+   "numberSource": "printed",
    "seq": 32,
    "title": "Reappoints Edward Densieski to Serve as Chairman of the Planning Board of the Town of Riverhead",
    "category": "personnel",
@@ -1458,6 +1709,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1473,6 +1727,7 @@
   },
   {
    "number": "2026-33",
+   "numberSource": "printed",
    "seq": 33,
    "title": "Reappoints John Hogan to Serve as Vice-Chairman of the Planning board of the Town of Riverhead",
    "category": "personnel",
@@ -1498,6 +1753,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1513,6 +1771,7 @@
   },
   {
    "number": "2026-34",
+   "numberSource": "printed",
    "seq": 34,
    "title": "Reappoints Daniel Zaweski as Member to the Zoning Board of Appeals for the Town of Riverhead",
    "category": "personnel",
@@ -1538,6 +1797,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1553,6 +1815,7 @@
   },
   {
    "number": "2026-35",
+   "numberSource": "printed",
    "seq": 35,
    "title": "Reappoints Joseph Baier as Member to the Town of Riverhead Planning Board",
    "category": "personnel",
@@ -1578,6 +1841,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -1593,6 +1859,7 @@
   },
   {
    "number": "2026-36",
+   "numberSource": "printed",
    "seq": 36,
    "title": "Reappoints Legal Representation for the Zoning Board of Appeals",
    "category": "personnel",
@@ -1632,6 +1899,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 12000.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026to appearance at Zoning Board of Appeals meetings, and drafting determinations at an annual rate of pay of $12,000.00 and paid on biweekly basis with no\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Zoning Board Of Appeals - P/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1647,6 +1924,7 @@
   },
   {
    "number": "2026-37",
+   "numberSource": "printed",
    "seq": 37,
    "title": "Appoints Bond Counsel",
    "category": "personnel",
@@ -1672,6 +1950,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1687,6 +1968,7 @@
   },
   {
    "number": "2026-38",
+   "numberSource": "printed",
    "seq": 38,
    "title": "Approves the Retirement of a Heavy Equipment Operator",
    "category": "personnel-out",
@@ -1712,6 +1994,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -1727,6 +2012,7 @@
   },
   {
    "number": "2026-39",
+   "numberSource": "printed",
    "seq": 39,
    "title": "Accepts the Retirement of a Police Sergeant",
    "category": "personnel-out",
@@ -1752,6 +2038,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -1767,6 +2056,7 @@
   },
   {
    "number": "2026-40",
+   "numberSource": "printed",
    "seq": 40,
    "title": "Accepts the Retirement of a Public Safety Dispatcher",
    "category": "personnel-out",
@@ -1792,6 +2082,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -1807,6 +2100,7 @@
   },
   {
    "number": "2026-41",
+   "numberSource": "printed",
    "seq": 41,
    "title": "Ratifies the Resignation of a Maintenance Mechanic III",
    "category": "personnel-out",
@@ -1832,6 +2126,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -1847,6 +2144,7 @@
   },
   {
    "number": "2026-42",
+   "numberSource": "printed",
    "seq": 42,
    "title": "Ratifies the Resignation of an Automotive Equipment Operator",
    "category": "personnel-out",
@@ -1872,6 +2170,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -1887,6 +2188,7 @@
   },
   {
    "number": "2026-43",
+   "numberSource": "printed",
    "seq": 43,
    "title": "Ratifies the Approval of an Unpaid Leave of Absence",
    "category": "procedural",
@@ -1912,6 +2214,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1927,6 +2232,7 @@
   },
   {
    "number": "2026-44",
+   "numberSource": "printed",
    "seq": 44,
    "title": "Authorizes the Supervisor to Execute Memorandum of Understanding with the County of Suffolk and Suffolk County Sheriff Related to Flock Safety Cameras",
    "category": "procedural",
@@ -1952,6 +2258,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -1967,6 +2276,7 @@
   },
   {
    "number": "2026-45",
+   "numberSource": "printed",
    "seq": 45,
    "title": "Authorizes The Supervisor to Execute A 2026 Musical Works License Agreement With SESAC",
    "category": "permit",
@@ -2015,6 +2325,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1278.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026to the Town of Riverhead to play all of the works of copyright holders SESAC LLC represents for a fee of $1,278.00 for calendar year 2026. NOW\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2030,6 +2350,7 @@
   },
   {
    "number": "2026-46",
+   "numberSource": "printed",
    "seq": 46,
    "title": "Authorizes Supervisor to Execute an Agreement with Assistant Recreation Superintendent I",
    "category": "contract",
@@ -2055,6 +2376,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -2070,6 +2394,7 @@
   },
   {
    "number": "2026-47",
+   "numberSource": "printed",
    "seq": 47,
    "title": "Authorizes Supervisor to Execute an Agreement with Network & Systems Administrator",
    "category": "contract",
@@ -2095,6 +2420,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2110,6 +2438,7 @@
   },
   {
    "number": "2026-48",
+   "numberSource": "printed",
    "seq": 48,
    "title": "Authorizes the Filing of an Application for New York State Assistance from the Household Hazardous Waste (HHW) State Assistance Program and Signing of the Associated State Contract, Under the Appropriate Laws of New York State",
    "category": "contract",
@@ -2135,6 +2464,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2150,6 +2482,7 @@
   },
   {
    "number": "2026-49",
+   "numberSource": "printed",
    "seq": 49,
    "title": "Authorizes Town Clerk to Post and Public Notice of Public Hearing to Amend Town Code Chapter 301, Article I Entitled \"Title, Purpose, Definitions and Interpretation\"",
    "category": "legislative",
@@ -2175,6 +2508,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2190,6 +2526,7 @@
   },
   {
    "number": "2026-50",
+   "numberSource": "printed",
    "seq": 50,
    "title": "Authorizes Town Clerk to Post and Publish Notice of Public Hearing to Amend Town Code Chapter 301, Article XLII Entitled \"Transfer of Development Rights\"",
    "category": "legislative",
@@ -2215,6 +2552,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2230,6 +2570,7 @@
   },
   {
    "number": "2026-51",
+   "numberSource": "printed",
    "seq": 51,
    "title": "Approves Special Event Chapter 255 Application for East End Emerald Society (Jamesport St. Patrick's Parade)",
    "category": "permit",
@@ -2255,6 +2596,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED, that\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2270,6 +2621,7 @@
   },
   {
    "number": "2026-52",
+   "numberSource": "printed",
    "seq": 52,
    "title": "Adopts 2026 Donations Policy",
    "category": "donation",
@@ -2295,6 +2647,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -2310,6 +2665,7 @@
   },
   {
    "number": "2026-53",
+   "numberSource": "printed",
    "seq": 53,
    "title": "Adopts 2026 Investment Policy",
    "category": "procedural",
@@ -2335,6 +2691,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2350,6 +2709,7 @@
   },
   {
    "number": "2026-54",
+   "numberSource": "printed",
    "seq": 54,
    "title": "Ratifies the Authorization of a Grant Application",
    "category": "capital",
@@ -2375,6 +2735,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 29691.18,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026cost of body armor vests purchased for law enforcement officers; and WHEREAS, funding in the amount of $29,691.18 is needed to purchase 31 new\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -2390,6 +2760,7 @@
   },
   {
    "number": "2026-55",
+   "numberSource": "printed",
    "seq": 55,
    "title": "Pays Bills",
    "category": "warrant",
@@ -2415,6 +2786,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Authorizes payment \u2014 the money leaves here",
     "reason": "A warrant is the Board signing off on actual disbursement: checks written and funds transferred. The obligations were incurred earlier, so this is not new spending \u2014 but it is the moment the cash goes out, and the resolution that releases it is the one place the total is put in front of the Board.",
@@ -2430,6 +2804,7 @@
   },
   {
    "number": "2026-56",
+   "numberSource": "printed",
    "seq": 56,
    "title": "Ratifies the Appointment of a Part-Time Code Enforcement Officer",
    "category": "personnel",
@@ -2469,6 +2844,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 26.16,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026appoints Chloe Ferguson to the position of part-time Code Enforcement Officer, to be paid the rate of $26.16 per hour. RESOLVED, all\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Code Enforcement - P/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -2484,6 +2869,7 @@
   },
   {
    "number": "2026-57",
+   "numberSource": "printed",
    "seq": 57,
    "title": "Ratifies the Termination of an Employee",
    "category": "personnel-out",
@@ -2509,6 +2895,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2524,6 +2913,7 @@
   },
   {
    "number": "2026-58",
+   "numberSource": "printed",
    "seq": 58,
    "title": "Acknowledges Appointment of David Cote (Legislative Aide to Town Supervisor) and Sets Terms and Conditions of Employment",
    "category": "personnel",
@@ -2563,6 +2953,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Supervisors - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -2578,6 +2971,7 @@
   },
   {
    "number": "2026-59",
+   "numberSource": "printed",
    "seq": 59,
    "title": "Acknowledges Appointment of Chief of Staff (Burkowsky)",
    "category": "personnel",
@@ -2617,6 +3011,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Supervisors - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -2632,6 +3029,7 @@
   },
   {
    "number": "2026-60",
+   "numberSource": "printed",
    "seq": 60,
    "title": "Acknowledges Appointment of Deputy Supervisor (Higgins)",
    "category": "personnel",
@@ -2671,6 +3069,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Supervisors - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",

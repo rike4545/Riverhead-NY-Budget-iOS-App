@@ -1,0 +1,975 @@
+{
+ "sources": {
+  "video": {
+   "title": "Town of Riverhead meeting video (CivicClerk)",
+   "url": "https://riverheadny.portal.civicclerk.com",
+   "note": "The Town's own recording, as its CivicClerk portal publishes it."
+  },
+  "transcripts": {
+   "title": "Riverhead Town Meeting Transcripts",
+   "url": "https://riverheadtranscripts.org/",
+   "note": "A volunteer project. Machine transcripts made with OpenAI Whisper from the Town's videos; it calls itself not an official record."
+  },
+  "ours": {
+   "title": "This site's machine transcripts",
+   "note": "Made here with OpenAI's open-source Whisper model from the Town's videos. Unofficial: names and figures can be misheard. A vote link opens where the resolution is read out, just before its roll call."
+  }
+ },
+ "meetings": {
+  "2026-09-24": {
+   "eventId": 6769,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6769",
+   "video": "https://cpmedia.azureedge.net/riverheadny/422abe9255.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-09-24_6769.html"
+  },
+  "2026-09-15": {
+   "eventId": 6455,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6455",
+   "video": "https://cpmedia.azureedge.net/riverheadny/ccb55cbdfa.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-09-15_6455.html",
+   "ours": {
+    "path": "/data/transcripts/2026-09-15.json",
+    "model": "small.en",
+    "votes": {
+     "2026-841": 1149.0,
+     "2026-842": 1180.8,
+     "2026-843": 1232.1,
+     "2026-844": 1255.6,
+     "2026-845": 1272.8,
+     "2026-846": 1287.3,
+     "2026-847": 1318.2,
+     "2026-848": 1335.2,
+     "2026-849": 1355.5,
+     "2026-850": 1391.4,
+     "2026-851": 1438.9,
+     "2026-852": 1508.0,
+     "2026-853": 1533.5,
+     "2026-854": 1547.7,
+     "2026-855": 1574.2,
+     "2026-856": 1602.2,
+     "2026-857": 2075.3,
+     "2026-858": 2088.3,
+     "2026-859": 2117.2,
+     "2026-860": 2140.4,
+     "2026-861": 2167.4,
+     "2026-862": 2190.6,
+     "2026-863": 2225.1,
+     "2026-864": 2242.2,
+     "2026-865": 2260.5,
+     "2026-866": 2276.1,
+     "2026-867": 2305.0,
+     "2026-868": 2327.0,
+     "2026-869": 2346.2,
+     "2026-870": 2364.4,
+     "2026-871": 2383.9,
+     "2026-872": 2397.7,
+     "2026-873": 2420.2,
+     "2026-874": 2436.7,
+     "2026-875": 2460.6,
+     "2026-876": 2477.0,
+     "2026-877": 2487.0
+    }
+   }
+  },
+  "2026-09-01": {
+   "eventId": 6442,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6442",
+   "video": "https://cpmedia.azureedge.net/riverheadny/3d2a132895.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-09-01_6442.html",
+   "ours": {
+    "path": "/data/transcripts/2026-09-01.json",
+    "model": "small.en",
+    "votes": {
+     "2026-814": 10865.4,
+     "2026-815": 10904.3,
+     "2026-816": 10918.4,
+     "2026-817": 10931.5,
+     "2026-818": 10945.0,
+     "2026-819": 10962.0,
+     "2026-820": 10980.0,
+     "2026-821": 11014.3,
+     "2026-822": 11058.7,
+     "2026-823": 11086.9,
+     "2026-824": 11108.1,
+     "2026-825": 11127.0,
+     "2026-826": 11140.8,
+     "2026-827": 11161.4,
+     "2026-828": 11191.8,
+     "2026-829": 11207.6,
+     "2026-830": 11234.5,
+     "2026-831": 11258.0,
+     "2026-832": 11372.8,
+     "2026-833": 11413.2,
+     "2026-834": 11429.1,
+     "2026-835": 11440.1,
+     "2026-836": 11490.9,
+     "2026-837": 11516.5,
+     "2026-838": 11534.1,
+     "2026-839": 11569.9,
+     "2026-840": 11594.3
+    }
+   }
+  },
+  "2026-08-18": {
+   "eventId": 6454,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6454",
+   "video": "https://cpmedia.azureedge.net/riverheadny/ae7d69cd-a1a5-432c-b787-e89a450ded99.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-08-18_6454.html"
+  },
+  "2026-08-04": {
+   "eventId": 6441,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6441",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a1e6428b1d.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-08-04_6441.html"
+  },
+  "2026-07-21": {
+   "eventId": 6453,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6453",
+   "video": "https://cpmedia.azureedge.net/riverheadny/7a4df4ff47.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-07-21_6453.html"
+  },
+  "2026-07-07": {
+   "eventId": 6440,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6440",
+   "video": "https://cpmedia.azureedge.net/riverheadny/9e48833430.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-07-07_6440.html"
+  },
+  "2026-06-23": {
+   "eventId": 6610,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6610",
+   "video": "https://cpmedia.azureedge.net/riverheadny/52dcfa6df7.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-06-23_6610.html"
+  },
+  "2026-06-16": {
+   "eventId": 6452,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6452",
+   "video": "https://cpmedia.azureedge.net/riverheadny/8f8685f92c.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-06-16_6452.html"
+  },
+  "2026-06-10": {
+   "eventId": 6609,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6609",
+   "video": "https://cpmedia.azureedge.net/riverheadny/c3ea2d2a17.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-06-10_6609.html"
+  },
+  "2026-06-02": {
+   "eventId": 6439,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6439",
+   "video": "https://cpmedia.azureedge.net/riverheadny/c9dba7d000.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-06-02_6439.html"
+  },
+  "2026-05-20": {
+   "eventId": 6451,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6451",
+   "video": "https://cpmedia.azureedge.net/riverheadny/7eee54515d.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-05-20_6451.html"
+  },
+  "2026-05-05": {
+   "eventId": 6438,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6438",
+   "video": "https://cpmedia.azureedge.net/riverheadny/f2e3e60e93.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-05-05_6438.html"
+  },
+  "2026-04-21": {
+   "eventId": 6450,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6450",
+   "video": "https://cpmedia.azureedge.net/riverheadny/fa5c64797e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-04-21_6450.html"
+  },
+  "2026-04-07": {
+   "eventId": 6437,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6437",
+   "video": "https://cpmedia.azureedge.net/riverheadny/463bb347aa.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-04-07_6437.html"
+  },
+  "2026-03-17": {
+   "eventId": 6449,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6449",
+   "video": "https://cpmedia.azureedge.net/riverheadny/06fbb07106.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-03-17_6449.html"
+  },
+  "2026-03-03": {
+   "eventId": 6436,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6436",
+   "video": "https://cpmedia.azureedge.net/riverheadny/3750867da9.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-03-03_6436.html"
+  },
+  "2026-02-18": {
+   "eventId": 6448,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6448",
+   "video": "https://cpmedia.azureedge.net/riverheadny/72179b59e0.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-02-18_6448.html"
+  },
+  "2026-02-03": {
+   "eventId": 6435,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6435",
+   "video": "https://cpmedia.azureedge.net/riverheadny/0693b430ba.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-02-03_6435.html"
+  },
+  "2026-01-21": {
+   "eventId": 6447,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6447",
+   "video": "https://cpmedia.azureedge.net/riverheadny/034e24b569.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-01-21_6447.html"
+  },
+  "2026-01-06": {
+   "eventId": 6434,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6434",
+   "video": "https://cpmedia.azureedge.net/riverheadny/feaa76bd5a.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-01-06_6434.html"
+  },
+  "2025-12-30": {
+   "eventId": 6550,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6550",
+   "video": "https://cpmedia.azureedge.net/riverheadny/e5ca846690.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-12-30_6550.html"
+  },
+  "2025-12-16": {
+   "eventId": 23,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/23",
+   "video": "https://cpmedia.azureedge.net/riverheadny/ff5c1ba81c.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-12-16_23.html"
+  },
+  "2025-12-02": {
+   "eventId": 11,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/11",
+   "video": "https://cpmedia.azureedge.net/riverheadny/f304594c2a.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-12-02_11.html"
+  },
+  "2025-11-18": {
+   "eventId": 22,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/22",
+   "video": "https://cpmedia.azureedge.net/riverheadny/cebcc1fa24.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-11-18_22.html"
+  },
+  "2025-11-06": {
+   "eventId": 10,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/10",
+   "video": "https://cpmedia.azureedge.net/riverheadny/9fda814422.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-11-06_10.html"
+  },
+  "2025-10-21": {
+   "eventId": 21,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/21",
+   "video": "https://cpmedia.azureedge.net/riverheadny/0f6726bae2.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-10-21_21.html"
+  },
+  "2025-10-16": {
+   "eventId": 6420,
+   "name": "Qualified and Eligible Public Hearing",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6420",
+   "video": "https://cpmedia.azureedge.net/riverheadny/15dd32db63.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-10-16_6420.html"
+  },
+  "2025-10-07": {
+   "eventId": 9,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/9",
+   "video": "https://cpmedia.azureedge.net/riverheadny/b888e52c60.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-10-07_9.html"
+  },
+  "2025-09-29": {
+   "eventId": 6141,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6141",
+   "video": "https://cpmedia.azureedge.net/riverheadny/663f0af1bf.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-29_6141.html"
+  },
+  "2025-09-16": {
+   "eventId": 20,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/20",
+   "video": "https://cpmedia.azureedge.net/riverheadny/472c4b83b0.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-16_20.html"
+  },
+  "2025-09-03": {
+   "eventId": 8,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/8",
+   "video": "https://cpmedia.azureedge.net/riverheadny/9692d2dc5e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-03_8.html"
+  },
+  "2025-08-19": {
+   "eventId": 19,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/19",
+   "video": "https://cpmedia.azureedge.net/riverheadny/7d72fcfeb9.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-08-19_19.html"
+  },
+  "2025-08-05": {
+   "eventId": 7,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/7",
+   "video": "https://cpmedia.azureedge.net/riverheadny/c18e2fd5a8.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-08-05_7.html"
+  },
+  "2025-07-24": {
+   "eventId": 195,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/195",
+   "video": "https://cpmedia.azureedge.net/riverheadny/b210084390.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-07-24_195.html"
+  },
+  "2025-07-22": {
+   "eventId": 61,
+   "name": "Special Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/61",
+   "video": "https://cpmedia.azureedge.net/riverheadny/1418a02d-b3d6-453f-989a-b66880c206ff.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-07-22_61.html"
+  },
+  "2025-07-15": {
+   "eventId": 18,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/18",
+   "video": "https://cpmedia.azureedge.net/riverheadny/e6b1b4b43e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-07-15_18.html"
+  },
+  "2025-07-01": {
+   "eventId": 2781,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2781",
+   "video": "https://cpmedia.azureedge.net/riverheadny/30f2eefa-af6c-4179-ab80-f4def14ca418.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-07-01_2781.html"
+  },
+  "2025-06-17": {
+   "eventId": 2671,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2671",
+   "video": "https://cpmedia.azureedge.net/riverheadny/2434c9e8-ef2b-49f5-b997-a12e4fa23d84.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-06-17_2671.html"
+  },
+  "2025-06-03": {
+   "eventId": 2545,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2545",
+   "video": "https://cpmedia.azureedge.net/riverheadny/5a5c9c35-64fc-47cd-aa47-f51ac3179f32.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-06-03_2545.html"
+  },
+  "2025-05-21": {
+   "eventId": 2460,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2460",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a2895106-ca2d-43ae-b9c5-ee66d1c8507d.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-05-21_2460.html"
+  },
+  "2025-05-08": {
+   "eventId": 2346,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2346",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a09942b3-76aa-4d0a-bdb7-a8d2ca299785.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-05-08_2346.html"
+  },
+  "2025-05-06": {
+   "eventId": 2327,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2327",
+   "video": "https://cpmedia.azureedge.net/riverheadny/1a1e5ccf-4ce6-42e3-8003-498a2b0845d7.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-05-06_2327.html"
+  },
+  "2025-04-15": {
+   "eventId": 2121,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2121",
+   "video": "https://cpmedia.azureedge.net/riverheadny/cf382733-599f-4eed-a223-f74f8711404e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-04-15_2121.html"
+  },
+  "2025-04-01": {
+   "eventId": 1993,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1993",
+   "video": "https://cpmedia.azureedge.net/riverheadny/2766a9c6-2203-4ee7-8c45-67c195218c8c.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-04-01_1993.html"
+  },
+  "2025-03-18": {
+   "eventId": 1881,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1881",
+   "video": "https://cpmedia.azureedge.net/riverheadny/e0ae2b38-19c2-443a-9315-dfc65bf8662f.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-03-18_1881.html"
+  },
+  "2025-03-04": {
+   "eventId": 1761,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1761",
+   "video": "https://cpmedia.azureedge.net/riverheadny/0ec18c56-852b-49a3-a533-4241696d9190.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-03-04_1761.html"
+  },
+  "2025-02-19": {
+   "eventId": 1641,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1641",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a5794245-c633-4095-a289-a8dbc583d871.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-02-19_1641.html"
+  },
+  "2025-02-04": {
+   "eventId": 1524,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1524",
+   "video": "https://cpmedia.azureedge.net/riverheadny/caa09bdd-a22d-48ac-96bd-df2f99098c1f.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-02-04_1524.html"
+  },
+  "2025-01-22": {
+   "eventId": 1434,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1434",
+   "video": "https://cpmedia.azureedge.net/riverheadny/25703df2-9c95-4049-9796-f5706652e610.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-01-22_1434.html"
+  },
+  "2025-01-07": {
+   "eventId": 1314,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1314",
+   "video": "https://cpmedia.azureedge.net/riverheadny/206ab79d-2eef-437d-bb78-4fbd52203777.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-01-07_1314.html"
+  },
+  "2024-12-17": {
+   "eventId": 4229,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4229",
+   "video": "https://cpmedia.azureedge.net/riverheadny/ebff2da9-03c0-4d56-911b-d7675f908a81.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-12-17_4229.html"
+  },
+  "2024-12-03": {
+   "eventId": 4117,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4117",
+   "video": "https://cpmedia.azureedge.net/riverheadny/86d32087-e1ca-40e3-b96e-56b1b2cc50a7.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-12-03_4117.html"
+  },
+  "2024-11-19": {
+   "eventId": 4017,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4017",
+   "video": "https://cpmedia.azureedge.net/riverheadny/c675d59e-f75b-46b1-a371-5f85ba136577.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-11-19_4017.html"
+  },
+  "2024-11-07": {
+   "eventId": 3867,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3867",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a86ad10b-3058-45ae-a55a-0a92405f8ff2.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-11-07_3867.html"
+  },
+  "2024-10-16": {
+   "eventId": 3677,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3677",
+   "video": "https://cpmedia.azureedge.net/riverheadny/322f546f-de21-461b-8d26-9284e19af659.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-10-16_3677.html"
+  },
+  "2024-10-01": {
+   "eventId": 3534,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3534",
+   "video": "https://cpmedia.azureedge.net/riverheadny/8626459f-7ac2-41a1-915a-d8018a3a6bc6.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-10-01_3534.html"
+  },
+  "2024-09-26": {
+   "eventId": 3498,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3498",
+   "video": "https://cpmedia.azureedge.net/riverheadny/38100132-da7d-4825-9182-b2c7735763c2.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-09-26_3498.html"
+  },
+  "2024-09-17": {
+   "eventId": 3424,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3424",
+   "video": "https://cpmedia.azureedge.net/riverheadny/b8c795b6-51ac-410f-a200-3b72af3cc08d.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-09-17_3424.html"
+  },
+  "2024-09-04": {
+   "eventId": 3301,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3301",
+   "video": "https://cpmedia.azureedge.net/riverheadny/cd2cc951-5f65-4dc1-981a-802181bc5278.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-09-04_3301.html"
+  },
+  "2024-08-21": {
+   "eventId": 3214,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3214",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a0fce58c-e4e1-4848-b8cb-dbaced3497d3.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-08-21_3214.html"
+  },
+  "2024-08-20": {
+   "eventId": 3201,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3201",
+   "video": "https://cpmedia.azureedge.net/riverheadny/b92f8c57-2e7d-4702-ba5b-d6b1e5337c3e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-08-20_3201.html"
+  },
+  "2024-08-06": {
+   "eventId": 3085,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3085",
+   "video": "https://cpmedia.azureedge.net/riverheadny/5059f7be-edc3-418c-aae9-cf79137cf357.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-08-06_3085.html"
+  },
+  "2024-07-31": {
+   "eventId": 3007,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3007",
+   "video": "https://cpmedia.azureedge.net/riverheadny/734594b2-5ac7-4d2d-9e00-ae72893bfd2e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-07-31_3007.html"
+  },
+  "2024-07-16": {
+   "eventId": 2911,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2911",
+   "video": "https://cpmedia.azureedge.net/riverheadny/db7b86dc-2d2e-40eb-bf16-3c956d9ec32d.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-07-16_2911.html"
+  },
+  "2024-07-02": {
+   "eventId": 2796,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2796",
+   "video": "https://cpmedia.azureedge.net/riverheadny/5251577e-6adc-45a1-aa42-e667745b3a0b.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-07-02_2796.html"
+  },
+  "2024-06-18": {
+   "eventId": 2687,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2687",
+   "video": "https://cpmedia.azureedge.net/riverheadny/d7482c0d-dd79-4982-96b2-9ee3d9507557.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-06-18_2687.html"
+  },
+  "2024-06-14": {
+   "eventId": 2631,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2631",
+   "video": "https://cpmedia.azureedge.net/riverheadny/9ea18a64-010b-4704-b24e-b68385b7b9b7.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-06-14_2631.html"
+  },
+  "2024-06-04": {
+   "eventId": 2561,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2561",
+   "video": "https://cpmedia.azureedge.net/riverheadny/9f3516b8-9ef9-4cc0-9be1-f655bc4e0035.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-06-04_2561.html"
+  },
+  "2024-05-29": {
+   "eventId": 2496,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2496",
+   "video": "https://cpmedia.azureedge.net/riverheadny/0d48e7b0-2af0-4db8-8a25-6c603059e8bd.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-05-29_2496.html"
+  },
+  "2024-05-22": {
+   "eventId": 2466,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2466",
+   "video": "https://cpmedia.azureedge.net/riverheadny/80dfa8f9-ccfe-4c5d-8334-9549a68a7b45.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-05-22_2466.html"
+  },
+  "2024-05-20": {
+   "eventId": 2448,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2448",
+   "video": "https://cpmedia.azureedge.net/riverheadny/1d176222-3cde-4c4c-98a6-ecba194cc513.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-05-20_2448.html"
+  },
+  "2024-05-07": {
+   "eventId": 2343,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2343",
+   "video": "https://cpmedia.azureedge.net/riverheadny/3c0d811c-2dda-4fb8-9564-320511ad6f23.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-05-07_2343.html"
+  },
+  "2024-04-25": {
+   "eventId": 2217,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2217",
+   "video": "https://cpmedia.azureedge.net/riverheadny/b164723c-0bca-43e9-93f3-5f4f872f2c1f.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-04-25_2217.html"
+  },
+  "2024-04-16": {
+   "eventId": 2135,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2135",
+   "video": "https://cpmedia.azureedge.net/riverheadny/d224e1c7-41b0-4838-89d0-1291ef258798.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-04-16_2135.html"
+  },
+  "2024-04-02": {
+   "eventId": 2008,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2008",
+   "video": "https://cpmedia.azureedge.net/riverheadny/a00a1f8f-9c9b-4f83-a080-dcb0ed3253b4.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-04-02_2008.html"
+  },
+  "2024-03-19": {
+   "eventId": 1896,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1896",
+   "video": "https://cpmedia.azureedge.net/riverheadny/e20334e0-3ed5-48e1-80ee-d7a06a18cf37.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-03-19_1896.html"
+  },
+  "2024-03-05": {
+   "eventId": 1775,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1775",
+   "video": "https://cpmedia.azureedge.net/riverheadny/4b8c90b0-2833-46b1-92fe-927c3b5868b2.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-03-05_1775.html"
+  },
+  "2024-02-21": {
+   "eventId": 1664,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1664",
+   "video": "https://cpmedia.azureedge.net/riverheadny/67fef930-c8df-4835-8029-287ad66aaecb.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-02-21_1664.html"
+  },
+  "2024-02-06": {
+   "eventId": 1545,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1545",
+   "video": "https://cpmedia.azureedge.net/riverheadny/25ea8408-659b-4acb-aab4-adcfbfcc392b.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-02-06_1545.html"
+  },
+  "2024-01-17": {
+   "eventId": 1378,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1378",
+   "video": "https://cpmedia.azureedge.net/riverheadny/8277d240-1ade-4ba2-a3d0-c2e61ea9231e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-01-17_1378.html"
+  },
+  "2024-01-03": {
+   "eventId": 1264,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1264",
+   "video": "https://cpmedia.azureedge.net/riverheadny/7039d35f-70c4-470c-ac77-097daf051075.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-01-03_1264.html"
+  },
+  "2024-01-01": {
+   "eventId": 1223,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1223",
+   "video": "https://cpmedia.azureedge.net/riverheadny/4fbfbd2d-2d3b-4ee2-91d6-49e72e03e983.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2024-01-01_1223.html"
+  },
+  "2023-12-19": {
+   "eventId": 4258,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4258",
+   "video": "https://cpmedia.azureedge.net/riverheadny/28fad9be-cd80-4706-a6ee-75b11dd56db1.mp4"
+  },
+  "2023-12-05": {
+   "eventId": 4145,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4145",
+   "video": "https://cpmedia.azureedge.net/riverheadny/934f447a-2766-4855-8e39-54091034b3ae.mp4"
+  },
+  "2023-11-21": {
+   "eventId": 4045,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4045",
+   "video": "https://cpmedia.azureedge.net/riverheadny/de71eb03-a306-4a74-993a-fd87bcbe9e80.mp4"
+  },
+  "2023-11-15": {
+   "eventId": 3959,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3959",
+   "video": "https://cpmedia.azureedge.net/riverheadny/10c78109-ebb0-4e68-83b2-23ca39052057.mp4"
+  },
+  "2023-11-09": {
+   "eventId": 3916,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3916",
+   "video": "https://cpmedia.azureedge.net/riverheadny/accbfbf2-21ff-40cd-a529-cf33f4e71709.mp4"
+  },
+  "2023-10-24": {
+   "eventId": 3747,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3747",
+   "video": "https://cpmedia.azureedge.net/riverheadny/0f971dfb-244f-41ff-af2a-51f171ba01f4.mp4"
+  },
+  "2023-10-17": {
+   "eventId": 3690,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3690",
+   "video": "https://cpmedia.azureedge.net/riverheadny/438c66c0-f550-4b8f-9efd-e3add97b8cdf.mp4"
+  },
+  "2023-10-03": {
+   "eventId": 3565,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3565",
+   "video": "https://cpmedia.azureedge.net/riverheadny/bd02d7df-8a01-4a20-af29-60c3a89bc7e7.mp4"
+  },
+  "2023-09-19": {
+   "eventId": 3448,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3448"
+  },
+  "2023-09-06": {
+   "eventId": 3328,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3328"
+  },
+  "2023-08-15": {
+   "eventId": 3138,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3138"
+  },
+  "2023-08-10": {
+   "eventId": 3111,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3111"
+  },
+  "2023-08-01": {
+   "eventId": 3023,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3023"
+  },
+  "2023-07-18": {
+   "eventId": 2937,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2937"
+  },
+  "2023-07-06": {
+   "eventId": 2843,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2843"
+  },
+  "2023-06-21": {
+   "eventId": 2728,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2728"
+  },
+  "2023-06-15": {
+   "eventId": 2644,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2644"
+  },
+  "2023-06-06": {
+   "eventId": 2588,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2588"
+  },
+  "2023-05-17": {
+   "eventId": 2408,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2408"
+  },
+  "2023-05-02": {
+   "eventId": 2275,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2275"
+  },
+  "2023-04-18": {
+   "eventId": 2164,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2164"
+  },
+  "2023-04-04": {
+   "eventId": 2034,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2034"
+  },
+  "2023-03-22": {
+   "eventId": 1924,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1924"
+  },
+  "2023-03-07": {
+   "eventId": 1799,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1799"
+  },
+  "2023-02-22": {
+   "eventId": 1669,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1669"
+  },
+  "2023-02-07": {
+   "eventId": 1556,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1556"
+  },
+  "2023-02-01": {
+   "eventId": 1482,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1482"
+  },
+  "2023-01-18": {
+   "eventId": 1389,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1389"
+  },
+  "2023-01-04": {
+   "eventId": 1280,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1280"
+  },
+  "2023-01-01": {
+   "eventId": 1222,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1222"
+  },
+  "2022-12-20": {
+   "eventId": 4272,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4272"
+  },
+  "2022-12-06": {
+   "eventId": 4159,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/4159"
+  },
+  "2022-11-15": {
+   "eventId": 3958,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3958"
+  },
+  "2022-11-01": {
+   "eventId": 3792,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3792"
+  },
+  "2022-10-18": {
+   "eventId": 3705,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3705"
+  },
+  "2022-10-04": {
+   "eventId": 3580,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3580"
+  },
+  "2022-09-27": {
+   "eventId": 3503,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3503"
+  },
+  "2022-09-20": {
+   "eventId": 3462,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3462"
+  },
+  "2022-09-13": {
+   "eventId": 3380,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3380"
+  },
+  "2022-09-07": {
+   "eventId": 3342,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3342"
+  },
+  "2022-08-16": {
+   "eventId": 3152,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3152"
+  },
+  "2022-08-02": {
+   "eventId": 3036,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/3036"
+  },
+  "2022-07-19": {
+   "eventId": 2953,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2953"
+  },
+  "2022-07-06": {
+   "eventId": 2842,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2842"
+  },
+  "2022-06-21": {
+   "eventId": 2727,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2727"
+  },
+  "2022-06-07": {
+   "eventId": 2603,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2603"
+  },
+  "2022-05-18": {
+   "eventId": 2423,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2423"
+  },
+  "2022-05-03": {
+   "eventId": 2288,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2288"
+  },
+  "2022-04-19": {
+   "eventId": 2178,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2178"
+  },
+  "2022-04-05": {
+   "eventId": 2048,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/2048"
+  },
+  "2022-03-24": {
+   "eventId": 1934,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1934"
+  },
+  "2022-03-16": {
+   "eventId": 1854,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1854"
+  },
+  "2022-03-01": {
+   "eventId": 1720,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1720"
+  },
+  "2022-02-15": {
+   "eventId": 1600,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1600"
+  },
+  "2022-02-01": {
+   "eventId": 1481,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1481"
+  },
+  "2022-01-19": {
+   "eventId": 1403,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1403"
+  },
+  "2022-01-04": {
+   "eventId": 1279,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1279"
+  },
+  "2022-01-01": {
+   "eventId": 1221,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/1221"
+  }
+ }
+}

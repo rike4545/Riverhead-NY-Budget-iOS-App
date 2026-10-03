@@ -5,7 +5,7 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-04-07 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. Dollar amounts are not auto-extracted from this packet \u2014 they live in interleaved backup tables that don't reliably tie to a single resolution \u2014 so they are left blank rather than guessed.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 95,
   "markedNo": 63,
@@ -18,11 +18,16 @@
   "withAccounts": 23,
   "accountEvidence": 14,
   "fundBalanceDraws": 1,
-  "fundBalanceDrawTotal": 30000.0
+  "fundBalanceDrawTotal": 30000.0,
+  "statedCostResolutions": 8,
+  "statementBelowTable": 0,
+  "statedCostMarkedNo": 0,
+  "largestStatedCostMarkedNo": null
  },
  "resolutions": [
   {
    "number": "2026-268",
+   "numberSource": "printed",
    "seq": 1,
    "title": "Water District Capital Project 82605 National Grid Hydrant Relocation Mill Rd. Budget Adoption",
    "category": "capital",
@@ -73,6 +78,28 @@
      "EW3-8-8320-250-000-82605"
     ]
    },
+   "statedAmounts": [
+    {
+     "amount": 87798.34,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026the Riverhead Water District has received 2 checks from Bancker Construction Corp, in the amounts of $87,798.34 and $3,677.75, representing\u2026"
+    },
+    {
+     "amount": 3677.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026Water District has received 2 checks from Bancker Construction Corp, in the amounts of $87,798.34 and $3,677.75, representing construction fees\u2026"
+    },
+    {
+     "amount": 91476.09,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO EW3-2130-000-82605-8 Developer Fees $91,476.09 EW3-8-8320-250-000-82605 Water \u2013\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Capital fund \u2014 no draw on an operating balance",
     "reason": "Every account named in section G sits in the Water District \u2014 developer fees. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
@@ -88,6 +115,7 @@
   },
   {
    "number": "2026-269",
+   "numberSource": "printed",
    "seq": 2,
    "title": "Water District Capital Project #82303 Budget Adjustment",
    "category": "capital",
@@ -136,6 +164,22 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 33800.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026New York; and WHEREAS, the Riverhead Water District has requested a budget adjustment in the amount of $33,800.00 for the next phase of the project in\u2026"
+    },
+    {
+     "amount": 33800.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO EW3-2130-000-82303-8 Developer Fees $33,800.00 EW3-8-8320-435-000-82303 Water - Pof\u2026"
+    }
+   ],
+   "statedCost": 33800.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Capital fund \u2014 no draw on an operating balance",
     "reason": "Every account named in section G sits in the Water District \u2014 developer fees. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
@@ -151,6 +195,7 @@
   },
   {
    "number": "2026-270",
+   "numberSource": "printed",
    "seq": 3,
    "title": "Capital Project #44038 Downtown Alleyway Lighting Enhancements Closure",
    "category": "capital",
@@ -199,6 +244,16 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 25000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO H01-6-6497-230-000-44038 Community Development Street Light Install $25,000.00 H01-2706-533-44038-6 Suffolk\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Capital fund \u2014 no draw on an operating balance",
     "reason": "Every account named in section G sits in the Capital Projects Fund. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
@@ -214,6 +269,7 @@
   },
   {
    "number": "2026-271",
+   "numberSource": "printed",
    "seq": 4,
    "title": "Adopts Budget Adjustment for Town Hall Capital Project #62204",
    "category": "capital",
@@ -264,6 +320,16 @@
      "H01-6-6497-230-000-62204"
     ]
    },
+   "statedAmounts": [
+    {
+     "amount": 25000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO H01-6-6497-230-000-62204 Comm Development Street Light Install $25,000.00 H01-2706-533-62204-6 Suffolk County\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Capital fund \u2014 no draw on an operating balance",
     "reason": "Every account named in section G sits in the Capital Projects Fund. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
@@ -279,6 +345,7 @@
   },
   {
    "number": "2026-272",
+   "numberSource": "printed",
    "seq": 5,
    "title": "Budget Adoption for Capital Project #72606 River and Roots Playground Rehabilitation",
    "category": "capital",
@@ -340,6 +407,40 @@
      "H01-7-7110-230-000-72606"
     ]
    },
+   "statedAmounts": [
+    {
+     "amount": 75000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026WHEREAS, the Community Development Department are requesting that improvements with projected costs of $75,000.00 be made and a capital project be\u2026"
+    },
+    {
+     "amount": 37500.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026\"Improvements at River and Roots Playground;\" and WHEREAS, the Supervisor has requested funding of $37,500.00 be made from the Suffolk County DTR\u2026"
+    },
+    {
+     "amount": 75000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026DTR Grant and matching/leveraged funds of $37,500.00 to be provided by BIDMA for a total project cost of $75,000.00. Now, therefore, be it\u2026"
+    },
+    {
+     "amount": 37500.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO H01-2705-100-72606-7 BIDMA Grant $37,500.00 H01-2706-000-72606-7 Suffolk County\u2026"
+    },
+    {
+     "amount": 75000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u202621 $37,500.00 H01-7-7110-230-000-72606 Parks Improvements - River & Roots Playground $75,000.00 And be it further RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Grant with a local share \u2014 not cost-free",
     "reason": "The statement says this award requires a local match. The grant covers most of the cost, but the Town's share is its own money, and it comes from the levy or from fund balance like any other spending.",
@@ -355,6 +456,7 @@
   },
   {
    "number": "2026-273",
+   "numberSource": "printed",
    "seq": 6,
    "title": "Budget Adjustment for New Sign Purchase for East End Arts Council",
    "category": "capital",
@@ -405,6 +507,28 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1400000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026York State and Empire State Development (ESD) awarded the Town of Riverhead a CFA grant in the amount of $1,400,000.00 for the Town Square Riverfront\u2026"
+    },
+    {
+     "amount": 1278.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026part of East End Arts Council\u2019s move to the building at 206 Griffing Avenue, they purchased a new sign for $1,278.00, of which 50% will eventually be\u2026"
+    },
+    {
+     "amount": 639.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-3789-100-00000-8 State Aid \u2013 ESD Grant -Amphitheater $639.00 A01-1-1620-402-000-00000 Town Hall \u2013\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Offsetting \u2014 in and straight back out",
     "reason": "Section G books $639 in and the same $639 out, both in the General Fund. The money is real but it is not the Town's, and it leaves the fund's balance where it started.",
@@ -420,6 +544,7 @@
   },
   {
    "number": "2026-274",
+   "numberSource": "printed",
    "seq": 7,
    "title": "Budget Adjustment for Justice Court 2025-2026 JCAP Grant Funds",
    "category": "capital",
@@ -470,6 +595,28 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 30000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026to apply for a NY State Justice Court Assistance Program (JCAP) Grant in the 2025-2026 cycle for up to $30,000; and WHEREAS, on February 20,\u2026"
+    },
+    {
+     "amount": 12843.75,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026up to $30,000; and WHEREAS, on February 20, 2026, the Town of Riverhead Justice Court was awarded $12,843.75 of grant funds by the New York State\u2026"
+    },
+    {
+     "amount": 12843.75,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-3389-000-00000-8 State Aid \u2013 Other $12,843.75 A01-1-1110-436-100-00000 Justice Court\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Offsetting \u2014 in and straight back out",
     "reason": "Section G books $12,844 in and the same $12,844 out, both in the General Fund. The money is real but it is not the Town's, and it leaves the fund's balance where it started.",
@@ -485,6 +632,7 @@
   },
   {
    "number": "2026-275",
+   "numberSource": "printed",
    "seq": 8,
    "title": "Ratifies Budget Adjustment for 2025 Audit of CDA (EPCAL) by PKF O'Connor Davies, LLP",
    "category": "capital",
@@ -542,6 +690,16 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 30000.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO Z14-9999-000-00000-0 \u2013 Fund Balance $30,000.00 Z14-6-6980-436-210-00000 \u2013 Prof\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Draws fund balance \u2014 stated on the Town's own form",
     "reason": "Section G charges $30,000 to Appropriated Fund Balance in the Calverton Parks Community Development Agency. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
@@ -557,6 +715,7 @@
   },
   {
    "number": "2026-276",
+   "numberSource": "printed",
    "seq": 9,
    "title": "Approves Sewer District Request for Change Order No. 1 Related to the Contract S 203-213 East Main Street Sewer Improvements",
    "category": "capital",
@@ -582,6 +741,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 10723.01,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026and be it further, RESOLVED, that the Change Order No. 1 cost for repair of the damaged sewer main is $10,723.01; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": 10723.01,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -597,6 +766,7 @@
   },
   {
    "number": "2026-277",
+   "numberSource": "printed",
    "seq": 10,
    "title": "Approves Sewer District Request for Change Order No. 2 Related to the Contract S 203-213 East Main Street Sewer Improvements",
    "category": "capital",
@@ -622,6 +792,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 13380.37,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026and be it further, RESOLVED, that the Change Order No. 2 cost for repair of the damaged sewer main is $13,380.37; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": 13380.37,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -637,6 +817,7 @@
   },
   {
    "number": "2026-278",
+   "numberSource": "printed",
    "seq": 11,
    "title": "Accepts Donation of Ice Cream Cakes for Senior Center 2026",
    "category": "donation",
@@ -662,6 +843,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1000.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u20262026, for the monthly birthday celebrations at the Riverhead Senior Center, with an approximate value of $1,000.00 (One Thousand Dollars); and\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -677,6 +868,7 @@
   },
   {
    "number": "2026-279",
+   "numberSource": "printed",
    "seq": 12,
    "title": "Accepts Donation from Riverhead Building Supply for PAL",
    "category": "donation",
@@ -727,6 +919,22 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 200.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026of Riverhead Police Athletic League received a donation from Riverhead Building Supply in the amount of $200; and WHEREAS, pursuant\u2026"
+    },
+    {
+     "amount": 200.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A04-2705-000-00000-7 \u2013 Gifts and Donations $200.00 A04-3-3120-417-000-00000 \u2013 Police -\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Offsetting \u2014 in and straight back out",
     "reason": "Section G books $200 in and the same $200 out, both in the Police Athletic League. The money is real but it is not the Town's, and it leaves the fund's balance where it started.",
@@ -742,6 +950,7 @@
   },
   {
    "number": "2026-280",
+   "numberSource": "printed",
    "seq": 13,
    "title": "Accepts Donation from William G. Pomeroy Foundation for Purchase of a Historic Marker",
    "category": "donation",
@@ -792,6 +1001,22 @@
     "splitAcross": 1,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 2100.0,
+     "role": "revenue",
+     "clause": "whereas",
+     "quote": "\u2026the William G. Pomeroy Foundation has approved the application and plans to send a check for $2,100.00 to the Town of Riverhead as a\u2026"
+    },
+    {
+     "amount": 2100.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026TO A01-2705-000-00000-J \u2013 Gifts and Donations $2,100.00 A01-1-1989-490-000-00000 \u2013 Other Gen\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Offsetting \u2014 in and straight back out",
     "reason": "Section G books $2,100 in and the same $2,100 out, both in the General Fund. The money is real but it is not the Town's, and it leaves the fund's balance where it started.",
@@ -807,6 +1032,7 @@
   },
   {
    "number": "2026-281",
+   "numberSource": "printed",
    "seq": 14,
    "title": "Amends Resolution #2026-69",
    "category": "procedural",
@@ -832,6 +1058,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -847,6 +1076,7 @@
   },
   {
    "number": "2026-282",
+   "numberSource": "printed",
    "seq": 15,
    "title": "Authorizes the Police Department to Apply for Funding",
    "category": "procedural",
@@ -872,6 +1102,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 4098693.0,
+     "role": "program",
+     "clause": "whereas",
+     "quote": "\u2026the Edward Byrne Memorial Justice Assistance Grant (JAG) Program, offers funding in the amount of $4,098,693 to law enforcement agencies in the\u2026"
+    },
+    {
+     "amount": 1544697.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026THEREFORE, BE IT RESOLVED, that the Police Department is authorized to apply for funding of up to $1,544,697 through the Edward Byrne Memorial\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -887,6 +1133,7 @@
   },
   {
    "number": "2026-283",
+   "numberSource": "printed",
    "seq": 16,
    "title": "Sets the Fees for the 2026 Spring/Summer Brochure",
    "category": "fees",
@@ -912,6 +1159,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -927,6 +1177,7 @@
   },
   {
    "number": "2026-284",
+   "numberSource": "printed",
    "seq": 17,
    "title": "Authorizes Purchase of Kenworth Tandem Axle Dump Truck",
    "category": "capital",
@@ -966,6 +1217,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 399625.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Truck Sales, an approved vendor, under the Town of East Hampton Contract# EHWY23-215, in the amount of $399,625.00, to be used for highway\u2026"
+    },
+    {
+     "amount": 399625.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026to establish the following budget adjustments; From DA1-9999-000-00000-0 - Appropriated Fund Balance $ 399,625.00 To DA1-5-5130-240-000-00000 \u2013\u2026"
+    }
+   ],
+   "statedCost": 399625.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -981,6 +1248,7 @@
   },
   {
    "number": "2026-285",
+   "numberSource": "printed",
    "seq": 18,
    "title": "Authorizes Purchase and Upfit of 2025 Kenworth Dump Truck",
    "category": "capital",
@@ -1020,6 +1288,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 256395.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Truck Sales, an approved vendor, under the Town of East Hampton Contract# EHWY24-321, in the amount of $256,395.00, to be used for highway\u2026"
+    },
+    {
+     "amount": 256395.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026establish the following budget adjustments; From DA1-9999-000-00000-0 - Appropriated Fund Balance $ 256,395.00 To DA1-5-5130-240-000-00000 \u2013\u2026"
+    }
+   ],
+   "statedCost": 256395.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -1035,6 +1319,7 @@
   },
   {
    "number": "2026-286",
+   "numberSource": "printed",
    "seq": 19,
    "title": "Authorizes Purchase of Freightliner Chassis with Mounted Sander for Highway Department",
    "category": "capital",
@@ -1074,6 +1359,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 248270.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026Inc., an approved vendor, under the Town of nder the Town of Islip contract 825-282, in the amount of $248,270.00, to be used for highway\u2026"
+    },
+    {
+     "amount": 248270.0,
+     "role": "budget-line",
+     "clause": "table",
+     "quote": "\u2026establish the following budget adjustments; From DA1-9999-000-00000-0 - Appropriated Fund Balance $ 248,270.00 To DA1-5-5130-240-000-00000 \u2013\u2026"
+    }
+   ],
+   "statedCost": 248270.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -1089,6 +1390,7 @@
   },
   {
    "number": "2026-287",
+   "numberSource": "printed",
    "seq": 20,
    "title": "Authorizes Employees to Attend IAAI Conference",
    "category": "training",
@@ -1114,6 +1416,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1806.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026International Training Conference and that all related expenses incurred shall not exceed a total cost of $1,806.00 (expenses to include registration fees\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "Attending a training, seminar or conference carries a registration fee and mileage or travel reimbursement. Both are charged to a budget line. On other, near-identical attendance resolutions the Town answered \u201cYes\u201d.",
@@ -1129,6 +1441,7 @@
   },
   {
    "number": "2026-288",
+   "numberSource": "printed",
    "seq": 21,
    "title": "Ratifies the Salary Adjustment of a Senior Assessment Clerk",
    "category": "personnel",
@@ -1168,6 +1481,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 60300.28,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Clerk Rebecca Hazzard effective April 5, 2026, and sets her salary from a Group 9 step 9 which is $60,300.28 to a Group 9 step 11 of the CSEA\u2026"
+    },
+    {
+     "amount": 62967.96,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u20269 which is $60,300.28 to a Group 9 step 11 of the CSEA Clerical and Supervisory salary schedule which is $62,967.96 per annum; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account (Assessor - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1183,6 +1512,7 @@
   },
   {
    "number": "2026-289",
+   "numberSource": "printed",
    "seq": 22,
    "title": "Ratifies the Reclassification of an Automotive Equipment Operator to Heavy Equipment Operator",
    "category": "personnel",
@@ -1222,6 +1552,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 63999.46,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u20262026, placing his salary at Group 7 Step 8 of the CSEA Operational and Technical Salary Schedule which is $63,999.46 per annum; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1237,6 +1577,7 @@
   },
   {
    "number": "2026-290",
+   "numberSource": "printed",
    "seq": 23,
    "title": "Appoints a Call-In Park Attendant to the Recreation Department",
    "category": "personnel",
@@ -1276,6 +1617,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 17.5,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Board hereby appoints Dylan Colon to the position of Park Attendant II, Level 1, to be paid the rate of $17.50 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1290,7 +1641,8 @@
    }
   },
   {
-   "number": "2026-290",
+   "number": "2026-291",
+   "numberSource": "printed",
    "seq": 24,
    "title": "Appoints a Call-In Park Attendant to the Recreation Department",
    "category": "personnel",
@@ -1330,6 +1682,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 17.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Board hereby appoints Je'vuan White to the position of Park Attendant I, Level 1, to be paid the rate of $17.00 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1345,6 +1707,7 @@
   },
   {
    "number": "2026-292",
+   "numberSource": "printed",
    "seq": 25,
    "title": "Appoints a Call-In Assistant Recreation Leader to the Recreation Department",
    "category": "personnel",
@@ -1384,6 +1747,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 19.2,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Christopher Harris to the position of Assistant Recreation Leader, Level 4, to be paid the rate of $19.20 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1399,6 +1772,7 @@
   },
   {
    "number": "2026-293",
+   "numberSource": "printed",
    "seq": 26,
    "title": "Appoints a Call-In Recreation Leader to the Recreation Department",
    "category": "personnel",
@@ -1438,6 +1812,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 20.55,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Board hereby appoints Joshua Carey to the position of Recreation Leader, Level 3, to be paid the rate of $20.55 per hour; and be it\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost \u2014 funded by the levy",
     "reason": "Section G charges this to an appropriation account and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
@@ -1453,6 +1837,7 @@
   },
   {
    "number": "2026-294",
+   "numberSource": "printed",
    "seq": 27,
    "title": "Appoints Charles Thomas to the Suffolk County Working Waterfront Committee",
    "category": "personnel",
@@ -1478,6 +1863,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1493,6 +1881,7 @@
   },
   {
    "number": "2026-295",
+   "numberSource": "printed",
    "seq": 28,
    "title": "Reappoints Marjorie Acevedo to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1518,6 +1907,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1533,6 +1925,7 @@
   },
   {
    "number": "2026-296",
+   "numberSource": "printed",
    "seq": 29,
    "title": "Reappoints Roberto Ramos to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1558,6 +1951,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1573,6 +1969,7 @@
   },
   {
    "number": "2026-297",
+   "numberSource": "printed",
    "seq": 30,
    "title": "Reappoints Patrice Stokely to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1598,6 +1995,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1613,6 +2013,7 @@
   },
   {
    "number": "2026-298",
+   "numberSource": "printed",
    "seq": 31,
    "title": "Reappoints Harley Abrams to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1638,6 +2039,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1653,6 +2057,7 @@
   },
   {
    "number": "2026-299",
+   "numberSource": "printed",
    "seq": 32,
    "title": "Reappoints Salim Massoud to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1678,6 +2083,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1693,6 +2101,7 @@
   },
   {
    "number": "2026-300",
+   "numberSource": "printed",
    "seq": 33,
    "title": "Reappoints Tom Najdzion to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1718,6 +2127,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1733,6 +2145,7 @@
   },
   {
    "number": "2026-301",
+   "numberSource": "printed",
    "seq": 34,
    "title": "Reappoints Connie Lassandro to the Anti-Bias Task Force",
    "category": "personnel",
@@ -1758,6 +2171,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1773,6 +2189,7 @@
   },
   {
    "number": "2026-302",
+   "numberSource": "printed",
    "seq": 35,
    "title": "Appoints William Zalakar to the Business Advisory Committee",
    "category": "personnel",
@@ -1798,6 +2215,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1813,6 +2233,7 @@
   },
   {
    "number": "2026-303",
+   "numberSource": "printed",
    "seq": 36,
    "title": "Reappoints Martin Sendlewski to the Parking District Advisory Committee",
    "category": "personnel",
@@ -1838,6 +2259,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1853,6 +2277,7 @@
   },
   {
    "number": "2026-304",
+   "numberSource": "printed",
    "seq": 37,
    "title": "Ratifies Name Change of the Inclusion Task Force Advisory Committee to the Town of Riverhead Disability Advisory Committee",
    "category": "appointment-volunteer",
@@ -1878,6 +2303,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "Appointment to an unpaid advisory board, committee, or task force \u2014 no salary attached.",
@@ -1893,6 +2321,7 @@
   },
   {
    "number": "2026-305",
+   "numberSource": "printed",
    "seq": 38,
    "title": "Appoints Joe Oliver to the Parking District Advisory Committee",
    "category": "personnel",
@@ -1918,6 +2347,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1933,6 +2365,7 @@
   },
   {
    "number": "2026-306",
+   "numberSource": "printed",
    "seq": 39,
    "title": "Reappoints Ike Israel to the Parking District Advisory Commitee",
    "category": "personnel",
@@ -1958,6 +2391,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -1973,6 +2409,7 @@
   },
   {
    "number": "2026-307",
+   "numberSource": "printed",
    "seq": 40,
    "title": "Appointes Georgia Malone to the Parking District Advisory Committee",
    "category": "personnel",
@@ -1998,6 +2435,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2013,6 +2453,7 @@
   },
   {
    "number": "2026-308",
+   "numberSource": "printed",
    "seq": 41,
    "title": "Appoints Peggy Kneski to the Parking District Advisory Committee",
    "category": "personnel",
@@ -2038,6 +2479,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2053,6 +2497,7 @@
   },
   {
    "number": "2026-309",
+   "numberSource": "printed",
    "seq": 42,
    "title": "Appoints Steve Armaral to the Parking District Advisory Committee",
    "category": "personnel",
@@ -2078,6 +2523,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2093,6 +2541,7 @@
   },
   {
    "number": "2026-310",
+   "numberSource": "printed",
    "seq": 43,
    "title": "Appoints Sean Kenna to the Parking District Advisory Committee",
    "category": "personnel",
@@ -2118,6 +2567,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2133,6 +2585,7 @@
   },
   {
    "number": "2026-311",
+   "numberSource": "printed",
    "seq": 44,
    "title": "Appoints Connie Lassandro to the Parking District Advisory Committee",
    "category": "personnel",
@@ -2158,6 +2611,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2173,6 +2629,7 @@
   },
   {
    "number": "2026-312",
+   "numberSource": "printed",
    "seq": 45,
    "title": "Appoints Steve Siliato to the Parking District Advisory Committee",
    "category": "personnel",
@@ -2198,6 +2655,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2213,6 +2673,7 @@
   },
   {
    "number": "2026-313",
+   "numberSource": "printed",
    "seq": 46,
    "title": "Ratifies the Resignation of an Automotive Equipment Operator",
    "category": "personnel-out",
@@ -2238,6 +2699,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2253,6 +2717,7 @@
   },
   {
    "number": "2026-314",
+   "numberSource": "printed",
    "seq": 47,
    "title": "Ratifies the Resignation of a Part-time Bilingual Office Assistant",
    "category": "personnel-out",
@@ -2278,6 +2743,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2293,6 +2761,7 @@
   },
   {
    "number": "2026-315",
+   "numberSource": "printed",
    "seq": 48,
    "title": "Ratifies the Resignation of a Water District Maintenance Crew Leader",
    "category": "personnel-out",
@@ -2318,6 +2787,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2333,6 +2805,7 @@
   },
   {
    "number": "2026-316",
+   "numberSource": "printed",
    "seq": 49,
    "title": "Ratifies the Termination of an Employee",
    "category": "personnel-out",
@@ -2358,6 +2831,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2373,6 +2849,7 @@
   },
   {
    "number": "2026-317",
+   "numberSource": "printed",
    "seq": 50,
    "title": "Ratifies the Appointment of a Hearing Officer and Suspension of an Employee",
    "category": "personnel",
@@ -2398,6 +2875,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2413,6 +2893,7 @@
   },
   {
    "number": "2026-318",
+   "numberSource": "printed",
    "seq": 51,
    "title": "Terminates LOA and Ratifies the Reappointment of Part-Time Police Officers",
    "category": "personnel-out",
@@ -2454,6 +2935,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 27.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026Ott effective April 3, 2026, and places them on Part-time active duty status at an hourly rate of pay of $27.00; and BE IT FURTHER\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Actually a saving",
     "reason": "A departure reduces payroll \u2014 the opposite of a cost.",
@@ -2469,6 +2960,7 @@
   },
   {
    "number": "2026-319",
+   "numberSource": "printed",
    "seq": 52,
    "title": "Ratifies Authorization for the Community Development Department to Apply for a Grant",
    "category": "capital",
@@ -2494,6 +2986,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 50000.0,
+     "role": "program",
+     "clause": "whereas",
+     "quote": "\u2026Department has identified this grant opportunity available through T-Mobile Hometown Grants, for up to $50,000.00 which would benefit the Town of\u2026"
+    },
+    {
+     "amount": 49184.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026to submit an application to the T- Mobile Hometown Grants program to apply for funding in the amount of $49,184.00 to replace the HVAC system in the\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
@@ -2509,6 +3017,7 @@
   },
   {
    "number": "2026-320",
+   "numberSource": "printed",
    "seq": 53,
    "title": "Authorizes Release of Performance Bond For Birchwood Major Subdivision (Section 3)",
    "category": "escrow-neutral",
@@ -2534,6 +3043,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 501000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026at Wading River, LLC and National Birchwood Corp. submitted Performance Bond #362217 in the amount of $501,000.00, for improvements to be completed\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -2549,6 +3068,7 @@
   },
   {
    "number": "2026-321",
+   "numberSource": "printed",
    "seq": 54,
    "title": "Cancels Letter Of Credit Posted By Kevin Rempe Plumbing And Heating Corp. For Drainlayer In The Town Of Riverhead Sewer District",
    "category": "escrow-neutral",
@@ -2574,6 +3094,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 5000.0,
+     "role": "security",
+     "clause": "whereas",
+     "quote": "\u2026Town Code, an Irrevocable Letter of Credit (No.: 121000000721) was filed with the Town in the amount of $5,000.00; and WHEREAS, Kevin Rempe\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -2589,6 +3119,7 @@
   },
   {
    "number": "2026-322",
+   "numberSource": "printed",
    "seq": 55,
    "title": "Amends Riverhead Water District Schedule of Rates and Charges",
    "category": "fees",
@@ -2614,6 +3145,46 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 3600.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026table and made effective April 7, 2026; and be it further, TASK FEE 1\" Service in vault short side $3,600.00* 1\" Service in vault long side\u2026"
+    },
+    {
+     "amount": 4100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026and be it further, TASK FEE 1\" Service in vault short side $3,600.00* 1\" Service in vault long side $4,100.00* 1\" Residential fire service\u2026"
+    },
+    {
+     "amount": 4300.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026in vault short side $3,600.00* 1\" Service in vault long side $4,100.00* 1\" Residential fire service $4,300.00* 3/4\" pre-tap service $1,900.00 1\"\u2026"
+    },
+    {
+     "amount": 1900.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u20261\" Service in vault long side $4,100.00* 1\" Residential fire service $4,300.00* 3/4\" pre-tap service $1,900.00 1\" pre-tap service $2,000.00 1\" meter\u2026"
+    },
+    {
+     "amount": 2000.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026side $4,100.00* 1\" Residential fire service $4,300.00* 3/4\" pre-tap service $1,900.00 1\" pre-tap service $2,000.00 1\" meter charge $225.00\u2026"
+    },
+    {
+     "amount": 225.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026fire service $4,300.00* 3/4\" pre-tap service $1,900.00 1\" pre-tap service $2,000.00 1\" meter charge $225.00 *NOTE: fees reflect standard water\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2629,6 +3200,7 @@
   },
   {
    "number": "2026-323",
+   "numberSource": "printed",
    "seq": 56,
    "title": "Amends Resolution #2025-209 \u2014 Building Division Fees",
    "category": "fees",
@@ -2654,6 +3226,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -2669,6 +3244,7 @@
   },
   {
    "number": "2026-324",
+   "numberSource": "printed",
    "seq": 57,
    "title": "Awards Bid for Propane Fuel and Equipment Maintenance",
    "category": "capital",
@@ -2741,6 +3317,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -2756,6 +3335,7 @@
   },
   {
    "number": "2026-325",
+   "numberSource": "printed",
    "seq": 58,
    "title": "Rejects Bid for Charter Buses",
    "category": "procedural",
@@ -2781,6 +3361,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2796,6 +3379,7 @@
   },
   {
    "number": "2026-326",
+   "numberSource": "printed",
    "seq": 59,
    "title": "Amends Resolution #2026-185 Adopted on February 18, 2026 (Brentwood Legion Ambulance Service Inc. Use of Pine Barrens Credits)",
    "category": "procedural",
@@ -2821,6 +3405,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2836,6 +3423,7 @@
   },
   {
    "number": "2026-327",
+   "numberSource": "printed",
    "seq": 60,
    "title": "Affirms Prior Authorization for Acquisition of Property for General Municipal Purposes Located at 111 East Main Street, Riverhead, New York, Suffolk County Tax Map #600-129.-1-11",
    "category": "procedural",
@@ -2861,6 +3449,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2876,6 +3467,7 @@
   },
   {
    "number": "2026-328",
+   "numberSource": "printed",
    "seq": 61,
    "title": "Resolution to Classify an Action Pursuant to SEQRA, Assume Lead Agency, Issue Negative Declaration and Approve Funding for Wading River Highway Garage, Subject to Permissive Referendum and Bond Authorization",
    "category": "procedural",
@@ -2901,6 +3493,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1700000.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026System (I/A OWTS) would meet the needs of the Highway Department with a cost projected and estimated at $1,700,000.00 and such cost is inclusive of the\u2026"
+    },
+    {
+     "amount": 1880000.0,
+     "role": "debt",
+     "clause": "resolved",
+     "quote": "\u2026plans prepared by Vincent Gaudiello and consistent with bid specifications in such amount not to exceed $1,880,000.00; and be it further,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2916,6 +3524,7 @@
   },
   {
    "number": "2026-329",
+   "numberSource": "printed",
    "seq": 62,
    "title": "Chapter 229 Application for Excavation & Exportation of Materials for Kathy Lane LLC, Subdivision (84-2-2.1)",
    "category": "procedural",
@@ -2941,6 +3550,28 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 11397.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026RESOLVED, the Building Department is hereby authorized to accept and collect a permit fee of $11,397.00; representing $3.00 per cubic yard\u2026"
+    },
+    {
+     "amount": 3.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026Building Department is hereby authorized to accept and collect a permit fee of $11,397.00; representing $3.00 per cubic yard for the\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026$3.00 per cubic yard for the excavation/exportation of said material, in addition to a permit fee of $100.00; and be it further,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -2956,6 +3587,7 @@
   },
   {
    "number": "2026-330",
+   "numberSource": "printed",
    "seq": 63,
    "title": "Resolution Calling Public Hearing Regarding a Capital Improvement for the Extension of Facilities of the Riverhead Water District for Summerwind Farm Subdivision, for a Water Main Extension at the Property Known as SCTM 0600-86-2-8.2 in Aquebogue, New York",
    "category": "capital",
@@ -2981,6 +3613,28 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 747750.0,
+     "role": "other",
+     "clause": "whereas",
+     "quote": "\u2026of Owner. The estimated project cost to implement the extension of water main to serve the development is $747,750.00. These costs also include\u2026"
+    },
+    {
+     "amount": 6052.0,
+     "role": "rate",
+     "clause": "whereas",
+     "quote": "\u2026extension will be subject to Key Money Fees. Currently, the Key Money Fees for a single-family dwelling is $6,052 per dwelling for a total assessed key\u2026"
+    },
+    {
+     "amount": 90780.0,
+     "role": "rate",
+     "clause": "whereas",
+     "quote": "\u2026Key Money Fees for a single-family dwelling is $6,052 per dwelling for a total assessed key money fee of $90,780. In addition, all properties will be\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",
@@ -2996,6 +3650,7 @@
   },
   {
    "number": "2026-331",
+   "numberSource": "printed",
    "seq": 64,
    "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 273 of the Riverhead Town Code Titled \u201cSolid Waste\u201d, Article V \u201cGeneral Provisions Applicable to Solid Waste for All Properties and Uses\u201d",
    "category": "legislative",
@@ -3021,6 +3676,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3036,6 +3694,7 @@
   },
   {
    "number": "2026-332",
+   "numberSource": "printed",
    "seq": 65,
    "title": "Authorizes Town Clerk to Publish and Post Public Notice to Consider a Local Law to Amend Chapter 279 of the Riverhead Town Code Titled \u201cTaxation\u201d, Article VIII \u201cExemption for Volunteer Firefighters and Volunteer Ambulance Workers\u201d",
    "category": "legislative",
@@ -3061,6 +3720,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3076,6 +3738,7 @@
   },
   {
    "number": "2026-333",
+   "numberSource": "printed",
    "seq": 66,
    "title": "Adopts a Local Law to Amend Chapter 217 of the Riverhead Town Code Titled \u201cBuildings, Building Construction and Improvements and Housing Standards\u201d, Article I \u201cAdministration and Enforcement\u201d",
    "category": "legislative",
@@ -3101,6 +3764,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3116,6 +3782,7 @@
   },
   {
    "number": "2026-334",
+   "numberSource": "printed",
    "seq": 67,
    "title": "Adopts a Local Law to Amend Chapter 289 of the Riverhead Town Code Titled \u201cVehicles, Traffic and Parking Regulations\u201d, Article IV \u201cParking, Standing and Stopping\u201d",
    "category": "legislative",
@@ -3141,6 +3808,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3156,6 +3826,7 @@
   },
   {
    "number": "2026-335",
+   "numberSource": "printed",
    "seq": 68,
    "title": "Adopts a Local Law to Amend Chapter 231 of the Riverhead Town Code Titled \u201cFire Prevention\u201d, Article III \u201cAdministration\u201d",
    "category": "legislative",
@@ -3181,6 +3852,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3196,6 +3870,7 @@
   },
   {
    "number": "2026-336",
+   "numberSource": "printed",
    "seq": 69,
    "title": "Adopts a Local Law to Amend Chapter 231 of the Riverhead Town Code Titled \u201cFire Prevention\u201d, Article XXVII \u201cTenancy Permits\u201d",
    "category": "permit",
@@ -3221,6 +3896,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3236,6 +3914,7 @@
   },
   {
    "number": "2026-337",
+   "numberSource": "printed",
    "seq": 70,
    "title": "Authorizes The Supervisor To Execute A License Agreement With Celtic Quest Inc. 2026",
    "category": "permit",
@@ -3275,6 +3954,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 2000.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026the vessel at the East Creek Docking Facility from April 28, 2026 to May 31, 2026, with a dockage fee of $2,000.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3290,6 +3979,7 @@
   },
   {
    "number": "2026-338",
+   "numberSource": "printed",
    "seq": 71,
    "title": "Authorizes Supervisor to Execute Agreement with Seed Clam Administrator",
    "category": "contract",
@@ -3315,6 +4005,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -3330,6 +4023,7 @@
   },
   {
    "number": "2026-339",
+   "numberSource": "printed",
    "seq": 72,
    "title": "Authorize Supervisor to Execute Early Voting Polling Place Agreement with Suffolk County Board of Elections for Riverhead Town Hall",
    "category": "appointment-volunteer",
@@ -3355,6 +4049,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "Appointment to an unpaid advisory board, committee, or task force \u2014 no salary attached.",
@@ -3370,6 +4067,7 @@
   },
   {
    "number": "2026-340",
+   "numberSource": "printed",
    "seq": 73,
    "title": "Authorizes the Supervisor to Execute Professional Service Agreements with H2M for Sanitary Improvements at Town Square Splash Pad",
    "category": "contract",
@@ -3420,6 +4118,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -3435,6 +4136,7 @@
   },
   {
    "number": "2026-341",
+   "numberSource": "printed",
    "seq": 74,
    "title": "Authorizes Supervisor to Execute an Agreement with the County of Suffolk Office for the Aging (AAA Transportation Program 2026)",
    "category": "contract",
@@ -3460,6 +4162,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 10165.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026the attached agreement authorizing the Town of Riverhead to accept funds in an amount not to exceed $10,165.00 from Suffolk County Office for the\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -3475,6 +4187,7 @@
   },
   {
    "number": "2026-342",
+   "numberSource": "printed",
    "seq": 75,
    "title": "Authorize Supervisor to Execute Short Term Runway Use Agreement for Race Track Not Street 2026 Spring Fling at EPCAL",
    "category": "contract",
@@ -3500,6 +4213,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -3515,6 +4231,7 @@
   },
   {
    "number": "2026-343",
+   "numberSource": "printed",
    "seq": 76,
    "title": "Authorize Supervisor to Sign a Professional Services Agreement with Smalley Engineering, P.C.",
    "category": "contract",
@@ -3540,6 +4257,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -3555,6 +4275,7 @@
   },
   {
    "number": "2026-344",
+   "numberSource": "printed",
    "seq": 77,
    "title": "Ratifies Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
    "category": "contract",
@@ -3580,6 +4301,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -3595,6 +4319,7 @@
   },
   {
    "number": "2026-345",
+   "numberSource": "printed",
    "seq": 78,
    "title": "Ratifies Authorization for Supervisor to Sign an Addendum to Consultant/Professional Services Agreement with Joan Mottern",
    "category": "contract",
@@ -3620,6 +4345,28 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 5000.0,
+     "role": "cost",
+     "clause": "whereas",
+     "quote": "\u2026agreement with Ms. Mottern as a consultant and such consulting services shall not to exceed the sum of $5,000 for the term of the addendum or to\u2026"
+    },
+    {
+     "amount": 46.45,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026it further, RESOLVED, that the Town Board hereby corrects the hourly rate payable to Ms. Mottern from $46.45 to $50.00, retroactive to the\u2026"
+    },
+    {
+     "amount": 50.0,
+     "role": "rate",
+     "clause": "resolved",
+     "quote": "\u2026RESOLVED, that the Town Board hereby corrects the hourly rate payable to Ms. Mottern from $46.45 to $50.00, retroactive to the commencement\u2026"
+    }
+   ],
+   "statedCost": 5000.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -3635,6 +4382,7 @@
   },
   {
    "number": "2026-346",
+   "numberSource": "printed",
    "seq": 79,
    "title": "Ratifies the Authorization for the Supervisor to Execute an Agreement with the County of Suffolk Department of Probation (Stop DWI Program 2026)",
    "category": "contract",
@@ -3660,6 +4408,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 25000.0,
+     "role": "revenue",
+     "clause": "resolved",
+     "quote": "\u2026the attached agreement authorizing the Town of Riverhead to accept funds in an amount not to exceed $25,000.00 from Suffolk County Department of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
@@ -3675,6 +4433,7 @@
   },
   {
    "number": "2026-347",
+   "numberSource": "printed",
    "seq": 80,
    "title": "Ratifies the Approval of Special Event Chapter 255 Application for Clifton Park Rental (Tractor Supply Season Sale)",
    "category": "permit",
@@ -3700,6 +4459,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 350.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026of 8:00 am and 9:00 pm; WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $350.00; and WHEREAS, a certificate of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3715,6 +4484,7 @@
   },
   {
    "number": "2026-348",
+   "numberSource": "printed",
    "seq": 81,
    "title": "Approves Special Event Chapter 255 Application for Hallockville Museum Farm (Fleece and Fiber Festival)",
    "category": "permit",
@@ -3740,6 +4510,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 175.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026date on May 17, 2026 and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $175.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3755,6 +4541,7 @@
   },
   {
    "number": "2026-349",
+   "numberSource": "printed",
    "seq": 82,
    "title": "Approves Special Event Chapter 255 Application for Wading River Shoreham Chamber of Commerce (Fall Festival)",
    "category": "permit",
@@ -3780,6 +4567,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 175.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026pm with no rain dates and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $175.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3795,6 +4598,7 @@
   },
   {
    "number": "2026-350",
+   "numberSource": "printed",
    "seq": 83,
    "title": "Approves Special Event Chapter 255 Application for The Duck Pond Society (Duck Pond Day)",
    "category": "permit",
@@ -3820,6 +4624,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 350.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026of June 21st, 2026 and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $350.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3835,6 +4655,7 @@
   },
   {
    "number": "2026-351",
+   "numberSource": "printed",
    "seq": 84,
    "title": "Approves Special Event Chapter 255 Application for Long Island Antique Power Association (Tractor Pulls and Shows)",
    "category": "permit",
@@ -3860,6 +4681,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 175.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026a.m. to 4 p.m. WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $175.00; and WHEREAS, a certificate of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3875,6 +4706,7 @@
   },
   {
    "number": "2026-352",
+   "numberSource": "printed",
    "seq": 85,
    "title": "Approves Special Event Chapter 255 Application for Race Awesome (Jamesport Triathlon)",
    "category": "permit",
@@ -3900,6 +4732,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 350.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026with no rain date and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $350.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3915,6 +4763,7 @@
   },
   {
    "number": "2026-353",
+   "numberSource": "printed",
    "seq": 86,
    "title": "Approves Special Event Chapter 255 Application for The American Cancer Society (Making Strides Against Cancer of Eastern Long Island Walk)",
    "category": "permit",
@@ -3940,6 +4789,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 175.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026of 9:00 am and 12:00 pm; WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $175.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3955,6 +4820,7 @@
   },
   {
    "number": "2026-354",
+   "numberSource": "printed",
    "seq": 87,
    "title": "Approves Special Event Chapter 255 Application for The New York Marine Rescue Center (Paddle Battle)",
    "category": "permit",
@@ -3980,6 +4846,22 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 175.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026on the Peconic River; and WHEREAS, the applicant has paid the requisite Chapter 255 Application fee of $175.00; and WHEREAS, A Comprehensive\u2026"
+    },
+    {
+     "amount": 100.0,
+     "role": "fee",
+     "clause": "resolved",
+     "quote": "\u2026of a License Agreement with the Town of Riverhead within 7 days of the event and a fee of not less than $100.00; and be it further, RESOLVED,\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -3995,6 +4877,7 @@
   },
   {
    "number": "2026-355",
+   "numberSource": "printed",
    "seq": 88,
    "title": "Approves Special Event Chapter 255 Application for Foodie Fest Productions LLC (Foodie Fest I - 2026)",
    "category": "permit",
@@ -4020,6 +4903,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 350.0,
+     "role": "fee",
+     "clause": "whereas",
+     "quote": "\u2026guidelines to the extent necessary, the applicant has paid the requisite Chapter 255 Application fee of $350.00; and WHEREAS, a certificate of\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "No direct cost",
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
@@ -4035,6 +4928,7 @@
   },
   {
    "number": "2026-356",
+   "numberSource": "printed",
    "seq": 89,
    "title": "Pays Bills",
    "category": "warrant",
@@ -4060,6 +4954,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Authorizes payment \u2014 the money leaves here",
     "reason": "A warrant is the Board signing off on actual disbursement: checks written and funds transferred. The obligations were incurred earlier, so this is not new spending \u2014 but it is the moment the cash goes out, and the resolution that releases it is the one place the total is put in front of the Board.",
@@ -4075,6 +4972,7 @@
   },
   {
    "number": "2026-357",
+   "numberSource": "printed",
    "seq": 90,
    "title": "Riverhead Highway Barn Bond Authorization Resolution April 2026",
    "category": "debt",
@@ -4100,6 +4998,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 1880000.0,
+     "role": "debt",
+     "clause": "whereas",
+     "quote": "\u2026NEW YORK, ADOPTED APRIL 7, 2026, AUTHORIZING THE ISSUANCE OF BONDS IN A PRINCIPAL AMOUNT NOT TO EXCEED $1,880,000 TO FINANCE THE CONSTRUCTION OF A NEW\u2026"
+    }
+   ],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -4115,6 +5023,7 @@
   },
   {
    "number": "2026-227",
+   "numberSource": "printed",
    "seq": 91,
    "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
    "category": "personnel",
@@ -4140,6 +5049,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -4155,6 +5067,7 @@
   },
   {
    "number": "2026-227",
+   "numberSource": "title",
    "seq": 92,
    "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
    "category": "personnel",
@@ -4180,6 +5093,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -4195,6 +5111,7 @@
   },
   {
    "number": "2026-227",
+   "numberSource": "title",
    "seq": 93,
    "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
    "category": "personnel",
@@ -4220,6 +5137,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
@@ -4235,6 +5155,7 @@
   },
   {
    "number": "2026-358",
+   "numberSource": "printed",
    "seq": 94,
    "title": "Resolution To Support County of Suffolk Application for Grant Funding Under NYS Environmental Bond Act for Preservation as Open Space of Property Commonly Known and Described as Venezia Square, Wading River, NY SCTM#s 600-73-1-Lots 1.4, 1.16, 1.17, 1.18, and 1.19",
    "category": "grant",
@@ -4260,6 +5181,9 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Revenue in / offsetting",
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
@@ -4275,6 +5199,7 @@
   },
   {
    "number": "2026-359",
+   "numberSource": "printed",
    "seq": 95,
    "title": "Authorizes the Town Supervisor to Execute Professional Services Agreement with Hon. Lori M. Hulse",
    "category": "personnel",
@@ -4300,6 +5225,16 @@
     "splitAcross": 0,
     "createsAccounts": []
    },
+   "statedAmounts": [
+    {
+     "amount": 7500.0,
+     "role": "cost",
+     "clause": "resolved",
+     "quote": "\u2026the Supervisor is authorized to execute said Professional Services Agreement providing compensation of $7,500 annually, prorated for 2026;\u2026"
+    }
+   ],
+   "statedCost": 7500.0,
+   "statementBelowTable": null,
    "realistic": {
     "verdict": "Real, recurring cost",
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",

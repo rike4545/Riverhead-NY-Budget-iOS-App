@@ -5,7 +5,7 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-06-16 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Where the budget table the Board adopted puts a different figure on a fund's Appropriated Fund Balance account, the table's figure is used, because the vote is the appropriation, and section G's is shown beside it. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 66,
   "markedNo": 55,
@@ -312,6 +312,15 @@
    ],
    "statedCost": null,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "A01-9999-000-00000-0",
+     "fund": "A01",
+     "name": "Assigned Unappropriated Fund Balance \u2013 CBF - Nextera Easement Phase 1",
+     "amount": 17972.55,
+     "row": "A01-9999-000-00000-0 Assigned Unappropriated Fund Balance \u2013 CBF - Nextera Easement Phase 1 $17,972.55"
+    }
+   ],
    "realistic": {
     "verdict": "No new cost \u2014 the project is closed",
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
@@ -810,6 +819,15 @@
    ],
    "statedCost": null,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "A01-9999-000-00000-0",
+     "fund": "A01",
+     "name": "Assigned Unappropriated Fund Balance \u2013 CBF - Nextera Phase 2",
+     "amount": 1500.0,
+     "row": "A01-9999-000-00000-0 Assigned Unappropriated Fund Balance \u2013 CBF - Nextera Phase 2 $1,500.00"
+    }
+   ],
    "realistic": {
     "verdict": "No new cost \u2014 the project is closed",
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",

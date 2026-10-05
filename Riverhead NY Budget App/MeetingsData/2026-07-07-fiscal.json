@@ -110,7 +110,16 @@
     }
    ],
    "statedCost": null,
-   "statementBelowTable": null
+   "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "EW1-9999-000-00000-0",
+     "fund": "EW1",
+     "name": "Appropriated Fund Balance",
+     "amount": 14368.0,
+     "row": "EW1-9999-000-00000-0 Appropriated Fund Balance $14,368.00"
+    }
+   ]
   },
   {
    "number": "2026-634",
@@ -526,7 +535,16 @@
     }
    ],
    "statedCost": null,
-   "statementBelowTable": null
+   "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "SL1-9999-000-00000-0",
+     "fund": "SL1",
+     "name": "Appropriated Fund Balance",
+     "amount": 257000.0,
+     "row": "SL1-9999-000-00000-0 - Appropriated Fund Balance $ 257,000.00"
+    }
+   ]
   },
   {
    "number": "2026-639",
@@ -613,7 +631,16 @@
     }
    ],
    "statedCost": null,
-   "statementBelowTable": null
+   "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "CM2-9999-000-00000-0",
+     "fund": "CM2",
+     "name": "Appropriated Fund Balance",
+     "amount": 60000.0,
+     "row": "CM2-9999-000-00000-0 Appropriated Fund Balance $ 60,000.00"
+    }
+   ]
   },
   {
    "number": "2026-640",
@@ -892,7 +919,16 @@
     }
    ],
    "statedCost": null,
-   "statementBelowTable": null
+   "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "CM4-9999-000-00000-0",
+     "fund": "CM4",
+     "name": "Appropriated Fund Balance",
+     "amount": 7212941.0,
+     "row": "CM4-9999-000-00000-0 Appropriated Fund Balance $ 7,212,941.00"
+    }
+   ]
   },
   {
    "number": "2026-643",
@@ -1207,7 +1243,23 @@
     }
    ],
    "statedCost": null,
-   "statementBelowTable": null
+   "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "A01-9999-000-00000-0",
+     "fund": "A01",
+     "name": "Assigned Fund Balance",
+     "amount": 48128.53,
+     "row": "A01-9999-000-00000-0 \u2013 Assigned Fund Balance $48,128.53"
+    },
+    {
+     "code": "A01-9999-000-00000-0",
+     "fund": "A01",
+     "name": "Appropriated Fund Balance",
+     "amount": 31871.47,
+     "row": "A01-9999-000-00000-0 - Appropriated Fund Balance $31,871.47"
+    }
+   ]
   },
   {
    "number": "2026-646",

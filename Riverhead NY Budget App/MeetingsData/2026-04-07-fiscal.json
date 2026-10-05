@@ -5,7 +5,7 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-04-07 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Where the budget table the Board adopted puts a different figure on a fund's Appropriated Fund Balance account, the table's figure is used, because the vote is the appropriation, and section G's is shown beside it. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 95,
   "markedNo": 63,
@@ -700,6 +700,15 @@
    ],
    "statedCost": null,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "Z14-9999-000-00000-0",
+     "fund": "Z14",
+     "name": "Fund Balance",
+     "amount": 30000.0,
+     "row": "Z14-9999-000-00000-0 \u2013 Fund Balance $30,000.00"
+    }
+   ],
    "realistic": {
     "verdict": "Draws fund balance \u2014 stated on the Town's own form",
     "reason": "Section G charges $30,000 to Appropriated Fund Balance in the Calverton Parks Community Development Agency. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
@@ -1233,6 +1242,15 @@
    ],
    "statedCost": 399625.0,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "DA1-9999-000-00000-0",
+     "fund": "DA1",
+     "name": "Appropriated Fund Balance",
+     "amount": 399625.0,
+     "row": "DA1-9999-000-00000-0 - Appropriated Fund Balance $ 399,625.00"
+    }
+   ],
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -1304,6 +1322,15 @@
    ],
    "statedCost": 256395.0,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "DA1-9999-000-00000-0",
+     "fund": "DA1",
+     "name": "Appropriated Fund Balance",
+     "amount": 256395.0,
+     "row": "DA1-9999-000-00000-0 - Appropriated Fund Balance $ 256,395.00"
+    }
+   ],
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
@@ -1375,6 +1402,15 @@
    ],
    "statedCost": 248270.0,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "DA1-9999-000-00000-0",
+     "fund": "DA1",
+     "name": "Appropriated Fund Balance",
+     "amount": 248270.0,
+     "row": "DA1-9999-000-00000-0 - Appropriated Fund Balance $ 248,270.00"
+    }
+   ],
    "realistic": {
     "verdict": "Understated \u2014 'absorbed by existing budget'",
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",

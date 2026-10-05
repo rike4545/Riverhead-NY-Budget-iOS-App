@@ -5,20 +5,20 @@
   "title": "Town of Riverhead Town Board Agenda Packet, 2026-08-18 (Fiscal Impact Statements)",
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
- "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
+ "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Where the budget table the Board adopted puts a different figure on a fund's Appropriated Fund Balance account, the table's figure is used, because the vote is the appropriation, and section G's is shown beside it. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
   "total": 49,
   "markedNo": 37,
   "markedYes": 12,
   "understated": 21,
   "understatedMarkedNo": 15,
-  "identifiedDollarsAtStake": 1074721.82,
+  "identifiedDollarsAtStake": 1204721.82,
   "pricedResolutions": 4,
   "largestUnderstatedMarkedNo": null,
   "withAccounts": 12,
   "accountEvidence": 8,
   "fundBalanceDraws": 3,
-  "fundBalanceDrawTotal": 321284.25,
+  "fundBalanceDrawTotal": 451284.25,
   "statedCostResolutions": 2,
   "statementBelowTable": 1,
   "statedCostMarkedNo": 1,
@@ -36,7 +36,7 @@
    "category": "capital",
    "townFiscalImpact": "Yes",
    "townTreatment": "absorbed",
-   "amount": 150000.0,
+   "amount": 280000.0,
    "funding": {
     "source": "fund-balance",
     "sources": [
@@ -101,9 +101,18 @@
     "statement": 150000.0,
     "table": 280000.0
    },
+   "tableFundBalance": [
+    {
+     "code": "A01-9999-000-00000-0",
+     "fund": "A01",
+     "name": "Appropriated Fund Balance",
+     "amount": 280000.0,
+     "row": "A01-9999-000-00000-0 Appropriated Fund Balance $280,000"
+    }
+   ],
    "realistic": {
     "verdict": "Draws fund balance \u2014 stated on the Town's own form",
-    "reason": "Section G charges $150,000 to Appropriated Fund Balance in the General Fund. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
+    "reason": "The budget table the Board adopted moves $280,000 out of Appropriated Fund Balance in the General Fund; section G of the statement names $150,000. The vote is the appropriation, so the draw is $280,000. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
     "flag": "reserve-draw",
     "evidence": "account-code"
    },
@@ -182,6 +191,15 @@
    ],
    "statedCost": null,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "DA1-9999-000-00000-0",
+     "fund": "DA1",
+     "name": "Appropriated Fund Balance",
+     "amount": 171284.25,
+     "row": "DA1-9999-000-00000-0 Appropriated Fund Balance $171,284.25"
+    }
+   ],
    "realistic": {
     "verdict": "Draws fund balance \u2014 stated on the Town's own form",
     "reason": "Section G charges $171,284 to Appropriated Fund Balance in the Highway Fund. This is not an inference from the title: it is the account the Town wrote down, and every dollar of it is surplus that is no longer available for anything else.",
@@ -251,6 +269,15 @@
    ],
    "statedCost": 650000.0,
    "statementBelowTable": null,
+   "tableFundBalance": [
+    {
+     "code": "ES7-9999-000-00000-0",
+     "fund": "ES7",
+     "name": "Appropriated Fund Balance",
+     "amount": 650000.0,
+     "row": "ES7-9999-000-00000-0 Appropriated Fund Balance $650,000.00"
+    }
+   ],
    "realistic": {
     "verdict": "Understated \u2014 the form says 'no fiscal impact'",
     "reason": "A capital or debt item marked 'no fiscal impact' still moves money the Town must fund.",

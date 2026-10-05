@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-10-04",
+ "generatedAt": "2026-10-05",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -53,8 +53,264 @@
    "startDateTime": "2026-10-06T14:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": true,
-   "itemsSource": "published-agenda",
-   "docket": [],
+   "itemsSource": "published-agenda+official-calendar",
+   "docket": [
+    {
+     "seq": 1,
+     "number": "2026-878",
+     "title": "Ratifies Budget Adjustment for Improvements at Two Bears Park Capital Project #72515"
+    },
+    {
+     "seq": 2,
+     "number": "2026-879",
+     "title": "Ratifies Highway Department Budget Transfer for Emergency Storm Repairs"
+    },
+    {
+     "seq": 3,
+     "number": "2026-880",
+     "title": "Modifies Use of Existing Budget for Street Lighting Equipment"
+    },
+    {
+     "seq": 4,
+     "number": "2026-881",
+     "title": "Accepts Donation of Resurfacing for South Jamesport Basketball Court"
+    },
+    {
+     "seq": 5,
+     "number": "2026-882",
+     "title": "Accepts Donation from Riverhead Moose Lodge for PAL"
+    },
+    {
+     "seq": 6,
+     "number": "2026-883",
+     "title": "Accepts Anonymous Donations for The Recreation Department"
+    },
+    {
+     "seq": 7,
+     "number": "2026-884",
+     "title": "Ratifies Acceptance of Donations From Various Local Businesses For Annual Snapper Tournament - 2026"
+    },
+    {
+     "seq": 8,
+     "number": "2026-885",
+     "title": "Removes Fixed Assets"
+    },
+    {
+     "seq": 9,
+     "number": "2026-886",
+     "title": "Sets Fees For Riverhead Sewer District, Calverton Sewer District And Scavenger Waste"
+    },
+    {
+     "seq": 10,
+     "number": "2026-887",
+     "title": "Amends Fire Prevention Fees"
+    },
+    {
+     "seq": 11,
+     "number": "2026-888",
+     "title": "Authorizes the Attendance of One Police Department Employee to attend a Conference"
+    },
+    {
+     "seq": 12,
+     "number": "2026-889",
+     "title": "Authorizes the Promotion of a Police Officer to the Position of Detective Grade III"
+    },
+    {
+     "seq": 13,
+     "number": "2026-890",
+     "title": "Promotes a Police Officer to the Rank of Sergeant"
+    },
+    {
+     "seq": 14,
+     "number": "2026-891",
+     "title": "Appoints an Accountant"
+    },
+    {
+     "seq": 15,
+     "number": "2026-892",
+     "title": "Appoints an Automotive Equipment Operator to the Highway"
+    },
+    {
+     "seq": 16,
+     "number": "2026-893",
+     "title": "Appoints a Fire Marshal I"
+    },
+    {
+     "seq": 17,
+     "number": "2026-894",
+     "title": "Appoints a Detention Attendant to the Police Department"
+    },
+    {
+     "seq": 18,
+     "number": "2026-895",
+     "title": "Ratifies the Appointment of a Maintenance Mechanic II to the Engineering Department"
+    },
+    {
+     "seq": 19,
+     "number": "2026-896",
+     "title": "Appoints a Call-In Recreation Aide to the Recreation Department"
+    },
+    {
+     "seq": 20,
+     "number": "2026-897",
+     "title": "Appoints a Call-In Park Attendant to the Recreation Department"
+    },
+    {
+     "seq": 21,
+     "number": "2026-898",
+     "title": "Appoints Part-Time Code Enforcement Officer"
+    },
+    {
+     "seq": 22,
+     "number": "2026-899",
+     "title": "Ratifies the Appointment of a Part-Time Employee"
+    },
+    {
+     "seq": 23,
+     "number": "2026-900",
+     "title": "Amends Terms & Conditions for Recreation Superintendent"
+    },
+    {
+     "seq": 24,
+     "number": "2026-901",
+     "title": "Ratifies the Appointment of Part-time Police Officers and Places them on a Leave of Absence"
+    },
+    {
+     "seq": 25,
+     "number": "2026-902",
+     "title": "Ratifies the Resignation of an Automotive Equipment Operator"
+    },
+    {
+     "seq": 26,
+     "number": "2026-903",
+     "title": "Establishes Standard Work Day for Elected and Appointed Officials"
+    },
+    {
+     "seq": 27,
+     "number": "2026-904",
+     "title": "Ratifies the Authorization for the Police Department to Apply for a Grant"
+    },
+    {
+     "seq": 28,
+     "number": "2026-905",
+     "title": "Ratifies the Application of Community Development Division for Capital Grant Funding Through the NYS Assembly (Assemblywoman Giglio) for a Brush Fire Staging Area at Veterans Park at EPCAL"
+    },
+    {
+     "seq": 29,
+     "number": "2026-906",
+     "title": "Approves Rain Date Change for Chapter 255 Special Event Application for Wading River Shoreham Chamber of Commerce (Fall Festival)"
+    },
+    {
+     "seq": 30,
+     "number": "2026-907",
+     "title": "Authorization For An Appraisal of 1458 Middle Road, Calverton New York and Intellishift for Automated Vehicle Location and Monitoring"
+    },
+    {
+     "seq": 32,
+     "number": "2026-909",
+     "title": "Authorize Supervisor to Sign a Professional Services Agreement with GovPilot LLC d/b/a Spatial Data Logic, LLC"
+    },
+    {
+     "seq": 33,
+     "number": "2026-910",
+     "title": "Authorizes The Supervisor to Execute an Extension of License Agreement with Resideo LLC, formerly known as Ademco"
+    },
+    {
+     "seq": 34,
+     "number": "2026-911",
+     "title": "Authorizes the Supervisor to Execute an Addendum to an Agreement with LVF Landscape Architects, PLLC (Townsquare and Streetscapes Improvement)"
+    },
+    {
+     "seq": 35,
+     "number": "2026-912",
+     "title": "Amends Town Board Resolution 2026-277 - LVF Landscape Architects"
+    },
+    {
+     "seq": 36,
+     "number": "2026-913",
+     "title": "Ratifies Authorization for the Supervisor to sign a Memorandum Of Agreement For Eastern Suffolk BOCES Interns"
+    },
+    {
+     "seq": 37,
+     "number": "2026-914",
+     "title": "Extends Agreement Nunc Pro Tunc for Youngs Avenue Landfill Maintenance and Monitoring"
+    },
+    {
+     "seq": 38,
+     "number": "2026-915",
+     "title": "Awards Bid for One (1) New Altec Model AT40G Telescopic Articulating Aerial Device with ISO-Boom on 2028 Ford F550 Chassis, or Equal"
+    },
+    {
+     "seq": 39,
+     "number": "2026-916",
+     "title": "Extends Bid 2025-08 Nunc Pro Tunc for Street Light and Traffic Signal Maintenance Repair Parts"
+    },
+    {
+     "seq": 40,
+     "number": "2026-917",
+     "title": "Extends Bid 2025-28 Replacement of Large Meters for Riverhead Water District"
+    },
+    {
+     "seq": 41,
+     "number": "2026-918",
+     "title": "Extends Bid 2025-31 for Dowflake Extra 83-87% Calcium Chloride or Equal"
+    },
+    {
+     "seq": 42,
+     "number": "2026-919",
+     "title": "Extends Bid 2025-34 for Removal of Household Hazardous Waste"
+    },
+    {
+     "seq": 43,
+     "number": "2026-920",
+     "title": "Extends Bid 2025-39 for General Hardware Items"
+    },
+    {
+     "seq": 44,
+     "number": "2026-921",
+     "title": "Authorizes the Supervisor to Execute Easements for Suffolk County Tax Map #0600-86-2-8.2"
+    },
+    {
+     "seq": 45,
+     "number": "2026-922",
+     "title": "Authorizes the Town Clerk to Publish and Post Request for Proposals for Redevelopment and Operation of a Destination Attraction at 111 East Main Street, Riverhead, NY"
+    },
+    {
+     "seq": 46,
+     "number": "2026-923",
+     "title": "Authorizes Town Clerk To Publish And Post Notice Of Public Hearing To Consider The Adoption Of The 2027 Preliminary Annual Budget For The Town Of Riverhead"
+    },
+    {
+     "seq": 47,
+     "number": "2026-924",
+     "title": "Resolution Calling Public Hearing Regarding A Capital Improvement For The Proposed Lateral Water Main Extension At 1001 Scott Avenue, District 0600 Section 135.10 Block 01 Lot 001, Calverton, New York"
+    },
+    {
+     "seq": 48,
+     "number": "2026-925",
+     "title": "Adopts a Local Law to Amend Chapter 115 of the Riverhead Town Code titled \u201cProcurement Policy\u201d"
+    },
+    {
+     "seq": 49,
+     "number": "2026-926",
+     "title": "Adopts a Local Law to Amend Chapter 231 of the Riverhead Town Code Titled \u201cFire Prevention\u201d, Article XIII \u201cFireworks and Pyrotechnics Displays\u201d"
+    },
+    {
+     "seq": 50,
+     "number": "2026-927",
+     "title": "Adopts a Local Law to Amend Chapter 255 of the Riverhead Town Code titled \u201cParades, Assemblies, and Block Parties\u201d, Article II \u201cSpecial Events\u201d"
+    },
+    {
+     "seq": 51,
+     "number": "2026-928",
+     "title": "Pays Bills"
+    },
+    {
+     "seq": 52,
+     "number": "2026-929",
+     "title": "Determines, as Host Community, that Upon Consideration and Application of the Monroe Balancing Test, the Suffolk County Water Authority Project Known and Referred to as \u201cThe North Fork Transmission Line (nftl) Draft Environmental Impact Statement Described \u201cPreferred Alternative\u201d Route Via Main Road Shall not be Immune from Riverhead Town Zoning and Land Use Laws, Codes and/or Regulations"
+    }
+   ],
    "hearings": [
     "2:00 PM- Public Hearing- Community Block Grant (CDBG)",
     "2:15 PM- Public Hearing- Amend Chapter 289, Art.II, Vehicle,Traffic and Parking Regulations",

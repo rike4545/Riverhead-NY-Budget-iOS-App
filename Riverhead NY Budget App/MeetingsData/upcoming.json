@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-10-05",
+ "generatedAt": "2026-10-06",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -35,18 +35,6 @@
   "2026-12-15"
  ],
  "recent": [
-  {
-   "slug": "2026-09-24",
-   "date": "2026-09-24",
-   "startDateTime": "2026-09-24T10:00:00Z",
-   "type": "Special Town Board Meeting",
-   "agendaPublished": true,
-   "itemsSource": null,
-   "docket": [],
-   "hearings": []
-  }
- ],
- "meetings": [
   {
    "slug": "2026-10-06",
    "date": "2026-10-06",
@@ -318,6 +306,18 @@
     "Amend Chapter 289 - Vehicles, Traffic and Parking, Art.II"
    ]
   },
+  {
+   "slug": "2026-09-24",
+   "date": "2026-09-24",
+   "startDateTime": "2026-09-24T10:00:00Z",
+   "type": "Special Town Board Meeting",
+   "agendaPublished": true,
+   "itemsSource": null,
+   "docket": [],
+   "hearings": []
+  }
+ ],
+ "meetings": [
   {
    "slug": "2026-10-20",
    "date": "2026-10-20",

@@ -142,7 +142,7 @@ struct OfficialsParityContractTests {
     /// did nothing at all would pass.
     @Test func orderingFollowsTheWebPageAndIsStableWithinAStatus() {
         let scrambled = ["review", "none", "pension", "active", "none", "unconfirmed", "pension"]
-        let sorted = OfficialsParityOrdering.sorted(scrambled.map(Self.stub))
+        let sorted = OfficialsParityOrdering.sorted(scrambled.map { Self.stub($0) })
         #expect(sorted.map(\.status) == ["pension", "pension", "unconfirmed", "active", "none", "none", "review"])
 
         // The web page relies on JavaScript's sort being stable, so two officials
@@ -157,7 +157,7 @@ struct OfficialsParityContractTests {
     /// Sorting it last is the deliberate difference, and the label falls back to
     /// the raw code so the badge is never empty.
     @Test func unknownStatusSortsLastAndKeepsItsCodeAsALabel() throws {
-        let rows = ["housing", "pension", "review"].map(Self.stub)
+        let rows = ["housing", "pension", "review"].map { Self.stub($0) }
         #expect(OfficialsParityOrdering.sorted(rows).map(\.status) == ["pension", "review", "housing"])
 
         let d = try Self.decoded()
@@ -188,6 +188,10 @@ struct OfficialsParityContractTests {
         #expect(d.officials.count == 5)
     }
 
+    /// Call sites use `.map { Self.stub($0) }` rather than `.map(Self.stub)`:
+    /// Swift does not apply default arguments when a function is referenced as a
+    /// value, so the bare reference has type `(String, String) -> Official` and
+    /// does not type-check against `map`.
     private static func stub(_ status: String, name: String = "stub") -> OfficialsParityDocument.Official {
         let json = """
         {"name":"\(name)","office":"o","party":"R","status":"\(status)",

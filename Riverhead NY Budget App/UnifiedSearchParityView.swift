@@ -830,14 +830,9 @@ struct NativeUnifiedSearchView: View {
 
 private extension View {
     func searchParityCard() -> some View {
-        self
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .strokeBorder(RiverheadTheme.border.opacity(0.35), lineWidth: 0.8)
-            )
+        // Delegates to the shared card so every screen in the app matches
+        // and Reduce Transparency is honoured in one place.
+        riverheadCard()
     }
 }
 

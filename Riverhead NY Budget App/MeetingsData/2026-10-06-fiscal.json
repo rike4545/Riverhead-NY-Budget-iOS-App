@@ -100,7 +100,12 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-879",
@@ -206,7 +211,12 @@
     "flag": "reserve-draw",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-880",
@@ -252,7 +262,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-881",
@@ -291,7 +306,12 @@
     "flag": "neutral",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-882",
@@ -368,7 +388,12 @@
     "flag": "neutral",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-883",
@@ -445,7 +470,12 @@
     "flag": "neutral",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-884",
@@ -522,7 +552,12 @@
     "flag": "neutral",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-885",
@@ -561,7 +596,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-886",
@@ -673,7 +713,12 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-887",
@@ -712,7 +757,12 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-888",
@@ -760,7 +810,12 @@
     "flag": "small-cost",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-889",
@@ -815,7 +870,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-890",
@@ -870,7 +930,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-891",
@@ -930,7 +995,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-892",
@@ -990,7 +1060,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-893",
@@ -1050,7 +1125,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-894",
@@ -1112,7 +1192,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-895",
@@ -1172,7 +1257,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-896",
@@ -1218,7 +1308,12 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-897",
@@ -1278,7 +1373,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-898",
@@ -1338,7 +1438,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-899",
@@ -1398,7 +1503,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-900",
@@ -1464,7 +1574,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-901",
@@ -1519,7 +1634,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-902",
@@ -1558,7 +1678,12 @@
     "flag": "saving",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-903",
@@ -1597,7 +1722,12 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-904",
@@ -1649,7 +1779,12 @@
     "flag": "neutral",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-905",
@@ -1701,7 +1836,12 @@
     "flag": "neutral",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-906",
@@ -1740,7 +1880,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-907",
@@ -1806,7 +1951,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-908",
@@ -1845,7 +1995,12 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-909",
@@ -1884,7 +2039,12 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-910",
@@ -1923,7 +2083,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-911",
@@ -1985,7 +2150,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-912",
@@ -2055,7 +2225,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-913",
@@ -2094,7 +2269,12 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-914",
@@ -2147,7 +2327,12 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-915",
@@ -2200,7 +2385,12 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-916",
@@ -2253,7 +2443,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-917",
@@ -2306,7 +2501,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-918",
@@ -2370,7 +2570,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-919",
@@ -2423,7 +2628,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-920",
@@ -2487,7 +2697,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-921",
@@ -2526,7 +2741,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "split",
+    "ayes": 4,
+    "nays": 1
+   }
   },
   {
    "number": "2026-922",
@@ -2565,7 +2785,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-923",
@@ -2604,7 +2829,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-924",
@@ -2662,7 +2892,12 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-925",
@@ -2701,7 +2936,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-926",
@@ -2740,7 +2980,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-927",
@@ -2779,7 +3024,12 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-928",
@@ -2818,7 +3068,12 @@
     "flag": "disbursement",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-929",
@@ -2857,7 +3112,12 @@
     "flag": "saving",
     "evidence": "category"
    },
-   "vote": null
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   }
  ]
 }

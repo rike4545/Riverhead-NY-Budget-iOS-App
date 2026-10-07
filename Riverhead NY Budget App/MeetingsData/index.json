@@ -4,28 +4,44 @@
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
  "totals": {
-  "meetings": 49,
-  "votes": 2084,
+  "meetings": 50,
+  "votes": 2136,
   "contested": 43,
-  "failed": 3,
-  "tabled": 11
+  "failed": 2,
+  "tabled": 10
  },
  "meetings": [
+  {
+   "slug": "2026-10-06",
+   "date": "October 6, 2026",
+   "type": "Regular Meeting",
+   "total": 52,
+   "unanimous": 51,
+   "contested": 1,
+   "failed": 0,
+   "tabled": 0,
+   "officialRecordStatus": "vote-record-parsed",
+   "voteSource": "minutes",
+   "minutesRevisionCount": 0,
+   "verifiedResolutionCount": 0,
+   "resolutionSourceCount": 0,
+   "sourceVersionAt": "2026-10-07T19:06:16Z"
+  },
   {
    "slug": "2026-09-15",
    "date": "September 15, 2026",
    "type": "Regular Meeting",
    "total": 37,
-   "unanimous": 35,
+   "unanimous": 36,
    "contested": 1,
    "failed": 0,
-   "tabled": 1,
-   "voteSource": "agenda-packet",
+   "tabled": 0,
    "officialRecordStatus": "vote-record-parsed",
-   "minutesRevisionCount": 0,
+   "voteSource": "minutes",
+   "minutesRevisionCount": 1,
    "verifiedResolutionCount": 0,
    "resolutionSourceCount": 0,
-   "sourceVersionAt": "2026-09-16T17:19:31Z"
+   "sourceVersionAt": "2026-10-07T19:06:15Z"
   },
   {
    "slug": "2026-09-01",
@@ -36,28 +52,28 @@
    "contested": 1,
    "failed": 0,
    "tabled": 0,
-   "voteSource": "agenda-packet",
    "officialRecordStatus": "vote-record-parsed",
-   "minutesRevisionCount": 1,
+   "voteSource": "minutes",
+   "minutesRevisionCount": 2,
    "verifiedResolutionCount": 0,
    "resolutionSourceCount": 0,
-   "sourceVersionAt": "2026-09-08T16:56:16Z"
+   "sourceVersionAt": "2026-10-07T19:06:15Z"
   },
   {
    "slug": "2026-08-18",
    "date": "August 18, 2026",
    "type": "Regular Meeting",
    "total": 49,
-   "unanimous": 48,
-   "contested": 1,
-   "failed": 1,
+   "unanimous": 49,
+   "contested": 0,
+   "failed": 0,
    "tabled": 0,
-   "voteSource": "agenda-packet",
    "officialRecordStatus": "vote-record-parsed",
-   "minutesRevisionCount": 1,
+   "voteSource": "minutes",
+   "minutesRevisionCount": 2,
    "verifiedResolutionCount": 0,
    "resolutionSourceCount": 0,
-   "sourceVersionAt": "2026-09-08T16:56:10Z"
+   "sourceVersionAt": "2026-10-07T19:06:14Z"
   },
   {
    "slug": "2026-08-04",
@@ -84,12 +100,12 @@
    "contested": 0,
    "failed": 0,
    "tabled": 0,
-   "voteSource": "agenda-packet",
    "officialRecordStatus": "vote-record-parsed",
-   "minutesRevisionCount": 1,
+   "voteSource": "minutes",
+   "minutesRevisionCount": 2,
    "verifiedResolutionCount": 0,
    "resolutionSourceCount": 0,
-   "sourceVersionAt": "2026-09-08T16:56:04Z"
+   "sourceVersionAt": "2026-10-07T19:06:13Z"
   },
   {
    "slug": "2026-07-07",

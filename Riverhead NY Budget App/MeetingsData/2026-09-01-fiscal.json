@@ -114,7 +114,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -171,7 +171,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -215,7 +215,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -259,7 +259,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -303,7 +303,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -347,7 +347,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -391,7 +391,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -435,7 +435,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -479,7 +479,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -523,7 +523,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -567,7 +567,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -611,7 +611,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -655,7 +655,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -699,7 +699,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -750,7 +750,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -808,7 +808,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -852,7 +852,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -896,7 +896,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -955,7 +955,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1024,7 +1024,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1068,7 +1068,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1112,7 +1112,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1156,7 +1156,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1200,7 +1200,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1243,8 +1243,8 @@
    "vote": {
     "adopted": true,
     "tag": "split",
-    "ayes": null,
-    "nays": null
+    "ayes": 4,
+    "nays": 1
    }
   },
   {
@@ -1301,7 +1301,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   },
   {
@@ -1345,7 +1345,7 @@
     "adopted": true,
     "tag": "unanimous",
     "ayes": null,
-    "nays": null
+    "nays": 0
    }
   }
  ]

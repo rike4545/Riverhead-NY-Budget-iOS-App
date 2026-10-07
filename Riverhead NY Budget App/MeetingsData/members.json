@@ -19,7 +19,7 @@
    ],
    "moved": 0,
    "seconded": 0,
-   "meetingsVoted": 18,
+   "meetingsVoted": 19,
    "dissents": [
     {
      "slug": "2026-04-07",
@@ -47,7 +47,14 @@
      "date": "September 1, 2026",
      "number": "2026-838",
      "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Installation of Water Mains & Appurtenances \u2013 Summerwind - Riverhead Water District",
-     "result": "Adopted"
+     "result": "ADOPTED [4 - 1]"
+    },
+    {
+     "slug": "2026-10-06",
+     "date": "October 6, 2026",
+     "number": "2026-921",
+     "title": "Authorizes the Supervisor to Execute Easements for Suffolk County Tax Map #0600-86-2-8.2",
+     "result": "ADOPTED [4 - 1]"
     }
    ],
    "abstentions": [
@@ -68,17 +75,17 @@
    ],
    "byYear": {
     "2026": {
-     "aye": 870,
+     "aye": 921,
      "abstain": 2,
-     "nay": 4
+     "nay": 5
     }
    },
    "career": {
-    "aye": 870,
+    "aye": 921,
     "abstain": 2,
-    "nay": 4
+    "nay": 5
    },
-   "ayePct": 99.3
+   "ayePct": 99.2
   },
   {
    "key": "Merrifield",
@@ -92,9 +99,9 @@
     "2025",
     "2026"
    ],
-   "moved": 491,
-   "seconded": 497,
-   "meetingsVoted": 45,
+   "moved": 503,
+   "seconded": 511,
+   "meetingsVoted": 46,
    "dissents": [
     {
      "slug": "2024-01-03",
@@ -201,16 +208,16 @@
      "abstain": 2
     },
     "2026": {
-     "aye": 875,
+     "aye": 927,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 1972,
+    "aye": 2024,
     "nay": 10,
     "abstain": 3
    },
-   "ayePct": 99.3
+   "ayePct": 99.4
   },
   {
    "key": "Waski",
@@ -224,9 +231,9 @@
     "2025",
     "2026"
    ],
-   "moved": 479,
-   "seconded": 495,
-   "meetingsVoted": 45,
+   "moved": 492,
+   "seconded": 507,
+   "meetingsVoted": 46,
    "dissents": [
     {
      "slug": "2025-01-07",
@@ -262,15 +269,15 @@
      "nay": 2
     },
     "2026": {
-     "aye": 876
+     "aye": 928
     }
    },
    "career": {
-    "aye": 1982,
+    "aye": 2034,
     "abstain": 1,
     "nay": 2
    },
-   "ayePct": 99.8
+   "ayePct": 99.9
   },
   {
    "key": "Rothwell",
@@ -286,9 +293,9 @@
     "2025",
     "2026"
    ],
-   "moved": 539,
-   "seconded": 498,
-   "meetingsVoted": 45,
+   "moved": 552,
+   "seconded": 511,
+   "meetingsVoted": 46,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -374,14 +381,14 @@
      "absent": 1
     },
     "2026": {
-     "aye": 871,
+     "aye": 923,
      "abstain": 3,
      "nay": 1,
      "absent": 1
     }
    },
    "career": {
-    "aye": 2037,
+    "aye": 2089,
     "nay": 5,
     "abstain": 4,
     "absent": 2
@@ -402,9 +409,9 @@
     "2025",
     "2026"
    ],
-   "moved": 510,
-   "seconded": 535,
-   "meetingsVoted": 45,
+   "moved": 524,
+   "seconded": 547,
+   "meetingsVoted": 46,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -502,7 +509,7 @@
      "date": "September 15, 2026",
      "number": "2026-859",
      "title": "Authorizes Commencement of Action - 47 Bayside Avenue",
-     "result": "Adopted"
+     "result": "ADOPTED [4 - 1]"
     }
    ],
    "abstentions": [
@@ -531,14 +538,14 @@
      "nay": 7
     },
     "2026": {
-     "aye": 869,
+     "aye": 921,
      "nay": 5,
      "absent": 1,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 2039,
+    "aye": 2091,
     "nay": 14,
     "absent": 1,
     "abstain": 1

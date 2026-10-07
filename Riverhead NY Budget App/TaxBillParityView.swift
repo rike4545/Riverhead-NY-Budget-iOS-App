@@ -366,13 +366,8 @@ struct NativeTaxBillParityView: View {
 
 private extension View {
     func parityCard() -> some View {
-        self
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .strokeBorder(Color(uiColor: .separator).opacity(0.22))
-            )
+        // Delegates to the shared card so every screen in the app matches
+        // and Reduce Transparency is honoured in one place.
+        riverheadCard()
     }
 }

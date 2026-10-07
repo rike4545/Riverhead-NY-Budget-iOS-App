@@ -40,6 +40,9 @@ jobs:
           echo "udid=$udid" >> "$GITHUB_OUTPUT"
           echo "Simulator: $udid"
 
+      - name: Boot the simulator
+        run: bash .github/scripts/boot-simulator.sh "${{ steps.dest.outputs.udid }}"
+
       - name: Build and run unit tests
         run: |
           set -euo pipefail
@@ -88,6 +91,9 @@ jobs:
           set -euo pipefail
           udid="$(bash .github/scripts/pick-destination.sh "$PROJECT" "$SCHEME")"
           echo "udid=$udid" >> "$GITHUB_OUTPUT"
+
+      - name: Boot the simulator
+        run: bash .github/scripts/boot-simulator.sh "${{ steps.dest.outputs.udid }}"
 
       - name: Run UI tests
         run: |

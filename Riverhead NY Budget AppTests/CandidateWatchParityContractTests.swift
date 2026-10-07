@@ -146,7 +146,14 @@ struct CandidateWatchParityContractTests {
         #expect(d.legend.bold == "Active Candidate")
         #expect(d.legend.asterisk == "Incumbent")
         #expect(!d.legend.note.isEmpty)
-        #expect(d.races[0].candidates.allSatisfy(\.active))
+        // Hoisted out of #expect deliberately. The macro decomposes its
+        // outermost call to build a failure message, and when that call is a
+        // `rethrows` method taking a closure the expansion loses its
+        // non-throwing-ness: `$0.allSatisfy($1)` then "can throw, but it is
+        // not marked with 'try'". Nested under an operator it is fine, which
+        // is why `map(\.status) == [...]` compiles elsewhere in these tests.
+        let everyCandidateIsActive = d.races[0].candidates.allSatisfy(\.active)
+        #expect(everyCandidateIsActive)
     }
 
     @Test func campaignLinksAreUsableURLs() throws {

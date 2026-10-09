@@ -29,6 +29,7 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/town-history/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/officials/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/candidate-watch/"))
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/tax-cap/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/payroll/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/search/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/meetings/"))

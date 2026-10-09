@@ -198,8 +198,15 @@ struct NativeCandidateWatchParityView: View {
                 keyDates(data.electionCalendar)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("**Only the Supervisor seat is on this ballot.** \(data.noRaceNote)")
+                    Text("Only the Supervisor seat is on this ballot.")
+                        .font(.caption.weight(.bold))
+                        .fixedSize(horizontal: false, vertical: true)
+                    // Not interpolated into a literal: that would make this a
+                    // LocalizedStringKey and markdown-parse the note, which is
+                    // free prose carried in the published document.
+                    Text(data.noRaceNote)
                         .font(.caption)
+                        .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .riverheadCard(accentEdge: .orange)
@@ -220,7 +227,7 @@ struct NativeCandidateWatchParityView: View {
                 // would be inventing it — a two-seat council race would print
                 // the wrong number. The election date is read from the
                 // calendar rather than hardcoded, for the same reason.
-                Text("\(race.candidates.count) candidates · Election \(calendar.generalElection)")
+                Text(String(race.candidates.count) + " candidates · Election " + calendar.generalElection)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }

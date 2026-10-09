@@ -52,6 +52,7 @@ enum BudgetLiveParityCatalog {
         "/town-history/",
         "/officials/",
         "/candidate-watch/",
+        "/tax-cap/",
         "/search/",
         "/meetings/",
         "/funds/",
@@ -204,6 +205,8 @@ struct BudgetLiveParityView: View {
             NativeOfficialsParityView()
         case "/candidate-watch/":
             NativeCandidateWatchParityView()
+        case "/tax-cap/":
+            NativeTaxCapParityView()
         case "/payroll/":
             NativePayrollParityView()
         case "/search/":

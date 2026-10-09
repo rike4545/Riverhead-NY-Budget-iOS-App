@@ -175,6 +175,42 @@ struct TaxCapParityContractTests {
     /// The finding of the page: every year on record is above the limit. The
     /// statuses differ only in whether an override law was adopted, so green
     /// means lawful rather than within the limit.
+    /// allSatisfy is vacuously true on an empty collection, so without a
+    /// guard an empty capStatus would render a compliance claim drawn from no
+    /// records at all — on the screen whose whole premise is provenance.
+    @Test func anEmptyRecordMakesNoComplianceClaim() throws {
+        let json = #"""
+        {"title":"t",
+         "capBasics":{"law":"l","limit":"li","override":"o"},
+         "finding":{"headline":"h","cause":"c","auditQuote":"q","correction":"r","correctionQuoteYear":2023},
+         "implications":[],
+         "levyContext":{"note":"n","rows":[]},
+         "capStatus":[],
+         "sources":[]}
+        """#
+        let empty = try JSONDecoder().decode(TaxCapParityDocument.self, from: Data(json.utf8))
+        #expect(empty.capStatus.isEmpty)
+        let claims = empty.everyYearIsAboveTheLimit
+        #expect(!claims)
+    }
+
+    /// Nothing renders this field, so dropping it on the web side must not
+    /// take the native screen down to a web view.
+    @Test func aMissingUnrenderedFieldStillDecodes() throws {
+        let json = #"""
+        {"title":"t",
+         "capBasics":{"law":"l","limit":"li","override":"o"},
+         "finding":{"headline":"h","cause":"c","auditQuote":"q","correction":"r"},
+         "implications":[],
+         "levyContext":{"note":"n","rows":[]},
+         "capStatus":[],
+         "sources":[]}
+        """#
+        let d = try JSONDecoder().decode(TaxCapParityDocument.self, from: Data(json.utf8))
+        #expect(d.finding.correctionQuoteYear == nil)
+        #expect(d.finding.headline == "h")
+    }
+
     @Test func everyRecordedYearIsAboveTheLimit() throws {
         let d = try Self.decoded()
         let allOver = d.everyYearIsAboveTheLimit
@@ -227,7 +263,8 @@ struct TaxCapParityContractTests {
     @Test func percentCarriesItsSignToTwoPlaces() {
         #expect(TaxCapFormatting.signedPercent(4.81) == "+4.81%")
         #expect(TaxCapFormatting.signedPercent(-3.10) == "-3.10%")
-        #expect(TaxCapFormatting.signedPercent(0) == "+0.00%")
+        // A flat year is not an increase, so it gets no plus sign.
+        #expect(TaxCapFormatting.signedPercent(0) == "0.00%")
     }
 
     /// 2022 is the auditor-confirmed year the Town exceeded the limit, and its

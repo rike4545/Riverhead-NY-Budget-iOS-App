@@ -25,22 +25,37 @@ have already been rewritten as native SwiftUI screens.
 
 ## Native routes in the parity hub
 
-The first native parity slice is now active:
+16 of 45 routes render natively. This list is generated from
+`BudgetLiveParityCatalog.nativePaths` and the `parityDestination` switch; it
+went twelve routes stale once, so update it in the same commit that adds a
+route.
 
-- `/funds/` → `FundDetailExplorerView` / `FundDetailView`
-- `/programs/` → `NativeProgramBudgetView`
-- `/compare/` → `NativeBudgetCompareView`
-- `/general-fund/` → `NativeGeneralFundHistoryView`
+- `/tax-bill/` → `NativeTaxBillParityView` — My Taxes
+- `/payroll/` → `NativePayrollParityView` — Payroll
+- `/road-spending/` → `NativeRoadSpendingParityView` — Road Spending
+- `/town-history/` → `NativeTownHistoryParityView` — Supervisors & Council History
+- `/officials/` → `NativeOfficialsParityView` — Officials & Pensions
+- `/candidate-watch/` → `NativeCandidateWatchParityView` — Candidate Watch
+- `/tax-cap/` → `NativeTaxCapParityView` — Tax Cap
+- `/search/` → `NativeUnifiedSearchView` — Search
+- `/meetings/` → `TownBoardVotesView` — Board Votes
+- `/funds/` → `FundDetailExplorerView` — Budget Overview
+- `/programs/` → `NativeProgramBudgetView` — Program Budget
+- `/compare/` → `NativeBudgetCompareView` — Budget Compare
+- `/general-fund/` → `NativeGeneralFundHistoryView` — General Fund
+- `/workforce-by-title/` → `WorkforceByTitleView` — Workforce by Title
+- `/board-elections/` → `NativeBoardElectionsParityView` — Board Elections
+- `/outliers/` → `NativeOutlierWatchView` — Outlier Watch
 
-`/compare/` and `/general-fund/` decode the same normalized history JSON files
-consumed by the web app rather than maintaining a separate Swift copy of the
-web calculations.
+The later routes follow one pattern: fetch the web app's own published JSON
+over HTTPS, decode it, render natively, and fall back to the live page if the
+fetch fails. Nothing restates the web app's content in Swift, so the two
+cannot drift. Where a page's content lives only in its TypeScript markup
+rather than in a published file, that is recorded in the route's own source
+as either mirrored or deliberately omitted.
 
-`/programs/` follows the same rule. Its material allocation logic remains in
-`web/lib/programs.ts`; web PR #41 publishes those already-computed values as a
-static `/data/programs.json` contract. Until that asset is deployed, the native
-Program Budget screen automatically falls back to the live web page instead of
-breaking access.
+Cards come from `riverheadCard()` in `RiverheadCard.swift`, not per-file
+copies; radii come from `RiverheadTheme.Radius`.
 
 ## Existing native coverage
 

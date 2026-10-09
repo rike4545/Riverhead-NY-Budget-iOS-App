@@ -22,7 +22,7 @@ struct TaxCapParityDocument: Decodable, Sendable {
 
     struct CapBasics: Decodable, Sendable {
         /// The statute and who publishes the formula. The web page does not
-        /// render this one; see the note on `lawIsRenderedHereButNotOnTheWeb`.
+        /// render this field; `whatTheCapLimits(_:)` says why this view does.
         let law: String
         let limit: String
         let override: String
@@ -36,7 +36,11 @@ struct TaxCapParityDocument: Decodable, Sendable {
         /// 2023, which the `correction` sentence already states in words.
         /// Decoded so the document round-trips; not rendered, because printing
         /// it beside that sentence would just repeat it.
-        let correctionQuoteYear: Int
+        ///
+        /// Optional precisely because nothing renders it: a web-side cleanup
+        /// dropping an unused key should not take the whole native screen down
+        /// to a web view.
+        let correctionQuoteYear: Int?
     }
 
     struct Implication: Decodable, Sendable {
@@ -81,7 +85,10 @@ struct TaxCapParityDocument: Decodable, Sendable {
     /// differ only in whether an override law was adopted. The summary line is
     /// derived rather than asserted, so it cannot be wrong if a year is added.
     var everyYearIsAboveTheLimit: Bool {
-        capStatus.allSatisfy { $0.status.hasPrefix("over") }
+        // The emptiness check is the point: allSatisfy is vacuously true on an
+        // empty collection, and this sentence is a claim about a town's
+        // statutory compliance. With no records it must not be made at all.
+        !capStatus.isEmpty && capStatus.allSatisfy { $0.status.hasPrefix("over") }
     }
 
     /// The two series cover different years and must never be joined. 2023 and
@@ -123,8 +130,12 @@ enum TaxCapStatus {
 /// will not follow an edit on the web side, and that is the trade.
 ///
 /// It is carried because it is the page's actual argument: the familiar 2% is
-/// one input among seven, and a reader who takes 2% as the limit has the wrong
-/// model of how the cap works.
+/// one input among several, and a reader who takes 2% as the limit has the
+/// wrong model of how the cap works.
+///
+/// This app also implements the sequence executably, in NYTaxCapInputs. These
+/// steps are prose for a reader; that is arithmetic. If one changes, check the
+/// other.
 enum TaxCapFormula {
     struct Step: Identifiable, Sendable {
         let id: Int
@@ -152,11 +163,16 @@ enum TaxCapFormula {
 }
 
 enum TaxCapFormatting {
-    /// Whole dollars, as the web page formats this column. Built from the
-    /// integer's own grouping rather than a currency style so the output is
-    /// the same shape on every locale this app ships to.
+    /// Whole dollars, as the web page formats this column.
+    ///
+    /// The locale is pinned. IntegerFormatStyle defaults to the device locale,
+    /// so an unpinned `.number` prints "$36.254.400" in Germany and
+    /// "$3,62,54,400" in en_IN — a US municipal figure that reads as a decimal
+    /// to a US reader. These are United States dollars from a New York town's
+    /// audited statements, so the grouping is fixed rather than localised. The
+    /// repo pins the same way in MeetingsStore and CouncilScorecardView.
     static func dollars(_ value: Int) -> String {
-        "$" + value.formatted(.number)
+        "$" + value.formatted(.number.locale(Locale(identifier: "en_US_POSIX")))
     }
 
     /// A year is a label, not a quantity: it must never pick up a grouping
@@ -170,7 +186,11 @@ enum TaxCapFormatting {
     /// because one year in the series is a decrease, and a bare "3.10%" next
     /// to eight increases would read as one.
     static func signedPercent(_ value: Double) -> String {
-        String(format: "%+.2f%%", value)
+        // "%+" would print "+0.00%" for a flat year, asserting a rise that did
+        // not happen. Only a real increase gets a plus, which is how
+        // BudgetHistoryParityViews already does it.
+        let prefix = value > 0 ? "+" : ""
+        return prefix + String(format: "%.2f%%", value)
     }
 }
 
@@ -214,6 +234,10 @@ struct NativeTaxCapParityView: View {
             guard document == nil, !loadFailed else { return }
             do {
                 document = try await TaxCapParityClient.load()
+            } catch is CancellationError {
+                // Leaving the view cancels the task. Treating that as a failure
+                // would pin this screen to the web fallback for the life of the
+                // view, on a working connection, with no way back.
             } catch {
                 loadFailed = true
             }
@@ -256,7 +280,9 @@ struct NativeTaxCapParityView: View {
     private func complianceRecord(_ data: TaxCapParityDocument) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("\(data.capStatus.count) budget years on record")
+                Text(data.capStatus.count == 1
+                     ? "1 budget year on record"
+                     : String(data.capStatus.count) + " budget years on record")
                     .font(.headline)
                 // Derived, not asserted. Colour alone must not have to carry
                 // "green means lawful, not within the limit", so the heading
@@ -294,7 +320,10 @@ struct NativeTaxCapParityView: View {
             Spacer(minLength: 0)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(row.year): \(row.label)")
+        // Built as a String: an interpolated literal is a LocalizedStringKey
+        // and markdown-parses the label, so a sighted reader and VoiceOver
+        // would get different text for a compliance status.
+        .accessibilityLabel(row.year + ": " + row.label)
     }
 
     private func auditorFinding(_ data: TaxCapParityDocument) -> some View {
@@ -447,30 +476,45 @@ struct NativeTaxCapParityView: View {
                 .font(.caption)
                 .monospacedDigit()
                 .foregroundStyle(.secondary)
-            // Fixed trailing slot so the signs and decimal points line up down
-            // the column instead of ragging against the dollar amounts.
+            // A floor rather than a fixed width: every current value is six
+            // characters so they align, and a future "+10.00%" needs a seventh
+            // rather than being truncated. Dynamic Type wins over the column.
+            // Deliberately not colour-coded. The web page emphasises rows above
+            // 2% inside a chart it labels as growth context; carried into a
+            // column that sits one card below the compliance record, that
+            // threshold reads as a verdict — and against the real data it is
+            // the wrong one. It would leave 2022 unmarked, the single
+            // auditor-confirmed year the Town exceeded its limit, because the
+            // levy fell that year, while marking 2024 and 2025, which were
+            // lawful, and 2017, which has no compliance record at all. The
+            // whole point of this page is that 2% is not the limit, so a 2%
+            // threshold must not be the thing that tints the table.
             Text(TaxCapFormatting.signedPercent(row.pct))
                 .font(.caption.weight(.semibold))
                 .monospacedDigit()
-                .foregroundStyle(row.pct > 2 ? Color.orange : .primary)
                 .frame(minWidth: 66, alignment: .trailing)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(row.year): levy \(TaxCapFormatting.dollars(row.levy)), change \(TaxCapFormatting.signedPercent(row.pct))")
+        // Interpolating the Int year into a literal would hand VoiceOver
+        // "2,017" while the visible cell reads "2017".
+        .accessibilityLabel(
+            TaxCapFormatting.year(row.year) + ": levy " + TaxCapFormatting.dollars(row.levy)
+                + ", change " + TaxCapFormatting.signedPercent(row.pct)
+        )
     }
 
     /// The web page replaces these with per-claim provenance components built
-    /// in its markup. Rendered here from the data: the five entries are the
-    /// documents the finding rests on, and dropping them to match the web
-    /// page's mechanism would cost the reader the sourcing.
+    /// in its markup. Rendered here from the data: these are the documents
+    /// the finding rests on, and dropping them to match the web page's
+    /// mechanism would cost the reader the sourcing.
     private func sources(_ data: TaxCapParityDocument) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("Sources")
                 .font(.caption.weight(.bold))
                 .foregroundStyle(.secondary)
 
-            ForEach(Array(data.sources.enumerated()), id: \.offset) { _, source in
-                Text(source)
+            ForEach(data.sources.indices, id: \.self) { index in
+                Text(data.sources[index])
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                     .fixedSize(horizontal: false, vertical: true)

@@ -198,9 +198,16 @@ struct NativeCandidateWatchParityView: View {
                 keyDates(data.electionCalendar)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Only the Supervisor seat is on this ballot.")
-                        .font(.caption.weight(.bold))
-                        .fixedSize(horizontal: false, vertical: true)
+                    // Derived, not asserted. This sentence was hardcoded, which
+                    // is the same mistake the seat count below is commented
+                    // against: a cycle with Council seats would print "only the
+                    // Supervisor seat" above a list showing two races, to voters,
+                    // during a live election.
+                    if let onlyRace = data.races.first, data.races.count == 1 {
+                        Text("Only the " + onlyRace.office + " seat is on this ballot.")
+                            .font(.caption.weight(.bold))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                     // Not interpolated into a literal: that would make this a
                     // LocalizedStringKey and markdown-parse the note, which is
                     // free prose carried in the published document.
@@ -227,7 +234,8 @@ struct NativeCandidateWatchParityView: View {
                 // would be inventing it — a two-seat council race would print
                 // the wrong number. The election date is read from the
                 // calendar rather than hardcoded, for the same reason.
-                Text(String(race.candidates.count) + " candidates · Election " + calendar.generalElection)
+                Text((race.candidates.count == 1 ? "1 candidate" : String(race.candidates.count) + " candidates")
+                     + " · Election " + calendar.generalElection)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
@@ -299,7 +307,12 @@ struct NativeCandidateWatchParityView: View {
         }
         .riverheadCard(accentEdge: tint)
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("\(candidate.name), \(candidate.incumbent ? "incumbent" : "challenger"), \(candidate.partyDisplay)")
+        // A candidate's name and party label are document prose, and an
+        // interpolated literal would markdown-parse them.
+        .accessibilityLabel(
+            candidate.name + ", " + (candidate.incumbent ? "incumbent" : "challenger")
+                + ", " + candidate.partyDisplay
+        )
     }
 
     private func badge(_ text: String, tint: Color, filled: Bool) -> some View {
@@ -336,6 +349,6 @@ struct NativeCandidateWatchParityView: View {
                 .multilineTextAlignment(.trailing)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(label): \(value)")
+        .accessibilityLabel(label + ": " + value)
     }
 }

@@ -30,6 +30,17 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/officials/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/candidate-watch/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/tax-cap/"))
+    }
+
+    /// A path can be marked native, badged as native in the hub, and still
+    /// fall through parityDestination to the web view if the switch case was
+    /// missed — three places have to be edited to add a route. This catches
+    /// the half that is introspectable: a native path that is not a real
+    /// route at all. The switch side is checked when the route is wired.
+    @Test func everyNativePathIsADeclaredRoute() {
+        let declared = Set(BudgetLiveParityCatalog.orderedRoutes.map(\.path))
+        let orphans = BudgetLiveParityCatalog.nativePaths.subtracting(declared)
+        #expect(orphans.isEmpty)
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/payroll/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/search/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/meetings/"))

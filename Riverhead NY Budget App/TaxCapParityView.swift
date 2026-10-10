@@ -180,8 +180,14 @@ enum TaxCapFormatting {
     /// this the most expensive operation in the file, which is a poor trade for
     /// pinning the grouping. Statics are how the rest of the app holds
     /// formatters.
+    ///
+    /// en_US, not en_US_POSIX. POSIX exists to produce machine-stable output
+    /// and therefore emits no thousands separator at all: it rendered this
+    /// column as "$36254400". Every other en_US_POSIX in this app is on a
+    /// DateFormatter that parses a fixed format, which is what POSIX is for.
+    /// A grouped display number wants a real regional locale.
     private static let usGrouping: IntegerFormatStyle<Int> =
-        .number.locale(Locale(identifier: "en_US_POSIX"))
+        .number.locale(Locale(identifier: "en_US"))
 
     static func dollars(_ value: Int) -> String {
         "$" + value.formatted(usGrouping)

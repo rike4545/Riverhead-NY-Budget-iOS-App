@@ -255,9 +255,16 @@ struct TaxCapParityContractTests {
         #expect(d.finding.correction.contains("2023"))
     }
 
+    /// This test earned its keep: it caught en_US_POSIX being pinned here,
+    /// which emits no thousands separator and rendered the column "$36254400".
     @Test func dollarsAreWholeAndGrouped() {
         #expect(TaxCapFormatting.dollars(36_254_400) == "$36,254,400")
         #expect(TaxCapFormatting.dollars(0) == "$0")
+        // Asserted directly, so a locale that drops grouping fails here rather
+        // than only in the one exact-string case above.
+        let grouped = TaxCapFormatting.dollars(1_000).contains(",")
+        #expect(grouped)
+        #expect(TaxCapFormatting.dollars(999) == "$999")
     }
 
     /// The sign is explicit because one year in the series is a decrease, and

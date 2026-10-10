@@ -8,6 +8,13 @@
 //  finding about the Town's statutory compliance, so the wording is the web
 //  app's and not a paraphrase.
 //
+//  Document prose goes through Text(verbatim:) and accessibilityLabel(Text(
+//  verbatim:)). A Text built from a string literal containing interpolation is
+//  a LocalizedStringKey and gets markdown-parsed, so an asterisk or underscore
+//  in published prose would silently restyle it — and the spoken label would
+//  then differ from the visible text. Stating that here once rather than at
+//  every call site, because a rule enforced by a comment per site gets missed.
+//
 
 import SwiftUI
 
@@ -74,11 +81,11 @@ struct TaxCapParityDocument: Decodable, Sendable {
     }
 
     var yearsWithoutOverrideLaw: Int {
-        capStatus.filter { $0.status == "over-no-law" }.count
+        capStatus.lazy.filter { $0.status == "over-no-law" }.count
     }
 
     var yearsWithOverrideLaw: Int {
-        capStatus.filter { $0.status == "over-with-law" }.count
+        capStatus.lazy.filter { $0.status == "over-with-law" }.count
     }
 
     /// Every year in the published record is above the limit; the statuses
@@ -91,33 +98,31 @@ struct TaxCapParityDocument: Decodable, Sendable {
         !capStatus.isEmpty && capStatus.allSatisfy { $0.status.hasPrefix("over") }
     }
 
-    /// The two series cover different years and must never be joined. 2023 and
-    /// 2026 carry a cap status with no levy row; 2017 carries a levy row with
-    /// no cap status. Exposed so a test can pin the mismatch.
-    var capStatusYearsWithoutALevyRow: [String] {
-        let levyYears = Set(levyContext.rows.map { String($0.year) })
-        return capStatus.map(\.year).filter { !levyYears.contains($0) }
-    }
 }
 
 enum TaxCapStatus {
+    struct Style: Sendable {
+        let tint: Color
+        /// Paired with the tint on purpose: a reader who does not get the
+        /// colour still gets the mark.
+        let symbol: String
+    }
+
     /// Mirrors STATUS_STYLE in the web page's markup, which is not in the JSON.
     /// Red is "above the limit with no override law", green is "above the limit
     /// with one adopted" — lawful, which is not the same as within the limit.
     /// The section heading carries that distinction so colour never has to.
-    static func tint(_ status: String) -> Color {
+    ///
+    /// One mapping rather than a switch per attribute: a third status code
+    /// should not be addable in a way that gives it a colour but no glyph.
+    static func style(_ status: String) -> Style {
         switch status {
-        case "over-no-law": return .red
-        case "over-with-law": return .green
-        default: return .secondary
-        }
-    }
-
-    static func symbol(_ status: String) -> String {
-        switch status {
-        case "over-no-law": return "xmark.circle.fill"
-        case "over-with-law": return "checkmark.circle.fill"
-        default: return "circle.fill"
+        case "over-no-law":
+            return Style(tint: .red, symbol: "xmark.circle.fill")
+        case "over-with-law":
+            return Style(tint: .green, symbol: "checkmark.circle.fill")
+        default:
+            return Style(tint: .secondary, symbol: "circle.fill")
         }
     }
 }
@@ -171,8 +176,15 @@ enum TaxCapFormatting {
     /// to a US reader. These are United States dollars from a New York town's
     /// audited statements, so the grouping is fixed rather than localised. The
     /// repo pins the same way in MeetingsStore and CouncilScorecardView.
+    /// Built once. Constructing the Locale and the format style per call made
+    /// this the most expensive operation in the file, which is a poor trade for
+    /// pinning the grouping. Statics are how the rest of the app holds
+    /// formatters.
+    private static let usGrouping: IntegerFormatStyle<Int> =
+        .number.locale(Locale(identifier: "en_US_POSIX"))
+
     static func dollars(_ value: Int) -> String {
-        "$" + value.formatted(.number.locale(Locale(identifier: "en_US_POSIX")))
+        "$" + value.formatted(usGrouping)
     }
 
     /// A year is a label, not a quantity: it must never pick up a grouping
@@ -244,7 +256,19 @@ struct NativeTaxCapParityView: View {
         }
     }
 
+    /// Rows with a rule between them and none above the first. Three sections
+    /// spelled this out separately before.
     @ViewBuilder
+    private func divided<Item, Row: View>(
+        _ items: [Item],
+        @ViewBuilder row: @escaping (Item) -> Row
+    ) -> some View {
+        ForEach(items.indices, id: \.self) { index in
+            if index > items.startIndex { Divider() }
+            row(items[index])
+        }
+    }
+
     private func content(_ data: TaxCapParityDocument) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
@@ -295,21 +319,18 @@ struct NativeTaxCapParityView: View {
                 }
             }
 
-            ForEach(Array(data.capStatus.enumerated()), id: \.offset) { index, row in
-                if index > 0 { Divider() }
-                statusRow(row)
-            }
+            divided(data.capStatus, row: statusRow)
         }
         .riverheadCard()
     }
 
     private func statusRow(_ row: TaxCapParityDocument.CapStatusYear) -> some View {
-        let tint = TaxCapStatus.tint(row.status)
+        let style = TaxCapStatus.style(row.status)
 
         return HStack(alignment: .firstTextBaseline, spacing: 10) {
-            Image(systemName: TaxCapStatus.symbol(row.status))
+            Image(systemName: style.symbol)
                 .font(.caption)
-                .foregroundStyle(tint)
+                .foregroundStyle(style.tint)
             Text(row.year)
                 .font(.caption.weight(.bold))
                 .monospacedDigit()
@@ -320,10 +341,7 @@ struct NativeTaxCapParityView: View {
             Spacer(minLength: 0)
         }
         .accessibilityElement(children: .combine)
-        // Built as a String: an interpolated literal is a LocalizedStringKey
-        // and markdown-parses the label, so a sighted reader and VoiceOver
-        // would get different text for a compliance status.
-        .accessibilityLabel(row.year + ": " + row.label)
+        .accessibilityLabel(Text(verbatim: "\(row.year): \(row.label)"))
     }
 
     private func auditorFinding(_ data: TaxCapParityDocument) -> some View {
@@ -342,13 +360,8 @@ struct NativeTaxCapParityView: View {
                 Rectangle()
                     .fill(Color.secondary.opacity(0.35))
                     .frame(width: 2)
-                // Concatenated, not interpolated. A Text built from a string
-                // literal with interpolation is a LocalizedStringKey and gets
-                // markdown-parsed; this quote is the auditor's prose, and an
-                // asterisk or underscore in it would silently restyle the text.
-                Text("\u{201C}" + data.finding.auditQuote + "\u{201D}")
+                Text(verbatim: "\u{201C}\(data.finding.auditQuote)\u{201D}")
                     .font(.caption.italic())
-                    .fixedSize(horizontal: false, vertical: true)
             }
             .fixedSize(horizontal: false, vertical: true)
 
@@ -447,6 +460,15 @@ struct NativeTaxCapParityView: View {
     /// The document's own note says this series cannot establish compliance,
     /// and the record bears that out: 2022 is the auditor-confirmed year the
     /// Town exceeded the limit, and its levy fell by 3.10%.
+    ///
+    /// Which is also why no row here is tinted by its percentage. The web page
+    /// emphasises rows above 2% inside a chart it labels as growth context;
+    /// one card below a compliance record, that threshold reads as a verdict,
+    /// and against the real data it is the wrong one. It leaves 2022 unmarked —
+    /// the one auditor-confirmed breach, because the levy fell that year —
+    /// while marking 2024 and 2025, which were lawful, and 2017, which has no
+    /// compliance record at all. This page exists to establish that 2% is not
+    /// the limit, so a 2% threshold must not be what tints its table.
     private func levyGrowth(_ data: TaxCapParityDocument) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             VStack(alignment: .leading, spacing: 4) {
@@ -458,49 +480,36 @@ struct NativeTaxCapParityView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            ForEach(Array(data.levyContext.rows.enumerated()), id: \.offset) { index, row in
-                if index > 0 { Divider() }
-                levyRow(row)
-            }
+            divided(data.levyContext.rows, row: levyRow)
         }
         .riverheadCard()
     }
 
     private func levyRow(_ row: TaxCapParityDocument.LevyRow) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text(TaxCapFormatting.year(row.year))
+        // Formatted once each. These were computed twice per row — once for the
+        // cell, once for the spoken label — which also let the two drift.
+        let year = TaxCapFormatting.year(row.year)
+        let dollars = TaxCapFormatting.dollars(row.levy)
+        let percent = TaxCapFormatting.signedPercent(row.pct)
+
+        return HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text(year)
                 .font(.caption.weight(.semibold))
                 .monospacedDigit()
             Spacer(minLength: 8)
-            Text(TaxCapFormatting.dollars(row.levy))
+            Text(dollars)
                 .font(.caption)
                 .monospacedDigit()
                 .foregroundStyle(.secondary)
-            // A floor rather than a fixed width: every current value is six
-            // characters so they align, and a future "+10.00%" needs a seventh
-            // rather than being truncated. Dynamic Type wins over the column.
-            // Deliberately not colour-coded. The web page emphasises rows above
-            // 2% inside a chart it labels as growth context; carried into a
-            // column that sits one card below the compliance record, that
-            // threshold reads as a verdict — and against the real data it is
-            // the wrong one. It would leave 2022 unmarked, the single
-            // auditor-confirmed year the Town exceeded its limit, because the
-            // levy fell that year, while marking 2024 and 2025, which were
-            // lawful, and 2017, which has no compliance record at all. The
-            // whole point of this page is that 2% is not the limit, so a 2%
-            // threshold must not be the thing that tints the table.
-            Text(TaxCapFormatting.signedPercent(row.pct))
+            // minWidth, not width: the six-character values align today, and a
+            // future "+10.00%" should widen rather than truncate.
+            Text(percent)
                 .font(.caption.weight(.semibold))
                 .monospacedDigit()
                 .frame(minWidth: 66, alignment: .trailing)
         }
         .accessibilityElement(children: .combine)
-        // Interpolating the Int year into a literal would hand VoiceOver
-        // "2,017" while the visible cell reads "2017".
-        .accessibilityLabel(
-            TaxCapFormatting.year(row.year) + ": levy " + TaxCapFormatting.dollars(row.levy)
-                + ", change " + TaxCapFormatting.signedPercent(row.pct)
-        )
+        .accessibilityLabel(Text(verbatim: "\(year): levy \(dollars), change \(percent)"))
     }
 
     /// The web page replaces these with per-claim provenance components built
@@ -514,7 +523,7 @@ struct NativeTaxCapParityView: View {
                 .foregroundStyle(.secondary)
 
             ForEach(data.sources.indices, id: \.self) { index in
-                Text(data.sources[index])
+                Text(verbatim: data.sources[index])
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                     .fixedSize(horizontal: false, vertical: true)

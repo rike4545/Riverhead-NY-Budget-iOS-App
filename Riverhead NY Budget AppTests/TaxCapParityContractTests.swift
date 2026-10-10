@@ -163,9 +163,10 @@ struct TaxCapParityContractTests {
         let levyYears = Set(d.levyContext.rows.map { String($0.year) })
         let statusYears = Set(d.capStatus.map(\.year))
 
-        // A cap status with no levy row.
-        #expect(d.capStatusYearsWithoutALevyRow.sorted() == ["2023", "2026"])
-        // A levy row with no cap status.
+        // Both directions, from the two sets above. This used to read one way
+        // through a model property that existed only for this assertion.
+        let statusOnly = statusYears.subtracting(levyYears)
+        #expect(statusOnly == ["2023", "2026"])
         let levyOnly = levyYears.subtracting(statusYears)
         #expect(levyOnly == ["2017"])
         // And so the counts differ: 8 against 9.
@@ -230,9 +231,10 @@ struct TaxCapParityContractTests {
         // Asserted through the glyph rather than the colour. Comparing two
         // SwiftUI Colors is not a guarantee worth leaning on, and the glyph is
         // the part a reader relies on when colour is not available to them.
-        #expect(TaxCapStatus.symbol("over-no-law") == "xmark.circle.fill")
-        #expect(TaxCapStatus.symbol("over-with-law") == "checkmark.circle.fill")
-        #expect(TaxCapStatus.symbol("something-new") == "circle.fill")
+        #expect(TaxCapStatus.style("over-no-law").symbol == "xmark.circle.fill")
+        #expect(TaxCapStatus.style("over-with-law").symbol == "checkmark.circle.fill")
+        // An unmapped code gets a neutral mark rather than vanishing.
+        #expect(TaxCapStatus.style("something-new").symbol == "circle.fill")
     }
 
     /// Labels come from the document, not from a table in Swift, so the

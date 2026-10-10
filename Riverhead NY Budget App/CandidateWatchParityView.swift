@@ -8,6 +8,11 @@
 //  Swift. This page carries what named candidates say they will do, during a
 //  live election; a stale copy would misrepresent them.
 //
+//  Document prose goes through Text(verbatim:). A Text built from a string
+//  literal containing interpolation is a LocalizedStringKey and gets
+//  markdown-parsed, so an asterisk or underscore in a candidate's own words
+//  would silently restyle them.
+//
 
 import SwiftUI
 
@@ -198,8 +203,19 @@ struct NativeCandidateWatchParityView: View {
                 keyDates(data.electionCalendar)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("**Only the Supervisor seat is on this ballot.** \(data.noRaceNote)")
+                    // Derived, not asserted. This sentence was hardcoded, which
+                    // is the same mistake the seat count below is commented
+                    // against: a cycle with Council seats would print "only the
+                    // Supervisor seat" above a list showing two races, to voters,
+                    // during a live election.
+                    if let onlyRace = data.races.first, data.races.count == 1 {
+                        Text(verbatim: "Only the \(onlyRace.office) seat is on this ballot.")
+                            .font(.caption.weight(.bold))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    Text(verbatim: data.noRaceNote)
                         .font(.caption)
+                        .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .riverheadCard(accentEdge: .orange)
@@ -220,7 +236,8 @@ struct NativeCandidateWatchParityView: View {
                 // would be inventing it — a two-seat council race would print
                 // the wrong number. The election date is read from the
                 // calendar rather than hardcoded, for the same reason.
-                Text("\(race.candidates.count) candidates · Election \(calendar.generalElection)")
+                Text(verbatim: (race.candidates.count == 1 ? "1 candidate" : "\(race.candidates.count) candidates")
+                     + " · Election " + calendar.generalElection)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
@@ -292,7 +309,9 @@ struct NativeCandidateWatchParityView: View {
         }
         .riverheadCard(accentEdge: tint)
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("\(candidate.name), \(candidate.incumbent ? "incumbent" : "challenger"), \(candidate.partyDisplay)")
+        .accessibilityLabel(Text(verbatim:
+            "\(candidate.name), \(candidate.incumbent ? "incumbent" : "challenger"), \(candidate.partyDisplay)"
+        ))
     }
 
     private func badge(_ text: String, tint: Color, filled: Bool) -> some View {
@@ -329,6 +348,6 @@ struct NativeCandidateWatchParityView: View {
                 .multilineTextAlignment(.trailing)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(label): \(value)")
+        .accessibilityLabel(Text(verbatim: "\(label): \(value)"))
     }
 }

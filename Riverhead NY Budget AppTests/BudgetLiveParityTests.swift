@@ -29,6 +29,7 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/town-history/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/officials/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/candidate-watch/"))
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/tax-cap/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/payroll/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/search/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/meetings/"))
@@ -37,7 +38,27 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/compare/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/general-fund/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/workforce-by-title/"))
+        #expect(BudgetLiveParityCatalog.nativePaths.contains("/board-elections/"))
         #expect(BudgetLiveParityCatalog.nativePaths.contains("/outliers/"))
+
+        // A deliberate tripwire. Adding a native route takes three edits —
+        // nativePaths, a parityDestination case, and the routes table — and the
+        // per-route assertions above cannot notice a path that was never added
+        // to them, which is how /board-elections/ went untested. This fails on
+        // the next route, which is the point: it forces the list to be updated
+        // rather than quietly drifting behind the Set it is meant to mirror.
+        #expect(BudgetLiveParityCatalog.nativePaths.count == 16)
+    }
+
+    /// A path can be marked native, badged as native in the hub, and still
+    /// fall through parityDestination to the web view if the switch case was
+    /// missed — three places have to be edited to add a route. This catches
+    /// the half that is introspectable: a native path that is not a real
+    /// route at all. The switch side is checked when the route is wired.
+    @Test func everyNativePathIsADeclaredRoute() {
+        let declared = Set(BudgetLiveParityCatalog.orderedRoutes.map(\.path))
+        let orphans = BudgetLiveParityCatalog.nativePaths.subtracting(declared)
+        #expect(orphans.isEmpty)
     }
 
     @Test func routeGroupsStillTotalFiftyFour() {

@@ -216,9 +216,34 @@ enum TaxCapParityClient {
     static let dataURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data/tax-cap.json")!
     static let livePageURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tax-cap/")!
 
+    /// Revalidate first, then fall back to whatever is cached.
+    ///
+    /// The other parity routes use .returnCacheDataElseLoad, which by
+    /// definition serves a cached response "regardless of age or expiration
+    /// date" — so once a reader has opened a screen, they keep that copy until
+    /// the cache is evicted. That is a poor fit for this page in particular:
+    /// its whole subject is an auditor's finding and the Town's later
+    /// correction of it, so a superseded finding sitting in a cache forever is
+    /// the specific failure to avoid.
+    ///
+    /// Revalidating alone would make the offline case worse, trading a stale
+    /// document for a web view that cannot load either. So the fallback is
+    /// explicit: ask the server, and only if that fails read the cache at any
+    /// age. Fresh when online, stale-but-present when not, and never silently
+    /// stale while a correction is a request away.
     static func load() async throws -> TaxCapParityDocument {
+        do {
+            return try await fetch(cachePolicy: .reloadRevalidatingCacheData)
+        } catch {
+            return try await fetch(cachePolicy: .returnCacheDataDontLoad)
+        }
+    }
+
+    private static func fetch(
+        cachePolicy: URLRequest.CachePolicy
+    ) async throws -> TaxCapParityDocument {
         var request = URLRequest(url: dataURL)
-        request.cachePolicy = .returnCacheDataElseLoad
+        request.cachePolicy = cachePolicy
         request.timeoutInterval = 20
 
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -248,6 +273,14 @@ struct NativeTaxCapParityView: View {
         }
         .navigationTitle("Tax Cap")
         .navigationBarTitleDisplayMode(.inline)
+        .refreshable {
+            // This document carries no asOf field, so nothing on screen tells a
+            // reader whether what they are looking at is current. Pull to ask.
+            if let fresh = try? await TaxCapParityClient.load() {
+                document = fresh
+                loadFailed = false
+            }
+        }
         .task {
             guard document == nil, !loadFailed else { return }
             do {

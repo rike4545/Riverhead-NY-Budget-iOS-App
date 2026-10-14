@@ -1503,21 +1503,95 @@
    "name": "Special Town Board Meeting",
    "portal": "https://riverheadny.portal.civicclerk.com/event/6141",
    "video": "https://cpmedia.azureedge.net/riverheadny/663f0af1bf.mp4",
-   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-29_6141.html"
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-29_6141.html",
+   "ours": {
+    "path": "/data/transcripts/2025-09-29.json",
+    "model": "small.en",
+    "votes": {
+     "2025-806": 570.3
+    }
+   }
   },
   "2025-09-16": {
    "eventId": 20,
    "name": "Town Board Meeting",
    "portal": "https://riverheadny.portal.civicclerk.com/event/20",
    "video": "https://cpmedia.azureedge.net/riverheadny/472c4b83b0.mp4",
-   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-16_20.html"
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-16_20.html",
+   "ours": {
+    "path": "/data/transcripts/2025-09-16.json",
+    "model": "small.en",
+    "votes": {
+     "2025-778": 3849.9,
+     "2025-779": 3875.4,
+     "2025-780": 3895.1,
+     "2025-781": 3914.2,
+     "2025-782": 3953.9,
+     "2025-784": 4017.9,
+     "2025-785": 4078.8,
+     "2025-786": 4079.8,
+     "2025-787": 4104.6,
+     "2025-788": 4124.0,
+     "2025-789": 4147.2,
+     "2025-790": 4164.1,
+     "2025-791": 4182.8,
+     "2025-792": 4209.4,
+     "2025-793": 4224.0,
+     "2025-794": 4244.9,
+     "2025-795": 4275.9,
+     "2025-796": 4304.4,
+     "2025-797": 4323.8,
+     "2025-798": 4364.8,
+     "2025-799": 4388.9,
+     "2025-800": 4406.5,
+     "2025-801": 4425.2,
+     "2025-802": 4493.4,
+     "2025-803": 4553.7,
+     "2025-804": 4664.0,
+     "2025-805": 4733.5
+    }
+   }
   },
   "2025-09-03": {
    "eventId": 8,
    "name": "Town Board Meeting",
    "portal": "https://riverheadny.portal.civicclerk.com/event/8",
    "video": "https://cpmedia.azureedge.net/riverheadny/9692d2dc5e.mp4",
-   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-03_8.html"
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2025-09-03_8.html",
+   "ours": {
+    "path": "/data/transcripts/2025-09-03.json",
+    "model": "small.en",
+    "votes": {
+     "2025-749": 6056.4,
+     "2025-750": 6081.1,
+     "2025-751": 6110.0,
+     "2025-752": 6134.0,
+     "2025-753": 6147.5,
+     "2025-754": 6174.4,
+     "2025-755": 6202.1,
+     "2025-756": 6223.1,
+     "2025-757": 6238.4,
+     "2025-758": 6758.8,
+     "2025-759": 6782.3,
+     "2025-760": 6803.6,
+     "2025-761": 6824.8,
+     "2025-762": 7170.8,
+     "2025-763": 7333.3,
+     "2025-764": 7356.2,
+     "2025-765": 7403.4,
+     "2025-766": 7431.3,
+     "2025-767": 7460.3,
+     "2025-768": 7482.3,
+     "2025-769": 7499.6,
+     "2025-770": 7534.3,
+     "2025-771": 7551.1,
+     "2025-772": 7575.8,
+     "2025-773": 7599.2,
+     "2025-774": 7619.2,
+     "2025-775": 7662.6,
+     "2025-776": 7684.7
+    }
+   }
   },
   "2025-08-19": {
    "eventId": 19,

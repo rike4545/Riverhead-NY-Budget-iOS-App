@@ -26,7 +26,7 @@ LOGS      := build-logs
 PLAIN := sed -f $(SCRIPTS)/plain.sed
 
 .DEFAULT_GOAL := help
-.PHONY: help compile check ui all clean
+.PHONY: help compile check ui all clean drift drift-test
 
 help:
 	@echo ''
@@ -34,6 +34,8 @@ help:
 	@echo '  make check     compile + run the unit suite on a simulator'
 	@echo '  make ui        run the UI suite (slow: boots and drives a simulator)'
 	@echo '  make all       everything CI runs'
+	@echo '  make drift     check the live web data against the Swift decoders'
+	@echo '  make drift-test  prove the drift check still detects (no network)'
 	@echo '  make clean     delete this project'"'"'s DerivedData and logs'
 	@echo ''
 	@echo '  Logs land in $(LOGS)/. Failures print the distinct error lines via'
@@ -109,6 +111,22 @@ ui:
 	fi
 
 all: check ui
+
+# Parity drift. Needs node and the network, not Xcode, so it is seconds rather
+# than minutes and is worth running whenever you touch a parity view.
+#
+# `drift` reports what the web app now publishes against what the Swift
+# decoders require. A `break` means a native view is silently showing its web
+# fallback right now. The exit code follows CI: breaks fail, drift does not.
+drift:
+	@node '$(SCRIPTS)/check-parity-drift.mjs' --json '$(LOGS)/parity-drift.json' || 		{ echo ''; echo "report: $(LOGS)/parity-drift.json"; exit 1; }
+	@echo ''
+	@echo "report: $(LOGS)/parity-drift.json"
+
+# The checker reports the same "no drift" whether it is working or has quietly
+# stopped looking, so it gets tested before it is trusted.
+drift-test:
+	@node '$(SCRIPTS)/test-parity-drift.mjs'
 
 clean:
 	@rm -rf '$(LOGS)'

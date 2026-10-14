@@ -9,3 +9,7 @@ xcuserdata/
 build-logs/
 
 .DS_Store
+
+# Output of the parity drift check when run directly (see Makefile `drift`)
+parity-drift.json
+parity-drift.md

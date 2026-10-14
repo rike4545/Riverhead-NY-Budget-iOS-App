@@ -103,6 +103,41 @@ For computed datasets that are better served live than bundled, the preferred
 pattern is a versioned static JSON contract generated from the same web module
 that renders the page. Program Budget is the first use of this pattern.
 
+## Staying in parity once a route is native
+
+A native parity view fetches its JSON, decodes it, and falls back to
+`WebContentView` if anything throws. That fallback is why web-side drift is
+invisible: no crash, no log, the native screen just stops appearing. It has
+already happened once, on `/tax-bill/`.
+
+Two things run on their own:
+
+- `sync-web-data.yml` pulls the canonical bundled datasets daily.
+- `parity-drift.yml` checks the **live** published payloads against what the
+  Swift decoders actually require, on every pull request and once a day, and
+  opens a draft pull request when it finds something.
+
+The contract is derived from the Swift source by
+`.github/scripts/parity-schema.mjs`, so there is no second copy to keep in sync
+and a new route is covered the day it lands.
+`.github/parity-contract.json` adds only what the Swift cannot state itself:
+which URL feeds which document, the string values a `switch` handles, and prose
+mirrored out of a page's markup.
+
+```
+make drift        check the live web data against the Swift decoders
+make drift-test   prove the checker still detects (no network)
+```
+
+Findings are `break` (the decoder throws — the native view is gone), `drift`
+(it renders but disagrees with the web app), or `note`. A fetch that does not
+arrive never fails the check.
+
+Work the findings with the `web-parity-watchdog` agent, which decides the part
+a script should not: whether a vanished field becomes optional or the view
+stops showing it, which new published field earns a row on screen, and what a
+new status code means before it gets a colour.
+
 ## Native parity definition of done
 
 A web route is fully native-parity only when the SwiftUI implementation matches

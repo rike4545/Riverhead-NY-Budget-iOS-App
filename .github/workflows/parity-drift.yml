@@ -1,0 +1,186 @@
+name: Web parity drift
+
+# Watches the web app's published data for changes that would break, or quietly
+# hollow out, the native parity views.
+#
+# Runs on ubuntu, never macOS: this repo is private, so macOS minutes bill at a
+# 10x multiplier and the iOS workflow is already paying it. Nothing here needs
+# Xcode — the checker reads the Swift source as text.
+on:
+  pull_request:
+  schedule:
+    # Eight minutes after the canonical data sync, so a schema change arrives
+    # here on the same day the bundled copies move.
+    - cron: '25 15 * * *'
+  workflow_dispatch:
+
+# The write scopes are for the scheduled run, which opens the draft PR. On a
+# pull_request event every write step is skipped, and a pull_request token from
+# a fork is read-only regardless.
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: parity-drift-${{ github.event_name == 'pull_request' && github.ref || 'scheduled' }}
+  cancel-in-progress: true
+
+env:
+  REPORT_BRANCH: automation/parity-drift
+
+jobs:
+  drift:
+    name: Check published data against the native views
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history: the scheduled run commits on top of the report
+          # branch, and pushing a new commit from a shallow clone onto a branch
+          # whose history it does not have is the kind of thing that works
+          # until it doesn't.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: Self-test the checker
+        # A checker that has stopped detecting reports the same "no drift" as
+        # one that is working, so it gets tested before it is trusted. No
+        # network: the fixtures are generated from the schema.
+        run: node .github/scripts/test-parity-drift.mjs
+
+      - name: Check live data against the Swift decoders
+        id: check
+        # A break fails the run. Drift annotates and does not, so a reworded
+        # paragraph on the web side never blocks an unrelated pull request. A
+        # fetch that does not arrive is neither.
+        run: |
+          set -o pipefail
+          node .github/scripts/check-parity-drift.mjs \
+            --json parity-drift.json \
+            --markdown parity-drift.md \
+            --fail-on break
+        continue-on-error: ${{ github.event_name != 'pull_request' }}
+
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: parity-drift-report
+          path: |
+            parity-drift.json
+            parity-drift.md
+          if-no-files-found: warn
+
+      - name: Decide whether there is anything to report
+        if: always() && github.event_name != 'pull_request'
+        id: triage
+        run: |
+          set -euo pipefail
+          if [ ! -f parity-drift.json ]; then
+            echo "actionable=false" >> "$GITHUB_OUTPUT"
+            echo "The checker did not produce a report; nothing to open."
+            exit 0
+          fi
+          breaks=$(node -e 'process.stdout.write(String(require("./parity-drift.json").counts.break))')
+          drifts=$(node -e 'process.stdout.write(String(require("./parity-drift.json").counts.drift))')
+          echo "breaks=$breaks" >> "$GITHUB_OUTPUT"
+          echo "drifts=$drifts" >> "$GITHUB_OUTPUT"
+          if [ "$breaks" -gt 0 ] || [ "$drifts" -gt 0 ]; then
+            echo "actionable=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "actionable=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "$breaks break, $drifts drift"
+
+      - name: Open or update the draft pull request
+        if: always() && github.event_name != 'pull_request' && steps.triage.outputs.actionable == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BREAKS: ${{ steps.triage.outputs.breaks }}
+          DRIFTS: ${{ steps.triage.outputs.drifts }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # One long-lived branch, so successive days update one pull request
+          # instead of opening a queue of them.
+          #
+          # It commits on top of whatever is already on that branch and never
+          # force-pushes. The draft pull request is where the Swift fix gets
+          # written, so a force push from the next day's run would throw away
+          # someone's work — and the report is a generated file, so a plain
+          # commit on top is all it needs anyway.
+          base="${GITHUB_REF_NAME}"
+          git fetch origin "$REPORT_BRANCH" || true
+          if git rev-parse --verify "refs/remotes/origin/$REPORT_BRANCH" >/dev/null 2>&1; then
+            git switch -c "$REPORT_BRANCH" "origin/$REPORT_BRANCH"
+          else
+            git switch -c "$REPORT_BRANCH"
+          fi
+
+          mkdir -p .github/reports
+          cp parity-drift.md .github/reports/parity-drift.md
+          cp parity-drift.json .github/reports/parity-drift.json
+          git add .github/reports/parity-drift.md .github/reports/parity-drift.json
+
+          if git diff --cached --quiet; then
+            echo "The report is unchanged since the last run; leaving the pull request alone."
+            exit 0
+          fi
+
+          git commit -m "Report web parity drift: ${BREAKS} break, ${DRIFTS} drift"
+          git push -u origin "$REPORT_BRANCH"
+
+          existing="$(gh pr list --head "$REPORT_BRANCH" --state open --json number --jq '.[0].number' || true)"
+
+          {
+            echo "The web app's published data no longer matches what the native parity views expect."
+            echo
+            echo "**${BREAKS} break, ${DRIFTS} drift.** A *break* means the Swift decoder throws on the"
+            echo "live payload, so the native screen is gone and the user silently gets the web page"
+            echo "instead — there is no crash and no log. A *drift* means the view still renders but no"
+            echo "longer agrees with the web app."
+            echo
+            cat parity-drift.md
+            echo
+            echo "### What this pull request does and does not do"
+            echo
+            echo "It carries the report. It does not change any Swift, because every fix here needs a"
+            echo "decision a script should not make on its own: whether a vanished field should become"
+            echo "optional or the view should stop showing it, which of two new published fields is worth"
+            echo "a row on screen, how a new status code should be coloured."
+            echo
+            echo "To work it: \`claude --agent web-parity-watchdog\` in a checkout of this branch, or ask"
+            echo "Claude to run the \`web-parity-watchdog\` agent. It reads this report, proposes the Swift"
+            echo "change for each finding, and extends the contract tests to cover it."
+            echo
+            echo "Reproduce locally with \`make drift\`."
+            echo
+            echo "---"
+            echo "_Generated by [Claude Code](https://claude.ai/code)_"
+          } > pr-body.md
+
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --body-file pr-body.md \
+              --title "Web parity drift: ${BREAKS} break, ${DRIFTS} drift"
+            echo "Updated pull request #${existing}."
+          else
+            gh pr create --draft --base "$base" --head "$REPORT_BRANCH" \
+              --title "Web parity drift: ${BREAKS} break, ${DRIFTS} drift" \
+              --body-file pr-body.md
+          fi
+
+      - name: Fail the scheduled run if the live data breaks a decoder
+        # Kept last so the pull request is opened first: the point of the
+        # scheduled run is the report, and a red run with no report would say
+        # less than a green one with a report.
+        if: always() && github.event_name != 'pull_request' && steps.triage.outputs.breaks != '0' && steps.triage.outputs.breaks != ''
+        run: |
+          echo "::error::${{ steps.triage.outputs.breaks }} parity break(s) — a native view is silently falling back to the web page."
+          exit 1

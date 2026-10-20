@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-10-19",
+ "generatedAt": "2026-10-20",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -314,8 +314,204 @@
    "startDateTime": "2026-10-20T18:00:00Z",
    "type": "Town Board Meeting",
    "agendaPublished": true,
-   "itemsSource": null,
-   "docket": [],
+   "itemsSource": "published-agenda",
+   "docket": [
+    {
+     "seq": 1,
+     "number": "2026-930",
+     "title": "Budget Adoption of Community Benefit Funds for Open Space Project"
+    },
+    {
+     "seq": 2,
+     "number": "2026-931",
+     "title": "Highway Department Capital Project #52621 National Grid Road Restoration Budget Adoption"
+    },
+    {
+     "seq": 3,
+     "number": "2026-932",
+     "title": "Water District Capital Project #82308 Well No. 5-2a Budget Adjustment"
+    },
+    {
+     "seq": 4,
+     "number": "2026-933",
+     "title": "Water Capital Project #82335 \u2013 437-483 Youngs Ave Landfill Solar Project Closure"
+    },
+    {
+     "seq": 5,
+     "number": "2026-934",
+     "title": "Adopts Highway Department Budget Transfer for Drainage Repairs"
+    },
+    {
+     "seq": 6,
+     "number": "2026-935",
+     "title": "Authorizes Amendment #1 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 7,
+     "number": "2026-936",
+     "title": "Authorizes Amendment #2 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 8,
+     "number": "2026-937",
+     "title": "Authorizes Amendment #3 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 9,
+     "number": "2026-938",
+     "title": "Authorizes Amendment #4 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 10,
+     "number": "2026-939",
+     "title": "Authorizes Amendment #5 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 11,
+     "number": "2026-940",
+     "title": "Authorizes Amendment #6 to the 2027 Preliminary Budget"
+    },
+    {
+     "seq": 12,
+     "number": "2026-941",
+     "title": "Accepts Donation of \u201cGrateful Turnout: A Public Thank You to First Responders\u201d Sculpture for Downtown Riverhead"
+    },
+    {
+     "seq": 13,
+     "number": "2026-942",
+     "title": "Accepts Donation from The GM Dealer Programs for PAL Football & Cheerleading"
+    },
+    {
+     "seq": 14,
+     "number": "2026-943",
+     "title": "Appoints Public Safety Dispatcher to the Police Department"
+    },
+    {
+     "seq": 15,
+     "number": "2026-944",
+     "title": "Appoints Kerri Figurniak to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 16,
+     "number": "2026-945",
+     "title": "Appoints Patricia Berry to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 17,
+     "number": "2026-946",
+     "title": "Appoints Claudette Bianco to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 18,
+     "number": "2026-947",
+     "title": "Reappoints John Cullen to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 19,
+     "number": "2026-948",
+     "title": "Reappoints Sid Bail to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 20,
+     "number": "2026-949",
+     "title": "Reappoints Connie Carlin to the Helicopter Noise Task Force"
+    },
+    {
+     "seq": 21,
+     "number": "2026-950",
+     "title": "Ratifies the Resignation of a Maintenance Mechanic II"
+    },
+    {
+     "seq": 22,
+     "number": "2026-951",
+     "title": "Ratifies the Termination of a Maintenance Mechanic III"
+    },
+    {
+     "seq": 23,
+     "number": "2026-952",
+     "title": "Amends Order Establishing Extension (No. 97) of Boundaries and Facilities of the Riverhead Water District for Forge Road, Calverton, New York, at the Properties Known as SCTM District 0600, Section 118, Block 5, Lots 1.1, 1.2, 2 through 11 and 12.1; Section 119 Block 2, Lots 59 through 62; and Section 139, Block 01, Lots 1 through 4"
+    },
+    {
+     "seq": 24,
+     "number": "2026-953",
+     "title": "Authorize Supervisor to Sign a License Agreement with Bold Broadcasting LLC D/B/A Bold Media"
+    },
+    {
+     "seq": 25,
+     "number": "2026-954",
+     "title": "Authorizes The Supervisor To Execute An Intermunicipal Agreement Purchase Of Salt/Sand Mixture"
+    },
+    {
+     "seq": 26,
+     "number": "2026-955",
+     "title": "Authorizes the Supervisor to Execute an Addendum to an Agreement with Smalley Engineering, P.C."
+    },
+    {
+     "seq": 27,
+     "number": "2026-956",
+     "title": "Authorize the Supervisor to Execute Agreement with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local # 852"
+    },
+    {
+     "seq": 28,
+     "number": "2026-957",
+     "title": "Ratifies the Authorization for the Supervisor to Sign a Consultant/Professional Services Agreement with Theresa DeFilippis"
+    },
+    {
+     "seq": 29,
+     "number": "2026-958",
+     "title": "Authorizes Town Clerk To Publish And Post Public Notice To Consider A Local Law To Amend Chapter 279 Of The Riverhead Town Code Entitled \u201cTaxation\u201d"
+    },
+    {
+     "seq": 30,
+     "number": "2026-959",
+     "title": "Adopts a Local Law to Amend Chapter 289 of the Riverhead Town Code titled \u201cVehicles, Traffic and Parking Regulations\u201d, Article II \u201cTraffic Regulations\u201d"
+    },
+    {
+     "seq": 31,
+     "number": "2026-960",
+     "title": "Authorizes Town Clerk to Publish and Post Notice to Bidders for Used 2018 or later Yamaha 9.9 HP Outboard Motor"
+    },
+    {
+     "seq": 32,
+     "number": "2026-961",
+     "title": "Awards Bid for Installation of Water Main & Appurtenances - Extension No.97 Forge Road"
+    },
+    {
+     "seq": 33,
+     "number": "2026-962",
+     "title": "Police Disciplinary Charges"
+    },
+    {
+     "seq": 34,
+     "number": "2026-963",
+     "title": "Authorizes Highway Department Charge Back To Riverhead Water District For Site Work At The Riverhead Water District Wading River Above Ground Storage Tank"
+    },
+    {
+     "seq": 35,
+     "number": "2026-964",
+     "title": "Approves Special Event Chapter 255 Application for BOLD Broadcasting LLC (Riverhead Holiday Light Show)"
+    },
+    {
+     "seq": 36,
+     "number": "2026-965",
+     "title": "Pays Bills"
+    },
+    {
+     "seq": 37,
+     "number": "2026-966",
+     "title": "Appoints an Assessment Clerk"
+    },
+    {
+     "seq": 38,
+     "number": "2026-967",
+     "title": "Adopts Final Scope for the Preparation of a Draft Generic Environmental Impact Statement (DGEIS) for the Implementation of Code Amendments for the Creation of the Golf Course (GC) Zoning Use District"
+    },
+    {
+     "seq": 39,
+     "number": "2026-968",
+     "title": "Accepts Draft Generic Environmental Impact Statement (DGEIS) for Proposed Golf Couse (GC) Zoning Use District Amendments, Sets Public Review Period, Schedules SEQRA Hearing"
+    }
+   ],
    "hearings": []
   },
   {

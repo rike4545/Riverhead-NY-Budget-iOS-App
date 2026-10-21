@@ -19,7 +19,9 @@
   "2026-10-20": {
    "eventId": 6456,
    "name": "Town Board Meeting",
-   "portal": "https://riverheadny.portal.civicclerk.com/event/6456"
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6456",
+   "video": "https://cpmedia.azureedge.net/riverheadny/2f8d7e289e.mp4",
+   "transcript": "https://riverheadtranscripts.org/meetings/town-board/2026-10-20_6456.html"
   },
   "2026-10-06": {
    "eventId": 6443,

@@ -19,7 +19,7 @@
    ],
    "moved": 0,
    "seconded": 0,
-   "meetingsVoted": 19,
+   "meetingsVoted": 20,
    "dissents": [
     {
      "slug": "2026-04-07",
@@ -71,21 +71,56 @@
      "number": "2026-553",
      "title": "Resolution Adopting Findings and Determination Pursuant to Article 2 of the Eminent Domain Procedure Law Regarding Acquisition of Fee Title to111 East Main Street, Riverhead, New York, reputed owner - a place for learning, inc. SUFFOLK COUNTY TAX MAP #600-129-1-11",
      "result": "[3 - 1]"
+    },
+    {
+     "slug": "2026-10-20",
+     "date": "October 20, 2026",
+     "number": "2026-935",
+     "title": "Authorizes Amendment #1 to the 2027 Preliminary Budget",
+     "result": "ADOPTED [4 - 0]"
+    },
+    {
+     "slug": "2026-10-20",
+     "date": "October 20, 2026",
+     "number": "2026-936",
+     "title": "Authorizes Amendment #2 to the 2027 Preliminary Budget",
+     "result": "ADOPTED [4 - 0]"
+    },
+    {
+     "slug": "2026-10-20",
+     "date": "October 20, 2026",
+     "number": "2026-937",
+     "title": "Authorizes Amendment #3 to the 2027 Preliminary Budget",
+     "result": "ADOPTED [4 - 0]"
+    },
+    {
+     "slug": "2026-10-20",
+     "date": "October 20, 2026",
+     "number": "2026-938",
+     "title": "Authorizes Amendment #4 to the 2027 Preliminary Budget",
+     "result": "ADOPTED [4 - 0]"
+    },
+    {
+     "slug": "2026-10-20",
+     "date": "October 20, 2026",
+     "number": "2026-940",
+     "title": "Authorizes Amendment #6 to the 2027 Preliminary Budget",
+     "result": "ADOPTED [4 - 0]"
     }
    ],
    "byYear": {
     "2026": {
-     "aye": 921,
-     "abstain": 2,
+     "aye": 955,
+     "abstain": 7,
      "nay": 5
     }
    },
    "career": {
-    "aye": 921,
-    "abstain": 2,
+    "aye": 955,
+    "abstain": 7,
     "nay": 5
    },
-   "ayePct": 99.2
+   "ayePct": 98.8
   },
   {
    "key": "Merrifield",
@@ -99,9 +134,9 @@
     "2025",
     "2026"
    ],
-   "moved": 503,
-   "seconded": 511,
-   "meetingsVoted": 46,
+   "moved": 512,
+   "seconded": 521,
+   "meetingsVoted": 47,
    "dissents": [
     {
      "slug": "2024-01-03",
@@ -208,12 +243,12 @@
      "abstain": 2
     },
     "2026": {
-     "aye": 927,
+     "aye": 966,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 2024,
+    "aye": 2063,
     "nay": 10,
     "abstain": 3
    },
@@ -231,9 +266,9 @@
     "2025",
     "2026"
    ],
-   "moved": 492,
-   "seconded": 507,
-   "meetingsVoted": 46,
+   "moved": 501,
+   "seconded": 516,
+   "meetingsVoted": 47,
    "dissents": [
     {
      "slug": "2025-01-07",
@@ -269,11 +304,11 @@
      "nay": 2
     },
     "2026": {
-     "aye": 928
+     "aye": 967
     }
    },
    "career": {
-    "aye": 2034,
+    "aye": 2073,
     "abstain": 1,
     "nay": 2
    },
@@ -293,9 +328,9 @@
     "2025",
     "2026"
    ],
-   "moved": 552,
-   "seconded": 511,
-   "meetingsVoted": 46,
+   "moved": 563,
+   "seconded": 520,
+   "meetingsVoted": 47,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -381,14 +416,14 @@
      "absent": 1
     },
     "2026": {
-     "aye": 923,
+     "aye": 962,
      "abstain": 3,
      "nay": 1,
      "absent": 1
     }
    },
    "career": {
-    "aye": 2089,
+    "aye": 2128,
     "nay": 5,
     "abstain": 4,
     "absent": 2
@@ -409,9 +444,9 @@
     "2025",
     "2026"
    ],
-   "moved": 524,
-   "seconded": 547,
-   "meetingsVoted": 46,
+   "moved": 534,
+   "seconded": 558,
+   "meetingsVoted": 47,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -538,14 +573,14 @@
      "nay": 7
     },
     "2026": {
-     "aye": 921,
+     "aye": 960,
      "nay": 5,
      "absent": 1,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 2091,
+    "aye": 2130,
     "nay": 14,
     "absent": 1,
     "abstain": 1

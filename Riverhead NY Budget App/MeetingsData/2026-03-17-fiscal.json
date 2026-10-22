@@ -7,10 +7,10 @@
  },
  "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Where the budget table the Board adopted puts a different figure on a fund's Appropriated Fund Balance account, the table's figure is used, because the vote is the appropriation, and section G's is shown beside it. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
-  "total": 48,
-  "markedNo": 34,
-  "markedYes": 14,
-  "understated": 19,
+  "total": 45,
+  "markedNo": 33,
+  "markedYes": 12,
+  "understated": 17,
   "understatedMarkedNo": 12,
   "identifiedDollarsAtStake": 623403.5,
   "pricedResolutions": 3,
@@ -409,97 +409,9 @@
    }
   },
   {
-   "number": "2026-227",
-   "numberSource": "printed",
-   "seq": 6,
-   "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
-   "amount": null,
-   "funding": {
-    "source": null,
-    "sources": [],
-    "sourceText": ": : Various : :",
-    "fundCodes": [],
-    "funds": [],
-    "amount": null,
-    "accounts": [],
-    "fundBalanceAccounts": [],
-    "fundBalanceFunds": [],
-    "fundBalanceDraw": null,
-    "fundBalanceClasses": [],
-    "drawsFundBalance": false,
-    "matchRequired": null,
-    "matchPercent": null,
-    "reimbursementBasis": false,
-    "splitAcross": 0,
-    "createsAccounts": []
-   },
-   "statedAmounts": [],
-   "statedCost": null,
-   "statementBelowTable": null,
-   "realistic": {
-    "verdict": "Real, recurring cost",
-    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
-    "flag": "reserve-draw",
-    "evidence": "category"
-   },
-   "vote": {
-    "adopted": false,
-    "tag": "tabled",
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
-   "number": "2026-227",
-   "numberSource": "title",
-   "seq": 7,
-   "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
-   "category": "personnel",
-   "townFiscalImpact": "Yes",
-   "townTreatment": "absorbed",
-   "amount": null,
-   "funding": {
-    "source": null,
-    "sources": [],
-    "sourceText": ": : Various : :",
-    "fundCodes": [],
-    "funds": [],
-    "amount": null,
-    "accounts": [],
-    "fundBalanceAccounts": [],
-    "fundBalanceFunds": [],
-    "fundBalanceDraw": null,
-    "fundBalanceClasses": [],
-    "drawsFundBalance": false,
-    "matchRequired": null,
-    "matchPercent": null,
-    "reimbursementBasis": false,
-    "splitAcross": 0,
-    "createsAccounts": []
-   },
-   "statedAmounts": [],
-   "statedCost": null,
-   "statementBelowTable": null,
-   "realistic": {
-    "verdict": "Real, recurring cost",
-    "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
-    "flag": "reserve-draw",
-    "evidence": "category"
-   },
-   "vote": {
-    "adopted": false,
-    "tag": "tabled",
-    "ayes": null,
-    "nays": null
-   }
-  },
-  {
    "number": "2026-228",
    "numberSource": "printed",
-   "seq": 8,
+   "seq": 6,
    "title": "Sets Salaries for 2026 Call-In and Seasonal Recreation Personnel",
    "category": "personnel",
    "townFiscalImpact": "Yes",
@@ -543,7 +455,7 @@
   {
    "number": "2026-229",
    "numberSource": "printed",
-   "seq": 9,
+   "seq": 7,
    "title": "Appoints a Call-In Park Attendant to the Recreation Department",
    "category": "personnel",
    "townFiscalImpact": "Yes",
@@ -608,7 +520,7 @@
   {
    "number": "2026-230",
    "numberSource": "printed",
-   "seq": 10,
+   "seq": 8,
    "title": "Appoints a Call-In Park Attendant to the Recreation Department",
    "category": "personnel",
    "townFiscalImpact": "Yes",
@@ -673,7 +585,7 @@
   {
    "number": "2026-231",
    "numberSource": "printed",
-   "seq": 11,
+   "seq": 9,
    "title": "Appoints a Call-In Assistant Recreation Leader to the Recreation Department",
    "category": "personnel",
    "townFiscalImpact": "Yes",
@@ -738,7 +650,7 @@
   {
    "number": "2026-232",
    "numberSource": "printed",
-   "seq": 12,
+   "seq": 10,
    "title": "Appoints an Account Clerk to the Finance Department",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -782,7 +694,7 @@
   {
    "number": "2026-233",
    "numberSource": "printed",
-   "seq": 13,
+   "seq": 11,
    "title": "Provisionally Appoints an Ordinance Inspector",
    "category": "personnel",
    "townFiscalImpact": "Yes",
@@ -847,7 +759,7 @@
   {
    "number": "2026-234",
    "numberSource": "printed",
-   "seq": 14,
+   "seq": 12,
    "title": "Appoints Douglas Borge to the Town of Riverhead Emerging Technology Committee",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -891,7 +803,7 @@
   {
    "number": "2026-235",
    "numberSource": "printed",
-   "seq": 15,
+   "seq": 13,
    "title": "Reappoints Richard Wines to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -935,7 +847,7 @@
   {
    "number": "2026-236",
    "numberSource": "printed",
-   "seq": 16,
+   "seq": 14,
    "title": "Reappoints Kelly Shauger to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -979,7 +891,7 @@
   {
    "number": "2026-237",
    "numberSource": "printed",
-   "seq": 17,
+   "seq": 15,
    "title": "Reappoints James McManmon to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -1023,7 +935,7 @@
   {
    "number": "2026-238",
    "numberSource": "printed",
-   "seq": 18,
+   "seq": 16,
    "title": "Reappoints Stephanie Bail to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -1067,7 +979,7 @@
   {
    "number": "2026-239",
    "numberSource": "printed",
-   "seq": 19,
+   "seq": 17,
    "title": "Reappoints Joe Petrocelli to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -1111,7 +1023,7 @@
   {
    "number": "2026-240",
    "numberSource": "printed",
-   "seq": 20,
+   "seq": 18,
    "title": "Reappoints Peter Lucas to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -1155,7 +1067,7 @@
   {
    "number": "2026-241",
    "numberSource": "printed",
-   "seq": 21,
+   "seq": 19,
    "title": "Reappoints Alta Indelman to the Landmarks Preservation Commission",
    "category": "personnel",
    "townFiscalImpact": "No",
@@ -1199,7 +1111,7 @@
   {
    "number": "2026-242",
    "numberSource": "printed",
-   "seq": 22,
+   "seq": 20,
    "title": "Adopts Town of Riverhead Petty Cash Policy",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1243,7 +1155,7 @@
   {
    "number": "2026-243",
    "numberSource": "printed",
-   "seq": 23,
+   "seq": 21,
    "title": "Increase of the Petty Cash Account for the Riverhead Parks and Recreation Department and Assigns the Custody of the Petty Cash Account",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1306,7 +1218,7 @@
   {
    "number": "2026-244",
    "numberSource": "printed",
-   "seq": 24,
+   "seq": 22,
    "title": "Amends Riverhead Water District Schedule of Rates and Charges",
    "category": "fees",
    "townFiscalImpact": "No",
@@ -1465,7 +1377,7 @@
   {
    "number": "2026-245",
    "numberSource": "printed",
-   "seq": 25,
+   "seq": 23,
    "title": "Approves S&D Mini Excavating, Inc. As A Drainlayer For The Riverhead Sewer District",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1509,7 +1421,7 @@
   {
    "number": "2026-246",
    "numberSource": "printed",
-   "seq": 26,
+   "seq": 24,
    "title": "Approves Riverhead Business Improvement District Management Association\u2019s Request to Extend the Filing Date for Filing of District Tax Exemption",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1553,7 +1465,7 @@
   {
    "number": "2026-247",
    "numberSource": "printed",
-   "seq": 27,
+   "seq": 25,
    "title": "Awards Bid for Chemicals for Sewer District",
    "category": "capital",
    "townFiscalImpact": "Yes",
@@ -1622,7 +1534,7 @@
   {
    "number": "2026-248",
    "numberSource": "printed",
-   "seq": 28,
+   "seq": 26,
    "title": "Awards Bid for Generator Maintenance",
    "category": "capital",
    "townFiscalImpact": "Yes",
@@ -1702,7 +1614,7 @@
   {
    "number": "2026-249",
    "numberSource": "printed",
-   "seq": 29,
+   "seq": 27,
    "title": "Awards Bid for Construction of Pre-fabricated Building for the Highway Department",
    "category": "capital",
    "townFiscalImpact": "Yes",
@@ -1746,7 +1658,7 @@
   {
    "number": "2026-250",
    "numberSource": "printed",
-   "seq": 30,
+   "seq": 28,
    "title": "Authorizes the Town Clerk to Publish and Post Notice to Bidders for Twin Honda Outboard Motors, or Equal, Plus Additional Related Items and Installation for the Riverhead Police Department",
    "category": "appointment-volunteer",
    "townFiscalImpact": "No",
@@ -1790,7 +1702,7 @@
   {
    "number": "2026-251",
    "numberSource": "printed",
-   "seq": 31,
+   "seq": 29,
    "title": "Authorizes Town Clerk to Publish and Post Request for Proposals for Buses for Recreation Summer Day Camp Trips",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1834,7 +1746,7 @@
   {
    "number": "2026-252",
    "numberSource": "printed",
-   "seq": 32,
+   "seq": 30,
    "title": "Adopts a Local Law Repealing Article 1 of Chapter 105, Titled \u201cAccessory Apartments\u201d of the Riverhead Town Code and Thereupon Enacting a New Part 7, Titled \u201cAccessory Dwelling Unit(s) (ADUs)\u201d of Chapter 217, Titled \u201cBuildings, Building Construction and Improvements and Housing Standards\u201d of the Riverhead Town Code",
    "category": "legislative",
    "townFiscalImpact": "No",
@@ -1878,7 +1790,7 @@
   {
    "number": "2026-253",
    "numberSource": "printed",
-   "seq": 33,
+   "seq": 31,
    "title": "Adopts A Local Law Amending Chapter 265 Of The Riverhead Town Code Entitled, \u201cSewers\u201d",
    "category": "legislative",
    "townFiscalImpact": "No",
@@ -1922,7 +1834,7 @@
   {
    "number": "2026-254",
    "numberSource": "printed",
-   "seq": 34,
+   "seq": 32,
    "title": "Authorizes the Supervisor to Execute a Non-Binding, Project Scope Letter to PSEGLI for the redevelopment of 1129 West Main Street, Riverhead, New York, known as the \u201cPerkins Building\u201d",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -1957,52 +1869,8 @@
     "evidence": "category"
    },
    "vote": {
-    "adopted": true,
-    "tag": "unanimous",
-    "ayes": null,
-    "nays": 0
-   }
-  },
-  {
-   "number": "2026-254",
-   "numberSource": "title",
-   "seq": 35,
-   "title": "Authorizes the Supervisor to Execute a Non-Binding, Project Scope Letter to PSEGLI for the redevelopment of 1129 West Main Street, Riverhead, New York, known as the \u201cPerkins Building\u201d",
-   "category": "procedural",
-   "townFiscalImpact": "No",
-   "townTreatment": "described",
-   "amount": null,
-   "funding": {
-    "source": null,
-    "sources": [],
-    "sourceText": ": : : :",
-    "fundCodes": [],
-    "funds": [],
-    "amount": null,
-    "accounts": [],
-    "fundBalanceAccounts": [],
-    "fundBalanceFunds": [],
-    "fundBalanceDraw": null,
-    "fundBalanceClasses": [],
-    "drawsFundBalance": false,
-    "matchRequired": null,
-    "matchPercent": null,
-    "reimbursementBasis": false,
-    "splitAcross": 0,
-    "createsAccounts": []
-   },
-   "statedAmounts": [],
-   "statedCost": null,
-   "statementBelowTable": null,
-   "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair",
-    "evidence": "category"
-   },
-   "vote": {
-    "adopted": true,
-    "tag": "unanimous",
+    "adopted": false,
+    "tag": "tabled",
     "ayes": null,
     "nays": 0
    }
@@ -2010,7 +1878,7 @@
   {
    "number": "2026-255",
    "numberSource": "printed",
-   "seq": 36,
+   "seq": 33,
    "title": "Authorizes the Supervisor to Execute an Agreement Authorizing the Town to Accept Funds from Suffolk County Office for the Aging for the Purpose of Supplementing the Town\u2019s Nutrition Program for the Elderly 2026",
    "category": "contract",
    "townFiscalImpact": "No",
@@ -2061,7 +1929,7 @@
   {
    "number": "2026-256",
    "numberSource": "printed",
-   "seq": 37,
+   "seq": 34,
    "title": "Ratifies Execution Of A License Agreement With Research Foundation Of State University Of New York For Installation Of Fish Passage Camera At Grangebel Park",
    "category": "permit",
    "townFiscalImpact": "No",
@@ -2105,7 +1973,7 @@
   {
    "number": "2026-257",
    "numberSource": "printed",
-   "seq": 38,
+   "seq": 35,
    "title": "Zenith Building Addition Site Plan Preliminary Approval 301 E. Main Street & 12 McDermott Ave, Riverhead, NY SCTM Nos. 600-129-4-1 & 600-129-4-5.2",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -2174,7 +2042,7 @@
   {
    "number": "2026-258",
    "numberSource": "printed",
-   "seq": 39,
+   "seq": 36,
    "title": "Ratifies Authorization for Town Attorney to Retain Special Counsel in Connection with Litigation Commenced by Suffolk County Water Authority",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -2218,7 +2086,7 @@
   {
    "number": "2026-259",
    "numberSource": "printed",
-   "seq": 40,
+   "seq": 37,
    "title": "Approves ClearRiver Environmental Service Corp. as a Drainlayer for The Riverhead Sewer District",
    "category": "procedural",
    "townFiscalImpact": "No",
@@ -2262,7 +2130,7 @@
   {
    "number": "2026-260",
    "numberSource": "printed",
-   "seq": 41,
+   "seq": 38,
    "title": "Approves Special Event Chapter 255 Application for The Greater Long Island Running Club (Kings Park 15K)",
    "category": "permit",
    "townFiscalImpact": "No",
@@ -2325,7 +2193,7 @@
   {
    "number": "2026-261",
    "numberSource": "printed",
-   "seq": 42,
+   "seq": 39,
    "title": "Approves Special Event Chapter 255 Application for Polish Town Civic Association (Polish Town Street Fair and Festival)",
    "category": "permit",
    "townFiscalImpact": "No",
@@ -2382,7 +2250,7 @@
   {
    "number": "2026-262",
    "numberSource": "printed",
-   "seq": 43,
+   "seq": 40,
    "title": "Approves Special Event Chapter 255 Application for Riverhead Rotary (Garden Festival)",
    "category": "permit",
    "townFiscalImpact": "No",
@@ -2439,7 +2307,7 @@
   {
    "number": "2026-263",
    "numberSource": "printed",
-   "seq": 44,
+   "seq": 41,
    "title": "Pays Bills",
    "category": "warrant",
    "townFiscalImpact": "No",
@@ -2483,7 +2351,7 @@
   {
    "number": "2026-264",
    "numberSource": "printed",
-   "seq": 45,
+   "seq": 42,
    "title": "Adopts Final Scope for the Preparation of the DEIS for Duffy MX Motocross Track Special Permit and Site Plan Application 2822 River Rd, Calverton, NY SCTM No. 600-136-1-4",
    "category": "permit",
    "townFiscalImpact": "No",
@@ -2527,7 +2395,7 @@
   {
    "number": "2026-265",
    "numberSource": "printed",
-   "seq": 46,
+   "seq": 43,
    "title": "Authorizes Settlement of NYS Division of Human Rights Complaint",
    "category": "litigation",
    "townFiscalImpact": "No",
@@ -2571,7 +2439,7 @@
   {
    "number": "2026-266",
    "numberSource": "printed",
-   "seq": 47,
+   "seq": 44,
    "title": "Authorizes the Community Development Department to Apply for Community Project Funding a/k/a Congressionally Directed Spending (Senate) and Community Project Funding a/k/a Congressionally Directed Spending (House of Representatives) for Economic Development Initiative for Repaving, Draining, Public Works Facilities, Streetscape improvements",
    "category": "grant",
    "townFiscalImpact": "No",
@@ -2622,7 +2490,7 @@
   {
    "number": "2026-267",
    "numberSource": "printed",
-   "seq": 48,
+   "seq": 45,
    "title": "Authorizes the Community Development Department to Apply for Community Project Funding a/k/a Congressionally Directed Spending (Senate) and Community Project Funding a/k/a Congressionally Directed Spending (House of Representatives) for Police Vehicles",
    "category": "grant",
    "townFiscalImpact": "No",

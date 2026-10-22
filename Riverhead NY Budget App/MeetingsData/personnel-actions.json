@@ -1,0 +1,581 @@
+{
+ "note": "Town Board resolutions that take a personnel action by payroll file number, with the person the Town's payroll roster (company code GFZ) gives that number to. The match is by number on a roster that runs through file number 001308; a number above that has no name here. A resolution is an action, not a finding.",
+ "rosterHighest": "001308",
+ "actions": [
+  {
+   "meeting": "2026-10-20",
+   "resolution": "2026-962",
+   "title": "POLICE DISCIPLINARY CHARGES",
+   "kind": "discipline",
+   "fileNumber": "000347",
+   "quote": "WHEREAS, Chief of Police Edward J. Frost has filed disciplinary charges against employee #GFZ000347",
+   "result": "Adopted",
+   "people": [
+    {
+     "name": "Bianco, William A",
+     "year": 2025,
+     "title": "Police Officer",
+     "department": "Squad 1 - Police"
+    }
+   ],
+   "source": "etl/data/meetings/2026-10-20-vote-packet.txt",
+   "redacted": [],
+   "review": {
+    "state": "publish",
+    "reviewed": "2026-10-22",
+    "reviewAgainBy": "2027-01-22",
+    "basis": "The site owner asked on October 21, 2026 that employees named only by file number in disciplinary, termination and separation resolutions be identified. The number is on the roster once. The payroll lists this person as a Police Officer in Squad 1 through 2025, which fits charges filed by the Chief of Police. The quote is the resolution's first clause and carries no redactable item. Re-reviewed in three months because the charges are pending and a determination may follow."
+   },
+   "later": []
+  },
+  {
+   "meeting": "2026-10-20",
+   "resolution": "2026-951",
+   "title": "RATIFIES THE TERMINATION OF A MAINTENANCE MECHANIC III",
+   "kind": "termination",
+   "fileNumber": "001716",
+   "quote": "RESOLVED, that effective October 5, 2026 this Town Board hereby terminates employee GFZ001716 from his position",
+   "result": "Adopted",
+   "people": [],
+   "source": "etl/data/meetings/2026-10-20-vote-packet.txt",
+   "redacted": [],
+   "review": {
+    "state": "no-match"
+   },
+   "later": []
+  },
+  {
+   "meeting": "2026-09-01",
+   "resolution": "2026-827",
+   "title": "RATIFIES THE AUTHORIZATION FOR THE SUPERVISOR TO EXECUTE AND AGREEMENT WITH A TOWN EMPLOYEE",
+   "kind": "separation",
+   "fileNumber": "000397",
+   "quote": "WHEREAS, the Town Board has reviewed and considered the terms of an Agreement concerning the retirement and separation of Town Employee GFZ000397 from Town employment",
+   "result": "Adopted",
+   "people": [
+    {
+     "name": "Dillingham, Drew E",
+     "year": 2025,
+     "title": "Town Engineer",
+     "department": "Town Engineer Management"
+    }
+   ],
+   "source": "etl/data/meetings/2026-09-01-vote-packet.txt",
+   "redacted": [],
+   "review": {
+    "state": "publish",
+    "reviewed": "2026-10-22",
+    "reviewAgainBy": "2027-04-22",
+    "basis": "Identified at the site owner's request of October 21, 2026. The number is on the roster once; the payroll lists this person as Town Engineer through 2025. The resolution approves an agreement concerning retirement and separation and states no reason or finding."
+   },
+   "later": []
+  },
+  {
+   "meeting": "2026-08-18",
+   "resolution": "2026-781",
+   "title": "RATIFIES THE TERMINATION OF A MAINTENANCE MECHANIC II",
+   "kind": "termination",
+   "fileNumber": "001701",
+   "quote": "RESOLVED, that effective July 27, 2026 this Town Board hereby terminates employee GFZ001701 from his position",
+   "result": "Adopted",
+   "people": [],
+   "source": "etl/data/meetings/2026-08-18-vote-packet.txt",
+   "redacted": [],
+   "review": {
+    "state": "no-match"
+   },
+   "later": []
+  },
+  {
+   "meeting": "2026-08-18",
+   "resolution": "2026-780",
+   "title": "RATIFIES THE TERMINATION OF A PART-TIME OFFICE ASSISTANT",
+   "kind": "termination",
+   "fileNumber": "001703",
+   "quote": "RESOLVED, that effective July 29, 2026 this Town Board hereby terminates employee GFZ001703 from her position",
+   "result": "Adopted",
+   "people": [],
+   "source": "etl/data/meetings/2026-08-18-vote-packet.txt",
+   "redacted": [],
+   "review": {
+    "state": "no-match"
+   },
+   "later": []
+  },
+  {
+   "meeting": "2025-07-01",
+   "resolution": "2025-606",
+   "title": "RATIFIES AUTHORIZATION FOR THE SUPERVISOR TO EXECUTE A STIPULATION WITH AN EMPLOYEE",
+   "kind": "stipulation",
+   "fileNumber": "001191",
+   "quote": "RESOLVED, that the Town Board hereby ratifies authorization for the Supervisor to execute a Stipulation with employee # GFZ001191",
+   "result": "ADOPTED [UNANIMOUS]",
+   "people": [
+    {
+     "name": "Sofoklis, Andreas P",
+     "year": 2025,
+     "title": "Chief Building Inspector",
+     "department": "Safety Inspection / Inspectors"
+    }
+   ],
+   "source": "etl/data/meetings/2025-07-01-minutes.txt",
+   "redacted": [],
+   "review": {
+    "state": "publish",
+    "reviewed": "2026-10-22",
+    "reviewAgainBy": "2027-04-22",
+    "basis": "Identified at the site owner's request of October 21, 2026. The number is on the roster once; the payroll lists this person as Chief Building Inspector, with a 2025 status of terminated. The resolution ratifies a stipulation and does not say what it concerns."
+   },
+   "later": []
+  },
+  {
+   "meeting": "2025-07-01",
+   "resolution": "2025-589",
+   "title": "RATIFIES AUTHORIZATION FOR THE SUPERVISOR TO EXECUTE A STIPULATION WITH AN EMPLOYEE",
+   "kind": "stipulation",
+   "fileNumber": "001173",
+   "quote": "RESOLVED, that the Town Board hereby ratifies authorization for the Supervisor to execute a Stipulation with employee # GFZ001173",
+   "result": "ADOPTED [UNANIMOUS]",
+   "people": [
+    {
+     "name": "Crohan, Tyler E",
+     "year": 2025,
+     "title": "Wastewater Treatment Plant Operator 3A",
+     "department": "Sewer / Scavenger Waste"
+    }
+   ],
+   "source": "etl/data/meetings/2025-07-01-minutes.txt",
+   "redacted": [],
+   "review": {
+    "state": "publish",
+    "reviewed": "2026-10-22",
+    "reviewAgainBy": "2027-04-22",
+    "basis": "Identified at the site owner's request of October 21, 2026. The number is on the roster once; the payroll lists this person as a Wastewater Treatment Plant Operator in the Sewer District. The resolution ratifies a stipulation and does not say what it concerns."
+   },
+   "later": []
+  }
+ ],
+ "unionAgreements": [
+  {
+   "meeting": "2026-10-20",
+   "resolution": "2026-956",
+   "title": "Authorize the Supervisor to Execute Agreement with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local # 852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves an Agreement with the CSEA Local 1000 and authorizes the Supervisor to execute same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2026-10-20-vote-packet.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2026-07-07",
+   "resolution": "2026-680",
+   "title": "Ratifies Authorization for the Supervisor to Execute Stipulation with Riverhead Town Police Benevolent Association",
+   "union": "Police Benevolent Association",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves the attached Stipulation with the Riverhead Town Police Benevolent Association (\"PBA\") and the Supervisor shall be authorized to execute the same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12085,plainText=false)",
+   "attachment": {
+    "pages": [
+     270,
+     271,
+     272
+    ],
+    "summary": "WHEREAS, the Town Board of the Town of Riverhead is desirous of offering a program incentive for voluntary retirement to certain PBA Bargaining Unit members eligible for retirement (“the Incentive”)"
+   }
+  },
+  {
+   "meeting": "2026-07-07",
+   "resolution": "2026-679",
+   "title": "Ratifies the Authorization for the Supervisor to Execute Stipulation with Riverhead Town Superior Officers Association, Inc.",
+   "union": "Superior Officers Association",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves the attached Stipulation with the Riverhead Town Superior Officers Association, Inc. (“SOA”) and ratifies the authorization for the Supervisor to execute the same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12085,plainText=false)",
+   "attachment": {
+    "pages": [
+     265,
+     266,
+     267
+    ],
+    "summary": "WHEREAS, the Town Board of the Town of Riverhead is desirous of offering a program incentive for voluntary retirement to certain SOA Bargaining Unit members eligible for retirement (“the Incentive”)"
+   }
+  },
+  {
+   "meeting": "2026-07-07",
+   "resolution": "2026-678",
+   "title": "Ratifies Authorization for the Supervisor to Execute Stipulation with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local #852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a stipulation with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local #852 and ratifies the authorization for the Supervisor to execute same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12085,plainText=false)",
+   "attachment": {
+    "pages": [
+     260,
+     261,
+     262
+    ],
+    "summary": "WHEREAS, the Town Board of the Town of Riverhead is desirous of offering a program incentive for voluntary retirement to certain CSEA Bargaining Unit members eligible for retirement (“the Incentive”)"
+   }
+  },
+  {
+   "meeting": "2026-06-02",
+   "resolution": "2026-564",
+   "title": "Ratifies the Authorization of the Supervisor to Execute Stipulation with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local # 852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a Stipulation with the CSEA Local 1000 and ratifies the authorization for the Supervisor to execute same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12145,plainText=false)",
+   "attachment": null
+  },
+  {
+   "meeting": "2026-05-05",
+   "resolution": "2026-457",
+   "title": "Ratifies the Authorization for the Supervisor to Execute Stipulation with the CSEA, LOCAL 1000, AFSCME, AFL-CIO,Riverhead Unit of the Suffolk Local # 852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a Stipulation with the CSEA Local 1000 and ratifies the authorization for the Supervisor to execute the same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11882,plainText=false)",
+   "attachment": null
+  },
+  {
+   "meeting": "2026-05-05",
+   "resolution": "2026-451",
+   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA to Restructure the Titles within the Water District",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, the Water District Superintendent requested to meet with the Town board to review the reasons behind excessive turnover of the department, specifically of those individuals who leave for a direct competitor (i.e. Suffolk County Water Authority and the Brookhaven National Lab)",
+    "WHEREAS, the Town Board did meet with the Water District Superintendent, Frank Mancini, to review and discuss the above, and agreed that the turnover in the Water District required immediate attention",
+    "WHEREAS, the Town conferred with the Civil Service Employees Association, Inc., Local 1000, AFSCME, AFL-CIO, Riverhead Unit of Suffolk Local #852 (CSEA), discussing the possibility of restructuring the titles within the Water District in the CSEA Operational & Technical salary schedule to reflect the knowledge and …",
+    "RESOLVED, this Town Board authorizes the Town Supervisor to sign the attached Memorandum of Agreement, outlining the title moves of the Water District titles"
+   ],
+   "named": [
+    "Mancini, Frank R"
+   ],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11882,plainText=false)",
+   "attachment": {
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "summary": "WHEREAS, due to the need to remain competitive as an employer, it is the desire of both the Town and the CSEA to re-evaluate the placement of the respective titles previously listed within the structure of the CSEA Operational & Technical Salary Schedule and complete a salary restructure of the …"
+   }
+  },
+  {
+   "meeting": "2026-01-21",
+   "resolution": "2026-100",
+   "title": "Authorize the Supervisor to Execute Agreement with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local #852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a Stipulation with the CSEA Local 1000 and authorizes the Supervisor to execute same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)",
+   "attachment": null
+  },
+  {
+   "meeting": "2025-11-06",
+   "resolution": "2025-915",
+   "title": "Ratifies the Authorization for the Supervisor to Execute a Stipulation with Local 1000, AFSCME, AFL_CIO Riverhead Unit of the Suffolk Local 852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, due to the growth of the IT department and the need for additional staff who are authorized to handle confidential data and situations, the suggestion has been made by the Town Supervisor and the Information Technology department head to add a deputy position to the IT department",
+    "WHEREAS, the Town, in order to maintain administrative stability and continuity of services, expressed a desire to the CSEA to promote a current Network & Systems Specialist II, John West, although he is not currently on a certified list of eligible with Suffolk County Civil Service",
+    "WHEREAS, the Suffolk County Department of Civil Service has agreed to earmark the position of current employee John West, as it has been proven to and approved by them that his daily duties are more appropriate for that in the deputy title of Network & Systems Administrator",
+    "WHEREAS, the CSEA local unit agreed to promote John West, pursuant to the items outlined in the accompanying stipulation."
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10343,plainText=false)",
+   "attachment": {
+    "pages": [
+     88,
+     89
+    ],
+    "summary": "WHEREAS, the title of Network & Systems Administrator has been designated as deputy level by the department of civil service, prompting restructuring of the Department Head’s title to the appropriate title and vacating the title of Network & Systems Administrator"
+   }
+  },
+  {
+   "meeting": "2025-10-07",
+   "resolution": "2025-830",
+   "title": "Ratifies the Authorization for the Supervisor to Execute a Stipulation with Local 1000, AFSCME, AFL_CIO Riverhead Unit of the Suffolk Local 3852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, there exists a vacancy within the Town of Riverhead Building Department",
+    "WHEREAS, the Town, in order to advance the administrative stability and continuity of services to residents, expressed a desire to the CSEA union to hire an outside consultant on a temporary basis, until a suitable candidate can be named as a full-time replacement and unit member",
+    "WHEREAS, the CSEA union has agreed to same",
+    "RESOLVED, that the Town Board hereby approves the attached Stipulation between the Town of Riverhead and Local 1000, AFSCME, AFL-CIO, Riverhead Unit of Suffolk Local #852 effective September 3, 2025 and authorizes the Town Supervisor to execute same with his signature."
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10248,plainText=false)",
+   "attachment": null
+  },
+  {
+   "meeting": "2025-09-03",
+   "resolution": "2025-769",
+   "title": "Authorizes Supervisor to Execute a Stipulation with Local 1000, AFSCME, AFL_CIO Riverhead Unit of the Suffolk Local 3852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, the civil service job title, “Homemaker” is currently in use for employees who work at the Riverhead Town Seniors Center",
+    "WHEREAS, this position was moved via resolution and stipulation from group C to group D of the CSEA Clerical and Supervisory Salary Schedule in June of 2021 to attract and retain talent",
+    "WHEREAS, the Town it is incumbent upon the Town to again reexamine the title’s placement within the salary structure of the CSEA Contract, reassigning it from Group D of the Clerical and Supervisory Salary Schedule to Group 2",
+    "WHEREAS, as a result of this reassignment, the following salary adjustments shall be made: Magdalena Lagun’s hourly wage will be increased from $18.9790 per hour to $20.5789 Lisa Liggon’s hourly wage will be increased from $18.50 per hour to $19.50"
+   ],
+   "named": [
+    "Lagun, Magdalena",
+    "Lagun, Magdalena E"
+   ],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=6312,plainText=false)",
+   "attachment": {
+    "pages": [
+     107
+    ],
+    "summary": "WHEREAS, the civil service job title “Homemaker” is currently being used for certain employees employed at the Riverhead Town Seniors Center"
+   }
+  },
+  {
+   "meeting": "2025-08-19",
+   "resolution": "2025-748",
+   "title": "Authorize Supervisor to Execute Stipulation with Riverhead Town Superior Officers Association, Inc.",
+   "union": "Superior Officers Association",
+   "result": "[UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves the attached Stipulation with the Riverhead Town Superior Officers Association, Inc. (“SOA”) and authorizes the Supervisor to execute the same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=296,plainText=false)",
+   "attachment": null
+  },
+  {
+   "meeting": "2025-08-19",
+   "resolution": "2025-720",
+   "title": "Ratifies Authorization For The Supervisor To Execute Stipulation with The CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local #852",
+   "union": "CSEA",
+   "result": "[UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a stipulation with the CSEA, Local 1000, AFSCME, AFL-CIO, Riverhead Unit of the Suffolk Local #852 and authorizes the Supervisor to execute same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=296,plainText=false)",
+   "attachment": {
+    "pages": [
+     130,
+     131
+    ],
+    "summary": "1. The Improper Practice Charge will be immediately withdrawn, with prejudice, following Town Board ratification of this Agreement."
+   }
+  },
+  {
+   "meeting": "2025-08-05",
+   "resolution": "2025-674",
+   "title": "Ratifies Authorization For Supervisor To Execute An Agreement Between The Town Of Riverhead And The Riverhead Police Benevolent Association And Superior Officers Association",
+   "union": "Police Benevolent Association and Superior Officers Association",
+   "result": "APPROVE ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby ratifies an agreement among the PBA and SOA regarding Body Worn Cameras and In-Car Vehicle Cameras Policy and Procedure"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/union-agreement-excerpts.json",
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=230,plainText=false)",
+   "attachment": {
+    "pages": [
+     254,
+     255,
+     256
+    ],
+    "summary": "3. All PBA and SOA Bargainmg Unit members will be subject to all other technology- telated policies and procedures that have been or may be issued by the Town pursuant to existing policies, as they may be amended by the Town or Department from time to time, subject to any applicable Taylor Law duty …"
+   }
+  },
+  {
+   "meeting": "2025-06-17",
+   "resolution": "2025-563",
+   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Merker",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, William Merker has been employed with the Town since October 4, 2004 and has served in the position of Maintenance Mechanic III in the Street Lighting division of the Engineering department since January 1, 2019",
+    "WHEREAS, Town Engineer Ken Testa, requested a promotion for William Merker based on his qualifications and his tenure with the Town, and the Supervisor agreed. However, the Suffolk County Department of Civil Service is unable to grant the promotion from a Maintenance Mechanic III to a Maintenance Mechanic IV due to …",
+    "WHEREAS, the Civil Service Employees Association, Inc., Local 1000, AFSCME, AFL -CIO, Riverhead Unit of Suffolk Local #852 (CSEA) has agreed to a stipulation outlining a merit increase for Mr. Merker without a title promotion",
+    "RESOLVED, this Town Board hereby authorizes the Town Supervisor to enter into an agreement with the CSEA union to effectuate a merit increase in place of the promotion previously denied by Suffolk County Civil Service effective June 15, 2025 and sets William Merker’s salary at a rate of pay as found on Group 12, Step …"
+   ],
+   "named": [
+    "Merker, William D"
+   ],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-06-17-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-06-17",
+   "resolution": "2025-562",
+   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Smith, J.",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, James Smith has been employed with the Town since August 21, 2006 and has served in the position of Maintenance Mechanic III in the Street Lighting division of the Engineering department since May 23, 2011",
+    "WHEREAS, Town Engineer Ken Testa, requested a promotion for James Smith based on his qualifications and his tenure with the Town, and the Supervisor agreed. However, the Suffolk County Department of Civil Service is unable to grant the promotion from a Maintenance Mechanic III to a Maintenance Mechanic IV due to the …",
+    "WHEREAS, the Civil Service Employees Association, Inc., Local 1000, AFSCME, AFL -CIO, Riverhead Unit of Suffolk Local #852 (CSEA) has agreed to a stipulation outlining a merit increase for Mr. Smith without a title promotion",
+    "RESOLVED, this Town Board hereby authorizes the Town Supervisor to enter into an agreement with the CSEA union to effectuate a merit increase in place of the promotion previously denied by Suffolk County Civil Service effective June 15, 2025 and sets James Smith’s salary at a rate of pay as found on Group 12, Step 15 …"
+   ],
+   "named": [
+    "Smith, James A"
+   ],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-06-17-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-06-17",
+   "resolution": "2025-561",
+   "title": "Authorizes the Supervisor to Enter into an Agreement with the CSEA- Zebrowski",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, Town Engineer Ken Testa has expressed his desire to give a merit increase to Building Maintenance Manager Dave Zebrowski and the Supervisor agreed",
+    "WHEREAS, giving Dave Zebrowski a merit increase from his current position of Group 20 step 16A on The CSEA Operational and Technical Salary Schedule would have pushed him to the end of the schedule, leaving no room for step increases for the duration of his tenure with the Town",
+    "WHEREAS, the Civil Service Employees Association, Inc., Local 1000, AFSCME, AFL - CIO, Riverhead Unit of Suffolk Local #852 (CSEA) has agreed to a stipulation outlining a merit increase for Mr. Zebrowski which will move him from the CSEA Operational and Technical Salary Schedule to the CSEA Administrative Salary …",
+    "RESOLVED, this Town Board hereby authorizes the Town Supervisor to enter into an agreement with the CSEA union effective June 15, 2025 and sets Dave Zebrowski’s salary at a rate of pay as found on Group 9, Step 6 of the CSEA Administrative Salary Schedule which is $94,266.94 per annum. ."
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-06-17-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-04-15",
+   "resolution": "2025-358",
+   "title": "Ratifies Agreement with Riverhead Town Superior Officers Association, Inc. (3/2025)",
+   "union": "Superior Officers Association",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a Stipulation of Agreement with the Riverhead Town Superior Officers Association, Inc. (“SOA”) and ratifies the same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-04-15-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-04-15",
+   "resolution": "2025-357",
+   "title": "Ratifies Agreement with Riverhead Town Superior Officers Association, Inc. (Insurance Buy Out)",
+   "union": "Superior Officers Association",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board hereby approves a Stipulation of Agreement with the Riverhead Town Superior Officers Association, Inc. (“SOA”) and ratifies the same; and"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-04-15-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-04-15",
+   "resolution": "2025-353",
+   "title": "Authorizes Supervisor to Execute a Stipulation with Local 1000, AFSCME, AFL-CIO Riverhead Unit of the Suffolk Local 852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, Doris Strange has been an employee of the Town of Riverhead since September 13, 1993 serving in the title of Account Clerk in the Recreation department",
+    "WHEREAS, Ms. Strange is currently assigned to Group 9, Step 19 of the CSEA Clerical & Supervisory Salary Schedule which is $70,724.19 per annum",
+    "WHEREAS, in acknowledgement of Ms. Strange’s length of service, hard work and dedication, the CSEA and the Town Board have agreed on a one-time non- precedent setting basis to reassign Ms. Strange’s placement as an Account Clerk in the Recreation department within the structure of the aforementioned salary schedule …",
+    "RESOLVED, that the Town Board hereby approves the attached Stipulation between the Town of Riverhead and Local 1000, AFSCME, AFL-CIO, Riverhead Unit of Suffolk Local #852 the terms of which shall be deemed to be effective Monday, April 20, 2025 and authorizes the Town Supervisor to execute same with his signature."
+   ],
+   "named": [
+    "Strange, Doris L"
+   ],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-04-15-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-03-04",
+   "resolution": "2025-238",
+   "title": "Ratifies Authorization for the Supervisor to Execute an Agreement with the Riverhead Town Police Benevolent Association",
+   "union": "Police Benevolent Association",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "RESOLVED, that the Town Board approves the agreement between the Riverhead Town Police Benevolent Association (\"PBA\") and the Town of Riverhead for the contract period January 1, 2023 through December 31, 2026 and ratifies the authorization for the Town Supervisor to execute same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-03-04-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  },
+  {
+   "meeting": "2025-01-07",
+   "resolution": "2025-77",
+   "title": "Authorizes the Supervisor to Execute a Stipulation with Local 1000, Afscme, AFL-CIO, Riverhead Unit of the Suffolk Local #852",
+   "union": "CSEA",
+   "result": "ADOPTED [UNANIMOUS]",
+   "clauses": [
+    "WHEREAS, the Chief of Police has requested a promotion for a CSEA Union employee in a title that is not currently used by the Town of Riverhead, Public Safety Dispatcher III",
+    "WHEREAS, the CSEA Public Safety Dispatcher (PSD) salary schedule has group 1 for the title Public Safety Dispatcher I and group 2 for the title Public Safety Dispatcher II",
+    "WHEREAS, to accompany this title, the Town of Riverhead proposed to the CSEA that a new group, to be known as group 3, be added to the Public Safety Dispatcher (PSD) salary schedule for 2025 and forward to accommodate this new title, and the CSEA has subsequently agreed",
+    "RESOLVED, that the Town Board be and hereby approves the stipulation outlined in this resolution and authorizes the Supervisor to execute same"
+   ],
+   "named": [],
+   "fileNumbers": [],
+   "source": "etl/data/meetings/2025-01-07-minutes.txt",
+   "sourceUrl": null,
+   "attachment": null
+  }
+ ]
+}

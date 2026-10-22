@@ -1927,27 +1927,6 @@
   },
   {
    "seq": 91,
-   "number": "2026-227",
-   "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
-   "result": "ADOPTED [UNANIMOUS]",
-   "adopted": true,
-   "tag": "unanimous",
-   "ayesCount": null,
-   "naysCount": 0,
-   "mover": "Robert Kern",
-   "seconder": "Denise Merrifield",
-   "votes": {
-    "Halpin": "aye",
-    "Rothwell": "aye",
-    "Kern": "aye",
-    "Merrifield": "aye",
-    "Waski": "aye"
-   },
-   "officialDocumentVerified": false,
-   "officialDocumentFileIds": []
-  },
-  {
-   "seq": 92,
    "number": "2026-358",
    "title": "Resolution To Support County of Suffolk Application for Grant Funding Under NYS Environmental Bond Act for Preservation as Open Space of Property Commonly Known and Described as Venezia Square, Wading River, NY SCTM#s 600-73-1-Lots 1.4, 1.16, 1.17, 1.18, and 1.19",
    "result": "ADOPTED [UNANIMOUS]",
@@ -1968,9 +1947,51 @@
    "officialDocumentFileIds": []
   },
   {
-   "seq": 93,
+   "seq": 92,
    "number": "2026-359",
    "title": "Authorizes the Town Supervisor to Execute Professional Services Agreement with Hon. Lori M. Hulse",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Kenneth Rothwell",
+   "seconder": "Robert Kern",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
+  },
+  {
+   "seq": 93,
+   "number": "2026-227",
+   "title": "Rehires and Sets Salaries for Various Call-In Recreation Personnel for 2026",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "tag": "unanimous",
+   "ayesCount": null,
+   "naysCount": 0,
+   "mover": "Robert Kern",
+   "seconder": "Denise Merrifield",
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "officialDocumentVerified": false,
+   "officialDocumentFileIds": []
+  },
+  {
+   "seq": 94,
+   "number": "2026-254",
+   "title": "Authorizes the Supervisor to Execute a Non-Binding, Project Scope Letter to PSEGLI for the redevelopment of 1129 West Main Street, Riverhead, New York, known as the \u201cPerkins Building\u201d",
    "result": "ADOPTED [UNANIMOUS]",
    "adopted": true,
    "tag": "unanimous",
@@ -1991,8 +2012,8 @@
  ],
  "slug": "2026-04-07",
  "stats": {
-  "total": 93,
-  "unanimous": 92,
+  "total": 94,
+  "unanimous": 93,
   "contested": 1,
   "failed": 0,
   "tabled": 0
@@ -2001,7 +2022,7 @@
   "Halpin": {
    "name": "Jerry Halpin",
    "title": "Supervisor",
-   "aye": 92,
+   "aye": 93,
    "nay": 1,
    "abstain": 0,
    "absent": 0,
@@ -2011,27 +2032,27 @@
   "Rothwell": {
    "name": "Kenneth Rothwell",
    "title": "Councilman",
-   "aye": 93,
+   "aye": 94,
    "nay": 0,
    "abstain": 0,
    "absent": 0,
-   "moved": 24,
+   "moved": 25,
    "seconded": 22
   },
   "Kern": {
    "name": "Robert Kern",
    "title": "Councilman",
-   "aye": 92,
+   "aye": 93,
    "nay": 1,
    "abstain": 0,
    "absent": 0,
    "moved": 24,
-   "seconded": 24
+   "seconded": 25
   },
   "Merrifield": {
    "name": "Denise Merrifield",
    "title": "Councilwoman",
-   "aye": 93,
+   "aye": 94,
    "nay": 0,
    "abstain": 0,
    "absent": 0,
@@ -2041,7 +2062,7 @@
   "Waski": {
    "name": "Joann Waski",
    "title": "Councilwoman",
-   "aye": 93,
+   "aye": 94,
    "nay": 0,
    "abstain": 0,
    "absent": 0,
@@ -2051,34 +2072,34 @@
  },
  "officialRecord": {
   "status": "vote-record-parsed",
-  "sourceVersionAt": "2026-09-08T01:22:46Z",
+  "sourceVersionAt": "2026-10-22T17:33:42Z",
   "minutes": {
-   "fileId": 11763,
+   "fileId": 12512,
    "type": "Minutes",
    "name": "Minutes",
-   "sha256": "14fb6bf213dda147e1d8919e30b59f66b0380bc763f28b2019284998a98991d5",
-   "bytes": 225902,
+   "sha256": "0267f9415c78a49f04e6adbd8f7a583fd396150008c6e047c3202e4f062b4221",
+   "bytes": 440591,
    "pages": 18,
-   "changedAt": "2026-09-08T01:22:46Z",
-   "revisionCount": 0,
-   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11763,plainText=false)",
+   "changedAt": "2026-10-22T17:33:42Z",
+   "revisionCount": 1,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12512,plainText=false)",
    "hasVoteSummary": true
   },
   "votePacket": null,
   "voteSourceKind": "minutes",
   "voteSource": {
-   "fileId": 11763,
+   "fileId": 12512,
    "type": "Minutes",
    "name": "Minutes",
-   "sha256": "14fb6bf213dda147e1d8919e30b59f66b0380bc763f28b2019284998a98991d5",
-   "bytes": 225902,
+   "sha256": "0267f9415c78a49f04e6adbd8f7a583fd396150008c6e047c3202e4f062b4221",
+   "bytes": 440591,
    "pages": 18,
-   "changedAt": "2026-09-08T01:22:46Z",
-   "revisionCount": 0,
-   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11763,plainText=false)",
+   "changedAt": "2026-10-22T17:33:42Z",
+   "revisionCount": 1,
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12512,plainText=false)",
    "hasVoteSummary": true
   },
-  "minutesRevisionCount": 0,
+  "minutesRevisionCount": 1,
   "resolutionSourceCount": 0,
   "verifiedResolutionCount": 0,
   "resolutionSources": []

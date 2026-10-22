@@ -4,7 +4,7 @@ import Testing
 
 struct BudgetLiveParityCatalogTests {
     @Test func routeCatalogMatchesCurrentWebNavigation() {
-        #expect(BudgetLiveParityCatalog.routeCount == 54)
+        #expect(BudgetLiveParityCatalog.routeCount == 61)
         #expect(BudgetLiveParityCatalog.hasUniquePaths)
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/programs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/compare/"))
@@ -61,11 +61,15 @@ struct BudgetLiveParityCatalogTests {
         #expect(orphans.isEmpty)
     }
 
-    @Test func routeGroupsStillTotalFiftyFour() {
+    /// Every route belongs to exactly one group, so the grouped count has to
+    /// account for the whole catalogue. Asserted against `routeCount` rather
+    /// than a second copy of the number: when the web nav grows, one tripwire
+    /// should fail and tell you to look, not two telling you the same thing.
+    @Test func everyRouteBelongsToAGroup() {
         let groupedCount = BudgetLiveRouteGroup.allCases.reduce(into: 0) { total, group in
             total += BudgetLiveParityCatalog.routes[group, default: []].count
         }
-        #expect(groupedCount == 54)
+        #expect(groupedCount == BudgetLiveParityCatalog.routeCount)
     }
 
     @Test func programBudgetContractDecodes() throws {
@@ -76,7 +80,7 @@ struct BudgetLiveParityCatalogTests {
           "payrollYear": 2025,
           "census": {
             "dataset":"ACS 2024",
-            "source":{"title":"ignored by native decoder"},
+            "source":{"title":"U.S. Census Bureau, ACS 5-Year Estimates","url":"https://example.invalid/acs","detail":"Five-year estimates are used below the 65,000-population threshold."},
             "population": 35000,
             "households": 14000,
             "householdsMoe": 500,

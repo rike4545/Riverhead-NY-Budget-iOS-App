@@ -21,10 +21,8 @@
     "",
     "Every value below was read off the live site, not guessed."
   ],
-
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "siteRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App",
-
   "endpoints": [
     {
       "id": "town-history",
@@ -86,7 +84,7 @@
       "id": "fund-appropriations",
       "path": "history/fund-appropriations.json",
       "document": "OutlierHistoryDocument",
-      "route": "/outlier-watch/",
+      "route": "/outliers/",
       "swift": "OutlierWatchParityView.swift"
     },
     {
@@ -117,15 +115,32 @@
       "document": "RiverheadSearchManifest",
       "route": "/search/",
       "swift": "UnifiedSearchParityView.swift"
+    },
+    {
+      "id": "budget-history",
+      "path": "history/fund-appropriations.json",
+      "document": "BudgetHistoryParityDocument",
+      "route": "/compare/",
+      "swift": "BudgetHistoryParityViews.swift",
+      "note": "The same payload as fund-appropriations, decoded by a second type for the compare route. Both consumers are checked on purpose: a key one requires and the other does not is exactly the asymmetry that hides."
+    },
+    {
+      "id": "general-fund",
+      "path": "history/general-fund.json",
+      "document": "GeneralFundParityDocument",
+      "route": "/general-fund/",
+      "swift": "BudgetHistoryParityViews.swift"
     }
   ],
-
   "closedSets": [
     {
       "id": "tax-cap-status",
       "endpoint": "tax-cap",
       "jsonPath": "capStatus[].status",
-      "handled": ["over-no-law", "over-with-law"],
+      "handled": [
+        "over-no-law",
+        "over-with-law"
+      ],
       "swift": "TaxCapStatus.style(_:) in TaxCapParityView.swift",
       "consequence": "An unhandled status takes the default branch: a grey dot with no colour and no glyph, on a page whose whole argument is which years were lawful."
     },
@@ -133,7 +148,12 @@
       "id": "candidate-party",
       "endpoint": "candidate-watch",
       "jsonPath": "races[].candidates[].party",
-      "handled": ["D", "R", "R/C", "C"],
+      "handled": [
+        "D",
+        "R",
+        "R/C",
+        "C"
+      ],
       "swift": "CandidateParty.spelledOut(_:) and .tint(_:) in CandidateWatchParityView.swift",
       "consequence": "An unhandled code is shown raw and tinted grey, so a reader sees \"W\" instead of a party name. Matches the web page's own fallback, but the web page would have been updated."
     },
@@ -141,7 +161,13 @@
       "id": "officials-status",
       "endpoint": "officials",
       "jsonPath": "officials[].status",
-      "handled": ["pension", "unconfirmed", "active", "none", "review"],
+      "handled": [
+        "pension",
+        "unconfirmed",
+        "active",
+        "none",
+        "review"
+      ],
       "swift": "OfficialsParityOrdering.statusOrder in OfficialsParityView.swift",
       "consequence": "An unhandled status sorts to the bottom of the roster rather than into its intended group. Its wording still comes from the document's statusLabels, so the label itself survives."
     },
@@ -150,12 +176,18 @@
       "endpoint": "search-manifest",
       "jsonPath": "shards",
       "mode": "requiredMapKeys",
-      "handled": ["fund", "line-item", "payroll", "salary", "resolution", "page"],
+      "handled": [
+        "fund",
+        "line-item",
+        "payroll",
+        "salary",
+        "resolution",
+        "page"
+      ],
       "swift": "RiverheadSearchEntryType in UnifiedSearchParityView.swift",
       "consequence": "loadShard returns an empty array for a missing key, so a whole search category disappears from results without any error."
     }
   ],
-
   "markupMirrors": [
     {
       "id": "officials-what-counts",
@@ -191,7 +223,6 @@
       "note": "Only the labels for party codes currently in the data are rendered on the page, so this checks the two that are. The full code set is covered by the candidate-party closed set."
     }
   ],
-
   "unchecked": [
     {
       "document": "RiverheadSearchEntry",

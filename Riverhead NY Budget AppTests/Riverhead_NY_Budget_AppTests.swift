@@ -371,3 +371,152 @@ struct ProgramBudgetContractTests {
         #expect(abs(document.perHousehold.programs - document.totals.net / document.census.households) < 0.01)
     }
 }
+
+// MARK: - Program budget: the fields the web page renders and this app did not
+
+/// The published programs.json carries a five-year series, a set-aside total,
+/// and a separate attribution for where the resident count comes from. The
+/// native screen was decoding none of them, so four years of published history
+/// and two source lines never reached anyone.
+///
+/// All three are optional on purpose: the copy bundled for offline use predates
+/// them. That is the case these tests exist to pin, because making them
+/// required would still pass a live-data check while silently killing the
+/// offline path — the bundled decode would return nil and the screen would fall
+/// back to the web view with nothing logged.
+struct ProgramBudgetYearSeriesTests {
+
+    /// A year entry carries less than a top-level program entry: no narrative,
+    /// no departments, no revenues, and no contingency line in its totals.
+    /// Decoding one as the top-level shape would throw on every year.
+    private static let fixture = """
+    {
+      "schemaVersion": 1,
+      "source": { "title": "T", "detail": "D", "url": "https://example.invalid/" },
+      "payrollYear": 2025,
+      "census": {
+        "dataset": "ACS 2023 5-year",
+        "source": { "title": "Census ACS", "url": "https://example.invalid/acs", "detail": "Five-year estimates." },
+        "population": 36394,
+        "populationSource": "Census SUB-EST2025, July 1, 2025",
+        "households": 13678,
+        "householdsMoe": 571,
+        "medianHouseholdIncome": 93595
+      },
+      "programs": [],
+      "totals": {
+        "direct": 1, "benefits": 1, "fullCost": 2, "earned": 1, "net": 1, "staff": 3,
+        "debtService": 1, "setAside": 826751, "contingency": 1, "interfundTransfers": 1,
+        "townwideRevenue": 1, "grandTotal": 1, "appropriations": 1
+      },
+      "perResident": { "programs": 1, "debtService": 1, "everything": 1 },
+      "perHousehold": { "programs": 1, "debtService": 1, "everything": 1, "shareOfMedianIncome": 1 },
+      "reconciliation": { "computed": 1, "appropriations": 1, "variance": 0 },
+      "method": [],
+      "notCovered": { "title": "N", "body": "B" },
+      "years": [
+        {
+          "year": 2023, "stage": "adopted", "label": "2023", "staffYear": 2023,
+          "sources": {
+            "supplement": { "title": "2024 Supplement", "url": "https://example.invalid/s" },
+            "summary": { "title": "2023 Adopted", "url": "https://example.invalid/a" }
+          },
+          "totals": {
+            "direct": 62763679, "benefits": 21513500, "fullCost": 84277179, "earned": 19672789,
+            "net": 64604390, "staff": 566, "debtService": 8728100, "setAside": 3148021,
+            "interfundTransfers": 7749400, "townwideRevenue": 84229911,
+            "grandTotal": 96153300, "appropriations": 103902700
+          },
+          "perResident": { "programs": 1775.13, "debtService": 239.82, "everything": 2101.45 },
+          "perHousehold": { "programs": 4723.23, "debtService": 638.11, "everything": 5591.49, "shareOfMedianIncome": 5.97 },
+          "reconciliation": { "computed": 103902700, "appropriations": 103902700, "variance": 0 },
+          "programs": [
+            { "key": "3", "name": "Public Safety", "direct": 19683400, "benefits": 14082215.84,
+              "fullCost": 33765615.84, "earned": 1914200, "net": 31851415.84, "recoveryPct": 5.66,
+              "netPerResident": 875.18, "netPerHousehold": 2328.66, "staff": 176 }
+          ]
+        },
+        {
+          "year": 2027, "stage": "tentative", "label": "2027 proposed", "staffYear": 2026,
+          "sources": {
+            "supplement": { "title": "2027 Supplement", "url": "https://example.invalid/s27" },
+            "summary": { "title": "2027 Tentative", "url": "https://example.invalid/t27" }
+          },
+          "totals": {
+            "direct": 1, "benefits": 1, "fullCost": 2, "earned": 1, "net": 1, "staff": 1,
+            "debtService": 1, "setAside": 1, "interfundTransfers": 1,
+            "townwideRevenue": 1, "grandTotal": 1, "appropriations": 1
+          },
+          "perResident": { "programs": 1, "debtService": 1, "everything": 1 },
+          "perHousehold": { "programs": 1, "debtService": 1, "everything": 1, "shareOfMedianIncome": 1 },
+          "reconciliation": { "computed": 1, "appropriations": 1, "variance": 0 },
+          "programs": []
+        }
+      ],
+      "diagnostics": { "unmappedPayrollDepartments": [] }
+    }
+    """
+
+    private func decoded() throws -> ProgramBudgetParityDocument {
+        try JSONDecoder().decode(
+            ProgramBudgetParityDocument.self,
+            from: Data(Self.fixture.utf8)
+        )
+    }
+
+    @Test func theYearSeriesDecodes() throws {
+        let years = try #require(decoded().years)
+        #expect(years.count == 2)
+    }
+
+    @Test func aTentativeYearIsMarkedProposed() throws {
+        let years = try #require(decoded().years)
+        let tentativeMatch = years.first { $0.year == 2027 }
+        let adoptedMatch = years.first { $0.year == 2023 }
+        let tentative = try #require(tentativeMatch)
+        let adopted = try #require(adoptedMatch)
+        #expect(tentative.isProposed)
+        #expect(adopted.isProposed == false)
+    }
+
+    /// The per-year totals carry a set-aside and no contingency. If the two
+    /// totals shapes are ever merged back together, this fails.
+    @Test func perYearTotalsCarryTheSetAside() throws {
+        let years = try #require(decoded().years)
+        let match = years.first { $0.year == 2023 }
+        let first = try #require(match)
+        #expect(first.totals.setAside == 3148021)
+        #expect(first.totals.staff == 566)
+    }
+
+    @Test func documentTotalsCarryTheSetAside() throws {
+        let totals = try decoded().totals
+        #expect(totals.setAside == 826751)
+    }
+
+    @Test func censusCarriesBothAttributions() throws {
+        let census = try decoded().census
+        #expect(census.source.title == "Census ACS")
+        #expect(census.populationSource == "Census SUB-EST2025, July 1, 2025")
+    }
+
+    /// Every year's label should be non-empty, since it is what the screen
+    /// shows as the row heading. Hoisted to a local because `#expect`
+    /// decomposes its outermost call and would strip `allSatisfy`'s
+    /// non-throwing guarantee.
+    @Test func everyYearHasALabel() throws {
+        let years = try #require(decoded().years)
+        let allLabelled = years.allSatisfy { !$0.label.isEmpty }
+        #expect(allLabelled)
+    }
+
+    /// The regression that matters most: the bundled copy predates all three
+    /// fields, so it must still decode, with the new properties simply absent.
+    @Test func theBundledCopyStillDecodesWithoutTheNewFields() throws {
+        let bundled = try #require(ProgramBudgetParityClient.bundled())
+        #expect(bundled.years == nil)
+        #expect(bundled.totals.setAside == nil)
+        #expect(bundled.census.populationSource == nil)
+        #expect(bundled.census.source.title.isEmpty == false)
+    }
+}

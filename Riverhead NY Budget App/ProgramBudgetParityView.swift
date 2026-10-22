@@ -24,7 +24,13 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
 
     struct Census: Decodable, Sendable {
         let dataset: String
+        let source: Source
         let population: Double
+        /// Where the resident count comes from, which is a different Census
+        /// product from the survey the household figures come from — the web
+        /// page says so and this app was not. Optional because the copy
+        /// bundled for offline use predates the field.
+        let populationSource: String?
         let households: Double
         let householdsMoe: Double
         let medianHouseholdIncome: Double
@@ -76,6 +82,9 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
         let net: Double
         let staff: Int
         let debtService: Double
+        /// A column the web page's totals table carries and this app did not.
+        /// Optional because the bundled offline copy predates it.
+        let setAside: Double?
         let contingency: Double
         let interfundTransfers: Double
         let townwideRevenue: Double
@@ -118,6 +127,74 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
         let unmappedPayrollDepartments: [String]
     }
 
+    /// One budget year in the published series. The web page shows all of them
+    /// as a table; this app was showing only the latest, so four years of
+    /// published history were not reaching anyone.
+    struct Year: Decodable, Identifiable, Sendable {
+        /// Deliberately lighter than the top-level `Program`: the per-year
+        /// entries carry no narrative, departments or revenues, so decoding
+        /// them as `Program` would throw on every year.
+        struct ProgramSummary: Decodable, Identifiable, Sendable {
+            let key: String
+            let name: String
+            let direct: Double
+            let benefits: Double
+            let fullCost: Double
+            let earned: Double
+            let net: Double
+            let recoveryPct: Double
+            let netPerResident: Double
+            let netPerHousehold: Double
+            let staff: Int
+
+            var id: String { key }
+        }
+
+        struct Citation: Decodable, Sendable {
+            let title: String
+            let url: String
+        }
+
+        struct Sources: Decodable, Sendable {
+            let supplement: Citation
+            let summary: Citation
+        }
+
+        /// The per-year totals carry no contingency line, so this is its own
+        /// type rather than a weakened version of the document's `Totals`.
+        struct YearTotals: Decodable, Sendable {
+            let direct: Double
+            let benefits: Double
+            let fullCost: Double
+            let earned: Double
+            let net: Double
+            let staff: Int
+            let debtService: Double
+            let setAside: Double
+            let interfundTransfers: Double
+            let townwideRevenue: Double
+            let grandTotal: Double
+            let appropriations: Double
+        }
+
+        let year: Int
+        /// "adopted" or "tentative". The label already carries "proposed" for
+        /// a tentative year, so this is what a reader should be told the
+        /// figure's standing is.
+        let stage: String
+        let label: String
+        let sources: Sources
+        let staffYear: Int
+        let totals: YearTotals
+        let perResident: PerResident
+        let perHousehold: PerHousehold
+        let reconciliation: Reconciliation
+        let programs: [ProgramSummary]
+
+        var id: Int { year }
+        var isProposed: Bool { stage != "adopted" }
+    }
+
     let schemaVersion: Int
     let source: Source
     let payrollYear: Int
@@ -129,6 +206,8 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
     let reconciliation: Reconciliation
     let method: [Method]
     let notCovered: Limitation
+    /// Optional because the bundled offline copy predates the series.
+    let years: [Year]?
     let diagnostics: Diagnostics
 }
 
@@ -213,6 +292,9 @@ struct NativeProgramBudgetView: View {
                     .buttonStyle(.plain)
                 }
                 scaleCard(document)
+                if let years = document.years, !years.isEmpty {
+                    yearSeriesCard(years)
+                }
                 reconciliationCard(document)
                 limitationCard(document)
                 methodCard(document)
@@ -343,6 +425,64 @@ struct NativeProgramBudgetView: View {
                 programKeyValue("All in / household", moneyProgram(document.perHousehold.everything))
                 programKeyValue("Share of median household income", String(format: "%.1f%%", document.perHousehold.shareOfMedianIncome))
             }
+
+            VStack(alignment: .leading, spacing: 3) {
+                if let populationSource = document.census.populationSource {
+                    Text(verbatim: "Residents: \(populationSource)")
+                }
+                Text(verbatim: "Households and income: \(document.census.source.title)")
+            }
+            .font(.caption2)
+            .foregroundStyle(.secondary)
+            .fixedSize(horizontal: false, vertical: true)
+        }
+        .programParityCard()
+    }
+
+    @ViewBuilder
+    private func yearSeriesCard(_ years: [ProgramBudgetParityDocument.Year]) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Year by year")
+                .font(.headline)
+
+            Text("The published series, newest first. A proposed year is a tentative budget, not an adopted one.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            ForEach(years.sorted { $0.year > $1.year }) { year in
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(verbatim: year.label)
+                            .font(.subheadline.weight(.semibold))
+                        if year.isProposed {
+                            Text("proposed")
+                                .font(.caption2.weight(.semibold))
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 2)
+                                .background(RiverheadTheme.brandGold.opacity(0.18), in: Capsule())
+                        }
+                        Spacer()
+                        Text(verbatim: moneyShortProgram(year.totals.appropriations))
+                            .font(.subheadline.weight(.semibold))
+                            .monospacedDigit()
+                    }
+
+                    VStack(spacing: 5) {
+                        programKeyValue("Cost of services", moneyProgram(year.totals.fullCost))
+                        programKeyValue("Debt service", moneyProgram(year.totals.debtService))
+                        programKeyValue("Set-aside", moneyProgram(year.totals.setAside))
+                        programKeyValue("Interfund transfers", moneyProgram(year.totals.interfundTransfers))
+                        programKeyValue("Staff", "\(year.totals.staff)")
+                        programKeyValue("Not covered by fees / resident", moneyProgram(year.perResident.programs))
+                    }
+                }
+                .padding(.vertical, 4)
+
+                if year.year != years.map(\.year).min() {
+                    Divider()
+                }
+            }
         }
         .programParityCard()
     }
@@ -362,7 +502,14 @@ struct NativeProgramBudgetView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 
-            programKeyValue("Variance", moneyProgram(document.reconciliation.variance))
+            VStack(spacing: 7) {
+                programKeyValue("Debt service", moneyProgram(document.totals.debtService))
+                if let setAside = document.totals.setAside {
+                    programKeyValue("Set-aside", moneyProgram(setAside))
+                }
+                programKeyValue("Interfund transfers", moneyProgram(document.totals.interfundTransfers))
+                programKeyValue("Variance", moneyProgram(document.reconciliation.variance))
+            }
         }
         .programParityCard()
     }

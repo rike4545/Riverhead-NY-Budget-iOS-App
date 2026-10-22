@@ -24,7 +24,20 @@ private enum PayrollParityDataClient {
 }
 
 private struct PayrollRecordsDocument: Decodable, Sendable {
+    struct Citation: Decodable, Sendable {
+        let title: String
+        let url: String
+    }
+
     let count: Int?
+    /// Union and pay-class codes to the names a resident would recognise. The
+    /// web page keeps its own hardcoded copy of this map; reading the published
+    /// one means ours cannot fall out of step with the ETL that produces it.
+    let unionLabels: [String: String]?
+    /// What the Town's export does and does not contain. Carried because the
+    /// page is about named people's pay and the caveat belongs beside it.
+    let note: String?
+    let source: Citation?
     let records: [PayrollParityRecord]
 }
 
@@ -251,6 +264,9 @@ private enum PayrollActualSort: String, CaseIterable, Identifiable {
 @MainActor
 private struct NativePayrollExplorerView: View {
     @State private var records: [PayrollParityRecord] = []
+    @State private var unionLabels: [String: String] = [:]
+    @State private var exportNote: String?
+    @State private var exportSource: PayrollRecordsDocument.Citation?
     @State private var isLoading = true
     @State private var errorMessage: String?
     @State private var selectedYear: Int? = 2025
@@ -361,7 +377,7 @@ private struct NativePayrollExplorerView: View {
                     }
                     Picker("Union / group", selection: $selectedUnion) {
                         Text("All").tag("All")
-                        ForEach(unions, id: \.self) { Text($0).tag($0) }
+                        ForEach(unions, id: \.self) { Text(verbatim: unionDisplay($0)).tag($0) }
                     }
                     Picker("Department", selection: $selectedDepartment) {
                         Text("All").tag("All")
@@ -375,7 +391,7 @@ private struct NativePayrollExplorerView: View {
                 Section("Employees") {
                     ForEach(filtered) { row in
                         NavigationLink {
-                            NativePayrollRecordDetailView(row: row)
+                            NativePayrollRecordDetailView(row: row, groupLabel: unionDisplay(row.u))
                         } label: {
                             VStack(alignment: .leading, spacing: 4) {
                                 HStack(alignment: .firstTextBaseline) {
@@ -402,6 +418,28 @@ private struct NativePayrollExplorerView: View {
                     }
                 }
 
+                if exportNote != nil || exportSource != nil {
+                    Section("What this export contains") {
+                        if let exportNote {
+                            Text(verbatim: exportNote)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        if let exportSource {
+                            if let url = URL(string: exportSource.url) {
+                                Link(destination: url) {
+                                    Text(verbatim: exportSource.title)
+                                        .font(.caption)
+                                }
+                            } else {
+                                Text(verbatim: exportSource.title)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
+
                 Section("Record notes") {
                     Text("Regular is base salary or wages. Overtime is premium pay for extra hours. Other pay is gross minus regular minus overtime and can include longevity, holiday or shift differential, stipends, retroactive pay, and leave or termination buy-outs. Fields marked ‘carried’ are inferred from a stable value reported in another year and are not represented as contemporaneous Town fields.")
                         .font(.caption)
@@ -424,11 +462,13 @@ private struct NativePayrollExplorerView: View {
         do {
             let document: PayrollRecordsDocument = try await PayrollParityDataClient.load("payroll/records.json")
             records = document.records
+            adopt(document)
             selectedYear = years.last
             isLoading = false
         } catch {
             if let bundled = loadBundledPayroll() {
                 records = bundled.records
+                adopt(bundled)
                 selectedYear = years.last
                 errorMessage = "Using the bundled payroll snapshot because the current web record could not be reached."
             } else {
@@ -436,6 +476,24 @@ private struct NativePayrollExplorerView: View {
             }
             isLoading = false
         }
+    }
+
+    /// All three are optional in the payload: an older bundled snapshot can
+    /// predate them, and a required field the snapshot lacks would throw in
+    /// loadBundledPayroll's `try?` and take the whole offline path down
+    /// silently. Absent simply means the screen shows codes and no caveat.
+    private func adopt(_ document: PayrollRecordsDocument) {
+        unionLabels = document.unionLabels ?? [:]
+        exportNote = document.note
+        exportSource = document.source
+    }
+
+    /// "PBA" means nothing to a resident; the web page shows "Police
+    /// Benevolent Association". Falls back to the raw code, which is what the
+    /// web page does for a code its map does not cover.
+    private func unionDisplay(_ code: String) -> String {
+        guard let label = unionLabels[code], !label.isEmpty else { return code }
+        return "\(code) — \(label)"
     }
 
     private func loadBundledPayroll() -> PayrollRecordsDocument? {
@@ -456,6 +514,8 @@ private struct NativePayrollExplorerView: View {
 
 private struct NativePayrollRecordDetailView: View {
     let row: PayrollParityRecord
+    /// Already resolved by the list, which holds the published label map.
+    let groupLabel: String
 
     var body: some View {
         List {
@@ -465,7 +525,7 @@ private struct NativePayrollRecordDetailView: View {
                 if let file = row.f, !file.isEmpty { LabeledContent("Payroll file #", value: file) }
                 if !row.t.isEmpty { LabeledContent("Title", value: row.t + (row.inferredTitle ? " · carried" : "")) }
                 if !row.d.isEmpty { LabeledContent("Department", value: row.d + (row.inferredDepartment ? " · carried" : "")) }
-                if !row.u.isEmpty { LabeledContent("Group", value: row.u) }
+                if !row.u.isEmpty { LabeledContent("Group", value: groupLabel) }
             }
 
             Section("Actual pay") {

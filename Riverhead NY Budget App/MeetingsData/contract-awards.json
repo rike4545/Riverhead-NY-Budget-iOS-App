@@ -1,0 +1,2659 @@
+{
+ "about": "Bid awards, bid extensions, purchases, change orders and service agreements the Riverhead Town Board voted on, read from each meeting's agenda packet. Vendors and amounts are the resolution's own words; an amount is blank where the resolution points to attached pricing or states none.",
+ "since": "2026-01-01",
+ "kinds": {
+  "bid-award": "Bid or proposal award",
+  "bid-extension": "Bid extended",
+  "change-order": "Change order",
+  "purchase": "Purchase",
+  "services": "Professional services",
+  "agreement": "Agreement"
+ },
+ "counts": {
+  "resolutions": 90,
+  "withVendor": 81,
+  "withAmount": 16,
+  "meetings": 19
+ },
+ "awards": [
+  {
+   "date": "2026-01-06",
+   "resolution": "2026-20",
+   "title": "Approves Sewer District Request For Change Order No. 1 Related To The Class A Biosolids Upgrade Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": 0.0,
+   "basis": "no-cost",
+   "quote": "WHEREAS, the Sewer District has reviewed the Change Order No. 1 (at no cost/no time change) along with H2M Architects and Engineers and, after due diligence, has found it to be acceptable",
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 1 of the project known as the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10512,plainText=false)"
+  },
+  {
+   "date": "2026-01-06",
+   "resolution": "2026-21",
+   "title": "Approves Sewer District Request For Change Order No. 2 Related To The Class A Biosolids Upgrade Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": 0.0,
+   "basis": "no-cost",
+   "quote": "WHEREAS, the Sewer District has reviewed the Change Order #2 (a no cost/no time change) along with H2M Architects and Engineers and, after due diligence, has found it to be acceptable",
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 2 of the project known as the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10512,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-64",
+   "title": "Approves Sewer District Request for Change Order No. 1 Related to the Electrical Contract for the Class A Biosolids Upgrade Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": 0.0,
+   "basis": "no-cost",
+   "quote": "WHEREAS, the Sewer District has reviewed the Change Order No. 1 related to the Electrical Contract (no cost/no time change) along with H2M Architects and Engineers and, after due diligence, has found it to be acceptable",
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 1 related to the Electrical Contract for the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-65",
+   "title": "Approves Sewer District Request for Change Order No. 2 Related to the Contract E - Electrical Construction for the Class A Biosolids Upgrade Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 2 related to the Electrical Construction Contract for the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-81",
+   "title": "Approves Extension of an Agreement with Mark Conklin, Nunc Pro Tunc",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Mark Conklin",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that except for the term of the agreement, all other terms and conditions of the Consultant/Professional Services Agreement with Mark Conklin shall remain the same. NOW THEREFORE BE IT RESOLVED, that the Town Board, as governing body of the Riverhead Water District, hereby approves an extension of the Professional Services Agreement with Mark Conklin for management and supervisory services and activities da",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-89",
+   "title": "Extends Bid Nunc Pro Tunc for Bid # 2022-35 Traffic Signal Emergency Repair and Additional Work As Authorized",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Hinck Electrical Contractor, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for TRAFFIC SIGNAL EMERGENCY REPAIR AND ADDITIONAL WORK AS AUTHORIZED be and is hereby extended nunc pro tunc until December 5, 2026",
+   "funds": [
+    "Street Lighting District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-90",
+   "title": "Awards Bid for Rehabilitation of Plant No. 7 - Electrical Upgrades- Riverhead Water District",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Hinck Electrical Contractor Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for REHABILITATION OF PLANT NO. 7 – ELECTRICAL UPGRADES – RIVERHEAD WATER DISTRICT be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-91",
+   "title": "Awards Re-Bid for Truck Parts",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "AA Systems Truck & Bus",
+     "role": "Primary"
+    },
+    {
+     "name": "Fleetpride, Inc.",
+     "role": "Secondary"
+    },
+    {
+     "name": "My Guy Auto Supply – NAPA",
+     "role": "Tertiary"
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for REBID – TRUCK PARTS be awarded to the vendors indicated below for prices on the attached pages",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-01-21",
+   "resolution": "2026-98",
+   "title": "Authorize Supervisor to Sign a Consultant/Professional Services Agreement with Joan Mottern",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Joan Mottern",
+     "role": null
+    }
+   ],
+   "amount": 5000.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a professional services agreement with Joan Mottern to retain her services as a Consultant (an independent contractor) at an hourly rate of $46.45, not to exceed the sum of $5,000.00 or continue after March 31, 2026 whichever first occurs and, in any event, subject to further Town Board action and upon approval of the CSEA",
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a professional services agreement with Joan Mottern to retain her services as a Consultant (an independent contractor) at an hourly rate of $46.45, not to exceed the sum of $5,000.00 or continue after March 31, 2026 whichever first occurs and, in any event, subject to further Town Board action and upon approval of the CSEA",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10560,plainText=false)"
+  },
+  {
+   "date": "2026-02-03",
+   "resolution": "2026-132",
+   "title": "Authorizes Supervisor to Sign an Agreement with Court Reporter (Galante)",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Court Reporter (Galante)",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor of the Town of Riverhead shall be hereby authorized to execute an agreement, in substantially similar form to the annexed agreement and for court reporting services as more particularly set forth in the annexed agreement",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10600,plainText=false)"
+  },
+  {
+   "date": "2026-02-03",
+   "resolution": "2026-135",
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement with Land Use Ecological Services, Inc. for the Meetinghouse Creek Road Bulkhead Reconstruction Project",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Land Use Ecological Services, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Supervisor is hereby authorized to execute an Agreement with Land Use Ecological Services, Inc., in substantially the form attached",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10600,plainText=false)"
+  },
+  {
+   "date": "2026-02-03",
+   "resolution": "2026-136",
+   "title": "Resolution Authorizing Agreement with TAN Productions, Inc. for the “America 250 – Town of Riverhead” Commemorative Book",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "TAN Productions, Inc.",
+     "role": null
+    }
+   ],
+   "amount": 0.0,
+   "basis": "no-cost",
+   "quote": "WHEREAS, TAN Productions, Inc. has proposed to prepare, print, and distribute the commemorative book at no cost to the Town, managing all aspects of advertising sales, layout, and printing, with the understanding that a portion of proceeds or a voluntary donation may be remitted to the Town’s America 250 fund pursuant to Town Law §64(8)",
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby authorizes the Supervisor to execute an agreement, in a form approved by the Town Attorney, with TAN Productions, Inc. for the preparation and publication of the America 250 – Town of Riverhead Commemorative Book",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10600,plainText=false)"
+  },
+  {
+   "date": "2026-02-03",
+   "resolution": "2026-141",
+   "title": "Extends Bid for Sensus Water Meter & Accessory Equipment, or Reasonable Equivalent, & Repair to Meter Reading Equipment for Riverhead Water District",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Core & Main LP",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for Sensus Water Meter & Accessory Equipment, or Reasonable Equivalent, & Repair to Meter Reading Equipment for Riverhead Water District be and is hereby extended until February 4, 2027",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10600,plainText=false)"
+  },
+  {
+   "date": "2026-02-03",
+   "resolution": "2026-142",
+   "title": "Awards Bid for Construction of Well No. 2A - Contract E - Electrical Construction; Contract G - General Construction; Contract P - Mechanical and Well Pump Construction - Riverhead Water District",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Eldor Contracting Corp.",
+     "role": "Contract E: Electrical Construction"
+    },
+    {
+     "name": "Philip Ross Industries Inc.",
+     "role": "Contract G: General Construction"
+    },
+    {
+     "name": "Eagle Control Corporation",
+     "role": "Contract as listed in the packet"
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for CONSTRUCTION OF WELL No. 2A – CONTRACT E – ELECTRICAL CONSTRUCTION",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=10600,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-178",
+   "title": "Authorizes the Town Attorney to Execute an Agreement with Municipal Valuation Services, Inc.",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Municipal Valuation Services, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Attorney is hereby authorized to execute an Agreement with Municipal Valuation Services, Inc. in substantially the same form as attached",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-179",
+   "title": "Authorizes the Supervisor to Execute an Agreement with the Nassau County Police Activity League – Lacrosse Unit for Referee/Umpire Services and Team Fees for Town of Riverhead Police Athletic League Boys Lacrosse Program Grades K-8 for 2026 Calendar Year.",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Nassau County Police Activity League – Lacrosse Unit",
+     "role": null
+    }
+   ],
+   "amount": 3642.5,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the Nassau County Police Activity League – County Lacrosse Unit for referee services for the 2026 Boys Lacrosse as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $3,642.50",
+   "clause": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the Nassau County Police Activity League – County Lacrosse Unit for referee services for the 2026 Boys Lacrosse as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $3,642.50",
+   "funds": [
+    "Police Athletic League"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-180",
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement with P.W. Grosser Consulting Engineering & Hydrogeologist, D.P.C. for the Meetinghouse Creek Stormwater Wetland and Habitat Restoration Project",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "P.W. Grosser Consulting Engineering & Hydrogeologist, D.P.C.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Supervisor is hereby authorized to execute an Agreement with P.W.",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-181",
+   "title": "Authorizes The Supervisor to Execute a Professional Services Agreement with The Raynor Group, P.E. & L.S., PLLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Raynor Group, P.E. & L.S., PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Professional Services Agreement with The Raynor Group, P.E. & L.S., PLLC in substantially the same form annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-183",
+   "title": "Authorizes the Supervisor to Execute an Addendum to an Agreement with LVF Landscape Architects, PLLC (Playground)",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "LVF Landscape Architects, PLLC",
+     "role": null
+    }
+   ],
+   "amount": 20000.0,
+   "basis": "stated",
+   "quote": "WHEREAS, these additional services require additional compensation in the total amount of $20,000.00. NOW, THEREFORE, BE IT RESOLVED, that LVF Landscape Architects, PLLC shall be entitled to additional compensation totaling $20,000.00 to complete the Phase 1 concept plan for the Adaptive Playground and all terms and conditions of the original Consultant/Professional Services Agreement dated January 22, 2024 shall remain in full force and effect",
+   "clause": "RESOLVED, that LVF Landscape Architects, PLLC shall be entitled to additional compensation totaling $20,000.00 to complete the Phase 1 concept plan for the Adaptive Playground and all terms and conditions of the original Consultant/Professional Services Agreement dated January 22, 2024 shall remain in full force and effect",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-184",
+   "title": "Ratifies the Authorization for the Town Attorney to Execute a Retainer Agreement with Certilman Balin Adler & Hyman, LLP",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Certilman Balin Adler & Hyman, LLP",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby authorizes the appointment of Certilman Balin Adler & Hyman, LLP on behalf of the Town of Riverhead to commence a proceeding, together with the Towns of Brookhaven and Southampton, against New York State Cannabis Control Board and others in connection with the New York State Cannabis Law",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-02-18",
+   "resolution": "2026-193",
+   "title": "Authorize Supervisor to Execute a Retainer Agreement with Timothy James Hopkins, Esq. d/b/a Hopkins Law Services",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Timothy James Hopkins, Esq. d/b/a Hopkins Law Services",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute a Retainer Agreement with Timothy James Hopkins, Esq. d/b/a Hopkins in substantially the same form as annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11718,plainText=false)"
+  },
+  {
+   "date": "2026-03-03",
+   "resolution": "2026-209",
+   "title": "Extends Bid for Water Service Materials",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "T.Mina Supply, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for WATER SERVICE MATERIALS be and is hereby extended until March 17, 2027",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11673,plainText=false)"
+  },
+  {
+   "date": "2026-03-03",
+   "resolution": "2026-210",
+   "title": "Authorizes the Supervisor to Execute an Agreement with the Riverhead Lacrosse Club for Referee/Umpire Services and Team Fees for Town of Riverhead Police Athletic League Girls Lacrosse Program Grades K-8 for 2026 Calendar Year.",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Riverhead Lacrosse Club",
+     "role": null
+    }
+   ],
+   "amount": 720.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the Riverhead Lacrosse Club for referee services for the 2026 Girls Lacrosse as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $720.00",
+   "clause": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the Riverhead Lacrosse Club for referee services for the 2026 Girls Lacrosse as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $720.00",
+   "funds": [
+    "Police Athletic League"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11673,plainText=false)"
+  },
+  {
+   "date": "2026-03-17",
+   "resolution": "2026-247",
+   "title": "Awards Bid for Chemicals for Sewer District",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Bulk Chemical Company, Inc.",
+     "role": "Item #1 & 6"
+    },
+    {
+     "name": "George S. Coyne Chemical Co., Inc.",
+     "role": "Items #2, 3, 4, 5 & 7"
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for CHEMICALS FOR SEWER DISTRICT be awarded to the vendors indicated below for items indicated at prices on the attached page",
+   "funds": [
+    "Calverton Sewer District",
+    "Riverhead Scavenger Waste"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12505,plainText=false)"
+  },
+  {
+   "date": "2026-03-17",
+   "resolution": "2026-248",
+   "title": "Awards Bid for Generator Maintenance",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "COMMANDER POWER Systems",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for GENERATOR MAINTENANCE be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [
+    "Calverton Sewer District",
+    "Water District",
+    "Ambulance District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12505,plainText=false)"
+  },
+  {
+   "date": "2026-03-17",
+   "resolution": "2026-249",
+   "title": "Awards Bid for Construction of Pre-fabricated Building for the Highway Department",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Construction Consultants/Li, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for CONSTRUCTION OF PRE- FABRICATED BUILDING FOR THE HIGHWAY DEPARTMENT be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12505,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-276",
+   "title": "Approves Sewer District Request for Change Order No. 1 Related to the Contract S 203-213 East Main Street Sewer Improvements",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 1 related to the Contract S for the labor materials and equipment necessary to remove the existing damaged section of sewer main and reinstall a new ductile iron sewer main in its place and connect it with suitable couplings to the existing sewer main at both ends",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-277",
+   "title": "Approves Sewer District Request for Change Order No. 2 Related to the Contract S 203-213 East Main Street Sewer Improvements",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 2 related to the Contract S for the for the Construction Administration and the Construction Observation required for the spill and containment effort",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-284",
+   "title": "Authorizes Purchase of Kenworth Tandem Axle Dump Truck",
+   "kind": "purchase",
+   "vendors": [
+    {
+     "name": "Gabrielli Truck Sales",
+     "role": null
+    }
+   ],
+   "amount": 399625.0,
+   "basis": "stated",
+   "quote": "RESOLVED, that the Town Board authorizes the purchase of one (1) 2026 Kenworth Model T480V Tandem Axle Chassis with PX-9. 380 Hp Engine, 4000RDS Allison Automatic Transmission, 16ft Stainless Steel Dump Body w/ Swingaway Tailgate, Plow Hitch w/ Central Hydraulic System with In-Cab Controls, Full Bench 11ft Wing Plow with In-Cab Controls, and 14ft Stainless Steel Sand/Salt Spreader, which meet the needs of the Highway Department, from Gabrielli Truck Sales, an approved vendor, under the Town of East Hampton Contract# EHWY23-215, in the amount of $399,625.00, to be used for highway maintenance",
+   "clause": "RESOLVED, that the Town Board authorizes the purchase of one (1) 2026 Kenworth Model T480V Tandem Axle Chassis with PX-9. 380 Hp Engine, 4000RDS Allison Automatic Transmission, 16ft Stainless Steel Dump Body w/ Swingaway Tailgate, Plow Hitch w/ Central Hydraulic System with In-Cab Controls, Full Bench 11ft Wing Plow with In-Cab Controls, and 14ft Stainless Steel Sand/Salt Spreader, which meet the needs of the Highway",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-285",
+   "title": "Authorizes Purchase and Upfit of 2025 Kenworth Dump Truck",
+   "kind": "purchase",
+   "vendors": [
+    {
+     "name": "Gabrielli Truck Sales",
+     "role": null
+    }
+   ],
+   "amount": 256395.0,
+   "basis": "stated",
+   "quote": "RESOLVED, that the Town Board authorizes the purchase of one (1) New 2025 Kenworth \"Model T480V\" Chassis with PX-9- Engine,Telescopic Hoist, Hydraulic Dumping Hardware, Central Hydraulic System w/ In-Cab Spreader, Plow and Dump Body Controls, Pintle Hook, Plate and Trailer Plug Connector, Air Lines to the Rear, Snow Plow Hitch, Electrical Tarp System and Spreader, Plow and Warning/Safety Lights, and utilize existing Dump Body, Salt/Sand Spreader and Snow plow from Highway Department's damaged plow truck destroyed by fire in December 2025, which meets the needs of the Highway Department, from Gabrielli Truck Sales, an approved vendor, under the Town of East Hampton Contract# EHWY24-321, in the amount of $256,395.00, to be used for highway maintenance",
+   "clause": "RESOLVED, that the Town Board authorizes the purchase of one (1) New 2025 Kenworth \"Model T480V\" Chassis with PX-9- Engine,Telescopic Hoist, Hydraulic Dumping Hardware, Central Hydraulic System w/ In-Cab Spreader, Plow and Dump Body Controls, Pintle Hook, Plate and Trailer Plug Connector, Air Lines to the Rear, Snow Plow Hitch, Electrical Tarp System and Spreader, Plow and Warning/Safety Lights, and utilize existing ",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-286",
+   "title": "Authorizes Purchase of Freightliner Chassis with Mounted Sander for Highway Department",
+   "kind": "purchase",
+   "vendors": [
+    {
+     "name": "Trux",
+     "role": null
+    }
+   ],
+   "amount": 248270.0,
+   "basis": "stated",
+   "quote": "RESOLVED, that the Town Board authorizes the purchase of one (1) 2026 Freightliner Model M2 106 Chassis with Chassis Mounted 11' E2020XT Sander, Bosch Hydraulics, Wausau Custom Low Mount Hitch, 11’ Henke Snow Plow, which meet the needs of the Highway Department, from Trux, Inc., an approved vendor, under the Town of nder the Town of Islip contract 825-282, in the amount of $248,270.00, to be used for highway maintenance",
+   "clause": "RESOLVED, that the Town Board authorizes the purchase of one (1) 2026 Freightliner Model M2 106 Chassis with Chassis Mounted 11' E2020XT Sander, Bosch Hydraulics, Wausau Custom Low Mount Hitch, 11’ Henke Snow Plow, which meet the needs of the Highway Department, from Trux, Inc., an approved vendor, under the Town of nder the Town of Islip contract 825-282, in the amount of $248,270.00, to be used for highway maintena",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-324",
+   "title": "Awards Bid for Propane Fuel and Equipment Maintenance",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Peconic Propane, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for PROPANE FUEL AND EQUIPMENT MAINTENANCE be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [
+    "Water District",
+    "Highway Fund",
+    "General Fund",
+    "Riverhead Scavenger Waste"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-338",
+   "title": "Authorizes Supervisor to Execute Agreement with Seed Clam Administrator",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "David Lessard",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that David Lessard is appointed Administrator of the Town of Riverhead Seed Clam Program – Year 2026",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-340",
+   "title": "Authorizes the Supervisor to Execute Professional Service Agreements with H2M for Sanitary Improvements at Town Square Splash Pad",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "H2M",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Board of the Town of Riverhead hereby accepts the aforementioned proposal by H2M and authorizes the Supervisor to execute same",
+   "funds": [
+    "Capital Projects Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-343",
+   "title": "Authorize Supervisor to Sign a Professional Services Agreement with Smalley Engineering, P.C.",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Smalley Engineering, P.C.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Professional Services Agreement with Smalley Engineering, P.C. in substantially the same form annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-344",
+   "title": "Ratifies Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Siegel & Sitler, PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby ratifies the appointment of Siegel & Sitler, PLLC to defend or appear in the above action commenced in Supreme Court, Suffolk County, entitled Tink & E.",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-07",
+   "resolution": "2026-345",
+   "title": "Ratifies Authorization for Supervisor to Sign an Addendum to Consultant/Professional Services Agreement with Joan Mottern",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Joan Mottern",
+     "role": null
+    }
+   ],
+   "amount": 5000.0,
+   "basis": "cap",
+   "quote": "WHEREAS, the Riverhead Town Highway Superintendent has conducted interviews in furtherance of filling the vacancy created by Ms. Mottern’s retirement but has not yet identified a suitable candidate for the position and as such, expressed a desire to extend the term of the agreement with Ms. Mottern as a consultant and such consulting services shall not to exceed the sum of $5,000 for the term of the addendum or to continue after May 31, 2026",
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute the Addendum, in substantially the same form as attached",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12511,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-360",
+   "title": "Awards Bid for Meetinghouse Creek Road Bulkhead Renovation",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "South Shore Docks, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for MEETINGHOUSE CREEK ROAD BULKHEAD RENOVATION be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-362",
+   "title": "Approves Sewer District Request for Change Order No. 2 Related to the Contract P – Plumbing Construction RDSD 2202 Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 2 related to the Contract P – Plumbing Construction RDSD 2202 for the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-363",
+   "title": "Approves Sewer District Request for Change Order No. 2 Related to the Contract E – Electrical Construction RDSD 2202 Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 2 related to the Contract E - Electrical Construction RDSD 2202 for the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-364",
+   "title": "Approves Sewer District Request for Change Order No. 3 Related to the Contract G- General Construction RDSD 2202 Project",
+   "kind": "change-order",
+   "vendors": [],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor be and is hereby authorized to execute Change Order No. 3 related to the Contract G- General Construction RDSD 2202 for the Class A Biosolids Upgrade Project",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-393",
+   "title": "Authorizes Extension of Agreement with Urban Design Associates, Ltd",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Urban Design Associates, Ltd",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the agreement with Urban Design Associates, LTD. be extended for one (1) year beginning February 23, 2026 under the same terms and conditions set forth in the original contract",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-396",
+   "title": "Authorizes the Town Supervisor to Enter Into an Agreement With BRYCER, L.P. For Third-Party Fire and Life-Safety Compliance Services",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Brycer, L.P.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby authorizes the Town Supervisor to execute an agreement with BRYCER, L.P. for third- party fire and life safety compliance reporting services, subject to approval as to form by the Town Attorney",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-397",
+   "title": "Ratifies Authorization for Supervisor to Sign a Professional Services Agreement with Brandbuilders Media LLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Brandbuilders Media LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby ratifies the authorization of the Supervisor to execute a Professional Services Agreement with Brandbuilders Media LLC in substantially the same form annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [4 - 1]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "nay",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-408",
+   "title": "Ratifies Award of Bid for Twin Honda Outboard Motors, or Equal, Plus Additional Related Items and Installation for the Riverhead Police Department",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Southold Marine Center Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for TWIN HONDA OUTBOARD MOTORS, OR EQUAL, PLUS ADDITIONAL RELATED ITEMS AND INSTALLATION FOR THE RIVERHEAD POLICE DEPARTMENT be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-409",
+   "title": "Extends Bid for Dry Hydrated Lime",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Progressive Grower",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for DRY HYDRATED LIME be and is hereby extended until May 5, 2027",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-04-21",
+   "resolution": "2026-410",
+   "title": "Extends Bid for Electric Motor Repair and Replacement, Including Emergencies",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "DP Electric Motor Service Inc",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for ELECTRIC MOTOR REPAIRS be and is hereby extended until May 6, 2027",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11818,plainText=false)"
+  },
+  {
+   "date": "2026-05-05",
+   "resolution": "2026-458",
+   "title": "Ratifies the Authorization for the Supervisor to Sign a Consultant/Professional Services Agreement with Elizabeth Maccagli",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Elizabeth Maccagli",
+     "role": null
+    }
+   ],
+   "amount": 5000.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board hereby ratifies the authorization for the Supervisor to execute a professional services agreement with Elizabeth Maccagli to retain her services as a Consultant (an independent contractor) at an hourly rate of $47.02, not to exceed the sum of $5,000.00 or continue after June 30, 2026",
+   "clause": "RESOLVED, that the Town Board hereby ratifies the authorization for the Supervisor to execute a professional services agreement with Elizabeth Maccagli to retain her services as a Consultant (an independent contractor) at an hourly rate of $47.02, not to exceed the sum of $5,000.00 or continue after June 30, 2026",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11882,plainText=false)"
+  },
+  {
+   "date": "2026-05-05",
+   "resolution": "2026-460",
+   "title": "Awards Bid for Installation of Water Mains at 203 East Main Street - Riverhead Water District",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Asplundh Construction, LLC.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for INSTALLATION OF WATER MAINS FOR 203 EAST MAIN STREET – RIVERHEAD WATER DISTRICT be awarded to the vendor indicated below for prices on the attached pages",
+   "funds": [
+    "Water District — developer fees"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11882,plainText=false)"
+  },
+  {
+   "date": "2026-05-05",
+   "resolution": "2026-461",
+   "title": "Awards Bid for Rebid PFA Treatment at Well No. 5-2A; SRF Project No. 19591 - Riverhead Water District",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Loduca Associates",
+     "role": "Contract G: General Construction"
+    },
+    {
+     "name": "Bensin Contracting Inc.",
+     "role": "Contract P: Plumbing Construction"
+    },
+    {
+     "name": "Commander Electric Inc.",
+     "role": "Contract E: Electrical Construction"
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": "RESOLVED that the bid for RE-BID PFAS TREATMENT AT WELL NO. 5-2A – CONTRACT G – GENERAL CONSTRUCTION",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11882,plainText=false)"
+  },
+  {
+   "date": "2026-05-20",
+   "resolution": "2026-477",
+   "title": "Authorizes Purchase of Massey Ferguson Tractor for Highway Department",
+   "kind": "purchase",
+   "vendors": [
+    {
+     "name": "All Island Equipment Corp",
+     "role": null
+    }
+   ],
+   "amount": 181981.0,
+   "basis": "stated",
+   "quote": "RESOLVED, that the Town Board authorizes the purchase of new (1) new 2026 Massey Ferguson 5M.105 Tractor with 22 Foot Rear Cradle Boom, Joystick, 44\" HD Boom Flail, Factory Authorized Mounting, warranty, and delivery, which meet the needs of the Highway Department, from All Island Equipment Corp, an approved vendor, under the New York State Office of General Services Contract PC69840, in the amount of $181,981.00, to be used for highway maintenance",
+   "clause": "RESOLVED, that the Town Board authorizes the purchase of new (1) new 2026 Massey Ferguson 5M.105 Tractor with 22 Foot Rear Cradle Boom, Joystick, 44\" HD Boom Flail, Factory Authorized Mounting, warranty, and delivery, which meet the needs of the Highway Department, from All Island Equipment Corp, an approved vendor, under the New York State Office of General Services Contract PC69840, in the amount of $181,981.00, to",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye",
+    "Kern": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11919,plainText=false)"
+  },
+  {
+   "date": "2026-05-20",
+   "resolution": "2026-499",
+   "title": "Extends Bid for Annual Fire and Security Alarm Systems",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Intelli-Tec Security Services LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for FIRE AND SECURITY ALARM SYSTEMS be and is hereby extended until June 16, 2027",
+   "funds": [
+    "Riverhead Sewer District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye",
+    "Kern": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11919,plainText=false)"
+  },
+  {
+   "date": "2026-05-20",
+   "resolution": "2026-518",
+   "title": "Authorizes The Supervisor To Execute A Professional Services Agreement With Main Street Agency For Alive On 25 2026",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Main Street Agency",
+     "role": null
+    }
+   ],
+   "amount": 10000.0,
+   "basis": "cap",
+   "quote": "WHEREAS, the Town Board desires to enter into a Professional Consultant Agreement with Main Street Agency to plan, coordinate, market and manage vendors and staffing for the Town of Riverhead Downtown’s Alive on 25 and shall pay a flat fee for the services in an amount not to exceed $10,000.00. NOW, THEREFORE, BE IT RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Professional Services Agreement with Main Street Agency for consulting services in substantially the same form annexed hereto",
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Professional Services Agreement with Main Street Agency for consulting services in substantially the same form annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye",
+    "Kern": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11919,plainText=false)"
+  },
+  {
+   "date": "2026-05-20",
+   "resolution": "2026-525",
+   "title": "Authorizes the Supervisor to Execute an Amendment & Extension Agreement with Parking and Mobility Consultants Inc.",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Parking and Mobility Consultants Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Supervisor is hereby authorized to execute an Amendment and Extension Agreement relating to professional services with Parking and Mobility Consultants Inc., in substantially the form attached",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye",
+    "Kern": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11919,plainText=false)"
+  },
+  {
+   "date": "2026-05-20",
+   "resolution": "2026-526",
+   "title": "Authorizes the Supervisor to Execute an Agreement with the Riverhead Business Improvement District Management Association, Inc.",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Riverhead Business Improvement District Management Association, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Supervisor is authorized to execute an agreement in substantially the form attached with the Riverhead Business Improvement District Management Association, Inc. regarding 2026 calendar year BIDMA operations",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye",
+    "Kern": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11919,plainText=false)"
+  },
+  {
+   "date": "2026-06-02",
+   "resolution": "2026-552",
+   "title": "Authorizes Supervisor To Execute An Agreement With Goodman-Marks Associates, Inc. To Conduct An Appraisal (Railroad Ave. Parking Lot for TOD)",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Goodman-Marks Associates, Inc.",
+     "role": null
+    }
+   ],
+   "amount": 3500.0,
+   "basis": "stated",
+   "quote": "WHEREAS, Goodman-Marks Associates, Inc., is ready, willing and able to provide such services and has provided an Agreement to conduct an appraisal in the amount of $3,500.00",
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute the Agreement with Goodman-Marks Associates, Inc.",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12145,plainText=false)"
+  },
+  {
+   "date": "2026-06-02",
+   "resolution": "2026-554",
+   "title": "Authorizes the Supervisor to Execute an Agreement with SUSA Soccer Training for Instruction/Training and Professional Officials for Town of Riverhead Police Athletic League Soccer Program Grades K-6 for 2026 Calendar Year",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "SUSA Soccer Training",
+     "role": null
+    }
+   ],
+   "amount": 7500.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the SUSA Soccer Training for referee services for the 2026 Soccer Program as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $7,500.00",
+   "clause": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with the SUSA Soccer Training for referee services for the 2026 Soccer Program as part of, and affiliated with, the Town of Riverhead Police Athletic League in an amount not to exceed $7,500.00",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12145,plainText=false)"
+  },
+  {
+   "date": "2026-06-02",
+   "resolution": "2026-563",
+   "title": "Ratifies Authorization for Supervisor to Sign Second Addendum to Consultant/Professional Services Agreement With Joan Mottern",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Joan Mottern",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby ratifies the authorization for the Supervisor to execute a Second Addendum Consultant/Professional Services Agreement with Joan Mottern, in substantially the same form as attached",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12145,plainText=false)"
+  },
+  {
+   "date": "2026-06-16",
+   "resolution": "2026-611",
+   "title": "Extends Bid for Corrosion Control Chemical (PO4) for Riverhead Water District",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Carus LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for CORROSION CONTROL CHEMICAL (PO4) be and is hereby extended until June 30, 2027 at the requested increased price",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12025,plainText=false)"
+  },
+  {
+   "date": "2026-06-16",
+   "resolution": "2026-622",
+   "title": "Ratifies the Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Siegel & Sitler, PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby authorizes the appointment of Siegel & Sitler, PLLC to defend or appear in the above action commenced in Supreme Court, Suffolk County, entitled (In the Matter of the Application of BAYVIEW AT PECONIC LLC v. TOWN OF RIVERHEAD ZONING BOARD OF APPEALS), under Index No.: 614155/2026",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12025,plainText=false)"
+  },
+  {
+   "date": "2026-07-07",
+   "resolution": "2026-677",
+   "title": "Authorizes The Supervisor To Execute An Addendum To An Agreement With LVF Landscape Architects, PLLC For East End Arts Buildings",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "LVF Landscape Architects, PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that LVF Landscape Architects, PLLC shall be entitled to additional compensation totaling $76,500.00 to complete the relocation of the East End Arts Buildings for the completion of the Adaptive Playground and all terms and conditions of the original Consultant/Professional Services Agreement dated January 22, 2024 shall remain in full force and effect",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12085,plainText=false)"
+  },
+  {
+   "date": "2026-07-07",
+   "resolution": "2026-684",
+   "title": "Accepts H2M Architects and Engineers Proposal to Prepare Map and Plan for Town Square Splash Pad",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "H2M Architects and Engineers",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby accepts the aforementioned proposal by H2M Architects and Engineers",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12085,plainText=false)"
+  },
+  {
+   "date": "2026-08-04",
+   "resolution": "2026-756",
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement with Sound Engineering, P.C. for Traffic Signal Design Plans at Osborn Avenue and Harrison Avenue",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Sound Engineering, P.C.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Supervisor is hereby authorized to execute an Agreement with Sound Engineering, P.C., in substantially the form attached",
+   "funds": [
+    "Street Lighting District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12209,plainText=false)"
+  },
+  {
+   "date": "2026-08-04",
+   "resolution": "2026-757",
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement with Sound Engineering, P.C. for Traffic Signal Design Plans at South Jamesport Avenue and Railroad Avenue",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Sound Engineering, P.C.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Supervisor is hereby authorized to execute an Agreement with Sound Engineering, P.C., in substantially the form attached",
+   "funds": [
+    "Street Lighting District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12209,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-793",
+   "title": "Amends Agreement With Main Street Agency For Alive On 25",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Main Street Agency",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Agreement with Main Street Agency for the production of the Town of Riverhead’s Alive on 25 event is hereby amended to reflect a rain date of September 10, 2026",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-794",
+   "title": "Ratifies Authorization for the Town Attorney to Execute a Retainer Agreement with Siegel & Sitler, PLLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Siegel & Sitler, PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board of the Town of Riverhead hereby ratifies the appointment of Siegel & Sitler, PLLC to defend or appear in the above action commenced in Supreme Court, Suffolk County, entitled 1086 OCR LLC, et. al. v. TOWN OF RIVERHEAD, et. al., under Index No.: 622445/2026",
+   "funds": [],
+   "townFiscalImpact": "No",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-798",
+   "title": "Authorizes Supervisor to Sign a Consultant/Professional Services Agreement with D&B Engineers and Architects",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "D&B Engineers and Architects",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Consultant/Professional Services Agreement with D&B Engineers and Architects, in substantially the same form annexed hereto",
+   "funds": [
+    "Capital Projects Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-799",
+   "title": "Authorizes Supervisor to Execute an Agreement with Riverhead Youth Sports, Inc for the Referee/Umpire Services for Town of Riverhead Police Athletic League Football Program for 2026 Calendar Year",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Riverhead Youth Sports, Inc",
+     "role": null
+    }
+   ],
+   "amount": 6000.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with Riverhead Youth Sports, Inc. for the referee services for 2026 Football Programs(s) as part of and affiliated with the Town of Riverhead Police Athletic League in an amount not to exceed $6,000.00",
+   "clause": "RESOLVED, that the Town Board authorizes the Supervisor to enter into an agreement with Riverhead Youth Sports, Inc. for the referee services for 2026 Football Programs(s) as part of and affiliated with the Town of Riverhead Police Athletic League in an amount not to exceed $6,000.00",
+   "funds": [
+    "Police Athletic League"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-807",
+   "title": "Awards Bid for CUES Flexitrax C550C Portable Video Pipe Inspection Camera, or Equal",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Cues Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": null,
+   "funds": [
+    "Riverhead Sewer District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-808",
+   "title": "Extends Bids for 2025 Annual Procurement Contract",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Barbato Nursery Corp.",
+     "role": "Award as listed in the packet"
+    },
+    {
+     "name": "East Island Asphalt Corp",
+     "role": "Award #50, 51, 52, 55, 67, and 68"
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the RE-BID FOR 2025 ANNUAL PROCUREMENT CONTRACT be and is hereby extended until February 19, 2027 at the same pricing and terms",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-08-18",
+   "resolution": "2026-809",
+   "title": "Extends Bids for 2025 Annual Construction Contract",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Suffolk Paving Corp",
+     "role": "Awards # 1, 2, 7, 17, 18, 19, 23, 24, 32"
+    },
+    {
+     "name": "Rosemar Construction Inc",
+     "role": "Awards # 5, 21, 22"
+    },
+    {
+     "name": "The Landtek Group Inc",
+     "role": "Awards # 8, 28, 33"
+    },
+    {
+     "name": "Laser Industries Inc",
+     "role": "Awards as listed in the packet"
+    },
+    {
+     "name": "Grace Industries LLC",
+     "role": "Awards # 34, 35, 36, 37"
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the 2025 ANNUAL CONSTRUCTION CONTRACT be and is hereby extended until February 19, 2027 at the same pricing and terms",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12255,plainText=false)"
+  },
+  {
+   "date": "2026-09-01",
+   "resolution": "2026-829",
+   "title": "Authorizes the Supervisor to Execute a Professional Services Agreement for Engineering Services for Installation of Water Mains and Appurtenances for Boundary Extension Nos. 95, 96, and 97 - Riverhead Water District",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "H2M Architects + Engineers",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town of Riverhead accepts the proposal for ENGINEERING SERVICES FOR INSTALLATION OF WATER MAINS AND APPURTENANCES FOR BOUNDARY EXTENSION NOS. 95, 96, AND 97 - RIVERHEAD WATER DISTRICT from the company indicated below: H2M Architects + Engineers 538 BROADHOLLOW ROAD 4TH FLOOR EAST MELVILLE, NY 11747 BE IT FURTHER RESOLVED, that the Supervisor is authorized to execute the attached Professional Servic",
+   "funds": [
+    "Water District — developer fees"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12303,plainText=false)"
+  },
+  {
+   "date": "2026-09-15",
+   "resolution": "2026-854",
+   "title": "Authorizing an Award of Contract to M&J Engineering, D.P.C. Engineering Assessment for the Restoration of the Wading River Duck Ponds, Wading River, NY",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "M&J Engineering, D.P.C.",
+     "role": null
+    }
+   ],
+   "amount": 78856.0,
+   "basis": "cap",
+   "quote": "RESOLVED by the Town Board of the Town of Riverhead, in partnership with the Town of Brookhaven, hereby award a contract to M&J Engineering, D.P.C., 110 Bi-County Boulevard, Suite 101, Farmingdale, NY 11735, to prepare an Engineering Assessment for the Restoration of the Wading River Duck Ponds, Wading River, NY in an amount not to exceed $78,856.00, and per the intermunicipal agreement, the Town of Riverhead will reimburse the Town of Brookhaven 50 percent of the cost associated therewith",
+   "clause": "RESOLVED by the Town Board of the Town of Riverhead, in partnership with the Town of Brookhaven, hereby award a contract to M&J Engineering, D.P.C., 110 Bi-County Boulevard, Suite 101, Farmingdale, NY 11735, to prepare an Engineering Assessment for the Restoration of the Wading River Duck Ponds, Wading River, NY in an amount not to exceed $78,856.00, and per the intermunicipal agreement, the Town of Riverhead will re",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12366,plainText=false)"
+  },
+  {
+   "date": "2026-09-15",
+   "resolution": "2026-868",
+   "title": "Extends Bid 2024-27 Nunc Pro Tunc for Highway Department Grinding of Yard Waste On-Site at South Side Young's Avenue Yard Waste Facility",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Crown Sanitation, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the HIGHWAY DEPARTMENT GRINDING OF YARD WASTE ON-SITE AT SOUTH SIDE YOUNG’S AVENUE YARD WASTE FACILITY be and is hereby extended nunc pro tunc until January 22, 2027 at the same pricing",
+   "funds": [
+    "Highway Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12366,plainText=false)"
+  },
+  {
+   "date": "2026-09-15",
+   "resolution": "2026-869",
+   "title": "Awards Bid for Replacement of HVAC System at George Young Community Center",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Intricate Tech Solutions Ltd",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": null,
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12366,plainText=false)"
+  },
+  {
+   "date": "2026-09-15",
+   "resolution": "2026-870",
+   "title": "Extends Bid 2024-22 for Well and Pump Testing for Riverhead Water District",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Victor Elefante Technical Services, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the WELL AND PUMP TESTING, EVALUATION, REPORTING, AND INFORMATION MANAGEMENT FOR THE RIVERHEAD WATER DISTRICT be and is hereby extended until September 17, 2027 at the same pricing",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12366,plainText=false)"
+  },
+  {
+   "date": "2026-09-15",
+   "resolution": "2026-871",
+   "title": "Extends Bid 2025-24 Nunc Pro Tunc for Fertilizer and Lawn Chemicals",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Nassau Suffolk Turf",
+     "role": null
+    },
+    {
+     "name": "Progressive Grower",
+     "role": "Items #10, 12, 13, and 16"
+    },
+    {
+     "name": "Long Island Cauliflower Assoc.",
+     "role": "Items #1, 2, 5, 6, 7, 8, 15, 17 and 18"
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the bid for FERTILIZER AND LAWN CHEMICALS be and is hereby extended nunc pro tunc until August 19, 2027 at the same pricing, with exceptions to items #1, 7, and 8 which are increased to the prices requested on the attached document",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12366,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-908",
+   "title": "Authorizes Professional Services Agreement Between Town of Riverhead and Intellishift for Automated Vehicle Location and Monitoring",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "IntelliShift",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board authorizes the Supervisor to execute a professional services agreement with IntelliShift for Automated Vehicle Location and Monitoring (AVLM) in substantially the same form as the agreement attached",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-909",
+   "title": "Authorize Supervisor to Sign a Professional Services Agreement with GovPilot LLC d/b/a Spatial Data Logic, LLC",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "GovPilot LLC d/b/a Spatial Data Logic, LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that the Town Board hereby authorizes the Supervisor to execute a Professional Services Agreement with GovPilot LLC d/b/a Spatial Data Logic, LLC, in substantially the same form annexed hereto",
+   "funds": [],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-911",
+   "title": "Authorizes the Supervisor to Execute an Addendum to an Agreement with LVF Landscape Architects, PLLC (Townsquare and Streetscapes Improvement)",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "LVF Landscape Architects, PLLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that LVF Landscape Architects, PLLC shall be entitled to additional compensation totaling $28,000 pursuant to the terms as outlined in the Addendum, and all terms and conditions of the original Consultant/Professional Services Agreement dated March 22, 2024 shall remain in full force and effect",
+   "funds": [
+    "Capital Projects Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-914",
+   "title": "Extends Agreement Nunc Pro Tunc for Youngs Avenue Landfill Maintenance and Monitoring",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "D&B Engineers and Architects",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED that the contract for Youngs Avenue Landfill Maintenance and Monitoring be extended nunc pro tunc until September 30, 2027 to the vendor indicated below for pricing, terms, and conditions as the original RFP",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-915",
+   "title": "Awards Bid for One (1) New Altec Model AT40G Telescopic Articulating Aerial Device with ISO-Boom on 2028 Ford F550 Chassis, or Equal",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Gabrielli Truck Sales Ltd",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": null,
+   "funds": [
+    "Street Lighting District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-916",
+   "title": "Extends Bid 2025-08 Nunc Pro Tunc for Street Light and Traffic Signal Maintenance Repair Parts",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Traffic Systems Inc.",
+     "role": "Items as listed in the packet"
+    },
+    {
+     "name": "Revco Lighting + Electrical Supply",
+     "role": "Items as listed in the packet"
+    },
+    {
+     "name": "General Traffic Equipment Corp",
+     "role": "Items as listed in the packet"
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that bid #2025-08 for STREET LIGHTING AND TRAFFIC SIGNAL MAINTENANCE REPAIR PARTS be and is hereby extended nunc pro tunc until July 15, 2027 at the same pricing",
+   "funds": [
+    "Street Lighting District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-917",
+   "title": "Extends Bid 2025-28 Replacement of Large Meters for Riverhead Water District",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Saks Utility Solutions, LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that bid #2025-28 for REPLACEMENT OF LARGE METERS FOR THE RIVERHEAD WATER DISTRICT be and is hereby extended until October 7, 2027 at the same pricing",
+   "funds": [
+    "Water District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-918",
+   "title": "Extends Bid 2025-31 for Dowflake Extra 83-87% Calcium Chloride or Equal",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Siteone Landscape Supply",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that bid #2025-31or DOWFLAKE EXTRA 83- 87% CALCIUM CHLORIDE, OR EQUAL, be and is hereby extended until October 7, 2027 the indicated price increase",
+   "funds": [
+    "General Fund",
+    "Public Parking District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-919",
+   "title": "Extends Bid 2025-34 for Removal of Household Hazardous Waste",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Mxi Environmental Services LLC",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that based upon the recommendation and request of the Town Engineer, bid #2025-34 for REMOVAL OF HOUSEHOLD HAZARDOUS WASTE be and is hereby extended until December 31, 2027 at the same pricing, terms and conditions",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-06",
+   "resolution": "2026-920",
+   "title": "Extends Bid 2025-39 for General Hardware Items",
+   "kind": "bid-extension",
+   "vendors": [
+    {
+     "name": "Griffing Hardware Co Inc",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that based upon the recommendation and request of various department heads, bid #2025-39 for GENERAL HARDWARE ITEMS be and is hereby extended until December 1, 2027 at the same pricing, terms and conditions",
+   "funds": [
+    "Highway Fund",
+    "Riverhead Sewer District"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12446,plainText=false)"
+  },
+  {
+   "date": "2026-10-20",
+   "resolution": "2026-955",
+   "title": "Authorizes the Supervisor to Execute an Addendum to an Agreement with Smalley Engineering, P.C.",
+   "kind": "agreement",
+   "vendors": [
+    {
+     "name": "Smalley Engineering, P.C.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "none",
+   "quote": null,
+   "clause": "RESOLVED, that Smalley Engineering, P.C. shall be entitled to additional compensation totaling $3,800 pursuant to the terms as outlined in the Addendum, and all terms and conditions of the original Consultant/Professional Services Agreement dated April 9, 2026 shall remain in full force and effect",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12495,plainText=false)"
+  },
+  {
+   "date": "2026-10-20",
+   "resolution": "2026-957",
+   "title": "Ratifies the Authorization for the Supervisor to Sign a Consultant/Professional Services Agreement with Theresa DeFilippis",
+   "kind": "services",
+   "vendors": [
+    {
+     "name": "Theresa DeFilippis",
+     "role": null
+    }
+   ],
+   "amount": 10000.0,
+   "basis": "cap",
+   "quote": "RESOLVED, that the Town Board hereby ratifies the authorization for the Supervisor to execute a professional services agreement with Theresa DeFilippis to retain her services as a Consultant (an independent contractor) at an hourly rate of $51.00, not to exceed the sum of $10,000.00 or continue after March 31, 2027",
+   "clause": "RESOLVED, that the Town Board hereby ratifies the authorization for the Supervisor to execute a professional services agreement with Theresa DeFilippis to retain her services as a Consultant (an independent contractor) at an hourly rate of $51.00, not to exceed the sum of $10,000.00 or continue after March 31, 2027",
+   "funds": [
+    "General Fund"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12495,plainText=false)"
+  },
+  {
+   "date": "2026-10-20",
+   "resolution": "2026-961",
+   "title": "Awards Bid for Installation of Water Main & Appurtenances - Extension No.97 Forge Road",
+   "kind": "bid-award",
+   "vendors": [
+    {
+     "name": "Excav Services, Inc.",
+     "role": null
+    }
+   ],
+   "amount": null,
+   "basis": "attached",
+   "quote": null,
+   "clause": null,
+   "funds": [
+    "Water District — developer fees"
+   ],
+   "townFiscalImpact": "Yes",
+   "result": "ADOPTED [UNANIMOUS]",
+   "adopted": true,
+   "votes": {
+    "Halpin": "aye",
+    "Rothwell": "aye",
+    "Kern": "aye",
+    "Merrifield": "aye",
+    "Waski": "aye"
+   },
+   "sourceUrl": "https://riverheadny.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12495,plainText=false)"
+  }
+ ]
+}

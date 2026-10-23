@@ -95,6 +95,19 @@ paragraph on `/officials/`, the `PARTY` map on `/candidate-watch/`, and
 `TaxCapFormula.steps` on `/tax-cap/`. Fetch the page, read the new wording,
 update the Swift copy, and update the pinned phrases in the contract.
 
+**`nav-route-missing` — the web app's navigation offers a route the app's
+route table does not.** The page is unreachable from the app entirely, not even
+as a web fallback, so this is the most user-visible drift the check reports. Add
+the route to `BudgetLiveParityCatalog` with the label SiteNav uses, which makes
+it reachable through the web view immediately; porting it natively is a separate
+decision for `parity-route-porter`. Six routes had accumulated this way before
+the check existed, and `/contracts/` appeared within a day of the check landing.
+
+**`nav-route-retired` — the app offers a route the navigation no longer does.**
+Check the page still responds before removing anything: the web app's
+`sitemap.xml` omits live routes, and a route can leave the nav while the page
+stays up.
+
 **`transport` — not reached.** Nothing is claimed about it. Never treat a failed
 fetch as a finding, and never make the check fail on one: it runs on every pull
 request and the data is on GitHub Pages.

@@ -15,7 +15,7 @@ navigation groups used by the web product:
 - Research — 11
 - Evidence — 7
 
-The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (61 entries over 60 distinct routes, as of 2026-10-22; the workforce page carries two entries, the roster and the organization chart anchored inside it), including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. Routes with a
+The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (62 entries over 61 distinct routes, as of 2026-10-23; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. Routes with a
 verified native counterpart open SwiftUI directly; every other destination uses
 the existing `WebContentView` / `WKWebView` implementation and therefore keeps
 loading the current GitHub Pages version until its native replacement is ready.

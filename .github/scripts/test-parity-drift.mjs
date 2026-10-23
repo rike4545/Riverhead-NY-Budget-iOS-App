@@ -106,7 +106,23 @@ function synthesise(type, types, scope, depth = 0) {
     }
 }
 
-function buildFixture(contract, types) {
+// A nav page whose links are generated from the route table the check will
+// compare them against, so the clean case is clean by construction. For the
+// synthetic contract that is the three fixture routes; for the real one it is
+// whatever BudgetLiveParityView currently lists, which also proves the
+// extraction round-trips against real source.
+function navFixture(contract, sourceDir) {
+    const nav = contract.navigation;
+    const base = nav.basePath ?? '';
+    const swift = readFileSync(join(sourceDir, nav.swift), 'utf8');
+    const routes = [...new Set([...swift.matchAll(/path:\s*"([^"]+)"/g)].map((m) => m[1]))];
+    const links = [...(nav.ignore ?? []), ...routes]
+        .map((r) => `<a href="${base}${r}">${r}</a>`)
+        .join('');
+    return `<!doctype html><nav>${links}</nav>`;
+}
+
+function buildFixture(contract, types, sourceDir) {
     const dir = mkdtempSync(join(tmpdir(), 'parity-fixture-'));
     for (const endpoint of contract.endpoints) {
         const payload = synthesise({ kind: 'named', name: endpoint.document }, types, null);
@@ -126,6 +142,7 @@ function buildFixture(contract, types) {
             `<!doctype html><main>${mirror.phrases.map((p) => `<p>${p}</p>`).join('')}</main>`
         );
     }
+    if (contract.navigation) writeFileSync(join(dir, 'navigation.html'), navFixture(contract, sourceDir));
     return dir;
 }
 
@@ -195,6 +212,14 @@ enum WidgetKind: String, Decodable, Sendable {
     case extraLarge = "extra-large"
 }
 
+enum FixtureCatalog {
+    static let routes = [
+        Route(title: "Alpha", path: "/alpha/"),
+        Route(title: "Beta", path: "/beta/"),
+        Route(title: "Gamma", path: "/gamma/")
+    ]
+}
+
 struct FixtureDocument: Decodable, Sendable {
     let title: String
     let count: Int
@@ -243,8 +268,17 @@ const SYNTHETIC_CONTRACT = {
     markupMirrors: [
         { id: 'fixture-prose', route: '/fixture/', swift: 'Fixture.swift', phrases: ['the mirrored sentence'], note: 'Mirrored from markup.' }
     ],
+    navigation: {
+        page: '/fixture/',
+        basePath: '/base',
+        swift: 'Fixture.swift',
+        minimumRoutes: 2,
+        ignore: ['/'],
+        note: 'Fixture nav.'
+    },
     unchecked: []
 };
+
 
 function syntheticSuite() {
     console.log('synthetic schema');
@@ -270,7 +304,7 @@ function syntheticSuite() {
     check('parser reads a renamed enum case',
         resolve({ kind: 'named', name: 'WidgetKind' }, types, null)?.values.join(',') === 'small,extra-large');
 
-    const clean = buildFixture(SYNTHETIC_CONTRACT, types);
+    const clean = buildFixture(SYNTHETIC_CONTRACT, types, sourceDir);
 
     {
         const { status, report } = run(clean, options);
@@ -318,6 +352,19 @@ function syntheticSuite() {
         ['optional key null', (d, io) => { const p = io.read('fixture.json'); p.caption = null; io.write('fixture.json', p); },
             null, null, null],
         ['optional key inside an element absent', (d, io) => { const p = io.read('fixture.json'); delete p.rows[0].note; io.write('fixture.json', p); },
+            null, null, null],
+
+        // The route table against the web app's own navigation. This is the
+        // gap class that needed a manual audit to find.
+        ['nav offers a route the app lacks', (d, io) =>
+            io.writeText('navigation.html', io.readText('navigation.html').replace('</nav>', '<a href="/base/delta/">Delta</a></nav>')),
+            'nav-route-missing', '', 'drift'],
+        ['app offers a route the nav retired', (d, io) =>
+            io.writeText('navigation.html', io.readText('navigation.html').replace('<a href="/base/gamma/">/gamma/</a>', '')),
+            'nav-route-retired', '', 'drift'],
+        // The homepage link is in `ignore`; if that stopped working it would
+        // fail every run.
+        ['ignored nav route stays ignored', (d, io) => { /* fixture as generated */ },
             null, null, null]
     ];
 
@@ -349,6 +396,19 @@ function syntheticSuite() {
         check('unreachable payload: transport finding, exit 0',
             status === 0 && find(report, 'transport'),
             `exit ${status}, findings: ${JSON.stringify(kinds(report))}`);
+        rmSync(dir_, { recursive: true, force: true });
+    }
+
+    // If extraction breaks, the check must say so and compare nothing. The
+    // failure mode this guards against is a near-empty nav reporting every
+    // route in the app as one the web has dropped.
+    {
+        const dir_ = mutate(clean, (d, io) => io.writeText('navigation.html', '<!doctype html><nav>no links here</nav>'));
+        const { status, report } = run(dir_, options);
+        const retired = report.findings.filter((f) => f.kind === 'nav-route-retired');
+        check('unreadable nav: reports transport, not a flood of retired routes',
+            status === 0 && find(report, 'transport') && retired.length === 0,
+            `exit ${status}, retired=${retired.length}, kinds=${JSON.stringify(kinds(report))}`);
         rmSync(dir_, { recursive: true, force: true });
     }
 
@@ -387,7 +447,7 @@ function realSuite() {
             contract.endpoints.some((e) => e.id === set.endpoint));
     }
 
-    const clean = buildFixture(contract, types);
+    const clean = buildFixture(contract, types, sourceDir);
     {
         const { status, report } = run(clean, options);
         check('a payload generated from the real schema is clean',

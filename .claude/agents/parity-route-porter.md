@@ -68,6 +68,9 @@ route half-ported:
 1. `BudgetLiveParityCatalog.nativePaths` — add the path.
 2. `parityDestination(for:)` — add the `case` returning your view.
 
+`make drift` compares the whole route table against the live navigation, so a
+route you forget to register is reported rather than silently missing.
+
 `BudgetLiveParityTests.swift` holds a `count ==` tripwire on `nativePaths`;
 update it and add the path to `coreBudgetRoutesAreRegisteredAsNative`. Then
 update the native-route list in `PARITY.md` — regenerate it from `nativePaths`

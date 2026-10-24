@@ -10,6 +10,9 @@ build-logs/
 
 .DS_Store
 
-# Output of the parity drift check when run directly (see Makefile `drift`)
-parity-drift.json
-parity-drift.md
+# Output of the parity drift check when run directly (see Makefile `drift`).
+# Anchored to the repo root on purpose: unanchored, these also matched
+# .github/reports/parity-drift.* and silently blocked the scheduled job from
+# committing the report it exists to produce.
+/parity-drift.json
+/parity-drift.md

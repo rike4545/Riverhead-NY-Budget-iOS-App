@@ -17,6 +17,10 @@
 //           page wording it mirrored that has since been edited.
 //   note    worth knowing, nothing to do.
 //
+// Beyond the payloads it also compares the app's route table against the web
+// app's own navigation, because a route the app never lists is not a parity
+// gap a payload check can see.
+//
 // A fetch that fails is a `transport` finding and never fails the run. The web
 // app is on GitHub Pages and this check runs on every pull request; a flaky
 // network must not turn into a red check on someone's unrelated change. Only a
@@ -549,6 +553,77 @@ async function main() {
             push('mirror-missing', 'drift',
                 { id: mirror.id, route: mirror.route, swift: mirror.swift },
                 `${mirror.swift} mirrors wording that is no longer on the page: ${gone.map((g) => `"${g}"`).join('; ')}. ${mirror.note}`);
+        }
+    }
+
+    // Navigation: does the app's route table still offer what the web app's nav
+    // offers? This is the gap that needed a manual audit to find — the table had
+    // fallen six routes behind SiteNav with nothing watching.
+    if (contract.navigation) {
+        const nav = contract.navigation;
+        const url = `${contract.siteRoot}${nav.page}`;
+        let html;
+
+        if (options.offline) {
+            const file = join(options.offline, 'navigation.html');
+            if (!existsSync(file)) {
+                push('transport', 'transport', { id: 'navigation', route: nav.page, swift: nav.swift },
+                    `no saved page at ${file}`);
+                html = null;
+            } else {
+                html = readFileSync(file, 'utf8');
+            }
+        } else {
+            const fetched = await fetchText(url, options.timeout);
+            if (fetched.error) {
+                push('transport', 'transport', { id: 'navigation', route: nav.page, swift: nav.swift },
+                    `${url} — ${fetched.error}`);
+                html = null;
+            } else {
+                html = fetched.value;
+            }
+        }
+
+        if (html) {
+            const base = nav.basePath ?? '';
+            const pattern = new RegExp(`href="${base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(/[a-z0-9-]*/(?:#[a-z-]+)?)"`, 'g');
+            const ignore = new Set(nav.ignore ?? []);
+            const webRoutes = new Set();
+            for (const m of html.matchAll(pattern)) {
+                if (!ignore.has(m[1])) webRoutes.add(m[1]);
+            }
+
+            const swiftPath = join(options.sourceDir, nav.swift);
+            const appRoutes = new Set();
+            if (existsSync(swiftPath)) {
+                const swift = readFileSync(swiftPath, 'utf8');
+                for (const m of swift.matchAll(/path:\s*"([^"]+)"/g)) appRoutes.add(m[1]);
+            }
+
+            const floor = nav.minimumRoutes ?? 0;
+            if (webRoutes.size < floor) {
+                // Extraction broke rather than the nav shrinking. Say so and
+                // claim nothing: the alternative is reporting every route in the
+                // app as one the web has dropped.
+                push('transport', 'transport', { id: 'navigation', route: nav.page, swift: nav.swift },
+                    `read only ${webRoutes.size} nav links from ${url}, below the floor of ${floor} — ` +
+                    `the markup has probably changed, so no comparison was made`);
+            } else if (appRoutes.size === 0) {
+                push('transport', 'transport', { id: 'navigation', route: nav.page, swift: nav.swift },
+                    `no route table found in ${nav.swift}, so no comparison was made`);
+            } else {
+                for (const route of [...webRoutes].sort()) {
+                    if (appRoutes.has(route)) continue;
+                    push('nav-route-missing', 'drift', { id: 'navigation', route, swift: nav.swift },
+                        `the web app's navigation offers \`${route}\` and the app's route table does not, ` +
+                        `so the page is unreachable from the app — not even as a web fallback`);
+                }
+                for (const route of [...appRoutes].sort()) {
+                    if (webRoutes.has(route)) continue;
+                    push('nav-route-retired', 'drift', { id: 'navigation', route, swift: nav.swift },
+                        `the app's route table offers \`${route}\` and the web app's navigation no longer does`);
+                }
+            }
         }
     }
 

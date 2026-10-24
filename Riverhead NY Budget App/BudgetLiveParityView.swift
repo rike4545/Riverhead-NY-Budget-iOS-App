@@ -112,6 +112,7 @@ enum BudgetLiveParityCatalog {
         ],
         .research: [
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
+            .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),
             .init(title: "Tax-Cap Letter, Checked", path: "/tax-cap-letter/", systemImage: "envelope.open.fill", detail: "Check the Suffolk supervisors' tax-cap letter against Riverhead's record."),
             .init(title: "Brookhaven’s 2027 Tentative", path: "/brookhaven-2027/", systemImage: "map.fill", detail: "Set Brookhaven's 2027 Tentative beside Riverhead's."),

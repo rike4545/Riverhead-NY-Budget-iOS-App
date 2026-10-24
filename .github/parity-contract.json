@@ -11,8 +11,8 @@
     "                 views that hold a `static let dataURL`, but several build",
     "                 their URL from a root and a relative path, so the mapping",
     "                 is written out once here for all of them.",
-    "  closedSets     string fields the Swift switches over. These never throw —",
-    "                 each switch has a `default` — so a new value degrades",
+    "  closedSets     string fields the Swift switches over. These never throw \u2014",
+    "                 each switch has a `default` \u2014 so a new value degrades",
     "                 silently instead of failing loudly. That is why they need",
     "                 checking from outside.",
     "  markupMirrors  prose and tables copied out of a web page's markup because",
@@ -197,7 +197,7 @@
         "retirees from a government career",
         "Private-sector business owners have no public pension at all"
       ],
-      "note": "The distinction the page rests on — drawing a pension versus building one. In the markup, not in officials-pensions.json."
+      "note": "The distinction the page rests on \u2014 drawing a pension versus building one. In the markup, not in officials-pensions.json."
     },
     {
       "id": "tax-cap-formula",
@@ -210,7 +210,7 @@
         "Add available carryover",
         "Apply transfers and exclusions"
       ],
-      "note": "The five steps OSC applies, in order. Describes statute rather than Riverhead's numbers, so it does not go stale the way a figure would — but a reworded step on the web side would leave the two out of step."
+      "note": "The five steps OSC applies, in order. Describes statute rather than Riverhead's numbers, so it does not go stale the way a figure would \u2014 but a reworded step on the web side would leave the two out of step."
     },
     {
       "id": "candidate-party-labels",
@@ -218,7 +218,7 @@
       "swift": "CandidateParty.spelledOut(_:) in CandidateWatchParityView.swift",
       "phrases": [
         "Democrat",
-        "Republican · Conservative"
+        "Republican \u00b7 Conservative"
       ],
       "note": "Only the labels for party codes currently in the data are rendered on the page, so this checks the two that are. The full code set is covered by the candidate-party closed set."
     }
@@ -226,11 +226,36 @@
   "unchecked": [
     {
       "document": "RiverheadSearchEntry",
-      "reason": "Reached through shard files whose names the manifest supplies at runtime. The manifest itself is checked, and search-shards covers the failure that actually bites — a category going missing."
+      "reason": "Reached through shard files whose names the manifest supplies at runtime. The manifest itself is checked, and search-shards covers the failure that actually bites \u2014 a category going missing."
     },
     {
       "document": "BudgetLiveParityDocument",
       "reason": "BudgetLiveParityView holds the route table; it decodes no document of its own."
     }
-  ]
+  ],
+  "navigation": {
+    "page": "/officials/",
+    "basePath": "/Riverhead-NY-Budget-Web-App",
+    "swift": "BudgetLiveParityView.swift",
+    "minimumRoutes": 30,
+    "ignore": [
+      "/"
+    ],
+    "note": [
+      "The app's route table claims to mirror the web app's SiteNav, and it had",
+      "silently fallen six routes behind before anyone looked. This compares the",
+      "two automatically.",
+      "",
+      "It reads the nav out of a published page rather than the web repo, because",
+      "SiteNav is server-rendered into every page and the repo is not something",
+      "this check can clone. Any page serves: the extracted set was identical",
+      "across /officials/, /tax-cap/ and /funds/, which is what distinguishes nav",
+      "links from a page's own content.",
+      "",
+      "minimumRoutes is the safety valve. If the markup changes and extraction",
+      "stops working, a near-empty result would otherwise report every route in",
+      "the app as one the web no longer has. Below the floor the check reports",
+      "that it could not read the nav and claims nothing."
+    ]
+  }
 }

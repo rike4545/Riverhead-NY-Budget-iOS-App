@@ -117,10 +117,15 @@ jobs:
           # someone's work — and the report is a generated file, so a plain
           # commit on top is all it needs anyway.
           base="${GITHUB_REF_NAME}"
-          git fetch origin "$REPORT_BRANCH" || true
-          if git rev-parse --verify "refs/remotes/origin/$REPORT_BRANCH" >/dev/null 2>&1; then
+          # Ask whether the branch exists before fetching it. `git fetch ||
+          # true` worked, but printed "fatal: couldn't find remote ref" on
+          # every first run, which reads like the cause of any later failure in
+          # this step and is not.
+          if git ls-remote --exit-code --heads origin "$REPORT_BRANCH" >/dev/null 2>&1; then
+            git fetch origin "$REPORT_BRANCH"
             git switch -c "$REPORT_BRANCH" "origin/$REPORT_BRANCH"
           else
+            echo "No $REPORT_BRANCH on the remote yet; starting it from $base."
             git switch -c "$REPORT_BRANCH"
           fi
 

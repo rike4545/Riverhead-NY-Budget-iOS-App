@@ -26,7 +26,7 @@ LOGS      := build-logs
 PLAIN := sed -f $(SCRIPTS)/plain.sed
 
 .DEFAULT_GOAL := help
-.PHONY: help compile check ui all clean drift drift-test
+.PHONY: help compile check ui all clean drift drift-test sync-programs
 
 help:
 	@echo ''
@@ -36,6 +36,7 @@ help:
 	@echo '  make all       everything CI runs'
 	@echo '  make drift     check the live web data against the Swift decoders'
 	@echo '  make drift-test  prove the drift check still detects (no network)'
+	@echo '  make sync-programs  refresh the bundled Program Budget offline copy'
 	@echo '  make clean     delete this project'"'"'s DerivedData and logs'
 	@echo ''
 	@echo '  Logs land in $(LOGS)/. Failures print the distinct error lines via'
@@ -127,6 +128,13 @@ drift:
 # stopped looking, so it gets tested before it is trusted.
 drift-test:
 	@node '$(SCRIPTS)/test-parity-drift.mjs'
+
+# Refresh the bundled Program Budget copy, which is the offline path for that
+# whole screen. Run by the daily sync workflow; here for when you want it now.
+# The copy is replaced only by a payload that satisfies the decoder, so a bad
+# fetch leaves the working one alone.
+sync-programs:
+	@bash '$(SCRIPTS)/sync-programs.sh'
 
 clean:
 	@rm -rf '$(LOGS)'

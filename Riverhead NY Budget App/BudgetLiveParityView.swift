@@ -135,6 +135,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Standards (GFOA)", path: "/gfoa/", systemImage: "checkmark.seal.fill", detail: "Compare Riverhead's budget presentation with GFOA standards."),
             .init(title: "Election Law Case", path: "/election-law-case/", systemImage: "scroll.fill", detail: "Review the sourced election-law case material."),
             .init(title: "Officials on Social Media", path: "/official-social-media/", systemImage: "bubble.left.and.bubble.right.fill", detail: "Review public-official social-media accountability context."),
+            .init(title: "Records to Request", path: "/records/", systemImage: "folder.badge.questionmark", detail: "Find the Freedom of Information Law requests that would answer open questions about Town records."),
             .init(title: "Know Your Rights (ICE)", path: "/know-your-rights/", systemImage: "person.badge.shield.checkmark.fill", detail: "Open the platform's sourced know-your-rights reference.")
         ]
     ]

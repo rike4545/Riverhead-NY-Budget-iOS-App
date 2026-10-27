@@ -2,8 +2,8 @@ name: Sync canonical web data
 
 on:
   schedule:
-    # Keep bundled datasets fresh throughout the day, not just once daily.
-    - cron: '17 */6 * * *'
+    # Refresh bundled datasets weekly (Monday at 15:17 UTC).
+    - cron: '17 15 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Riverhead NY Budget App/MeetingsData"                   "Riverhead NY Budget App/supplement-lines.json"                   "Riverhead NY Budget App/supplement-outliers.json"                   "Riverhead NY Budget App/reductions.json"                   "Riverhead NY Budget App/payroll-records.json"                   "Riverhead NY Budget App/titles-by-year.json"
+          git add "Riverhead NY Budget App/MeetingsData" "Riverhead NY Budget App/supplement-lines.json" "Riverhead NY Budget App/supplement-outliers.json" "Riverhead NY Budget App/reductions.json" "Riverhead NY Budget App/payroll-records.json" "Riverhead NY Budget App/titles-by-year.json"
           git commit -m "Sync canonical data from web source"
           git push

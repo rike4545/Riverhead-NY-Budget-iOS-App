@@ -94,6 +94,14 @@ struct MainTabView: View {
                                         Label("2027 Tentative Budget", systemImage: "doc.text")
                                     }
                                     NavigationLink {
+                                        WebContentView(
+                                            url: URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/predict-2027/")!,
+                                            title: "2027 Prediction"
+                                        )
+                                    } label: {
+                                        Label("2027 Prediction", systemImage: "chart.line.uptrend.xyaxis.circle.fill")
+                                    }
+                                    NavigationLink {
                                         BudgetLiveParityView()
                                     } label: {
                                         Label("Browse all topics", systemImage: "square.grid.2x2")

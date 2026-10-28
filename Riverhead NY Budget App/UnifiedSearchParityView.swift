@@ -64,6 +64,7 @@ struct RiverheadSearchManifest: Decodable, Sendable {
         let url: String
         let count: Int
         let bytes: Int
+        let sha256: String?
     }
 
     let version: Int

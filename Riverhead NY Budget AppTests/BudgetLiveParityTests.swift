@@ -21,6 +21,7 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/open-meetings/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/tentative-2027/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/budget-adoption/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/records/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {

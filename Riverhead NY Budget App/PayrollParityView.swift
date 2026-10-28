@@ -29,6 +29,8 @@ private struct PayrollRecordsDocument: Decodable, Sendable {
         let url: String
     }
 
+    /// Canonical field-name dictionary published with the compact payroll rows.
+    let fields: [String: String]?
     let count: Int?
     /// Union and pay-class codes to the names a resident would recognise. The
     /// web page keeps its own hardcoded copy of this map; reading the published
@@ -151,6 +153,18 @@ private struct SalaryComparisonDocument: Decodable, Sendable {
         let totalRaise: Double
         let avgRaise: Double
         let medianRaisePct: Double?
+        let topRaises: [TopRaise]?
+    }
+
+    struct TopRaise: Decodable, Identifiable, Sendable {
+        let name: String
+        let title2026: String
+        let annual2025: Double?
+        let annual2026: Double
+        let raise: Double
+        let raisePct: Double
+        let promoted: Bool
+        var id: String { name + "|" + title2026 }
     }
 }
 

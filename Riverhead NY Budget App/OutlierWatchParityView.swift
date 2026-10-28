@@ -25,12 +25,22 @@ private struct OutlierHistoryDocument: Decodable, Sendable {
         let code: String
         let name: String
         let years: [String: FundYear]
+        let firstYear: Int?
+        let lastYear: Int?
+        let totalChange: Double?
+        let totalChangePct: Double?
+    }
+
+    struct TownTotal: Decodable, Sendable {
+        let appropriations: Double
+        let fundCount: Int
     }
 
     let source: Source
     let note: String
     let years: [Int]
     let funds: [Fund]
+    let townTotals: [String: TownTotal]?
 }
 
 private struct OutlierFundChange: Identifiable, Sendable {

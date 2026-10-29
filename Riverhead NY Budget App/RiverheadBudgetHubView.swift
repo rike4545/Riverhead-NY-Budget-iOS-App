@@ -3516,7 +3516,7 @@ fileprivate struct CapitalDebtExplorerView: View {
             subtitle: "Outstanding bonds and notes reported at December 31, 2025."
         ) {
             VStack(alignment: .leading, spacing: 12) {
-                Text(totalDebt, format: .currency(code: "USD", precision: .fractionLength(1)))
+                Text(totalDebt, format: .currency(code: "USD").precision(.fractionLength(1)))
                     .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     .foregroundStyle(RiverheadTheme.textPrimary)
                     .contentTransition(.numericText())
@@ -3554,7 +3554,7 @@ fileprivate struct CapitalDebtExplorerView: View {
             Text(title)
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(RiverheadTheme.textSecondary)
-            Text(value, format: .currency(code: "USD", precision: .fractionLength(1)))
+            Text(value, format: .currency(code: "USD").precision(.fractionLength(1)))
                 .font(.headline.weight(.semibold))
                 .foregroundStyle(tint)
                 .lineLimit(1)

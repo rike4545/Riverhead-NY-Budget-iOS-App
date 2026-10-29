@@ -38,16 +38,12 @@ struct RiverheadBudgetHubView: View {
             RiverheadTheme.backgroundGradient
                 .ignoresSafeArea()
 
-            VStack(spacing: 12) {
+            VStack(spacing: 14) {
                 hubHeader
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
 
                 sectionChips
-
-                Divider()
-                    .opacity(0.35)
-                    .padding(.horizontal, 16)
 
                 if section == .supplementExplorer {
                     BudgetSupplementExplorerView()
@@ -127,64 +123,99 @@ struct RiverheadBudgetHubView: View {
     // MARK: - Hero Header
 
     private var hubHeader: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Riverhead Town Budget")
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-                    .foregroundStyle(.white)
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top, spacing: 12) {
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("INDEPENDENT COMMUNITY GUIDE")
+                        .font(.caption2.weight(.bold))
+                        .tracking(1.1)
+                        .foregroundStyle(Color.white.opacity(0.78))
 
-                Text("Pick what you want to know — your taxes, where money goes, or what to ask at a meeting.")
-                    .font(.footnote)
-                    .foregroundStyle(.white.opacity(0.88))
-                    .fixedSize(horizontal: false, vertical: true)
+                    Text("Riverhead Town Budget")
+                        .font(.system(.title2, design: .rounded).weight(.bold))
+                        .foregroundStyle(.white)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Text("Understand your taxes, follow the money, and prepare better questions.")
+                        .font(.subheadline)
+                        .foregroundStyle(.white.opacity(0.90))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chart.bar.xaxis")
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(Color.white.opacity(0.92))
+                    .frame(width: 48, height: 48)
+                    .background(Color.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .strokeBorder(Color.white.opacity(0.20), lineWidth: 1)
+                    }
+                    .accessibilityHidden(true)
             }
 
-            HStack(spacing: 8) {
-                quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
-                    section = .myTaxes
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) {
+                    quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
+                        section = .myTaxes
+                    }
+                    quickStartChip("Where money goes", symbol: "chart.pie.fill") {
+                        section = .overview
+                    }
+                    quickStartChip("2027 analysis", symbol: "doc.text.fill") {
+                        section = .proposed2027Budget
+                    }
                 }
-                quickStartChip("Where $ goes", symbol: "chart.pie.fill") {
-                    section = .overview
-                }
-                quickStartChip("2027 analysis", symbol: "doc.text.fill") {
-                    section = .proposed2027Budget
+
+                VStack(alignment: .leading, spacing: 8) {
+                    quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
+                        section = .myTaxes
+                    }
+                    quickStartChip("Where money goes", symbol: "chart.pie.fill") {
+                        section = .overview
+                    }
+                    quickStartChip("2027 analysis", symbol: "doc.text.fill") {
+                        section = .proposed2027Budget
+                    }
                 }
             }
         }
-        .padding(16)
+        .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             LinearGradient(
                 colors: [
-                    RiverheadTheme.primaryBlue.opacity(0.98),
-                    RiverheadTheme.brandSky.opacity(0.86),
-                    RiverheadTheme.brandMint.opacity(0.68)
+                    RiverheadTheme.primaryBlue,
+                    RiverheadTheme.brandSky.opacity(0.90),
+                    RiverheadTheme.brandMint.opacity(0.76)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
-            )
+            ),
+            in: RoundedRectangle(cornerRadius: RiverheadTheme.Radius.hero, style: .continuous)
         )
         .overlay(alignment: .bottomTrailing) {
-            HStack(spacing: 6) {
-                ForEach(0..<8, id: \.self) { index in
+            HStack(alignment: .bottom, spacing: 5) {
+                ForEach(0..<7, id: .self) { index in
                     RoundedRectangle(cornerRadius: 2, style: .continuous)
-                        .fill(Color.white.opacity(index.isMultiple(of: 2) ? 0.22 : 0.11))
-                        .frame(width: 8, height: CGFloat(16 + index * 4))
+                        .fill(Color.white.opacity(index.isMultiple(of: 2) ? 0.20 : 0.10))
+                        .frame(width: 6, height: CGFloat(12 + index * 4))
                 }
             }
-            .padding(16)
+            .padding(18)
             .accessibilityHidden(true)
         }
         .overlay(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .strokeBorder(Color.white.opacity(0.18), lineWidth: 0.8)
+            RoundedRectangle(cornerRadius: RiverheadTheme.Radius.hero, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.20), lineWidth: 1)
         )
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(
             color: RiverheadTheme.cardShadow(scheme, elevated: true),
-            radius: 18,
+            radius: 16,
             x: 0,
-            y: 10
+            y: 8
         )
     }
 
@@ -214,62 +245,49 @@ struct RiverheadBudgetHubView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 ForEach(primarySections) { sec in
+                    let isSelected = section == sec
+
                     Button {
-                        section = sec
-                    } label: {
-                        HStack(spacing: 6) {
-                            Image(systemName: sec.symbolName)
-                                .font(.footnote)
-                                .accessibilityHidden(true)
-                            Text(sec.label)
-                                .font(.footnote.weight(.medium))
+                        withAnimation(.snappy(duration: 0.22)) {
+                            section = sec
                         }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(
-                            Group {
-                                if section == sec {
-                                    RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [
-                                                    RiverheadTheme.accent.opacity(0.24),
-                                                    RiverheadTheme.brandTeal.opacity(0.18)
-                                                ],
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
-                                            )
-                                        )
-                                } else {
-                                    RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(RiverheadTheme.Surface.elevated.opacity(scheme == .dark ? 0.82 : 0.96))
-                                }
-                            }
-                        )
-                        .overlay(
+                    } label: {
+                        HStack(spacing: 7) {
+                            Image(systemName: sec.symbolName)
+                                .font(.caption.weight(.semibold))
+                                .accessibilityHidden(true)
+
+                            Text(sec.label)
+                                .font(.subheadline.weight(isSelected ? .semibold : .medium))
+                                .lineLimit(1)
+                        }
+                        .foregroundStyle(isSelected ? Color.white : RiverheadTheme.textPrimary)
+                        .padding(.horizontal, 13)
+                        .padding(.vertical, 10)
+                        .background {
+                            Capsule()
+                                .fill(
+                                    isSelected
+                                    ? AnyShapeStyle(RiverheadTheme.accent)
+                                    : AnyShapeStyle(.regularMaterial)
+                                )
+                        }
+                        .overlay {
                             Capsule()
                                 .strokeBorder(
-                                    (section == sec
-                                     ? RiverheadTheme.accent
-                                     : RiverheadTheme.border
-                                    ).opacity(0.35),
+                                    isSelected ? Color.white.opacity(0.18) : RiverheadTheme.softBorder.opacity(0.8),
                                     lineWidth: 0.8
                                 )
-                        )
-                        .foregroundStyle(
-                            section == sec
-                            ? RiverheadTheme.accent
-                            : RiverheadTheme.textPrimary
-                        )
+                        }
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(sec.label)
-                    .accessibilityAddTraits(section == sec ? [.isSelected] : [])
-                    .accessibilityHint(section == sec ? "Currently selected" : "Tap to open \(sec.label)")
+                    .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+                    .accessibilityHint(isSelected ? "Currently selected" : "Tap to open \(sec.label)")
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 4)
+            .padding(.vertical, 3)
         }
     }
 }
@@ -277,9 +295,6 @@ struct RiverheadBudgetHubView: View {
 // MARK: - Reusable glass card
 
 fileprivate struct GlassCard<Content: View>: View {
-    @Environment(\.colorScheme) private var scheme
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-
     let title: String?
     let subtitle: String?
     @ViewBuilder var content: Content
@@ -305,22 +320,15 @@ fileprivate struct GlassCard<Content: View>: View {
                 Text(subtitle)
                     .font(.footnote)
                     .foregroundStyle(RiverheadTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             content
         }
-        .padding(14)
-        .background(
-            (reduceTransparency
-             ? AnyShapeStyle(RiverheadTheme.Surface.card)
-             : AnyShapeStyle(scheme == .dark ? .ultraThinMaterial : .regularMaterial)),
-            in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+        .riverheadCard(
+            padding: RiverheadTheme.CardPadding.standard,
+            radius: RiverheadTheme.Radius.card
         )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .strokeBorder(RiverheadTheme.border.opacity(scheme == .dark ? 0.35 : 0.2))
-        )
-        .shadow(color: .black.opacity(scheme == .dark ? 0.25 : 0.06), radius: 10, x: 0, y: 4)
     }
 }
 
@@ -2780,8 +2788,118 @@ fileprivate struct FundBalanceDashboardView: View {
         )
     }
 
+    private var reserveRatio: Double {
+        store.appropriations > 0 ? currentUnassigned / store.appropriations : 0
+    }
+
+    private var reserveSummary: some View {
+        GlassCard(
+            title: "General Fund at a glance",
+            subtitle: "A quick read of the current reserve position against annual appropriations."
+        ) {
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)], spacing: 10) {
+                metricCell(
+                    title: "Unassigned balance",
+                    value: currentUnassigned.formatted(.currency(code: "USD").precision(.fractionLength(1))),
+                    note: "Available fund balance",
+                    symbol: "banknote"
+                )
+                metricCell(
+                    title: "Reserve ratio",
+                    value: reserveRatio.formatted(.percent.precision(.fractionLength(1))),
+                    note: "Of annual appropriations",
+                    symbol: "chart.bar"
+                )
+                metricCell(
+                    title: "Policy minimum",
+                    value: store.fundBalancePolicy.minimumPercent.formatted(.percent.precision(.fractionLength(0))),
+                    note: "Town policy floor",
+                    symbol: "shield.lefthalf.filled"
+                )
+                metricCell(
+                    title: "Modeled capacity",
+                    value: deployableAbove288.formatted(.currency(code: "USD").precision(.fractionLength(1))),
+                    note: "Above 28.8% scenario",
+                    symbol: "arrow.up.forward.circle"
+                )
+            }
+
+            VStack(alignment: .leading, spacing: 7) {
+                HStack {
+                    Text("Reserve position")
+                        .font(.caption.weight(.semibold))
+                    Spacer()
+                    Text("0%–50% scale")
+                        .font(.caption2)
+                        .foregroundStyle(RiverheadTheme.textSecondary)
+                }
+                GeometryReader { proxy in
+                    ZStack(alignment: .leading) {
+                        Capsule().fill(RiverheadTheme.softBorder.opacity(0.55))
+                        Capsule()
+                            .fill(
+                                LinearGradient(
+                                    colors: [RiverheadTheme.brandSky, RiverheadTheme.brandMint],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .frame(width: proxy.size.width * min(max(reserveRatio / 0.5, 0), 1))
+                        Rectangle()
+                            .fill(RiverheadTheme.brandGold)
+                            .frame(width: 2, height: 18)
+                            .offset(x: proxy.size.width * min(max(store.fundBalancePolicy.minimumPercent / 0.5, 0), 1))
+                    }
+                }
+                .frame(height: 12)
+
+                HStack {
+                    Label("Policy floor", systemImage: "line.3.horizontal")
+                        .foregroundStyle(RiverheadTheme.textSecondary)
+                    Spacer()
+                    Text("Current: \(reserveRatio, format: .percent.precision(.fractionLength(1)))")
+                        .fontWeight(.semibold)
+                        .foregroundStyle(RiverheadTheme.textPrimary)
+                }
+                .font(.caption2)
+            }
+            .padding(.top, 4)
+        }
+    }
+
+    private func metricCell(title: String, value: String, note: String, symbol: String) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Image(systemName: symbol)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.accent)
+            Text(value)
+                .font(.system(.title3, design: .rounded).weight(.bold))
+                .foregroundStyle(RiverheadTheme.textPrimary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+                .contentTransition(.numericText())
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.textPrimary)
+            Text(note)
+                .font(.caption2)
+                .foregroundStyle(RiverheadTheme.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
+        .padding(11)
+        .background(RiverheadTheme.cardBackground, in: RoundedRectangle(cornerRadius: 13, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 13, style: .continuous)
+                .strokeBorder(RiverheadTheme.softBorder.opacity(0.65), lineWidth: 0.8)
+        }
+        .accessibilityElement(children: .combine)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            reserveSummary
+
             GlassCard(
                 title: "Policy compliance at a glance",
                 subtitle: mode == .resident
@@ -3380,8 +3498,104 @@ fileprivate struct CapitalDebtExplorerView: View {
     @State private var assumedInterestRate: Double = 3.5
     @State private var termYears: Double = 10.0
 
+    private var totalDebt: Double {
+        debt.reduce(0) { $0 + $1.outstanding }
+    }
+
+    private var banDebt: Double {
+        debt.filter { $0.kind == .ban }.reduce(0) { $0 + $1.outstanding }
+    }
+
+    private var serialBondDebt: Double {
+        debt.filter { $0.kind == .serialBond }.reduce(0) { $0 + $1.outstanding }
+    }
+
+    private var otherDebt: Double {
+        debt.filter { $0.kind == .other }.reduce(0) { $0 + $1.outstanding }
+    }
+
+    private var debtSnapshot: some View {
+        GlassCard(
+            title: "Debt profile",
+            subtitle: "Outstanding bonds and notes reported at December 31, 2025."
+        ) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(totalDebt, format: .currency(code: "USD").precision(.fractionLength(0)))
+                    .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                    .foregroundStyle(RiverheadTheme.textPrimary)
+                    .contentTransition(.numericText())
+                    .minimumScaleFactor(0.75)
+                    .lineLimit(1)
+                    .accessibilityLabel("Total outstanding debt")
+                    .accessibilityValue(totalDebt.formatted(.currency(code: "USD")))
+
+                HStack(spacing: 10) {
+                    debtMetric(title: "BANs", value: banDebt, tint: RiverheadTheme.brandGold)
+                    debtMetric(title: "Serial bonds", value: serialBondDebt, tint: RiverheadTheme.brandSky)
+                    if otherDebt > 0 {
+                        debtMetric(title: "Other", value: otherDebt, tint: RiverheadTheme.textSecondary)
+                    }
+                }
+
+                GeometryReader { proxy in
+                    let segmentCount: CGFloat = otherDebt > 0 ? 3 : 2
+                    let availableWidth = max(0, proxy.size.width - (segmentCount - 1) * 2)
+                    HStack(spacing: 2) {
+                        Capsule()
+                            .fill(RiverheadTheme.brandGold)
+                            .frame(width: totalDebt > 0 ? availableWidth * CGFloat(banDebt / totalDebt) : 0)
+                        Capsule()
+                            .fill(RiverheadTheme.brandSky)
+                            .frame(width: totalDebt > 0 ? availableWidth * CGFloat(serialBondDebt / totalDebt) : 0)
+                        if otherDebt > 0 {
+                            Capsule()
+                                .fill(RiverheadTheme.textSecondary.opacity(0.65))
+                                .frame(width: totalDebt > 0 ? availableWidth * CGFloat(otherDebt / totalDebt) : 0)
+                        }
+                    }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Debt composition")
+                    .accessibilityValue("\(banDebt.formatted(.currency(code: "USD"))) in BANs, \(serialBondDebt.formatted(.currency(code: "USD"))) in serial bonds, \(otherDebt.formatted(.currency(code: "USD"))) in other debt")
+                }
+                .frame(height: 10)
+
+                HStack(spacing: 12) {
+                    Label("BANs", systemImage: "circle.fill")
+                        .foregroundStyle(RiverheadTheme.brandGold)
+                    Label("Serial bonds", systemImage: "circle.fill")
+                        .foregroundStyle(RiverheadTheme.brandSky)
+                    if otherDebt > 0 {
+                        Label("Other", systemImage: "circle.fill")
+                            .foregroundStyle(RiverheadTheme.textSecondary)
+                    }
+                }
+                .font(.caption2.weight(.medium))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+            }
+        }
+    }
+
+    private func debtMetric(title: String, value: Double, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(RiverheadTheme.textSecondary)
+            Text(value, format: .currency(code: "USD").precision(.fractionLength(0)))
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(tint)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(11)
+        .background(RiverheadTheme.cardBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            debtSnapshot
+
             GlassCard(
                 title: "Is this a lot of debt?",
                 subtitle: "There is no single number that answers that. The State Comptroller lists four things lenders actually look at \u{2014} here is how Riverhead reads on each."

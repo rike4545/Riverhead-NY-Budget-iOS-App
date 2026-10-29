@@ -3532,6 +3532,9 @@ fileprivate struct CapitalDebtExplorerView: View {
                 HStack(spacing: 10) {
                     debtMetric(title: "BANs", value: banDebt, tint: RiverheadTheme.brandGold)
                     debtMetric(title: "Serial bonds", value: serialBondDebt, tint: RiverheadTheme.brandSky)
+                    if otherDebt > 0 {
+                        debtMetric(title: "Other", value: otherDebt, tint: RiverheadTheme.textSecondary)
+                    }
                 }
 
                 GeometryReader { proxy in
@@ -3578,7 +3581,7 @@ fileprivate struct CapitalDebtExplorerView: View {
             Text(title)
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(RiverheadTheme.textSecondary)
-            Text(value, format: .currency(code: "USD").precision(.fractionLength(1)))
+            Text(value, format: .currency(code: "USD").precision(.fractionLength(0)))
                 .font(.headline.weight(.semibold))
                 .foregroundStyle(tint)
                 .lineLimit(1)

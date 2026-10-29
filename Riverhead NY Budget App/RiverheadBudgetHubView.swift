@@ -38,16 +38,12 @@ struct RiverheadBudgetHubView: View {
             RiverheadTheme.backgroundGradient
                 .ignoresSafeArea()
 
-            VStack(spacing: 12) {
+            VStack(spacing: 14) {
                 hubHeader
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
 
                 sectionChips
-
-                Divider()
-                    .opacity(0.35)
-                    .padding(.horizontal, 16)
 
                 if section == .supplementExplorer {
                     BudgetSupplementExplorerView()
@@ -127,64 +123,99 @@ struct RiverheadBudgetHubView: View {
     // MARK: - Hero Header
 
     private var hubHeader: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Riverhead Town Budget")
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-                    .foregroundStyle(.white)
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top, spacing: 12) {
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("INDEPENDENT COMMUNITY GUIDE")
+                        .font(.caption2.weight(.bold))
+                        .tracking(1.1)
+                        .foregroundStyle(Color.white.opacity(0.78))
 
-                Text("Pick what you want to know — your taxes, where money goes, or what to ask at a meeting.")
-                    .font(.footnote)
-                    .foregroundStyle(.white.opacity(0.88))
-                    .fixedSize(horizontal: false, vertical: true)
+                    Text("Riverhead Town Budget")
+                        .font(.system(.title2, design: .rounded).weight(.bold))
+                        .foregroundStyle(.white)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Text("Understand your taxes, follow the money, and prepare better questions.")
+                        .font(.subheadline)
+                        .foregroundStyle(.white.opacity(0.90))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chart.bar.xaxis")
+                    .font(.title2.weight(.semibold))
+                    .foregroundStyle(Color.white.opacity(0.92))
+                    .frame(width: 48, height: 48)
+                    .background(Color.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .strokeBorder(Color.white.opacity(0.20), lineWidth: 1)
+                    }
+                    .accessibilityHidden(true)
             }
 
-            HStack(spacing: 8) {
-                quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
-                    section = .myTaxes
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) {
+                    quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
+                        section = .myTaxes
+                    }
+                    quickStartChip("Where money goes", symbol: "chart.pie.fill") {
+                        section = .overview
+                    }
+                    quickStartChip("2027 analysis", symbol: "doc.text.fill") {
+                        section = .proposed2027Budget
+                    }
                 }
-                quickStartChip("Where $ goes", symbol: "chart.pie.fill") {
-                    section = .overview
-                }
-                quickStartChip("2027 analysis", symbol: "doc.text.fill") {
-                    section = .proposed2027Budget
+
+                VStack(alignment: .leading, spacing: 8) {
+                    quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
+                        section = .myTaxes
+                    }
+                    quickStartChip("Where money goes", symbol: "chart.pie.fill") {
+                        section = .overview
+                    }
+                    quickStartChip("2027 analysis", symbol: "doc.text.fill") {
+                        section = .proposed2027Budget
+                    }
                 }
             }
         }
-        .padding(16)
+        .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             LinearGradient(
                 colors: [
-                    RiverheadTheme.primaryBlue.opacity(0.98),
-                    RiverheadTheme.brandSky.opacity(0.86),
-                    RiverheadTheme.brandMint.opacity(0.68)
+                    RiverheadTheme.primaryBlue,
+                    RiverheadTheme.brandSky.opacity(0.90),
+                    RiverheadTheme.brandMint.opacity(0.76)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
-            )
+            ),
+            in: RoundedRectangle(cornerRadius: RiverheadTheme.Radius.hero, style: .continuous)
         )
         .overlay(alignment: .bottomTrailing) {
-            HStack(spacing: 6) {
-                ForEach(0..<8, id: \.self) { index in
+            HStack(alignment: .bottom, spacing: 5) {
+                ForEach(0..<7, id: .self) { index in
                     RoundedRectangle(cornerRadius: 2, style: .continuous)
-                        .fill(Color.white.opacity(index.isMultiple(of: 2) ? 0.22 : 0.11))
-                        .frame(width: 8, height: CGFloat(16 + index * 4))
+                        .fill(Color.white.opacity(index.isMultiple(of: 2) ? 0.20 : 0.10))
+                        .frame(width: 6, height: CGFloat(12 + index * 4))
                 }
             }
-            .padding(16)
+            .padding(18)
             .accessibilityHidden(true)
         }
         .overlay(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .strokeBorder(Color.white.opacity(0.18), lineWidth: 0.8)
+            RoundedRectangle(cornerRadius: RiverheadTheme.Radius.hero, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.20), lineWidth: 1)
         )
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(
             color: RiverheadTheme.cardShadow(scheme, elevated: true),
-            radius: 18,
+            radius: 16,
             x: 0,
-            y: 10
+            y: 8
         )
     }
 
@@ -214,62 +245,49 @@ struct RiverheadBudgetHubView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 ForEach(primarySections) { sec in
+                    let isSelected = section == sec
+
                     Button {
-                        section = sec
-                    } label: {
-                        HStack(spacing: 6) {
-                            Image(systemName: sec.symbolName)
-                                .font(.footnote)
-                                .accessibilityHidden(true)
-                            Text(sec.label)
-                                .font(.footnote.weight(.medium))
+                        withAnimation(.snappy(duration: 0.22)) {
+                            section = sec
                         }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(
-                            Group {
-                                if section == sec {
-                                    RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [
-                                                    RiverheadTheme.accent.opacity(0.24),
-                                                    RiverheadTheme.brandTeal.opacity(0.18)
-                                                ],
-                                                startPoint: .topLeading,
-                                                endPoint: .bottomTrailing
-                                            )
-                                        )
-                                } else {
-                                    RoundedRectangle(cornerRadius: 999, style: .continuous)
-                                        .fill(RiverheadTheme.Surface.elevated.opacity(scheme == .dark ? 0.82 : 0.96))
-                                }
-                            }
-                        )
-                        .overlay(
+                    } label: {
+                        HStack(spacing: 7) {
+                            Image(systemName: sec.symbolName)
+                                .font(.caption.weight(.semibold))
+                                .accessibilityHidden(true)
+
+                            Text(sec.label)
+                                .font(.subheadline.weight(isSelected ? .semibold : .medium))
+                                .lineLimit(1)
+                        }
+                        .foregroundStyle(isSelected ? Color.white : RiverheadTheme.textPrimary)
+                        .padding(.horizontal, 13)
+                        .padding(.vertical, 10)
+                        .background {
+                            Capsule()
+                                .fill(
+                                    isSelected
+                                    ? AnyShapeStyle(RiverheadTheme.accent)
+                                    : AnyShapeStyle(.regularMaterial)
+                                )
+                        }
+                        .overlay {
                             Capsule()
                                 .strokeBorder(
-                                    (section == sec
-                                     ? RiverheadTheme.accent
-                                     : RiverheadTheme.border
-                                    ).opacity(0.35),
+                                    isSelected ? Color.white.opacity(0.18) : RiverheadTheme.softBorder.opacity(0.8),
                                     lineWidth: 0.8
                                 )
-                        )
-                        .foregroundStyle(
-                            section == sec
-                            ? RiverheadTheme.accent
-                            : RiverheadTheme.textPrimary
-                        )
+                        }
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(sec.label)
-                    .accessibilityAddTraits(section == sec ? [.isSelected] : [])
-                    .accessibilityHint(section == sec ? "Currently selected" : "Tap to open \(sec.label)")
+                    .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+                    .accessibilityHint(isSelected ? "Currently selected" : "Tap to open \(sec.label)")
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 4)
+            .padding(.vertical, 3)
         }
     }
 }
@@ -277,9 +295,6 @@ struct RiverheadBudgetHubView: View {
 // MARK: - Reusable glass card
 
 fileprivate struct GlassCard<Content: View>: View {
-    @Environment(\.colorScheme) private var scheme
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-
     let title: String?
     let subtitle: String?
     @ViewBuilder var content: Content
@@ -305,22 +320,15 @@ fileprivate struct GlassCard<Content: View>: View {
                 Text(subtitle)
                     .font(.footnote)
                     .foregroundStyle(RiverheadTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             content
         }
-        .padding(14)
-        .background(
-            (reduceTransparency
-             ? AnyShapeStyle(RiverheadTheme.Surface.card)
-             : AnyShapeStyle(scheme == .dark ? .ultraThinMaterial : .regularMaterial)),
-            in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+        .riverheadCard(
+            padding: RiverheadTheme.CardPadding.standard,
+            radius: RiverheadTheme.Radius.card
         )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .strokeBorder(RiverheadTheme.border.opacity(scheme == .dark ? 0.35 : 0.2))
-        )
-        .shadow(color: .black.opacity(scheme == .dark ? 0.25 : 0.06), radius: 10, x: 0, y: 4)
     }
 }
 

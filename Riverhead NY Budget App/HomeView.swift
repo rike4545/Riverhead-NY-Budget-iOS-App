@@ -834,11 +834,6 @@ Always confirm with:
         let iconCircleFill = scheme == .dark ? iconCircleFillDark : iconCircleFillLight
 
         return HStack(alignment: .top, spacing: 12) {
-            RoundedRectangle(cornerRadius: 3, style: .continuous)
-                .fill(accentColor.opacity(prominent ? 0.95 : 0.55))
-                .frame(width: 4)
-                .padding(.vertical, 2)
-
             Image(systemName: systemImage)
                 .font(.title3)
                 .foregroundStyle(
@@ -870,29 +865,23 @@ Always confirm with:
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            Spacer()
+            Spacer(minLength: 4)
 
             Image(systemName: "chevron.right")
                 .font(.caption.weight(.bold))
                 .foregroundStyle(accentColor.opacity(0.7))
                 .padding(.top, 8)
         }
-        .padding(14)
-        .frame(minHeight: prominent ? (isPadLayout ? 84 : 88) : (isPadLayout ? 96 : 108), alignment: .topLeading)
-        .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(cardGradient(accent: accentColor, prominent: prominent))
+        .frame(
+            minHeight: prominent ? (isPadLayout ? 56 : 60) : (isPadLayout ? 68 : 80),
+            alignment: .topLeading
         )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .strokeBorder(cardBorder, lineWidth: 1)
-        )
-        .shadow(
-            color: RiverheadTheme.cardShadow(scheme, elevated: prominent),
-            radius: prominent ? 12 : 8,
-            x: 0,
-            y: prominent ? 6 : 4
+        .contentShape(RoundedRectangle(cornerRadius: RiverheadTheme.Radius.card, style: .continuous))
+        .riverheadCard(
+            padding: RiverheadTheme.CardPadding.standard,
+            radius: RiverheadTheme.Radius.card,
+            accentEdge: accentColor,
+            elevated: prominent
         )
     }
 }

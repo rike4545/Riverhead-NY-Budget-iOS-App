@@ -3510,16 +3510,24 @@ fileprivate struct CapitalDebtExplorerView: View {
         debt.filter { $0.kind == .serialBond }.reduce(0) { $0 + $1.outstanding }
     }
 
+    private var otherDebt: Double {
+        debt.filter { $0.kind == .other }.reduce(0) { $0 + $1.outstanding }
+    }
+
     private var debtSnapshot: some View {
         GlassCard(
             title: "Debt profile",
             subtitle: "Outstanding bonds and notes reported at December 31, 2025."
         ) {
             VStack(alignment: .leading, spacing: 12) {
-                Text(totalDebt, format: .currency(code: "USD").precision(.fractionLength(1)))
+                Text(totalDebt, format: .currency(code: "USD").precision(.fractionLength(0)))
                     .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     .foregroundStyle(RiverheadTheme.textPrimary)
                     .contentTransition(.numericText())
+                    .minimumScaleFactor(0.75)
+                    .lineLimit(1)
+                    .accessibilityLabel("Total outstanding debt")
+                    .accessibilityValue(totalDebt.formatted(.currency(code: "USD")))
 
                 HStack(spacing: 10) {
                     debtMetric(title: "BANs", value: banDebt, tint: RiverheadTheme.brandGold)
@@ -3527,24 +3535,40 @@ fileprivate struct CapitalDebtExplorerView: View {
                 }
 
                 GeometryReader { proxy in
+                    let segmentCount = otherDebt > 0 ? 3.0 : 2.0
+                    let availableWidth = max(0, proxy.size.width - (segmentCount - 1) * 2)
                     HStack(spacing: 2) {
                         Capsule()
                             .fill(RiverheadTheme.brandGold)
-                            .frame(width: proxy.size.width * (totalDebt > 0 ? banDebt / totalDebt : 0))
+                            .frame(width: totalDebt > 0 ? availableWidth * banDebt / totalDebt : 0)
                         Capsule()
                             .fill(RiverheadTheme.brandSky)
+                            .frame(width: totalDebt > 0 ? availableWidth * serialBondDebt / totalDebt : 0)
+                        if otherDebt > 0 {
+                            Capsule()
+                                .fill(RiverheadTheme.textSecondary.opacity(0.65))
+                                .frame(width: totalDebt > 0 ? availableWidth * otherDebt / totalDebt : 0)
+                        }
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Debt composition")
+                    .accessibilityValue("\(banDebt.formatted(.currency(code: "USD"))) in BANs, \(serialBondDebt.formatted(.currency(code: "USD"))) in serial bonds, \(otherDebt.formatted(.currency(code: "USD"))) in other debt")
                 }
                 .frame(height: 10)
 
-                HStack {
+                HStack(spacing: 12) {
                     Label("BANs", systemImage: "circle.fill")
                         .foregroundStyle(RiverheadTheme.brandGold)
-                    Spacer()
                     Label("Serial bonds", systemImage: "circle.fill")
                         .foregroundStyle(RiverheadTheme.brandSky)
+                    if otherDebt > 0 {
+                        Label("Other", systemImage: "circle.fill")
+                            .foregroundStyle(RiverheadTheme.textSecondary)
+                    }
                 }
                 .font(.caption2.weight(.medium))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
             }
         }
     }

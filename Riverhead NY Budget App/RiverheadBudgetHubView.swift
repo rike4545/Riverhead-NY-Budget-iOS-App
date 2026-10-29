@@ -3535,19 +3535,19 @@ fileprivate struct CapitalDebtExplorerView: View {
                 }
 
                 GeometryReader { proxy in
-                    let segmentCount = otherDebt > 0 ? 3.0 : 2.0
+                    let segmentCount: CGFloat = otherDebt > 0 ? 3 : 2
                     let availableWidth = max(0, proxy.size.width - (segmentCount - 1) * 2)
                     HStack(spacing: 2) {
                         Capsule()
                             .fill(RiverheadTheme.brandGold)
-                            .frame(width: totalDebt > 0 ? availableWidth * banDebt / totalDebt : 0)
+                            .frame(width: totalDebt > 0 ? availableWidth * CGFloat(banDebt / totalDebt) : 0)
                         Capsule()
                             .fill(RiverheadTheme.brandSky)
-                            .frame(width: totalDebt > 0 ? availableWidth * serialBondDebt / totalDebt : 0)
+                            .frame(width: totalDebt > 0 ? availableWidth * CGFloat(serialBondDebt / totalDebt) : 0)
                         if otherDebt > 0 {
                             Capsule()
                                 .fill(RiverheadTheme.textSecondary.opacity(0.65))
-                                .frame(width: totalDebt > 0 ? availableWidth * otherDebt / totalDebt : 0)
+                                .frame(width: totalDebt > 0 ? availableWidth * CGFloat(otherDebt / totalDebt) : 0)
                         }
                     }
                     .accessibilityElement(children: .ignore)

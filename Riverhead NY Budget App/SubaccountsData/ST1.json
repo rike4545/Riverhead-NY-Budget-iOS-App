@@ -1,0 +1,472 @@
+{
+ "code": "ST1",
+ "name": "Public Parking District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 207100.0,
+ "expenditureTotal2025": 201600.0,
+ "revenueTotal2026": 207100.0,
+ "departmentCount": 5,
+ "lineItemCount": 11,
+ "departments": [
+  {
+   "code": "5650",
+   "name": "Public Parking District",
+   "adopted2024": 114300.0,
+   "adopted2025": 113500.0,
+   "adopted2026": 126600.0,
+   "change": 13100.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 126600.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ST1-5-5650-400-000-00000",
+     "name": "Pub Prk - Contractual",
+     "category": "Contractual",
+     "adopted2025": 61800.0,
+     "deptRequested2026": 61800.0,
+     "tentative2026": 61800.0,
+     "preliminary2026": 61800.0,
+     "adopted2026": 61800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 99100.0
+      },
+      {
+       "year": 2021,
+       "value": 120100.0
+      },
+      {
+       "year": 2022,
+       "value": 54800.0
+      },
+      {
+       "year": 2023,
+       "value": 58700.0
+      },
+      {
+       "year": 2024,
+       "value": 61800.0
+      },
+      {
+       "year": 2025,
+       "value": 61800.0
+      },
+      {
+       "year": 2026,
+       "value": 61800.0
+      }
+     ],
+     "adopted2024": 61800.0
+    },
+    {
+     "account": "ST1-5-5650-465-000-00000",
+     "name": "Pub Prk - Rents & Leases - Parking Space",
+     "category": "Contractual",
+     "adopted2025": 15000.0,
+     "deptRequested2026": 15000.0,
+     "tentative2026": 15000.0,
+     "preliminary2026": 15000.0,
+     "adopted2026": 15000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 15000.0
+      },
+      {
+       "year": 2024,
+       "value": 15000.0
+      },
+      {
+       "year": 2025,
+       "value": 15000.0
+      },
+      {
+       "year": 2026,
+       "value": 15000.0
+      }
+     ],
+     "adopted2024": 15000.0
+    },
+    {
+     "account": "ST1-5-5650-472-000-00000",
+     "name": "Pub Prk - Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 31000.0,
+     "deptRequested2026": 43700.0,
+     "tentative2026": 43700.0,
+     "preliminary2026": 43700.0,
+     "adopted2026": 43700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 30000.0
+      },
+      {
+       "year": 2021,
+       "value": 30000.0
+      },
+      {
+       "year": 2022,
+       "value": 30000.0
+      },
+      {
+       "year": 2023,
+       "value": 30000.0
+      },
+      {
+       "year": 2024,
+       "value": 31000.0
+      },
+      {
+       "year": 2025,
+       "value": 31000.0
+      },
+      {
+       "year": 2026,
+       "value": 43700.0
+      }
+     ],
+     "adopted2024": 31000.0
+    },
+    {
+     "account": "ST1-5-5650-495-000-00000",
+     "name": "Pub Prk - Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 5700.0,
+     "deptRequested2026": 6100.0,
+     "tentative2026": 6100.0,
+     "preliminary2026": 6100.0,
+     "adopted2026": 6100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 6200.0
+      },
+      {
+       "year": 2021,
+       "value": 6400.0
+      },
+      {
+       "year": 2022,
+       "value": 5900.0
+      },
+      {
+       "year": 2023,
+       "value": 6200.0
+      },
+      {
+       "year": 2024,
+       "value": 6500.0
+      },
+      {
+       "year": 2025,
+       "value": 5700.0
+      },
+      {
+       "year": 2026,
+       "value": 6100.0
+      }
+     ],
+     "adopted2024": 6500.0
+    }
+   ],
+   "lineItemCount": 4
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 77300.0,
+   "adopted2025": 77000.0,
+   "adopted2026": 76300.0,
+   "change": -700.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 76300.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ST1-9-9901-900-V01-00000",
+     "name": "Trf - Interfund Trf - Gen Fund Debt Svc",
+     "category": "Interfund / Transfers",
+     "adopted2025": 77000.0,
+     "deptRequested2026": 76300.0,
+     "tentative2026": 76300.0,
+     "preliminary2026": 76300.0,
+     "adopted2026": 76300.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25000.0
+      },
+      {
+       "year": 2021,
+       "value": 23300.0
+      },
+      {
+       "year": 2022,
+       "value": 78800.0
+      },
+      {
+       "year": 2023,
+       "value": 78100.0
+      },
+      {
+       "year": 2024,
+       "value": 77300.0
+      },
+      {
+       "year": 2025,
+       "value": 77000.0
+      },
+      {
+       "year": 2026,
+       "value": 76300.0
+      }
+     ],
+     "adopted2024": 77300.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 3100.0,
+   "adopted2025": 3100.0,
+   "adopted2026": 3200.0,
+   "change": 100.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 3200.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ST1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 2200.0,
+     "deptRequested2026": 2300.0,
+     "tentative2026": 2300.0,
+     "preliminary2026": 2300.0,
+     "adopted2026": 2300.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1400.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1600.0
+      },
+      {
+       "year": 2023,
+       "value": 1800.0
+      },
+      {
+       "year": 2024,
+       "value": 2100.0
+      },
+      {
+       "year": 2025,
+       "value": 2200.0
+      },
+      {
+       "year": 2026,
+       "value": 2300.0
+      }
+     ],
+     "adopted2024": 2100.0
+    },
+    {
+     "account": "ST1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 900.0,
+     "deptRequested2026": 900.0,
+     "tentative2026": 900.0,
+     "preliminary2026": 900.0,
+     "adopted2026": 900.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 900.0
+      },
+      {
+       "year": 2026,
+       "value": 900.0
+      }
+     ],
+     "adopted2024": 1000.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "1950",
+   "name": "Taxes & Asses. On Prope",
+   "adopted2024": 1000.0,
+   "adopted2025": 1000.0,
+   "adopted2026": 1000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 1000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ST1-1-1950-481-000-00000",
+     "name": "Taxes & Asses. - Taxes on Town Property",
+     "category": "Contractual",
+     "adopted2025": 1000.0,
+     "deptRequested2026": 1000.0,
+     "tentative2026": 1000.0,
+     "preliminary2026": 1000.0,
+     "adopted2026": 1000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1000.0
+      },
+      {
+       "year": 2026,
+       "value": 1000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9990",
+   "name": "Function 9990",
+   "adopted2024": 0,
+   "adopted2025": 7000.0,
+   "adopted2026": 0,
+   "change": -7000.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ST1-9-9990-000-000-00000",
+     "name": "Public Parking-Fund Balance Contribution",
+     "category": "Other",
+     "adopted2025": 7000.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 7000.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": null
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "ST1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 199800.0,
+   "deptRequested2026": 205300.0,
+   "tentative2026": 205300.0,
+   "preliminary2026": 205300.0,
+   "adopted2026": 205300.0
+  },
+  {
+   "account": "ST1-1081-100-00000-B",
+   "name": "PILOT - LIPA",
+   "adopted2025": 1800.0,
+   "deptRequested2026": 1800.0,
+   "tentative2026": 1800.0,
+   "preliminary2026": 1800.0,
+   "adopted2026": 1800.0
+  }
+ ],
+ "officialAppropriations2026": 207100,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

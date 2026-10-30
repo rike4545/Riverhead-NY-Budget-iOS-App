@@ -1,0 +1,1175 @@
+{
+ "code": "SL1",
+ "name": "Street Lighting District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 926533.0,
+ "expenditureTotal2025": 954400.0,
+ "revenueTotal2026": 926533.0,
+ "departmentCount": 7,
+ "lineItemCount": 28,
+ "departments": [
+  {
+   "code": "5182",
+   "name": "Street -Street Lighting",
+   "adopted2024": 711134.0,
+   "adopted2025": 748697.0,
+   "adopted2026": 748298.0,
+   "change": -399.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 246827.0
+    },
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 60000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 441471.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-5-5182-101-NON-00000",
+     "name": "Street -Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 215020.0,
+     "deptRequested2026": 231431.0,
+     "tentative2026": 228482.0,
+     "preliminary2026": 228482.0,
+     "adopted2026": 228482.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 189100.0
+      },
+      {
+       "year": 2021,
+       "value": 247900.0
+      },
+      {
+       "year": 2022,
+       "value": 250500.0
+      },
+      {
+       "year": 2023,
+       "value": 263500.0
+      },
+      {
+       "year": 2024,
+       "value": 221211.0
+      },
+      {
+       "year": 2025,
+       "value": 215020.0
+      },
+      {
+       "year": 2026,
+       "value": 228482.0
+      }
+     ],
+     "adopted2024": 221211.0
+    },
+    {
+     "account": "SL1-5-5182-111-NON-00000",
+     "name": "Street -Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 800.0,
+     "deptRequested2026": 800.0,
+     "tentative2026": 800.0,
+     "preliminary2026": 800.0,
+     "adopted2026": 800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8300.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 800.0
+      },
+      {
+       "year": 2025,
+       "value": 800.0
+      },
+      {
+       "year": 2026,
+       "value": 800.0
+      }
+     ],
+     "adopted2024": 800.0
+    },
+    {
+     "account": "SL1-5-5182-112-NON-00000",
+     "name": "Street -Pers Svcs Longevity",
+     "category": "Personal Services",
+     "adopted2025": 10254.0,
+     "deptRequested2026": 11640.0,
+     "tentative2026": 11640.0,
+     "preliminary2026": 11640.0,
+     "adopted2026": 11640.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 9100.0
+      },
+      {
+       "year": 2021,
+       "value": 9100.0
+      },
+      {
+       "year": 2022,
+       "value": 9500.0
+      },
+      {
+       "year": 2023,
+       "value": 10900.0
+      },
+      {
+       "year": 2024,
+       "value": 13873.0
+      },
+      {
+       "year": 2025,
+       "value": 10254.0
+      },
+      {
+       "year": 2026,
+       "value": 11640.0
+      }
+     ],
+     "adopted2024": 13873.0
+    },
+    {
+     "account": "SL1-5-5182-152-000-00000",
+     "name": "Street- Sick Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 3700.0,
+     "deptRequested2026": 3700.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 1700.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 3700.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 0.0
+    },
+    {
+     "account": "SL1-5-5182-154-000-00000",
+     "name": "Street Lighting - Health Ins Buyback",
+     "category": "Personal Services",
+     "adopted2025": 0.0,
+     "deptRequested2026": 1905.0,
+     "tentative2026": 1905.0,
+     "preliminary2026": 1905.0,
+     "adopted2026": 1905.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 1905.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "SL1-5-5182-240-000-00000",
+     "name": "Street -Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 60000.0,
+     "deptRequested2026": 50000.0,
+     "tentative2026": 50000.0,
+     "preliminary2026": 50000.0,
+     "adopted2026": 50000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 100000.0
+      },
+      {
+       "year": 2021,
+       "value": 86000.0
+      },
+      {
+       "year": 2022,
+       "value": 103400.0
+      },
+      {
+       "year": 2023,
+       "value": 90000.0
+      },
+      {
+       "year": 2024,
+       "value": 70000.0
+      },
+      {
+       "year": 2025,
+       "value": 60000.0
+      },
+      {
+       "year": 2026,
+       "value": 50000.0
+      }
+     ],
+     "adopted2024": 70000.0
+    },
+    {
+     "account": "SL1-5-5182-280-000-00000",
+     "name": "Street -Vehicles",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "SL1-5-5182-405-000-00000",
+     "name": "Street -R&M - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 15000.0,
+     "deptRequested2026": 15000.0,
+     "tentative2026": 15000.0,
+     "preliminary2026": 15000.0,
+     "adopted2026": 15000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 15000.0
+      },
+      {
+       "year": 2024,
+       "value": 15000.0
+      },
+      {
+       "year": 2025,
+       "value": 15000.0
+      },
+      {
+       "year": 2026,
+       "value": 15000.0
+      }
+     ],
+     "adopted2024": 15000.0
+    },
+    {
+     "account": "SL1-5-5182-411-000-00000",
+     "name": "Street -R&M - Street Lighting",
+     "category": "Contractual",
+     "adopted2025": 20000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 55000.0
+      },
+      {
+       "year": 2021,
+       "value": 55000.0
+      },
+      {
+       "year": 2022,
+       "value": 52300.0
+      },
+      {
+       "year": 2023,
+       "value": 25000.0
+      },
+      {
+       "year": 2024,
+       "value": 15000.0
+      },
+      {
+       "year": 2025,
+       "value": 20000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 15000.0
+    },
+    {
+     "account": "SL1-5-5182-412-000-00000",
+     "name": "Street -R&M - Traffic Light",
+     "category": "Contractual",
+     "adopted2025": 84123.0,
+     "deptRequested2026": 84123.0,
+     "tentative2026": 84123.0,
+     "preliminary2026": 84123.0,
+     "adopted2026": 84123.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 63000.0
+      },
+      {
+       "year": 2021,
+       "value": 63000.0
+      },
+      {
+       "year": 2022,
+       "value": 70000.0
+      },
+      {
+       "year": 2023,
+       "value": 60000.0
+      },
+      {
+       "year": 2024,
+       "value": 65050.0
+      },
+      {
+       "year": 2025,
+       "value": 84123.0
+      },
+      {
+       "year": 2026,
+       "value": 84123.0
+      }
+     ],
+     "adopted2024": 65050.0
+    },
+    {
+     "account": "SL1-5-5182-425-000-00000",
+     "name": "Street -Uniforms",
+     "category": "Contractual",
+     "adopted2025": 4000.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5100.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 5000.0
+      },
+      {
+       "year": 2025,
+       "value": 4000.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 5000.0
+    },
+    {
+     "account": "SL1-5-5182-426-000-00000",
+     "name": "Street Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 9000.0,
+     "deptRequested2026": 9000.0,
+     "tentative2026": 9000.0,
+     "preliminary2026": 9000.0,
+     "adopted2026": 9000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 9000.0
+      },
+      {
+       "year": 2021,
+       "value": 9000.0
+      },
+      {
+       "year": 2022,
+       "value": 9000.0
+      },
+      {
+       "year": 2023,
+       "value": 9000.0
+      },
+      {
+       "year": 2024,
+       "value": 9000.0
+      },
+      {
+       "year": 2025,
+       "value": 9000.0
+      },
+      {
+       "year": 2026,
+       "value": 9000.0
+      }
+     ],
+     "adopted2024": 9000.0
+    },
+    {
+     "account": "SL1-5-5182-464-000-00000",
+     "name": "Street -Rents & Leases - Cell Phones",
+     "category": "Contractual",
+     "adopted2025": 700.0,
+     "deptRequested2026": 700.0,
+     "tentative2026": 700.0,
+     "preliminary2026": 700.0,
+     "adopted2026": 700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 800.0
+      },
+      {
+       "year": 2021,
+       "value": 700.0
+      },
+      {
+       "year": 2022,
+       "value": 700.0
+      },
+      {
+       "year": 2023,
+       "value": 700.0
+      },
+      {
+       "year": 2024,
+       "value": 700.0
+      },
+      {
+       "year": 2025,
+       "value": 700.0
+      },
+      {
+       "year": 2026,
+       "value": 700.0
+      }
+     ],
+     "adopted2024": 700.0
+    },
+    {
+     "account": "SL1-5-5182-471-000-00000",
+     "name": "Street -Utl - Telephone",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 400.0
+      },
+      {
+       "year": 2021,
+       "value": 400.0
+      },
+      {
+       "year": 2022,
+       "value": 400.0
+      },
+      {
+       "year": 2023,
+       "value": 400.0
+      },
+      {
+       "year": 2024,
+       "value": 400.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 400.0
+    },
+    {
+     "account": "SL1-5-5182-472-000-00000",
+     "name": "Street -Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 160000.0,
+     "deptRequested2026": 170000.0,
+     "tentative2026": 170948.0,
+     "preliminary2026": 170948.0,
+     "adopted2026": 170948.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 450000.0
+      },
+      {
+       "year": 2021,
+       "value": 142000.0
+      },
+      {
+       "year": 2022,
+       "value": 142000.0
+      },
+      {
+       "year": 2023,
+       "value": 142000.0
+      },
+      {
+       "year": 2024,
+       "value": 142000.0
+      },
+      {
+       "year": 2025,
+       "value": 160000.0
+      },
+      {
+       "year": 2026,
+       "value": 170948.0
+      }
+     ],
+     "adopted2024": 142000.0
+    },
+    {
+     "account": "SL1-5-5182-490-000-00000",
+     "name": "Street -Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 1000.0,
+     "deptRequested2026": 1000.0,
+     "tentative2026": 1000.0,
+     "preliminary2026": 1000.0,
+     "adopted2026": 1000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1000.0
+      },
+      {
+       "year": 2026,
+       "value": 1000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    },
+    {
+     "account": "SL1-5-5182-495-000-00000",
+     "name": "Street -Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 154600.0,
+     "deptRequested2026": 131200.0,
+     "tentative2026": 131200.0,
+     "preliminary2026": 131200.0,
+     "adopted2026": 131200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 140000.0
+      },
+      {
+       "year": 2021,
+       "value": 139300.0
+      },
+      {
+       "year": 2022,
+       "value": 137100.0
+      },
+      {
+       "year": 2023,
+       "value": 134500.0
+      },
+      {
+       "year": 2024,
+       "value": 142100.0
+      },
+      {
+       "year": 2025,
+       "value": 154600.0
+      },
+      {
+       "year": 2026,
+       "value": 131200.0
+      }
+     ],
+     "adopted2024": 142100.0
+    }
+   ],
+   "lineItemCount": 17
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 99201.0,
+   "adopted2025": 125114.0,
+   "adopted2026": 93487.0,
+   "change": -31627.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 93487.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 125114.0,
+     "deptRequested2026": 93487.0,
+     "tentative2026": 93487.0,
+     "preliminary2026": 93487.0,
+     "adopted2026": 93487.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 78800.0
+      },
+      {
+       "year": 2021,
+       "value": 109600.0
+      },
+      {
+       "year": 2022,
+       "value": 83600.0
+      },
+      {
+       "year": 2023,
+       "value": 91300.0
+      },
+      {
+       "year": 2024,
+       "value": 99201.0
+      },
+      {
+       "year": 2025,
+       "value": 125114.0
+      },
+      {
+       "year": 2026,
+       "value": 93487.0
+      }
+     ],
+     "adopted2024": 99201.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 41516.0,
+   "adopted2025": 39929.0,
+   "adopted2026": 46365.0,
+   "change": 6436.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 46365.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 39929.0,
+     "deptRequested2026": 42877.0,
+     "tentative2026": 46365.0,
+     "preliminary2026": 46365.0,
+     "adopted2026": 46365.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 32500.0
+      },
+      {
+       "year": 2021,
+       "value": 45900.0
+      },
+      {
+       "year": 2022,
+       "value": 35800.0
+      },
+      {
+       "year": 2023,
+       "value": 41500.0
+      },
+      {
+       "year": 2024,
+       "value": 41516.0
+      },
+      {
+       "year": 2025,
+       "value": 39929.0
+      },
+      {
+       "year": 2026,
+       "value": 46365.0
+      }
+     ],
+     "adopted2024": 41516.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 18046.0,
+   "adopted2025": 17578.0,
+   "adopted2026": 18883.0,
+   "change": 1305.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 18883.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 17578.0,
+     "deptRequested2026": 19085.0,
+     "tentative2026": 18883.0,
+     "preliminary2026": 18883.0,
+     "adopted2026": 18883.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 16100.0
+      },
+      {
+       "year": 2021,
+       "value": 20300.0
+      },
+      {
+       "year": 2022,
+       "value": 20500.0
+      },
+      {
+       "year": 2023,
+       "value": 21300.0
+      },
+      {
+       "year": 2024,
+       "value": 18046.0
+      },
+      {
+       "year": 2025,
+       "value": 17578.0
+      },
+      {
+       "year": 2026,
+       "value": 18883.0
+      }
+     ],
+     "adopted2024": 18046.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 18600.0,
+   "adopted2025": 17600.0,
+   "adopted2026": 14700.0,
+   "change": -2900.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 14700.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 12500.0,
+     "deptRequested2026": 10700.0,
+     "tentative2026": 10700.0,
+     "preliminary2026": 10700.0,
+     "adopted2026": 10700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 9800.0
+      },
+      {
+       "year": 2021,
+       "value": 9800.0
+      },
+      {
+       "year": 2022,
+       "value": 10100.0
+      },
+      {
+       "year": 2023,
+       "value": 11200.0
+      },
+      {
+       "year": 2024,
+       "value": 12800.0
+      },
+      {
+       "year": 2025,
+       "value": 12500.0
+      },
+      {
+       "year": 2026,
+       "value": 10700.0
+      }
+     ],
+     "adopted2024": 12800.0
+    },
+    {
+     "account": "SL1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 5100.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 7100.0
+      },
+      {
+       "year": 2021,
+       "value": 6600.0
+      },
+      {
+       "year": 2022,
+       "value": 6500.0
+      },
+      {
+       "year": 2023,
+       "value": 6500.0
+      },
+      {
+       "year": 2024,
+       "value": 5800.0
+      },
+      {
+       "year": 2025,
+       "value": 5100.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 5800.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9040",
+   "name": "WC",
+   "adopted2024": 4600.0,
+   "adopted2025": 4700.0,
+   "adopted2026": 4800.0,
+   "change": 100.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 4800.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-9-9040-887-000-00000",
+     "name": "WC - Insurance Premuim",
+     "category": "Employee Benefits",
+     "adopted2025": 1400.0,
+     "deptRequested2026": 1500.0,
+     "tentative2026": 1500.0,
+     "preliminary2026": 1500.0,
+     "adopted2026": 1500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1100.0
+      },
+      {
+       "year": 2021,
+       "value": 1200.0
+      },
+      {
+       "year": 2022,
+       "value": 1300.0
+      },
+      {
+       "year": 2023,
+       "value": 1300.0
+      },
+      {
+       "year": 2024,
+       "value": 1300.0
+      },
+      {
+       "year": 2025,
+       "value": 1400.0
+      },
+      {
+       "year": 2026,
+       "value": 1500.0
+      }
+     ],
+     "adopted2024": 1300.0
+    },
+    {
+     "account": "SL1-9-9040-888-000-00000",
+     "name": "WC - Claim Payments",
+     "category": "Employee Benefits",
+     "adopted2025": 3300.0,
+     "deptRequested2026": 3300.0,
+     "tentative2026": 3300.0,
+     "preliminary2026": 3300.0,
+     "adopted2026": 3300.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 3300.0
+      },
+      {
+       "year": 2022,
+       "value": 3300.0
+      },
+      {
+       "year": 2023,
+       "value": 3300.0
+      },
+      {
+       "year": 2024,
+       "value": 3300.0
+      },
+      {
+       "year": 2025,
+       "value": 3300.0
+      },
+      {
+       "year": 2026,
+       "value": 3300.0
+      }
+     ],
+     "adopted2024": 3300.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 803.0,
+   "adopted2025": 782.0,
+   "adopted2026": 0,
+   "change": -782.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SL1-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 782.0,
+     "deptRequested2026": 1585.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 800.0
+      },
+      {
+       "year": 2021,
+       "value": 900.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 803.0
+      },
+      {
+       "year": 2025,
+       "value": 782.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 803.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "SL1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 921000.0,
+   "deptRequested2026": 893133.0,
+   "tentative2026": 893133.0,
+   "preliminary2026": 893133.0,
+   "adopted2026": 893133.0
+  },
+  {
+   "account": "SL1-1081-100-00000-B",
+   "name": "PILOT - LIPA",
+   "adopted2025": 33100.0,
+   "deptRequested2026": 33100.0,
+   "tentative2026": 33100.0,
+   "preliminary2026": 33100.0,
+   "adopted2026": 33100.0
+  },
+  {
+   "account": "SL1-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 300.0,
+   "deptRequested2026": 300.0,
+   "tentative2026": 300.0,
+   "preliminary2026": 300.0,
+   "adopted2026": 300.0
+  }
+ ],
+ "officialAppropriations2026": 926533,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

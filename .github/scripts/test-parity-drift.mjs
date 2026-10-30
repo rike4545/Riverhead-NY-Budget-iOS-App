@@ -449,12 +449,12 @@ function realSuite() {
 
     // Every route the contract names has to be a route the app actually has.
     // Matching is by endpoint id, so a wrong route label changes no behaviour
-    // and goes unnoticed — it just makes every report about that endpoint cite
-    // a page that does not exist. Two have slipped through that way already:
-    // /outlier-watch/ and /salary/, neither of which is a page.
+    // and goes unnoticed — it makes every report about that endpoint cite
+    // a page that does not exist. Keep the contract and the app route table
+    // tied together so stale paths fail the self-test before a report is trusted.
     {
         const swift = readFileSync(join(sourceDir, 'BudgetLiveParityView.swift'), 'utf8');
-        const appRoutes = new Set([...swift.matchAll(/path:\\s*"([^"]+)"/g)].map((m) => m[1]));
+        const appRoutes = new Set([...swift.matchAll(/path:\s*"([^"]+)"/g)].map((m) => m[1]));
         for (const endpoint of contract.endpoints) {
             if (!endpoint.route) continue;
             check(`${endpoint.id}: route \`${endpoint.route}\` is one the app has`,

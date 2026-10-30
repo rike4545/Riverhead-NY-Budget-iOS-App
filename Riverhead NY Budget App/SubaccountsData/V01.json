@@ -1,0 +1,232 @@
+{
+ "code": "V01",
+ "name": "Debt Service Fund",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 6888150.0,
+ "expenditureTotal2025": 6282600.0,
+ "revenueTotal2026": 6888150.0,
+ "departmentCount": 2,
+ "lineItemCount": 10,
+ "departments": [
+  {
+   "code": "9710",
+   "name": "Serial Bond Payments",
+   "adopted2024": 6266400.0,
+   "adopted2025": 4517600.0,
+   "adopted2026": 4629400.0,
+   "change": 111800.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 4629400.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "V01-9-9710-600-000-00000",
+     "name": "Bond Pmt - Debt Principal",
+     "category": "Other",
+     "adopted2025": 3783700.0,
+     "deptRequested2026": 3784600.0,
+     "tentative2026": 3784600.0,
+     "preliminary2026": 3784600.0,
+     "adopted2026": 3784600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8093800.0
+      },
+      {
+       "year": 2021,
+       "value": 7845200.0
+      },
+      {
+       "year": 2022,
+       "value": 7702900.0
+      },
+      {
+       "year": 2023,
+       "value": 3750400.0
+      },
+      {
+       "year": 2024,
+       "value": 4066700.0
+      },
+      {
+       "year": 2025,
+       "value": 3783700.0
+      },
+      {
+       "year": 2026,
+       "value": 3784600.0
+      }
+     ],
+     "adopted2024": 4066700.0
+    },
+    {
+     "account": "V01-9-9710-700-000-00000",
+     "name": "Bond Pmt - Interest Expense",
+     "category": "Other",
+     "adopted2025": 733900.0,
+     "deptRequested2026": 844800.0,
+     "tentative2026": 844800.0,
+     "preliminary2026": 844800.0,
+     "adopted2026": 844800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1950300.0
+      },
+      {
+       "year": 2021,
+       "value": 1733200.0
+      },
+      {
+       "year": 2022,
+       "value": 1434300.0
+      },
+      {
+       "year": 2023,
+       "value": 2467100.0
+      },
+      {
+       "year": 2024,
+       "value": 2199700.0
+      },
+      {
+       "year": 2025,
+       "value": 733900.0
+      },
+      {
+       "year": 2026,
+       "value": 844800.0
+      }
+     ],
+     "adopted2024": 2199700.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9730",
+   "name": "Function 9730",
+   "adopted2024": 0,
+   "adopted2025": 1765000.0,
+   "adopted2026": 2258750.0,
+   "change": 493750.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 2258750.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "V01-9-9730-600-000-00000",
+     "name": "BAN Principal",
+     "category": "Other",
+     "adopted2025": 825000.0,
+     "deptRequested2026": 1025000.0,
+     "tentative2026": 1025000.0,
+     "preliminary2026": 1025000.0,
+     "adopted2026": 1025000.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 825000.0
+      },
+      {
+       "year": 2026,
+       "value": 1025000.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "V01-9-9730-700-000-00000",
+     "name": "BAN - Interest Expense",
+     "category": "Other",
+     "adopted2025": 940000.0,
+     "deptRequested2026": 1233750.0,
+     "tentative2026": 1233750.0,
+     "preliminary2026": 1233750.0,
+     "adopted2026": 1233750.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 940000.0
+      },
+      {
+       "year": 2026,
+       "value": 1233750.0
+      }
+     ],
+     "adopted2024": null
+    }
+   ],
+   "lineItemCount": 2
+  }
+ ],
+ "revenues": [
+  {
+   "account": "V01-5031-A01-00000-K",
+   "name": "Interfund Transfers - A01",
+   "adopted2025": 2768800.0,
+   "deptRequested2026": 3054850.0,
+   "tentative2026": 3054850.0,
+   "preliminary2026": 3054850.0,
+   "adopted2026": 3054850.0
+  },
+  {
+   "account": "V01-5031-CM2-00000-K",
+   "name": "Interfund Transfers - CM2",
+   "adopted2025": 105600.0,
+   "deptRequested2026": 102000.0,
+   "tentative2026": 102000.0,
+   "preliminary2026": 102000.0,
+   "adopted2026": 102000.0
+  },
+  {
+   "account": "V01-5031-CM4-00000-K",
+   "name": "Interfund Transfers - CM4",
+   "adopted2025": 3076600.0,
+   "deptRequested2026": 2959300.0,
+   "tentative2026": 2959300.0,
+   "preliminary2026": 2959300.0,
+   "adopted2026": 2959300.0
+  },
+  {
+   "account": "V01-5031-DA1-00000-K",
+   "name": "Interfund Transfers - DA1",
+   "adopted2025": 254600.0,
+   "deptRequested2026": 245700.0,
+   "tentative2026": 245700.0,
+   "preliminary2026": 245700.0,
+   "adopted2026": 245700.0
+  },
+  {
+   "account": "V01-5031-SM1-00000-K",
+   "name": "Interfund Transfers - SM1",
+   "adopted2025": 0.0,
+   "deptRequested2026": 450000.0,
+   "tentative2026": 450000.0,
+   "preliminary2026": 450000.0,
+   "adopted2026": 450000.0
+  },
+  {
+   "account": "V01-5031-ST1-00000-K",
+   "name": "Interfund Transfers - ST1",
+   "adopted2025": 77000.0,
+   "deptRequested2026": 76300.0,
+   "tentative2026": 76300.0,
+   "preliminary2026": 76300.0,
+   "adopted2026": 76300.0
+  }
+ ],
+ "officialAppropriations2026": 6888150,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

@@ -1,0 +1,2689 @@
+{
+ "code": "ES1",
+ "name": "Riverhead Sewer District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 8142722.0,
+ "expenditureTotal2025": 7745384.0,
+ "revenueTotal2026": 8142722.0,
+ "departmentCount": 12,
+ "lineItemCount": 69,
+ "departments": [
+  {
+   "code": "8130",
+   "name": "Sewer Treatment & Disposal",
+   "adopted2024": 2094600.0,
+   "adopted2025": 2221200.0,
+   "adopted2026": 2401500.0,
+   "change": 180300.0,
+   "categoryTotals": [
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 272000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 2129500.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-8-8130-230-000-00000",
+     "name": "Sewer Trmt - Improvements",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 180000.0,
+     "deptRequested2026": 80000.0,
+     "tentative2026": 80000.0,
+     "preliminary2026": 80000.0,
+     "adopted2026": 80000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 50000.0
+      },
+      {
+       "year": 2021,
+       "value": 25000.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 180000.0
+      },
+      {
+       "year": 2024,
+       "value": 180000.0
+      },
+      {
+       "year": 2025,
+       "value": 180000.0
+      },
+      {
+       "year": 2026,
+       "value": 80000.0
+      }
+     ],
+     "adopted2024": 180000.0
+    },
+    {
+     "account": "ES1-8-8130-240-000-00000",
+     "name": "Sewer Trmt - Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 20000.0,
+     "deptRequested2026": 95000.0,
+     "tentative2026": 95000.0,
+     "preliminary2026": 95000.0,
+     "adopted2026": 95000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 20000.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 7500.0
+      },
+      {
+       "year": 2023,
+       "value": 20000.0
+      },
+      {
+       "year": 2024,
+       "value": 20000.0
+      },
+      {
+       "year": 2025,
+       "value": 20000.0
+      },
+      {
+       "year": 2026,
+       "value": 95000.0
+      }
+     ],
+     "adopted2024": 20000.0
+    },
+    {
+     "account": "ES1-8-8130-240-100-00000",
+     "name": "Sewer Trmt - Plant Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 6000.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 6000.0
+      },
+      {
+       "year": 2022,
+       "value": 2000.0
+      },
+      {
+       "year": 2023,
+       "value": 6000.0
+      },
+      {
+       "year": 2024,
+       "value": 6000.0
+      },
+      {
+       "year": 2025,
+       "value": 6000.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 6000.0
+    },
+    {
+     "account": "ES1-8-8130-240-150-00000",
+     "name": "Sewer Trmt - Recording Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 6000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES1-8-8130-240-200-00000",
+     "name": "Sewer Trmt - Station Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 97000.0,
+     "deptRequested2026": 97000.0,
+     "tentative2026": 97000.0,
+     "preliminary2026": 97000.0,
+     "adopted2026": 97000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 97000.0
+      },
+      {
+       "year": 2026,
+       "value": 97000.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES1-8-8130-401-000-00000",
+     "name": "Sewer Trmt - R&M Pump Station",
+     "category": "Contractual",
+     "adopted2025": 35000.0,
+     "deptRequested2026": 35000.0,
+     "tentative2026": 35000.0,
+     "preliminary2026": 35000.0,
+     "adopted2026": 35000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 28500.0
+      },
+      {
+       "year": 2021,
+       "value": 28500.0
+      },
+      {
+       "year": 2022,
+       "value": 28500.0
+      },
+      {
+       "year": 2023,
+       "value": 35000.0
+      },
+      {
+       "year": 2024,
+       "value": 35000.0
+      },
+      {
+       "year": 2025,
+       "value": 35000.0
+      },
+      {
+       "year": 2026,
+       "value": 35000.0
+      }
+     ],
+     "adopted2024": 35000.0
+    },
+    {
+     "account": "ES1-8-8130-402-000-00000",
+     "name": "Sewer Trmt - R&M - Buildings",
+     "category": "Contractual",
+     "adopted2025": 60000.0,
+     "deptRequested2026": 60000.0,
+     "tentative2026": 60000.0,
+     "preliminary2026": 60000.0,
+     "adopted2026": 60000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 52000.0
+      },
+      {
+       "year": 2021,
+       "value": 56000.0
+      },
+      {
+       "year": 2022,
+       "value": 56000.0
+      },
+      {
+       "year": 2023,
+       "value": 60000.0
+      },
+      {
+       "year": 2024,
+       "value": 60000.0
+      },
+      {
+       "year": 2025,
+       "value": 60000.0
+      },
+      {
+       "year": 2026,
+       "value": 60000.0
+      }
+     ],
+     "adopted2024": 60000.0
+    },
+    {
+     "account": "ES1-8-8130-402-100-00000",
+     "name": "Sewer Trmt R&M - Plant Lubricant Exp",
+     "category": "Contractual",
+     "adopted2025": 7000.0,
+     "deptRequested2026": 7000.0,
+     "tentative2026": 7000.0,
+     "preliminary2026": 7000.0,
+     "adopted2026": 7000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2000.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 7000.0
+      },
+      {
+       "year": 2024,
+       "value": 7000.0
+      },
+      {
+       "year": 2025,
+       "value": 7000.0
+      },
+      {
+       "year": 2026,
+       "value": 7000.0
+      }
+     ],
+     "adopted2024": 7000.0
+    },
+    {
+     "account": "ES1-8-8130-403-000-00000",
+     "name": "Sewer Trmt - R&M - Equipment",
+     "category": "Contractual",
+     "adopted2025": 85000.0,
+     "deptRequested2026": 100000.0,
+     "tentative2026": 100000.0,
+     "preliminary2026": 100000.0,
+     "adopted2026": 100000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 40000.0
+      },
+      {
+       "year": 2021,
+       "value": 17000.0
+      },
+      {
+       "year": 2022,
+       "value": 20000.0
+      },
+      {
+       "year": 2023,
+       "value": 85000.0
+      },
+      {
+       "year": 2024,
+       "value": 85000.0
+      },
+      {
+       "year": 2025,
+       "value": 85000.0
+      },
+      {
+       "year": 2026,
+       "value": 100000.0
+      }
+     ],
+     "adopted2024": 85000.0
+    },
+    {
+     "account": "ES1-8-8130-404-000-00000",
+     "name": "Sewer Trmt - R&M - Grounds",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 700.0,
+     "tentative2026": 700.0,
+     "preliminary2026": 700.0,
+     "adopted2026": 700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 500.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 700.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "ES1-8-8130-405-000-00000",
+     "name": "Sewer Trmt - R&M - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 27000.0,
+     "tentative2026": 27000.0,
+     "preliminary2026": 27000.0,
+     "adopted2026": 27000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25000.0
+      },
+      {
+       "year": 2021,
+       "value": 20000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 25000.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 27000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    },
+    {
+     "account": "ES1-8-8130-414-050-00000",
+     "name": "Sewer Trmt - Plant Generator R&M",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 6500.0
+      },
+      {
+       "year": 2023,
+       "value": 6500.0
+      },
+      {
+       "year": 2024,
+       "value": 6500.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 6500.0
+    },
+    {
+     "account": "ES1-8-8130-414-075-00000",
+     "name": "Sewer Trmt - Station Generator R&M",
+     "category": "Contractual",
+     "adopted2025": 15000.0,
+     "deptRequested2026": 18000.0,
+     "tentative2026": 18000.0,
+     "preliminary2026": 18000.0,
+     "adopted2026": 18000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12000.0
+      },
+      {
+       "year": 2021,
+       "value": 12000.0
+      },
+      {
+       "year": 2022,
+       "value": 12000.0
+      },
+      {
+       "year": 2023,
+       "value": 12000.0
+      },
+      {
+       "year": 2024,
+       "value": 12000.0
+      },
+      {
+       "year": 2025,
+       "value": 15000.0
+      },
+      {
+       "year": 2026,
+       "value": 18000.0
+      }
+     ],
+     "adopted2024": 12000.0
+    },
+    {
+     "account": "ES1-8-8130-415-000-00000",
+     "name": "Sewer Trmt - Chlorine & Chemical Expense",
+     "category": "Contractual",
+     "adopted2025": 130000.0,
+     "deptRequested2026": 140000.0,
+     "tentative2026": 140000.0,
+     "preliminary2026": 140000.0,
+     "adopted2026": 140000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 85000.0
+      },
+      {
+       "year": 2021,
+       "value": 85000.0
+      },
+      {
+       "year": 2022,
+       "value": 90000.0
+      },
+      {
+       "year": 2023,
+       "value": 115000.0
+      },
+      {
+       "year": 2024,
+       "value": 126500.0
+      },
+      {
+       "year": 2025,
+       "value": 130000.0
+      },
+      {
+       "year": 2026,
+       "value": 140000.0
+      }
+     ],
+     "adopted2024": 126500.0
+    },
+    {
+     "account": "ES1-8-8130-415-100-00000",
+     "name": "Sewer Trmt - Plant Supplies",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 11000.0,
+     "tentative2026": 11000.0,
+     "preliminary2026": 11000.0,
+     "adopted2026": 11000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 7500.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 11000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "ES1-8-8130-415-372-00000",
+     "name": "Sewer Trmt - Supplies - First Aid",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2200.0
+      },
+      {
+       "year": 2021,
+       "value": 1600.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "ES1-8-8130-415-500-00000",
+     "name": "Sewer Treatment - Lab Supplies",
+     "category": "Contractual",
+     "adopted2025": 0.0,
+     "deptRequested2026": 11800.0,
+     "tentative2026": 11800.0,
+     "preliminary2026": 11800.0,
+     "adopted2026": 11800.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 11800.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "ES1-8-8130-420-000-00000",
+     "name": "Sewer Trmt - Small Tools",
+     "category": "Contractual",
+     "adopted2025": 600.0,
+     "deptRequested2026": 700.0,
+     "tentative2026": 700.0,
+     "preliminary2026": 700.0,
+     "adopted2026": 700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 600.0
+      },
+      {
+       "year": 2021,
+       "value": 600.0
+      },
+      {
+       "year": 2022,
+       "value": 600.0
+      },
+      {
+       "year": 2023,
+       "value": 600.0
+      },
+      {
+       "year": 2024,
+       "value": 600.0
+      },
+      {
+       "year": 2025,
+       "value": 600.0
+      },
+      {
+       "year": 2026,
+       "value": 700.0
+      }
+     ],
+     "adopted2024": 600.0
+    },
+    {
+     "account": "ES1-8-8130-425-000-00000",
+     "name": "Sewer Trmt - Uniforms",
+     "category": "Contractual",
+     "adopted2025": 5500.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 4500.0
+      },
+      {
+       "year": 2023,
+       "value": 4500.0
+      },
+      {
+       "year": 2024,
+       "value": 4500.0
+      },
+      {
+       "year": 2025,
+       "value": 5500.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 4500.0
+    },
+    {
+     "account": "ES1-8-8130-426-050-00000",
+     "name": "Sewer Trmt Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 20000.0,
+     "deptRequested2026": 20000.0,
+     "tentative2026": 20000.0,
+     "preliminary2026": 20000.0,
+     "adopted2026": 20000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 20000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 20000.0
+      },
+      {
+       "year": 2024,
+       "value": 20000.0
+      },
+      {
+       "year": 2025,
+       "value": 20000.0
+      },
+      {
+       "year": 2026,
+       "value": 20000.0
+      }
+     ],
+     "adopted2024": 20000.0
+    },
+    {
+     "account": "ES1-8-8130-426-075-00000",
+     "name": "Sewer Trmt Fuel - Plant Fuel",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 26000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "ES1-8-8130-426-100-00000",
+     "name": "Sewer Trmt Fuel - Station Fuel",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 500.0
+      },
+      {
+       "year": 2021,
+       "value": 500.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "ES1-8-8130-431-000-00000",
+     "name": "Sewer Trmt - Alarm Contract",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 15100.0,
+     "tentative2026": 15100.0,
+     "preliminary2026": 15100.0,
+     "adopted2026": 15100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 13000.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 15100.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "ES1-8-8130-433-000-00000",
+     "name": "Sewer Trmt - Prof Svcs - Legal",
+     "category": "Contractual",
+     "adopted2025": 17000.0,
+     "deptRequested2026": 18500.0,
+     "tentative2026": 18500.0,
+     "preliminary2026": 18500.0,
+     "adopted2026": 18500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 18000.0
+      },
+      {
+       "year": 2021,
+       "value": 18000.0
+      },
+      {
+       "year": 2022,
+       "value": 12000.0
+      },
+      {
+       "year": 2023,
+       "value": 12000.0
+      },
+      {
+       "year": 2024,
+       "value": 12000.0
+      },
+      {
+       "year": 2025,
+       "value": 17000.0
+      },
+      {
+       "year": 2026,
+       "value": 18500.0
+      }
+     ],
+     "adopted2024": 12000.0
+    },
+    {
+     "account": "ES1-8-8130-435-000-00000",
+     "name": "Sewer Trmt - Prof Svcs - Engineering",
+     "category": "Contractual",
+     "adopted2025": 63000.0,
+     "deptRequested2026": 65000.0,
+     "tentative2026": 65000.0,
+     "preliminary2026": 65000.0,
+     "adopted2026": 65000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 85000.0
+      },
+      {
+       "year": 2021,
+       "value": 52000.0
+      },
+      {
+       "year": 2022,
+       "value": 47000.0
+      },
+      {
+       "year": 2023,
+       "value": 63000.0
+      },
+      {
+       "year": 2024,
+       "value": 63000.0
+      },
+      {
+       "year": 2025,
+       "value": 63000.0
+      },
+      {
+       "year": 2026,
+       "value": 65000.0
+      }
+     ],
+     "adopted2024": 63000.0
+    },
+    {
+     "account": "ES1-8-8130-436-208-00000",
+     "name": "Sewer Trmt - Prof Svcs - Lab Fees",
+     "category": "Contractual",
+     "adopted2025": 31000.0,
+     "deptRequested2026": 33000.0,
+     "tentative2026": 33000.0,
+     "preliminary2026": 33000.0,
+     "adopted2026": 33000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 32000.0
+      },
+      {
+       "year": 2021,
+       "value": 32000.0
+      },
+      {
+       "year": 2022,
+       "value": 30000.0
+      },
+      {
+       "year": 2023,
+       "value": 31000.0
+      },
+      {
+       "year": 2024,
+       "value": 31000.0
+      },
+      {
+       "year": 2025,
+       "value": 31000.0
+      },
+      {
+       "year": 2026,
+       "value": 33000.0
+      }
+     ],
+     "adopted2024": 31000.0
+    },
+    {
+     "account": "ES1-8-8130-442-000-00000",
+     "name": "Sewer Trmt - Prof Edu & Training",
+     "category": "Contractual",
+     "adopted2025": 4500.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4500.0
+      },
+      {
+       "year": 2021,
+       "value": 4500.0
+      },
+      {
+       "year": 2022,
+       "value": 4500.0
+      },
+      {
+       "year": 2023,
+       "value": 4500.0
+      },
+      {
+       "year": 2024,
+       "value": 4500.0
+      },
+      {
+       "year": 2025,
+       "value": 4500.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 4500.0
+    },
+    {
+     "account": "ES1-8-8130-464-000-00000",
+     "name": "Sewer Trmt - Rents & Leases - Cell Phone",
+     "category": "Contractual",
+     "adopted2025": 1400.0,
+     "deptRequested2026": 1800.0,
+     "tentative2026": 1800.0,
+     "preliminary2026": 1800.0,
+     "adopted2026": 1800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2000.0
+      },
+      {
+       "year": 2021,
+       "value": 1400.0
+      },
+      {
+       "year": 2022,
+       "value": 1400.0
+      },
+      {
+       "year": 2023,
+       "value": 1400.0
+      },
+      {
+       "year": 2024,
+       "value": 1400.0
+      },
+      {
+       "year": 2025,
+       "value": 1400.0
+      },
+      {
+       "year": 2026,
+       "value": 1800.0
+      }
+     ],
+     "adopted2024": 1400.0
+    },
+    {
+     "account": "ES1-8-8130-470-000-00000",
+     "name": "Sewer Trmt - Utl - SPDES Permit",
+     "category": "Contractual",
+     "adopted2025": 4000.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4000.0
+      },
+      {
+       "year": 2021,
+       "value": 4000.0
+      },
+      {
+       "year": 2022,
+       "value": 4000.0
+      },
+      {
+       "year": 2023,
+       "value": 4000.0
+      },
+      {
+       "year": 2024,
+       "value": 4000.0
+      },
+      {
+       "year": 2025,
+       "value": 4000.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 4000.0
+    },
+    {
+     "account": "ES1-8-8130-471-000-00000",
+     "name": "Sewer Trmt - Utl - Telephone",
+     "category": "Contractual",
+     "adopted2025": 7200.0,
+     "deptRequested2026": 7200.0,
+     "tentative2026": 7200.0,
+     "preliminary2026": 7200.0,
+     "adopted2026": 7200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8000.0
+      },
+      {
+       "year": 2021,
+       "value": 6000.0
+      },
+      {
+       "year": 2022,
+       "value": 6000.0
+      },
+      {
+       "year": 2023,
+       "value": 6000.0
+      },
+      {
+       "year": 2024,
+       "value": 7200.0
+      },
+      {
+       "year": 2025,
+       "value": 7200.0
+      },
+      {
+       "year": 2026,
+       "value": 7200.0
+      }
+     ],
+     "adopted2024": 7200.0
+    },
+    {
+     "account": "ES1-8-8130-472-000-00000",
+     "name": "Sewer Trmt - Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 755000.0,
+     "deptRequested2026": 800000.0,
+     "tentative2026": 800000.0,
+     "preliminary2026": 800000.0,
+     "adopted2026": 800000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 691900.0
+      },
+      {
+       "year": 2021,
+       "value": 590000.0
+      },
+      {
+       "year": 2022,
+       "value": 545000.0
+      },
+      {
+       "year": 2023,
+       "value": 720000.0
+      },
+      {
+       "year": 2024,
+       "value": 755000.0
+      },
+      {
+       "year": 2025,
+       "value": 755000.0
+      },
+      {
+       "year": 2026,
+       "value": 800000.0
+      }
+     ],
+     "adopted2024": 755000.0
+    },
+    {
+     "account": "ES1-8-8130-472-100-00000",
+     "name": "Sewer Trmt Util - Station Electric",
+     "category": "Contractual",
+     "adopted2025": 105000.0,
+     "deptRequested2026": 120000.0,
+     "tentative2026": 120000.0,
+     "preliminary2026": 120000.0,
+     "adopted2026": 120000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 96800.0
+      },
+      {
+       "year": 2021,
+       "value": 65000.0
+      },
+      {
+       "year": 2022,
+       "value": 65000.0
+      },
+      {
+       "year": 2023,
+       "value": 100000.0
+      },
+      {
+       "year": 2024,
+       "value": 105000.0
+      },
+      {
+       "year": 2025,
+       "value": 105000.0
+      },
+      {
+       "year": 2026,
+       "value": 120000.0
+      }
+     ],
+     "adopted2024": 105000.0
+    },
+    {
+     "account": "ES1-8-8130-474-000-00000",
+     "name": "Sewer Trmt - Utl - Water",
+     "category": "Contractual",
+     "adopted2025": 3000.0,
+     "deptRequested2026": 3000.0,
+     "tentative2026": 3000.0,
+     "preliminary2026": 3000.0,
+     "adopted2026": 3000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 3000.0
+      },
+      {
+       "year": 2023,
+       "value": 3000.0
+      },
+      {
+       "year": 2024,
+       "value": 3000.0
+      },
+      {
+       "year": 2025,
+       "value": 3000.0
+      },
+      {
+       "year": 2026,
+       "value": 3000.0
+      }
+     ],
+     "adopted2024": 3000.0
+    },
+    {
+     "account": "ES1-8-8130-475-000-00000",
+     "name": "Sewer Trmt - Utl - Comm",
+     "category": "Contractual",
+     "adopted2025": 6500.0,
+     "deptRequested2026": 7000.0,
+     "tentative2026": 7000.0,
+     "preliminary2026": 7000.0,
+     "adopted2026": 7000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 3500.0
+      },
+      {
+       "year": 2023,
+       "value": 5900.0
+      },
+      {
+       "year": 2024,
+       "value": 5900.0
+      },
+      {
+       "year": 2025,
+       "value": 6500.0
+      },
+      {
+       "year": 2026,
+       "value": 7000.0
+      }
+     ],
+     "adopted2024": 5900.0
+    },
+    {
+     "account": "ES1-8-8130-482-000-00000",
+     "name": "Sewer Trmt - Waste Disposal",
+     "category": "Contractual",
+     "adopted2025": 490000.0,
+     "deptRequested2026": 585700.0,
+     "tentative2026": 585700.0,
+     "preliminary2026": 585700.0,
+     "adopted2026": 585700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 387500.0
+      },
+      {
+       "year": 2021,
+       "value": 340000.0
+      },
+      {
+       "year": 2022,
+       "value": 380000.0
+      },
+      {
+       "year": 2023,
+       "value": 420000.0
+      },
+      {
+       "year": 2024,
+       "value": 475000.0
+      },
+      {
+       "year": 2025,
+       "value": 490000.0
+      },
+      {
+       "year": 2026,
+       "value": 585700.0
+      }
+     ],
+     "adopted2024": 475000.0
+    },
+    {
+     "account": "ES1-8-8130-490-000-00000",
+     "name": "Sewer Trmt - Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 4000.0,
+     "deptRequested2026": 5000.0,
+     "tentative2026": 5000.0,
+     "preliminary2026": 5000.0,
+     "adopted2026": 5000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 4000.0
+      },
+      {
+       "year": 2023,
+       "value": 4000.0
+      },
+      {
+       "year": 2024,
+       "value": 4000.0
+      },
+      {
+       "year": 2025,
+       "value": 4000.0
+      },
+      {
+       "year": 2026,
+       "value": 5000.0
+      }
+     ],
+     "adopted2024": 4000.0
+    }
+   ],
+   "lineItemCount": 36
+  },
+  {
+   "code": "1994",
+   "name": "Depreciation",
+   "adopted2024": 2100000.0,
+   "adopted2025": 2150000.0,
+   "adopted2026": 2150000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 2150000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-1-1994-492-000-00000",
+     "name": "Depr - Depreciation",
+     "category": "Contractual",
+     "adopted2025": 2150000.0,
+     "deptRequested2026": 2150000.0,
+     "tentative2026": 2150000.0,
+     "preliminary2026": 2150000.0,
+     "adopted2026": 2150000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2100000.0
+      },
+      {
+       "year": 2021,
+       "value": 2100000.0
+      },
+      {
+       "year": 2022,
+       "value": 2100000.0
+      },
+      {
+       "year": 2023,
+       "value": 2100000.0
+      },
+      {
+       "year": 2024,
+       "value": 2100000.0
+      },
+      {
+       "year": 2025,
+       "value": 2150000.0
+      },
+      {
+       "year": 2026,
+       "value": 2150000.0
+      }
+     ],
+     "adopted2024": 2100000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9710",
+   "name": "Serial Bond Payments",
+   "adopted2024": 890700.0,
+   "adopted2025": 909000.0,
+   "adopted2026": 904100.0,
+   "change": -4900.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 904100.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9710-600-000-00000",
+     "name": "Bond Pmt - Debt Principal",
+     "category": "Other",
+     "adopted2025": 680000.0,
+     "deptRequested2026": 685000.0,
+     "tentative2026": 685000.0,
+     "preliminary2026": 685000.0,
+     "adopted2026": 685000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 716300.0
+      },
+      {
+       "year": 2021,
+       "value": 706000.0
+      },
+      {
+       "year": 2022,
+       "value": 710800.0
+      },
+      {
+       "year": 2023,
+       "value": 670000.0
+      },
+      {
+       "year": 2024,
+       "value": 675000.0
+      },
+      {
+       "year": 2025,
+       "value": 680000.0
+      },
+      {
+       "year": 2026,
+       "value": 685000.0
+      }
+     ],
+     "adopted2024": 675000.0
+    },
+    {
+     "account": "ES1-9-9710-700-000-00000",
+     "name": "Bond Pmt - Interest Expense",
+     "category": "Other",
+     "adopted2025": 206500.0,
+     "deptRequested2026": 196600.0,
+     "tentative2026": 196600.0,
+     "preliminary2026": 196600.0,
+     "adopted2026": 196600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 248800.0
+      },
+      {
+       "year": 2021,
+       "value": 240800.0
+      },
+      {
+       "year": 2022,
+       "value": 232600.0
+      },
+      {
+       "year": 2023,
+       "value": 224200.0
+      },
+      {
+       "year": 2024,
+       "value": 215700.0
+      },
+      {
+       "year": 2025,
+       "value": 206500.0
+      },
+      {
+       "year": 2026,
+       "value": 196600.0
+      }
+     ],
+     "adopted2024": 215700.0
+    },
+    {
+     "account": "ES1-9-9710-700-200-00000",
+     "name": "Serial Bond Administrative Fee",
+     "category": "Other",
+     "adopted2025": 22500.0,
+     "deptRequested2026": 22500.0,
+     "tentative2026": 22500.0,
+     "preliminary2026": 22500.0,
+     "adopted2026": 22500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 22500.0
+      },
+      {
+       "year": 2026,
+       "value": 22500.0
+      }
+     ],
+     "adopted2024": 0.0
+    }
+   ],
+   "lineItemCount": 3
+  },
+  {
+   "code": "8110",
+   "name": "Sewer Administration",
+   "adopted2024": 941994.0,
+   "adopted2025": 1049492.0,
+   "adopted2026": 850015.0,
+   "change": -199477.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 848915.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 1100.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-8-8110-101-NON-00000",
+     "name": "Sewer Adm - Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 935182.0,
+     "deptRequested2026": 751992.0,
+     "tentative2026": 749817.0,
+     "preliminary2026": 749817.0,
+     "adopted2026": 749817.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 714900.0
+      },
+      {
+       "year": 2021,
+       "value": 689500.0
+      },
+      {
+       "year": 2022,
+       "value": 726800.0
+      },
+      {
+       "year": 2023,
+       "value": 741900.0
+      },
+      {
+       "year": 2024,
+       "value": 784294.0
+      },
+      {
+       "year": 2025,
+       "value": 935182.0
+      },
+      {
+       "year": 2026,
+       "value": 749817.0
+      }
+     ],
+     "adopted2024": 784294.0
+    },
+    {
+     "account": "ES1-8-8110-111-NON-00000",
+     "name": "Sewer Adm - Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 31000.0,
+     "deptRequested2026": 28738.0,
+     "tentative2026": 28738.0,
+     "preliminary2026": 28738.0,
+     "adopted2026": 28738.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 32000.0
+      },
+      {
+       "year": 2021,
+       "value": 32000.0
+      },
+      {
+       "year": 2022,
+       "value": 31000.0
+      },
+      {
+       "year": 2023,
+       "value": 31000.0
+      },
+      {
+       "year": 2024,
+       "value": 31000.0
+      },
+      {
+       "year": 2025,
+       "value": 31000.0
+      },
+      {
+       "year": 2026,
+       "value": 28738.0
+      }
+     ],
+     "adopted2024": 31000.0
+    },
+    {
+     "account": "ES1-8-8110-112-NON-00000",
+     "name": "Sewer Adm - Pers Svcs Longevity",
+     "category": "Personal Services",
+     "adopted2025": 37335.0,
+     "deptRequested2026": 16166.0,
+     "tentative2026": 16090.0,
+     "preliminary2026": 16090.0,
+     "adopted2026": 16090.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 35100.0
+      },
+      {
+       "year": 2021,
+       "value": 22000.0
+      },
+      {
+       "year": 2022,
+       "value": 29100.0
+      },
+      {
+       "year": 2023,
+       "value": 29800.0
+      },
+      {
+       "year": 2024,
+       "value": 27700.0
+      },
+      {
+       "year": 2025,
+       "value": 37335.0
+      },
+      {
+       "year": 2026,
+       "value": 16090.0
+      }
+     ],
+     "adopted2024": 27700.0
+    },
+    {
+     "account": "ES1-8-8110-123-000-00000",
+     "name": "Sewer Adm - Pers Svcs Cleaning Allow",
+     "category": "Personal Services",
+     "adopted2025": 140.0,
+     "deptRequested2026": 140.0,
+     "tentative2026": 140.0,
+     "preliminary2026": 140.0,
+     "adopted2026": 140.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 200.0
+      },
+      {
+       "year": 2021,
+       "value": 200.0
+      },
+      {
+       "year": 2022,
+       "value": 200.0
+      },
+      {
+       "year": 2023,
+       "value": 200.0
+      },
+      {
+       "year": 2024,
+       "value": 140.0
+      },
+      {
+       "year": 2025,
+       "value": 140.0
+      },
+      {
+       "year": 2026,
+       "value": 140.0
+      }
+     ],
+     "adopted2024": 140.0
+    },
+    {
+     "account": "ES1-8-8110-152-000-00000",
+     "name": "Sewer Adm - Pers Svcs Sick Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 2800.0,
+     "deptRequested2026": 2800.0,
+     "tentative2026": 3490.0,
+     "preliminary2026": 3490.0,
+     "adopted2026": 3490.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3300.0
+      },
+      {
+       "year": 2021,
+       "value": 9100.0
+      },
+      {
+       "year": 2022,
+       "value": 2700.0
+      },
+      {
+       "year": 2023,
+       "value": 6000.0
+      },
+      {
+       "year": 2024,
+       "value": 5900.0
+      },
+      {
+       "year": 2025,
+       "value": 2800.0
+      },
+      {
+       "year": 2026,
+       "value": 3490.0
+      }
+     ],
+     "adopted2024": 5900.0
+    },
+    {
+     "account": "ES1-8-8110-153-000-00000",
+     "name": "Sewer Adm - Pers Svcs Mgmt Buy Bac",
+     "category": "Personal Services",
+     "adopted2025": 40530.0,
+     "deptRequested2026": 40530.0,
+     "tentative2026": 47880.0,
+     "preliminary2026": 47880.0,
+     "adopted2026": 47880.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 80500.0
+      },
+      {
+       "year": 2021,
+       "value": 87800.0
+      },
+      {
+       "year": 2022,
+       "value": 92700.0
+      },
+      {
+       "year": 2023,
+       "value": 81000.0
+      },
+      {
+       "year": 2024,
+       "value": 88550.0
+      },
+      {
+       "year": 2025,
+       "value": 40530.0
+      },
+      {
+       "year": 2026,
+       "value": 47880.0
+      }
+     ],
+     "adopted2024": 88550.0
+    },
+    {
+     "account": "ES1-8-8110-154-000-00000",
+     "name": "Sewer Adm - Pers Svcs Health Ins Buy Bac",
+     "category": "Personal Services",
+     "adopted2025": 1905.0,
+     "deptRequested2026": 4665.0,
+     "tentative2026": 2760.0,
+     "preliminary2026": 2760.0,
+     "adopted2026": 2760.0,
+     "history": [
+      {
+       "year": 2024,
+       "value": 3810.0
+      },
+      {
+       "year": 2025,
+       "value": 1905.0
+      },
+      {
+       "year": 2026,
+       "value": 2760.0
+      }
+     ],
+     "adopted2024": 3810.0
+    },
+    {
+     "account": "ES1-8-8110-416-000-00000",
+     "name": "Sewer Adm - Supplies - Office",
+     "category": "Contractual",
+     "adopted2025": 0.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 700.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 0.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 0.0
+    },
+    {
+     "account": "ES1-8-8110-481-000-00000",
+     "name": "Sewer Adm - Taxes on Town Property",
+     "category": "Contractual",
+     "adopted2025": 600.0,
+     "deptRequested2026": 600.0,
+     "tentative2026": 600.0,
+     "preliminary2026": 600.0,
+     "adopted2026": 600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 300.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 600.0
+      },
+      {
+       "year": 2023,
+       "value": 600.0
+      },
+      {
+       "year": 2024,
+       "value": 600.0
+      },
+      {
+       "year": 2025,
+       "value": 600.0
+      },
+      {
+       "year": 2026,
+       "value": 600.0
+      }
+     ],
+     "adopted2024": 600.0
+    }
+   ],
+   "lineItemCount": 9
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 608000.0,
+   "adopted2025": 664600.0,
+   "adopted2026": 585000.0,
+   "change": -79600.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 585000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9901-900-A01-00000",
+     "name": "Trf - Interfund Trf General Fund",
+     "category": "Interfund / Transfers",
+     "adopted2025": 664600.0,
+     "deptRequested2026": 585000.0,
+     "tentative2026": 585000.0,
+     "preliminary2026": 585000.0,
+     "adopted2026": 585000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 586500.0
+      },
+      {
+       "year": 2021,
+       "value": 584000.0
+      },
+      {
+       "year": 2022,
+       "value": 633500.0
+      },
+      {
+       "year": 2023,
+       "value": 557000.0
+      },
+      {
+       "year": 2024,
+       "value": 608000.0
+      },
+      {
+       "year": 2025,
+       "value": 664600.0
+      },
+      {
+       "year": 2026,
+       "value": 585000.0
+      }
+     ],
+     "adopted2024": 608000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9990",
+   "name": "Function 9990",
+   "adopted2024": 50000.0,
+   "adopted2025": 0,
+   "adopted2026": 500000.0,
+   "change": 500000.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 500000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9990-000-000-00000",
+     "name": "Fund Balance Contribution",
+     "category": "Other",
+     "adopted2025": 0.0,
+     "deptRequested2026": 500000.0,
+     "tentative2026": 500000.0,
+     "preliminary2026": 500000.0,
+     "adopted2026": 500000.0,
+     "history": [
+      {
+       "year": 2023,
+       "value": 75000.0
+      },
+      {
+       "year": 2024,
+       "value": 50000.0
+      },
+      {
+       "year": 2025,
+       "value": 0.0
+      },
+      {
+       "year": 2026,
+       "value": 500000.0
+      }
+     ],
+     "adopted2024": 50000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 274556.0,
+   "adopted2025": 353997.0,
+   "adopted2026": 400963.0,
+   "change": 46966.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 400963.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 353997.0,
+     "deptRequested2026": 400963.0,
+     "tentative2026": 400963.0,
+     "preliminary2026": 400963.0,
+     "adopted2026": 400963.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 260000.0
+      },
+      {
+       "year": 2021,
+       "value": 241700.0
+      },
+      {
+       "year": 2022,
+       "value": 252600.0
+      },
+      {
+       "year": 2023,
+       "value": 234200.0
+      },
+      {
+       "year": 2024,
+       "value": 274556.0
+      },
+      {
+       "year": 2025,
+       "value": 353997.0
+      },
+      {
+       "year": 2026,
+       "value": 400963.0
+      }
+     ],
+     "adopted2024": 274556.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 110700.0,
+   "adopted2025": 114100.0,
+   "adopted2026": 119400.0,
+   "change": 5300.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 119400.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 81100.0,
+     "deptRequested2026": 86500.0,
+     "tentative2026": 86500.0,
+     "preliminary2026": 86500.0,
+     "adopted2026": 86500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 38500.0
+      },
+      {
+       "year": 2021,
+       "value": 55400.0
+      },
+      {
+       "year": 2022,
+       "value": 54500.0
+      },
+      {
+       "year": 2023,
+       "value": 60400.0
+      },
+      {
+       "year": 2024,
+       "value": 76400.0
+      },
+      {
+       "year": 2025,
+       "value": 81100.0
+      },
+      {
+       "year": 2026,
+       "value": 86500.0
+      }
+     ],
+     "adopted2024": 76400.0
+    },
+    {
+     "account": "ES1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 33000.0,
+     "deptRequested2026": 32900.0,
+     "tentative2026": 32900.0,
+     "preliminary2026": 32900.0,
+     "adopted2026": 32900.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 27700.0
+      },
+      {
+       "year": 2021,
+       "value": 37100.0
+      },
+      {
+       "year": 2022,
+       "value": 35100.0
+      },
+      {
+       "year": 2023,
+       "value": 35100.0
+      },
+      {
+       "year": 2024,
+       "value": 34300.0
+      },
+      {
+       "year": 2025,
+       "value": 33000.0
+      },
+      {
+       "year": 2026,
+       "value": 32900.0
+      }
+     ],
+     "adopted2024": 34300.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 121121.0,
+   "adopted2025": 160092.0,
+   "adopted2026": 118555.0,
+   "change": -41537.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 118555.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 160092.0,
+     "deptRequested2026": 109814.0,
+     "tentative2026": 118555.0,
+     "preliminary2026": 118555.0,
+     "adopted2026": 118555.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 125900.0
+      },
+      {
+       "year": 2021,
+       "value": 133900.0
+      },
+      {
+       "year": 2022,
+       "value": 103500.0
+      },
+      {
+       "year": 2023,
+       "value": 115800.0
+      },
+      {
+       "year": 2024,
+       "value": 121121.0
+      },
+      {
+       "year": 2025,
+       "value": 160092.0
+      },
+      {
+       "year": 2026,
+       "value": 118555.0
+      }
+     ],
+     "adopted2024": 121121.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 66796.0,
+   "adopted2025": 70036.0,
+   "adopted2026": 62689.0,
+   "change": -7347.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 62689.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 70036.0,
+     "deptRequested2026": 63881.0,
+     "tentative2026": 62689.0,
+     "preliminary2026": 62689.0,
+     "adopted2026": 62689.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 67400.0
+      },
+      {
+       "year": 2021,
+       "value": 65200.0
+      },
+      {
+       "year": 2022,
+       "value": 65600.0
+      },
+      {
+       "year": 2023,
+       "value": 66400.0
+      },
+      {
+       "year": 2024,
+       "value": 66796.0
+      },
+      {
+       "year": 2025,
+       "value": 70036.0
+      },
+      {
+       "year": 2026,
+       "value": 62689.0
+      }
+     ],
+     "adopted2024": 66796.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9040",
+   "name": "WC",
+   "adopted2024": 48600.0,
+   "adopted2025": 49300.0,
+   "adopted2026": 50500.0,
+   "change": 1200.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 50500.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9040-887-000-00000",
+     "name": "WC - Insurance Premuim",
+     "category": "Employee Benefits",
+     "adopted2025": 14500.0,
+     "deptRequested2026": 15700.0,
+     "tentative2026": 15700.0,
+     "preliminary2026": 15700.0,
+     "adopted2026": 15700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12700.0
+      },
+      {
+       "year": 2021,
+       "value": 14000.0
+      },
+      {
+       "year": 2022,
+       "value": 15300.0
+      },
+      {
+       "year": 2023,
+       "value": 11800.0
+      },
+      {
+       "year": 2024,
+       "value": 13900.0
+      },
+      {
+       "year": 2025,
+       "value": 14500.0
+      },
+      {
+       "year": 2026,
+       "value": 15700.0
+      }
+     ],
+     "adopted2024": 13900.0
+    },
+    {
+     "account": "ES1-9-9040-888-000-00000",
+     "name": "WC - Claim Payments",
+     "category": "Employee Benefits",
+     "adopted2025": 34800.0,
+     "deptRequested2026": 34800.0,
+     "tentative2026": 34800.0,
+     "preliminary2026": 34800.0,
+     "adopted2026": 34800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 36500.0
+      },
+      {
+       "year": 2021,
+       "value": 40300.0
+      },
+      {
+       "year": 2022,
+       "value": 40300.0
+      },
+      {
+       "year": 2023,
+       "value": 34900.0
+      },
+      {
+       "year": 2024,
+       "value": 34700.0
+      },
+      {
+       "year": 2025,
+       "value": 34800.0
+      },
+      {
+       "year": 2026,
+       "value": 34800.0
+      }
+     ],
+     "adopted2024": 34700.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 3201.0,
+   "adopted2025": 3567.0,
+   "adopted2026": 0,
+   "change": -3567.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES1-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 3567.0,
+     "deptRequested2026": 5366.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 2900.0
+      },
+      {
+       "year": 2022,
+       "value": 3100.0
+      },
+      {
+       "year": 2023,
+       "value": 3100.0
+      },
+      {
+       "year": 2024,
+       "value": 3201.0
+      },
+      {
+       "year": 2025,
+       "value": 3567.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 3201.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "ES1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 551300.0,
+   "deptRequested2026": 566409.0,
+   "tentative2026": 566309.0,
+   "preliminary2026": 566309.0,
+   "adopted2026": 566309.0
+  },
+  {
+   "account": "ES1-1081-000-00000-B",
+   "name": "PILOT Programs",
+   "adopted2025": 490000.0,
+   "deptRequested2026": 0.0,
+   "tentative2026": 0.0,
+   "preliminary2026": 0.0,
+   "adopted2026": 0.0
+  },
+  {
+   "account": "ES1-1081-100-00000-3",
+   "name": "PILOT - LIPA",
+   "adopted2025": 1700.0,
+   "deptRequested2026": 1700.0,
+   "tentative2026": 1700.0,
+   "preliminary2026": 1700.0,
+   "adopted2026": 1700.0
+  },
+  {
+   "account": "ES1-1120-000-00000-C",
+   "name": "Non Property Tax Distr by County",
+   "adopted2025": 146688.0,
+   "deptRequested2026": 146688.0,
+   "tentative2026": 146688.0,
+   "preliminary2026": 146688.0,
+   "adopted2026": 146688.0
+  },
+  {
+   "account": "ES1-2120-000-00000-8",
+   "name": "Sewer Rents",
+   "adopted2025": 4401196.0,
+   "deptRequested2026": 4832358.0,
+   "tentative2026": 4838525.0,
+   "preliminary2026": 4838525.0,
+   "adopted2026": 4838525.0
+  },
+  {
+   "account": "ES1-2122-000-00000-8",
+   "name": "Sewer Charges",
+   "adopted2025": 4000.0,
+   "deptRequested2026": 4000.0,
+   "tentative2026": 4000.0,
+   "preliminary2026": 4000.0,
+   "adopted2026": 4000.0
+  },
+  {
+   "account": "ES1-2122-100-00000-8",
+   "name": "Sewer Charges - Out of Town",
+   "adopted2025": 0.0,
+   "deptRequested2026": 350000.0,
+   "tentative2026": 350000.0,
+   "preliminary2026": 350000.0,
+   "adopted2026": 350000.0
+  },
+  {
+   "account": "ES1-2122-300-00000-8",
+   "name": "Sewer Charges - golf course irrigation",
+   "adopted2025": 0.0,
+   "deptRequested2026": 85000.0,
+   "tentative2026": 85000.0,
+   "preliminary2026": 85000.0,
+   "adopted2026": 85000.0
+  },
+  {
+   "account": "ES1-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 500.0,
+   "deptRequested2026": 500.0,
+   "tentative2026": 500.0,
+   "preliminary2026": 500.0,
+   "adopted2026": 500.0
+  },
+  {
+   "account": "ES1-9999-000-00000-0",
+   "name": "Appropriated Fund Balance (Budget Prep O",
+   "adopted2025": 2150000.0,
+   "deptRequested2026": 2150000.0,
+   "tentative2026": 2150000.0,
+   "preliminary2026": 2150000.0,
+   "adopted2026": 2150000.0
+  }
+ ],
+ "officialAppropriations2026": 8142722,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

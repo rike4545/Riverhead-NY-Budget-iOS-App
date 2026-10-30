@@ -1,0 +1,186 @@
+{
+ "source": {
+  "title": "Town of Riverhead Adopted Budgets (General Fund)",
+  "url": "https://www.townofriverheadny.gov/206/Financial-Reports"
+ },
+ "note": "Adopted General Fund figures by year. Some early years are unavailable; the series shows every year with a parsed adopted budget, and adds each new one from the Town\u2019s own Summary page when it is adopted. Corrected to the Town\u2019s Summary page, which the following year\u2019s budget repeats: 2021.",
+ "growth": {
+  "firstYear": 2005,
+  "lastYear": 2026,
+  "appropriationsChangePct": 124.1,
+  "taxLevyChangePct": 145.2
+ },
+ "rows": [
+  {
+   "year": 2005,
+   "appropriations": 30840590,
+   "estimatedRevenues": 8030960,
+   "appropriatedFundBalance": 1250000,
+   "taxLevy": 21559630,
+   "source": "05.adopted.budget.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2009,
+   "appropriations": 39517562,
+   "estimatedRevenues": 11200860,
+   "appropriatedFundBalance": 2005602,
+   "taxLevy": 26311100,
+   "source": "2009.adopted.budget.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2010,
+   "appropriations": 43277978,
+   "estimatedRevenues": 10956345,
+   "appropriatedFundBalance": 4701200,
+   "taxLevy": 27620433,
+   "source": "2010.adopted.budget.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2011,
+   "appropriations": 42383100,
+   "estimatedRevenues": 10532600,
+   "appropriatedFundBalance": 2600000,
+   "taxLevy": 29250500,
+   "source": "2011.Adopted Budget.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2012,
+   "appropriations": 43865900,
+   "estimatedRevenues": 11141600,
+   "appropriatedFundBalance": 2600000,
+   "taxLevy": 30124300,
+   "source": "2012.Adopted.Budget.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2013,
+   "appropriations": 44981980,
+   "estimatedRevenues": 10845400,
+   "appropriatedFundBalance": 3082680,
+   "taxLevy": 31053900,
+   "source": "document957030902120612.pdf (2013)",
+   "status": "Adopted"
+  },
+  {
+   "year": 2014,
+   "appropriations": 46327350,
+   "estimatedRevenues": 10923450,
+   "appropriatedFundBalance": 3570500,
+   "taxLevy": 31833400,
+   "source": "document957043856112013.pdf (2014)",
+   "status": "Adopted"
+  },
+  {
+   "year": 2015,
+   "appropriations": 45668800,
+   "estimatedRevenues": 12973500,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 32695300,
+   "source": "document957022719050415.pdf (2015)",
+   "status": "Final/Adopted"
+  },
+  {
+   "year": 2016,
+   "appropriations": 46136300,
+   "estimatedRevenues": 11545700,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 34590600,
+   "source": "document957104317121615.pdf (2016)",
+   "status": "Adopted"
+  },
+  {
+   "year": 2017,
+   "appropriations": 47100400,
+   "estimatedRevenues": 10846000,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 36254400,
+   "source": "document957094340010417.pdf (2017)",
+   "status": "Adopted"
+  },
+  {
+   "year": 2018,
+   "appropriations": 48463550,
+   "estimatedRevenues": 11141250,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 37322300,
+   "source": "document958090952092917.pdf (2018)",
+   "status": "Tentative"
+  },
+  {
+   "year": 2019,
+   "appropriations": 50648900,
+   "estimatedRevenues": 11800100,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 38848800,
+   "source": "document958105748120718.pdf (2019)",
+   "status": "Final/Adopted"
+  },
+  {
+   "year": 2020,
+   "appropriations": 51359400,
+   "estimatedRevenues": 11289400,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 40070000,
+   "source": "2020AdoptedBudget957121129112119PM.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2021,
+   "appropriations": 51050700,
+   "estimatedRevenues": 9352300,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 41698400,
+   "source": "2021 Adopted Budget (PDF)",
+   "status": "Adopted"
+  },
+  {
+   "year": 2022,
+   "appropriations": 52487600,
+   "estimatedRevenues": 11998462,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 40489138,
+   "source": "2022AdoptedBudget958105751111721AM.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2023,
+   "appropriations": 55354900,
+   "estimatedRevenues": 13177000,
+   "appropriatedFundBalance": 0,
+   "taxLevy": 42177900,
+   "source": "2023-Adopted-Budget-DocumentCenter-2865.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2024,
+   "appropriations": 60797800,
+   "estimatedRevenues": 14273650,
+   "appropriatedFundBalance": 2000000,
+   "taxLevy": 44524150,
+   "source": "2024AdoptedBudget1505034817111523PM.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2025,
+   "appropriations": 64852829,
+   "estimatedRevenues": 14463350,
+   "appropriatedFundBalance": 1750000,
+   "taxLevy": 48639479,
+   "source": "2025AdoptedBudget1518015509112024PM.pdf",
+   "status": "Adopted"
+  },
+  {
+   "year": 2026,
+   "appropriations": 69113159,
+   "estimatedRevenues": 14998550,
+   "appropriatedFundBalance": 1250000,
+   "taxLevy": 52864609,
+   "source": "2026 Adopted Budget (PDF)",
+   "status": "Adopted"
+  }
+ ]
+}

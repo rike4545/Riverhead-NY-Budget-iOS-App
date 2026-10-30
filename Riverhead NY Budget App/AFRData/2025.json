@@ -1,0 +1,584 @@
+{
+ "source": {
+  "title": "2025 Annual Financial Report (NYS Annual Update Document)",
+  "url": "https://www.townofriverheadny.gov/206/Financial-Reports"
+ },
+ "fiscalYear": 2025,
+ "years": [
+  2025,
+  2024,
+  2023
+ ],
+ "note": "Actual year-end results filed with the NYS Office of the State Comptroller. Columns are 2025, 2024, and 2023. 'And Other Sources/Uses' totals include interfund transfers.",
+ "funds": [
+  {
+   "code": "A",
+   "name": "General Fund",
+   "revenues": {
+    "2025": 71010825.93,
+    "2024": 64394577.88,
+    "2023": 60760553.87
+   },
+   "expenditures": {
+    "2025": 66007499.29,
+    "2024": 62603057.36,
+    "2023": 54019179.55
+   },
+   "surplus": {
+    "2025": 5003326.64,
+    "2024": 1791520.52,
+    "2023": 6741374.32
+   },
+   "fundBalance": {
+    "2025": 33407250.75,
+    "2024": 28403924.11,
+    "2023": 26612403.66
+   },
+   "revenueCategories": [
+    {
+     "category": "Property Taxes",
+     "values": {
+      "2025": 48725571.08,
+      "2024": 44540013.44,
+      "2023": 42517064.94
+     }
+    },
+    {
+     "category": "Property Tax Items",
+     "values": {
+      "2025": 2705506.36,
+      "2024": 2305730.26,
+      "2023": 2346296.25
+     }
+    },
+    {
+     "category": "Non-Property Tax Items",
+     "values": {
+      "2025": 3957363.25,
+      "2024": 3358637.0,
+      "2023": 3211432.0
+     }
+    },
+    {
+     "category": "Departmental Income",
+     "values": {
+      "2025": 5656483.52,
+      "2024": 5473898.77,
+      "2023": 5546692.61
+     }
+    },
+    {
+     "category": "Intergovernmental Charges",
+     "values": {
+      "2025": 2500.0,
+      "2024": 7500.0,
+      "2023": 0.0
+     }
+    },
+    {
+     "category": "Use of Money and Property",
+     "values": {
+      "2025": 2056604.22,
+      "2024": 2540661.79,
+      "2023": 1830964.93
+     }
+    },
+    {
+     "category": "Licenses and Permits",
+     "values": {
+      "2025": 65260.35,
+      "2024": 57880.65,
+      "2023": 47104.82
+     }
+    },
+    {
+     "category": "Fines and Forfeitures",
+     "values": {
+      "2025": 865515.36,
+      "2024": 592338.05,
+      "2023": 720375.66
+     }
+    },
+    {
+     "category": "Sales of Property and Compensation for Loss",
+     "values": {
+      "2025": 550478.66,
+      "2024": 46973.06,
+      "2023": 5104.69
+     }
+    },
+    {
+     "category": "Other Revenues",
+     "values": {
+      "2025": 490772.38,
+      "2024": 273432.76,
+      "2023": 331242.39
+     }
+    },
+    {
+     "category": "State Aid",
+     "values": {
+      "2025": 1989765.33,
+      "2024": 3035169.75,
+      "2023": 2185915.0
+     }
+    },
+    {
+     "category": "Federal Aid",
+     "values": {
+      "2025": 2400244.93,
+      "2024": 518499.28,
+      "2023": 556758.58
+     }
+    }
+   ],
+   "expenditureCategories": [
+    {
+     "category": "General Government Support",
+     "values": {
+      "2025": 12978257.14,
+      "2024": 12508937.16,
+      "2023": 10767181.84
+     }
+    },
+    {
+     "category": "Public Safety",
+     "values": {
+      "2025": 23448698.41,
+      "2024": 23615213.3,
+      "2023": 20132757.38
+     }
+    },
+    {
+     "category": "Health",
+     "values": {
+      "2025": 14019.19,
+      "2024": 14376.32,
+      "2023": 15301.58
+     }
+    },
+    {
+     "category": "Transportation",
+     "values": {
+      "2025": 412412.08,
+      "2024": 339513.56,
+      "2023": 316282.48
+     }
+    },
+    {
+     "category": "Economic Assistance and Opportunity",
+     "values": {
+      "2025": 984414.88,
+      "2024": 978380.91,
+      "2023": 904847.49
+     }
+    },
+    {
+     "category": "Culture and Recreation",
+     "values": {
+      "2025": 1520776.28,
+      "2024": 1531462.48,
+      "2023": 1435773.99
+     }
+    },
+    {
+     "category": "Home and Community Services",
+     "values": {
+      "2025": 1945053.2,
+      "2024": 1641476.26,
+      "2023": 1661914.2
+     }
+    },
+    {
+     "category": "Employee Benefits",
+     "values": {
+      "2025": 18829792.24,
+      "2024": 16384924.28,
+      "2023": 14983044.47
+     }
+    },
+    {
+     "category": "Debt Service",
+     "values": {
+      "2025": 825000.0,
+      "2024": 1122000.0,
+      "2023": 1143550.79
+     }
+    }
+   ],
+   "fundBalanceClasses": [
+    {
+     "class": "Nonspendable",
+     "values": {
+      "2025": 2012534.08,
+      "2024": 1716192.29,
+      "2023": 1367916.94
+     }
+    },
+    {
+     "class": "Restricted",
+     "values": {
+      "2025": 17924.16,
+      "2024": 1432.5,
+      "2023": 888629.31
+     }
+    },
+    {
+     "class": "Committed",
+     "values": {
+      "2025": 42435.0,
+      "2024": 22005.0,
+      "2023": 0.0
+     }
+    },
+    {
+     "class": "Assigned",
+     "values": {
+      "2025": 1663273.34,
+      "2024": 2199681.61,
+      "2023": 2507679.69
+     }
+    },
+    {
+     "class": "Unassigned",
+     "values": {
+      "2025": 29671084.17,
+      "2024": 24464612.71,
+      "2023": 21848177.72
+     }
+    }
+   ]
+  },
+  {
+   "code": "CD",
+   "name": "Special Grant",
+   "revenues": {
+    "2025": 576978.69,
+    "2024": 320131.61,
+    "2023": 323281.38
+   },
+   "expenditures": {
+    "2025": 570041.34,
+    "2024": 241685.67,
+    "2023": 317546.78
+   },
+   "surplus": {
+    "2025": 6937.35,
+    "2024": 78445.94,
+    "2023": 5734.6
+   },
+   "fundBalance": {
+    "2025": 136477.08,
+    "2024": 129539.73,
+    "2023": 51093.79
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "CM",
+   "name": "Miscellaneous Special Revenue",
+   "revenues": {
+    "2025": 8582969.61,
+    "2024": 10900614.65,
+    "2023": 8061595.43
+   },
+   "expenditures": {
+    "2025": 3999024.4,
+    "2024": 3669577.97,
+    "2023": 3655170.24
+   },
+   "surplus": {
+    "2025": 4583945.21,
+    "2024": 7231036.68,
+    "2023": 4406425.19
+   },
+   "fundBalance": {
+    "2025": 30784387.48,
+    "2024": 26200442.27,
+    "2023": 18969405.59
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "DA",
+   "name": "Highway (Town-wide)",
+   "revenues": {
+    "2025": 7971863.33,
+    "2024": 7807557.11,
+    "2023": 7696177.65
+   },
+   "expenditures": {
+    "2025": 7777382.44,
+    "2024": 6964296.16,
+    "2023": 8186119.9
+   },
+   "surplus": {
+    "2025": 194480.89,
+    "2024": 843260.95,
+    "2023": -489942.25
+   },
+   "fundBalance": {
+    "2025": 5594416.1,
+    "2024": 5399935.21,
+    "2023": 4556674.26
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "ES",
+   "name": "Enterprise Sewer",
+   "revenues": {
+    "2025": 8739457.72,
+    "2024": 9108476.23,
+    "2023": 6061140.68
+   },
+   "expenditures": {
+    "2025": 9831597.24,
+    "2024": 11396069.13,
+    "2023": 8400222.41
+   },
+   "surplus": {
+    "2025": -1092139.52,
+    "2024": -2287592.9,
+    "2023": -2339081.73
+   },
+   "fundBalance": null,
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "EW",
+   "name": "Enterprise Water",
+   "revenues": {
+    "2025": 14934370.72,
+    "2024": 12518504.27,
+    "2023": 13272457.26
+   },
+   "expenditures": {
+    "2025": 9092518.79,
+    "2024": 8545960.11,
+    "2023": 7883708.53
+   },
+   "surplus": {
+    "2025": 5841851.93,
+    "2024": 3972544.16,
+    "2023": 5388748.73
+   },
+   "fundBalance": null,
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "H",
+   "name": "Capital Projects",
+   "revenues": {
+    "2025": 2012254.48,
+    "2024": 5396046.12,
+    "2023": 25953882.8
+   },
+   "expenditures": {
+    "2025": 1824640.13,
+    "2024": 3694028.16,
+    "2023": 23082927.91
+   },
+   "surplus": {
+    "2025": 187614.35,
+    "2024": 1702017.96,
+    "2023": 2870954.89
+   },
+   "fundBalance": {
+    "2025": 562386.45,
+    "2024": 374772.1,
+    "2023": 1327245.76
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "MS",
+   "name": "Self Insurance",
+   "revenues": {
+    "2025": 599010.02,
+    "2024": 754433.3,
+    "2023": 1037149.46
+   },
+   "expenditures": {
+    "2025": 761634.03,
+    "2024": 879319.75,
+    "2023": 727652.31
+   },
+   "surplus": {
+    "2025": -162624.01,
+    "2024": -124886.45,
+    "2023": 309497.15
+   },
+   "fundBalance": null,
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "SL",
+   "name": "Street Lighting Districts",
+   "revenues": {
+    "2025": 1073292.8,
+    "2024": 1243990.38,
+    "2023": 1441933.03
+   },
+   "expenditures": {
+    "2025": 821958.76,
+    "2024": 1072100.43,
+    "2023": 1081031.77
+   },
+   "surplus": {
+    "2025": 251334.04,
+    "2024": 171889.95,
+    "2023": 360901.26
+   },
+   "fundBalance": {
+    "2025": 2682970.49,
+    "2024": 2431636.45,
+    "2023": 2259746.5
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "SM",
+   "name": "Special Districts (Misc.)",
+   "revenues": {
+    "2025": 1945305.07,
+    "2024": 1700790.15,
+    "2023": 1718495.23
+   },
+   "expenditures": {
+    "2025": 2063543.9,
+    "2024": 1873729.13,
+    "2023": 1708344.53
+   },
+   "surplus": {
+    "2025": -118238.83,
+    "2024": -172938.98,
+    "2023": 10150.7
+   },
+   "fundBalance": {
+    "2025": 756396.47,
+    "2024": 874635.3,
+    "2023": 1047574.28
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "SR",
+   "name": "Refuse and Garbage District",
+   "revenues": {
+    "2025": 5273588.25,
+    "2024": 5102681.19,
+    "2023": 4524419.35
+   },
+   "expenditures": {
+    "2025": 5041555.06,
+    "2024": 4458706.52,
+    "2023": 4237738.8
+   },
+   "surplus": {
+    "2025": 232033.19,
+    "2024": 643974.67,
+    "2023": 286680.55
+   },
+   "fundBalance": {
+    "2025": 2046399.37,
+    "2024": 1814366.18,
+    "2023": 1170391.51
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "ST",
+   "name": "Public Parking District",
+   "revenues": {
+    "2025": 223863.18,
+    "2024": 217563.85,
+    "2023": 268194.5
+   },
+   "expenditures": {
+    "2025": 124583.55,
+    "2024": 124703.71,
+    "2023": 115113.63
+   },
+   "surplus": {
+    "2025": 99279.63,
+    "2024": 92860.14,
+    "2023": 153080.87
+   },
+   "fundBalance": {
+    "2025": 579078.1,
+    "2024": 479798.47,
+    "2023": 386938.33
+   },
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "TC",
+   "name": "Custodial",
+   "revenues": {
+    "2025": 0.0,
+    "2024": 0.0,
+    "2023": 0.0
+   },
+   "expenditures": {
+    "2025": 0.0,
+    "2024": 0.0,
+    "2023": 0.0
+   },
+   "surplus": {
+    "2025": 0.0,
+    "2024": 0.0,
+    "2023": 0.0
+   },
+   "fundBalance": null,
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  },
+  {
+   "code": "V",
+   "name": "Debt Service",
+   "revenues": {
+    "2025": 5285238.92,
+    "2024": 5648606.97,
+    "2023": 5032357.71
+   },
+   "expenditures": {
+    "2025": 5285238.92,
+    "2024": 5648606.97,
+    "2023": 5032357.71
+   },
+   "surplus": {
+    "2025": 0.0,
+    "2024": 0.0,
+    "2023": 0.0
+   },
+   "fundBalance": null,
+   "revenueCategories": [],
+   "expenditureCategories": [],
+   "fundBalanceClasses": []
+  }
+ ]
+}

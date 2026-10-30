@@ -40,6 +40,16 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Riverhead NY Budget App/MeetingsData" "Riverhead NY Budget App/supplement-lines.json" "Riverhead NY Budget App/supplement-outliers.json" "Riverhead NY Budget App/reductions.json" "Riverhead NY Budget App/payroll-records.json" "Riverhead NY Budget App/titles-by-year.json"
+          git add \
+            "Riverhead NY Budget App/MeetingsData" \
+            "Riverhead NY Budget App/AFRData" \
+            "Riverhead NY Budget App/HistoryData" \
+            "Riverhead NY Budget App/SalaryData" \
+            "Riverhead NY Budget App/SubaccountsData" \
+            "Riverhead NY Budget App/supplement-lines.json" \
+            "Riverhead NY Budget App/supplement-outliers.json" \
+            "Riverhead NY Budget App/reductions.json" \
+            "Riverhead NY Budget App/payroll-records.json" \
+            "Riverhead NY Budget App/titles-by-year.json"
           git commit -m "Sync canonical data from web source"
           git push

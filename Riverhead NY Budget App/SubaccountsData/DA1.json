@@ -1,0 +1,1787 @@
+{
+ "code": "DA1",
+ "name": "Highway Fund",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 7919250.0,
+ "expenditureTotal2025": 7721800.0,
+ "revenueTotal2026": 7919250.0,
+ "departmentCount": 11,
+ "lineItemCount": 44,
+ "departments": [
+  {
+   "code": "5110",
+   "name": "General Repairs",
+   "adopted2024": 3491245.0,
+   "adopted2025": 3516590.0,
+   "adopted2026": 3553226.0,
+   "change": 36636.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 2604374.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 948852.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-5-5110-101-NON-00000",
+     "name": "Repair - Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 2420369.0,
+     "deptRequested2026": 2464557.0,
+     "tentative2026": 2468135.0,
+     "preliminary2026": 2468135.0,
+     "adopted2026": 2468135.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2069400.0
+      },
+      {
+       "year": 2021,
+       "value": 2051100.0
+      },
+      {
+       "year": 2022,
+       "value": 2058100.0
+      },
+      {
+       "year": 2023,
+       "value": 2239900.0
+      },
+      {
+       "year": 2024,
+       "value": 2334292.0
+      },
+      {
+       "year": 2025,
+       "value": 2420369.0
+      },
+      {
+       "year": 2026,
+       "value": 2468135.0
+      }
+     ],
+     "adopted2024": 2334292.0
+    },
+    {
+     "account": "DA1-5-5110-111-NON-00000",
+     "name": "Repair - Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25000.0
+      },
+      {
+       "year": 2021,
+       "value": 25000.0
+      },
+      {
+       "year": 2022,
+       "value": 25000.0
+      },
+      {
+       "year": 2023,
+       "value": 25000.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    },
+    {
+     "account": "DA1-5-5110-112-NON-00000",
+     "name": "Repair - Pers Svcs Longevity",
+     "category": "Personal Services",
+     "adopted2025": 92139.0,
+     "deptRequested2026": 88994.0,
+     "tentative2026": 88994.0,
+     "preliminary2026": 88994.0,
+     "adopted2026": 88994.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 90400.0
+      },
+      {
+       "year": 2021,
+       "value": 83500.0
+      },
+      {
+       "year": 2022,
+       "value": 93600.0
+      },
+      {
+       "year": 2023,
+       "value": 82900.0
+      },
+      {
+       "year": 2024,
+       "value": 93128.0
+      },
+      {
+       "year": 2025,
+       "value": 92139.0
+      },
+      {
+       "year": 2026,
+       "value": 88994.0
+      }
+     ],
+     "adopted2024": 93128.0
+    },
+    {
+     "account": "DA1-5-5110-123-000-00000",
+     "name": "Repairs - Pers Svcs Cleaning Allow",
+     "category": "Personal Services",
+     "adopted2025": 400.0,
+     "deptRequested2026": 400.0,
+     "tentative2026": 400.0,
+     "preliminary2026": 400.0,
+     "adopted2026": 400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 400.0
+      },
+      {
+       "year": 2024,
+       "value": 400.0
+      },
+      {
+       "year": 2025,
+       "value": 400.0
+      },
+      {
+       "year": 2026,
+       "value": 400.0
+      }
+     ],
+     "adopted2024": 400.0
+    },
+    {
+     "account": "DA1-5-5110-152-000-00000",
+     "name": "Repair - Pers Svcs Sick Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 24700.0,
+     "deptRequested2026": 24700.0,
+     "tentative2026": 10900.0,
+     "preliminary2026": 10900.0,
+     "adopted2026": 10900.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 28000.0
+      },
+      {
+       "year": 2021,
+       "value": 7700.0
+      },
+      {
+       "year": 2022,
+       "value": 20100.0
+      },
+      {
+       "year": 2023,
+       "value": 23100.0
+      },
+      {
+       "year": 2024,
+       "value": 9000.0
+      },
+      {
+       "year": 2025,
+       "value": 24700.0
+      },
+      {
+       "year": 2026,
+       "value": 10900.0
+      }
+     ],
+     "adopted2024": 9000.0
+    },
+    {
+     "account": "DA1-5-5110-154-000-00000",
+     "name": "Repair - Pers Svcs Health Ins Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 5230.0,
+     "deptRequested2026": 10945.0,
+     "tentative2026": 10945.0,
+     "preliminary2026": 10945.0,
+     "adopted2026": 10945.0,
+     "history": [
+      {
+       "year": 2024,
+       "value": 6625.0
+      },
+      {
+       "year": 2025,
+       "value": 5230.0
+      },
+      {
+       "year": 2026,
+       "value": 10945.0
+      }
+     ],
+     "adopted2024": 6625.0
+    },
+    {
+     "account": "DA1-5-5110-406-000-00000",
+     "name": "Repair - R&M - Road Resurfacing & Patchi",
+     "category": "Contractual",
+     "adopted2025": 655393.0,
+     "deptRequested2026": 655393.0,
+     "tentative2026": 655393.0,
+     "preliminary2026": 655393.0,
+     "adopted2026": 655393.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 712124.0
+      },
+      {
+       "year": 2021,
+       "value": 652144.0
+      },
+      {
+       "year": 2022,
+       "value": 600354.0
+      },
+      {
+       "year": 2023,
+       "value": 710000.0
+      },
+      {
+       "year": 2024,
+       "value": 710000.0
+      },
+      {
+       "year": 2025,
+       "value": 655393.0
+      },
+      {
+       "year": 2026,
+       "value": 655393.0
+      }
+     ],
+     "adopted2024": 710000.0
+    },
+    {
+     "account": "DA1-5-5110-413-000-00000",
+     "name": "Repair - R&M - Traffic Safety",
+     "category": "Contractual",
+     "adopted2025": 50000.0,
+     "deptRequested2026": 50000.0,
+     "tentative2026": 50000.0,
+     "preliminary2026": 50000.0,
+     "adopted2026": 50000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 50000.0
+      },
+      {
+       "year": 2021,
+       "value": 30000.0
+      },
+      {
+       "year": 2022,
+       "value": 30000.0
+      },
+      {
+       "year": 2023,
+       "value": 50000.0
+      },
+      {
+       "year": 2024,
+       "value": 50000.0
+      },
+      {
+       "year": 2025,
+       "value": 50000.0
+      },
+      {
+       "year": 2026,
+       "value": 50000.0
+      }
+     ],
+     "adopted2024": 50000.0
+    },
+    {
+     "account": "DA1-5-5110-425-000-00000",
+     "name": "Repair - Shared Services",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 0.0
+    },
+    {
+     "account": "DA1-5-5110-426-000-00000",
+     "name": "Repairs Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 185559.0,
+     "deptRequested2026": 185559.0,
+     "tentative2026": 185559.0,
+     "preliminary2026": 185559.0,
+     "adopted2026": 185559.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 215000.0
+      },
+      {
+       "year": 2021,
+       "value": 215000.0
+      },
+      {
+       "year": 2022,
+       "value": 170000.0
+      },
+      {
+       "year": 2023,
+       "value": 215000.0
+      },
+      {
+       "year": 2024,
+       "value": 235000.0
+      },
+      {
+       "year": 2025,
+       "value": 185559.0
+      },
+      {
+       "year": 2026,
+       "value": 185559.0
+      }
+     ],
+     "adopted2024": 235000.0
+    },
+    {
+     "account": "DA1-5-5110-436-000-00000",
+     "name": "Repair - Prof Svcs - Consultants",
+     "category": "Contractual",
+     "adopted2025": 1000.0,
+     "deptRequested2026": 1000.0,
+     "tentative2026": 1000.0,
+     "preliminary2026": 1000.0,
+     "adopted2026": 1000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1000.0
+      },
+      {
+       "year": 2026,
+       "value": 1000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    },
+    {
+     "account": "DA1-5-5110-462-000-00000",
+     "name": "Repair - Rents & Leases - Equip",
+     "category": "Contractual",
+     "adopted2025": 40000.0,
+     "deptRequested2026": 40000.0,
+     "tentative2026": 40000.0,
+     "preliminary2026": 40000.0,
+     "adopted2026": 40000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 35000.0
+      },
+      {
+       "year": 2021,
+       "value": 30000.0
+      },
+      {
+       "year": 2022,
+       "value": 30000.0
+      },
+      {
+       "year": 2023,
+       "value": 35000.0
+      },
+      {
+       "year": 2024,
+       "value": 20000.0
+      },
+      {
+       "year": 2025,
+       "value": 40000.0
+      },
+      {
+       "year": 2026,
+       "value": 40000.0
+      }
+     ],
+     "adopted2024": 20000.0
+    },
+    {
+     "account": "DA1-5-5110-464-000-00000",
+     "name": "Repair - Rents & Leases - Cell Phones",
+     "category": "Contractual",
+     "adopted2025": 1800.0,
+     "deptRequested2026": 1900.0,
+     "tentative2026": 1900.0,
+     "preliminary2026": 1900.0,
+     "adopted2026": 1900.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2200.0
+      },
+      {
+       "year": 2021,
+       "value": 1100.0
+      },
+      {
+       "year": 2022,
+       "value": 1200.0
+      },
+      {
+       "year": 2023,
+       "value": 1600.0
+      },
+      {
+       "year": 2024,
+       "value": 1800.0
+      },
+      {
+       "year": 2025,
+       "value": 1800.0
+      },
+      {
+       "year": 2026,
+       "value": 1900.0
+      }
+     ],
+     "adopted2024": 1800.0
+    },
+    {
+     "account": "DA1-5-5110-475-000-00000",
+     "name": "Repair - Utl - Comm",
+     "category": "Contractual",
+     "adopted2025": 5000.0,
+     "deptRequested2026": 5000.0,
+     "tentative2026": 5000.0,
+     "preliminary2026": 5000.0,
+     "adopted2026": 5000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 4400.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 5000.0
+      },
+      {
+       "year": 2025,
+       "value": 5000.0
+      },
+      {
+       "year": 2026,
+       "value": 5000.0
+      }
+     ],
+     "adopted2024": 5000.0
+    }
+   ],
+   "lineItemCount": 14
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 1180672.0,
+   "adopted2025": 1347256.0,
+   "adopted2026": 1394544.0,
+   "change": 47288.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 1394544.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 1347256.0,
+     "deptRequested2026": 1394544.0,
+     "tentative2026": 1394544.0,
+     "preliminary2026": 1394544.0,
+     "adopted2026": 1394544.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 927200.0
+      },
+      {
+       "year": 2021,
+       "value": 946100.0
+      },
+      {
+       "year": 2022,
+       "value": 1047100.0
+      },
+      {
+       "year": 2023,
+       "value": 1227200.0
+      },
+      {
+       "year": 2024,
+       "value": 1180672.0
+      },
+      {
+       "year": 2025,
+       "value": 1347256.0
+      },
+      {
+       "year": 2026,
+       "value": 1394544.0
+      }
+     ],
+     "adopted2024": 1180672.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "5130",
+   "name": "Mach -Machinery",
+   "adopted2024": 678819.0,
+   "adopted2025": 681819.0,
+   "adopted2026": 728090.0,
+   "change": 46271.0,
+   "categoryTotals": [
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 236500.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 491590.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-5-5130-240-000-00000",
+     "name": "Mach -Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 236500.0,
+     "deptRequested2026": 236500.0,
+     "tentative2026": 236500.0,
+     "preliminary2026": 236500.0,
+     "adopted2026": 236500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 150376.0
+      },
+      {
+       "year": 2021,
+       "value": 165456.0
+      },
+      {
+       "year": 2022,
+       "value": 197246.0
+      },
+      {
+       "year": 2023,
+       "value": 233500.0
+      },
+      {
+       "year": 2024,
+       "value": 233500.0
+      },
+      {
+       "year": 2025,
+       "value": 236500.0
+      },
+      {
+       "year": 2026,
+       "value": 236500.0
+      }
+     ],
+     "adopted2024": 233500.0
+    },
+    {
+     "account": "DA1-5-5130-403-000-00000",
+     "name": "Mach -R&M - Equipment",
+     "category": "Contractual",
+     "adopted2025": 445319.0,
+     "deptRequested2026": 500593.0,
+     "tentative2026": 491590.0,
+     "preliminary2026": 491590.0,
+     "adopted2026": 491590.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 500000.0
+      },
+      {
+       "year": 2021,
+       "value": 400000.0
+      },
+      {
+       "year": 2022,
+       "value": 350000.0
+      },
+      {
+       "year": 2023,
+       "value": 450000.0
+      },
+      {
+       "year": 2024,
+       "value": 445319.0
+      },
+      {
+       "year": 2025,
+       "value": 445319.0
+      },
+      {
+       "year": 2026,
+       "value": 491590.0
+      }
+     ],
+     "adopted2024": 445319.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9040",
+   "name": "WC",
+   "adopted2024": 520600.0,
+   "adopted2025": 529400.0,
+   "adopted2026": 541800.0,
+   "change": 12400.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 541800.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9040-887-000-00000",
+     "name": "WC - Insurance Premuim",
+     "category": "Employee Benefits",
+     "adopted2025": 155800.0,
+     "deptRequested2026": 168200.0,
+     "tentative2026": 168200.0,
+     "preliminary2026": 168200.0,
+     "adopted2026": 168200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 117700.0
+      },
+      {
+       "year": 2021,
+       "value": 129800.0
+      },
+      {
+       "year": 2022,
+       "value": 142100.0
+      },
+      {
+       "year": 2023,
+       "value": 144100.0
+      },
+      {
+       "year": 2024,
+       "value": 148500.0
+      },
+      {
+       "year": 2025,
+       "value": 155800.0
+      },
+      {
+       "year": 2026,
+       "value": 168200.0
+      }
+     ],
+     "adopted2024": 148500.0
+    },
+    {
+     "account": "DA1-9-9040-888-000-00000",
+     "name": "WC - Claim Payments",
+     "category": "Employee Benefits",
+     "adopted2025": 373600.0,
+     "deptRequested2026": 373600.0,
+     "tentative2026": 373600.0,
+     "preliminary2026": 373600.0,
+     "adopted2026": 373600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 338100.0
+      },
+      {
+       "year": 2021,
+       "value": 373700.0
+      },
+      {
+       "year": 2022,
+       "value": 373700.0
+      },
+      {
+       "year": 2023,
+       "value": 373700.0
+      },
+      {
+       "year": 2024,
+       "value": 372100.0
+      },
+      {
+       "year": 2025,
+       "value": 373600.0
+      },
+      {
+       "year": 2026,
+       "value": 373600.0
+      }
+     ],
+     "adopted2024": 372100.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 390443.0,
+   "adopted2025": 431371.0,
+   "adopted2026": 447917.0,
+   "change": 16546.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 447917.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 431371.0,
+     "deptRequested2026": 410830.0,
+     "tentative2026": 447917.0,
+     "preliminary2026": 447917.0,
+     "adopted2026": 447917.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 322700.0
+      },
+      {
+       "year": 2021,
+       "value": 361500.0
+      },
+      {
+       "year": 2022,
+       "value": 263000.0
+      },
+      {
+       "year": 2023,
+       "value": 314600.0
+      },
+      {
+       "year": 2024,
+       "value": 390443.0
+      },
+      {
+       "year": 2025,
+       "value": 431371.0
+      },
+      {
+       "year": 2026,
+       "value": 447917.0
+      }
+     ],
+     "adopted2024": 390443.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "5140",
+   "name": "Miscellaneous",
+   "adopted2024": 391000.0,
+   "adopted2025": 383500.0,
+   "adopted2026": 384000.0,
+   "change": 500.0,
+   "categoryTotals": [
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 122000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 262000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-5-5140-230-000-00000",
+     "name": "Misc - Improvements",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 122000.0,
+     "deptRequested2026": 122000.0,
+     "tentative2026": 122000.0,
+     "preliminary2026": 122000.0,
+     "adopted2026": 122000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 128500.0
+      },
+      {
+       "year": 2021,
+       "value": 78500.0
+      },
+      {
+       "year": 2022,
+       "value": 78500.0
+      },
+      {
+       "year": 2023,
+       "value": 128500.0
+      },
+      {
+       "year": 2024,
+       "value": 128500.0
+      },
+      {
+       "year": 2025,
+       "value": 122000.0
+      },
+      {
+       "year": 2026,
+       "value": 122000.0
+      }
+     ],
+     "adopted2024": 128500.0
+    },
+    {
+     "account": "DA1-5-5140-408-000-00000",
+     "name": "Misc - R&M - Drainage",
+     "category": "Contractual",
+     "adopted2025": 110000.0,
+     "deptRequested2026": 110000.0,
+     "tentative2026": 110000.0,
+     "preliminary2026": 110000.0,
+     "adopted2026": 110000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 110000.0
+      },
+      {
+       "year": 2021,
+       "value": 110000.0
+      },
+      {
+       "year": 2022,
+       "value": 110000.0
+      },
+      {
+       "year": 2023,
+       "value": 110000.0
+      },
+      {
+       "year": 2024,
+       "value": 110000.0
+      },
+      {
+       "year": 2025,
+       "value": 110000.0
+      },
+      {
+       "year": 2026,
+       "value": 110000.0
+      }
+     ],
+     "adopted2024": 110000.0
+    },
+    {
+     "account": "DA1-5-5140-409-000-00000",
+     "name": "Misc - R&M - Trees",
+     "category": "Contractual",
+     "adopted2025": 6000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5000.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 7500.0
+      },
+      {
+       "year": 2024,
+       "value": 7500.0
+      },
+      {
+       "year": 2025,
+       "value": 6000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 7500.0
+    },
+    {
+     "account": "DA1-5-5140-413-000-00000",
+     "name": "Misc R&M - Traffic Safety Exp",
+     "category": "Contractual",
+     "adopted2025": 45000.0,
+     "deptRequested2026": 45000.0,
+     "tentative2026": 45000.0,
+     "preliminary2026": 45000.0,
+     "adopted2026": 45000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 50000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 45000.0
+      },
+      {
+       "year": 2024,
+       "value": 45000.0
+      },
+      {
+       "year": 2025,
+       "value": 45000.0
+      },
+      {
+       "year": 2026,
+       "value": 45000.0
+      }
+     ],
+     "adopted2024": 45000.0
+    },
+    {
+     "account": "DA1-5-5140-419-000-00000",
+     "name": "Misc - Supplies - Other",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2500.0,
+     "tentative2026": 2500.0,
+     "preliminary2026": 2500.0,
+     "adopted2026": 2500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 1500.0
+      },
+      {
+       "year": 2024,
+       "value": 1500.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2500.0
+      }
+     ],
+     "adopted2024": 1500.0
+    },
+    {
+     "account": "DA1-5-5140-425-000-00000",
+     "name": "Misc - Uniforms",
+     "category": "Contractual",
+     "adopted2025": 22500.0,
+     "deptRequested2026": 22500.0,
+     "tentative2026": 22500.0,
+     "preliminary2026": 22500.0,
+     "adopted2026": 22500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 20000.0
+      },
+      {
+       "year": 2024,
+       "value": 22500.0
+      },
+      {
+       "year": 2025,
+       "value": 22500.0
+      },
+      {
+       "year": 2026,
+       "value": 22500.0
+      }
+     ],
+     "adopted2024": 22500.0
+    },
+    {
+     "account": "DA1-5-5140-442-000-00000",
+     "name": "Misc - Prof Edu & Training",
+     "category": "Contractual",
+     "adopted2025": 1000.0,
+     "deptRequested2026": 1000.0,
+     "tentative2026": 1000.0,
+     "preliminary2026": 1000.0,
+     "adopted2026": 1000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 2000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1000.0
+      },
+      {
+       "year": 2026,
+       "value": 1000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    },
+    {
+     "account": "DA1-5-5140-482-000-00000",
+     "name": "Misc - Waste Disposal",
+     "category": "Contractual",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 18000.0
+      },
+      {
+       "year": 2021,
+       "value": 8000.0
+      },
+      {
+       "year": 2022,
+       "value": 8000.0
+      },
+      {
+       "year": 2023,
+       "value": 25000.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    },
+    {
+     "account": "DA1-5-5140-483-000-00000",
+     "name": "Misc - Wood Chipping",
+     "category": "Contractual",
+     "adopted2025": 40000.0,
+     "deptRequested2026": 40000.0,
+     "tentative2026": 40000.0,
+     "preliminary2026": 40000.0,
+     "adopted2026": 40000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 45000.0
+      },
+      {
+       "year": 2021,
+       "value": 30000.0
+      },
+      {
+       "year": 2022,
+       "value": 30000.0
+      },
+      {
+       "year": 2023,
+       "value": 40000.0
+      },
+      {
+       "year": 2024,
+       "value": 40000.0
+      },
+      {
+       "year": 2025,
+       "value": 40000.0
+      },
+      {
+       "year": 2026,
+       "value": 40000.0
+      }
+     ],
+     "adopted2024": 40000.0
+    },
+    {
+     "account": "DA1-5-5140-490-000-00000",
+     "name": "Misc - Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 20000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    }
+   ],
+   "lineItemCount": 10
+  },
+  {
+   "code": "5142",
+   "name": "Snow Removal Highway",
+   "adopted2024": 285000.0,
+   "adopted2025": 249000.0,
+   "adopted2026": 300000.0,
+   "change": 51000.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 75000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 225000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-5-5142-111-NON-00000",
+     "name": "Snow - Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 75000.0,
+     "deptRequested2026": 75000.0,
+     "tentative2026": 75000.0,
+     "preliminary2026": 75000.0,
+     "adopted2026": 75000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 75000.0
+      },
+      {
+       "year": 2021,
+       "value": 75000.0
+      },
+      {
+       "year": 2022,
+       "value": 50000.0
+      },
+      {
+       "year": 2023,
+       "value": 75000.0
+      },
+      {
+       "year": 2024,
+       "value": 75000.0
+      },
+      {
+       "year": 2025,
+       "value": 75000.0
+      },
+      {
+       "year": 2026,
+       "value": 75000.0
+      }
+     ],
+     "adopted2024": 75000.0
+    },
+    {
+     "account": "DA1-5-5142-400-000-00000",
+     "name": "Snow - Contractual",
+     "category": "Contractual",
+     "adopted2025": 174000.0,
+     "deptRequested2026": 225000.0,
+     "tentative2026": 225000.0,
+     "preliminary2026": 225000.0,
+     "adopted2026": 225000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 200000.0
+      },
+      {
+       "year": 2021,
+       "value": 200000.0
+      },
+      {
+       "year": 2022,
+       "value": 175000.0
+      },
+      {
+       "year": 2023,
+       "value": 200000.0
+      },
+      {
+       "year": 2024,
+       "value": 210000.0
+      },
+      {
+       "year": 2025,
+       "value": 174000.0
+      },
+      {
+       "year": 2026,
+       "value": 225000.0
+      }
+     ],
+     "adopted2024": 210000.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 251800.0,
+   "adopted2025": 254600.0,
+   "adopted2026": 245700.0,
+   "change": -8900.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 245700.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9901-900-V01-00000",
+     "name": "Trf - Interfund Trf - Gen Fund Debt Svc",
+     "category": "Interfund / Transfers",
+     "adopted2025": 254600.0,
+     "deptRequested2026": 245700.0,
+     "tentative2026": 245700.0,
+     "preliminary2026": 245700.0,
+     "adopted2026": 245700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 590200.0
+      },
+      {
+       "year": 2021,
+       "value": 480900.0
+      },
+      {
+       "year": 2022,
+       "value": 401300.0
+      },
+      {
+       "year": 2023,
+       "value": 244800.0
+      },
+      {
+       "year": 2024,
+       "value": 251800.0
+      },
+      {
+       "year": 2025,
+       "value": 254600.0
+      },
+      {
+       "year": 2026,
+       "value": 245700.0
+      }
+     ],
+     "adopted2024": 251800.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 194573.0,
+   "adopted2025": 202178.0,
+   "adopted2026": 204973.0,
+   "change": 2795.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 204973.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 202178.0,
+     "deptRequested2026": 205755.0,
+     "tentative2026": 204973.0,
+     "preliminary2026": 204973.0,
+     "adopted2026": 204973.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 176000.0
+      },
+      {
+       "year": 2021,
+       "value": 171800.0
+      },
+      {
+       "year": 2022,
+       "value": 174300.0
+      },
+      {
+       "year": 2023,
+       "value": 187600.0
+      },
+      {
+       "year": 2024,
+       "value": 194573.0
+      },
+      {
+       "year": 2025,
+       "value": 202178.0
+      },
+      {
+       "year": 2026,
+       "value": 204973.0
+      }
+     ],
+     "adopted2024": 194573.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 114700.0,
+   "adopted2025": 117100.0,
+   "adopted2026": 119000.0,
+   "change": 1900.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 119000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 83300.0,
+     "deptRequested2026": 86200.0,
+     "tentative2026": 86200.0,
+     "preliminary2026": 86200.0,
+     "adopted2026": 86200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 55800.0
+      },
+      {
+       "year": 2021,
+       "value": 57600.0
+      },
+      {
+       "year": 2022,
+       "value": 56800.0
+      },
+      {
+       "year": 2023,
+       "value": 61000.0
+      },
+      {
+       "year": 2024,
+       "value": 79100.0
+      },
+      {
+       "year": 2025,
+       "value": 83300.0
+      },
+      {
+       "year": 2026,
+       "value": 86200.0
+      }
+     ],
+     "adopted2024": 79100.0
+    },
+    {
+     "account": "DA1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 33800.0,
+     "deptRequested2026": 32800.0,
+     "tentative2026": 32800.0,
+     "preliminary2026": 32800.0,
+     "adopted2026": 32800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 40200.0
+      },
+      {
+       "year": 2021,
+       "value": 38500.0
+      },
+      {
+       "year": 2022,
+       "value": 36600.0
+      },
+      {
+       "year": 2023,
+       "value": 36600.0
+      },
+      {
+       "year": 2024,
+       "value": 35600.0
+      },
+      {
+       "year": 2025,
+       "value": 33800.0
+      },
+      {
+       "year": 2026,
+       "value": 32800.0
+      }
+     ],
+     "adopted2024": 35600.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 8648.0,
+   "adopted2025": 8986.0,
+   "adopted2026": 0,
+   "change": -8986.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "DA1-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 8986.0,
+     "deptRequested2026": 17080.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 7900.0
+      },
+      {
+       "year": 2021,
+       "value": 7700.0
+      },
+      {
+       "year": 2022,
+       "value": 7800.0
+      },
+      {
+       "year": 2023,
+       "value": 8400.0
+      },
+      {
+       "year": 2024,
+       "value": 8648.0
+      },
+      {
+       "year": 2025,
+       "value": 8986.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 8648.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "DA1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 7223100.0,
+   "deptRequested2026": 7420550.0,
+   "tentative2026": 7420550.0,
+   "preliminary2026": 7420550.0,
+   "adopted2026": 7420550.0
+  },
+  {
+   "account": "DA1-1081-000-00000-B",
+   "name": "PILOT Programs",
+   "adopted2025": 242100.0,
+   "deptRequested2026": 242100.0,
+   "tentative2026": 242100.0,
+   "preliminary2026": 242100.0,
+   "adopted2026": 242100.0
+  },
+  {
+   "account": "DA1-1789-000-00000-5",
+   "name": "Other Transportation Dept Income",
+   "adopted2025": 5000.0,
+   "deptRequested2026": 5000.0,
+   "tentative2026": 5000.0,
+   "preliminary2026": 5000.0,
+   "adopted2026": 5000.0
+  },
+  {
+   "account": "DA1-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 5000.0,
+   "deptRequested2026": 5000.0,
+   "tentative2026": 5000.0,
+   "preliminary2026": 5000.0,
+   "adopted2026": 5000.0
+  },
+  {
+   "account": "DA1-2560-000-00000-5",
+   "name": "Street Opening Permits",
+   "adopted2025": 25000.0,
+   "deptRequested2026": 25000.0,
+   "tentative2026": 25000.0,
+   "preliminary2026": 25000.0,
+   "adopted2026": 25000.0
+  },
+  {
+   "account": "DA1-2650-000-00000-I",
+   "name": "Sale of Scrap & Excess Materials",
+   "adopted2025": 1500.0,
+   "deptRequested2026": 1500.0,
+   "tentative2026": 1500.0,
+   "preliminary2026": 1500.0,
+   "adopted2026": 1500.0
+  },
+  {
+   "account": "DA1-5031-A01-00000-K",
+   "name": "Interfund Transfer - A01",
+   "adopted2025": 220100.0,
+   "deptRequested2026": 220100.0,
+   "tentative2026": 220100.0,
+   "preliminary2026": 220100.0,
+   "adopted2026": 220100.0
+  }
+ ],
+ "officialAppropriations2026": 7919250,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

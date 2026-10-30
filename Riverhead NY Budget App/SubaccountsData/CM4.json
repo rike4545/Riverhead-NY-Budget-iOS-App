@@ -1,0 +1,145 @@
+{
+ "code": "CM4",
+ "name": "Community Preservation Fund",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 2979300.0,
+ "expenditureTotal2025": 3090900.0,
+ "revenueTotal2026": 2979300.0,
+ "departmentCount": 2,
+ "lineItemCount": 3,
+ "departments": [
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 3185700.0,
+   "adopted2025": 3076600.0,
+   "adopted2026": 2959300.0,
+   "change": -117300.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 2959300.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM4-9-9901-900-V01-00000",
+     "name": "Trf - Interfund Trf - Gen Fund Debt Svc",
+     "category": "Interfund / Transfers",
+     "adopted2025": 3076600.0,
+     "deptRequested2026": 2959300.0,
+     "tentative2026": 2959300.0,
+     "preliminary2026": 2959300.0,
+     "adopted2026": 2959300.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4997600.0
+      },
+      {
+       "year": 2021,
+       "value": 4688300.0
+      },
+      {
+       "year": 2022,
+       "value": 4576800.0
+      },
+      {
+       "year": 2023,
+       "value": 3196800.0
+      },
+      {
+       "year": 2024,
+       "value": 3185700.0
+      },
+      {
+       "year": 2025,
+       "value": 3076600.0
+      },
+      {
+       "year": 2026,
+       "value": 2959300.0
+      }
+     ],
+     "adopted2024": 3185700.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1320",
+   "name": "Auditor",
+   "adopted2024": 14300.0,
+   "adopted2025": 14300.0,
+   "adopted2026": 20000.0,
+   "change": 5700.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 20000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM4-1-1320-436-000-00000",
+     "name": "Prof Svcs - Consultants",
+     "category": "Contractual",
+     "adopted2025": 14300.0,
+     "deptRequested2026": 20000.0,
+     "tentative2026": 20000.0,
+     "preliminary2026": 20000.0,
+     "adopted2026": 20000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 14300.0
+      },
+      {
+       "year": 2025,
+       "value": 14300.0
+      },
+      {
+       "year": 2026,
+       "value": 20000.0
+      }
+     ],
+     "adopted2024": 14300.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "CM4-1189-000-00000-C",
+   "name": "Other Non Property Taxes",
+   "adopted2025": 3090900.0,
+   "deptRequested2026": 2979300.0,
+   "tentative2026": 2979300.0,
+   "preliminary2026": 2979300.0,
+   "adopted2026": 2979300.0
+  }
+ ],
+ "officialAppropriations2026": 2979300,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

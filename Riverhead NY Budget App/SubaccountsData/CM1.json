@@ -1,0 +1,277 @@
+{
+ "code": "CM1",
+ "name": "Business Improvement District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 144136.0,
+ "expenditureTotal2025": 183500.0,
+ "revenueTotal2026": 144136.0,
+ "departmentCount": 2,
+ "lineItemCount": 7,
+ "departments": [
+  {
+   "code": "6410",
+   "name": "Publicity/Economic Developmen",
+   "adopted2024": 175400.0,
+   "adopted2025": 180700.0,
+   "adopted2026": 141236.0,
+   "change": -39464.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 141236.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM1-6-6410-436-203-00000",
+     "name": "Eco Dev - Prof Svcs - Other BIDMA",
+     "category": "Contractual",
+     "adopted2025": 128300.0,
+     "deptRequested2026": 137636.0,
+     "tentative2026": 137636.0,
+     "preliminary2026": 137636.0,
+     "adopted2026": 137636.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 80970.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 79198.0
+      },
+      {
+       "year": 2023,
+       "value": 119535.0
+      },
+      {
+       "year": 2024,
+       "value": 123600.0
+      },
+      {
+       "year": 2025,
+       "value": 128300.0
+      },
+      {
+       "year": 2026,
+       "value": 137636.0
+      }
+     ],
+     "adopted2024": 123600.0
+    },
+    {
+     "account": "CM1-6-6410-441-000-00000",
+     "name": "Eco Dev - Marketing & Advertising",
+     "category": "Contractual",
+     "adopted2025": 48400.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 36730.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 45202.0
+      },
+      {
+       "year": 2023,
+       "value": 47465.0
+      },
+      {
+       "year": 2024,
+       "value": 48400.0
+      },
+      {
+       "year": 2025,
+       "value": 48400.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 48400.0
+    },
+    {
+     "account": "CM1-6-6410-495-000-00000",
+     "name": "Eco Dev - Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 4000.0,
+     "deptRequested2026": 3600.0,
+     "tentative2026": 3600.0,
+     "preliminary2026": 3600.0,
+     "adopted2026": 3600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3800.0
+      },
+      {
+       "year": 2021,
+       "value": 3400.0
+      },
+      {
+       "year": 2022,
+       "value": 3500.0
+      },
+      {
+       "year": 2023,
+       "value": 3400.0
+      },
+      {
+       "year": 2024,
+       "value": 3400.0
+      },
+      {
+       "year": 2025,
+       "value": 4000.0
+      },
+      {
+       "year": 2026,
+       "value": 3600.0
+      }
+     ],
+     "adopted2024": 3400.0
+    }
+   ],
+   "lineItemCount": 3
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 2800.0,
+   "adopted2025": 2800.0,
+   "adopted2026": 2900.0,
+   "change": 100.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 2900.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2100.0,
+     "tentative2026": 2100.0,
+     "preliminary2026": 2100.0,
+     "adopted2026": 2100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1100.0
+      },
+      {
+       "year": 2023,
+       "value": 1300.0
+      },
+      {
+       "year": 2024,
+       "value": 1900.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2100.0
+      }
+     ],
+     "adopted2024": 1900.0
+    },
+    {
+     "account": "CM1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 800.0,
+     "deptRequested2026": 800.0,
+     "tentative2026": 800.0,
+     "preliminary2026": 800.0,
+     "adopted2026": 800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 700.0
+      },
+      {
+       "year": 2021,
+       "value": 700.0
+      },
+      {
+       "year": 2022,
+       "value": 700.0
+      },
+      {
+       "year": 2023,
+       "value": 700.0
+      },
+      {
+       "year": 2024,
+       "value": 900.0
+      },
+      {
+       "year": 2025,
+       "value": 800.0
+      },
+      {
+       "year": 2026,
+       "value": 800.0
+      }
+     ],
+     "adopted2024": 900.0
+    }
+   ],
+   "lineItemCount": 2
+  }
+ ],
+ "revenues": [
+  {
+   "account": "CM1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 140300.0,
+   "deptRequested2026": 144136.0,
+   "tentative2026": 144136.0,
+   "preliminary2026": 144136.0,
+   "adopted2026": 144136.0
+  },
+  {
+   "account": "CM1-5031-A01-00000-K",
+   "name": "Interfund Transfers - Transfer From A01",
+   "adopted2025": 43200.0,
+   "deptRequested2026": 0.0,
+   "tentative2026": 0.0,
+   "preliminary2026": 0.0,
+   "adopted2026": 0.0
+  }
+ ],
+ "officialAppropriations2026": 144136,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

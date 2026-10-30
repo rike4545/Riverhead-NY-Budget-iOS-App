@@ -1,0 +1,794 @@
+{
+ "code": "SM1",
+ "name": "Ambulance District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 2388824.0,
+ "expenditureTotal2025": 4513349.0,
+ "revenueTotal2026": 2388824.0,
+ "departmentCount": 4,
+ "lineItemCount": 22,
+ "departments": [
+  {
+   "code": "4540",
+   "name": "Ambulance",
+   "adopted2024": 1846489.0,
+   "adopted2025": 1913900.0,
+   "adopted2026": 1679224.0,
+   "change": -234676.0,
+   "categoryTotals": [
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 85000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 1594224.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SM1-4-4540-280-000-00000",
+     "name": "Amb - Vehicles",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 205000.0,
+     "deptRequested2026": 205000.0,
+     "tentative2026": 85000.0,
+     "preliminary2026": 85000.0,
+     "adopted2026": 85000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 85000.0
+      },
+      {
+       "year": 2021,
+       "value": 85000.0
+      },
+      {
+       "year": 2022,
+       "value": 85000.0
+      },
+      {
+       "year": 2023,
+       "value": 85000.0
+      },
+      {
+       "year": 2024,
+       "value": 195000.0
+      },
+      {
+       "year": 2025,
+       "value": 205000.0
+      },
+      {
+       "year": 2026,
+       "value": 85000.0
+      }
+     ],
+     "adopted2024": 195000.0
+    },
+    {
+     "account": "SM1-4-4540-402-000-00000",
+     "name": "Amb - R&M - Buildings",
+     "category": "Contractual",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 15000.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    },
+    {
+     "account": "SM1-4-4540-405-000-00000",
+     "name": "Amb - R&M - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 40000.0,
+     "deptRequested2026": 45000.0,
+     "tentative2026": 45000.0,
+     "preliminary2026": 45000.0,
+     "adopted2026": 45000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 38000.0
+      },
+      {
+       "year": 2021,
+       "value": 38000.0
+      },
+      {
+       "year": 2022,
+       "value": 38000.0
+      },
+      {
+       "year": 2023,
+       "value": 38000.0
+      },
+      {
+       "year": 2024,
+       "value": 40000.0
+      },
+      {
+       "year": 2025,
+       "value": 40000.0
+      },
+      {
+       "year": 2026,
+       "value": 45000.0
+      }
+     ],
+     "adopted2024": 40000.0
+    },
+    {
+     "account": "SM1-4-4540-426-000-00000",
+     "name": "Amb Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 35000.0,
+     "deptRequested2026": 35000.0,
+     "tentative2026": 35000.0,
+     "preliminary2026": 35000.0,
+     "adopted2026": 35000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25000.0
+      },
+      {
+       "year": 2021,
+       "value": 25000.0
+      },
+      {
+       "year": 2022,
+       "value": 25000.0
+      },
+      {
+       "year": 2023,
+       "value": 25000.0
+      },
+      {
+       "year": 2024,
+       "value": 35000.0
+      },
+      {
+       "year": 2025,
+       "value": 35000.0
+      },
+      {
+       "year": 2026,
+       "value": 35000.0
+      }
+     ],
+     "adopted2024": 35000.0
+    },
+    {
+     "account": "SM1-4-4540-436-203-00000",
+     "name": "Amb - Prof Svcs - RVAC Inc.",
+     "category": "Contractual",
+     "adopted2025": 1347300.0,
+     "deptRequested2026": 1074924.0,
+     "tentative2026": 1274924.0,
+     "preliminary2026": 1274924.0,
+     "adopted2026": 1274924.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1165000.0
+      },
+      {
+       "year": 2021,
+       "value": 1231700.0
+      },
+      {
+       "year": 2022,
+       "value": 1244100.0
+      },
+      {
+       "year": 2023,
+       "value": 1280279.0
+      },
+      {
+       "year": 2024,
+       "value": 1308189.0
+      },
+      {
+       "year": 2025,
+       "value": 1347300.0
+      },
+      {
+       "year": 2026,
+       "value": 1274924.0
+      }
+     ],
+     "adopted2024": 1308189.0
+    },
+    {
+     "account": "SM1-4-4540-436-210-00000",
+     "name": "Ambulance Professional Svcs - Other",
+     "category": "Contractual",
+     "adopted2025": 0.0,
+     "deptRequested2026": 30000.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "SM1-4-4540-462-000-00000",
+     "name": "Amb - Rents & Leases - Equip",
+     "category": "Contractual",
+     "adopted2025": 50000.0,
+     "deptRequested2026": 50000.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 50000.0
+      },
+      {
+       "year": 2021,
+       "value": 50000.0
+      },
+      {
+       "year": 2022,
+       "value": 50000.0
+      },
+      {
+       "year": 2023,
+       "value": 50000.0
+      },
+      {
+       "year": 2024,
+       "value": 50000.0
+      },
+      {
+       "year": 2025,
+       "value": 50000.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 50000.0
+    },
+    {
+     "account": "SM1-4-4540-462-100-00000",
+     "name": "Amb - Rents & Leases - Office",
+     "category": "Contractual",
+     "adopted2025": 6900.0,
+     "deptRequested2026": 6900.0,
+     "tentative2026": 6900.0,
+     "preliminary2026": 6900.0,
+     "adopted2026": 6900.0,
+     "history": [
+      {
+       "year": 2021,
+       "value": 5400.0
+      },
+      {
+       "year": 2022,
+       "value": 5400.0
+      },
+      {
+       "year": 2023,
+       "value": 6900.0
+      },
+      {
+       "year": 2024,
+       "value": 6900.0
+      },
+      {
+       "year": 2025,
+       "value": 6900.0
+      },
+      {
+       "year": 2026,
+       "value": 6900.0
+      }
+     ],
+     "adopted2024": 6900.0
+    },
+    {
+     "account": "SM1-4-4540-471-000-00000",
+     "name": "Amb - Utl - Telephone",
+     "category": "Contractual",
+     "adopted2025": 6000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3700.0
+      },
+      {
+       "year": 2021,
+       "value": 4000.0
+      },
+      {
+       "year": 2022,
+       "value": 4000.0
+      },
+      {
+       "year": 2023,
+       "value": 4000.0
+      },
+      {
+       "year": 2024,
+       "value": 6000.0
+      },
+      {
+       "year": 2025,
+       "value": 6000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 6000.0
+    },
+    {
+     "account": "SM1-4-4540-472-000-00000",
+     "name": "Amb - Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15600.0
+      },
+      {
+       "year": 2021,
+       "value": 19000.0
+      },
+      {
+       "year": 2022,
+       "value": 19000.0
+      },
+      {
+       "year": 2023,
+       "value": 19000.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    },
+    {
+     "account": "SM1-4-4540-473-000-00000",
+     "name": "Amb - Utl - Heating Fuel/Oil",
+     "category": "Contractual",
+     "adopted2025": 9500.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5000.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 7300.0
+      },
+      {
+       "year": 2025,
+       "value": 9500.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 7300.0
+    },
+    {
+     "account": "SM1-4-4540-474-000-00000",
+     "name": "Amb - Utl - Water",
+     "category": "Contractual",
+     "adopted2025": 1500.0,
+     "deptRequested2026": 2000.0,
+     "tentative2026": 2000.0,
+     "preliminary2026": 2000.0,
+     "adopted2026": 2000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1500.0
+      },
+      {
+       "year": 2026,
+       "value": 2000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    },
+    {
+     "account": "SM1-4-4540-495-000-00000",
+     "name": "Amb - Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 162700.0,
+     "deptRequested2026": 164400.0,
+     "tentative2026": 164400.0,
+     "preliminary2026": 164400.0,
+     "adopted2026": 164400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 152300.0
+      },
+      {
+       "year": 2021,
+       "value": 145700.0
+      },
+      {
+       "year": 2022,
+       "value": 151900.0
+      },
+      {
+       "year": 2023,
+       "value": 139900.0
+      },
+      {
+       "year": 2024,
+       "value": 147100.0
+      },
+      {
+       "year": 2025,
+       "value": 162700.0
+      },
+      {
+       "year": 2026,
+       "value": 164400.0
+      }
+     ],
+     "adopted2024": 147100.0
+    }
+   ],
+   "lineItemCount": 13
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 0,
+   "adopted2025": 0,
+   "adopted2026": 450000.0,
+   "change": 450000.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 450000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SM1-9-9901-900-V01-00000",
+     "name": "Trf - Interfund Trf - Gen Fund Debt Svc",
+     "category": "Interfund / Transfers",
+     "adopted2025": 0.0,
+     "deptRequested2026": 450000.0,
+     "tentative2026": 450000.0,
+     "preliminary2026": 450000.0,
+     "adopted2026": 450000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 0.0
+      },
+      {
+       "year": 2026,
+       "value": 450000.0
+      }
+     ],
+     "adopted2024": 0.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9990",
+   "name": "Ambulance",
+   "adopted2024": 2121411.0,
+   "adopted2025": 2536549.0,
+   "adopted2026": 190000.0,
+   "change": -2346549.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 190000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SM1-9-9990-000-000-00000",
+     "name": "Ambulance - RVAC & Improvements Reserve",
+     "category": "Other",
+     "adopted2025": 2536549.0,
+     "deptRequested2026": 190000.0,
+     "tentative2026": 190000.0,
+     "preliminary2026": 190000.0,
+     "adopted2026": 190000.0,
+     "history": [
+      {
+       "year": 2023,
+       "value": 2088021.0
+      },
+      {
+       "year": 2024,
+       "value": 2121411.0
+      },
+      {
+       "year": 2025,
+       "value": 2536549.0
+      },
+      {
+       "year": 2026,
+       "value": 190000.0
+      }
+     ],
+     "adopted2024": 2121411.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 59200.0,
+   "adopted2025": 62900.0,
+   "adopted2026": 69600.0,
+   "change": 6700.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 69600.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SM1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 44700.0,
+     "deptRequested2026": 50400.0,
+     "tentative2026": 50400.0,
+     "preliminary2026": 50400.0,
+     "adopted2026": 50400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12300.0
+      },
+      {
+       "year": 2021,
+       "value": 12900.0
+      },
+      {
+       "year": 2022,
+       "value": 13800.0
+      },
+      {
+       "year": 2023,
+       "value": 15400.0
+      },
+      {
+       "year": 2024,
+       "value": 40800.0
+      },
+      {
+       "year": 2025,
+       "value": 44700.0
+      },
+      {
+       "year": 2026,
+       "value": 50400.0
+      }
+     ],
+     "adopted2024": 40800.0
+    },
+    {
+     "account": "SM1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 18200.0,
+     "deptRequested2026": 19200.0,
+     "tentative2026": 19200.0,
+     "preliminary2026": 19200.0,
+     "adopted2026": 19200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8800.0
+      },
+      {
+       "year": 2021,
+       "value": 8700.0
+      },
+      {
+       "year": 2022,
+       "value": 8900.0
+      },
+      {
+       "year": 2023,
+       "value": 8900.0
+      },
+      {
+       "year": 2024,
+       "value": 18400.0
+      },
+      {
+       "year": 2025,
+       "value": 18200.0
+      },
+      {
+       "year": 2026,
+       "value": 19200.0
+      }
+     ],
+     "adopted2024": 18400.0
+    }
+   ],
+   "lineItemCount": 2
+  }
+ ],
+ "revenues": [
+  {
+   "account": "SM1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 1658800.0,
+   "deptRequested2026": 1705024.0,
+   "tentative2026": 1704224.0,
+   "preliminary2026": 1704224.0,
+   "adopted2026": 1704224.0
+  },
+  {
+   "account": "SM1-1081-100-00000-B",
+   "name": "PILOT - LIPA",
+   "adopted2025": 43300.0,
+   "deptRequested2026": 43300.0,
+   "tentative2026": 43300.0,
+   "preliminary2026": 43300.0,
+   "adopted2026": 43300.0
+  },
+  {
+   "account": "SM1-1640-000-00000-4",
+   "name": "Ambulance Charges - Medical Billing",
+   "adopted2025": 100000.0,
+   "deptRequested2026": 640000.0,
+   "tentative2026": 640000.0,
+   "preliminary2026": 640000.0,
+   "adopted2026": 640000.0
+  },
+  {
+   "account": "SM1-1640-100-00000-4",
+   "name": "Ambulance Charges - Full Billing",
+   "adopted2025": 2710749.0,
+   "deptRequested2026": 0.0,
+   "tentative2026": 0.0,
+   "preliminary2026": 0.0,
+   "adopted2026": 0.0
+  },
+  {
+   "account": "SM1-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 500.0,
+   "deptRequested2026": 500.0,
+   "tentative2026": 1300.0,
+   "preliminary2026": 1300.0,
+   "adopted2026": 1300.0
+  }
+ ],
+ "officialAppropriations2026": 2388824,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

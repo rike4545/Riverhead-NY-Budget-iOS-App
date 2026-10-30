@@ -1,0 +1,87 @@
+{
+ "code": "MS1",
+ "name": "Workers Compensation Fund",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 1050000.0,
+ "expenditureTotal2025": 1050000.0,
+ "revenueTotal2026": 1050000.0,
+ "departmentCount": 1,
+ "lineItemCount": 2,
+ "departments": [
+  {
+   "code": "1710",
+   "name": "Workers Comp",
+   "adopted2024": 1050000.0,
+   "adopted2025": 1050000.0,
+   "adopted2026": 1050000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 1050000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "MS1-1-1710-488-000-00000",
+     "name": "Workers Comp - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 1050000.0,
+     "deptRequested2026": 1050000.0,
+     "tentative2026": 1050000.0,
+     "preliminary2026": 1050000.0,
+     "adopted2026": 1050000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 950000.0
+      },
+      {
+       "year": 2021,
+       "value": 950000.0
+      },
+      {
+       "year": 2022,
+       "value": 950000.0
+      },
+      {
+       "year": 2023,
+       "value": 950000.0
+      },
+      {
+       "year": 2024,
+       "value": 1050000.0
+      },
+      {
+       "year": 2025,
+       "value": 1050000.0
+      },
+      {
+       "year": 2026,
+       "value": 1050000.0
+      }
+     ],
+     "adopted2024": 1050000.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "MS1-5031-A01-00000-K",
+   "name": "Interfund Transfers - A01",
+   "adopted2025": 1050000.0,
+   "deptRequested2026": 1050000.0,
+   "tentative2026": 1050000.0,
+   "preliminary2026": 1050000.0,
+   "adopted2026": 1050000.0
+  }
+ ],
+ "officialAppropriations2026": 1050000,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

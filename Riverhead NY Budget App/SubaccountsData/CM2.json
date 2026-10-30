@@ -1,0 +1,865 @@
+{
+ "code": "CM2",
+ "name": "East Creek Docking Facility",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 288100.0,
+ "expenditureTotal2025": 294323.0,
+ "revenueTotal2026": 288100.0,
+ "departmentCount": 8,
+ "lineItemCount": 21,
+ "departments": [
+  {
+   "code": "7230",
+   "name": "Marinas & Docs",
+   "adopted2024": 120975.0,
+   "adopted2025": 129876.0,
+   "adopted2026": 102613.0,
+   "change": -27263.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 43813.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 58800.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-7-7230-101-NON-00000",
+     "name": "Docs - Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 38730.0,
+     "deptRequested2026": 43483.0,
+     "tentative2026": 40478.0,
+     "preliminary2026": 40478.0,
+     "adopted2026": 40478.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25900.0
+      },
+      {
+       "year": 2021,
+       "value": 26000.0
+      },
+      {
+       "year": 2022,
+       "value": 26100.0
+      },
+      {
+       "year": 2023,
+       "value": 29000.0
+      },
+      {
+       "year": 2024,
+       "value": 30108.0
+      },
+      {
+       "year": 2025,
+       "value": 38730.0
+      },
+      {
+       "year": 2026,
+       "value": 40478.0
+      }
+     ],
+     "adopted2024": 30108.0
+    },
+    {
+     "account": "CM2-7-7230-112-NON-00000",
+     "name": "Docs - Pers Svcs Longevity",
+     "category": "Personal Services",
+     "adopted2025": 2481.0,
+     "deptRequested2026": 2805.0,
+     "tentative2026": 2595.0,
+     "preliminary2026": 2595.0,
+     "adopted2026": 2595.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1700.0
+      },
+      {
+       "year": 2021,
+       "value": 1700.0
+      },
+      {
+       "year": 2022,
+       "value": 1700.0
+      },
+      {
+       "year": 2023,
+       "value": 1700.0
+      },
+      {
+       "year": 2024,
+       "value": 2108.0
+      },
+      {
+       "year": 2025,
+       "value": 2481.0
+      },
+      {
+       "year": 2026,
+       "value": 2595.0
+      }
+     ],
+     "adopted2024": 2108.0
+    },
+    {
+     "account": "CM2-7-7230-123-000-00000",
+     "name": "Marinas & Docs Cleaning Allowance",
+     "category": "Personal Services",
+     "adopted2025": 140.0,
+     "deptRequested2026": 140.0,
+     "tentative2026": 140.0,
+     "preliminary2026": 140.0,
+     "adopted2026": 140.0,
+     "history": [
+      {
+       "year": 2024,
+       "value": 100.0
+      },
+      {
+       "year": 2025,
+       "value": 140.0
+      },
+      {
+       "year": 2026,
+       "value": 140.0
+      }
+     ],
+     "adopted2024": 100.0
+    },
+    {
+     "account": "CM2-7-7230-152-000-00000",
+     "name": "Docs - Pers Svcs Sick Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 1025.0,
+     "deptRequested2026": 1025.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 6100.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 900.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 900.0
+      },
+      {
+       "year": 2025,
+       "value": 1025.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 900.0
+    },
+    {
+     "account": "CM2-7-7230-153-000-00000",
+     "name": "Marinas & Docs Mgmt Buyback",
+     "category": "Personal Services",
+     "adopted2025": 1500.0,
+     "deptRequested2026": 1500.0,
+     "tentative2026": 600.0,
+     "preliminary2026": 600.0,
+     "adopted2026": 600.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 1500.0
+      },
+      {
+       "year": 2026,
+       "value": 600.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "CM2-7-7230-401-000-00000",
+     "name": "Docs - R&M",
+     "category": "Contractual",
+     "adopted2025": 14000.0,
+     "deptRequested2026": 14000.0,
+     "tentative2026": 14000.0,
+     "preliminary2026": 14000.0,
+     "adopted2026": 14000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8000.0
+      },
+      {
+       "year": 2021,
+       "value": 25200.0
+      },
+      {
+       "year": 2022,
+       "value": 25200.0
+      },
+      {
+       "year": 2023,
+       "value": 25400.0
+      },
+      {
+       "year": 2024,
+       "value": 21459.0
+      },
+      {
+       "year": 2025,
+       "value": 14000.0
+      },
+      {
+       "year": 2026,
+       "value": 14000.0
+      }
+     ],
+     "adopted2024": 21459.0
+    },
+    {
+     "account": "CM2-7-7230-472-000-00000",
+     "name": "Docs - Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 12000.0,
+     "deptRequested2026": 14000.0,
+     "tentative2026": 14000.0,
+     "preliminary2026": 14000.0,
+     "adopted2026": 14000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12000.0
+      },
+      {
+       "year": 2021,
+       "value": 12000.0
+      },
+      {
+       "year": 2022,
+       "value": 12000.0
+      },
+      {
+       "year": 2023,
+       "value": 12000.0
+      },
+      {
+       "year": 2024,
+       "value": 12000.0
+      },
+      {
+       "year": 2025,
+       "value": 12000.0
+      },
+      {
+       "year": 2026,
+       "value": 14000.0
+      }
+     ],
+     "adopted2024": 12000.0
+    },
+    {
+     "account": "CM2-7-7230-474-000-00000",
+     "name": "Docs - Utl - Water",
+     "category": "Contractual",
+     "adopted2025": 1200.0,
+     "deptRequested2026": 1200.0,
+     "tentative2026": 1200.0,
+     "preliminary2026": 1200.0,
+     "adopted2026": 1200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 500.0
+      },
+      {
+       "year": 2021,
+       "value": 500.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 1200.0
+      },
+      {
+       "year": 2026,
+       "value": 1200.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "CM2-7-7230-475-000-00000",
+     "name": "Docs - Utl - WiFi",
+     "category": "Contractual",
+     "adopted2025": 4200.0,
+     "deptRequested2026": 4200.0,
+     "tentative2026": 4200.0,
+     "preliminary2026": 4200.0,
+     "adopted2026": 4200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 1800.0
+      },
+      {
+       "year": 2023,
+       "value": 4200.0
+      },
+      {
+       "year": 2024,
+       "value": 4200.0
+      },
+      {
+       "year": 2025,
+       "value": 4200.0
+      },
+      {
+       "year": 2026,
+       "value": 4200.0
+      }
+     ],
+     "adopted2024": 4200.0
+    },
+    {
+     "account": "CM2-7-7230-495-000-00000",
+     "name": "Docs - Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 54600.0,
+     "deptRequested2026": 25400.0,
+     "tentative2026": 25400.0,
+     "preliminary2026": 25400.0,
+     "adopted2026": 25400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 45300.0
+      },
+      {
+       "year": 2021,
+       "value": 45000.0
+      },
+      {
+       "year": 2022,
+       "value": 51000.0
+      },
+      {
+       "year": 2023,
+       "value": 51500.0
+      },
+      {
+       "year": 2024,
+       "value": 49600.0
+      },
+      {
+       "year": 2025,
+       "value": 54600.0
+      },
+      {
+       "year": 2026,
+       "value": 25400.0
+      }
+     ],
+     "adopted2024": 49600.0
+    }
+   ],
+   "lineItemCount": 10
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 108200.0,
+   "adopted2025": 105600.0,
+   "adopted2026": 102000.0,
+   "change": -3600.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 102000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9901-900-V01-00000",
+     "name": "Trf - Interfund Trf - Gen Fund Debt Svc",
+     "category": "Interfund / Transfers",
+     "adopted2025": 105600.0,
+     "deptRequested2026": 102000.0,
+     "tentative2026": 102000.0,
+     "preliminary2026": 102000.0,
+     "adopted2026": 102000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 124700.0
+      },
+      {
+       "year": 2021,
+       "value": 116400.0
+      },
+      {
+       "year": 2022,
+       "value": 114200.0
+      },
+      {
+       "year": 2023,
+       "value": 111100.0
+      },
+      {
+       "year": 2024,
+       "value": 108200.0
+      },
+      {
+       "year": 2025,
+       "value": 105600.0
+      },
+      {
+       "year": 2026,
+       "value": 102000.0
+      }
+     ],
+     "adopted2024": 108200.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 27100.0,
+   "adopted2025": 28600.0,
+   "adopted2026": 29800.0,
+   "change": 1200.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 29800.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-1-1910-487-000-00000",
+     "name": "Unall Ins - Self Insurance Payments",
+     "category": "Contractual",
+     "adopted2025": 27300.0,
+     "deptRequested2026": 28500.0,
+     "tentative2026": 28500.0,
+     "preliminary2026": 28500.0,
+     "adopted2026": 28500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15100.0
+      },
+      {
+       "year": 2021,
+       "value": 15200.0
+      },
+      {
+       "year": 2022,
+       "value": 16800.0
+      },
+      {
+       "year": 2023,
+       "value": 23300.0
+      },
+      {
+       "year": 2024,
+       "value": 25600.0
+      },
+      {
+       "year": 2025,
+       "value": 27300.0
+      },
+      {
+       "year": 2026,
+       "value": 28500.0
+      }
+     ],
+     "adopted2024": 25600.0
+    },
+    {
+     "account": "CM2-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 1300.0,
+     "deptRequested2026": 1300.0,
+     "tentative2026": 1300.0,
+     "preliminary2026": 1300.0,
+     "adopted2026": 1300.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 1500.0
+      },
+      {
+       "year": 2024,
+       "value": 1500.0
+      },
+      {
+       "year": 2025,
+       "value": 1300.0
+      },
+      {
+       "year": 2026,
+       "value": 1300.0
+      }
+     ],
+     "adopted2024": 1500.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 14345.0,
+   "adopted2025": 19322.0,
+   "adopted2026": 21073.0,
+   "change": 1751.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 21073.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 19322.0,
+     "deptRequested2026": 21073.0,
+     "tentative2026": 21073.0,
+     "preliminary2026": 21073.0,
+     "adopted2026": 21073.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 13300.0
+      },
+      {
+       "year": 2021,
+       "value": 11100.0
+      },
+      {
+       "year": 2022,
+       "value": 11900.0
+      },
+      {
+       "year": 2023,
+       "value": 13000.0
+      },
+      {
+       "year": 2024,
+       "value": 14345.0
+      },
+      {
+       "year": 2025,
+       "value": 19322.0
+      },
+      {
+       "year": 2026,
+       "value": 21073.0
+      }
+     ],
+     "adopted2024": 14345.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9990",
+   "name": "Function 9990",
+   "adopted2024": 0,
+   "adopted2025": 0,
+   "adopted2026": 20795.0,
+   "change": 20795.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 20795.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9990-000-000-00000",
+     "name": "Fund Balance Contribution",
+     "category": "Other",
+     "adopted2025": 0.0,
+     "deptRequested2026": 15119.0,
+     "tentative2026": 20795.0,
+     "preliminary2026": 20795.0,
+     "adopted2026": 20795.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 20795.0
+      }
+     ],
+     "adopted2024": null
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 5670.0,
+   "adopted2025": 7418.0,
+   "adopted2026": 8467.0,
+   "change": 1049.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 8467.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 7418.0,
+     "deptRequested2026": 8379.0,
+     "tentative2026": 8467.0,
+     "preliminary2026": 8467.0,
+     "adopted2026": 8467.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4400.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 3600.0
+      },
+      {
+       "year": 2023,
+       "value": 4600.0
+      },
+      {
+       "year": 2024,
+       "value": 5670.0
+      },
+      {
+       "year": 2025,
+       "value": 7418.0
+      },
+      {
+       "year": 2026,
+       "value": 8467.0
+      }
+     ],
+     "adopted2024": 5670.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 2594.0,
+   "adopted2025": 3357.0,
+   "adopted2026": 3352.0,
+   "change": -5.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 3352.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 3357.0,
+     "deptRequested2026": 3665.0,
+     "tentative2026": 3352.0,
+     "preliminary2026": 3352.0,
+     "adopted2026": 3352.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2600.0
+      },
+      {
+       "year": 2021,
+       "value": 2200.0
+      },
+      {
+       "year": 2022,
+       "value": 2200.0
+      },
+      {
+       "year": 2023,
+       "value": 2400.0
+      },
+      {
+       "year": 2024,
+       "value": 2594.0
+      },
+      {
+       "year": 2025,
+       "value": 3357.0
+      },
+      {
+       "year": 2026,
+       "value": 3352.0
+      }
+     ],
+     "adopted2024": 2594.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 116.0,
+   "adopted2025": 150.0,
+   "adopted2026": 0,
+   "change": -150.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "CM2-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 150.0,
+     "deptRequested2026": 311.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 200.0
+      },
+      {
+       "year": 2021,
+       "value": 100.0
+      },
+      {
+       "year": 2022,
+       "value": 100.0
+      },
+      {
+       "year": 2023,
+       "value": 200.0
+      },
+      {
+       "year": 2024,
+       "value": 116.0
+      },
+      {
+       "year": 2025,
+       "value": 150.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 116.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "CM2-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 100.0,
+   "deptRequested2026": 100.0,
+   "tentative2026": 100.0,
+   "preliminary2026": 100.0,
+   "adopted2026": 100.0
+  },
+  {
+   "account": "CM2-2410-000-00000-7",
+   "name": "Rental Income",
+   "adopted2025": 285371.0,
+   "deptRequested2026": 280000.0,
+   "tentative2026": 280000.0,
+   "preliminary2026": 280000.0,
+   "adopted2026": 280000.0
+  },
+  {
+   "account": "CM2-2410-352-00000-1",
+   "name": "Rental Income - Utilities",
+   "adopted2025": 8852.0,
+   "deptRequested2026": 8000.0,
+   "tentative2026": 8000.0,
+   "preliminary2026": 8000.0,
+   "adopted2026": 8000.0
+  }
+ ],
+ "officialAppropriations2026": 288100,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

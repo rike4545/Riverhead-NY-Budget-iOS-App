@@ -2,8 +2,7 @@ name: Sync canonical web data
 
 on:
   schedule:
-    # Refresh bundled datasets weekly (Monday at 15:17 UTC).
-    - cron: '17 15 * * 1'
+    - cron: '17 15 * * *'
   workflow_dispatch:
 
 permissions:
@@ -18,18 +17,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out iOS app
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: mobile
 
       - name: Check out canonical web source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: rike4545/Riverhead-NY-Budget-Web-App
           path: web-source
 
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
       - name: Sync datasets from web ETL
         run: node web-source/web/scripts/sync-shared-data.mjs --consumer ios --root mobile
+
+      # programs.json is not in the web repo's shared-data manifest, so the ETL
+      # sync above never copies it and the bundled copy froze at 22,055 bytes
+      # against a live 38,314 — a stale population and four years of missing
+      # history, shown whenever the network copy is unreachable. This fetches
+      # it directly and installs it only if it satisfies the decoder.
+      - name: Refresh the bundled Program Budget copy
+        working-directory: mobile
+        run: bash .github/scripts/sync-programs.sh
 
       - name: Commit canonical data changes
         working-directory: mobile
@@ -40,6 +52,12 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Riverhead NY Budget App/MeetingsData" "Riverhead NY Budget App/supplement-lines.json" "Riverhead NY Budget App/supplement-outliers.json" "Riverhead NY Budget App/reductions.json" "Riverhead NY Budget App/payroll-records.json" "Riverhead NY Budget App/titles-by-year.json"
+          git add "Riverhead NY Budget App/MeetingsData" \
+                  "Riverhead NY Budget App/supplement-lines.json" \
+                  "Riverhead NY Budget App/supplement-outliers.json" \
+                  "Riverhead NY Budget App/reductions.json" \
+                  "Riverhead NY Budget App/payroll-records.json" \
+                  "Riverhead NY Budget App/titles-by-year.json" \
+                  "Riverhead NY Budget App/programs.json"
           git commit -m "Sync canonical data from web source"
           git push

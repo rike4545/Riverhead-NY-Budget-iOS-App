@@ -447,6 +447,25 @@ function realSuite() {
             contract.endpoints.some((e) => e.id === set.endpoint));
     }
 
+    // Every route the contract names has to be a route the app actually has.
+    // Matching is by endpoint id, so a wrong route label changes no behaviour
+    // and goes unnoticed — it makes every report about that endpoint cite
+    // a page that does not exist. Keep the contract and the app route table
+    // tied together so stale paths fail the self-test before a report is trusted.
+    {
+        const swift = readFileSync(join(sourceDir, 'BudgetLiveParityView.swift'), 'utf8');
+        const appRoutes = new Set([...swift.matchAll(/path:\s*"([^"]+)"/g)].map((m) => m[1]));
+        for (const endpoint of contract.endpoints) {
+            if (!endpoint.route) continue;
+            check(`${endpoint.id}: route \`${endpoint.route}\` is one the app has`,
+                appRoutes.has(endpoint.route));
+        }
+        if (contract.navigation?.page) {
+            check(`navigation page \`${contract.navigation.page}\` is one the app has`,
+                appRoutes.has(contract.navigation.page));
+        }
+    }
+
     const clean = buildFixture(contract, types, sourceDir);
     {
         const { status, report } = run(clean, options);

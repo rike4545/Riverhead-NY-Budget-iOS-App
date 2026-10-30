@@ -19,7 +19,7 @@ on:
 # a fork is read-only regardless.
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 concurrency:
   group: parity-drift-${{ github.event_name == 'pull_request' && github.ref || 'scheduled' }}
@@ -96,7 +96,7 @@ jobs:
           fi
           echo "$breaks break, $drifts drift"
 
-      - name: Open or update the draft pull request
+      - name: Open or update the parity tracking issue
         if: always() && github.event_name != 'pull_request' && steps.triage.outputs.actionable == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -142,7 +142,7 @@ jobs:
           git commit -m "Report web parity drift: ${BREAKS} break, ${DRIFTS} drift"
           git push -u origin "$REPORT_BRANCH"
 
-          existing="$(gh pr list --head "$REPORT_BRANCH" --state open --json number --jq '.[0].number' || true)"
+          existing="$(gh issue list --state open --search "in:title Web parity drift" --json number --jq '.[0].number' | head -n 1 || true)"
 
           {
             echo "The web app's published data no longer matches what the native parity views expect."
@@ -154,9 +154,9 @@ jobs:
             echo
             cat parity-drift.md
             echo
-            echo "### What this pull request does and does not do"
+            echo "### What this issue does and does not do"
             echo
-            echo "It carries the report. It does not change any Swift, because every fix here needs a"
+            echo "The report is committed to the `automation/parity-drift` branch. It does not change any Swift, because every fix here needs a"
             echo "decision a script should not make on its own: whether a vanished field should become"
             echo "optional or the view should stop showing it, which of two new published fields is worth"
             echo "a row on screen, how a new status code should be coloured."
@@ -172,11 +172,11 @@ jobs:
           } > pr-body.md
 
           if [ -n "$existing" ]; then
-            gh pr edit "$existing" --body-file pr-body.md \
+            gh issue edit "$existing" --body-file pr-body.md \
               --title "Web parity drift: ${BREAKS} break, ${DRIFTS} drift"
-            echo "Updated pull request #${existing}."
+            echo "Updated issue #${existing}."
           else
-            gh pr create --draft --base "$base" --head "$REPORT_BRANCH" \
+            gh issue create \
               --title "Web parity drift: ${BREAKS} break, ${DRIFTS} drift" \
               --body-file pr-body.md
           fi

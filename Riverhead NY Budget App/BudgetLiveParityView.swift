@@ -80,6 +80,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Budget Compare", path: "/compare/", systemImage: "chart.bar.doc.horizontal", detail: "Compare adopted fund appropriations across 2020–2026."),
             .init(title: "General Fund", path: "/general-fund/", systemImage: "chart.line.uptrend.xyaxis", detail: "Review the long-run General Fund history."),
             .init(title: "Where Revenue Comes From", path: "/revenue/", systemImage: "arrow.down.left.circle.fill", detail: "Explore the revenue sources that support each fund and service."),
+            .init(title: "RVAC Funding", path: "/rvac-funding/", systemImage: "building.2.crop.circle", detail: "Review Riverhead Volunteer Ambulance Corps funding, payments, and supporting records."),
             .init(title: "Annual Report", path: "/annual-report/", systemImage: "doc.text.magnifyingglass", detail: "Explore the Town's annual financial report in searchable form."),
             .init(title: "Tax Cap", path: "/tax-cap/", systemImage: "percent", detail: "Understand the New York property-tax cap and Riverhead history."),
             .init(title: "Reserves & Fund Balance", path: "/reserves/", systemImage: "banknote.fill", detail: "Review reserve policy, fund balance, draw-down modeling, and peers."),

@@ -1,0 +1,229 @@
+{
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "generatedFrom": "2026-2026-adopted-budget.json",
+ "fundCount": 19,
+ "totalLineItems": 1009,
+ "historyYears": [
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "funds": [
+  {
+   "code": "A01",
+   "name": "General Fund",
+   "expenditureTotal2026": 69113159.0,
+   "officialAppropriations2026": 69113159,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 67356859.0,
+   "departmentCount": 64,
+   "lineItemCount": 565
+  },
+  {
+   "code": "EW1",
+   "name": "Water District",
+   "expenditureTotal2026": 11008655.0,
+   "officialAppropriations2026": 11008655,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 11008655.0,
+   "departmentCount": 12,
+   "lineItemCount": 53
+  },
+  {
+   "code": "ES1",
+   "name": "Riverhead Sewer District",
+   "expenditureTotal2026": 8142722.0,
+   "officialAppropriations2026": 8142722,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 8142722.0,
+   "departmentCount": 12,
+   "lineItemCount": 69
+  },
+  {
+   "code": "DA1",
+   "name": "Highway Fund",
+   "expenditureTotal2026": 7919250.0,
+   "officialAppropriations2026": 7919250,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 7919250.0,
+   "departmentCount": 11,
+   "lineItemCount": 44
+  },
+  {
+   "code": "V01",
+   "name": "Debt Service Fund",
+   "expenditureTotal2026": 6888150.0,
+   "officialAppropriations2026": 6888150,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 6888150.0,
+   "departmentCount": 2,
+   "lineItemCount": 10
+  },
+  {
+   "code": "SR1",
+   "name": "Refuse and Garbage District",
+   "expenditureTotal2026": 5254540.0,
+   "officialAppropriations2026": 5254540,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 5254540.0,
+   "departmentCount": 4,
+   "lineItemCount": 15
+  },
+  {
+   "code": "CM4",
+   "name": "Community Preservation Fund",
+   "expenditureTotal2026": 2979300.0,
+   "officialAppropriations2026": 2979300,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 2979300.0,
+   "departmentCount": 2,
+   "lineItemCount": 3
+  },
+  {
+   "code": "SM1",
+   "name": "Ambulance District",
+   "expenditureTotal2026": 2388824.0,
+   "officialAppropriations2026": 2388824,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 2388824.0,
+   "departmentCount": 4,
+   "lineItemCount": 22
+  },
+  {
+   "code": "ES5",
+   "name": "Riverhead Scavenger Waste",
+   "expenditureTotal2026": 2231988.0,
+   "officialAppropriations2026": 2231988,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 2231988.0,
+   "departmentCount": 9,
+   "lineItemCount": 50
+  },
+  {
+   "code": "ES3",
+   "name": "Calverton Sewer District",
+   "expenditureTotal2026": 1488357.0,
+   "officialAppropriations2026": 1488357,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 1488357.0,
+   "departmentCount": 11,
+   "lineItemCount": 48
+  },
+  {
+   "code": "MS1",
+   "name": "Workers Compensation Fund",
+   "expenditureTotal2026": 1050000.0,
+   "officialAppropriations2026": 1050000,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 1050000.0,
+   "departmentCount": 1,
+   "lineItemCount": 2
+  },
+  {
+   "code": "SL1",
+   "name": "Street Lighting District",
+   "expenditureTotal2026": 926533.0,
+   "officialAppropriations2026": 926533,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 926533.0,
+   "departmentCount": 7,
+   "lineItemCount": 28
+  },
+  {
+   "code": "A06",
+   "name": "Recreation Program Fund",
+   "expenditureTotal2026": 504500.0,
+   "officialAppropriations2026": 504500,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 504500.0,
+   "departmentCount": 13,
+   "lineItemCount": 30
+  },
+  {
+   "code": "MS2",
+   "name": "Risk Retention Fund",
+   "expenditureTotal2026": 450000.0,
+   "officialAppropriations2026": 450000,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 450000.0,
+   "departmentCount": 1,
+   "lineItemCount": 2
+  },
+  {
+   "code": "CM2",
+   "name": "East Creek Docking Facility",
+   "expenditureTotal2026": 288100.0,
+   "officialAppropriations2026": 288100,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 288100.0,
+   "departmentCount": 8,
+   "lineItemCount": 21
+  },
+  {
+   "code": "ST1",
+   "name": "Public Parking District",
+   "expenditureTotal2026": 207100.0,
+   "officialAppropriations2026": 207100,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 207100.0,
+   "departmentCount": 5,
+   "lineItemCount": 11
+  },
+  {
+   "code": "CM1",
+   "name": "Business Improvement District",
+   "expenditureTotal2026": 144136.0,
+   "officialAppropriations2026": 144136,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 144136.0,
+   "departmentCount": 2,
+   "lineItemCount": 7
+  },
+  {
+   "code": "A04",
+   "name": "Police Athletic League",
+   "expenditureTotal2026": 81490.0,
+   "officialAppropriations2026": 81490,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 81490.0,
+   "departmentCount": 6,
+   "lineItemCount": 22
+  },
+  {
+   "code": "Z14",
+   "name": "Calverton Parks Community Development Agency",
+   "expenditureTotal2026": 44100.0,
+   "officialAppropriations2026": 44100,
+   "reconciliationVariance2026": 0.0,
+   "reconciled": true,
+   "revenueTotal2026": 44100.0,
+   "departmentCount": 2,
+   "lineItemCount": 7
+  }
+ ]
+}

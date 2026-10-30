@@ -1,0 +1,663 @@
+{
+ "code": "SR1",
+ "name": "Refuse and Garbage District",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 5254540.0,
+ "expenditureTotal2025": 5165700.0,
+ "revenueTotal2026": 5254540.0,
+ "departmentCount": 4,
+ "lineItemCount": 15,
+ "departments": [
+  {
+   "code": "8160",
+   "name": "Refuse & Garbage",
+   "adopted2024": 4793071.0,
+   "adopted2025": 5012432.0,
+   "adopted2026": 5097076.0,
+   "change": 84644.0,
+   "categoryTotals": [
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 50000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 5047076.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SR1-8-8160-280-000-00000",
+     "name": "Refuse - Vehicles",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 50000.0,
+     "deptRequested2026": 50000.0,
+     "tentative2026": 50000.0,
+     "preliminary2026": 50000.0,
+     "adopted2026": 50000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 50000.0
+      },
+      {
+       "year": 2026,
+       "value": 50000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "SR1-8-8160-400-000-00000",
+     "name": "Refuse - Contractual",
+     "category": "Contractual",
+     "adopted2025": 341200.0,
+     "deptRequested2026": 385400.0,
+     "tentative2026": 385400.0,
+     "preliminary2026": 385400.0,
+     "adopted2026": 385400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 206500.0
+      },
+      {
+       "year": 2021,
+       "value": 221100.0
+      },
+      {
+       "year": 2022,
+       "value": 233700.0
+      },
+      {
+       "year": 2023,
+       "value": 285600.0
+      },
+      {
+       "year": 2024,
+       "value": 378771.0
+      },
+      {
+       "year": 2025,
+       "value": 341200.0
+      },
+      {
+       "year": 2026,
+       "value": 385400.0
+      }
+     ],
+     "adopted2024": 378771.0
+    },
+    {
+     "account": "SR1-8-8160-405-000-00000",
+     "name": "Refuse - R&M - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 6000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 6000.0
+      },
+      {
+       "year": 2021,
+       "value": 6000.0
+      },
+      {
+       "year": 2022,
+       "value": 6000.0
+      },
+      {
+       "year": 2023,
+       "value": 6000.0
+      },
+      {
+       "year": 2024,
+       "value": 6000.0
+      },
+      {
+       "year": 2025,
+       "value": 6000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 6000.0
+    },
+    {
+     "account": "SR1-8-8160-426-000-00000",
+     "name": "Refuse Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 4500.0,
+     "deptRequested2026": 4500.0,
+     "tentative2026": 4500.0,
+     "preliminary2026": 4500.0,
+     "adopted2026": 4500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4500.0
+      },
+      {
+       "year": 2021,
+       "value": 4500.0
+      },
+      {
+       "year": 2022,
+       "value": 4500.0
+      },
+      {
+       "year": 2023,
+       "value": 4500.0
+      },
+      {
+       "year": 2024,
+       "value": 4500.0
+      },
+      {
+       "year": 2025,
+       "value": 4500.0
+      },
+      {
+       "year": 2026,
+       "value": 4500.0
+      }
+     ],
+     "adopted2024": 4500.0
+    },
+    {
+     "account": "SR1-8-8160-455-231-00000",
+     "name": "Refuse - Program Exp - Recycling Program",
+     "category": "Contractual",
+     "adopted2025": 1000.0,
+     "deptRequested2026": 1000.0,
+     "tentative2026": 1000.0,
+     "preliminary2026": 1000.0,
+     "adopted2026": 1000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 1000.0
+      },
+      {
+       "year": 2025,
+       "value": 1000.0
+      },
+      {
+       "year": 2026,
+       "value": 1000.0
+      }
+     ],
+     "adopted2024": 1000.0
+    },
+    {
+     "account": "SR1-8-8160-482-000-00000",
+     "name": "Refuse - Waste Disposal",
+     "category": "Contractual",
+     "adopted2025": 4485858.0,
+     "deptRequested2026": 4529102.0,
+     "tentative2026": 4529102.0,
+     "preliminary2026": 4529102.0,
+     "adopted2026": 4529102.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2953000.0
+      },
+      {
+       "year": 2021,
+       "value": 3204900.0
+      },
+      {
+       "year": 2022,
+       "value": 3243600.0
+      },
+      {
+       "year": 2023,
+       "value": 3566500.0
+      },
+      {
+       "year": 2024,
+       "value": 4371000.0
+      },
+      {
+       "year": 2025,
+       "value": 4485858.0
+      },
+      {
+       "year": 2026,
+       "value": 4529102.0
+      }
+     ],
+     "adopted2024": 4371000.0
+    },
+    {
+     "account": "SR1-8-8160-482-100-00000",
+     "name": "Refuse - Waste Disposal - Tipping Fees",
+     "category": "Contractual",
+     "adopted2025": 100000.0,
+     "deptRequested2026": 100000.0,
+     "tentative2026": 100000.0,
+     "preliminary2026": 100000.0,
+     "adopted2026": 100000.0,
+     "history": [
+      {
+       "year": 2023,
+       "value": 307400.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 100000.0
+      },
+      {
+       "year": 2026,
+       "value": 100000.0
+      }
+     ],
+     "adopted2024": 0.0
+    },
+    {
+     "account": "SR1-8-8160-490-000-00000",
+     "name": "Refuse - Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 4274.0,
+     "deptRequested2026": 4274.0,
+     "tentative2026": 4274.0,
+     "preliminary2026": 4274.0,
+     "adopted2026": 4274.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 3000.0
+      },
+      {
+       "year": 2022,
+       "value": 3000.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 5000.0
+      },
+      {
+       "year": 2025,
+       "value": 4274.0
+      },
+      {
+       "year": 2026,
+       "value": 4274.0
+      }
+     ],
+     "adopted2024": 5000.0
+    },
+    {
+     "account": "SR1-8-8160-495-000-00000",
+     "name": "Refuse - Administrative Charges",
+     "category": "Contractual",
+     "adopted2025": 19600.0,
+     "deptRequested2026": 16800.0,
+     "tentative2026": 16800.0,
+     "preliminary2026": 16800.0,
+     "adopted2026": 16800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12800.0
+      },
+      {
+       "year": 2021,
+       "value": 13800.0
+      },
+      {
+       "year": 2022,
+       "value": 16600.0
+      },
+      {
+       "year": 2023,
+       "value": 16300.0
+      },
+      {
+       "year": 2024,
+       "value": 16800.0
+      },
+      {
+       "year": 2025,
+       "value": 19600.0
+      },
+      {
+       "year": 2026,
+       "value": 16800.0
+      }
+     ],
+     "adopted2024": 16800.0
+    }
+   ],
+   "lineItemCount": 9
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 69900.0,
+   "adopted2025": 77700.0,
+   "adopted2026": 79700.0,
+   "change": 2000.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 79700.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SR1-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 55300.0,
+     "deptRequested2026": 57700.0,
+     "tentative2026": 57700.0,
+     "preliminary2026": 57700.0,
+     "adopted2026": 57700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 23600.0
+      },
+      {
+       "year": 2021,
+       "value": 26800.0
+      },
+      {
+       "year": 2022,
+       "value": 32500.0
+      },
+      {
+       "year": 2023,
+       "value": 35400.0
+      },
+      {
+       "year": 2024,
+       "value": 48200.0
+      },
+      {
+       "year": 2025,
+       "value": 55300.0
+      },
+      {
+       "year": 2026,
+       "value": 57700.0
+      }
+     ],
+     "adopted2024": 48200.0
+    },
+    {
+     "account": "SR1-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 22400.0,
+     "deptRequested2026": 22000.0,
+     "tentative2026": 22000.0,
+     "preliminary2026": 22000.0,
+     "adopted2026": 22000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 17000.0
+      },
+      {
+       "year": 2021,
+       "value": 17900.0
+      },
+      {
+       "year": 2022,
+       "value": 21000.0
+      },
+      {
+       "year": 2023,
+       "value": 21000.0
+      },
+      {
+       "year": 2024,
+       "value": 21700.0
+      },
+      {
+       "year": 2025,
+       "value": 22400.0
+      },
+      {
+       "year": 2026,
+       "value": 22000.0
+      }
+     ],
+     "adopted2024": 21700.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9040",
+   "name": "WC",
+   "adopted2024": 54000.0,
+   "adopted2025": 55000.0,
+   "adopted2026": 56300.0,
+   "change": 1300.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 56300.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SR1-9-9040-887-000-00000",
+     "name": "WC - Insurance Premuim",
+     "category": "Employee Benefits",
+     "adopted2025": 16200.0,
+     "deptRequested2026": 17500.0,
+     "tentative2026": 17500.0,
+     "preliminary2026": 17500.0,
+     "adopted2026": 17500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12300.0
+      },
+      {
+       "year": 2021,
+       "value": 13500.0
+      },
+      {
+       "year": 2022,
+       "value": 14800.0
+      },
+      {
+       "year": 2023,
+       "value": 15000.0
+      },
+      {
+       "year": 2024,
+       "value": 15400.0
+      },
+      {
+       "year": 2025,
+       "value": 16200.0
+      },
+      {
+       "year": 2026,
+       "value": 17500.0
+      }
+     ],
+     "adopted2024": 15400.0
+    },
+    {
+     "account": "SR1-9-9040-888-000-00000",
+     "name": "WC - Claim Payments",
+     "category": "Employee Benefits",
+     "adopted2025": 38800.0,
+     "deptRequested2026": 38800.0,
+     "tentative2026": 38800.0,
+     "preliminary2026": 38800.0,
+     "adopted2026": 38800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 35100.0
+      },
+      {
+       "year": 2021,
+       "value": 38800.0
+      },
+      {
+       "year": 2022,
+       "value": 38800.0
+      },
+      {
+       "year": 2023,
+       "value": 38800.0
+      },
+      {
+       "year": 2024,
+       "value": 38600.0
+      },
+      {
+       "year": 2025,
+       "value": 38800.0
+      },
+      {
+       "year": 2026,
+       "value": 38800.0
+      }
+     ],
+     "adopted2024": 38600.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 17159.0,
+   "adopted2025": 20568.0,
+   "adopted2026": 21464.0,
+   "change": 896.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 21464.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "SR1-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 20568.0,
+     "deptRequested2026": 21464.0,
+     "tentative2026": 21464.0,
+     "preliminary2026": 21464.0,
+     "adopted2026": 21464.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 36500.0
+      },
+      {
+       "year": 2021,
+       "value": 28300.0
+      },
+      {
+       "year": 2022,
+       "value": 27900.0
+      },
+      {
+       "year": 2023,
+       "value": 42900.0
+      },
+      {
+       "year": 2024,
+       "value": 17159.0
+      },
+      {
+       "year": 2025,
+       "value": 20568.0
+      },
+      {
+       "year": 2026,
+       "value": 21464.0
+      }
+     ],
+     "adopted2024": 17159.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "SR1-1001-001-00000-A",
+   "name": "Property Taxes",
+   "adopted2025": 5165700.0,
+   "deptRequested2026": 5254540.0,
+   "tentative2026": 5254540.0,
+   "preliminary2026": 5254540.0,
+   "adopted2026": 5254540.0
+  }
+ ],
+ "officialAppropriations2026": 5254540,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

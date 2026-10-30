@@ -1,0 +1,1167 @@
+{
+ "code": "A06",
+ "name": "Recreation Program Fund",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 504500.0,
+ "expenditureTotal2025": 528525.0,
+ "revenueTotal2026": 504500.0,
+ "departmentCount": 13,
+ "lineItemCount": 30,
+ "departments": [
+  {
+   "code": "7310",
+   "name": "Youth Programs",
+   "adopted2024": 203461.0,
+   "adopted2025": 219700.0,
+   "adopted2026": 228200.0,
+   "change": 8500.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 135700.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 92500.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7310-103-000-00000",
+     "name": "Yth Prg - Pers Svcs Seasonal",
+     "category": "Personal Services",
+     "adopted2025": 135700.0,
+     "deptRequested2026": 135700.0,
+     "tentative2026": 135700.0,
+     "preliminary2026": 135700.0,
+     "adopted2026": 135700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 115700.0
+      },
+      {
+       "year": 2021,
+       "value": 125700.0
+      },
+      {
+       "year": 2022,
+       "value": 125700.0
+      },
+      {
+       "year": 2023,
+       "value": 125700.0
+      },
+      {
+       "year": 2024,
+       "value": 125700.0
+      },
+      {
+       "year": 2025,
+       "value": 135700.0
+      },
+      {
+       "year": 2026,
+       "value": 135700.0
+      }
+     ],
+     "adopted2024": 125700.0
+    },
+    {
+     "account": "A06-7-7310-415-000-00000",
+     "name": "Yth Prg - Supplies",
+     "category": "Contractual",
+     "adopted2025": 12000.0,
+     "deptRequested2026": 12500.0,
+     "tentative2026": 12500.0,
+     "preliminary2026": 12500.0,
+     "adopted2026": 12500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 12500.0
+      },
+      {
+       "year": 2022,
+       "value": 12500.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 12000.0
+      },
+      {
+       "year": 2025,
+       "value": 12000.0
+      },
+      {
+       "year": 2026,
+       "value": 12500.0
+      }
+     ],
+     "adopted2024": 12000.0
+    },
+    {
+     "account": "A06-7-7310-443-000-00000",
+     "name": "Yth Prg - Travel & Lodging",
+     "category": "Contractual",
+     "adopted2025": 72000.0,
+     "deptRequested2026": 80000.0,
+     "tentative2026": 80000.0,
+     "preliminary2026": 80000.0,
+     "adopted2026": 80000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 45000.0
+      },
+      {
+       "year": 2021,
+       "value": 65000.0
+      },
+      {
+       "year": 2022,
+       "value": 60600.0
+      },
+      {
+       "year": 2023,
+       "value": 60600.0
+      },
+      {
+       "year": 2024,
+       "value": 65761.0
+      },
+      {
+       "year": 2025,
+       "value": 72000.0
+      },
+      {
+       "year": 2026,
+       "value": 80000.0
+      }
+     ],
+     "adopted2024": 65761.0
+    }
+   ],
+   "lineItemCount": 3
+  },
+  {
+   "code": "9990",
+   "name": "Function 9990",
+   "adopted2024": 0,
+   "adopted2025": 0,
+   "adopted2026": 80024.0,
+   "change": 80024.0,
+   "categoryTotals": [
+    {
+     "category": "Other",
+     "adopted2026": 80024.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-9-9990-000-000-00000",
+     "name": "Fund Balance Contribution",
+     "category": "Other",
+     "adopted2025": 0.0,
+     "deptRequested2026": 80646.0,
+     "tentative2026": 80024.0,
+     "preliminary2026": 80024.0,
+     "adopted2026": 80024.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 80024.0
+      }
+     ],
+     "adopted2024": null
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "7624",
+   "name": "Rec InstRec Instructional Programs",
+   "adopted2024": 75000.0,
+   "adopted2025": 60000.0,
+   "adopted2026": 65000.0,
+   "change": 5000.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 65000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7624-436-210-00000",
+     "name": "Rec Inst Prof Svcs - Other",
+     "category": "Contractual",
+     "adopted2025": 60000.0,
+     "deptRequested2026": 65000.0,
+     "tentative2026": 65000.0,
+     "preliminary2026": 65000.0,
+     "adopted2026": 65000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 70000.0
+      },
+      {
+       "year": 2021,
+       "value": 75000.0
+      },
+      {
+       "year": 2022,
+       "value": 75000.0
+      },
+      {
+       "year": 2023,
+       "value": 75000.0
+      },
+      {
+       "year": 2024,
+       "value": 75000.0
+      },
+      {
+       "year": 2025,
+       "value": 60000.0
+      },
+      {
+       "year": 2026,
+       "value": 65000.0
+      }
+     ],
+     "adopted2024": 75000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "7315",
+   "name": "Other Youth Programs",
+   "adopted2024": 25000.0,
+   "adopted2025": 25000.0,
+   "adopted2026": 25000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 25000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7315-103-000-00000",
+     "name": "Oth Yth Prg - Pers Svcs Seasonal",
+     "category": "Personal Services",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 20000.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 10200.0
+      },
+      {
+       "year": 2024,
+       "value": 25000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 25000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "7621",
+   "name": "Recreation",
+   "adopted2024": 15000.0,
+   "adopted2025": 25000.0,
+   "adopted2026": 25000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 25000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7621-463-000-00000",
+     "name": "Bus Trip - Rents & Leases - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 25000.0,
+     "deptRequested2026": 25000.0,
+     "tentative2026": 25000.0,
+     "preliminary2026": 25000.0,
+     "adopted2026": 25000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 60000.0
+      },
+      {
+       "year": 2021,
+       "value": 60000.0
+      },
+      {
+       "year": 2022,
+       "value": 60000.0
+      },
+      {
+       "year": 2023,
+       "value": 45000.0
+      },
+      {
+       "year": 2024,
+       "value": 15000.0
+      },
+      {
+       "year": 2025,
+       "value": 25000.0
+      },
+      {
+       "year": 2026,
+       "value": 25000.0
+      }
+     ],
+     "adopted2024": 15000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 26804.0,
+   "adopted2025": 30637.0,
+   "adopted2026": 23216.0,
+   "change": -7421.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 23216.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 30637.0,
+     "deptRequested2026": 21509.0,
+     "tentative2026": 23216.0,
+     "preliminary2026": 23216.0,
+     "adopted2026": 23216.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 20000.0
+      },
+      {
+       "year": 2021,
+       "value": 20000.0
+      },
+      {
+       "year": 2022,
+       "value": 20000.0
+      },
+      {
+       "year": 2023,
+       "value": 21000.0
+      },
+      {
+       "year": 2024,
+       "value": 26804.0
+      },
+      {
+       "year": 2025,
+       "value": 30637.0
+      },
+      {
+       "year": 2026,
+       "value": 23216.0
+      }
+     ],
+     "adopted2024": 26804.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "7110",
+   "name": "Parks",
+   "adopted2024": 25000.0,
+   "adopted2025": 20000.0,
+   "adopted2026": 20000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 10000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 10000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7110-103-000-00000",
+     "name": "Parks - Personal Services Seasonal",
+     "category": "Personal Services",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "A06-7-7110-415-000-00000",
+     "name": "Parks - Supplies",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12000.0
+      },
+      {
+       "year": 2021,
+       "value": 12000.0
+      },
+      {
+       "year": 2022,
+       "value": 12000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 15000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 15000.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 18339.0,
+   "adopted2025": 18630.0,
+   "adopted2026": 13060.0,
+   "change": -5570.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 13060.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 18630.0,
+     "deptRequested2026": 13060.0,
+     "tentative2026": 13060.0,
+     "preliminary2026": 13060.0,
+     "adopted2026": 13060.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 16300.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 16000.0
+      },
+      {
+       "year": 2023,
+       "value": 17000.0
+      },
+      {
+       "year": 2024,
+       "value": 18339.0
+      },
+      {
+       "year": 2025,
+       "value": 18630.0
+      },
+      {
+       "year": 2026,
+       "value": 13060.0
+      }
+     ],
+     "adopted2024": 18339.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "7620",
+   "name": "Adult Recreation",
+   "adopted2024": 16500.0,
+   "adopted2025": 13000.0,
+   "adopted2026": 13000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 13000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7620-421-000-00000",
+     "name": "Adlt Rec - Postage",
+     "category": "Contractual",
+     "adopted2025": 5000.0,
+     "deptRequested2026": 5000.0,
+     "tentative2026": 5000.0,
+     "preliminary2026": 5000.0,
+     "adopted2026": 5000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 7500.0
+      },
+      {
+       "year": 2021,
+       "value": 7500.0
+      },
+      {
+       "year": 2022,
+       "value": 7500.0
+      },
+      {
+       "year": 2023,
+       "value": 6500.0
+      },
+      {
+       "year": 2024,
+       "value": 6500.0
+      },
+      {
+       "year": 2025,
+       "value": 5000.0
+      },
+      {
+       "year": 2026,
+       "value": 5000.0
+      }
+     ],
+     "adopted2024": 6500.0
+    },
+    {
+     "account": "A06-7-7620-424-000-00000",
+     "name": "Adlt Rec - Printing",
+     "category": "Contractual",
+     "adopted2025": 8000.0,
+     "deptRequested2026": 8000.0,
+     "tentative2026": 8000.0,
+     "preliminary2026": 8000.0,
+     "adopted2026": 8000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 15000.0
+      },
+      {
+       "year": 2023,
+       "value": 15000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 8000.0
+      },
+      {
+       "year": 2026,
+       "value": 8000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "7020",
+   "name": "Recreation Administration",
+   "adopted2024": 85524.0,
+   "adopted2025": 82800.0,
+   "adopted2026": 10000.0,
+   "change": -72800.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 0.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 10000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7020-101-NON-00000",
+     "name": "Rec Adm - Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 69221.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 58400.0
+      },
+      {
+       "year": 2021,
+       "value": 59100.0
+      },
+      {
+       "year": 2022,
+       "value": 60700.0
+      },
+      {
+       "year": 2023,
+       "value": 64500.0
+      },
+      {
+       "year": 2024,
+       "value": 68124.0
+      },
+      {
+       "year": 2025,
+       "value": 69221.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 68124.0
+    },
+    {
+     "account": "A06-7-7020-111-NON-00000",
+     "name": "Rec Adm - Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 450.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 5000.0
+      },
+      {
+       "year": 2021,
+       "value": 5000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 450.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "A06-7-7020-112-NON-00000",
+     "name": "Recreation Admin Longevity",
+     "category": "Personal Services",
+     "adopted2025": 2769.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 2769.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "A06-7-7020-123-000-00000",
+     "name": "Rec Adm - Pers Svcs Cleaning Allow",
+     "category": "Personal Services",
+     "adopted2025": 360.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 400.0
+      },
+      {
+       "year": 2021,
+       "value": 400.0
+      },
+      {
+       "year": 2022,
+       "value": 400.0
+      },
+      {
+       "year": 2023,
+       "value": 400.0
+      },
+      {
+       "year": 2024,
+       "value": 400.0
+      },
+      {
+       "year": 2025,
+       "value": 360.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 400.0
+    },
+    {
+     "account": "A06-7-7020-440-000-00000",
+     "name": "Rec Adm - Public Relations",
+     "category": "Contractual",
+     "adopted2025": 8000.0,
+     "deptRequested2026": 8000.0,
+     "tentative2026": 8000.0,
+     "preliminary2026": 8000.0,
+     "adopted2026": 8000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12000.0
+      },
+      {
+       "year": 2021,
+       "value": 14500.0
+      },
+      {
+       "year": 2022,
+       "value": 14500.0
+      },
+      {
+       "year": 2023,
+       "value": 14500.0
+      },
+      {
+       "year": 2024,
+       "value": 14500.0
+      },
+      {
+       "year": 2025,
+       "value": 8000.0
+      },
+      {
+       "year": 2026,
+       "value": 8000.0
+      }
+     ],
+     "adopted2024": 14500.0
+    },
+    {
+     "account": "A06-7-7020-490-000-00000",
+     "name": "Rec Adm - Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2000.0,
+     "tentative2026": 2000.0,
+     "preliminary2026": 2000.0,
+     "adopted2026": 2000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2000.0
+      }
+     ],
+     "adopted2024": 2000.0
+    }
+   ],
+   "lineItemCount": 6
+  },
+  {
+   "code": "7626",
+   "name": "Rec Non-League Sports Pro",
+   "adopted2024": 5000.0,
+   "adopted2025": 2000.0,
+   "adopted2026": 2000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 2000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-7-7626-415-000-00000",
+     "name": "Rec Non-Leag - Supplies",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2000.0,
+     "tentative2026": 2000.0,
+     "preliminary2026": 2000.0,
+     "adopted2026": 2000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 5000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2000.0
+      }
+     ],
+     "adopted2024": 5000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 815.0,
+   "adopted2025": 829.0,
+   "adopted2026": 0,
+   "change": -829.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 829.0,
+     "deptRequested2026": 1085.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 800.0
+      },
+      {
+       "year": 2021,
+       "value": 1000.0
+      },
+      {
+       "year": 2022,
+       "value": 1000.0
+      },
+      {
+       "year": 2023,
+       "value": 1000.0
+      },
+      {
+       "year": 2024,
+       "value": 815.0
+      },
+      {
+       "year": 2025,
+       "value": 829.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 815.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 31057.0,
+   "adopted2025": 30929.0,
+   "adopted2026": 0,
+   "change": -30929.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "A06-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 30929.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 24200.0
+      },
+      {
+       "year": 2021,
+       "value": 23900.0
+      },
+      {
+       "year": 2022,
+       "value": 25700.0
+      },
+      {
+       "year": 2023,
+       "value": 28100.0
+      },
+      {
+       "year": 2024,
+       "value": 31057.0
+      },
+      {
+       "year": 2025,
+       "value": 30929.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 31057.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "A06-2001-216-00000-7",
+   "name": "Misc Fees",
+   "adopted2025": 350.0,
+   "deptRequested2026": 0.0,
+   "tentative2026": 0.0,
+   "preliminary2026": 0.0,
+   "adopted2026": 0.0
+  },
+  {
+   "account": "A06-2025-230-00000-7",
+   "name": "Non-League Sports Fees",
+   "adopted2025": 24475.0,
+   "deptRequested2026": 20000.0,
+   "tentative2026": 20000.0,
+   "preliminary2026": 20000.0,
+   "adopted2026": 20000.0
+  },
+  {
+   "account": "A06-2025-234-00000-7",
+   "name": "Bus Trip Fees",
+   "adopted2025": 40000.0,
+   "deptRequested2026": 25000.0,
+   "tentative2026": 25000.0,
+   "preliminary2026": 25000.0,
+   "adopted2026": 25000.0
+  },
+  {
+   "account": "A06-2025-235-00000-7",
+   "name": "Field Rental Fee",
+   "adopted2025": 83000.0,
+   "deptRequested2026": 75000.0,
+   "tentative2026": 75000.0,
+   "preliminary2026": 75000.0,
+   "adopted2026": 75000.0
+  },
+  {
+   "account": "A06-2025-241-00000-7",
+   "name": "Sr. Citizen Club Lunch",
+   "adopted2025": 4200.0,
+   "deptRequested2026": 9500.0,
+   "tentative2026": 9500.0,
+   "preliminary2026": 9500.0,
+   "adopted2026": 9500.0
+  },
+  {
+   "account": "A06-2025-242-00000-7",
+   "name": "Other Youth Program Fees",
+   "adopted2025": 320000.0,
+   "deptRequested2026": 320000.0,
+   "tentative2026": 320000.0,
+   "preliminary2026": 320000.0,
+   "adopted2026": 320000.0
+  },
+  {
+   "account": "A06-2025-243-00000-7",
+   "name": "Registration - Summer Program",
+   "adopted2025": 6500.0,
+   "deptRequested2026": 0.0,
+   "tentative2026": 0.0,
+   "preliminary2026": 0.0,
+   "adopted2026": 0.0
+  },
+  {
+   "account": "A06-2025-244-00000-7",
+   "name": "Instructional Program Fees",
+   "adopted2025": 50000.0,
+   "deptRequested2026": 55000.0,
+   "tentative2026": 55000.0,
+   "preliminary2026": 55000.0,
+   "adopted2026": 55000.0
+  }
+ ],
+ "officialAppropriations2026": 504500,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

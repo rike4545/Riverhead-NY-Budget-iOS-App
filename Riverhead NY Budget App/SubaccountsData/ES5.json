@@ -1,0 +1,2031 @@
+{
+ "code": "ES5",
+ "name": "Riverhead Scavenger Waste",
+ "source": {
+  "title": "2026 Adopted Budget",
+  "url": "https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"
+ },
+ "expenditureTotal2026": 2231988.0,
+ "expenditureTotal2025": 2069799.0,
+ "revenueTotal2026": 2231988.0,
+ "departmentCount": 9,
+ "lineItemCount": 50,
+ "departments": [
+  {
+   "code": "8189",
+   "name": "Scavenger Waste",
+   "adopted2024": 1335595.0,
+   "adopted2025": 1392772.0,
+   "adopted2026": 1590431.0,
+   "change": 197659.0,
+   "categoryTotals": [
+    {
+     "category": "Personal Services",
+     "adopted2026": 379531.0
+    },
+    {
+     "category": "Equipment & Capital Outlay",
+     "adopted2026": 22000.0
+    },
+    {
+     "category": "Contractual",
+     "adopted2026": 1188900.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-8-8189-101-NON-00000",
+     "name": "Scav Waste - Personal Services",
+     "category": "Personal Services",
+     "adopted2025": 359429.0,
+     "deptRequested2026": 333925.0,
+     "tentative2026": 332544.0,
+     "preliminary2026": 332544.0,
+     "adopted2026": 332544.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 275100.0
+      },
+      {
+       "year": 2021,
+       "value": 275300.0
+      },
+      {
+       "year": 2022,
+       "value": 294900.0
+      },
+      {
+       "year": 2023,
+       "value": 314300.0
+      },
+      {
+       "year": 2024,
+       "value": 324004.0
+      },
+      {
+       "year": 2025,
+       "value": 359429.0
+      },
+      {
+       "year": 2026,
+       "value": 332544.0
+      }
+     ],
+     "adopted2024": 324004.0
+    },
+    {
+     "account": "ES5-8-8189-102-000-00000",
+     "name": "Scav Waste - Personal Services Part Time",
+     "category": "Personal Services",
+     "adopted2025": 7900.0,
+     "deptRequested2026": 7900.0,
+     "tentative2026": 7900.0,
+     "preliminary2026": 7900.0,
+     "adopted2026": 7900.0,
+     "history": [
+      {
+       "year": 2024,
+       "value": 7900.0
+      },
+      {
+       "year": 2025,
+       "value": 7900.0
+      },
+      {
+       "year": 2026,
+       "value": 7900.0
+      }
+     ],
+     "adopted2024": 7900.0
+    },
+    {
+     "account": "ES5-8-8189-111-NON-00000",
+     "name": "Scav Waste - Personal Services OT",
+     "category": "Personal Services",
+     "adopted2025": 6000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 12000.0
+      },
+      {
+       "year": 2021,
+       "value": 6000.0
+      },
+      {
+       "year": 2022,
+       "value": 6000.0
+      },
+      {
+       "year": 2023,
+       "value": 6000.0
+      },
+      {
+       "year": 2024,
+       "value": 6000.0
+      },
+      {
+       "year": 2025,
+       "value": 6000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 6000.0
+    },
+    {
+     "account": "ES5-8-8189-112-NON-00000",
+     "name": "Scav Waste - Pers Svcs Longevity",
+     "category": "Personal Services",
+     "adopted2025": 20973.0,
+     "deptRequested2026": 18217.0,
+     "tentative2026": 18122.0,
+     "preliminary2026": 18122.0,
+     "adopted2026": 18122.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 14500.0
+      },
+      {
+       "year": 2021,
+       "value": 14900.0
+      },
+      {
+       "year": 2022,
+       "value": 16200.0
+      },
+      {
+       "year": 2023,
+       "value": 16900.0
+      },
+      {
+       "year": 2024,
+       "value": 18626.0
+      },
+      {
+       "year": 2025,
+       "value": 20973.0
+      },
+      {
+       "year": 2026,
+       "value": 18122.0
+      }
+     ],
+     "adopted2024": 18626.0
+    },
+    {
+     "account": "ES5-8-8189-123-000-00000",
+     "name": "Scav Waste - Pers Svcs Cleaning Allow",
+     "category": "Personal Services",
+     "adopted2025": 240.0,
+     "deptRequested2026": 240.0,
+     "tentative2026": 240.0,
+     "preliminary2026": 240.0,
+     "adopted2026": 240.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 200.0
+      },
+      {
+       "year": 2021,
+       "value": 200.0
+      },
+      {
+       "year": 2022,
+       "value": 200.0
+      },
+      {
+       "year": 2023,
+       "value": 200.0
+      },
+      {
+       "year": 2024,
+       "value": 240.0
+      },
+      {
+       "year": 2025,
+       "value": 240.0
+      },
+      {
+       "year": 2026,
+       "value": 240.0
+      }
+     ],
+     "adopted2024": 240.0
+    },
+    {
+     "account": "ES5-8-8189-152-000-00000",
+     "name": "Scav Waste - Pers Svcs Sick Buy Back",
+     "category": "Personal Services",
+     "adopted2025": 0.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 840.0,
+     "preliminary2026": 840.0,
+     "adopted2026": 840.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 4900.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 27500.0
+      },
+      {
+       "year": 2025,
+       "value": 0.0
+      },
+      {
+       "year": 2026,
+       "value": 840.0
+      }
+     ],
+     "adopted2024": 27500.0
+    },
+    {
+     "account": "ES5-8-8189-153-000-00000",
+     "name": "Scav Waste - Mgmt Buy Out",
+     "category": "Personal Services",
+     "adopted2025": 12475.0,
+     "deptRequested2026": 12475.0,
+     "tentative2026": 11630.0,
+     "preliminary2026": 11630.0,
+     "adopted2026": 11630.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 19700.0
+      },
+      {
+       "year": 2021,
+       "value": 22600.0
+      },
+      {
+       "year": 2022,
+       "value": 23700.0
+      },
+      {
+       "year": 2023,
+       "value": 19800.0
+      },
+      {
+       "year": 2024,
+       "value": 22325.0
+      },
+      {
+       "year": 2025,
+       "value": 12475.0
+      },
+      {
+       "year": 2026,
+       "value": 11630.0
+      }
+     ],
+     "adopted2024": 22325.0
+    },
+    {
+     "account": "ES5-8-8189-154-000-00000",
+     "name": "Scavenger Waste Health Ins BB",
+     "category": "Personal Services",
+     "adopted2025": 255.0,
+     "deptRequested2026": 255.0,
+     "tentative2026": 255.0,
+     "preliminary2026": 255.0,
+     "adopted2026": 255.0,
+     "history": [
+      {
+       "year": 2025,
+       "value": 255.0
+      },
+      {
+       "year": 2026,
+       "value": 255.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "ES5-8-8189-154-NON-00000",
+     "name": "Scav Waste - Pers Svcs Health Ins Buy Ba",
+     "category": "Personal Services",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2000.0,
+     "tentative2026": 2000.0,
+     "preliminary2026": 2000.0,
+     "adopted2026": 2000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2900.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 1700.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2000.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES5-8-8189-240-000-00000",
+     "name": "Scav Waste - Equipment",
+     "category": "Equipment & Capital Outlay",
+     "adopted2025": 22000.0,
+     "deptRequested2026": 22000.0,
+     "tentative2026": 22000.0,
+     "preliminary2026": 22000.0,
+     "adopted2026": 22000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 10000.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 0.0
+      },
+      {
+       "year": 2025,
+       "value": 22000.0
+      },
+      {
+       "year": 2026,
+       "value": 22000.0
+      }
+     ],
+     "adopted2024": 0.0
+    },
+    {
+     "account": "ES5-8-8189-402-000-00000",
+     "name": "Scav Waste - R&M - Buildings",
+     "category": "Contractual",
+     "adopted2025": 5000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 2000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 5000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES5-8-8189-403-000-00000",
+     "name": "Scav Waste - R&M - Equipment",
+     "category": "Contractual",
+     "adopted2025": 52000.0,
+     "deptRequested2026": 62000.0,
+     "tentative2026": 62000.0,
+     "preliminary2026": 62000.0,
+     "adopted2026": 62000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 48000.0
+      },
+      {
+       "year": 2021,
+       "value": 55000.0
+      },
+      {
+       "year": 2022,
+       "value": 55000.0
+      },
+      {
+       "year": 2023,
+       "value": 52000.0
+      },
+      {
+       "year": 2024,
+       "value": 52000.0
+      },
+      {
+       "year": 2025,
+       "value": 52000.0
+      },
+      {
+       "year": 2026,
+       "value": 62000.0
+      }
+     ],
+     "adopted2024": 52000.0
+    },
+    {
+     "account": "ES5-8-8189-404-000-00000",
+     "name": "Scav Waste - R&M - Grounds",
+     "category": "Contractual",
+     "adopted2025": 300.0,
+     "deptRequested2026": 400.0,
+     "tentative2026": 400.0,
+     "preliminary2026": 400.0,
+     "adopted2026": 400.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 300.0
+      },
+      {
+       "year": 2021,
+       "value": 300.0
+      },
+      {
+       "year": 2022,
+       "value": 300.0
+      },
+      {
+       "year": 2023,
+       "value": 300.0
+      },
+      {
+       "year": 2024,
+       "value": 300.0
+      },
+      {
+       "year": 2025,
+       "value": 300.0
+      },
+      {
+       "year": 2026,
+       "value": 400.0
+      }
+     ],
+     "adopted2024": 300.0
+    },
+    {
+     "account": "ES5-8-8189-405-000-00000",
+     "name": "Scav Waste - R&M - Vehicles",
+     "category": "Contractual",
+     "adopted2025": 7500.0,
+     "deptRequested2026": 7500.0,
+     "tentative2026": 7500.0,
+     "preliminary2026": 7500.0,
+     "adopted2026": 7500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3000.0
+      },
+      {
+       "year": 2021,
+       "value": 10500.0
+      },
+      {
+       "year": 2022,
+       "value": 7500.0
+      },
+      {
+       "year": 2023,
+       "value": 7500.0
+      },
+      {
+       "year": 2024,
+       "value": 7500.0
+      },
+      {
+       "year": 2025,
+       "value": 7500.0
+      },
+      {
+       "year": 2026,
+       "value": 7500.0
+      }
+     ],
+     "adopted2024": 7500.0
+    },
+    {
+     "account": "ES5-8-8189-414-000-00000",
+     "name": "Scav Waste - R&M Generator",
+     "category": "Contractual",
+     "adopted2025": 3500.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 3500.0
+      },
+      {
+       "year": 2021,
+       "value": 3500.0
+      },
+      {
+       "year": 2022,
+       "value": 3500.0
+      },
+      {
+       "year": 2023,
+       "value": 3500.0
+      },
+      {
+       "year": 2024,
+       "value": 3500.0
+      },
+      {
+       "year": 2025,
+       "value": 3500.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 3500.0
+    },
+    {
+     "account": "ES5-8-8189-415-000-00000",
+     "name": "Scav Waste - Chemical Expense",
+     "category": "Contractual",
+     "adopted2025": 130000.0,
+     "deptRequested2026": 140000.0,
+     "tentative2026": 140000.0,
+     "preliminary2026": 140000.0,
+     "adopted2026": 140000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 55000.0
+      },
+      {
+       "year": 2021,
+       "value": 60000.0
+      },
+      {
+       "year": 2022,
+       "value": 80000.0
+      },
+      {
+       "year": 2023,
+       "value": 110000.0
+      },
+      {
+       "year": 2024,
+       "value": 115500.0
+      },
+      {
+       "year": 2025,
+       "value": 130000.0
+      },
+      {
+       "year": 2026,
+       "value": 140000.0
+      }
+     ],
+     "adopted2024": 115500.0
+    },
+    {
+     "account": "ES5-8-8189-415-100-00000",
+     "name": "Scav Waste - Plant Supplies",
+     "category": "Contractual",
+     "adopted2025": 5000.0,
+     "deptRequested2026": 5500.0,
+     "tentative2026": 5500.0,
+     "preliminary2026": 5500.0,
+     "adopted2026": 5500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 0.0
+      },
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 3000.0
+      },
+      {
+       "year": 2024,
+       "value": 3000.0
+      },
+      {
+       "year": 2025,
+       "value": 5000.0
+      },
+      {
+       "year": 2026,
+       "value": 5500.0
+      }
+     ],
+     "adopted2024": 3000.0
+    },
+    {
+     "account": "ES5-8-8189-415-372-00000",
+     "name": "Scav Waste - Supplies - First Aid",
+     "category": "Contractual",
+     "adopted2025": 600.0,
+     "deptRequested2026": 600.0,
+     "tentative2026": 600.0,
+     "preliminary2026": 600.0,
+     "adopted2026": 600.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 600.0
+      },
+      {
+       "year": 2021,
+       "value": 600.0
+      },
+      {
+       "year": 2022,
+       "value": 600.0
+      },
+      {
+       "year": 2023,
+       "value": 600.0
+      },
+      {
+       "year": 2024,
+       "value": 600.0
+      },
+      {
+       "year": 2025,
+       "value": 600.0
+      },
+      {
+       "year": 2026,
+       "value": 600.0
+      }
+     ],
+     "adopted2024": 600.0
+    },
+    {
+     "account": "ES5-8-8189-415-500-00000",
+     "name": "Scavenger Waste - Lab Supplies",
+     "category": "Contractual",
+     "adopted2025": 0.0,
+     "deptRequested2026": 7300.0,
+     "tentative2026": 7300.0,
+     "preliminary2026": 7300.0,
+     "adopted2026": 7300.0,
+     "history": [
+      {
+       "year": 2026,
+       "value": 7300.0
+      }
+     ],
+     "adopted2024": null
+    },
+    {
+     "account": "ES5-8-8189-416-000-00000",
+     "name": "Scav Waste - Supplies - Office",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 500.0
+      },
+      {
+       "year": 2021,
+       "value": 500.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "ES5-8-8189-420-000-00000",
+     "name": "Scav Waste - Small Tools",
+     "category": "Contractual",
+     "adopted2025": 300.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 300.0
+      },
+      {
+       "year": 2021,
+       "value": 300.0
+      },
+      {
+       "year": 2022,
+       "value": 300.0
+      },
+      {
+       "year": 2023,
+       "value": 300.0
+      },
+      {
+       "year": 2024,
+       "value": 300.0
+      },
+      {
+       "year": 2025,
+       "value": 300.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 300.0
+    },
+    {
+     "account": "ES5-8-8189-425-000-00000",
+     "name": "Scav Waste - Uniforms",
+     "category": "Contractual",
+     "adopted2025": 2100.0,
+     "deptRequested2026": 2100.0,
+     "tentative2026": 2100.0,
+     "preliminary2026": 2100.0,
+     "adopted2026": 2100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 2100.0
+      },
+      {
+       "year": 2023,
+       "value": 2100.0
+      },
+      {
+       "year": 2024,
+       "value": 2100.0
+      },
+      {
+       "year": 2025,
+       "value": 2100.0
+      },
+      {
+       "year": 2026,
+       "value": 2100.0
+      }
+     ],
+     "adopted2024": 2100.0
+    },
+    {
+     "account": "ES5-8-8189-426-050-00000",
+     "name": "Scav Waste Fuel - Gasoline & Diesel",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2000.0,
+     "tentative2026": 2000.0,
+     "preliminary2026": 2000.0,
+     "adopted2026": 2000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2000.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES5-8-8189-426-075-00000",
+     "name": "Scav Waste Fuel - Plant Fuel",
+     "category": "Contractual",
+     "adopted2025": 1500.0,
+     "deptRequested2026": 1700.0,
+     "tentative2026": 1700.0,
+     "preliminary2026": 1700.0,
+     "adopted2026": 1700.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 1500.0
+      },
+      {
+       "year": 2024,
+       "value": 1500.0
+      },
+      {
+       "year": 2025,
+       "value": 1500.0
+      },
+      {
+       "year": 2026,
+       "value": 1700.0
+      }
+     ],
+     "adopted2024": 1500.0
+    },
+    {
+     "account": "ES5-8-8189-431-000-00000",
+     "name": "Scav Waste - Alarm Contract",
+     "category": "Contractual",
+     "adopted2025": 500.0,
+     "deptRequested2026": 500.0,
+     "tentative2026": 500.0,
+     "preliminary2026": 500.0,
+     "adopted2026": 500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 500.0
+      },
+      {
+       "year": 2021,
+       "value": 500.0
+      },
+      {
+       "year": 2022,
+       "value": 500.0
+      },
+      {
+       "year": 2023,
+       "value": 500.0
+      },
+      {
+       "year": 2024,
+       "value": 500.0
+      },
+      {
+       "year": 2025,
+       "value": 500.0
+      },
+      {
+       "year": 2026,
+       "value": 500.0
+      }
+     ],
+     "adopted2024": 500.0
+    },
+    {
+     "account": "ES5-8-8189-435-000-00000",
+     "name": "Scav Waste - Prof Svcs - Engineering",
+     "category": "Contractual",
+     "adopted2025": 5000.0,
+     "deptRequested2026": 6000.0,
+     "tentative2026": 6000.0,
+     "preliminary2026": 6000.0,
+     "adopted2026": 6000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 15000.0
+      },
+      {
+       "year": 2021,
+       "value": 15000.0
+      },
+      {
+       "year": 2022,
+       "value": 5000.0
+      },
+      {
+       "year": 2023,
+       "value": 5000.0
+      },
+      {
+       "year": 2024,
+       "value": 5000.0
+      },
+      {
+       "year": 2025,
+       "value": 5000.0
+      },
+      {
+       "year": 2026,
+       "value": 6000.0
+      }
+     ],
+     "adopted2024": 5000.0
+    },
+    {
+     "account": "ES5-8-8189-436-208-00000",
+     "name": "Scav Waste - Prof Svcs - Other Lab Fees",
+     "category": "Contractual",
+     "adopted2025": 8000.0,
+     "deptRequested2026": 9500.0,
+     "tentative2026": 9500.0,
+     "preliminary2026": 9500.0,
+     "adopted2026": 9500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 8000.0
+      },
+      {
+       "year": 2021,
+       "value": 8000.0
+      },
+      {
+       "year": 2022,
+       "value": 8000.0
+      },
+      {
+       "year": 2023,
+       "value": 8000.0
+      },
+      {
+       "year": 2024,
+       "value": 8000.0
+      },
+      {
+       "year": 2025,
+       "value": 8000.0
+      },
+      {
+       "year": 2026,
+       "value": 9500.0
+      }
+     ],
+     "adopted2024": 8000.0
+    },
+    {
+     "account": "ES5-8-8189-442-000-00000",
+     "name": "Scav Waste - Prof Edu & Training",
+     "category": "Contractual",
+     "adopted2025": 3000.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2022,
+       "value": 3000.0
+      },
+      {
+       "year": 2023,
+       "value": 3000.0
+      },
+      {
+       "year": 2024,
+       "value": 3000.0
+      },
+      {
+       "year": 2025,
+       "value": 3000.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 3000.0
+    },
+    {
+     "account": "ES5-8-8189-470-000-00000",
+     "name": "Scav Waste - Utl - SPDES Permit",
+     "category": "Contractual",
+     "adopted2025": 4000.0,
+     "deptRequested2026": 4000.0,
+     "tentative2026": 4000.0,
+     "preliminary2026": 4000.0,
+     "adopted2026": 4000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 4000.0
+      },
+      {
+       "year": 2021,
+       "value": 4000.0
+      },
+      {
+       "year": 2022,
+       "value": 4000.0
+      },
+      {
+       "year": 2023,
+       "value": 4000.0
+      },
+      {
+       "year": 2024,
+       "value": 4000.0
+      },
+      {
+       "year": 2025,
+       "value": 4000.0
+      },
+      {
+       "year": 2026,
+       "value": 4000.0
+      }
+     ],
+     "adopted2024": 4000.0
+    },
+    {
+     "account": "ES5-8-8189-471-000-00000",
+     "name": "Scav Waste - Utl - Telephone",
+     "category": "Contractual",
+     "adopted2025": 1500.0,
+     "deptRequested2026": 0.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1500.0
+      },
+      {
+       "year": 2021,
+       "value": 1500.0
+      },
+      {
+       "year": 2022,
+       "value": 1500.0
+      },
+      {
+       "year": 2023,
+       "value": 1500.0
+      },
+      {
+       "year": 2024,
+       "value": 1500.0
+      },
+      {
+       "year": 2025,
+       "value": 1500.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 1500.0
+    },
+    {
+     "account": "ES5-8-8189-472-000-00000",
+     "name": "Scav Waste - Utl - Electricity",
+     "category": "Contractual",
+     "adopted2025": 192000.0,
+     "deptRequested2026": 200000.0,
+     "tentative2026": 200000.0,
+     "preliminary2026": 200000.0,
+     "adopted2026": 200000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 143000.0
+      },
+      {
+       "year": 2021,
+       "value": 140000.0
+      },
+      {
+       "year": 2022,
+       "value": 160000.0
+      },
+      {
+       "year": 2023,
+       "value": 192000.0
+      },
+      {
+       "year": 2024,
+       "value": 192000.0
+      },
+      {
+       "year": 2025,
+       "value": 192000.0
+      },
+      {
+       "year": 2026,
+       "value": 200000.0
+      }
+     ],
+     "adopted2024": 192000.0
+    },
+    {
+     "account": "ES5-8-8189-474-000-00000",
+     "name": "Scav Waste - Utl - Water",
+     "category": "Contractual",
+     "adopted2025": 10000.0,
+     "deptRequested2026": 10000.0,
+     "tentative2026": 10000.0,
+     "preliminary2026": 10000.0,
+     "adopted2026": 10000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 18800.0
+      },
+      {
+       "year": 2021,
+       "value": 10000.0
+      },
+      {
+       "year": 2022,
+       "value": 10000.0
+      },
+      {
+       "year": 2023,
+       "value": 10000.0
+      },
+      {
+       "year": 2024,
+       "value": 10000.0
+      },
+      {
+       "year": 2025,
+       "value": 10000.0
+      },
+      {
+       "year": 2026,
+       "value": 10000.0
+      }
+     ],
+     "adopted2024": 10000.0
+    },
+    {
+     "account": "ES5-8-8189-481-000-00000",
+     "name": "Scav Waste - Taxes on Town Property",
+     "category": "Contractual",
+     "adopted2025": 200.0,
+     "deptRequested2026": 200.0,
+     "tentative2026": 200.0,
+     "preliminary2026": 200.0,
+     "adopted2026": 200.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 200.0
+      },
+      {
+       "year": 2021,
+       "value": 200.0
+      },
+      {
+       "year": 2022,
+       "value": 200.0
+      },
+      {
+       "year": 2023,
+       "value": 200.0
+      },
+      {
+       "year": 2024,
+       "value": 200.0
+      },
+      {
+       "year": 2025,
+       "value": 200.0
+      },
+      {
+       "year": 2026,
+       "value": 200.0
+      }
+     ],
+     "adopted2024": 200.0
+    },
+    {
+     "account": "ES5-8-8189-482-000-00000",
+     "name": "Scav Waste - Waste Disposal",
+     "category": "Contractual",
+     "adopted2025": 490000.0,
+     "deptRequested2026": 677100.0,
+     "tentative2026": 677100.0,
+     "preliminary2026": 677100.0,
+     "adopted2026": 677100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 387500.0
+      },
+      {
+       "year": 2021,
+       "value": 340000.0
+      },
+      {
+       "year": 2022,
+       "value": 380000.0
+      },
+      {
+       "year": 2023,
+       "value": 420000.0
+      },
+      {
+       "year": 2024,
+       "value": 475000.0
+      },
+      {
+       "year": 2025,
+       "value": 490000.0
+      },
+      {
+       "year": 2026,
+       "value": 677100.0
+      }
+     ],
+     "adopted2024": 475000.0
+    },
+    {
+     "account": "ES5-8-8189-490-000-00000",
+     "name": "Scav Waste - Miscellaneous",
+     "category": "Contractual",
+     "adopted2025": 2000.0,
+     "deptRequested2026": 2500.0,
+     "tentative2026": 2500.0,
+     "preliminary2026": 2500.0,
+     "adopted2026": 2500.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 2000.0
+      },
+      {
+       "year": 2021,
+       "value": 2000.0
+      },
+      {
+       "year": 2022,
+       "value": 2000.0
+      },
+      {
+       "year": 2023,
+       "value": 2000.0
+      },
+      {
+       "year": 2024,
+       "value": 2000.0
+      },
+      {
+       "year": 2025,
+       "value": 2000.0
+      },
+      {
+       "year": 2026,
+       "value": 2500.0
+      }
+     ],
+     "adopted2024": 2000.0
+    },
+    {
+     "account": "ES5-8-8189-490-100-00000",
+     "name": "Scav Waste - Misc - Bank Fees",
+     "category": "Contractual",
+     "adopted2025": 35000.0,
+     "deptRequested2026": 35000.0,
+     "tentative2026": 35000.0,
+     "preliminary2026": 35000.0,
+     "adopted2026": 35000.0,
+     "history": [
+      {
+       "year": 2021,
+       "value": 0.0
+      },
+      {
+       "year": 2022,
+       "value": 0.0
+      },
+      {
+       "year": 2023,
+       "value": 0.0
+      },
+      {
+       "year": 2024,
+       "value": 35000.0
+      },
+      {
+       "year": 2025,
+       "value": 35000.0
+      },
+      {
+       "year": 2026,
+       "value": 35000.0
+      }
+     ],
+     "adopted2024": 35000.0
+    }
+   ],
+   "lineItemCount": 36
+  },
+  {
+   "code": "9060",
+   "name": "Hosp",
+   "adopted2024": 187848.0,
+   "adopted2025": 214925.0,
+   "adopted2026": 226949.0,
+   "change": 12024.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 226949.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9060-810-NON-00000",
+     "name": "Hosp - Hosp, Den & Opt Ins Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 214925.0,
+     "deptRequested2026": 226949.0,
+     "tentative2026": 226949.0,
+     "preliminary2026": 226949.0,
+     "adopted2026": 226949.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 122700.0
+      },
+      {
+       "year": 2021,
+       "value": 131600.0
+      },
+      {
+       "year": 2022,
+       "value": 156100.0
+      },
+      {
+       "year": 2023,
+       "value": 167100.0
+      },
+      {
+       "year": 2024,
+       "value": 187848.0
+      },
+      {
+       "year": 2025,
+       "value": 214925.0
+      },
+      {
+       "year": 2026,
+       "value": 226949.0
+      }
+     ],
+     "adopted2024": 187848.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9901",
+   "name": "Transfers to Other Funds",
+   "adopted2024": 194700.0,
+   "adopted2025": 212300.0,
+   "adopted2026": 167000.0,
+   "change": -45300.0,
+   "categoryTotals": [
+    {
+     "category": "Interfund / Transfers",
+     "adopted2026": 167000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9901-900-A01-00000",
+     "name": "Trf - Interfund Trf General Fund",
+     "category": "Interfund / Transfers",
+     "adopted2025": 212300.0,
+     "deptRequested2026": 167000.0,
+     "tentative2026": 167000.0,
+     "preliminary2026": 167000.0,
+     "adopted2026": 167000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 189000.0
+      },
+      {
+       "year": 2021,
+       "value": 190700.0
+      },
+      {
+       "year": 2022,
+       "value": 205900.0
+      },
+      {
+       "year": 2023,
+       "value": 180400.0
+      },
+      {
+       "year": 2024,
+       "value": 194700.0
+      },
+      {
+       "year": 2025,
+       "value": 212300.0
+      },
+      {
+       "year": 2026,
+       "value": 167000.0
+      }
+     ],
+     "adopted2024": 194700.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1994",
+   "name": "Depreciation",
+   "adopted2024": 100000.0,
+   "adopted2025": 100000.0,
+   "adopted2026": 100000.0,
+   "change": 0.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 100000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-1-1994-492-000-00000",
+     "name": "Depr - Depreciation",
+     "category": "Contractual",
+     "adopted2025": 100000.0,
+     "deptRequested2026": 100000.0,
+     "tentative2026": 100000.0,
+     "preliminary2026": 100000.0,
+     "adopted2026": 100000.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 135000.0
+      },
+      {
+       "year": 2021,
+       "value": 135000.0
+      },
+      {
+       "year": 2022,
+       "value": 135000.0
+      },
+      {
+       "year": 2023,
+       "value": 100000.0
+      },
+      {
+       "year": 2024,
+       "value": 100000.0
+      },
+      {
+       "year": 2025,
+       "value": 100000.0
+      },
+      {
+       "year": 2026,
+       "value": 100000.0
+      }
+     ],
+     "adopted2024": 100000.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9010",
+   "name": "Function 9010",
+   "adopted2024": 57524.0,
+   "adopted2025": 70434.0,
+   "adopted2026": 68309.0,
+   "change": -2125.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 68309.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9010-801-NON-00000",
+     "name": "Ret -NYS Retirement Non-Uni Pers",
+     "category": "Employee Benefits",
+     "adopted2025": 70434.0,
+     "deptRequested2026": 62911.0,
+     "tentative2026": 68309.0,
+     "preliminary2026": 68309.0,
+     "adopted2026": 68309.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 45800.0
+      },
+      {
+       "year": 2021,
+       "value": 56500.0
+      },
+      {
+       "year": 2022,
+       "value": 43300.0
+      },
+      {
+       "year": 2023,
+       "value": 51900.0
+      },
+      {
+       "year": 2024,
+       "value": 57524.0
+      },
+      {
+       "year": 2025,
+       "value": 70434.0
+      },
+      {
+       "year": 2026,
+       "value": 68309.0
+      }
+     ],
+     "adopted2024": 57524.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "1910",
+   "name": "Unallocated Insurance",
+   "adopted2024": 27700.0,
+   "adopted2025": 30500.0,
+   "adopted2026": 31900.0,
+   "change": 1400.0,
+   "categoryTotals": [
+    {
+     "category": "Contractual",
+     "adopted2026": 31900.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-1-1910-487-000-00000",
+     "name": "Gen Liab - Insurance Premium",
+     "category": "Contractual",
+     "adopted2025": 21700.0,
+     "deptRequested2026": 23100.0,
+     "tentative2026": 23100.0,
+     "preliminary2026": 23100.0,
+     "adopted2026": 23100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 13800.0
+      },
+      {
+       "year": 2021,
+       "value": 13400.0
+      },
+      {
+       "year": 2022,
+       "value": 13700.0
+      },
+      {
+       "year": 2023,
+       "value": 16300.0
+      },
+      {
+       "year": 2024,
+       "value": 19100.0
+      },
+      {
+       "year": 2025,
+       "value": 21700.0
+      },
+      {
+       "year": 2026,
+       "value": 23100.0
+      }
+     ],
+     "adopted2024": 19100.0
+    },
+    {
+     "account": "ES5-1-1910-488-000-00000",
+     "name": "Gen Liab - Claim Payments",
+     "category": "Contractual",
+     "adopted2025": 8800.0,
+     "deptRequested2026": 8800.0,
+     "tentative2026": 8800.0,
+     "preliminary2026": 8800.0,
+     "adopted2026": 8800.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 9900.0
+      },
+      {
+       "year": 2021,
+       "value": 9000.0
+      },
+      {
+       "year": 2022,
+       "value": 8900.0
+      },
+      {
+       "year": 2023,
+       "value": 8900.0
+      },
+      {
+       "year": 2024,
+       "value": 8600.0
+      },
+      {
+       "year": 2025,
+       "value": 8800.0
+      },
+      {
+       "year": 2026,
+       "value": 8800.0
+      }
+     ],
+     "adopted2024": 8600.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9030",
+   "name": "FICA",
+   "adopted2024": 29911.0,
+   "adopted2025": 28883.0,
+   "adopted2026": 28399.0,
+   "change": -484.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 28399.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9030-805-NON-00000",
+     "name": "FICA - FICA Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 28883.0,
+     "deptRequested2026": 28831.0,
+     "tentative2026": 28399.0,
+     "preliminary2026": 28399.0,
+     "adopted2026": 28399.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 25000.0
+      },
+      {
+       "year": 2021,
+       "value": 24900.0
+      },
+      {
+       "year": 2022,
+       "value": 26400.0
+      },
+      {
+       "year": 2023,
+       "value": 27600.0
+      },
+      {
+       "year": 2024,
+       "value": 29911.0
+      },
+      {
+       "year": 2025,
+       "value": 28883.0
+      },
+      {
+       "year": 2026,
+       "value": 28399.0
+      }
+     ],
+     "adopted2024": 29911.0
+    }
+   ],
+   "lineItemCount": 1
+  },
+  {
+   "code": "9040",
+   "name": "WC",
+   "adopted2024": 20600.0,
+   "adopted2025": 18600.0,
+   "adopted2026": 19000.0,
+   "change": 400.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 19000.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9040-887-000-00000",
+     "name": "WC - Insurance Premuim",
+     "category": "Employee Benefits",
+     "adopted2025": 5500.0,
+     "deptRequested2026": 5900.0,
+     "tentative2026": 5900.0,
+     "preliminary2026": 5900.0,
+     "adopted2026": 5900.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 6600.0
+      },
+      {
+       "year": 2021,
+       "value": 7200.0
+      },
+      {
+       "year": 2022,
+       "value": 7900.0
+      },
+      {
+       "year": 2023,
+       "value": 4400.0
+      },
+      {
+       "year": 2024,
+       "value": 5200.0
+      },
+      {
+       "year": 2025,
+       "value": 5500.0
+      },
+      {
+       "year": 2026,
+       "value": 5900.0
+      }
+     ],
+     "adopted2024": 5200.0
+    },
+    {
+     "account": "ES5-9-9040-888-000-00000",
+     "name": "WC - Claim Payments",
+     "category": "Employee Benefits",
+     "adopted2025": 13100.0,
+     "deptRequested2026": 13100.0,
+     "tentative2026": 13100.0,
+     "preliminary2026": 13100.0,
+     "adopted2026": 13100.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 18800.0
+      },
+      {
+       "year": 2021,
+       "value": 20800.0
+      },
+      {
+       "year": 2022,
+       "value": 20800.0
+      },
+      {
+       "year": 2023,
+       "value": 13100.0
+      },
+      {
+       "year": 2024,
+       "value": 15400.0
+      },
+      {
+       "year": 2025,
+       "value": 13100.0
+      },
+      {
+       "year": 2026,
+       "value": 13100.0
+      }
+     ],
+     "adopted2024": 15400.0
+    }
+   ],
+   "lineItemCount": 2
+  },
+  {
+   "code": "9055",
+   "name": "Function 9055",
+   "adopted2024": 1383.0,
+   "adopted2025": 1385.0,
+   "adopted2026": 0,
+   "change": -1385.0,
+   "categoryTotals": [
+    {
+     "category": "Employee Benefits",
+     "adopted2026": 0.0
+    }
+   ],
+   "lineItems": [
+    {
+     "account": "ES5-9-9055-806-NON-00000",
+     "name": "Fringe -MTA Tax Non-Uni Personnel",
+     "category": "Employee Benefits",
+     "adopted2025": 1385.0,
+     "deptRequested2026": 2407.0,
+     "tentative2026": 0.0,
+     "preliminary2026": 0.0,
+     "adopted2026": 0.0,
+     "history": [
+      {
+       "year": 2020,
+       "value": 1200.0
+      },
+      {
+       "year": 2021,
+       "value": 1200.0
+      },
+      {
+       "year": 2022,
+       "value": 1200.0
+      },
+      {
+       "year": 2023,
+       "value": 1300.0
+      },
+      {
+       "year": 2024,
+       "value": 1383.0
+      },
+      {
+       "year": 2025,
+       "value": 1385.0
+      },
+      {
+       "year": 2026,
+       "value": 0.0
+      }
+     ],
+     "adopted2024": 1383.0
+    }
+   ],
+   "lineItemCount": 1
+  }
+ ],
+ "revenues": [
+  {
+   "account": "ES5-2122-000-00000-8",
+   "name": "Sewer Charges",
+   "adopted2025": 1964699.0,
+   "deptRequested2026": 2120810.0,
+   "tentative2026": 2121888.0,
+   "preliminary2026": 2121888.0,
+   "adopted2026": 2121888.0
+  },
+  {
+   "account": "ES5-2122-100-00000-8",
+   "name": "Scavenger Waste Permits",
+   "adopted2025": 5000.0,
+   "deptRequested2026": 10000.0,
+   "tentative2026": 10000.0,
+   "preliminary2026": 10000.0,
+   "adopted2026": 10000.0
+  },
+  {
+   "account": "ES5-2401-000-00000-G",
+   "name": "Interest and Earnings",
+   "adopted2025": 100.0,
+   "deptRequested2026": 100.0,
+   "tentative2026": 100.0,
+   "preliminary2026": 100.0,
+   "adopted2026": 100.0
+  },
+  {
+   "account": "ES5-9999-000-00000-0",
+   "name": "Appropriated Fund Balance (Budget Prep O",
+   "adopted2025": 100000.0,
+   "deptRequested2026": 100000.0,
+   "tentative2026": 100000.0,
+   "preliminary2026": 100000.0,
+   "adopted2026": 100000.0
+  }
+ ],
+ "officialAppropriations2026": 2231988,
+ "reconciliationVariance2026": 0.0,
+ "reconciled": true
+}

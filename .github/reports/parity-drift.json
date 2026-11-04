@@ -1,16 +1,44 @@
 {
-  "generatedAt": "2026-11-03T21:06:13.219Z",
+  "generatedAt": "2026-11-04T21:22:14.066Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
   "swiftTypesRead": 848,
   "counts": {
     "break": 0,
-    "drift": 1,
+    "drift": 3,
     "note": 1,
     "transport": 0
   },
   "findings": [
+    {
+      "kind": "unknown-key",
+      "severity": "drift",
+      "endpoint": "board-elections",
+      "route": "/board-elections/",
+      "swift": "BoardElectionsParityView.swift",
+      "schemaPath": "priorElections[].status",
+      "examplePath": "priorElections[0].status",
+      "detail": "the web app publishes this but `BoardElectionsParityDocument.PriorElection` has no property for it, so the view ignores it",
+      "occurrences": 1,
+      "swiftType": "BoardElectionsParityDocument.PriorElection",
+      "declaredIn": "BoardElectionsParityView.swift",
+      "declaredAt": 38
+    },
+    {
+      "kind": "unknown-key",
+      "severity": "drift",
+      "endpoint": "board-elections",
+      "route": "/board-elections/",
+      "swift": "BoardElectionsParityView.swift",
+      "schemaPath": "priorElections[].turnout",
+      "examplePath": "priorElections[1].turnout",
+      "detail": "the web app publishes this but `BoardElectionsParityDocument.PriorElection` has no property for it, so the view ignores it",
+      "occurrences": 5,
+      "swiftType": "BoardElectionsParityDocument.PriorElection",
+      "declaredIn": "BoardElectionsParityView.swift",
+      "declaredAt": 38
+    },
     {
       "kind": "nav-route-missing",
       "severity": "drift",

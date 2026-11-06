@@ -34,6 +34,14 @@ private struct PayrollRecordsDocument: Decodable, Sendable {
     /// web page keeps its own hardcoded copy of this map; reading the published
     /// one means ours cannot fall out of step with the ETL that produces it.
     let unionLabels: [String: String]?
+    /// The ETL's own legend for the abbreviated record keys. `fields["k"]` is
+    /// the authoritative order of the `k` array — "[longevity,
+    /// holiday/differential, stipends, buy-outs, retro]" — which
+    /// `PayrollParityRecord.otherComponents` maps to labels *by position*. If
+    /// the web ever reorders that array, the positional mapping would quietly
+    /// relabel buy-outs as stipends, so the published legend is shown beside
+    /// the breakdown rather than left to be discovered.
+    let fields: [String: String]?
     /// What the Town's export does and does not contain. Carried because the
     /// page is about named people's pay and the caveat belongs beside it.
     let note: String?
@@ -151,6 +159,24 @@ private struct SalaryComparisonDocument: Decodable, Sendable {
         let totalRaise: Double
         let avgRaise: Double
         let medianRaisePct: Double?
+        /// The web page's precomputed top 15 raises. Decoded so this document
+        /// accounts for everything the ETL publishes, but deliberately not
+        /// rendered: `records` carries every row, and this screen already lets
+        /// a resident sort the full list by raise or by percent. A fixed
+        /// fifteen would be strictly less than what the native view offers,
+        /// and a second ranking on the same screen could disagree with the
+        /// first after a filter.
+        let topRaises: [TopRaise]?
+    }
+
+    struct TopRaise: Decodable, Sendable {
+        let name: String
+        let title2026: String?
+        let annual2025: Double?
+        let annual2026: Double?
+        let raise: Double?
+        let raisePct: Double?
+        let promoted: Bool?
     }
 }
 
@@ -267,6 +293,7 @@ private struct NativePayrollExplorerView: View {
     @State private var unionLabels: [String: String] = [:]
     @State private var exportNote: String?
     @State private var exportSource: PayrollRecordsDocument.Citation?
+    @State private var otherPayLegend: String?
     @State private var isLoading = true
     @State private var errorMessage: String?
     @State private var selectedYear: Int? = 2025
@@ -444,6 +471,16 @@ private struct NativePayrollExplorerView: View {
                     Text("Regular is base salary or wages. Overtime is premium pay for extra hours. Other pay is gross minus regular minus overtime and can include longevity, holiday or shift differential, stipends, retroactive pay, and leave or termination buy-outs. Fields marked ‘carried’ are inferred from a stable value reported in another year and are not represented as contemporaneous Town fields.")
                         .font(.caption)
                         .foregroundStyle(.secondary)
+
+                    if let otherPayLegend {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Other pay, as the published export defines it")
+                                .font(.caption2.weight(.semibold))
+                            Text(verbatim: otherPayLegend)
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                 }
             }
         }
@@ -486,6 +523,7 @@ private struct NativePayrollExplorerView: View {
         unionLabels = document.unionLabels ?? [:]
         exportNote = document.note
         exportSource = document.source
+        otherPayLegend = document.fields?["k"]
     }
 
     /// "PBA" means nothing to a resident; the web page shows "Police

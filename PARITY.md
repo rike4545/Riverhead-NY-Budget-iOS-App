@@ -6,26 +6,35 @@ This document defines parity against the current user-facing navigation in
 ## Current parity layer
 
 `BudgetLiveParityView` exposes every current web navigation destination inside
-the iOS app. The catalog contains **54 unique routes** across the same five
+the iOS app. The catalog contains **64 entries** across the same five
 navigation groups used by the web product:
 
 - Start Here — 4
-- Explore — 18
-- Government — 14
-- Research — 11
-- Evidence — 7
+- Explore — 20
+- Government — 16
+- Research — 16
+- Evidence — 8
 
-The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (62 entries over 61 distinct routes, as of 2026-10-23; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. Routes with a
+The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (64 entries over 64 distinct routes and 63 distinct pages, as of 2026-11-05; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. Routes with a
 verified native counterpart open SwiftUI directly; every other destination uses
 the existing `WebContentView` / `WKWebView` implementation and therefore keeps
 loading the current GitHub Pages version until its native replacement is ready.
 
-This is **complete functional access parity**, not a claim that all 45 features
+This is **complete functional access parity**, not a claim that all 63 pages
 have already been rewritten as native SwiftUI screens.
+
+Two routes were added on 2026-11-05 after the drift check reported them
+unreachable — not even as a web fallback: `/rvac-funding/` (Ambulance Funding,
+in Explore, where the web nav puts it) and `/records/` (Records the Town Has Not
+Published, in Evidence). The same pass removed a duplicate `/tentative-2027/`
+entry that had been appended to the top of the Research group while an identical
+one already sat three lines below it. That duplicate was breaking two assertions
+in `BudgetLiveParityTests` — `routeCount == 62` and `hasUniquePaths` — which is
+how a catalog with 63 entries and 62 distinct paths went unnoticed.
 
 ## Native routes in the parity hub
 
-16 of 45 routes render natively. This list is generated from
+16 of 63 pages render natively. This list is generated from
 `BudgetLiveParityCatalog.nativePaths` and the `parityDestination` switch; it
 went twelve routes stale once, so update it in the same commit that adds a
 route.
@@ -137,6 +146,41 @@ Work the findings with the `web-parity-watchdog` agent, which decides the part
 a script should not: whether a vanished field becomes optional or the view
 stops showing it, which new published field earns a row on screen, and what a
 new status code means before it gets a colour.
+
+## Drift pass, 2026-11-05
+
+The checker reported `0 break, 12 drift, 1 note`. The two navigation findings
+are covered above. The other ten were all `unknown-key` — the web app publishes
+a field and the Swift decoder has no property for it, so the native view
+silently ignores content the web route shows. None was a break; nothing was
+falling back to a web view. All ten are now closed, and the checker reports
+**0 break, 0 drift**.
+
+Every added property is **optional**, including the ones present on every row
+today. A non-optional field that the web later stops publishing throws the whole
+document away, and the native screen becomes its web fallback with no crash and
+no log — the failure this document already records against `/tax-bill/`.
+
+| Field | Decision |
+|---|---|
+| `board-elections` `priorElections[].status` | **Shown.** "Unofficial — not yet certified" is published only while a canvass is open. Rendering the vote counts without it states a result more firmly than the Board of Elections has. |
+| `board-elections` `priorElections[].turnout` | **Shown**, as a percentage in each cycle's section header. `turnoutNote` already says it in prose; the figure makes six cycles scannable without reading six paragraphs. |
+| `fund-appropriations` `funds[].firstYear` / `lastYear` / `totalChange` / `totalChangePct` | **Shown** as a "whole range" line under each flagged fund. This is first-to-last across the published range, a different measure from the year-over-year change the view computes, so it is context rather than a duplicate. |
+| `fund-appropriations` `townTotals` | **Shown** in Snapshot — the town-wide baseline a single fund's swing sits against. Read from the document rather than summed from `funds`, so it stays whatever the ETL says the total is. |
+| `payroll-records` `fields` | **Shown** under Record notes. `fields["k"]` is the ETL's authoritative order for the `k` array, which `otherComponents` maps to labels *by position*. If the web reorders it, the positional mapping would quietly relabel buy-outs as stipends. |
+| `salary-comparison` `summary.topRaises` | **Decoded, deliberately not shown.** `records` already carries every row and the screen sorts the full list by raise or percent. A fixed fifteen is strictly less, and a second ranking on the same screen could disagree with the first after a filter. |
+| `search-manifest` `shards[*].sha256` | **Used, not shown.** Shards are fetched with `.returnCacheDataElseLoad`, which on its own serves a cached shard indefinitely. The hash is now the cache key, so a republished index actually arrives. |
+
+### The remaining note is correct and stays
+
+`closed-set-unused` reports that `CandidateParty` handles `"R"` and `"C"`, which
+the current data no longer contains. It should keep handling them. The live
+payload carries only `"D"` and `"R/C"` because this cycle's Republican ran on a
+fused Republican/Conservative line; fusion is not guaranteed, and either bare
+code can return at any election. Removing the branches to silence a note would
+be a regression that shows a reader `"C"` instead of "Conservative". The note is
+doing its job — recording that a branch is currently unexercised, not that it is
+wrong.
 
 ## Native parity definition of done
 

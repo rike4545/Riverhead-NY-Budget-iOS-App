@@ -35,9 +35,29 @@ struct BoardElectionsParityDocument: Decodable, Sendable {
         var id: String { "\(office)|\(seats)" }
     }
 
+    /// Ballots cast against registered voters, as the web app publishes them.
+    /// `turnoutNote` says the same thing in prose; this is the machine-readable
+    /// form, used for the percentage in the section header so a reader can scan
+    /// six cycles without reading six paragraphs.
+    struct Turnout: Decodable, Sendable {
+        let ballots: Int
+        let registered: Int
+
+        var percentage: Double? {
+            guard registered > 0 else { return nil }
+            return Double(ballots) / Double(registered) * 100
+        }
+    }
+
     struct PriorElection: Decodable, Identifiable, Sendable {
         let year: Int
+        /// Present only while a result is not yet certified ("Unofficial — not
+        /// yet certified"). Optional because the web app omits it once a canvass
+        /// is final, and a non-optional would throw the whole document away.
+        let status: String?
         let turnoutNote: String
+        /// Absent on a cycle whose canvass has not reported registered totals.
+        let turnout: Turnout?
         let races: [Race]
         var id: Int { year }
     }
@@ -162,8 +182,22 @@ struct NativeBoardElectionsParityView: View {
                     }
 
                     ForEach(document.priorElections) { election in
-                        Section("\(election.year) General Election") {
-                            Text(election.turnoutNote)
+                        Section {
+                            // Published only while a canvass is uncertified.
+                            // Showing the vote counts without it would state a
+                            // result more firmly than the Board of Elections has.
+                            if let status = election.status {
+                                Label {
+                                    Text(verbatim: status)
+                                } icon: {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                }
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(RiverheadTheme.gold)
+                                .accessibilityLabel(Text(verbatim: "Result status: \(status)"))
+                            }
+
+                            Text(verbatim: election.turnoutNote)
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
 
@@ -190,6 +224,18 @@ struct NativeBoardElectionsParityView: View {
                                     }
                                 }
                                 .padding(.vertical, 4)
+                            }
+                        } header: {
+                            HStack(alignment: .firstTextBaseline) {
+                                // String(_:) and Text(verbatim:): a literal with
+                                // interpolation is a LocalizedStringKey, which
+                                // would render the year as "2,026".
+                                Text(verbatim: "\(String(election.year)) General Election")
+                                if let percentage = election.turnout?.percentage {
+                                    Spacer()
+                                    Text(verbatim: String(format: "%.1f%% turnout", percentage))
+                                        .accessibilityLabel(Text(verbatim: String(format: "Turnout %.1f percent", percentage)))
+                                }
                             }
                         }
                     }

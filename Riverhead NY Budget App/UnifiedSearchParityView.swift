@@ -64,6 +64,13 @@ struct RiverheadSearchManifest: Decodable, Sendable {
         let url: String
         let count: Int
         let bytes: Int
+        /// Content hash of the shard file. Shards are fetched with
+        /// `.returnCacheDataElseLoad`, which serves a cached copy forever and
+        /// would keep showing yesterday's search index after the web app
+        /// republished. Appending this to the shard URL changes the cache key
+        /// exactly when the content changes. Optional: the manifest is
+        /// versioned, and an older one without hashes must still load.
+        let sha256: String?
     }
 
     let version: Int
@@ -101,16 +108,29 @@ private enum RiverheadSearchClient {
         manifest: RiverheadSearchManifest
     ) async throws -> [RiverheadSearchEntry] {
         guard let shard = manifest.shards[type.rawValue] else { return [] }
-        let envelope = try await loadJSON(RiverheadSearchShard.self, filename: shard.url)
+        let envelope = try await loadJSON(
+            RiverheadSearchShard.self,
+            filename: shard.url,
+            contentHash: shard.sha256
+        )
         return envelope.entries
     }
 
-    private static func loadJSON<T: Decodable & Sendable>(_ type: T.Type, filename: String) async throws -> T {
+    private static func loadJSON<T: Decodable & Sendable>(
+        _ type: T.Type,
+        filename: String,
+        contentHash: String? = nil
+    ) async throws -> T {
         let roots = [pagesRoot, rawRoot]
         var lastError: Error?
 
         for root in roots {
-            guard let url = URL(string: "\(root)/\(filename)") else { continue }
+            guard var components = URLComponents(string: "\(root)/\(filename)") else { continue }
+            // Cache-bust on content, not on time: same hash, same cached copy.
+            if let contentHash, !contentHash.isEmpty {
+                components.queryItems = [URLQueryItem(name: "v", value: contentHash)]
+            }
+            guard let url = components.url else { continue }
             do {
                 var request = URLRequest(url: url)
                 request.cachePolicy = .returnCacheDataElseLoad

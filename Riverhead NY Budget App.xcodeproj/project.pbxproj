@@ -426,7 +426,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 71;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -450,7 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.08.06;
+				MARKETING_VERSION = 2026.10.27;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -474,7 +474,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Riverhead NY Budget App/Riverhead_NY_Budget_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 58;
+				CURRENT_PROJECT_VERSION = 71;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RT25WXR9M5;
 				ENABLE_APP_SANDBOX = YES;
@@ -498,7 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 2026.08.06;
+				MARKETING_VERSION = 2026.10.27;
 				PRODUCT_BUNDLE_IDENTIFIER = "Me.Riverhead-NY-Budget-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;

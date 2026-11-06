@@ -84,6 +84,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Tax Cap", path: "/tax-cap/", systemImage: "percent", detail: "Understand the New York property-tax cap and Riverhead history."),
             .init(title: "Reserves & Fund Balance", path: "/reserves/", systemImage: "banknote.fill", detail: "Review reserve policy, fund balance, draw-down modeling, and peers."),
             .init(title: "Where the Surplus Went", path: "/fund-balance-draws/", systemImage: "arrow.down.right.circle.fill", detail: "Track adopted uses of fund balance and the effect on reserves."),
+            .init(title: "Ambulance Funding", path: "/rvac-funding/", systemImage: "staroflife.fill", detail: "See how the Ambulance District budget funds the Riverhead Volunteer Ambulance Corps, line by line."),
             .init(title: "Budget Changes, Live", path: "/budget-changes/", systemImage: "arrow.triangle.2.circlepath", detail: "Track every budget change the Town Board has passed this year."),
             .init(title: "Capital & Debt", path: "/capital-debt/", systemImage: "building.2.crop.circle", detail: "Review debt, amortization, BANs, bonds, and financing scenarios."),
             .init(title: "Town Square", path: "/town-square/", systemImage: "building.2.fill", detail: "Review the Town Square project, financing, and source record."),
@@ -130,13 +131,13 @@ enum BudgetLiveParityCatalog {
         ],
         .evidence: [
             .init(title: "Source Library", path: "/sources/", systemImage: "books.vertical.fill", detail: "Open the source trail behind the platform's figures."),
+            .init(title: "Records the Town Has Not Published", path: "/records/", systemImage: "tray.and.arrow.up.fill", detail: "Request records the Town has not published under the Freedom of Information Law, and track the response deadlines."),
             .init(title: "Downloads", path: "/downloads/", systemImage: "arrow.down.doc.fill", detail: "Download published datasets for independent analysis."),
             .init(title: "Data Quality & Freshness", path: "/data-quality/", systemImage: "checkmark.circle.badge.questionmark", detail: "Review refresh dates, data limitations, and quality checks."),
             .init(title: "Standards (GFOA)", path: "/gfoa/", systemImage: "checkmark.seal.fill", detail: "Compare Riverhead's budget presentation with GFOA standards."),
             .init(title: "Election Law Case", path: "/election-law-case/", systemImage: "scroll.fill", detail: "Review the sourced election-law case material."),
             .init(title: "Officials on Social Media", path: "/official-social-media/", systemImage: "bubble.left.and.bubble.right.fill", detail: "Review public-official social-media accountability context."),
-            .init(title: "Know Your Rights (ICE)", path: "/know-your-rights/", systemImage: "person.badge.shield.checkmark.fill", detail: "Open the platform's sourced know-your-rights reference."),
-            .init(title: "Records to Request", path: "/records/", systemImage: "doc.text.magnifyingglass", detail: "Find public records worth requesting and the relevant request context.")
+            .init(title: "Know Your Rights (ICE)", path: "/know-your-rights/", systemImage: "person.badge.shield.checkmark.fill", detail: "Open the platform's sourced know-your-rights reference.")
         ]
     ]
 

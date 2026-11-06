@@ -2,50 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- The app does not track: no IDFA, no ATTrackingManager call, and no data
-	     is linked with third-party data for advertising or shared with data
-	     brokers. FirebaseAnalyticsIdentitySupport (the IDFA/AdSupport product)
-	     is deliberately not linked. -->
+	<!-- The app does not track: no IDFA, no ATTrackingManager call, no ad or
+	     attribution SDK, and no data linked with third-party data for
+	     advertising or shared with data brokers. AdMob and Firebase were both
+	     removed deliberately; there are no third-party SDK dependencies at all
+	     (no package references, empty Frameworks phases). -->
 	<key>NSPrivacyTracking</key>
 	<false/>
 	<key>NSPrivacyTrackingDomains</key>
 	<array/>
 
-	<!-- First-party Firebase Analytics only (automatic events; no logEvent
-	     calls). Not linked to a user identity — the app has no accounts or
-	     sign-in. -->
+	<!-- The app collects nothing. It has no accounts, no sign-in, no analytics
+	     SDK and no first-party telemetry: it logs no events and sends no usage
+	     data anywhere. SettingsView states this to the user in the same terms
+	     ("Nothing about how you use it leaves your device"), and
+	     Riverhead_NYApp.swift records why Firebase Analytics was removed.
+	     This array was previously non-empty: it still declared Product
+	     Interaction and Device ID collection for a Firebase Analytics
+	     integration that no longer exists, which overstated the App Store
+	     privacy label for an app whose product is that it collects nothing.
+	     Network requests fetch published Town and web-app data; none carries a
+	     user identifier. -->
 	<key>NSPrivacyCollectedDataTypes</key>
-	<array>
-		<dict>
-			<key>NSPrivacyCollectedDataType</key>
-			<string>NSPrivacyCollectedDataTypeProductInteraction</string>
-			<key>NSPrivacyCollectedDataTypeLinked</key>
-			<false/>
-			<key>NSPrivacyCollectedDataTypeTracking</key>
-			<false/>
-			<key>NSPrivacyCollectedDataTypePurposes</key>
-			<array>
-				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
-			</array>
-		</dict>
-		<dict>
-			<!-- Firebase app-instance ID. First-party identifier, not the IDFA. -->
-			<key>NSPrivacyCollectedDataType</key>
-			<string>NSPrivacyCollectedDataTypeDeviceID</string>
-			<key>NSPrivacyCollectedDataTypeLinked</key>
-			<false/>
-			<key>NSPrivacyCollectedDataTypeTracking</key>
-			<false/>
-			<key>NSPrivacyCollectedDataTypePurposes</key>
-			<array>
-				<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
-			</array>
-		</dict>
-	</array>
+	<array/>
 
 	<!-- Required-reason APIs used directly by this app. UserDefaults is read
-	     and written only for this app's own settings (CA92.1). No file-timestamp,
-	     disk-space, boot-time, or active-keyboard APIs are used. -->
+	     and written only for this app's own settings via @AppStorage
+	     (CA92.1). Audited: no file-timestamp, disk-space,
+	     system-boot-time, or active-keyboard API is called anywhere in the
+	     target. -->
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array>
 		<dict>

@@ -25,12 +25,22 @@ private struct OutlierHistoryDocument: Decodable, Sendable {
         let code: String
         let name: String
         let years: [String: FundYear]
+        // Span-wide figures the web ETL already computes. This view derives
+        // year-over-year changes itself, which is a different measure; these
+        // are first-to-last across the whole published range, so they are
+        // context rather than a duplicate of anything calculated here.
+        //
+        // All four are optional on purpose. They are present on all 19 funds
+        // today, but a non-optional field that the web later stops publishing
+        // throws the whole document away and the native view silently becomes
+        // its web fallback — which has already happened once, on /tax-bill/.
         let firstYear: Int?
         let lastYear: Int?
         let totalChange: Double?
         let totalChangePct: Double?
     }
 
+    /// Town-wide appropriations per year, across every fund.
     struct TownTotal: Decodable, Sendable {
         let appropriations: Double
         let fundCount: Int
@@ -52,9 +62,19 @@ private struct OutlierFundChange: Identifiable, Sendable {
     let current: Double
     let dollarChange: Double
     let percentChange: Double?
+    let spanChange: Double?
+    let spanChangePct: Double?
+    let spanFirstYear: Int?
+    let spanLastYear: Int?
 
     var id: String { "\(code)|\(fromYear)|\(toYear)" }
     var transition: String { "\(fromYear)→\(toYear)" }
+
+    /// "2020→2026", when the document published both ends of the range.
+    var spanLabel: String? {
+        guard let spanFirstYear, let spanLastYear else { return nil }
+        return "\(spanFirstYear)→\(spanLastYear)"
+    }
 }
 
 private enum OutlierWatchParityClient {
@@ -110,7 +130,11 @@ struct NativeOutlierWatchView: View {
                     prior: prior,
                     current: current,
                     dollarChange: dollarChange,
-                    percentChange: percentChange
+                    percentChange: percentChange,
+                    spanChange: fund.totalChange,
+                    spanChangePct: fund.totalChangePct,
+                    spanFirstYear: fund.firstYear,
+                    spanLastYear: fund.lastYear
                 )
             }
         }
@@ -132,6 +156,21 @@ struct NativeOutlierWatchView: View {
         return document.years.dropFirst().enumerated().map { index, year in
             "\(document.years[index])→\(year)"
         }
+    }
+
+    /// Town-wide appropriations at both ends of the published range. Comes
+    /// from the document's `townTotals`, not from summing `funds`, so it stays
+    /// whatever the web ETL says the town total is.
+    private var townSpan: (first: Int, last: Int, change: Double, percent: Double?)? {
+        guard let document,
+              let totals = document.townTotals,
+              let firstYear = document.years.first,
+              let lastYear = document.years.last,
+              let from = totals[String(firstYear)]?.appropriations,
+              let to = totals[String(lastYear)]?.appropriations
+        else { return nil }
+        let change = to - from
+        return (firstYear, lastYear, change, from == 0 ? nil : (change / from) * 100)
     }
 
     private var visibleOutliers: [OutlierFundChange] {
@@ -165,6 +204,20 @@ struct NativeOutlierWatchView: View {
                             VStack(alignment: .leading, spacing: 2) {
                                 LabeledContent("Largest flagged swing", value: outlierMoney(abs(biggest.dollarChange)))
                                 Text("\(biggest.name) · \(biggest.transition)")
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        if let span = townSpan {
+                            let percent = span.percent.map {
+                                " (" + ($0 >= 0 ? "+" : "") + String(format: "%.1f", $0) + "%)"
+                            } ?? ""
+                            VStack(alignment: .leading, spacing: 2) {
+                                LabeledContent(
+                                    "Town-wide, all funds",
+                                    value: outlierSignedMoney(span.change) + percent
+                                )
+                                Text(verbatim: "Every fund together, \(String(span.first)) to \(String(span.last)) — the baseline a single fund's swing sits against.")
                                     .font(.caption2)
                                     .foregroundStyle(.secondary)
                             }
@@ -227,6 +280,15 @@ struct NativeOutlierWatchView: View {
                                         } else {
                                             Text("—").foregroundStyle(.secondary)
                                         }
+                                    }
+
+                                    if let spanLabel = outlier.spanLabel, let spanChange = outlier.spanChange {
+                                        let percent = outlier.spanChangePct.map {
+                                            " (" + ($0 >= 0 ? "+" : "") + String(format: "%.1f", $0) + "%)"
+                                        } ?? ""
+                                        Text(verbatim: "Whole range " + spanLabel + ": " + outlierSignedMoney(spanChange) + percent)
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
                                     }
                                 }
                                 .padding(.vertical, 3)

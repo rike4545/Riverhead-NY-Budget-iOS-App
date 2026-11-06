@@ -112,9 +112,9 @@ enum BudgetLiveParityCatalog {
             .init(title: "Open Meetings Law", path: "/open-meetings/", systemImage: "person.2.wave.2.fill", detail: "Review New York Open Meetings Law guidance and Riverhead meeting context.")
         ],
         .research: [
+            .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
-            .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Review the actual tentative budget before comparing it with the projection."),
             .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection after reviewing the actual tentative budget."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),
             .init(title: "Tax-Cap Letter, Checked", path: "/tax-cap-letter/", systemImage: "envelope.open.fill", detail: "Check the Suffolk supervisors' tax-cap letter against Riverhead's record."),

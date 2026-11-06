@@ -169,14 +169,15 @@ private struct SalaryComparisonDocument: Decodable, Sendable {
         let topRaises: [TopRaise]?
     }
 
-    struct TopRaise: Decodable, Sendable {
+    struct TopRaise: Decodable, Identifiable, Sendable {
         let name: String
-        let title2026: String?
+        let title2026: String
         let annual2025: Double?
-        let annual2026: Double?
-        let raise: Double?
-        let raisePct: Double?
-        let promoted: Bool?
+        let annual2026: Double
+        let raise: Double
+        let raisePct: Double
+        let promoted: Bool
+        var id: String { name + "|" + title2026 }
     }
 }
 

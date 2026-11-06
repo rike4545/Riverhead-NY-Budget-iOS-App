@@ -23,14 +23,18 @@ loading the current GitHub Pages version until its native replacement is ready.
 This is **complete functional access parity**, not a claim that all 63 pages
 have already been rewritten as native SwiftUI screens.
 
-Two routes were added on 2026-11-05 after the drift check reported them
-unreachable — not even as a web fallback: `/rvac-funding/` (Ambulance Funding,
-in Explore, where the web nav puts it) and `/records/` (Records the Town Has Not
-Published, in Evidence). The same pass removed a duplicate `/tentative-2027/`
-entry that had been appended to the top of the Research group while an identical
-one already sat three lines below it. That duplicate was breaking two assertions
-in `BudgetLiveParityTests` — `routeCount == 62` and `hasUniquePaths` — which is
-how a catalog with 63 entries and 62 distinct paths went unnoticed.
+The drift check reported two routes unreachable — not even as a web fallback.
+`/records/` was closed by PR #25 on 2026-10-27, which also removed a duplicate
+`/tentative-2027/` entry. That duplicate had been breaking two assertions in
+`BudgetLiveParityTests` — `routeCount == 62` against an actual 63, and
+`hasUniquePaths` — which is how it went unnoticed.
+
+`/rvac-funding/` (Ambulance Funding) was still missing and is added here, in
+Explore, where the web nav puts it. Its title mirrors the nav label rather than
+the page heading, which is the rule the catalog follows; the same rule is why
+the `/records/` entry is titled "Records the Town Has Not Published" (the nav
+label) rather than "Records to Request" (the page's H1), changed here from what
+PR #25 shipped.
 
 ## Native routes in the parity hub
 
@@ -149,12 +153,16 @@ new status code means before it gets a colour.
 
 ## Drift pass, 2026-11-05
 
-The checker reported `0 break, 12 drift, 1 note`. The two navigation findings
-are covered above. The other ten were all `unknown-key` — the web app publishes
-a field and the Swift decoder has no property for it, so the native view
-silently ignores content the web route shows. None was a break; nothing was
-falling back to a web view. All ten are now closed, and the checker reports
-**0 break, 0 drift**.
+The checker reported `0 break, 12 drift, 1 note`. The other ten findings were
+all `unknown-key` — the web app publishes a field and the Swift decoder has no
+property for it, so the native view silently ignores content the web route
+shows. None was a break; nothing was falling back to a web view. All ten are
+now closed and the checker reports **0 break, 0 drift**.
+
+PR #25 had already added the properties for seven of them, which silences the
+checker because the schema is derived from the Swift declarations. It wired
+none of them to anything: `fields`, `topRaises` and `sha256` were declared and
+never read. The table below is what each field now actually does.
 
 Every added property is **optional**, including the ones present on every row
 today. A non-optional field that the web later stops publishing throws the whole

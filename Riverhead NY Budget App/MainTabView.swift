@@ -15,11 +15,15 @@
 //  replace that material with a flat fill and the app would look like it had
 //  never been rebuilt. The previous version of this file did exactly that.
 //
-//  Note that nothing here calls a Liquid Glass API by name. The bars get the
-//  material from the SDK because nothing overrides them any more, which is the
-//  whole adoption. .glassEffect and .tabBarMinimizeBehavior were tried and then
-//  removed: they were written without an SDK to check them against, and an
-//  unverifiable API call is not worth the build.
+//  The bars get their material from the SDK because nothing overrides them any
+//  more, which is the whole Liquid Glass adoption. .glassEffect and
+//  .tabBarMinimizeBehavior were tried and then removed: they were written
+//  without an SDK to check them against, and an unverifiable API call is not
+//  worth the build.
+//
+//  The two tab-placement modifiers below are the exception, and they earn it:
+//  both were read out of the iOS 27.2 SDK's SwiftUI.swiftinterface before they
+//  were typed, and both are iOS 18 APIs, so CI's older SDK still contains them.
 //
 
 import SwiftUI
@@ -133,6 +137,21 @@ struct MainTabView: View {
             }
         }
         .tint(RiverheadTheme.accent)
+        // iPhone Duo. The inner display is regular in BOTH size classes, which is
+        // the one place a sidebar belongs on a phone (Apple, "Prepare your app for
+        // iPhone Duo", Tech Talk 111461). .sidebarAdaptable keeps the tab bar in
+        // compact width — the outer display, and every non-folding iPhone — and
+        // promotes the same five tabs to a sidebar when the device is opened. The
+        // 64-route parity catalog is reached from the Budget tab's toolbar, so the
+        // extra column is worth real navigation on the larger screen.
+        //
+        // These are the iOS 18 spellings, deliberately. iOS 27 renames the second
+        // one to .defaultTabBarPlacement(_:), but no GitHub Actions runner image
+        // ships an iOS 27 SDK yet — the macOS 26 image tops out at Xcode 26.6 and
+        // the iOS 26.5 SDK — and a symbol the CI SDK does not contain fails the
+        // whole target, availability check or not. Same mechanism, builds today.
+        .tabViewStyle(.sidebarAdaptable)
+        .defaultAdaptableTabBarPlacement(.sidebar)
         .task {
             await prepareBudgetDataIfNeeded()
         }

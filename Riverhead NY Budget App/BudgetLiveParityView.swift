@@ -84,6 +84,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Tax Cap", path: "/tax-cap/", systemImage: "percent", detail: "Understand the New York property-tax cap and Riverhead history."),
             .init(title: "Reserves & Fund Balance", path: "/reserves/", systemImage: "banknote.fill", detail: "Review reserve policy, fund balance, draw-down modeling, and peers."),
             .init(title: "Where the Surplus Went", path: "/fund-balance-draws/", systemImage: "arrow.down.right.circle.fill", detail: "Track adopted uses of fund balance and the effect on reserves."),
+            .init(title: "Ambulance Funding", path: "/rvac-funding/", systemImage: "staroflife.fill", detail: "See how the Ambulance District budget funds the Riverhead Volunteer Ambulance Corps, line by line."),
             .init(title: "Budget Changes, Live", path: "/budget-changes/", systemImage: "arrow.triangle.2.circlepath", detail: "Track every budget change the Town Board has passed this year."),
             .init(title: "Capital & Debt", path: "/capital-debt/", systemImage: "building.2.crop.circle", detail: "Review debt, amortization, BANs, bonds, and financing scenarios."),
             .init(title: "Town Square", path: "/town-square/", systemImage: "building.2.fill", detail: "Review the Town Square project, financing, and source record."),
@@ -111,7 +112,6 @@ enum BudgetLiveParityCatalog {
             .init(title: "Open Meetings Law", path: "/open-meetings/", systemImage: "person.2.wave.2.fill", detail: "Review New York Open Meetings Law guidance and Riverhead meeting context.")
         ],
         .research: [
-            .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Review the actual tentative budget before comparing it with the projection."),
@@ -131,6 +131,7 @@ enum BudgetLiveParityCatalog {
         ],
         .evidence: [
             .init(title: "Source Library", path: "/sources/", systemImage: "books.vertical.fill", detail: "Open the source trail behind the platform's figures."),
+            .init(title: "Records the Town Has Not Published", path: "/records/", systemImage: "tray.and.arrow.up.fill", detail: "Request records the Town has not published under the Freedom of Information Law, and track the response deadlines."),
             .init(title: "Downloads", path: "/downloads/", systemImage: "arrow.down.doc.fill", detail: "Download published datasets for independent analysis."),
             .init(title: "Data Quality & Freshness", path: "/data-quality/", systemImage: "checkmark.circle.badge.questionmark", detail: "Review refresh dates, data limitations, and quality checks."),
             .init(title: "Standards (GFOA)", path: "/gfoa/", systemImage: "checkmark.seal.fill", detail: "Compare Riverhead's budget presentation with GFOA standards."),

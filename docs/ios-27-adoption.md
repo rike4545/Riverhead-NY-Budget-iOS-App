@@ -387,6 +387,97 @@ macOS runner would end the class of problem that `aff809c` had to clean up.
 Items 1–4 need no iOS 27 API at all, which is the point: the most valuable work
 on this list is available before a single new symbol is typed.
 
+## 9. iPhone Duo — what landed, and the one thing blocking the rest
+
+Added 2026-11-05, on a machine with **Xcode 27.2 and the iOS 27.2 SDK**, so for
+the first time the standing rule at the top of this document could be satisfied
+by reading symbols out of the SDK instead of trusting release notes. Every API
+named below was checked in
+`iPhoneOS27.2.sdk/.../SwiftUI.swiftmodule/arm64e-apple-ios.swiftinterface`
+before it was typed.
+
+### The blocker, stated plainly
+
+**No GitHub Actions runner image ships an iOS 27 SDK.** Checked against the
+current `runner-images` READMEs:
+
+| Image | Newest Xcode | Newest iOS SDK |
+|---|---|---|
+| `macos-15` | 26.3 | 26.2 |
+| `macos-26` | 26.6 (default) | 26.5 |
+
+`select-xcode.sh` picks the newest Xcode installed, so CI gets 26.6 at best.
+An `#available(iOS 27, *)` check does **not** help: availability gates runtime,
+not the SDK, and a symbol the CI SDK does not contain fails the whole target.
+That is the same failure `aff809c` had to clean up, so every iOS 27-only symbol
+stays out of the target until the runners catch up — `toolbarMinimizationBehavior`
+included, which is why item 7 is still unfinished.
+
+### What Duo actually needed, and how much of it was free
+
+Apple's "Prepare your app for iPhone Duo" is mostly a list of things *not* to
+do, and this app was already clean on all of them. Audited, with counts:
+
+| Apple's guidance | This app |
+|---|---|
+| Avoid `UIScreen.main` (ambiguous on two displays, will be deprecated) | **0 uses** — no `UIScreen` reference at all |
+| Don't branch layout on interface orientation | **0 uses** — the inner display does not honour supported orientations anyway |
+| Don't branch layout on `userInterfaceIdiom` | **0 uses** |
+| Safe-area insets are **asymmetric**; never doubling one side | **0 uses** of `safeAreaInsets` — SwiftUI's default handling throughout |
+| Support landscape (people prop the phone open like a tent) | all four orientations already declared |
+| Don't force `UIRequiresFullScreen` | not set |
+| Use size classes | 7 views already read `horizontalSizeClass` / `verticalSizeClass` |
+
+So the only real gap was the one Apple calls out as the opportunity rather than
+the hazard: the inner display is **regular in both size classes**, which is the
+one place a sidebar belongs on a phone.
+
+### What changed
+
+`MainTabView` gains two modifiers:
+
+```swift
+.tabViewStyle(.sidebarAdaptable)
+.defaultAdaptableTabBarPlacement(.sidebar)
+```
+
+The tab bar stays in compact width — the outer display, and every non-folding
+iPhone — and the same five tabs become a sidebar when the device is opened.
+
+These are the **iOS 18** spellings on purpose. iOS 27 renames the second to
+`defaultTabBarPlacement(_:)`, but that symbol is `@available(anyAppleOS 27.0, *)`
+and therefore uncompilable in CI per the table above. The iOS 18 API is the same
+mechanism and builds today. Verified availability:
+
+| Symbol | Availability in the 27.2 SDK | Usable in CI |
+|---|---|---|
+| `defaultAdaptableTabBarPlacement(_:)` | `iOS 18.0` | yes — **used** |
+| `.tabViewStyle(.sidebarAdaptable)` | `iOS 18.0` | yes — **used** |
+| `AdaptableTabBarPlacement.sidebar` | `iOS 18.0` | yes — **used** |
+| `defaultTabBarPlacement(_:)` | `anyAppleOS 27.0` | no |
+| `toolbarMinimizationBehavior(_:for:)` | `anyAppleOS 27.0` | no |
+| `ReservedRegion` / `UIViewReservedRegion` | iOS 27.1 (SwiftUICore, UIKit) | no |
+| `ArrangementView` | iOS 27.1 (SwiftUICore, UIKit) | no |
+
+One consequence worth stating: `TARGETED_DEVICE_FAMILY` is `1,2`, so **iPad
+also moves from a bottom tab bar to a sidebar.** That is the direction Apple
+has taken iPad since iOS 18 and it suits a 64-route catalog, but it is a visible
+change on a device that is not the one this work was aimed at.
+
+### Not done, deliberately
+
+- **`UIApplicationSupportsMultipleScenes` is still `false`.** Duo's Split View
+  does not require it — that is the app beside *another* app, not two windows of
+  this one — and flipping it means auditing every `@AppStorage`-backed piece of
+  state that currently assumes one window, starting with
+  `Riverhead.selectedTab`. Worth doing on its own, not as a side effect.
+- **Reserved regions.** For custom edge-to-edge bars. This app uses system bars,
+  which already sit outside the safe area correctly.
+- **`ConcentricRectangle`** (iOS 26, in SwiftUICore) would replace the
+  hand-rolled corner radii in `RiverheadTheme.Radius` on the Duo's rounder
+  corners. Compilable in CI, but visual — it needs a simulator and eyes, not
+  reasoning.
+
 ## Sources
 
 - [What's New in iOS 27 — Apple Developer](https://developer.apple.com/ios/whats-new/)
@@ -397,3 +488,6 @@ on this list is available before a single new symbol is typed.
 - [Core AI — Apple Developer](https://developer.apple.com/core-ai/)
 - [WWDC26 Machine Learning guide](https://developer.apple.com/wwdc26/guides/machine-learning/)
 - [WWDC26 Apple Intelligence guide](https://developer.apple.com/wwdc26/guides/apple-intelligence/)
+- [Prepare your app for iPhone Duo — Tech Talk 111461](https://developer.apple.com/videos/play/tech-talks/111461/)
+- [Strike a pose with adaptive layouts on iPhone Duo — Tech Talk 111463](https://developer.apple.com/videos/play/tech-talks/111463/)
+- [actions/runner-images — macOS image contents](https://github.com/actions/runner-images/tree/main/images/macos)

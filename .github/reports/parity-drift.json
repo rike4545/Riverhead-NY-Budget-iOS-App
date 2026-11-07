@@ -1,53 +1,25 @@
 {
-  "generatedAt": "2026-11-05T21:29:37.187Z",
+  "generatedAt": "2026-11-07T19:29:22.463Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
-  "swiftTypesRead": 848,
+  "swiftTypesRead": 849,
   "counts": {
     "break": 0,
-    "drift": 3,
+    "drift": 1,
     "note": 1,
     "transport": 0
   },
   "findings": [
     {
-      "kind": "unknown-key",
-      "severity": "drift",
-      "endpoint": "board-elections",
-      "route": "/board-elections/",
-      "swift": "BoardElectionsParityView.swift",
-      "schemaPath": "priorElections[].status",
-      "examplePath": "priorElections[0].status",
-      "detail": "the web app publishes this but `BoardElectionsParityDocument.PriorElection` has no property for it, so the view ignores it",
-      "occurrences": 1,
-      "swiftType": "BoardElectionsParityDocument.PriorElection",
-      "declaredIn": "BoardElectionsParityView.swift",
-      "declaredAt": 38
-    },
-    {
-      "kind": "unknown-key",
-      "severity": "drift",
-      "endpoint": "board-elections",
-      "route": "/board-elections/",
-      "swift": "BoardElectionsParityView.swift",
-      "schemaPath": "priorElections[].turnout",
-      "examplePath": "priorElections[1].turnout",
-      "detail": "the web app publishes this but `BoardElectionsParityDocument.PriorElection` has no property for it, so the view ignores it",
-      "occurrences": 5,
-      "swiftType": "BoardElectionsParityDocument.PriorElection",
-      "declaredIn": "BoardElectionsParityView.swift",
-      "declaredAt": 38
-    },
-    {
       "kind": "nav-route-missing",
       "severity": "drift",
       "endpoint": "navigation",
-      "route": "/rvac-funding/",
+      "route": "/grants/",
       "swift": "BudgetLiveParityView.swift",
       "schemaPath": "",
       "examplePath": "",
-      "detail": "the web app's navigation offers `/rvac-funding/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
+      "detail": "the web app's navigation offers `/grants/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
       "occurrences": 1
     },
     {

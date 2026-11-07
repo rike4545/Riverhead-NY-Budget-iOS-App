@@ -70,7 +70,7 @@ struct NativeTaxBillParityView: View {
     @State private var inputMode: TaxBillInputMode = .assessed
     @State private var assessedValue = 45_000.0
     @State private var marketValue = 550_000.0
-    @State private var starReduction = 0.0
+    @State private var townExemption = 0.0
 
     private static let contractURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data/tax-bill.json")!
     private static let webFallbackURL = URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tax-bill/")!
@@ -100,12 +100,12 @@ struct NativeTaxBillParityView: View {
             : marketValue * (data.equalization.residentialAssessmentRatio / 100)
         let estimate2026 = estimate(
             assessedValue: effectiveAssessed,
-            reduction: starReduction,
+            reduction: townExemption,
             rates: data.rates2026
         )
         let estimate2025 = estimate(
             assessedValue: effectiveAssessed,
-            reduction: starReduction,
+            reduction: townExemption,
             rates: data.rates2025
         )
         let difference = estimate2026.total - estimate2025.total
@@ -174,12 +174,12 @@ struct NativeTaxBillParityView: View {
                     }
 
                     sliderField(
-                        title: "STAR exemption reduction (if any)",
-                        value: $starReduction,
+                        title: "Exemptions that lower Town taxes (if any)",
+                        value: $townExemption,
                         range: 0...30_000,
                         step: 500,
-                        displayValue: currency(starReduction),
-                        hint: "Use the assessed-value reduction shown on your tax bill if applicable. The app does not guess a STAR amount."
+                        displayValue: currency(townExemption),
+                        hint: "The assessed value your bill exempts from the Town tax: veterans’, senior citizens’ or disability exemptions. Leave STAR out: it lowers school taxes only and does not change the Town portion."
                     )
                 }
                 .parityCard()

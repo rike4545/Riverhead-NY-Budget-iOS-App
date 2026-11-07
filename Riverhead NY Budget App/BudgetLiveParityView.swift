@@ -91,7 +91,9 @@ enum BudgetLiveParityCatalog {
             .init(title: "Road Spending", path: "/road-spending/", systemImage: "road.lanes", detail: "Explore road and highway spending context."),
             .init(title: "Community Preservation Fund", path: "/community-preservation-fund/", systemImage: "leaf.fill", detail: "Review CPF revenues, obligations, and policy context."),
             .init(title: "Community Housing Plan", path: "/housing-plan/", systemImage: "house.lodge.fill", detail: "Explore the Town's community housing plan and fiscal context."),
-            .init(title: "Community", path: "/community/", systemImage: "person.3.fill", detail: "See population, assessment, tax-base, and community context.")
+            .init(title: "Community", path: "/community/", systemImage: "person.3.fill", detail: "See population, assessment, tax-base, and community context."),
+            .init(title: "Preserved Land", path: "/preserved-land/", systemImage: "leaf.fill", detail: "Map every preserved farm parcel by who holds the development rights and when."),
+            .init(title: "Transfer of Development Rights", path: "/tdr/", systemImage: "arrow.left.arrow.right.square.fill", detail: "See how farmland credits buy extra building room, what a credit costs, and the Walmart expansion.")
         ],
         .government: [
             .init(title: "Resident Answers", path: "/answers/", systemImage: "questionmark.bubble.fill", detail: "Plain-language answers to common resident questions."),
@@ -105,7 +107,10 @@ enum BudgetLiveParityCatalog {
             .init(title: "School Resource Officers", path: "/school-resource-officers/", systemImage: "building.columns.circle.fill", detail: "Review school-resource-officer costs, agreements, and fiscal context."),
             .init(title: "Supervisors & Council History", path: "/town-history/", systemImage: "clock.arrow.circlepath", detail: "Review Riverhead's supervisor and council history."),
             .init(title: "Board Elections", path: "/board-elections/", systemImage: "checkmark.rectangle.stack.fill", detail: "Explore Town Board election history and context."),
+            .init(title: "Election Map", path: "/election-map/", systemImage: "map.fill", detail: "Compare candidates and years district by district across Riverhead’s 22 election districts."),
             .init(title: "Campaign Finance", path: "/campaign-finance/", systemImage: "dollarsign.circle.fill", detail: "Load current NYS campaign-finance filings and donor context."),
+            .init(title: "Donation Map", path: "/donation-map/", systemImage: "mappin.and.ellipse", detail: "See where each committee’s itemized contributions came from, by ZIP code."),
+            .init(title: "Board Votes", path: "/board-votes/", systemImage: "hand.raised.fill", detail: "See how each Town Board member voted when the Board split, and who votes with whom."),
             .init(title: "Candidate Watch", path: "/candidate-watch/", systemImage: "eye.fill", detail: "Review current candidate information and sourced claims."),
             .init(title: "Candidate Proposals", path: "/candidate-cost-benefit/", systemImage: "scale.3d", detail: "Review candidate proposals through a cost-benefit lens."),
             .init(title: "Supervisor’s Promises", path: "/supervisor-promises/", systemImage: "checkmark.bubble.fill", detail: "Track documented promises against sourced actions and outcomes."),
@@ -114,6 +119,10 @@ enum BudgetLiveParityCatalog {
         .research: [
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
+            .init(title: "Budget Flow", path: "/budget-flow/", systemImage: "arrow.triangle.branch", detail: "Follow the 2027 Preliminary budget from revenue, through the funds, to spending."),
+            .init(title: "Assessment Roll", path: "/assessment/", systemImage: "house.fill", detail: "Graph the 2026 assessment rolls: market value by property class, exemptions and home values."),
+            .init(title: "Legal Costs", path: "/legal-costs/", systemImage: "briefcase.fill", detail: "Review the Town’s legal spending by account and year."),
+            .init(title: "Regional CPF Counsel", path: "/regional-cpf-counsel/", systemImage: "person.fill.checkmark", detail: "Review the regional Community Preservation Fund attorney the 2024 state law requires."),
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
             .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection after reviewing the actual tentative budget."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),

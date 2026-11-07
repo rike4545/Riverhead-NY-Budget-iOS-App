@@ -4,7 +4,7 @@ import Testing
 
 struct BudgetLiveParityCatalogTests {
     @Test func routeCatalogMatchesCurrentWebNavigation() {
-        #expect(BudgetLiveParityCatalog.routeCount == 64)
+        #expect(BudgetLiveParityCatalog.routeCount == 73)
         #expect(BudgetLiveParityCatalog.hasUniquePaths)
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/programs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/compare/"))
@@ -23,6 +23,15 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/budget-adoption/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/rvac-funding/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/records/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/preserved-land/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/tdr/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/election-map/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/donation-map/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/board-votes/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/budget-flow/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/assessment/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/legal-costs/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/regional-cpf-counsel/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {

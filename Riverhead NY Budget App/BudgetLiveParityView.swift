@@ -94,7 +94,8 @@ enum BudgetLiveParityCatalog {
             .init(title: "Community Housing Plan", path: "/housing-plan/", systemImage: "house.lodge.fill", detail: "Explore the Town's community housing plan and fiscal context."),
             .init(title: "Community", path: "/community/", systemImage: "person.3.fill", detail: "See population, assessment, tax-base, and community context."),
             .init(title: "Preserved Land", path: "/preserved-land/", systemImage: "leaf.fill", detail: "Map every preserved farm parcel by who holds the development rights and when."),
-            .init(title: "Transfer of Development Rights", path: "/tdr/", systemImage: "arrow.left.arrow.right.square.fill", detail: "See how farmland credits buy extra building room, what a credit costs, and the Walmart expansion.")
+            .init(title: "Transfer of Development Rights", path: "/tdr/", systemImage: "arrow.left.arrow.right.square.fill", detail: "See how farmland credits buy extra building room, what a credit costs, and the Walmart expansion."),
+            .init(title: "Comprehensive Plan Tracker", path: "/comprehensive-plan/", systemImage: "map.circle.fill", detail: "See which 2024 Comprehensive Plan recommendations the Town Board has adopted and which show no action.")
         ],
         .government: [
             .init(title: "Resident Answers", path: "/answers/", systemImage: "questionmark.bubble.fill", detail: "Plain-language answers to common resident questions."),

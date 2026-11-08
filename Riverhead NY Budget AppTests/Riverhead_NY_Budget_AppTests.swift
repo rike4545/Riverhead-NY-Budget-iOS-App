@@ -510,13 +510,62 @@ struct ProgramBudgetYearSeriesTests {
         #expect(allLabelled)
     }
 
-    /// The regression that matters most: the bundled copy predates all three
-    /// fields, so it must still decode, with the new properties simply absent.
-    @Test func theBundledCopyStillDecodesWithoutTheNewFields() throws {
+    /// The regression that matters most: a payload without the three newer
+    /// fields still has to decode, because the offline path decodes with `try?`
+    /// and a throw there silently drops the screen onto its web fallback.
+    ///
+    /// Asserted against a fixture rather than the bundled file. An earlier
+    /// version of this test read the bundled copy and asserted the three were
+    /// nil, which passed only because that copy was frozen well behind the
+    /// published one. Refreshing it would have failed a test whose real subject
+    /// is the decoder — so the fixture carries the shape, and the bundled file
+    /// is left to assert only what it can: that it decodes.
+    private static let fixtureWithoutTheNewerFields = """
+    {
+      "schemaVersion": 1,
+      "source": { "title": "T", "detail": "D", "url": "https://example.invalid/" },
+      "payrollYear": 2025,
+      "census": {
+        "dataset": "ACS 2023 5-year",
+        "source": { "title": "Census ACS", "url": "https://example.invalid/acs", "detail": "Five-year estimates." },
+        "population": 35980,
+        "households": 13678,
+        "householdsMoe": 571,
+        "medianHouseholdIncome": 93595
+      },
+      "programs": [],
+      "totals": {
+        "direct": 1, "benefits": 1, "fullCost": 2, "earned": 1, "net": 1, "staff": 3,
+        "debtService": 1, "contingency": 1, "interfundTransfers": 1,
+        "townwideRevenue": 1, "grandTotal": 1, "appropriations": 1
+      },
+      "perResident": { "programs": 1, "debtService": 1, "everything": 1 },
+      "perHousehold": { "programs": 1, "debtService": 1, "everything": 1, "shareOfMedianIncome": 1 },
+      "reconciliation": { "computed": 1, "appropriations": 1, "variance": 0 },
+      "method": [],
+      "notCovered": { "title": "N", "body": "B" },
+      "diagnostics": { "unmappedPayrollDepartments": [] }
+    }
+    """
+
+    @Test func aPayloadWithoutTheNewerFieldsStillDecodes() throws {
+        let document = try JSONDecoder().decode(
+            ProgramBudgetParityDocument.self,
+            from: Data(Self.fixtureWithoutTheNewerFields.utf8)
+        )
+        #expect(document.years == nil)
+        #expect(document.totals.setAside == nil)
+        #expect(document.census.populationSource == nil)
+        #expect(document.census.source.title.isEmpty == false)
+    }
+
+    /// The bundled copy is refreshed from the published site by
+    /// .github/scripts/sync-programs.sh, so what it holds changes without
+    /// anyone touching Swift. All this can assert is that it decodes — which is
+    /// what matters, since it is the offline path for the whole screen.
+    @Test func theBundledCopyDecodes() throws {
         let bundled = try #require(ProgramBudgetParityClient.bundled())
-        #expect(bundled.years == nil)
-        #expect(bundled.totals.setAside == nil)
-        #expect(bundled.census.populationSource == nil)
+        #expect(bundled.census.population > 0)
         #expect(bundled.census.source.title.isEmpty == false)
     }
 }

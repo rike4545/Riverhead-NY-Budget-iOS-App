@@ -4,7 +4,7 @@ import Testing
 
 struct BudgetLiveParityCatalogTests {
     @Test func routeCatalogMatchesCurrentWebNavigation() {
-        #expect(BudgetLiveParityCatalog.routeCount == 73)
+        #expect(BudgetLiveParityCatalog.routeCount == 75)
         #expect(BudgetLiveParityCatalog.hasUniquePaths)
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/programs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/compare/"))
@@ -32,6 +32,8 @@ struct BudgetLiveParityCatalogTests {
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/assessment/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/legal-costs/"))
         #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/regional-cpf-counsel/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/grants/"))
+        #expect(BudgetLiveParityCatalog.orderedRoutes.map(\.path).contains("/state-of-the-town/"))
     }
 
     @Test func coreBudgetRoutesAreRegisteredAsNative() {

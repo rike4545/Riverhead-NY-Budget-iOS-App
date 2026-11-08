@@ -80,6 +80,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Budget Compare", path: "/compare/", systemImage: "chart.bar.doc.horizontal", detail: "Compare adopted fund appropriations across 2020–2026."),
             .init(title: "General Fund", path: "/general-fund/", systemImage: "chart.line.uptrend.xyaxis", detail: "Review the long-run General Fund history."),
             .init(title: "Where Revenue Comes From", path: "/revenue/", systemImage: "arrow.down.left.circle.fill", detail: "Explore the revenue sources that support each fund and service."),
+            .init(title: "Grants", path: "/grants/", systemImage: "gift.circle.fill", detail: "See grants and State and federal aid received since 2018, with each award and the Town’s share."),
             .init(title: "Annual Report", path: "/annual-report/", systemImage: "doc.text.magnifyingglass", detail: "Explore the Town's annual financial report in searchable form."),
             .init(title: "Tax Cap", path: "/tax-cap/", systemImage: "percent", detail: "Understand the New York property-tax cap and Riverhead history."),
             .init(title: "Reserves & Fund Balance", path: "/reserves/", systemImage: "banknote.fill", detail: "Review reserve policy, fund balance, draw-down modeling, and peers."),
@@ -114,6 +115,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Candidate Watch", path: "/candidate-watch/", systemImage: "eye.fill", detail: "Review current candidate information and sourced claims."),
             .init(title: "Candidate Proposals", path: "/candidate-cost-benefit/", systemImage: "scale.3d", detail: "Review candidate proposals through a cost-benefit lens."),
             .init(title: "Supervisor’s Promises", path: "/supervisor-promises/", systemImage: "checkmark.bubble.fill", detail: "Track documented promises against sourced actions and outcomes."),
+            .init(title: "State of the Town Addresses", path: "/state-of-the-town/", systemImage: "megaphone.fill", detail: "See what each Supervisor said in inaugural and State of the Town addresses, and what the law requires."),
             .init(title: "Open Meetings Law", path: "/open-meetings/", systemImage: "person.2.wave.2.fill", detail: "Review New York Open Meetings Law guidance and Riverhead meeting context.")
         ],
         .research: [

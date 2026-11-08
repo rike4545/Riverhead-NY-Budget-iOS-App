@@ -4,13 +4,29 @@
   "url": "https://www.townofriverheadny.gov/129/Agendas-Minutes"
  },
  "totals": {
-  "meetings": 51,
-  "votes": 2175,
+  "meetings": 52,
+  "votes": 2201,
   "contested": 48,
   "failed": 2,
-  "tabled": 10
+  "tabled": 11
  },
  "meetings": [
+  {
+   "slug": "2026-11-05",
+   "date": "November 5, 2026",
+   "type": "Regular Meeting",
+   "total": 26,
+   "unanimous": 25,
+   "contested": 0,
+   "failed": 0,
+   "tabled": 1,
+   "officialRecordStatus": "vote-record-parsed",
+   "voteSource": "minutes",
+   "minutesRevisionCount": 1,
+   "verifiedResolutionCount": 0,
+   "resolutionSourceCount": 0,
+   "sourceVersionAt": "2026-11-07T03:06:25Z"
+  },
   {
    "slug": "2026-10-20",
    "date": "October 20, 2026",

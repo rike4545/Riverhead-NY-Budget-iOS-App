@@ -19,7 +19,7 @@
    ],
    "moved": 0,
    "seconded": 0,
-   "meetingsVoted": 20,
+   "meetingsVoted": 21,
    "dissents": [
     {
      "slug": "2026-04-07",
@@ -110,13 +110,13 @@
    ],
    "byYear": {
     "2026": {
-     "aye": 955,
+     "aye": 981,
      "abstain": 7,
      "nay": 5
     }
    },
    "career": {
-    "aye": 955,
+    "aye": 981,
     "abstain": 7,
     "nay": 5
    },
@@ -134,9 +134,9 @@
     "2025",
     "2026"
    ],
-   "moved": 512,
-   "seconded": 521,
-   "meetingsVoted": 47,
+   "moved": 518,
+   "seconded": 528,
+   "meetingsVoted": 48,
    "dissents": [
     {
      "slug": "2024-01-03",
@@ -243,12 +243,12 @@
      "abstain": 2
     },
     "2026": {
-     "aye": 966,
+     "aye": 992,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 2063,
+    "aye": 2089,
     "nay": 10,
     "abstain": 3
    },
@@ -266,9 +266,9 @@
     "2025",
     "2026"
    ],
-   "moved": 501,
-   "seconded": 516,
-   "meetingsVoted": 47,
+   "moved": 507,
+   "seconded": 522,
+   "meetingsVoted": 48,
    "dissents": [
     {
      "slug": "2025-01-07",
@@ -304,11 +304,11 @@
      "nay": 2
     },
     "2026": {
-     "aye": 967
+     "aye": 993
     }
    },
    "career": {
-    "aye": 2073,
+    "aye": 2099,
     "abstain": 1,
     "nay": 2
    },
@@ -328,9 +328,9 @@
     "2025",
     "2026"
    ],
-   "moved": 563,
-   "seconded": 520,
-   "meetingsVoted": 47,
+   "moved": 570,
+   "seconded": 526,
+   "meetingsVoted": 48,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -416,14 +416,14 @@
      "absent": 1
     },
     "2026": {
-     "aye": 962,
+     "aye": 988,
      "abstain": 3,
      "nay": 1,
      "absent": 1
     }
    },
    "career": {
-    "aye": 2128,
+    "aye": 2154,
     "nay": 5,
     "abstain": 4,
     "absent": 2
@@ -444,9 +444,9 @@
     "2025",
     "2026"
    ],
-   "moved": 534,
-   "seconded": 558,
-   "meetingsVoted": 47,
+   "moved": 541,
+   "seconded": 565,
+   "meetingsVoted": 48,
    "dissents": [
     {
      "slug": "2023-01-04",
@@ -573,14 +573,14 @@
      "nay": 7
     },
     "2026": {
-     "aye": 960,
+     "aye": 986,
      "nay": 5,
      "absent": 1,
      "abstain": 1
     }
    },
    "career": {
-    "aye": 2130,
+    "aye": 2156,
     "nay": 14,
     "absent": 1,
     "abstain": 1

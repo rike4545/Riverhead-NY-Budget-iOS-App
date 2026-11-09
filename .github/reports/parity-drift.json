@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-08T19:45:51.855Z",
+  "generatedAt": "2026-11-09T23:48:36.044Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
   "swiftTypesRead": 849,
   "counts": {
     "break": 0,
-    "drift": 3,
+    "drift": 4,
     "note": 1,
     "transport": 0
   },
@@ -43,6 +43,20 @@
       "examplePath": "",
       "detail": "the web app's navigation offers `/governance-accountability/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
       "occurrences": 1
+    },
+    {
+      "kind": "unknown-key",
+      "severity": "drift",
+      "endpoint": "tax-bill",
+      "route": "/tax-bill/",
+      "swift": "TaxBillParityView.swift",
+      "schemaPath": "lookup",
+      "examplePath": "lookup",
+      "detail": "the web app publishes this but `TaxBillParityDocument` has no property for it, so the view ignores it",
+      "occurrences": 1,
+      "swiftType": "TaxBillParityDocument",
+      "declaredIn": "TaxBillParityView.swift",
+      "declaredAt": 3
     },
     {
       "kind": "closed-set-unused",

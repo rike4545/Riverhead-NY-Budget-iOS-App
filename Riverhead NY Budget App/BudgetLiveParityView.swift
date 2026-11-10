@@ -130,6 +130,8 @@ enum BudgetLiveParityCatalog {
             .init(title: "Legal Costs", path: "/legal-costs/", systemImage: "briefcase.fill", detail: "Review the Town’s legal spending by account and year."),
             .init(title: "Regional CPF Counsel", path: "/regional-cpf-counsel/", systemImage: "person.fill.checkmark", detail: "Review the regional Community Preservation Fund attorney the 2024 state law requires."),
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
+            .init(title: "Glossary of Terms", path: "/glossary/", systemImage: "character.book.closed.fill", detail: "Look up plain-English definitions of 91 budget, tax, accounting, debt, pay and Town Board terms."),
+            .init(title: "How the Town's Books Work", path: "/accounting-basics/", systemImage: "book.closed.fill", detail: "Learn how funds, the bases of accounting and the five tiers of fund balance work, using the Town's own audit."),
             .init(title: "Guided Tour", path: "/explore/", systemImage: "map.fill", detail: "Take a plain-English tour of where the Town's money comes from, where it goes, and who decides."),
             .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection after reviewing the actual tentative budget."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),

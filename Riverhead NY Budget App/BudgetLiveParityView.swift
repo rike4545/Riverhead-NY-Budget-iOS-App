@@ -89,13 +89,15 @@ enum BudgetLiveParityCatalog {
             .init(title: "Budget Changes, Live", path: "/budget-changes/", systemImage: "arrow.triangle.2.circlepath", detail: "Track every budget change the Town Board has passed this year."),
             .init(title: "Capital & Debt", path: "/capital-debt/", systemImage: "building.2.crop.circle", detail: "Review debt, amortization, BANs, bonds, and financing scenarios."),
             .init(title: "Town Square", path: "/town-square/", systemImage: "building.2.fill", detail: "Review the Town Square project, financing, and source record."),
+            .init(title: "New Justice Court at 200 Howell", path: "/justice-court/", systemImage: "building.columns.fill", detail: "Follow the plan to turn the former Town Hall into the Justice Court, its $6.5 million bond, and the grants that could help."),
             .init(title: "Road Spending", path: "/road-spending/", systemImage: "road.lanes", detail: "Explore road and highway spending context."),
             .init(title: "Community Preservation Fund", path: "/community-preservation-fund/", systemImage: "leaf.fill", detail: "Review CPF revenues, obligations, and policy context."),
             .init(title: "Community Housing Plan", path: "/housing-plan/", systemImage: "house.lodge.fill", detail: "Explore the Town's community housing plan and fiscal context."),
             .init(title: "Community", path: "/community/", systemImage: "person.3.fill", detail: "See population, assessment, tax-base, and community context."),
             .init(title: "Preserved Land", path: "/preserved-land/", systemImage: "leaf.fill", detail: "Map every preserved farm parcel by who holds the development rights and when."),
             .init(title: "Transfer of Development Rights", path: "/tdr/", systemImage: "arrow.left.arrow.right.square.fill", detail: "See how farmland credits buy extra building room, what a credit costs, and the Walmart expansion."),
-            .init(title: "Comprehensive Plan Tracker", path: "/comprehensive-plan/", systemImage: "map.circle.fill", detail: "See which 2024 Comprehensive Plan recommendations the Town Board has adopted and which show no action.")
+            .init(title: "Comprehensive Plan Tracker", path: "/comprehensive-plan/", systemImage: "map.circle.fill", detail: "See which 2024 Comprehensive Plan recommendations the Town Board has adopted and which show no action."),
+            .init(title: "The Former Armory and the YMCA", path: "/armory/", systemImage: "shield.lefthalf.filled", detail: "See what State law allows at the former armory, the bill to lease it to the YMCA, and the Town's letter of intent.")
         ],
         .government: [
             .init(title: "Resident Answers", path: "/answers/", systemImage: "questionmark.bubble.fill", detail: "Plain-language answers to common resident questions."),
@@ -122,11 +124,13 @@ enum BudgetLiveParityCatalog {
         .research: [
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
+            .init(title: "Optimum Cable Franchise and Verizon", path: "/cable-franchise/", systemImage: "tv.fill", detail: "See the 2016 Optimum franchise terms, the fees the Town receives, when it is due for renewal, and whether Verizon could compete."),
             .init(title: "Budget Flow", path: "/budget-flow/", systemImage: "arrow.triangle.branch", detail: "Follow the 2027 Preliminary budget from revenue, through the funds, to spending."),
             .init(title: "Assessment Roll", path: "/assessment/", systemImage: "house.fill", detail: "Graph the 2026 assessment rolls: market value by property class, exemptions and home values."),
             .init(title: "Legal Costs", path: "/legal-costs/", systemImage: "briefcase.fill", detail: "Review the Town’s legal spending by account and year."),
             .init(title: "Regional CPF Counsel", path: "/regional-cpf-counsel/", systemImage: "person.fill.checkmark", detail: "Review the regional Community Preservation Fund attorney the 2024 state law requires."),
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
+            .init(title: "Guided Tour", path: "/explore/", systemImage: "map.fill", detail: "Take a plain-English tour of where the Town's money comes from, where it goes, and who decides."),
             .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection after reviewing the actual tentative budget."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),
             .init(title: "Tax-Cap Letter, Checked", path: "/tax-cap-letter/", systemImage: "envelope.open.fill", detail: "Check the Suffolk supervisors' tax-cap letter against Riverhead's record."),
@@ -143,10 +147,12 @@ enum BudgetLiveParityCatalog {
         ],
         .evidence: [
             .init(title: "Source Library", path: "/sources/", systemImage: "books.vertical.fill", detail: "Open the source trail behind the platform's figures."),
+            .init(title: "How to Check a Figure", path: "/evidence/", systemImage: "magnifyingglass.circle.fill", detail: "See how the site labels and sources its figures, and trace a number to its record."),
             .init(title: "Records the Town Has Not Published", path: "/records/", systemImage: "tray.and.arrow.up.fill", detail: "Request records the Town has not published under the Freedom of Information Law, and track the response deadlines."),
             .init(title: "Downloads", path: "/downloads/", systemImage: "arrow.down.doc.fill", detail: "Download published datasets for independent analysis."),
             .init(title: "Data Quality & Freshness", path: "/data-quality/", systemImage: "checkmark.circle.badge.questionmark", detail: "Review refresh dates, data limitations, and quality checks."),
             .init(title: "Standards (GFOA)", path: "/gfoa/", systemImage: "checkmark.seal.fill", detail: "Compare Riverhead's budget presentation with GFOA standards."),
+            .init(title: "Following How the Town Is Governed", path: "/governance-accountability/", systemImage: "person.3.sequence.fill", detail: "Follow the decisions, public costs, services and results residents can check."),
             .init(title: "Election Law Case", path: "/election-law-case/", systemImage: "scroll.fill", detail: "Review the sourced election-law case material."),
             .init(title: "Officials on Social Media", path: "/official-social-media/", systemImage: "bubble.left.and.bubble.right.fill", detail: "Review public-official social-media accountability context."),
             .init(title: "Know Your Rights (ICE)", path: "/know-your-rights/", systemImage: "person.badge.shield.checkmark.fill", detail: "Open the platform's sourced know-your-rights reference.")

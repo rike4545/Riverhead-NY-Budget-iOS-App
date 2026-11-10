@@ -132,6 +132,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Start Here", path: "/guide/", systemImage: "signpost.right.and.left.fill", detail: "A guided entry point to the platform and its sources."),
             .init(title: "Glossary of Terms", path: "/glossary/", systemImage: "character.book.closed.fill", detail: "Look up plain-English definitions of 91 budget, tax, accounting, debt, pay and Town Board terms."),
             .init(title: "How the Town's Books Work", path: "/accounting-basics/", systemImage: "book.closed.fill", detail: "Learn how funds, the bases of accounting and the five tiers of fund balance work, using the Town's own audit."),
+            .init(title: "Fiscal Impact Statement Helper", path: "/fiscal-impact-helper/", systemImage: "doc.text.fill", detail: "For Town staff: pick a department and up to ten journal entries, reconcile them, and print the Fiscal Impact Statement."),
             .init(title: "Guided Tour", path: "/explore/", systemImage: "map.fill", detail: "Take a plain-English tour of where the Town's money comes from, where it goes, and who decides."),
             .init(title: "2027 Prediction", path: "/predict-2027/", systemImage: "chart.line.uptrend.xyaxis.circle.fill", detail: "Explore the forward projection after reviewing the actual tentative budget."),
             .init(title: "2027 Budget Amendments", path: "/budget-amendments-2027/", systemImage: "doc.badge.plus", detail: "Review the amendments to the 2027 budget as they are recorded."),
@@ -144,6 +145,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Zero or 1% for 2027", path: "/zero-percent-2027/", systemImage: "0.circle.fill", detail: "Explore what holding 2027 levy growth to zero or one percent would take."),
             .init(title: "Credit Rating", path: "/credit-rating/", systemImage: "seal.fill", detail: "Review the Town's credit rating and debt-capacity context."),
             .init(title: "Outlier Watch", path: "/outliers/", systemImage: "exclamationmark.triangle.fill", detail: "Flag large year-over-year fund swings worth a closer look."),
+            .init(title: "Department Efficiency", path: "/department-efficiency/", systemImage: "speedometer", detail: "Compare departments on spending, growth and budget accuracy, see lines to review, and print survey kits."),
             .init(title: "Budget Accuracy", path: "/budget-accuracy/", systemImage: "scope", detail: "Compare budget assumptions with subsequent financial results."),
             .init(title: "Fiscal Impact", path: "/fiscal-impact/", systemImage: "doc.badge.gearshape.fill", detail: "Read Town Board fiscal-impact statements in resident-friendly form.")
         ],

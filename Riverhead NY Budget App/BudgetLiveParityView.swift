@@ -124,6 +124,7 @@ enum BudgetLiveParityCatalog {
         .research: [
             .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
+            .init(title: "Optimum Cable Franchise and Verizon", path: "/cable-franchise/", systemImage: "tv.fill", detail: "See the 2016 Optimum franchise terms, the fees the Town receives, when it is due for renewal, and whether Verizon could compete."),
             .init(title: "Budget Flow", path: "/budget-flow/", systemImage: "arrow.triangle.branch", detail: "Follow the 2027 Preliminary budget from revenue, through the funds, to spending."),
             .init(title: "Assessment Roll", path: "/assessment/", systemImage: "house.fill", detail: "Graph the 2026 assessment rolls: market value by property class, exemptions and home values."),
             .init(title: "Legal Costs", path: "/legal-costs/", systemImage: "briefcase.fill", detail: "Review the Town’s legal spending by account and year."),

@@ -1,6 +1,6 @@
 ## Web parity drift
 
-0 breaks, 4 drifts, over 15 of 15 endpoints.
+0 breaks, 1 drift, over 15 of 15 endpoints.
 
 ### Drift
 
@@ -8,9 +8,6 @@ The view still renders, but it no longer agrees with the web app.
 
 | route | where | what |
 | --- | --- | --- |
-| `/evidence/` | `—` | the web app's navigation offers `/evidence/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback |
-| `/explore/` | `—` | the web app's navigation offers `/explore/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback |
-| `/governance-accountability/` | `—` | the web app's navigation offers `/governance-accountability/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback |
 | `/tax-bill/` | `lookup` | the web app publishes this but `TaxBillParityDocument` has no property for it, so the view ignores it |
 
 ### Notes

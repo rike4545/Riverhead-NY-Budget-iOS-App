@@ -1,49 +1,16 @@
 {
-  "generatedAt": "2026-11-09T23:48:36.044Z",
+  "generatedAt": "2026-11-10T21:20:57.441Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
   "swiftTypesRead": 849,
   "counts": {
     "break": 0,
-    "drift": 4,
+    "drift": 1,
     "note": 1,
     "transport": 0
   },
   "findings": [
-    {
-      "kind": "nav-route-missing",
-      "severity": "drift",
-      "endpoint": "navigation",
-      "route": "/evidence/",
-      "swift": "BudgetLiveParityView.swift",
-      "schemaPath": "",
-      "examplePath": "",
-      "detail": "the web app's navigation offers `/evidence/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
-      "occurrences": 1
-    },
-    {
-      "kind": "nav-route-missing",
-      "severity": "drift",
-      "endpoint": "navigation",
-      "route": "/explore/",
-      "swift": "BudgetLiveParityView.swift",
-      "schemaPath": "",
-      "examplePath": "",
-      "detail": "the web app's navigation offers `/explore/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
-      "occurrences": 1
-    },
-    {
-      "kind": "nav-route-missing",
-      "severity": "drift",
-      "endpoint": "navigation",
-      "route": "/governance-accountability/",
-      "swift": "BudgetLiveParityView.swift",
-      "schemaPath": "",
-      "examplePath": "",
-      "detail": "the web app's navigation offers `/governance-accountability/` and the app's route table does not, so the page is unreachable from the app — not even as a web fallback",
-      "occurrences": 1
-    },
     {
       "kind": "unknown-key",
       "severity": "drift",

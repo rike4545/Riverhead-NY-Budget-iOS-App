@@ -105,6 +105,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Workforce by Title", path: "/workforce-by-title/", systemImage: "person.3.sequence.fill", detail: "Explore the municipal workforce grouped by job title."),
             .init(title: "Officials & Pensions", path: "/officials/", systemImage: "person.crop.rectangle.stack.fill", detail: "Review elected and appointed officials with pension context."),
             .init(title: "Management Pay", path: "/management-compensation/", systemImage: "person.crop.rectangle.badge.plus", detail: "Review management compensation and multi-year salary history."),
+            .init(title: "Supervisor's Office Pay Compared", path: "/supervisor-office-pay/", systemImage: "person.2.fill", detail: "Compare the 2026 salaries of the Supervisor's office roles with Southampton, Southold, Smithtown and Huntington."),
             .init(title: "Fringe Benefits", path: "/fringe-benefits/", systemImage: "gift.fill", detail: "Review the Town-paid deferred comp, annuity, and life insurance allowance."),
             .init(title: "2026 Buyout", path: "/buyout/", systemImage: "person.badge.minus", detail: "Review the early-retirement incentive and realistic savings cases."),
             .init(title: "Police Spending & Crime", path: "/police-crime/", systemImage: "shield.lefthalf.filled", detail: "Compare police spending with reported crime trends and source limitations."),

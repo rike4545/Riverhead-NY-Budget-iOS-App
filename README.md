@@ -16,6 +16,8 @@ https://github.com/rike4545/Riverhead-NY-Budget-iOS-App
 Also available on the web:
 **[Riverhead Budget Live](https://rike4545.github.io/Riverhead-NY-Budget-Web-App/)** — the browser-based companion platform, covering much of the same ground plus live campaign-finance data and peer-town benchmarking. Repo: https://github.com/rike4545/Riverhead-NY-Budget-Web-App
 
+Every page on the website is also reachable in the app. The Budget tab's *All Budget Topics* catalog lists all 87 pages in the website's menu (as of November 10, 2026), in the same groups: 16 open as native SwiftUI screens and the rest in an in-app web view. The newest are the Fiscal Impact Statement Helper, Department Efficiency, Supervisor's Office Pay Compared and How the Town's Books Work. A drift check compares the catalog with the website's menu on every pull request; see [PARITY.md](PARITY.md).
+
 ---
 
 # What's New

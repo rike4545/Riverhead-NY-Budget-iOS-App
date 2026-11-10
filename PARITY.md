@@ -6,21 +6,21 @@ This document defines parity against the current user-facing navigation in
 ## Current parity layer
 
 `BudgetLiveParityView` exposes every current web navigation destination inside
-the iOS app. The catalog contains **76 entries** across the same five
+the iOS app. The catalog contains **87 entries** across the same five
 navigation groups used by the web product:
 
 - Start Here — 4
-- Explore — 22
-- Government — 19
-- Research — 20
-- Evidence — 8
+- Explore — 26
+- Government — 21
+- 2027 & Analysis — 26
+- Evidence — 10
 
-The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (76 entries over 76 distinct routes and 75 distinct pages, as of 2026-11-08; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. On 2026-11-07 it added nine pages the web app had gained: Preserved Land and Transfer of Development Rights (Explore); Election Map, Donation Map and Board Votes (Government); and Budget Flow, Assessment Roll, Legal Costs and Regional CPF Counsel (2027 & Analysis). All nine open as web fallbacks. On 2026-11-08 it added Grants (Explore) and State of the Town Addresses (Government), also as web fallbacks, and then Comprehensive Plan Tracker (Explore). Routes with a
+The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (87 entries over 87 distinct routes and 86 distinct pages, as of 2026-11-10; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. On 2026-11-07 it added nine pages the web app had gained: Preserved Land and Transfer of Development Rights (Explore); Election Map, Donation Map and Board Votes (Government); and Budget Flow, Assessment Roll, Legal Costs and Regional CPF Counsel (2027 & Analysis). All nine open as web fallbacks. On 2026-11-08 it added Grants (Explore) and State of the Town Addresses (Government), also as web fallbacks, and then Comprehensive Plan Tracker (Explore). On 2026-11-10 it added How the Town's Books Work, the Fiscal Impact Statement Helper, Department Efficiency and Supervisor's Office Pay Compared, all as web fallbacks. Routes with a
 verified native counterpart open SwiftUI directly; every other destination uses
 the existing `WebContentView` / `WKWebView` implementation and therefore keeps
 loading the current GitHub Pages version until its native replacement is ready.
 
-This is **complete functional access parity**, not a claim that all 72 pages
+This is **complete functional access parity**, not a claim that all 86 pages
 have already been rewritten as native SwiftUI screens.
 
 The drift check reported two routes unreachable — not even as a web fallback.
@@ -38,7 +38,7 @@ PR #25 shipped.
 
 ## Native routes in the parity hub
 
-16 of 72 pages render natively. This list is generated from
+16 of 86 pages render natively. This list is generated from
 `BudgetLiveParityCatalog.nativePaths` and the `parityDestination` switch; it
 went twelve routes stale once, so update it in the same commit that adds a
 route.

@@ -48,12 +48,12 @@ struct MoreView: View {
     private let urlSurveySavvy  = URL(string: "https://www.surveysavvy.com/?m=7690803")!
     private let urlUpside       = URL(string: "https://upside.app.link/GBNRJ")!
     private let urlFirmoo       = URL(string: "https://www.firmoo.com/?invite_code=eb59917f65")!
-    private let urlRakuten      = URL(string: "http://www.rakuten.com/r/B2BRB9?eeid=28187")!
+    private let urlRakuten      = URL(string: "https://www.rakuten.com/r/B2BRB9?eeid=28187")!
     private let urlFetch        = URL(string: "https://referral.fetch.com/vvv3/referralsocial?code=4TC22")!
     private let urlIbotta       = URL(string: "https://ibotta.onelink.me/iUfE/1005cd3f?friend_code=chlaojv")!
     private let urlVisible      = URL(string: "https://www.visible.com/get/?3SL9ZDM")!
     private let urlWispr        = URL(string: "https://ref.wisprflow.ai/bryan-c")!
-    private let urlShopSimon    = URL(string: "http://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
+    private let urlShopSimon    = URL(string: "https://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
     private let appFeedbackURL = URL(string: "https://qualtricsxmm8q5gxrhq.qualtrics.com/jfe/form/SV_1TvkCrIKgaEYHPM")!
 
     private var discountSections: [DiscountOfferSection] {

@@ -97,7 +97,7 @@ struct LocalNewsEconomyView: View {
     }
 
     // User-provided affiliate link.
-    private let sponsoredURL = URL(string: "http://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
+    private let sponsoredURL = URL(string: "https://click.linksynergy.com/fs-bin/click?id=rG4d7/djvVM&offerid=1949172&type=3&subid=0")!
 
     var body: some View {
         List {

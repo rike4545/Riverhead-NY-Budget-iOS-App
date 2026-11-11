@@ -12,6 +12,11 @@ enum OpenAIKeychain {
     private static let service = "me.riverhead.budget.openai"
     private static let account = "api-key"
 
+    /// Readable only while the phone is unlocked, and never copied to another
+    /// device through a backup or migration. The Ask AI panel tells readers the
+    /// key is "stored only in this device's Keychain"; this is what makes that so.
+    private static let accessibility = kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+
     static func loadAPIKey() -> String? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -44,8 +49,11 @@ enum OpenAIKeychain {
             kSecAttrAccount as String: account
         ]
 
+        // Updating also moves a key saved by an earlier version, which had no
+        // accessibility setting, onto this-device-only.
         let attributes: [String: Any] = [
-            kSecValueData as String: data
+            kSecValueData as String: data,
+            kSecAttrAccessible as String: accessibility
         ]
 
         let updateStatus = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
@@ -55,6 +63,7 @@ enum OpenAIKeychain {
 
         var newItem = query
         newItem[kSecValueData as String] = data
+        newItem[kSecAttrAccessible as String] = accessibility
         let addStatus = SecItemAdd(newItem as CFDictionary, nil)
         return addStatus == errSecSuccess
     }

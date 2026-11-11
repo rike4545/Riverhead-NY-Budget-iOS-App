@@ -133,7 +133,7 @@ struct CivicToolkitsHubView: View {
 
                 toolRow(
                     title: "Candidate Watch",
-                    subtitle: "Who's running in November 2026, their campaign links, and their stated platforms.",
+                    subtitle: "The November 3, 2026 Supervisor race: the unofficial result, each candidate's links, and their stated platforms.",
                     symbol: "person.crop.circle.badge.checkmark",
                     tint: RiverheadTheme.accent
                 ) { CandidateWatchView() }

@@ -84,9 +84,26 @@ data — see **Important Disclaimer** below.
 
 The app is organized into five tabs: **Home**, **Budget**, **Civic**, **Tools**, and **More**.
 
+## Home
+- A status line at the top while budget data loads, so a reader knows why a
+  chart is still empty before scrolling past it.
+- **Start with your goal** — one card per question. The first opens the Town's
+  official 2027 budget and names its current stage: the Preliminary until the
+  November 20, 2026 adoption deadline, then the budget itself
+  (`Budget2027Status.swift`, tested in `Budget2027StatusTests.swift`). *Where
+  is the money going?* switches to the Budget tab rather than opening a second
+  copy of it inside Home.
+- Town services (Channel 22, News & Events, Departments, Contact, Code
+  Enforcement), the official Town website, and the disclaimer.
+
 ## Budget
+- The header names the sections; the row of buttons under it is the one way
+  in. (It used to repeat three of them as chips under different names.)
 - **Overview** — resident/expert audience toggle, headline budget summary.
 - **My Taxes** — personal property-tax impact view.
+- **2027 Plan** — the app's own unofficial planning case, clearly labelled.
+  Its *Official budget* corner links to the Town's 2027 budget and shows its
+  stage; it used to say the official budget "comes later".
 - **2027 Planning** — Budget Message (unofficial proposal), Early Retirement
   Model, Executive Summary, Budget Lab (scenario controls), Budget Simulator,
   and **Spending Reduction** (see What's New above).
@@ -114,7 +131,12 @@ A searchable, task-oriented hub grouped by what you're trying to do:
 
 ## Tools
 - Town Board Scorecard, Campaign Donation Ethics, Procurement Watch
-- Employee Pay Lookup (public gross-earnings data, 2018–2023)
+- Employee Pay Lookup (Newsday's gross-earnings data, 2019–2021; current pay
+  through 2025 is in Payroll)
+- Candidate Watch — the November 3, 2026 Supervisor race: the unofficial
+  Suffolk County Board of Elections count (Halpin 6,779, Rothwell 6,152, as of
+  November 4, 12:24 AM), each candidate's links and stated platform. Replace
+  it with the certified count when the County publishes it.
 - Budget Explainers, Budget Policy Insights
 - Contract Cost Increases / Contract Cost Estimator
 - Department Spending Forecast, Snow Removal Overtime
@@ -127,7 +149,9 @@ accountability and budget tools: Retirement Waivers (NY), Roads Dashboard,
 Snow Budget Overrun, Town Salary Comparison, Officials & Pensions, News &
 Events, PDF Search, Town Code (eCode360), Contract Raise View, Department
 Spend Forecast, Defamation Risk Analysis, Plurality & Oversight, Council
-Scorecard.
+Scorecard. *Savings & Offers* is labelled as what it is: referral and partner
+links chosen by the developer, who may earn a credit or commission, and not
+Town services.
 
 ---
 

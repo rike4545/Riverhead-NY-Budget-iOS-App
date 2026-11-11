@@ -17,6 +17,9 @@ struct HomeView: View {
     @Environment(RBBudgetStore.self) private var store
     @Environment(\.colorScheme) private var scheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    // The tab bar keeps its selection here (MainTabView). Writing to it moves the
+    // reader to that tab instead of pushing a second copy of it inside Home.
+    @AppStorage("Riverhead.selectedTab") private var selectedTabRaw: String = "home"
     private var isPadLayout: Bool { horizontalSizeClass == .regular }
 
     // MARK: - External URLs
@@ -65,9 +68,9 @@ struct HomeView: View {
                 } else {
                     LazyVStack(spacing: 20) {
                         heroHeader
+                        dataStatusBanner
                         budgetSection
                         quickLinksSection
-                        dataStatusBanner
                         infoSection
                         disclaimerSection
                     }
@@ -254,21 +257,21 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 12) {
             sectionHeader(title: "Start With Your Goal", icon: "figure.walk.motion")
 
-            Text("Choose the path that matches what you are trying to do. The deeper tools are still here, but residents should not have to know the app map before getting an answer.")
+            Text("Pick what you want to find out. Each card opens one screen.")
                 .font(.footnote)
                 .foregroundStyle(secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
 
             VStack(spacing: 10) {
                 internalFullWidthCard(
-                    title: "Read the 2027 Tentative Budget",
-                    subtitle: "Open the current tentative budget and its source-backed analysis.",
+                    title: Budget2027Status.title(),
+                    subtitle: Budget2027Status.summary(),
                     systemImage: "doc.text.fill",
                     accentOverride: RiverheadTheme.brandSky
                 ) {
                     WebContentView(
-                        url: URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tentative-2027/")!,
-                        title: "2027 Tentative Budget"
+                        url: Budget2027Status.url,
+                        title: Budget2027Status.pageTitle
                     )
                 }
 
@@ -290,13 +293,13 @@ struct HomeView: View {
                     MyTaxesView()
                 }
 
-                internalFullWidthCard(
+                externalFullWidthCard(
                     title: "Where is the money going?",
-                    subtitle: "Start with the budget hub for spending, reserves, debt, payroll, and source documents.",
+                    subtitle: "Opens the Budget tab: spending, reserves, debt, payroll and source documents.",
                     systemImage: "chart.pie.fill",
                     accentOverride: RiverheadTheme.brandSky
                 ) {
-                    RiverheadBudgetHubView()
+                    selectedTabRaw = "budget"
                 }
 
                 internalFullWidthCard(

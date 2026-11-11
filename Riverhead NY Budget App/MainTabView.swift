@@ -91,11 +91,11 @@ struct MainTabView: View {
                                 Menu {
                                     NavigationLink {
                                         WebContentView(
-                                            url: URL(string: "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/tentative-2027/")!,
-                                            title: "2027 Tentative Budget"
+                                            url: Budget2027Status.url,
+                                            title: Budget2027Status.pageTitle
                                         )
                                     } label: {
-                                        Label("2027 Tentative Budget", systemImage: "doc.text")
+                                        Label("The 2027 budget", systemImage: "doc.text")
                                     }
                                     NavigationLink {
                                         WebContentView(
@@ -142,7 +142,7 @@ struct MainTabView: View {
         // iPhone Duo", Tech Talk 111461). .sidebarAdaptable keeps the tab bar in
         // compact width — the outer display, and every non-folding iPhone — and
         // promotes the same five tabs to a sidebar when the device is opened. The
-        // 64-route parity catalog is reached from the Budget tab's toolbar, so the
+        // 87-entry parity catalog is reached from the Budget tab's toolbar, so the
         // extra column is worth real navigation on the larger screen.
         //
         // These are the iOS 18 spellings, deliberately. iOS 27 renames the second

@@ -80,12 +80,12 @@ jobs:
         run: bash .github/scripts/summarise.sh unit.log "Unit run" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload log
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: unit-log
           path: unit.log
-          retention-days: 7
+          retention-days: 3
           if-no-files-found: ignore
 
   # Split out because it is the expensive half: the UI bundle spends roughly two
@@ -135,12 +135,12 @@ jobs:
       # a picture of the screen at the moment of the assertion is exactly what
       # was missing while these tests were being debugged blind.
       - name: Upload logs and result bundle
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: ui-logs
           path: |
             ui.log
             ui.xcresult
-          retention-days: 7
+          retention-days: 3
           if-no-files-found: ignore

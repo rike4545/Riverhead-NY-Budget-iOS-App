@@ -1,12 +1,20 @@
 name: iOS
 
-# This repo is private, so macOS runner minutes bill at a 10x multiplier.
-# The triggers are deliberately narrow to avoid paying twice for one commit:
-# pull_request covers branch work, push covers only main. Nothing runs twice.
 on:
-  push:
-    branches: [main]
+  # Private repo: macOS minutes bill at 10x and the free allowance is small, so
+  # this runs once per ready-for-review PR change, not on drafts, docs-only
+  # changes, or again on main after a merge (the PR head was already tested).
+  # Run it by hand from the Actions tab when you need a main build.
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - ".claude/**"
+      - ".agents/**"
+      - ".github/dependabot.yml"
+      - ".gitignore"
+      - "LICENSE*"
   workflow_dispatch:
 
 # The jobs only check out code and upload logs, so the token needs no write access.
@@ -28,6 +36,11 @@ jobs:
   # at PR time, months before anyone opened Xcode.
   build-and-unit-test:
     name: Build + unit tests
+    # Skip drafts, and skip label events other than the opt-in "ui-tests" label.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.draft == false &&
+       (github.event.action != 'labeled' || github.event.label.name == 'ui-tests'))
     runs-on: macos-latest
     timeout-minutes: 45
     steps:
@@ -67,20 +80,23 @@ jobs:
         run: bash .github/scripts/summarise.sh unit.log "Unit run" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload log
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: unit-log
           path: unit.log
-          retention-days: 7
+          retention-days: 3
           if-no-files-found: ignore
 
   # Split out because it is the expensive half: the UI bundle spends roughly two
   # minutes booting and driving a simulator for 4 tests, against 0.3s for 47
-  # unit tests. It only needs to gate a merge, so it skips pushes to main.
+  # unit tests, and it was half of this repo's macOS bill. It is opt-in: add the
+  # "ui-tests" label to a PR (or run the workflow by hand) when a change touches
+  # UI flows. It waits for the unit job so a broken build is not paid for twice.
   ui-test:
     name: UI tests
-    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    needs: build-and-unit-test
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.pull_request.labels.*.name, 'ui-tests')
     runs-on: macos-latest
     timeout-minutes: 45
     steps:
@@ -119,12 +135,12 @@ jobs:
       # a picture of the screen at the moment of the assertion is exactly what
       # was missing while these tests were being debugged blind.
       - name: Upload logs and result bundle
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: ui-logs
           path: |
             ui.log
             ui.xcresult
-          retention-days: 7
+          retention-days: 3
           if-no-files-found: ignore

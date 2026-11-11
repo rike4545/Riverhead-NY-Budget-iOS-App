@@ -2,10 +2,12 @@
 //  CandidateWatchView.swift
 //  Riverhead NY Budget App
 //
-//  2026 Town Campaign Candidate Watch — who's running for Riverhead Town
-//  office in the November 2026 general election, their campaign links, and
-//  their stated platforms, sourced from each campaign's own website/social
-//  media plus local news coverage.
+//  2026 Town Campaign Candidate Watch — who was on the November 3, 2026 ballot
+//  for Riverhead Town office, the unofficial result, each campaign's links and
+//  stated platform, sourced from each campaign's own website/social media plus
+//  local news coverage. The result mirrors the website's
+//  web/lib/election-results-2026.ts; replace both with the certified count when
+//  the Suffolk County Board of Elections publishes it.
 //
 //  Swift 6 / iOS 17+
 //
@@ -31,8 +33,31 @@ enum CandidateWatchData {
         ("Filing Deadline (Independents)", "June 15, 2026"),
         ("Filing Deadline (Other Parties)", "July 2026"),
         ("Primary (held)", "June 23, 2026"),
-        ("General Election", "November 3, 2026"),
+        ("General Election (held)", "November 3, 2026"),
     ]
+
+    /// Unofficial result of the Supervisor race, from the Suffolk County Board of
+    /// Elections' election-night results page ("Last Updated" Nov. 4, 2026,
+    /// 12:24:42 AM). Not certified; the count can change.
+    enum UnofficialResult {
+        static let asOf = "November 4, 2026, 12:24 AM"
+        struct Row: Identifiable {
+            let name: String
+            let lines: String
+            let votes: Int
+            let percent: String
+            var id: String { name }
+        }
+        static let rows: [Row] = [
+            .init(name: "Jerry Halpin", lines: "Democratic 6,587 + Taxpayers First 192", votes: 6_779, percent: "52.40%"),
+            .init(name: "Ken Rothwell", lines: "Republican 5,264 + Conservative 888", votes: 6_152, percent: "47.55%"),
+            .init(name: "Write-in", lines: "", votes: 7, percent: "0.05%"),
+        ]
+        static let total = 12_938
+        static let margin = 627
+        static let sourceTitle = "Suffolk County Board of Elections: 2026 General Election results"
+        static let sourceURL = URL(string: "https://app.enhancedvoting.com/results/public/suffolk-county-ny/elections/GE2026_20261028145605")!
+    }
 
     static let townSupervisorCandidates: [CandidateWatchCandidate] = [
         .init(
@@ -70,7 +95,7 @@ enum CandidateWatchData {
         ),
     ]
 
-    static let noRaceNote = "No Town Council seats are on the ballot in November 2026. Bob Kern and Kenneth Rothwell won three-year council terms in the November 2025 election that run through December 31, 2028 — Rothwell's council seat doesn't expire this cycle even though he's running for Supervisor, so it would need to be filled separately (by appointment or special election) if he wins. Joann Waski and Denise Merrifield's seats aren't up until 2027."
+    static let noRaceNote = "No Town Council seats were on the ballot in November 2026. Bob Kern and Kenneth Rothwell won three-year council terms in the November 2025 election that run through December 31, 2028; Rothwell kept his council seat while running for Supervisor. Joann Waski's and Denise Merrifield's seats are up in 2027."
 }
 
 struct CandidateWatchView: View {
@@ -80,11 +105,49 @@ struct CandidateWatchView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("2026 Town Campaign Candidate Watch")
                         .font(.headline)
-                    Text("Who's running for Riverhead Town office in the November 2026 general election, their campaign links, and their stated platforms — sourced from each campaign's own website and social media plus local news coverage.")
+                    Text("Who was on the November 3, 2026 ballot for Riverhead Town office, the unofficial result, and each candidate's campaign links and stated platform — sourced from each campaign's own website and social media plus local news coverage.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 4)
+            }
+
+            Section {
+                let r = CandidateWatchData.UnofficialResult.self
+                ForEach(r.rows) { row in
+                    HStack(alignment: .firstTextBaseline) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(row.name)
+                                .font(.subheadline.weight(.semibold))
+                            if !row.lines.isEmpty {
+                                Text(row.lines)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text(row.votes.formatted())
+                                .font(.subheadline.weight(.semibold).monospacedDigit())
+                            Text(row.percent)
+                                .font(.caption.monospacedDigit())
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+                Text("\(r.total.formatted()) votes in the race. Halpin leads by \(r.margin.formatted()) votes. These numbers are unofficial and can change; the County Board of Elections certifies the final count.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Link(destination: r.sourceURL) {
+                    Label(r.sourceTitle, systemImage: "arrow.up.forward.square")
+                        .font(.footnote.weight(.semibold))
+                }
+            } header: {
+                Text("Unofficial result, Town Supervisor")
+            } footer: {
+                Text("As of \(CandidateWatchData.UnofficialResult.asOf). The County lists all 22 election districts as partially reported, and affidavit ballots were not yet counted.")
             }
 
             Section {
@@ -116,7 +179,7 @@ struct CandidateWatchView: View {
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             } header: {
-                Text("Only the Supervisor seat is on this ballot")
+                Text("Only the Supervisor seat was on this ballot")
             }
         }
         .navigationTitle("Candidate Watch")

@@ -185,15 +185,29 @@ struct Proposed2027BudgetPresentationView: View {
 
                 Spacer(minLength: 12)
 
-                VStack(alignment: .trailing, spacing: 3) {
-                    Text("Official budget")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                    Text("Comes later in the formal cycle")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(RiverheadTheme.brandNavy)
-                        .multilineTextAlignment(.trailing)
+                // This screen is the app's own planning case. The Town's official
+                // budget is a separate document, linked here with its current stage.
+                NavigationLink {
+                    WebContentView(url: Budget2027Status.url, title: Budget2027Status.pageTitle)
+                } label: {
+                    VStack(alignment: .trailing, spacing: 3) {
+                        Text("Official budget")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                        Text(Budget2027Status.shortStatus())
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.brandNavy)
+                            .multilineTextAlignment(.trailing)
+                        Label("Read it", systemImage: "arrow.up.forward.square")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.accent)
+                    }
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
                 }
+                .buttonStyle(.plain)
+                .accessibilityElement(children: .combine)
+                .accessibilityHint("Opens the Town's official 2027 budget, separate from this unofficial plan.")
             }
         }
         .padding(isCompact ? 14 : 18)

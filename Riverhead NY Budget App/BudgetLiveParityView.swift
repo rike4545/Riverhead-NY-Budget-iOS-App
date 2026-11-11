@@ -123,7 +123,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Open Meetings Law", path: "/open-meetings/", systemImage: "person.2.wave.2.fill", detail: "Review New York Open Meetings Law guidance and Riverhead meeting context.")
         ],
         .research: [
-            .init(title: "2027 Tentative Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "Explore the 2027 Tentative Budget as published and parsed by the web pipeline."),
+            .init(title: "The 2027 Budget", path: "/tentative-2027/", systemImage: "doc.text.fill", detail: "The Town's 2027 budget at its latest stage, Tentative then Preliminary, as published and parsed by the web pipeline."),
             .init(title: "Contracts & Bids", path: "/contracts/", systemImage: "doc.on.doc.fill", detail: "Review bid awards, extensions, purchases, change orders, and service agreements with their vendors."),
             .init(title: "Optimum Cable Franchise and Verizon", path: "/cable-franchise/", systemImage: "tv.fill", detail: "See the 2016 Optimum franchise terms, the fees the Town receives, when it is due for renewal, and whether Verizon could compete."),
             .init(title: "Budget Flow", path: "/budget-flow/", systemImage: "arrow.triangle.branch", detail: "Follow the 2027 Preliminary budget from revenue, through the funds, to spending."),

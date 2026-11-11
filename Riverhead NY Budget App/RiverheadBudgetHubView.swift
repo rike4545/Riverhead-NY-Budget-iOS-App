@@ -133,22 +133,12 @@ struct RiverheadBudgetHubView: View {
                     .font(.system(.title2, design: .rounded).weight(.bold))
                     .foregroundStyle(.white)
 
-                Text("Pick what you want to know — your taxes, where money goes, or what to ask at a meeting.")
+                // The section buttons just below this header are the way in, so
+                // the header names them rather than repeating them.
+                Text("Pick a section below: your taxes, where the money goes, an unofficial 2027 plan, reserves, or debt.")
                     .font(.footnote)
                     .foregroundStyle(.white.opacity(0.88))
                     .fixedSize(horizontal: false, vertical: true)
-            }
-
-            HStack(spacing: 8) {
-                quickStartChip("My tax bill", symbol: "house.and.flag.fill") {
-                    section = .myTaxes
-                }
-                quickStartChip("Where $ goes", symbol: "chart.pie.fill") {
-                    section = .overview
-                }
-                quickStartChip("2027 analysis", symbol: "doc.text.fill") {
-                    section = .proposed2027Budget
-                }
             }
         }
         .padding(16)
@@ -190,25 +180,6 @@ struct RiverheadBudgetHubView: View {
 
     // MARK: - UI pieces
 
-    private func quickStartChip(_ label: String, symbol: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            HStack(spacing: 5) {
-                Image(systemName: symbol)
-                    .font(.caption2)
-                    .accessibilityHidden(true)
-                Text(label)
-                    .font(.caption.weight(.semibold))
-            }
-            .foregroundStyle(.white)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(Color.white.opacity(0.18), in: Capsule())
-            .overlay(Capsule().strokeBorder(Color.white.opacity(0.30), lineWidth: 0.8))
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(label)
-        .accessibilityHint("Jumps to the \(label) section of the budget.")
-    }
 
     private var sectionChips: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -392,19 +363,10 @@ fileprivate struct BudgetToolsDirectoryView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            GlassCard(title: "More Budget Tools", subtitle: directorySubtitle) {
-                HStack(spacing: 8) {
-                    ForEach(["2027 Planning", "Evidence", "Public Review"], id: \.self) { label in
-                        Text(label)
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(RiverheadTheme.brandNavy)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 6)
-                            .background(RiverheadTheme.brandSky.opacity(0.12))
-                            .clipShape(Capsule())
-                    }
-                }
-            }
+            Text(directorySubtitle)
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
 
             ForEach(groups) { group in
                 GlassCard(title: group.title, subtitle: nil) {

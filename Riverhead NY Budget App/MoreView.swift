@@ -250,7 +250,7 @@ struct MoreView: View {
                 offers: [
                     DiscountOffer(
                         title: "Buy Me a Coffee",
-                        subtitle: "Support the EV Companion app developer",
+                        subtitle: "Tip the developer (the page is shared with their EV Companion app)",
                         detail: "A one-time contribution to support the developer behind the EV tools and companion apps linked here. Any amount helps cover hosting and development costs.",
                         url: urlBuyMeCoffee,
                         badge: "One-time tip"
@@ -743,7 +743,7 @@ struct MoreView: View {
                 Label("Discounts & Offers", systemImage: "tag.circle.fill")
             }
 
-            Text("Organized by category so referral codes, partner links, and app-support offers stay easy to review or remove later.")
+            Text("Referral and partner links chosen by the app's developer, who may earn a credit or commission when you use them. They are not Town services, and the Town does not endorse them.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }

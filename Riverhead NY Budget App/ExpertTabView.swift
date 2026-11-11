@@ -22,7 +22,7 @@ fileprivate final class ExpertStore {
 
     // Fund balance snapshot
     var appropriations: Double = 69_113_159
-    var estimatedFundBalance: Double = 29_671_084
+    var estimatedFundBalance: Double = 28_829_513
 
     // Quick taxes (default matches RBBudgetStore.ratePerThousand; overwritten by sync(from:) below)
     var ratePerThousand: Double = 71.598

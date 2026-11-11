@@ -71,7 +71,8 @@ struct PeerReserveBenchmarkView: View {
     // OSC FSMS fiscal-stress warning threshold — unassigned fund balance below 15% of appropriations
     // is one of several negative indicators in the Fiscal Stress Monitoring System.
     private let oscFSMSThreshold = 0.15
-    // Riverhead's adopted local policy minimum (15%) and upper target (20%).
+    // Riverhead's adopted policy minimum (15%, Resolution 918 of 2011). The policy has no ceiling;
+    // 20% is a reference line this app draws.
     private let riverheadPolicyMin = 0.15
     private let riverheadPolicyMax = 0.20
 
@@ -152,7 +153,7 @@ struct PeerReserveBenchmarkView: View {
     }
 
     var body: some View {
-        NavigationView {
+        Group {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     headerCard
@@ -207,14 +208,14 @@ struct PeerReserveBenchmarkView: View {
                 }
 
                 if riverheadPercent >= riverheadPolicyMax {
-                    statusPill("Above 20% upper target — above policy band", color: .blue)
+                    statusPill("Above the 15% floor and the app's 20% reference line", color: .blue)
                 } else if riverheadPercent >= riverheadPolicyMin {
-                    statusPill("Within 15%–20% policy band", color: .green)
+                    statusPill("Above the 15% floor", color: .green)
                 } else {
                     statusPill("Below 15% local minimum — policy alert", color: .red)
                 }
 
-                Text("Riverhead's Town Board adopted a policy requiring unassigned fund balance of at least 15% of General Fund appropriations, with 20% as an upper target. A balance within that band is policy-compliant; above the band is available for intentional one-time deployment.")
+                Text("Riverhead's policy, Resolution 918 of 2011, requires unassigned fund balance of at least 15% of General Fund appropriations and sets no ceiling. Money above the floor may be used to cut the next year's taxes, for one-time capital or for natural emergencies. The 20% line is a reference point this app draws, not Town policy.")
                     .font(.caption)
                     .foregroundStyle(RiverheadTheme.textSecondary)
             }
@@ -276,7 +277,7 @@ struct PeerReserveBenchmarkView: View {
                     label: "Riverhead local policy minimum",
                     value: "15%",
                     color: RiverheadTheme.accent,
-                    explanation: "Riverhead's adopted fund-balance policy sets 15% of General Fund appropriations as the minimum floor. The upper target is 20%. Amounts above 20% are candidates for intentional one-time deployment (capital, debt reduction, or tax stabilization) by board resolution."
+                    explanation: "Riverhead's adopted fund-balance policy sets 15% of General Fund appropriations as the minimum floor. It sets no ceiling. Money above the floor may go to cutting the next year's taxes, one-time capital or natural emergencies, by Board resolution."
                 )
                 Divider().opacity(0.2)
                 benchmarkRow(
@@ -336,7 +337,7 @@ struct PeerReserveBenchmarkView: View {
                     .foregroundStyle(RiverheadTheme.accent)
                 }
 
-                Link(destination: URL(string: "https://www.osc.ny.gov/local-government/publications/reserve-funds")!) {
+                Link(destination: URL(string: "https://www.osc.ny.gov/files/local-government/publications/pdf/reserve-funds.pdf")!) {
                     HStack {
                         Image(systemName: "arrow.up.right.square")
                         Text("OSC Reserve Funds publication")
@@ -346,7 +347,7 @@ struct PeerReserveBenchmarkView: View {
                     .foregroundStyle(RiverheadTheme.accent)
                 }
 
-                Link(destination: URL(string: "https://www.osc.ny.gov/local-government/fiscal-stress-monitoring")!) {
+                Link(destination: URL(string: "https://www.osc.ny.gov/local-government/fiscal-monitoring")!) {
                     HStack {
                         Image(systemName: "arrow.up.right.square")
                         Text("Fiscal Stress Monitoring System (FSMS)")

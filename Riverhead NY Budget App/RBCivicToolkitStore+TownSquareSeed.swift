@@ -77,7 +77,7 @@ extension RBCivicToolkitStore {
         • Downtown grants coverage: https://riverheadlocal.com/2025/12/30/riverhead-secures-more-than-4m-in-state-grants-for-downtown-projects/
         • Science Center petition: https://www.change.org/p/save-the-long-island-science-center-no-eminent-domain-in-riverhead
         • Science Center hearing coverage: https://riverheadlocal.com/2026/04/22/riverhead-sets-hearing-on-condemning-science-centers-building-in-3-2-vote/
-        • Long Island Museum vote: https://longislandmuseum.org/about-the-long-island-museum/vote2026/
+        • Long Island Museum (its 2026 vote page has been taken down): https://longislandmuseum.org/
         • Southold Historical Museum budget vote: https://www.southoldhistorical.org/budget-vote
         • Rocky Point Historical Society funding note: https://rockypointhistoricalsociety.org/news/
         • NY Education Law §253: https://www.nysenate.gov/legislation/laws/EDN/253

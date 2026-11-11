@@ -85,7 +85,7 @@ struct TaxImpactCalculatorView: View {
     private var estimatedMarketValue: Double { assessedValue / equalizationRate }
 
     var body: some View {
-        NavigationView {
+        Group {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     contextCard

@@ -181,7 +181,7 @@ enum TownSquareCoreTerms {
     static let fundBalancePetitionURL: URL = URL.verified("https://www.change.org/p/revise-riverhead-s-outdated-fund-balance-policy")
     static let scienceCenterEminentDomainArticleURL: URL = URL.verified("https://riverheadlocal.com/2026/04/22/riverhead-sets-hearing-on-condemning-science-centers-building-in-3-2-vote/")
     static let scienceCenterWebsiteURL: URL = URL.verified("https://www.sciencecenterli.org/")
-    static let longIslandMuseumVoteURL: URL = URL.verified("https://longislandmuseum.org/about-the-long-island-museum/vote2026/")
+    static let longIslandMuseumVoteURL: URL = URL.verified("https://longislandmuseum.org/")
     static let southoldMuseumBudgetVoteURL: URL = URL.verified("https://www.southoldhistorical.org/budget-vote")
     static let rockyPointHistoricalBudgetVoteURL: URL = URL.verified("https://rockypointhistoricalsociety.org/news/")
     static let educationLaw253URL: URL = URL.verified("https://www.nysenate.gov/legislation/laws/EDN/253")

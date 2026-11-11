@@ -141,7 +141,7 @@ struct RBTownSquareHubView: View {
                 .padding(.vertical, 4)
 
                 LinkRow(title: "NYS Education Law §253", url: TownSquareCoreTerms.educationLaw253URL)
-                LinkRow(title: "Long Island Museum 2026 vote information", url: TownSquareCoreTerms.longIslandMuseumVoteURL)
+                LinkRow(title: "Long Island Museum website (its 2026 vote page has been taken down)", url: TownSquareCoreTerms.longIslandMuseumVoteURL)
                 LinkRow(title: "Southold Historical Museum budget vote", url: TownSquareCoreTerms.southoldMuseumBudgetVoteURL)
                 LinkRow(title: "Rocky Point Historical Society funding note", url: TownSquareCoreTerms.rockyPointHistoricalBudgetVoteURL)
             }

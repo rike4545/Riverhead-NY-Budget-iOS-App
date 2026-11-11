@@ -201,11 +201,11 @@ struct RiverheadAIService {
             "- 2026 General Fund appropriations in the app: \(formatCurrency(store.appropriations)).",
             "- 2026 estimated unassigned General Fund balance in the app: \(formatCurrency(store.estimatedFundBalance)), about \(formatPercent(fundBalancePercent)).",
             "- The app currently treats 15% as Riverhead's local floor, notes GFOA's two-month benchmark as about 16.7% to 17%, and presents 25% to 32% as a practical Riverhead operating range.",
-            "- The app's featured reserve reset lowers Riverhead from about 41.1% to 28.8%, leaving about \(formatCurrency(deployableAbove288)) of one-time deployment capacity before specific uses are assigned.",
+            "- The app's featured reserve reset lowers Riverhead from about 41.7% (audited end of 2025, over the 2026 budget) to 28.8%, leaving about \(formatCurrency(deployableAbove288)) of one-time deployment capacity before specific uses are assigned.",
             "- The app's current policy story says recurring revenues should cover recurring costs, including modeled union salary pressure, without leaning on one-time reserve draws.",
-            "- The app highlights a 2026 General Fund mismatch of about $74,283 and reserve dependence in sewer and water funds based on the 2026 supplement.",
+            "- The 2027 Preliminary Budget balances in every fund but still counts $880,000 of General Fund savings as income and $4,945,000 more across the sewer and water funds ($5,825,000 in all). The 2026 Tentative's $74,283 General Fund gap is not repeated.",
             "- The app's current recommendations include a Schedule of Fund Balance and Projections with every budget, exact debit-or-credit line citations for fiscally impactful legislation, and Brookhaven-style expenditure growth triggers tied to revenue and population growth.",
-            "- The app notes that Riverhead's December 5, 2006 Town Board agenda included Resolution #1101 for adoption of a General Fund balance policy, and later audited statements describe a 15% General Fund minimum by resolution.",
+            "- Riverhead's written fund balance policy is Resolution 918 of December 20, 2011, which amended the 2006 policy (Resolution #1101 of December 5, 2006). It sets a 15% General Fund floor and no ceiling; money above the floor may be used to cut the next year's taxes, for one-time capital, or for natural emergencies. No Town record sets a 20% upper target.",
             "- The app's historical extraction for the 2011 adopted budget shows General Fund appropriations of $42,383,100, appropriated fund balance of $2,600,000, and tax levy of $29,250,500.",
             "- The app's current recommendation package also includes CPF debt acceleration, Community Housing Fund oversight, and phased implementation steps for immediate actions, first 100 days, and year one."
         ]
@@ -236,7 +236,7 @@ struct RiverheadAIService {
             Current quick context:
             - App appropriations: \(formatCurrency(store.appropriations))
             - App estimated fund balance: \(formatCurrency(store.estimatedFundBalance))
-            - App policy floor / upper target: \(formatPercent(store.fundBalancePolicy.minimumPercent)) / \(formatPercent(store.fundBalancePolicy.targetUpperPercent ?? 0))
+            - Policy floor (Resolution 918 of 2011) / app reference line (not Town policy): \(formatPercent(store.fundBalancePolicy.minimumPercent)) / \(formatPercent(store.fundBalancePolicy.targetUpperPercent ?? 0))
 
             Resident question:
             \(prompt)

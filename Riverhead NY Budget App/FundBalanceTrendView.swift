@@ -33,13 +33,11 @@ private struct FBPoint: Identifiable {
     let id = UUID()
     let year: Int
     let unassigned: Double      // year-end unassigned General Fund balance (dollars)
-    let appropriations: Double  // budget-year appropriations (dollars)
+    let appropriations: Double  // the next year's adopted General Fund appropriations (dollars)
     let source: PointSource
 
     enum PointSource {
-        case afr        // confirmed from Annual Financial Report on file in app
-        case audEst     // OSC Annual Update Document estimate — verify on Open Book NY
-        case budget     // adopted budget supplement figure
+        case audit      // the Town's independent audit of that year
     }
 
     var percent: Double { guard appropriations > 0 else { return 0 }; return unassigned / appropriations }
@@ -47,26 +45,23 @@ private struct FBPoint: Identifiable {
 
 // MARK: - Historical series
 //
-// Sources:
-//  • FY2025 (AFR): BudgetSupplementExplorerView.swift — $29,671,084 confirmed.
-//  • FY2014–FY2024: derived from OSC Annual Update Documents (AUDs) filed by Riverhead.
-//    Appropriations for FY2014–FY2022 come from riverhead_general_fund_2005_2025.csv.
-//    Fund balance figures are estimates — verify on OSC Open Book NY or the Town's audited
-//    financial statements before citing in official documents.
-//
+// The same audited series the website uses (web/lib/audits.ts): each year-end
+// unassigned General Fund balance from that year's independent audit, over the
+// next year's adopted General Fund appropriations, so 2025 reads 41.7% as it
+// does on the website's reserves and credit pages.
+//  • 2023: $21,848,178 (2023 Audited Basic Financial Statement) over the 2024
+//    Adopted Budget's $60,797,800.
+//  • 2024: $23,887,952 (2024 Audited Basic Financial Statements) over the 2025
+//    Adopted Budget's $64,852,829.
+//  • 2025: $28,829,513 (2025 audited financial statements, accepted by the
+//    Town Board September 1, 2026, Resolution 2026-834) over the 2026 Adopted
+//    Budget's $69,113,159.
+// Earlier years are left out: the app used to show estimates for 2014-2024,
+// and the two it could check against audits ran $4-5 million high.
 private let historicalPoints: [FBPoint] = [
-    .init(year: 2014, unassigned:  8_500_000, appropriations: 46_327_350, source: .audEst),
-    .init(year: 2015, unassigned: 10_800_000, appropriations: 45_668_800, source: .audEst),
-    .init(year: 2016, unassigned: 11_900_000, appropriations: 46_136_300, source: .audEst),
-    .init(year: 2017, unassigned: 13_200_000, appropriations: 47_100_400, source: .audEst),
-    .init(year: 2018, unassigned: 14_700_000, appropriations: 48_463_550, source: .audEst),
-    .init(year: 2019, unassigned: 16_500_000, appropriations: 50_648_900, source: .audEst),
-    .init(year: 2020, unassigned: 20_800_000, appropriations: 51_359_400, source: .audEst),
-    .init(year: 2021, unassigned: 23_200_000, appropriations: 52_007_600, source: .audEst),
-    .init(year: 2022, unassigned: 25_400_000, appropriations: 52_487_600, source: .audEst),
-    .init(year: 2023, unassigned: 26_700_000, appropriations: 57_690_000, source: .audEst),
-    .init(year: 2024, unassigned: 27_900_000, appropriations: 60_797_800, source: .audEst),
-    .init(year: 2025, unassigned: 29_671_084, appropriations: 64_852_829, source: .afr),
+    .init(year: 2023, unassigned: 21_848_178, appropriations: 60_797_800, source: .audit),
+    .init(year: 2024, unassigned: 23_887_952, appropriations: 64_852_829, source: .audit),
+    .init(year: 2025, unassigned: 28_829_513, appropriations: 69_113_159, source: .audit),
 ]
 
 // MARK: - View
@@ -81,7 +76,7 @@ struct FundBalanceTrendView: View {
 
     private let gfoaBenchmark = 1.0 / 6.0   // 16.7%
     private let policyMin     = 0.15
-    private let policyUpper   = 0.20
+    private let policyUpper   = 0.20   // a reference line only; the Town's policy has no ceiling
 
     private var points: [FBPoint] { historicalPoints }
 
@@ -91,7 +86,7 @@ struct FundBalanceTrendView: View {
     }
 
     var body: some View {
-        NavigationView {
+        Group {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     headerCard
@@ -104,7 +99,7 @@ struct FundBalanceTrendView: View {
                 .padding(.bottom, 32)
             }
             .background(RiverheadTheme.background.ignoresSafeArea())
-            .navigationTitle("Reserve Trend: 2014–2025")
+            .navigationTitle("Reserve Trend: 2023–2025")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -121,11 +116,10 @@ struct FundBalanceTrendView: View {
     private var headerCard: some View {
         GlassCard(
             title: "Unassigned Fund Balance Trend",
-            subtitle: "Riverhead General Fund (A01) year-end unassigned balance as a percentage of appropriations, FY2014–FY2025."
+            subtitle: "Riverhead General Fund (A01) year-end unassigned balance from each year's audit, as a share of the next year's adopted General Fund budget, 2023–2025."
         ) {
             HStack(spacing: 8) {
-                badge("AFR confirmed", color: RiverheadTheme.accent)
-                badge("OSC AUD estimate", color: .orange)
+                badge("Audited", color: RiverheadTheme.accent)
                 badge("GFOA 16.7%", color: .green)
             }
         }
@@ -192,7 +186,7 @@ struct FundBalanceTrendView: View {
                             x: .value("Year", pt.year),
                             y: .value(showDollars ? "$M" : "%", showDollars ? pt.unassigned / 1_000_000 : pt.percent * 100)
                         )
-                        .foregroundStyle(pt.source == .afr ? RiverheadTheme.accent : .orange)
+                        .foregroundStyle(RiverheadTheme.accent)
                         .symbolSize(pt.year == selectedYear ? 120 : 50)
                     }
 
@@ -204,7 +198,7 @@ struct FundBalanceTrendView: View {
                     }
                 }
                 .chartXAxis {
-                    AxisMarks(values: points.filter { $0.year % 2 == 0 }.map(\.year)) { val in
+                    AxisMarks(values: points.map(\.year)) { val in
                         AxisValueLabel { if let y = val.as(Int.self) { Text("\(y)").font(.caption2) } }
                         AxisGridLine()
                     }
@@ -270,7 +264,7 @@ struct FundBalanceTrendView: View {
     private func detailCard(for pt: FBPoint) -> some View {
         GlassCard(
             title: "FY\(pt.year) Snapshot",
-            subtitle: pt.source == .afr ? "Confirmed from Annual Financial Report in app." : "Estimated from OSC Annual Update Document — verify on Open Book NY."
+            subtitle: "From the Town's independent audit of \(pt.year)."
         ) {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(alignment: .firstTextBaseline) {
@@ -289,7 +283,7 @@ struct FundBalanceTrendView: View {
 
                 Divider().opacity(0.25)
 
-                statRow("Appropriations", value: pt.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0))))
+                statRow("\(String(pt.year + 1)) appropriations", value: pt.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0))))
                 statRow("Reserve ratio", value: pt.percent.formatted(.percent.precision(.fractionLength(1))))
                 statRow("vs. GFOA 16.7%", value: ((pt.percent - gfoaBenchmark) * 100).formatted(.number.precision(.fractionLength(1))) + " pp")
                 statRow("vs. 15% policy min", value: ((pt.percent - policyMin) * 100).formatted(.number.precision(.fractionLength(1))) + " pp")
@@ -309,27 +303,22 @@ struct FundBalanceTrendView: View {
     private var narrativeCard: some View {
         GlassCard(
             title: "What the Trend Shows",
-            subtitle: "A decade of reserve accumulation — and what it means for 2027."
+            subtitle: "Three audited years, and what they mean for 2027."
         ) {
             VStack(alignment: .leading, spacing: 10) {
                 narrativeParagraph(
                     icon: "arrow.up.right.circle.fill", color: .green,
-                    text: "FY2014–FY2019: Gradual rebuilding. After drawing heavily on reserves in the 2009–2014 period (the CSV shows $2–4.7M appropriated annually), the Town stopped using fund balance as a budget offset. The reserve ratio climbed from an estimated 18% in 2014 to about 33% in 2019."
+                    text: "The balance grew each year: $21.8 million at the end of 2023, $23.9 million at the end of 2024 and $28.8 million at the end of 2025. Measured against the next year's budget, that is 35.9%, 36.8% and 41.7%, all well above the Town's 15% floor."
                 )
                 Divider().opacity(0.2)
                 narrativeParagraph(
-                    icon: "bolt.fill", color: .blue,
-                    text: "FY2020–FY2022: COVID-era acceleration. Reduced spending, federal aid inflows, and continued restraint pushed the ratio from roughly 40% to 48%. The Town had not accumulated reserves at this pace in recent memory."
-                )
-                Divider().opacity(0.2)
-                narrativeParagraph(
-                    icon: "arrow.right.circle.fill", color: .orange,
-                    text: "FY2023–FY2025: Plateau. The dollar balance kept growing modestly, but appropriations grew faster as the Town began rebuilding service capacity and facing payroll pressure. The ratio stabilized near 45–46%, confirmed at 45.7% by the FY2025 AFR."
+                    icon: "doc.text.fill", color: .blue,
+                    text: "The Town's policy is Resolution 918 of 2011. It sets a 15% floor and no ceiling. The shaded band up to 20% on the chart is a reference line this app draws, not a Town target."
                 )
                 Divider().opacity(0.2)
                 narrativeParagraph(
                     icon: "calendar.badge.clock", color: RiverheadTheme.accent,
-                    text: "Looking to 2027: the 2026 adopted budget appropriates fund balance and projects a declining ratio. The BudgetSimulator2027 models scenarios that hold the ratio above the 15% floor while funding service improvements. A written reserve policy would convert this trend line into a formal commitment."
+                    text: "Looking to 2027: the 2027 Preliminary Budget counts $880,000 of General Fund savings as income. The 2027 Lab models scenarios that keep the ratio above the 15% floor while paying for service changes."
                 )
             }
         }
@@ -341,15 +330,15 @@ struct FundBalanceTrendView: View {
             subtitle: "How each data point was sourced."
         ) {
             VStack(alignment: .leading, spacing: 8) {
-                sourceRow(color: RiverheadTheme.accent, label: "AFR (FY2025)", detail: "Confirmed in app from the 2025 Annual Financial Report — $29,671,084 unassigned, $64,852,829 appropriations.")
-                sourceRow(color: .orange, label: "OSC AUD estimates (FY2014–FY2024)", detail: "Derived from Annual Update Documents filed by the Town with OSC. Appropriations for FY2014–FY2022 are from the riverhead_general_fund_2005_2025.csv in this app. Fund balance estimates should be verified against OSC Open Book NY or the Town's audited financial statements.")
+                sourceRow(color: RiverheadTheme.accent, label: "Audits (2023–2025)", detail: "Unassigned balances from the Town's audited financial statements: $21,848,178 (2023), $23,887,952 (2024) and $28,829,513 (2025, accepted September 1, 2026). Budgets from the Town's 2024, 2025 and 2026 Adopted Budgets. The Town's unaudited 2025 Annual Financial Report put the 2025 balance at $29,671,084.")
+                sourceRow(color: .orange, label: "Earlier years", detail: "Not shown. The app's earlier estimates for 2014–2024 did not match the audits where they could be checked, so they were removed rather than kept as guesses.")
 
                 Divider().opacity(0.2)
 
                 Link(destination: URL(string: "https://www.osc.ny.gov/local-government/data")!) {
                     HStack {
                         Image(systemName: "arrow.up.right.square")
-                        Text("OSC Open Book NY — verify AUD figures")
+                        Text("State Comptroller local government data")
                             .underline()
                     }
                     .font(.caption.weight(.medium))

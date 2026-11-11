@@ -652,9 +652,9 @@ fileprivate enum BudgetRecommendations2027 {
     static let fundBalancePolicyFloorPercent = 0.15
     static let fundBalancePolicyOperatingTargetPercent = 0.20
     static let fundBalancePolicyDeploymentCapPercent = 0.25
-    // Matches RBBudgetStore.estimatedFundBalance: the 2025 Annual Financial Report's actual unassigned
-    // General Fund balance ($29,671,084.17), the newest year-end figure available.
-    static let modeledUnassignedFundBalance2026 = 29_671_084.00
+    // Matches RBBudgetStore.estimatedFundBalance: the audited unassigned General Fund balance at the
+    // end of 2025 ($28,829,513, 2025 audited financial statements), the newest year-end figure.
+    static let modeledUnassignedFundBalance2026 = 28_829_513.00
     static let cpfOutstandingDebt2024 = 12_290_000.00
     /// The General Fund's share of the July 2026 CPF debt paydown. The paydown
     /// itself was funded from CPF fund balance (~$7.2M), which is a separate
@@ -936,54 +936,60 @@ fileprivate enum BudgetRecommendations2027 {
         )
     ]
 
+    // From the Town's 2027 Preliminary Budget (as the website's
+    // budget-2027-preliminary-lines.json reads it, book pages in brackets).
+    // Every fund below balances to the dollar in the Preliminary; what is left
+    // to explain is how much each one counts its savings as income. These used
+    // to describe the 2026 Tentative's $74,283 General Fund gap, which the 2027
+    // Preliminary does not repeat.
     static let residentCorrectionLines: [BudgetCorrectionLine] = [
         .init(
-            title: "General Fund (A01) still needs a closing correction",
-            status: "Overage",
-            detail: "The supplement shows $69,187,442 of tentative spending against $69,113,159 of tentative revenue, leaving a $74,283 gap to close. It also still uses $1.25M of appropriated fund balance."
+            title: "General Fund (A01) balances, but still uses savings",
+            status: "Reserve watch",
+            detail: "The 2027 Preliminary's General Fund spending and revenue both come to $71,932,070, so there is no arithmetic gap. It still counts $880,000 of appropriated fund balance as income, down from $1.25M in the 2026 budget and $950,000 in the 2027 Tentative."
         ),
         .init(
             title: "Sewer Fund (ES1) needs a plain-English reserve explanation",
             status: "Reserve watch",
-            detail: "The supplement carries $2.15M of appropriated fund balance in revenues and a separate $500,000 fund balance contribution on the spending side. Residents should be told why both are needed and how reserves will be rebuilt."
+            detail: "The 2027 Preliminary counts $2,225,000 of appropriated fund balance as income and also shows a separate $500,000 fund balance contribution on the spending side. Residents should be told why both are there."
         ),
         .init(
             title: "Calverton Sewer (ES3) remains dependent on reserves",
             status: "Reserve watch",
-            detail: "ES3 still uses $645,000 of appropriated fund balance and shows a $35,932 fund balance contribution. That should be explained as a temporary fix, not a permanent funding plan."
+            detail: "ES3 still uses $645,000 of appropriated fund balance in the 2027 Preliminary, and its fund balance contribution, $35,932 in 2026, is now zero. That should be explained as a temporary fix, not a permanent funding plan."
         ),
         .init(
-            title: "Water Fund (EW1) still leans on fund balance",
+            title: "Water Fund (EW1) leans on fund balance more than last year",
             status: "Transparency",
-            detail: "EW1 includes $1.85M of appropriated fund balance in the 2026 tentative revenue plan. The public should be shown whether rates, debt, or operating costs are driving that reliance."
+            detail: "EW1 counts $1,975,000 of appropriated fund balance as income in the 2027 Preliminary, up from $1.85M in 2026. The public should be shown whether rates, debt, or operating costs are driving that reliance."
         )
     ]
 
     static let expertCorrectionLines: [BudgetCorrectionLine] = [
         .init(
-            title: "A01 General Fund arithmetic gap should be reconciled before adoption",
-            status: "Correction required",
-            detail: "The supplement totals show A01 tentative expenditures of $69,187,442 versus A01 tentative revenues of $69,113,159, leaving a $74,283 imbalance. A01 also carries $1.25M of appropriated fund balance."
+            title: "A01 General Fund still budgets a reserve draw",
+            status: "Reserve dependence",
+            detail: "The 2027 Preliminary's A01 appropriations and revenues both total $71,932,070, so the 2026 Tentative's $74,283 arithmetic gap is not repeated. A01 still carries $880,000 of appropriated fund balance (A01-9999-000-00000-0), down from $1.25M adopted for 2026; a structural-balance test would ask what recurring revenue replaces it."
         ),
         .init(
             title: "ES1 Sewer shows layered reserve use that needs board-level explanation",
             status: "Reserve dependence",
-            detail: "ES1 revenues include $2.15M of appropriated fund balance, while expenditures also show a $500,000 fund balance contribution line. That presentation should be reconciled in the hearing record."
+            detail: "ES1 revenues include $2,225,000 of appropriated fund balance in the 2027 Preliminary, while expenditures also show a $500,000 fund balance contribution line (ES1-9-9990). That presentation should be reconciled in the hearing narrative."
         ),
         .init(
             title: "ES3 Calverton Sewer still relies on nonrecurring balance support",
             status: "Reserve dependence",
-            detail: "ES3 includes $645,000 of appropriated fund balance in revenues and a $35,932 fund balance contribution in expenditures. If that is a short-term bridge, the replenishment plan should be stated explicitly."
+            detail: "ES3 includes $645,000 of appropriated fund balance in 2027 revenues, and the $35,932 fund balance contribution it carried in 2026 is gone. If that is a short-term bridge, the replenishment plan should be stated explicitly."
         ),
         .init(
-            title: "EW1 Water continues to rely on a large reserve draw",
+            title: "EW1 Water's reserve draw grows",
             status: "Reserve dependence",
-            detail: "EW1 includes $1.85M of appropriated fund balance in the tentative revenue plan. That should be paired with a clear statement of whether the driver is rates, capital timing, or operating pressure."
+            detail: "EW1 includes $1,975,000 of appropriated fund balance in the 2027 Preliminary, up from $1,850,000 adopted for 2026. That should be paired with a clear statement of whether the driver is rates, capital timing, or operating pressure."
         ),
         .init(
-            title: "ES5 Scavenger/Waste should be reconciled in the final narrative",
+            title: "ES5 Scavenger Waste should be reconciled in the final narrative",
             status: "Correction watch",
-            detail: "ES5 still carries $100,000 of appropriated fund balance in revenues and a $167,000 interfund transfer to A01 on the expenditure side. The board should clarify whether that transfer is still appropriate under current operating conditions."
+            detail: "ES5 still carries $100,000 of appropriated fund balance in revenues and a $179,900 interfund transfer to A01 on the expenditure side (up from $167,000 in 2026). The board should clarify whether that transfer is still appropriate under current operating conditions."
         )
     ]
 
@@ -2197,12 +2203,12 @@ fileprivate struct OverviewStoryView: View {
     private var expertCards: [OverviewStoryCard] {
         [
             .init(symbol: "chart.bar.fill",
-                  title: "2026 Tentative: $69,113,159 appropriations",
-                  blurb: "+6.5% over 2025 adopted ($64,895,000). General Fund carries most of the growth via personal services and benefits. Tax cap compliance: verify levy does not exceed the calculated limit.",
+                  title: "2026 Adopted: $69,113,159 General Fund appropriations",
+                  blurb: "+6.6% over the 2025 Adopted Budget ($64,852,829). General Fund carries most of the growth via personal services and benefits. Tax cap compliance: verify levy does not exceed the calculated limit.",
                   tag: "Fiscal summary"),
             .init(symbol: "banknote.fill",
-                  title: "Fund balance: $29,671,084 unassigned",
-                  blurb: "Riverhead's 2025 Annual Financial Report shows the General Fund ended 2025 with about $33.4M in fund balance and total governmental funds rose to about $76.55M. That still reads as a very large operating cushion relative to Riverhead's 15% floor and 20% upper target.",
+                  title: "Fund balance: $28,829,513 unassigned",
+                  blurb: "The 2025 audit shows the General Fund ended 2025 with $33.3M in fund balance, $28.8M of it unassigned: 41.7% of the 2026 budget. That is a large cushion next to the Town's 15% floor (Resolution 918 of 2011, which sets no ceiling).",
                   tag: "Fund balance"),
             .init(symbol: "arrow.up.right.circle.fill",
                   title: "Key cost drivers",
@@ -2582,14 +2588,14 @@ fileprivate struct FundBalanceDashboardView: View {
     private let targetReservePercent = 0.288
 
     // Real 2026 Adopted Budget figures from RBBudgetStore.
-    // General Fund: appropriations $69,113,159 · estimated unassigned fund balance $29,671,084.
-    // Policy: 15% minimum, 20% upper target.
+    // General Fund: appropriations $69,113,159 · audited unassigned fund balance $28,829,513 (end of 2025).
+    // Policy: Resolution 918 of 2011, a 15% floor and no ceiling. The 20% line is the app's reference point.
     private var snapshots: [FundBalanceSnapshot] {
         [
             .init(
                 fundName: "General Fund",
                 expenditures: store.appropriations,          // $69,113,159
-                totalFundBalance: store.estimatedFundBalance, // $29,671,084
+                totalFundBalance: store.estimatedFundBalance, // $28,829,513
                 unassigned: store.estimatedFundBalance,
                 policyMinimumPercent: store.fundBalancePolicy.minimumPercent  // 0.15
             )
@@ -2748,7 +2754,7 @@ fileprivate struct FundBalanceDashboardView: View {
                 title: "Policy compliance at a glance",
                 subtitle: mode == .resident
                     ? "How the Town's savings stack up against its own reserve rules."
-                    : "Unassigned fund balance vs. adopted 15% minimum and 20% upper target."
+                    : "Unassigned fund balance vs. the adopted 15% floor, with a 20% reference line the app draws (the policy sets no ceiling)."
             ) {
                 VStack(spacing: 10) {
                     ForEach(snapshots) { snap in
@@ -2761,7 +2767,7 @@ fileprivate struct FundBalanceDashboardView: View {
                     if mode == .expert, let upper = store.targetUpper {
                         Divider().opacity(0.2)
                         HStack {
-                            Text("Policy upper target (20%)")
+                            Text("20% reference line (not Town policy)")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Spacer()
@@ -2771,7 +2777,7 @@ fileprivate struct FundBalanceDashboardView: View {
                         }
                         let surplus = store.estimatedFundBalance - upper
                         HStack {
-                            Text("Surplus above upper target")
+                            Text("Above the 20% reference line")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Spacer()
@@ -2779,7 +2785,7 @@ fileprivate struct FundBalanceDashboardView: View {
                                 .font(.caption.weight(.semibold))
                                 .foregroundStyle(surplus >= 0 ? .green : .orange)
                         }
-                        Text("A balance above the upper target may be a candidate for appropriation to reduce the levy or fund one-time capital.")
+                        Text("Resolution 918 of 2011 lets money above the 15% floor go to cutting the next year's taxes, one-time capital or natural emergencies.")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -2787,10 +2793,10 @@ fileprivate struct FundBalanceDashboardView: View {
             }
 
             GlassCard(
-                title: mode == .resident ? "28.8% Reserve Reset" : "Deployment Scenario: 41.1% to 28.8%",
+                title: mode == .resident ? "28.8% Reserve Reset" : "Deployment Scenario: 41.7% to 28.8%",
                 subtitle: mode == .resident
                     ? "A playful one-time-money plan: keep a big cushion, use the rest on purpose, and show what still fits after the serious bills are paid."
-                    : "Modeled from the 2026 adopted General Fund balance. This scenario lowers unassigned fund balance to 28.8% of appropriations and then sequences one-time deployments."
+                    : "Modeled from the audited 2025 unassigned General Fund balance and the 2026 adopted budget. This scenario lowers unassigned fund balance to 28.8% of appropriations and then sequences one-time deployments."
             ) {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
@@ -3370,8 +3376,8 @@ fileprivate struct CapitalDebtExplorerView: View {
                     oscDebtMetricRow(
                         n: "4",
                         name: "How close to the legal ceiling?",
-                        reading: "6.74% used",
-                        detail: "The State caps how much a town may borrow, and Riverhead is using 6.74% of its cap \u{2014} not close to it. Two other measures the Comptroller names: about $1,686 of debt per resident ($60,398,858 spread across 35,826 people), and debt payments running roughly 8% of General Fund spending ($5,285,239 through the Debt Service fund in 2025). A fourth \u{2014} debt against the full market value of taxable property \u{2014} needs a figure the Town does not publish in this filing, so it is left blank rather than guessed."
+                        reading: "5.48% used",
+                        detail: "The State caps how much a town may borrow, and Riverhead is using 5.48% of its cap \u{2014} not close to it (2025 audit; 6.74% a year earlier). Two other measures the Comptroller names: about $1,686 of debt per resident ($60,398,858 spread across 35,826 people), and debt payments running roughly 8% of General Fund spending ($5,285,239 through the Debt Service fund in 2025). A fourth \u{2014} debt against the full market value of taxable property \u{2014} needs a figure the Town does not publish in this filing, so it is left blank rather than guessed."
                     )
 
                     Text("Source: NYS Comptroller, \u{201C}Multiyear Capital Planning\u{201D} and \u{201C}Capital Projects Fund\u{201D} (Local Government Management Guides). Debt figures from the 2025 Annual Financial Report; debt-limit percentage from the 2024 audited statements.")
@@ -3725,8 +3731,8 @@ fileprivate struct BudgetGlossaryView: View {
             .init(term: "Unassigned Fund Balance",
                   shortDefinition: "The freely spendable portion of the Town's reserves.",
                   longExplanation: mode == .resident
-                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The Town's 2025 Annual Financial Report shows the General Fund finished 2025 with about $29.67M in unassigned fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
-                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy sets a 15% floor and 20% upper target. The Town's 2025 Annual Financial Report shows the General Fund finished 2025 with about $29.67M in unassigned fund balance and total governmental funds ended 2025 at about $76.55M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
+                    ? "This is the Town's main savings cushion — money not restricted for a specific purpose. Riverhead's policy requires keeping at least 15% of appropriations in this account. The 2025 audit shows the General Fund finished 2025 with $28.83M in unassigned fund balance, which is why reserve policy is such a live question. It is not the same thing as an excess tax-levy reserve, which would be legally earmarked for the next year's levy offset."
+                    : "Under GASB 54, unassigned fund balance is the residual after restricted, committed, and assigned amounts. Riverhead's adopted policy, Resolution 918 of 2011, sets a 15% floor and no ceiling. The 2025 audit shows the General Fund finished 2025 with $28.83M in unassigned fund balance and total governmental funds ended 2025 at about $76.55M, reinforcing that Riverhead is operating with a cushion well above its policy floor. That general cushion should not be confused with the separate OSC reserve for an excess tax levy, which is legally committed to the following year's tax-cap offset, or with other statutory reserves that the Accounting and Reporting Manual treats as restricted fund balance.",
                   tags: ["fund balance", "policy", "GASB 54"]),
             .init(term: "Capital Projects Fund",
                   shortDefinition: "The fund used for major one-time construction and acquisition work.",
@@ -3901,7 +3907,7 @@ fileprivate struct HearingToolkitView: View {
     private var residentTalkingPoints: [String] {
         [
             "Is the Town's savings account staying above the 15% minimum policy after this budget?",
-            "How much of the $15.85M surplus above the upper reserve target is being used, and why?",
+            "The 2027 budget uses $880,000 of General Fund savings. With $28.8M unassigned at the end of 2025, what is the plan for the rest?",
             "Police personal services are up $1.65M — is that from new hires, raises, or overtime?",
             "OSC said Riverhead's CPF spending and debt payments were proper, but some CPF collections were not logged or deposited on time — what changed to fix that before the next audit?",
             "If the Supervisor recommends an exempt Budget Officer, what financial training or accounting experience does that person have?",
@@ -3921,7 +3927,7 @@ fileprivate struct HearingToolkitView: View {
     // Expert talking points: technically framed for OSC/fiscal compliance context
     private var expertTalkingPoints: [String] {
         [
-            "The tentative budget appropriates no explicit fund balance draw, yet the $29.67M unassigned balance is $15.85M above the 20% upper target — what is the Board's plan to deploy or return that surplus?",
+            "The 2027 Preliminary appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 41.7% of the 2026 budget and $18.5M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
             "Personnel services growth (Police +6.8%, Highway +4.9%) outpaces CPI. What contract provisions drive this, and how does it affect the out-year levy cap forecast?",
             "OSC's February 2024 CPF audit found Riverhead's CPF disbursements and debt service were proper, but some collections were not date-stamped and nine deposits totaling $5.3 million were not deposited within 10 days. What written control changes, training, and receipt-tracking steps have been implemented since then?",
             "If the Supervisor designates or recommends an exempt Budget Officer, what minimum qualifications in accounting, municipal finance, or budget administration does the Board require to preserve independent budget scrutiny and effective pluralism?",
@@ -4902,7 +4908,7 @@ fileprivate struct EmployeesHubSectionView: View {
                     title: "Newsday Gross Earnings Reports",
                     kind: .other,
                     note: "Annual public disclosure (2018–2023)",
-                    url: URL(string: "https://www.newsday.com/long-island/nassau/government-salary-database-1.18687295")
+                    url: URL(string: "https://www.newsday.com/long-island/data")
                 )
             ])
         }

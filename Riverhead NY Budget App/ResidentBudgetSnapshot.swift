@@ -4,7 +4,7 @@
 //
 //  Numbers-first "at a glance" view of the 2026 budget for everyday residents:
 //  big KPI tiles, a fund-balance health bar (where reserves sit against the
-//  Town's own 15% floor / 20% target), and a proportional chart of what's
+//  Town's own 15% floor, with the app's 20% reference line), and a proportional chart of what's
 //  pushing the budget up — replacing the previous all-prose summary cards.
 //
 //  Headline dollar figures come from RBBudgetStore so they stay consistent with

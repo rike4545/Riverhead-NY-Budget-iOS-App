@@ -157,7 +157,7 @@ struct ReserveFundBreakdownView: View {
     // MARK: - Body
 
     var body: some View {
-        NavigationView {
+        Group {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     heroCard
@@ -199,9 +199,9 @@ struct ReserveFundBreakdownView: View {
                 Divider().opacity(0.25)
 
                 policyRow(label: "Policy minimum (15%)", value: policyMin, color: .orange)
-                policyRow(label: "Policy upper target (20%)", value: policyMax, color: .green)
+                policyRow(label: "20% reference line (not Town policy)", value: policyMax, color: .green)
                 policyRow(label: "Cushion above minimum", value: max(0, unassigned - policyMin), color: .blue)
-                policyRow(label: "Cushion above upper target", value: max(0, unassigned - policyMax), color: .purple)
+                policyRow(label: "Above the 20% reference line", value: max(0, unassigned - policyMax), color: .purple)
 
                 Text("The full unassigned balance is currently in one undifferentiated pool. Formally establishing named reserves converts portions of this balance into restricted or committed tiers with legal purpose constraints and board-level withdrawal rules.")
                     .font(.caption)
@@ -360,7 +360,7 @@ struct ReserveFundBreakdownView: View {
 
                 Divider().opacity(0.2)
 
-                Link(destination: URL(string: "https://www.osc.ny.gov/local-government/publications/reserve-funds")!) {
+                Link(destination: URL(string: "https://www.osc.ny.gov/files/local-government/publications/pdf/reserve-funds.pdf")!) {
                     HStack {
                         Image(systemName: "arrow.up.right.square")
                         Text("OSC Reserve Funds publication")
@@ -378,7 +378,7 @@ struct ReserveFundBreakdownView: View {
                     .font(.caption.weight(.medium))
                     .foregroundStyle(RiverheadTheme.accent)
                 }
-                Link(destination: URL(string: "https://www.osc.ny.gov/local-government/publications/gasb54.pdf")!) {
+                Link(destination: URL(string: "https://www.osc.ny.gov/files/local-government/publications/pdf/gasb54.pdf")!) {
                     HStack {
                         Image(systemName: "arrow.up.right.square")
                         Text("GASB 54 Fund Balance Reporting guide")

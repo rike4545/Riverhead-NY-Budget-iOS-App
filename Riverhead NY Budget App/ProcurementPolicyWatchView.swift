@@ -20,7 +20,7 @@ struct ProcurementPolicyWatchView: View {
     private let qualifiedEligibleApprovalURL = URL(string: "https://riverheadnewsreview.timesreview.com/2025/08/127728/j-petrocelli-named-qualified-and-eligible-town-square-developer/")!
     private let eastEndBeaconApprovalURL = URL(string: "https://www.eastendbeacon.com/riverhead-board-deems-petrocelli-qualified-eligible-to-build-town-square-hotel/")!
     private let competitiveBiddingBenchmarkURL = URL(string: "https://www.nysed.gov/facilities-planning/competitive-bidding-or-equal-and-bidding-cost-control")!
-    private let ftcPriceFixingURL = URL(string: "https://www.ftc.gov/tips-advice/competition-guidance/guide-antitrust-laws/dealings-competitors/price-fixing")!
+    private let ftcPriceFixingURL = URL(string: "https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/dealings-competitors/price-fixing")!
     private let petrocelliBoardBioURL = URL(string: "https://nymarinerescue.org/our-board-joseph-petrocelli/")!
     private let petrocelliBusinessProfileURL = URL(string: "https://libn.com/1999/07/23/for-petrocellis-construction-not-the-only-concern/")!
     private let zoningLotAgreementURL = URL(string: "https://www.klgates.com/the-zoning-lot-development-agreement-a-new-york-concept-long-overdue-in-new-jersey")!

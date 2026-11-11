@@ -44,7 +44,7 @@ struct LocalNewsEconomyView: View {
         .init(name: "RiverheadLOCAL", blurb: "Daily local coverage focused on Riverhead.", url: URL(string: "https://riverheadlocal.com/")!),
         .init(name: "Riverhead News-Review", blurb: "Community reporting and local town coverage.", url: URL(string: "https://riverheadnewsreview.timesreview.com/")!),
         .init(name: "Riverhead Patch", blurb: "Breaking and community headlines.", url: URL(string: "https://patch.com/new-york/riverhead")!),
-        .init(name: "Newsday: Riverhead", blurb: "Regional reporting with Riverhead coverage.", url: URL(string: "https://www.newsday.com/long-island/suffolk/riverhead")!),
+        .init(name: "Newsday: Long Island towns", blurb: "Regional reporting, including Riverhead.", url: URL(string: "https://www.newsday.com/long-island/towns")!),
         .init(name: "News 12 Long Island", blurb: "Regional TV and web news updates.", url: URL(string: "https://longisland.news12.com/")!)
     ]
 

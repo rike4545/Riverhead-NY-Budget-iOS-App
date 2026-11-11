@@ -37,12 +37,16 @@ final class RBBudgetStore {
     /// Appropriations for the budget year being analyzed (e.g., FY 2026).
     var appropriations: Double = 69_113_159
 
-    /// Unassigned General Fund balance from the 2025 Annual Financial Report.
-    var estimatedFundBalance: Double = 29_671_084
+    /// Unassigned General Fund balance at the end of 2025, from the 2025 audited
+    /// financial statements (accepted September 1, 2026, Resolution 2026-834), the
+    /// figure the website uses. The unaudited Annual Financial Report said $29,671,084.
+    var estimatedFundBalance: Double = 28_829_513
 
     /// Active fund balance policy (editable via Policies view).
     var fundBalancePolicy: RBFundBalancePolicy = .init(
         minimumPercent: 0.15,
+        // 20% is a reference line the app draws, not Town policy: Resolution 918
+        // of 2011 sets a 15% floor and no ceiling.
         targetUpperPercent: 0.20,
         replenishYears: 3,
         notes: ""

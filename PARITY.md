@@ -6,21 +6,21 @@ This document defines parity against the current user-facing navigation in
 ## Current parity layer
 
 `BudgetLiveParityView` exposes every current web navigation destination inside
-the iOS app. The catalog contains **87 entries** across the same five
+the iOS app. The catalog contains **88 entries** across the same five
 navigation groups used by the web product:
 
 - Start Here — 4
 - Explore — 26
 - Government — 21
-- 2027 & Analysis — 26
+- 2027 & Analysis — 27
 - Evidence — 10
 
-The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (87 entries over 87 distinct routes and 86 distinct pages, as of 2026-11-10; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. On 2026-11-07 it added nine pages the web app had gained: Preserved Land and Transfer of Development Rights (Explore); Election Map, Donation Map and Board Votes (Government); and Budget Flow, Assessment Roll, Legal Costs and Regional CPF Counsel (2027 & Analysis). All nine open as web fallbacks. On 2026-11-08 it added Grants (Explore) and State of the Town Addresses (Government), also as web fallbacks, and then Comprehensive Plan Tracker (Explore). On 2026-11-10 it added How the Town's Books Work, the Fiscal Impact Statement Helper, Department Efficiency and Supervisor's Office Pay Compared, all as web fallbacks. The same day the website's Fiscal Impact page gained a section on statements that contradict themselves; the route is a web fallback, so the app shows it unchanged. On 2026-11-11 the `/tentative-2027/` entry was renamed *The 2027 Budget*: the Town has published its Preliminary, and the website's menu already calls the page "The 2027 budget". The route and the count are unchanged. Routes with a
+The Budget tab exposes this catalog from the navigation bar. The catalog now matches the current web SiteNav exactly (88 entries over 88 distinct routes and 87 distinct pages, as of 2026-11-11; the workforce page carries two entries, the roster and the organization chart anchored inside it). A drift check compares the table against the live navigation on every pull request, so it no longer takes an audit to notice a new route, including Revenue, Fund Balance Draws, Management Pay, Police Spending & Crime, School Resource Officers, Supervisor’s Promises, Open Meetings Law, 2027 Tentative Budget, and Budget Adoption. On 2026-11-07 it added nine pages the web app had gained: Preserved Land and Transfer of Development Rights (Explore); Election Map, Donation Map and Board Votes (Government); and Budget Flow, Assessment Roll, Legal Costs and Regional CPF Counsel (2027 & Analysis). All nine open as web fallbacks. On 2026-11-08 it added Grants (Explore) and State of the Town Addresses (Government), also as web fallbacks, and then Comprehensive Plan Tracker (Explore). On 2026-11-10 it added How the Town's Books Work, the Fiscal Impact Statement Helper, Department Efficiency and Supervisor's Office Pay Compared, all as web fallbacks. The same day the website's Fiscal Impact page gained a section on statements that contradict themselves; the route is a web fallback, so the app shows it unchanged. On 2026-11-11 the `/tentative-2027/` entry was renamed *The 2027 Budget*: the Town has published its Preliminary, and the website's menu already calls the page "The 2027 budget". The route and the count are unchanged. The same day it added the Resolution Builder (2027 & Analysis, beside the Fiscal Impact Statement Helper), as a web fallback. Routes with a
 verified native counterpart open SwiftUI directly; every other destination uses
 the existing `WebContentView` / `WKWebView` implementation and therefore keeps
 loading the current GitHub Pages version until its native replacement is ready.
 
-This is **complete functional access parity**, not a claim that all 86 pages
+This is **complete functional access parity**, not a claim that all 87 pages
 have already been rewritten as native SwiftUI screens.
 
 The drift check reported two routes unreachable — not even as a web fallback.

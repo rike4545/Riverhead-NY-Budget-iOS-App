@@ -16,3 +16,14 @@ build-logs/
 # committing the report it exists to produce.
 /parity-drift.json
 /parity-drift.md
+
+# Secrets and signing material: never commit
+.env
+*.p12
+*.p8
+*.mobileprovision
+*.jks
+*.keystore
+*.pem
+.env.*
+!.env.example

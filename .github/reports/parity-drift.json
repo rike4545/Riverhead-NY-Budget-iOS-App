@@ -1,16 +1,30 @@
 {
-  "generatedAt": "2026-11-11T22:02:11.890Z",
+  "generatedAt": "2026-11-12T21:51:39.767Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
   "swiftTypesRead": 852,
   "counts": {
     "break": 0,
-    "drift": 1,
+    "drift": 2,
     "note": 1,
     "transport": 0
   },
   "findings": [
+    {
+      "kind": "unknown-key",
+      "severity": "drift",
+      "endpoint": "payroll-records",
+      "route": "/payroll/",
+      "swift": "PayrollParityView.swift",
+      "schemaPath": "records[].h",
+      "examplePath": "records[0].h",
+      "detail": "the web app publishes this but `PayrollParityRecord` has no property for it, so the view ignores it",
+      "occurrences": 4444,
+      "swiftType": "PayrollParityRecord",
+      "declaredIn": "PayrollParityView.swift",
+      "declaredAt": 59
+    },
     {
       "kind": "unknown-key",
       "severity": "drift",

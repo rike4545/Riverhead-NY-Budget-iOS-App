@@ -89,6 +89,7 @@ enum BudgetLiveParityCatalog {
             .init(title: "Budget Changes, Live", path: "/budget-changes/", systemImage: "arrow.triangle.2.circlepath", detail: "Track every budget change the Town Board has passed this year."),
             .init(title: "Capital & Debt", path: "/capital-debt/", systemImage: "building.2.crop.circle", detail: "Review debt, amortization, BANs, bonds, and financing scenarios."),
             .init(title: "Town Square", path: "/town-square/", systemImage: "building.2.fill", detail: "Review the Town Square project, financing, and source record."),
+            .init(title: "IDA Tax Breaks", path: "/ida/", systemImage: "building.columns", detail: "What the Riverhead Industrial Development Agency's projects were spared in taxes, paid back in PILOTs and reported in jobs."),
             .init(title: "New Justice Court at 200 Howell", path: "/justice-court/", systemImage: "building.columns.fill", detail: "Follow the plan to turn the former Town Hall into the Justice Court, its $6.5 million bond, and the grants that could help."),
             .init(title: "Road Spending", path: "/road-spending/", systemImage: "road.lanes", detail: "Explore road and highway spending context."),
             .init(title: "Community Preservation Fund", path: "/community-preservation-fund/", systemImage: "leaf.fill", detail: "Review CPF revenues, obligations, and policy context."),

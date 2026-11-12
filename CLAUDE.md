@@ -15,7 +15,7 @@ here disagrees with the website, the website's data and `web/lib/` are right.
   (`@testable import Riverhead_NY_Budget_App`).
 - `Riverhead NY Budget AppUITests/`: UI tests. They tap the tab titles "Home",
   "Budget", "Civic", "Tools" and "More"; don't rename them.
-- `BudgetLiveParityView.swift`: the catalog of every website page (89 entries
+- `BudgetLiveParityView.swift`: the catalog of every website page (91 entries
   as of November 12, 2026). `PARITY.md` records how it tracks the website.
 - `.github/workflows/`: `ios.yml` (build, unit and UI tests on macOS),
   `parity-drift.yml` (live website data against the Swift decoders) and

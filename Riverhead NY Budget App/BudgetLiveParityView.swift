@@ -98,6 +98,8 @@ enum BudgetLiveParityCatalog {
             .init(title: "Preserved Land", path: "/preserved-land/", systemImage: "leaf.fill", detail: "Map every preserved farm parcel by who holds the development rights and when."),
             .init(title: "Transfer of Development Rights", path: "/tdr/", systemImage: "arrow.left.arrow.right.square.fill", detail: "See how farmland credits buy extra building room, what a credit costs, and the Walmart expansion."),
             .init(title: "Comprehensive Plan Tracker", path: "/comprehensive-plan/", systemImage: "map.circle.fill", detail: "See which 2024 Comprehensive Plan recommendations the Town Board has adopted and which show no action."),
+            .init(title: "EPCAL", path: "/epcal/", systemImage: "airplane", detail: "Where the failed sale of the Town's Calverton land and the lawsuit stand, what the land earns and costs, and what to weigh next."),
+            .init(title: "Downtown Pattern Book", path: "/pattern-book/", systemImage: "building.2", detail: "The 2021 downtown design guide, why it was never written into the zoning code, and why doing that now may be a hard sell."),
             .init(title: "The Former Armory and the YMCA", path: "/armory/", systemImage: "shield.lefthalf.filled", detail: "See what State law allows at the former armory, the bill to lease it to the YMCA, and the Town's letter of intent.")
         ],
         .government: [

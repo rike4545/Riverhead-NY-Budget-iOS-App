@@ -147,7 +147,7 @@
   {
    "account": "ES5-8-8189-472-000-00000",
    "fund": "ES5",
-   "name": "Scav Waste - Utl - Electricit y",
+   "name": "Scav Waste - Utl - Electricity",
    "control": "controllable",
    "actual2024": 142457.34,
    "budget2025": 192000.0,
@@ -423,7 +423,7 @@
   {
    "account": "ES5-8-8189-474-000-00000",
    "fund": "ES5",
-   "name": "Scav Waste - Utl - Wate r",
+   "name": "Scav Waste - Utl - Water",
    "control": "controllable",
    "actual2024": 2056.15,
    "budget2025": 10000.0,

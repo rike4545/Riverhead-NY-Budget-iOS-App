@@ -7,7 +7,7 @@
   "title": "Town of Riverhead Town Board Meeting Schedule",
   "url": "https://townofriverheadny.gov/282/Town-Board-Meeting-Schedule"
  },
- "generatedAt": "2026-11-13",
+ "generatedAt": "2026-11-14",
  "officialScheduleDates": [
   "2026-01-06",
   "2026-01-21",
@@ -190,8 +190,8 @@
    "date": "2026-11-17",
    "startDateTime": "2026-11-17T18:00:00Z",
    "type": "Town Board Meeting",
-   "agendaPublished": false,
-   "itemsSource": "official-calendar",
+   "agendaPublished": true,
+   "itemsSource": "published-agenda",
    "docket": [],
    "hearings": [
     "Amend Chapter 301, Art.X - Hamlet Center",
@@ -200,7 +200,13 @@
     "Amend Chapter 301, Art.XLV - Supplementary Use Regulations",
     "Amend Chapter 301, Art.XVIII - Business Center",
     "Amend Chapter 291 - Water",
-    "Amend Chapter 289 -Vehicles, Traffic and Parking"
+    "Amend Chapter 289 -Vehicles, Traffic and Parking",
+    "Amend Chapter 301, Art. X - Hamlet Center",
+    "Amend Chapter 301, Art XIX - Business CR (Rural",
+    "Amend Chapter 301;Art, XLV - Supplementary Use",
+    "Amend Chapter 301, Art. XVIII - Business Center",
+    "Amend Chapter 291 - Water District",
+    "Amend Chapter 289 - Vehicles, Traffic and Parking"
    ]
   },
   {

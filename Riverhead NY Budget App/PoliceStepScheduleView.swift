@@ -22,6 +22,7 @@ struct PoliceStepScheduleView: View {
     var body: some View {
         List {
             ledeSection
+            proposedContractsSection
             yearPickerSection
             officerScheduleSection
             legacyTierSection
@@ -51,6 +52,78 @@ struct PoliceStepScheduleView: View {
         }
     }
 
+    // MARK: - Proposed 2027-2030 contracts
+
+    private var proposedContractsSection: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 6) {
+                Text(PoliceContracts2027.statusLabel)
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(RiverheadTheme.brandCoral)
+                Text("Items IX.26 and IX.27 on the Town Board's \(PoliceContracts2027.meetingDate) agenda ask it to approve stipulations with the PBA and the SOA. The agenda packet attaches their salary and night-differential schedules, not the stipulations themselves. Every step rises 3.75% a year, and 2027 salaries add $500 for the body-camera agreement.")
+                    .font(.subheadline)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(.vertical, 4)
+
+            ForEach(PoliceContracts2027.pbaOfficers + PoliceContracts2027.pbaDetectives + PoliceContracts2027.soaRanks) { row in
+                contractRow(row)
+            }
+
+            DisclosureGroup("Night differential (yearly amounts)") {
+                ForEach(PoliceContracts2027.nightDifferential) { row in
+                    contractRow(row)
+                }
+            }
+            .font(.footnote)
+
+            Text("What it might cost: on the Police Officer ladder alone, the higher 2027 rates come to about \(PoliceContracts2027.ladderIncrease2027, format: .currency(code: "USD").precision(.fractionLength(0))) for the \(PoliceContracts2027.ladderOfficers) officers the website counts, on top of step raises owed either way. That is the website's estimate, not a Town figure, and it leaves out detectives, superior officers, night differential, overtime and pensions.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text("A likely concern: both Fiscal Impact Statements answer \u{201C}\(PoliceContracts2027.fiscalImpactAnswer)\u{201D} and leave the cost sections blank.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Link("Open the November 17 agenda packet", destination: PoliceContracts2027.packetURL)
+                .font(.footnote.weight(.semibold))
+        } header: {
+            Label("Proposed contracts, 2027 to 2030", systemImage: "doc.badge.clock")
+        } footer: {
+            Text("2026 → 2030. Pages 204–205 and 208–209 of the packet.")
+        }
+    }
+
+    private func contractRow(_ row: PoliceContracts2027.Row) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(row.title)
+                .font(.footnote.weight(.semibold))
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                Text(row.rates[0], format: .currency(code: "USD").precision(.fractionLength(0)))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+                Image(systemName: "arrow.right")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .accessibilityHidden(true)
+                Text(row.rates[4], format: .currency(code: "USD").precision(.fractionLength(0)))
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(RiverheadTheme.brandNavy)
+                    .monospacedDigit()
+                Spacer(minLength: 6)
+                Text("+\(row.fourYearChange * 100, specifier: "%.1f")%")
+                    .font(.caption.weight(.heavy))
+                    .foregroundStyle(RiverheadTheme.brandCoral)
+                    .monospacedDigit()
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .padding(.vertical, 1)
+    }
+
     // MARK: - Year picker
 
     private var yearPickerSection: some View {
@@ -64,7 +137,7 @@ struct PoliceStepScheduleView: View {
             .accessibilityLabel("Contract year")
             .accessibilityHint("Choose which year of the 2023 to 2026 PBA contract to show.")
         } footer: {
-            Text("The 2027 rate isn't set — the PBA contract expires 12/31/2026 with no successor yet public.")
+            Text("These are the 2023–2026 contract's rates. The contract expires 12/31/2026; the proposed 2027–2030 rates are above.")
         }
     }
 

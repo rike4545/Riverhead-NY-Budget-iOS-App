@@ -1,0 +1,38 @@
+import Testing
+@testable import Riverhead_NY_Budget_App
+
+/// The proposed 2027-2030 police schedules follow the pattern the agenda packet
+/// shows, and the incentive payout lines add up to the transfer. Mirrors
+/// web/scripts/verify-police-stipulations.mjs.
+struct PoliceContracts2027Tests {
+
+    @Test func everyScheduleRowRises3Point75PercentAYear() {
+        let salaries = PoliceContracts2027.pbaOfficers + PoliceContracts2027.pbaDetectives + PoliceContracts2027.soaRanks
+        for row in salaries {
+            let r = row.rates
+            #expect(r.count == 5)
+            let steps = [(r[1] - PoliceContracts2027.bodycam2027) / r[0], r[2] / r[1], r[3] / r[2], r[4] / r[3]]
+            for s in steps { #expect(abs(s - 1 - PoliceContracts2027.impliedRaise) < 0.00002, "\(row.title)") }
+        }
+        for row in PoliceContracts2027.nightDifferential {
+            let r = row.rates
+            for i in 0..<4 { #expect(abs(r[i + 1] / r[i] - 1 - PoliceContracts2027.impliedRaise) < 0.00002, "\(row.title)") }
+        }
+    }
+
+    @Test func topStepOfficerMatchesThePacket() {
+        let top = PoliceContracts2027.pbaOfficers.last!
+        #expect(top.rates.first == 152_900.66)
+        #expect(top.rates.last == 177_716.80)
+    }
+
+    @Test func payoutLinesAddToTheTransfer() {
+        let sum = PoliceContracts2027.payoutLines.reduce(0) { $0 + $1.amount }
+        #expect(sum == PoliceContracts2027.payoutsFromFundBalance)
+    }
+
+    @Test func stillProposed() {
+        #expect(PoliceContracts2027.adopted == nil)
+        #expect(PoliceContracts2027.statusLabel == "Proposed, not yet voted on")
+    }
+}

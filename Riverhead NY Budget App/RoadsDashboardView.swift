@@ -530,9 +530,7 @@ struct RoadsDashboardView: View {
         } else if value >= 1_000 {
             return String(format: "$%.0fK", value / 1_000)
         }
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.maximumFractionDigits = 0
+        let f = SharedFormatters.currency0
         return f.string(from: NSNumber(value: value)) ?? "$0"
     }
 }

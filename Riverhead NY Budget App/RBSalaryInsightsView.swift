@@ -684,9 +684,7 @@ private enum RBSalaryCSV {
 
 private extension Double {
     var currency: String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
-        nf.maximumFractionDigits = 2
+        let nf = SharedFormatters.currency2
         return nf.string(from: NSNumber(value: self)) ?? String(format: "$%.2f", self)
     }
 

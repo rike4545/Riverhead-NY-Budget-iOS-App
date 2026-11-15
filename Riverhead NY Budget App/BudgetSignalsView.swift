@@ -734,9 +734,7 @@ private enum RiverheadBudgetSignalEngine {
     }
 
     private static func percent(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.maximumFractionDigits = 1
+        let formatter = SharedFormatters.percent1
         return formatter.string(from: NSNumber(value: value)) ?? "\(value * 100)%"
     }
 }

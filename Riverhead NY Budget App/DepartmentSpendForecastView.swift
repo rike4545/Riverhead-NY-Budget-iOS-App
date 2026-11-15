@@ -271,9 +271,7 @@ private struct DepartmentForecastDetailView: View {
     }
 
     private func currency(_ value: Double) -> String {
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.maximumFractionDigits = 2
+        let f = SharedFormatters.currency2
         return f.string(from: NSNumber(value: value)) ?? String(format: "$%.2f", value)
     }
 }
@@ -400,9 +398,7 @@ final class DepartmentSpendForecastModel: ObservableObject {
     }
 
     func currency(_ value: Double) -> String {
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.maximumFractionDigits = 2
+        let f = SharedFormatters.currency2
         return f.string(from: NSNumber(value: value)) ?? String(format: "$%.2f", value)
     }
 

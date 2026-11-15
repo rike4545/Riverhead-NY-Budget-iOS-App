@@ -283,18 +283,12 @@ private struct LinkRow: View {
 
 private extension Double {
     var currency0: String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
-        nf.maximumFractionDigits = 0
-        nf.minimumFractionDigits = 0
+        let nf = SharedFormatters.currency0
         return nf.string(from: NSNumber(value: self)) ?? "$0"
     }
 
     var currency2: String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
-        nf.maximumFractionDigits = 2
-        nf.minimumFractionDigits = 2
+        let nf = SharedFormatters.currency2
         return nf.string(from: NSNumber(value: self)) ?? "$0.00"
     }
 }

@@ -301,16 +301,12 @@ struct RiverheadAIService {
     }
 
     private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 2
+        let formatter = SharedFormatters.currency2
         return formatter.string(from: NSNumber(value: value)) ?? "$\(value)"
     }
 
     private func formatPercent(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.maximumFractionDigits = 1
+        let formatter = SharedFormatters.percent1
         return formatter.string(from: NSNumber(value: value)) ?? "\(value * 100)%"
     }
 }

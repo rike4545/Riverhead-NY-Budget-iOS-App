@@ -536,9 +536,7 @@ struct RiverheadDebtSavingsView: View {
     }
 
     private func currency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
+        let formatter = SharedFormatters.currency0
         return formatter.string(from: NSNumber(value: value)) ?? "$0"
     }
 }

@@ -22,6 +22,7 @@ struct PoliceStepScheduleView: View {
     var body: some View {
         List {
             ledeSection
+            proposedContractsSection
             yearPickerSection
             officerScheduleSection
             legacyTierSection
@@ -51,6 +52,115 @@ struct PoliceStepScheduleView: View {
         }
     }
 
+    // MARK: - Proposed 2027-2030 contracts
+
+    private var proposedContractsSection: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(PoliceContracts2027.statusLabel)
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(RiverheadTheme.brandCoral)
+                Text("On \(PoliceContracts2027.meetingDate) the Town Board is asked to approve new contracts with the two police unions: officers and detectives (PBA), and sergeants and lieutenants (SOA). The Town has published the pay tables, but not the rest of the contracts.")
+                    .font(.subheadline)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(.vertical, 4)
+
+            plainPoint("Pay goes up by the same share every year for four years: 3.75%, a little under 4 cents on every dollar.")
+            plainPoint("In 2027 everyone also gets $500 more for agreeing to wear body cameras, the last such increase.")
+            plainPoint("A top-step police officer earns \(Self.money(top.rates[0])) this year. That would become \(Self.money(top.rates[1])) next year and \(Self.money(top.rates[4])) in 2030: \(Self.money(top.rates[4] - top.rates[0])) more a year.")
+            plainPoint("What it might cost: roughly \(Self.money((PoliceContracts2027.ladderIncrease2027 / 1000).rounded() * 1000)) more in 2027 for the \(PoliceContracts2027.ladderOfficers) rank-and-file officers the website counts, on top of the step raises the Town owes anyway. That is the website's estimate, not a Town figure, and it leaves out detectives, sergeants, lieutenants, night pay, overtime and pensions.")
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Compared with the Town's civilian workers")
+                    .font(.footnote.weight(.bold))
+                Text("Most non-police employees are in the CSEA union. Their 2026–2029 contract was approved on December 16, 2025; it isn't new. For every $100 of pay today, the police proposal would pay about \(Self.money(PoliceContracts2027.policePer100(by: 2029))) in 2029 and \(Self.money(PoliceContracts2027.policePer100(by: 2030))) in 2030. The CSEA contract pays about \(Self.money(PoliceContracts2027.cseaPer100(by: 2029))) in 2029, plus flat dollar raises, and then ends.")
+                    .font(.footnote)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text("For example, the middle CSEA salary on the 2026 list, \(Self.money(PoliceContracts2027.cseaTypical2026)), would reach about \(Self.money(PoliceContracts2027.cseaSalary(from: PoliceContracts2027.cseaTypical2026, by: 2029))) in 2029.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                ForEach([2027, 2028, 2029, 2030], id: \.self) { year in
+                    HStack {
+                        Text(String(year)).font(.caption.weight(.semibold))
+                        Spacer()
+                        Text("Police: \(year == 2027 ? "3.75% and $500" : "3.75%")")
+                            .font(.caption)
+                        Text("CSEA: \(cseaLabel(year))")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+            .padding(.vertical, 2)
+
+            plainPoint("Something to ask about: the form that says whether a resolution costs money answers \u{201C}No\u{201D} on both, with the cost lines blank. A four-year raise does cost money.")
+
+            DisclosureGroup("See every pay step and the night pay") {
+                ForEach(PoliceContracts2027.pbaOfficers + PoliceContracts2027.pbaDetectives + PoliceContracts2027.soaRanks + PoliceContracts2027.nightDifferential) { row in
+                    contractRow(row)
+                }
+            }
+            .font(.footnote)
+
+            Link("Open the November 17 agenda packet", destination: PoliceContracts2027.packetURL)
+                .font(.footnote.weight(.semibold))
+        } header: {
+            Label("Proposed contracts, 2027 to 2030", systemImage: "doc.badge.clock")
+        } footer: {
+            Text("Pay tables from pages 204–205 and 208–209 of the agenda packet.")
+        }
+    }
+
+    private var top: PoliceContracts2027.Row { PoliceContracts2027.pbaOfficers[6] }
+
+    private static func money(_ value: Double) -> String {
+        value.formatted(.currency(code: "USD").precision(.fractionLength(0)))
+    }
+
+    private func cseaLabel(_ year: Int) -> String {
+        guard let t = PoliceContracts2027.cseaTerms.first(where: { $0.year == year }) else { return "contract ends" }
+        let pct = (t.pct * 100).formatted(.number.precision(.fractionLength(0...2)))
+        return t.flat > 0 ? "\(pct)% and \(Self.money(t.flat))" : "\(pct)%"
+    }
+
+    private func plainPoint(_ text: String) -> some View {
+        Text(text)
+            .font(.footnote)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.vertical, 1)
+    }
+
+    private func contractRow(_ row: PoliceContracts2027.Row) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(row.title)
+                .font(.footnote.weight(.semibold))
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                Text(row.rates[0], format: .currency(code: "USD").precision(.fractionLength(0)))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .monospacedDigit()
+                Image(systemName: "arrow.right")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .accessibilityHidden(true)
+                Text(row.rates[4], format: .currency(code: "USD").precision(.fractionLength(0)))
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(RiverheadTheme.brandNavy)
+                    .monospacedDigit()
+                Spacer(minLength: 6)
+                Text("+\(Self.money(row.rates[4] - row.rates[0]))")
+                    .font(.caption.weight(.heavy))
+                    .foregroundStyle(RiverheadTheme.brandCoral)
+                    .monospacedDigit()
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .padding(.vertical, 1)
+    }
+
     // MARK: - Year picker
 
     private var yearPickerSection: some View {
@@ -64,7 +174,7 @@ struct PoliceStepScheduleView: View {
             .accessibilityLabel("Contract year")
             .accessibilityHint("Choose which year of the 2023 to 2026 PBA contract to show.")
         } footer: {
-            Text("The 2027 rate isn't set — the PBA contract expires 12/31/2026 with no successor yet public.")
+            Text("These are the 2023–2026 contract's rates. The contract expires 12/31/2026; the proposed 2027–2030 rates are above.")
         }
     }
 

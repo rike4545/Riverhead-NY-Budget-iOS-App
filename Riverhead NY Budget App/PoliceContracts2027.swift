@@ -77,6 +77,46 @@ enum PoliceContracts2027 {
     static let ladderIncrease2027 = 428_561.0
     static let ladderOfficers = 74
 
+    // MARK: - The CSEA contract, for comparison
+
+    /// The 2026-2029 CSEA agreement, Article 15(2) (Wages), approved December 16,
+    /// 2025 (Resolution 2025-1001): each step rises by the percentage, then the
+    /// flat amount is added to every step and carries into later years.
+    /// Mirrors CSEA_TERMS in the website's web/lib/raises-2027.ts.
+    struct CseaTerm: Identifiable {
+        let year: Int
+        let pct: Double
+        let flat: Double
+        var id: Int { year }
+    }
+
+    static let cseaTerms: [CseaTerm] = [
+        CseaTerm(year: 2026, pct: 0.02, flat: 1_500),
+        CseaTerm(year: 2027, pct: 0.025, flat: 1_000),
+        CseaTerm(year: 2028, pct: 0.03, flat: 500),
+        CseaTerm(year: 2029, pct: 0.035, flat: 0),
+    ]
+
+    /// What $100 of 2026 pay becomes by `year` under the proposed police terms
+    /// (percentages only; the $500 is per person).
+    static func policePer100(by year: Int) -> Double {
+        100 * pow(1 + impliedRaise, Double(year - 2026))
+    }
+
+    /// The same for CSEA, percentages only; its flat amounts are per person.
+    static func cseaPer100(by year: Int) -> Double {
+        cseaTerms.filter { $0.year > 2026 && $0.year <= year }.reduce(100) { $0 * (1 + $1.pct) }
+    }
+
+    /// One CSEA salary carried through the contract: the percentage, then the flat amount.
+    static func cseaSalary(from y2026: Double, by year: Int) -> Double {
+        cseaTerms.filter { $0.year > 2026 && $0.year <= year }.reduce(y2026) { $0 * (1 + $1.pct) + $1.flat }
+    }
+
+    /// The middle salary of the CSEA members on the 2026 authorized list, as the
+    /// website's payroll page computes it.
+    static let cseaTypical2026 = 68_564.79
+
     // MARK: - Item IX.2: the one-time retirement-incentive payouts
 
     struct PayoutLine: Identifiable {

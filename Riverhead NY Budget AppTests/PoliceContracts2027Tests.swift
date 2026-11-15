@@ -31,6 +31,15 @@ struct PoliceContracts2027Tests {
         #expect(sum == PoliceContracts2027.payoutsFromFundBalance)
     }
 
+    @Test func cseaComparisonMatchesTheWebsite() {
+        // The website's payroll page: $68,564.79 (shown as $68,565) reaches about $76,504 by 2029;
+        // $100 becomes about $112 (police) and $109 (CSEA) by 2029.
+        #expect(PoliceContracts2027.cseaSalary(from: PoliceContracts2027.cseaTypical2026, by: 2029).rounded() == 76_504)
+        #expect(PoliceContracts2027.policePer100(by: 2029).rounded() == 112)
+        #expect(PoliceContracts2027.policePer100(by: 2030).rounded() == 116)
+        #expect(PoliceContracts2027.cseaPer100(by: 2029).rounded() == 109)
+    }
+
     @Test func stillProposed() {
         #expect(PoliceContracts2027.adopted == nil)
         #expect(PoliceContracts2027.statusLabel == "Proposed, not yet voted on")

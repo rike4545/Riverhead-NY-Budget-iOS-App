@@ -141,7 +141,7 @@ struct EarlyRetirementIncentiveView: View {
                 }
 
                 collapsiblePanelCard(title: "CSEA Contract Context", systemImage: "person.3.fill", isExpanded: $showCSEAContext) {
-                    bullet("The 2026-2029 CSEA agreement adds scheduled wage actions of 2.0% in 2026, 2.5% in 2027, 3.0% in 2028, and 3.5% in 2029, plus supplemental annual payments of $1,500 in 2026, $1,000 in 2027, and $500 in 2028.")
+                    bullet("The 2026-2029 CSEA agreement (Article 15(2)) raises the salary schedule 2.0% in 2026, 2.5% in 2027, 3.0% in 2028 and 3.5% in 2029, and after the percentage adds a flat $1,500 in 2026, $1,000 in 2027 and $500 in 2028 to every step, which carries into later years.")
                     bullet("The agreement increases longevity after 25 years of continuous service from 7% to 8% of annual salary, so long-tenured CSEA employees may carry higher recurring costs than base salary alone shows.")
                     bullet("The agreement increases retiree health-insurance buyback amounts for retirees who decline town-sponsored coverage, which can reduce future premium exposure but must be modeled separately from salary savings.")
                     bullet("For active CSEA employees, the premium-share structure remains important: depending on hire date and service threshold, the town may move from a 75% premium contribution to paying 100% of the premium amount.")

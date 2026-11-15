@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-14T19:58:04.308Z",
+  "generatedAt": "2026-11-15T20:26:20.617Z",
   "dataRoot": "https://rike4545.github.io/Riverhead-NY-Budget-Web-App/data",
   "endpointsInContract": 15,
   "endpointsChecked": 15,
-  "swiftTypesRead": 852,
+  "swiftTypesRead": 856,
   "counts": {
     "break": 0,
     "drift": 2,

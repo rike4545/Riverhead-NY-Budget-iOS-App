@@ -16,6 +16,11 @@
   }
  },
  "meetings": {
+  "2026-11-17": {
+   "eventId": 6457,
+   "name": "Town Board Meeting",
+   "portal": "https://riverheadny.portal.civicclerk.com/event/6457"
+  },
   "2026-11-05": {
    "eventId": 6444,
    "name": "Town Board Meeting",

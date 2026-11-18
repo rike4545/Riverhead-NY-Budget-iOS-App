@@ -253,9 +253,7 @@ struct LocalNewsEconomyView: View {
     }
 
     private static func currency(_ amount: Double) -> String {
-        let fmt = NumberFormatter()
-        fmt.numberStyle = .currency
-        fmt.maximumFractionDigits = 0
+        let fmt = SharedFormatters.currency0
         return fmt.string(from: NSNumber(value: amount)) ?? "$0"
     }
 

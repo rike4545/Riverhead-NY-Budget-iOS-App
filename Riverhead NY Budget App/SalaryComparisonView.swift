@@ -311,18 +311,14 @@ struct SalaryComparisonView: View {
 
     private func formatCurrency(_ value: Double?) -> String {
         guard let value else { return "—" }
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.maximumFractionDigits = 0
+        let f = SharedFormatters.currency0
         return f.string(from: NSNumber(value: value)) ?? "$0"
     }
 
     private func formatDelta(_ value: Double?) -> String {
         guard let value else { return "" }
         let absVal = abs(value)
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.maximumFractionDigits = 0
+        let f = SharedFormatters.currency0
         let cash = f.string(from: NSNumber(value: absVal)) ?? "$0"
         if value > 0 { return "(+\(cash))" }
         if value < 0 { return "(-\(cash))" }

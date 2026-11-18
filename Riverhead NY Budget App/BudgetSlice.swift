@@ -60,8 +60,7 @@ public struct BudgetSlice: Identifiable, Codable, Hashable {
 public extension BudgetSlice {
     /// Returns `amount` formatted with the current locale’s currency.
     var formattedAmount: String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
+        let nf = SharedFormatters.currency
         return nf.string(from: amount as NSNumber) ?? "\(amount)"
     }
 }

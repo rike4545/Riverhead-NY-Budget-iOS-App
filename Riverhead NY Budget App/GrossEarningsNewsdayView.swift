@@ -378,10 +378,11 @@ struct GrossEarningsNewsdayView: View {
 
     private var separationsAllYears: [GrossEarningsEmployeeRow] {
         var bySeparation: [String: GrossEarningsEmployeeRow] = [:]
-        let formatter = ISO8601DateFormatter()
         for row in model.rows {
             guard let term = row.terminationDate else { continue }
-            let key = "\(row.employeeKey)|\(formatter.string(from: term))"
+            // Dates here are parsed from day-only spreadsheet cells, so whole
+            // seconds identify a separation exactly as the ISO string did.
+            let key = "\(row.employeeKey)|\(Int(term.timeIntervalSince1970))"
             if bySeparation[key] == nil {
                 bySeparation[key] = row
             }
@@ -590,12 +591,7 @@ private enum GrossEarningsNewsdayParser {
         let cleaned = raw.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !cleaned.isEmpty else { return nil }
 
-        let formats = ["M/d/yy", "M/d/yyyy", "MM/dd/yy", "MM/dd/yyyy"]
-        for format in formats {
-            let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "en_US_POSIX")
-            formatter.timeZone = TimeZone(secondsFromGMT: 0)
-            formatter.dateFormat = format
+        for formatter in SharedFormatters.usDateParsers {
             if let date = formatter.date(from: cleaned) {
                 return date
             }

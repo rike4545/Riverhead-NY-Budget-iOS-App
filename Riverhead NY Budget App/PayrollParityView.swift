@@ -353,26 +353,37 @@ private struct NativePayrollExplorerView: View {
         return rows
     }
 
-    private var totalGross: Double { filtered.reduce(0) { $0 + $1.g } }
-    private var totalOvertime: Double { filtered.reduce(0) { $0 + $1.o } }
-    private var averageGross: Double { filtered.isEmpty ? 0 : totalGross / Double(filtered.count) }
+    /// Totals over the filtered rows, computed once per render. `filtered`
+    /// filters and sorts up to every payroll record, so reading it once per
+    /// figure (as the summary used to, about ten times) made typing in search lag.
+    private struct Stats {
+        let totalGross: Double
+        let totalOvertime: Double
+        let averageGross: Double
+        let medianGross: Double
+        let currentHeadcount: Int
+        let formerHeadcount: Int
 
-    private var medianGross: Double {
-        let values = filtered.map(\.g).sorted()
-        guard !values.isEmpty else { return 0 }
-        let middle = values.count / 2
-        return values.count.isMultiple(of: 2) ? (values[middle - 1] + values[middle]) / 2 : values[middle]
+        init(rows: [PayrollParityRecord], latestYear: Int?) {
+            totalGross = rows.reduce(0) { $0 + $1.g }
+            totalOvertime = rows.reduce(0) { $0 + $1.o }
+            averageGross = rows.isEmpty ? 0 : totalGross / Double(rows.count)
+            let values = rows.map(\.g).sorted()
+            if values.isEmpty {
+                medianGross = 0
+            } else {
+                let middle = values.count / 2
+                medianGross = values.count.isMultiple(of: 2) ? (values[middle - 1] + values[middle]) / 2 : values[middle]
+            }
+            let current = latestYear.map { year in Set(rows.filter { $0.y == year }.map(\.n)).count } ?? 0
+            currentHeadcount = current
+            formerHeadcount = max(0, Set(rows.map(\.n)).count - current)
+        }
     }
-
-    private var currentHeadcount: Int {
-        guard let latestYear else { return 0 }
-        return Set(filtered.filter { $0.y == latestYear }.map(\.n)).count
-    }
-
-    private var allTimeHeadcount: Int { Set(filtered.map(\.n)).count }
-    private var formerHeadcount: Int { max(0, allTimeHeadcount - currentHeadcount) }
 
     var body: some View {
+        let rows = filtered
+        let stats = Stats(rows: rows, latestYear: latestYear)
         List {
             if isLoading {
                 Section { ProgressView("Loading canonical payroll records…") }
@@ -384,16 +395,16 @@ private struct NativePayrollExplorerView: View {
             if !records.isEmpty {
                 Section("Summary") {
                     if selectedYear == nil {
-                        stat("Current employees (\(latestYear.map(String.init) ?? "latest"))", "\(currentHeadcount)")
-                        stat("Former employees", "\(formerHeadcount)")
-                        stat("Employee-year records", "\(filtered.count)")
+                        stat("Current employees (\(latestYear.map(String.init) ?? "latest"))", "\(stats.currentHeadcount)")
+                        stat("Former employees", "\(stats.formerHeadcount)")
+                        stat("Employee-year records", "\(rows.count)")
                     } else {
-                        stat("Employees actually paid", "\(filtered.count)")
-                        stat("Average gross pay", money(averageGross))
-                        stat("Median gross pay", money(medianGross))
+                        stat("Employees actually paid", "\(rows.count)")
+                        stat("Average gross pay", money(stats.averageGross))
+                        stat("Median gross pay", money(stats.medianGross))
                     }
-                    stat("Total gross pay", money(totalGross))
-                    stat("Total overtime", money(totalOvertime))
+                    stat("Total gross pay", money(stats.totalGross))
+                    stat("Total overtime", money(stats.totalOvertime))
                 }
 
                 Section("Filters") {
@@ -417,7 +428,7 @@ private struct NativePayrollExplorerView: View {
                 }
 
                 Section("Employees") {
-                    ForEach(filtered) { row in
+                    ForEach(rows) { row in
                         NavigationLink {
                             NativePayrollRecordDetailView(row: row, groupLabel: unionDisplay(row.u))
                         } label: {
@@ -504,7 +515,7 @@ private struct NativePayrollExplorerView: View {
             selectedYear = years.last
             isLoading = false
         } catch {
-            if let bundled = loadBundledPayroll() {
+            if let bundled = await Task.detached(priority: .userInitiated, operation: { Self.loadBundledPayroll() }).value {
                 records = bundled.records
                 adopt(bundled)
                 selectedYear = years.last
@@ -535,7 +546,8 @@ private struct NativePayrollExplorerView: View {
         return "\(code) — \(label)"
     }
 
-    private func loadBundledPayroll() -> PayrollRecordsDocument? {
+    /// Decodes the ~840 KB bundled snapshot; called off the main thread.
+    private nonisolated static func loadBundledPayroll() -> PayrollRecordsDocument? {
         guard let url = Bundle.main.url(forResource: "payroll-records", withExtension: "json"),
               let data = try? Data(contentsOf: url) else { return nil }
         return try? JSONDecoder().decode(PayrollRecordsDocument.self, from: data)

@@ -598,9 +598,7 @@ private struct SideBySideRow: View {
 
 private extension BinaryInteger {
     var currencyString: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.maximumFractionDigits = 0
+        let formatter = SharedFormatters.currency0
         return formatter.string(from: NSNumber(value: Int(self))) ?? "$\(self)"
     }
 }

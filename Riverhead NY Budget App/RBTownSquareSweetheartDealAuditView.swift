@@ -1032,10 +1032,7 @@ private enum AuditSeverity: Int {
 
 private extension Double {
     var currency0: String {
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
-        nf.maximumFractionDigits = 0
-        nf.minimumFractionDigits = 0
+        let nf = SharedFormatters.currency0
         return nf.string(from: NSNumber(value: self)) ?? "$0"
     }
 

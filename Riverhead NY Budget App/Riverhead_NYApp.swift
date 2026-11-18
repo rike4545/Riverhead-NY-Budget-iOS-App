@@ -51,6 +51,7 @@ struct Riverhead_NYApp: App {
                 .environmentObject(civicStore)
                 .environmentObject(sixSigmaStore)
                 .environment(budgetStore)
+                .task { DataWarmup.start() }
         }
     }
 }

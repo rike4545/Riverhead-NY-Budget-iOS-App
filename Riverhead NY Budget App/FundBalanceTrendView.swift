@@ -318,7 +318,7 @@ struct FundBalanceTrendView: View {
                 Divider().opacity(0.2)
                 narrativeParagraph(
                     icon: "calendar.badge.clock", color: RiverheadTheme.accent,
-                    text: "Looking to 2027: the 2027 Preliminary Budget counts $880,000 of General Fund savings as income. The 2027 Lab models scenarios that keep the ratio above the 15% floor while paying for service changes."
+                    text: "Looking to 2027: the 2027 Adopted Budget counts $880,000 of General Fund savings as income. The 2027 Lab models scenarios that keep the ratio above the 15% floor while paying for service changes."
                 )
             }
         }

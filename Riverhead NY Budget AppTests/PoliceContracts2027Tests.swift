@@ -40,8 +40,8 @@ struct PoliceContracts2027Tests {
         #expect(PoliceContracts2027.cseaPer100(by: 2029).rounded() == 109)
     }
 
-    @Test func stillProposed() {
-        #expect(PoliceContracts2027.adopted == nil)
-        #expect(PoliceContracts2027.statusLabel == "Proposed, not yet voted on")
+    @Test func approvedNovember17() {
+        #expect(PoliceContracts2027.adopted == true)
+        #expect(PoliceContracts2027.statusLabel == "Approved by the Town Board on November 17, 2026, 5–0")
     }
 }

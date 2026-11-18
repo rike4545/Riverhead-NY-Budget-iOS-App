@@ -213,8 +213,8 @@ enum CreditRating {
         ),
         .init(
             title: "Close the last structural gaps with recurring revenue, not one-time transfers",
-            detail: "The 2027 Preliminary still counts $880,000 of General Fund savings as income, and $4,945,000 more across the water and sewer districts. Agencies explicitly reward towns that “balance responsibly — without dipping into reserves” (cited for Smithtown's own rating). Closing those draws with recurring revenue at adoption, not with fund balance, keeps that praise applicable to Riverhead too.",
-            evidence: "2027 Preliminary Summary: appropriated fund balance $880,000 in the General Fund and $5,825,000 across all funds. The 2026 adopted budget's General Fund mismatch was $74,283."
+            detail: "The 2027 Adopted Budget still counts $880,000 of General Fund savings as income, and $4,945,000 more across the water and sewer districts. Agencies explicitly reward towns that “balance responsibly — without dipping into reserves” (cited for Smithtown's own rating). Closing those draws with recurring revenue at adoption, not with fund balance, keeps that praise applicable to Riverhead too.",
+            evidence: "2027 Adopted Budget Summary (unchanged from the Preliminary): appropriated fund balance $880,000 in the General Fund and $5,825,000 across all funds. The 2026 adopted budget's General Fund mismatch was $74,283."
         ),
         .init(
             title: "Update the reserve policy, and put it where a rating analyst looks",

@@ -3,7 +3,8 @@
 //  Riverhead NY Budget AppTests
 //
 //  The Home card and the 2027 proposal screen take their wording from
-//  Budget2027Status, which switches on the November 20, 2026 adoption deadline.
+//  Budget2027Status, which switches on the November 17, 2026 adoption and the
+//  November 20 deadline.
 //
 
 import Foundation
@@ -29,11 +30,19 @@ struct Budget2027StatusTests {
         #expect(Budget2027Status.isBeforeAdoptionDeadline(date(2026, 11, 20, 18)))
     }
 
-    @Test func afterTheDeadlineItStopsCallingItPreliminary() {
+    @Test func fromNovember17ItSaysAdopted() {
+        let now = date(2026, 11, 18)
+        #expect(Budget2027Status.isAdopted(now))
+        #expect(Budget2027Status.title(now) == "Read the 2027 Adopted Budget")
+        #expect(Budget2027Status.summary(now).contains("$120,854,219"))
+        #expect(Budget2027Status.shortStatus(now) == "Adopted Nov 17 · 5–0")
+        #expect(!Budget2027Status.isAdopted(date(2026, 11, 16)))
+    }
+
+    @Test func afterTheDeadlineItStillSaysAdopted() {
         let now = date(2026, 11, 21)
         #expect(!Budget2027Status.isBeforeAdoptionDeadline(now))
-        #expect(Budget2027Status.title(now) == "Read the 2027 budget")
-        #expect(Budget2027Status.shortStatus(now) == "Adoption deadline passed Nov 20")
+        #expect(Budget2027Status.title(now) == "Read the 2027 Adopted Budget")
     }
 
     @Test func itOpensTheWebsitesBudgetPage() {

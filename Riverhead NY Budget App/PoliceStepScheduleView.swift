@@ -52,7 +52,7 @@ struct PoliceStepScheduleView: View {
         }
     }
 
-    // MARK: - Proposed 2027-2030 contracts
+    // MARK: - The 2027-2030 contracts
 
     private var proposedContractsSection: some View {
         Section {
@@ -60,7 +60,7 @@ struct PoliceStepScheduleView: View {
                 Text(PoliceContracts2027.statusLabel)
                     .font(.caption.weight(.bold))
                     .foregroundStyle(RiverheadTheme.brandCoral)
-                Text("On \(PoliceContracts2027.meetingDate) the Town Board is asked to approve new contracts with the two police unions: officers and detectives (PBA), and sergeants and lieutenants (SOA). The Town has published the pay tables, but not the rest of the contracts.")
+                Text("On \(PoliceContracts2027.meetingDate) the Town Board \(PoliceContracts2027.adopted == true ? "approved" : "is asked to approve") new contracts with the two police unions: officers and detectives (PBA), and sergeants and lieutenants (SOA). The Town has published the pay tables, but not the rest of the contracts.")
                     .font(.subheadline)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -68,13 +68,13 @@ struct PoliceStepScheduleView: View {
 
             plainPoint("Pay goes up by the same share every year for four years: 3.75%, a little under 4 cents on every dollar.")
             plainPoint("In 2027 everyone also gets $500 more for agreeing to wear body cameras, the last such increase.")
-            plainPoint("A top-step police officer earns \(Self.money(top.rates[0])) this year. That would become \(Self.money(top.rates[1])) next year and \(Self.money(top.rates[4])) in 2030: \(Self.money(top.rates[4] - top.rates[0])) more a year.")
+            plainPoint("A top-step police officer earns \(Self.money(top.rates[0])) this year. That \(PoliceContracts2027.adopted == true ? "becomes" : "would become") \(Self.money(top.rates[1])) next year and \(Self.money(top.rates[4])) in 2030: \(Self.money(top.rates[4] - top.rates[0])) more a year.")
             plainPoint("What it might cost: roughly \(Self.money((PoliceContracts2027.ladderIncrease2027 / 1000).rounded() * 1000)) more in 2027 for the \(PoliceContracts2027.ladderOfficers) rank-and-file officers the website counts, on top of the step raises the Town owes anyway. That is the website's estimate, not a Town figure, and it leaves out detectives, sergeants, lieutenants, night pay, overtime and pensions.")
 
             VStack(alignment: .leading, spacing: 6) {
                 Text("Compared with the Town's civilian workers")
                     .font(.footnote.weight(.bold))
-                Text("Most non-police employees are in the CSEA union. Their 2026–2029 contract was approved on December 16, 2025; it isn't new. For every $100 of pay today, the police proposal would pay about \(Self.money(PoliceContracts2027.policePer100(by: 2029))) in 2029 and \(Self.money(PoliceContracts2027.policePer100(by: 2030))) in 2030. The CSEA contract pays about \(Self.money(PoliceContracts2027.cseaPer100(by: 2029))) in 2029, plus flat dollar raises, and then ends.")
+                Text("Most non-police employees are in the CSEA union. Their 2026–2029 contract was approved on December 16, 2025; it isn't new. For every $100 of pay today, the police \(PoliceContracts2027.adopted == true ? "contracts pay" : "proposal would pay") about \(Self.money(PoliceContracts2027.policePer100(by: 2029))) in 2029 and \(Self.money(PoliceContracts2027.policePer100(by: 2030))) in 2030. The CSEA contract pays about \(Self.money(PoliceContracts2027.cseaPer100(by: 2029))) in 2029, plus flat dollar raises, and then ends.")
                     .font(.footnote)
                     .fixedSize(horizontal: false, vertical: true)
                 Text("For example, the middle CSEA salary on the 2026 list, \(Self.money(PoliceContracts2027.cseaTypical2026)), would reach about \(Self.money(PoliceContracts2027.cseaSalary(from: PoliceContracts2027.cseaTypical2026, by: 2029))) in 2029.")
@@ -108,7 +108,7 @@ struct PoliceStepScheduleView: View {
             Link("Open the November 17 agenda packet", destination: PoliceContracts2027.packetURL)
                 .font(.footnote.weight(.semibold))
         } header: {
-            Label("Proposed contracts, 2027 to 2030", systemImage: "doc.badge.clock")
+            Label(PoliceContracts2027.adopted == true ? "New contracts, 2027 to 2030" : "Proposed contracts, 2027 to 2030", systemImage: "doc.badge.clock")
         } footer: {
             Text("Pay tables from pages 204–205 and 208–209 of the agenda packet.")
         }
@@ -174,7 +174,7 @@ struct PoliceStepScheduleView: View {
             .accessibilityLabel("Contract year")
             .accessibilityHint("Choose which year of the 2023 to 2026 PBA contract to show.")
         } footer: {
-            Text("These are the 2023–2026 contract's rates. The contract expires 12/31/2026; the proposed 2027–2030 rates are above.")
+            Text("These are the 2023–2026 contract's rates. The contract expires 12/31/2026; the \(PoliceContracts2027.adopted == true ? "new" : "proposed") 2027–2030 rates are above.")
         }
     }
 

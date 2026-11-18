@@ -22,7 +22,10 @@
   "statedCostResolutions": 2,
   "statementBelowTable": 0,
   "statedCostMarkedNo": 0,
-  "largestStatedCostMarkedNo": null
+  "largestStatedCostMarkedNo": null,
+  "signoffRead": 41,
+  "preparerDated": 22,
+  "accountingDated": 27
  },
  "resolutions": [
   {
@@ -97,6 +100,10 @@
     "reason": "Every account named in section G sits in the Water District \u2014 developer fees. The money moves through a capital or developer-paid fund, so it does not reduce the General Fund surplus the Town would need for anything else.",
     "flag": "neutral",
     "evidence": "account-code"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -208,6 +215,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -259,6 +270,10 @@
     "flag": "neutral",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -303,6 +318,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -346,6 +365,10 @@
     "reason": "Attending a training, seminar or conference carries a registration fee and mileage or travel reimbursement. Both are charged to a budget line. On other, near-identical attendance resolutions the Town answered \u201cYes\u201d.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -397,6 +420,10 @@
     "reason": "Registration or tuition plus mileage and travel, charged to a conference or training line. Individually minor; the Town answered honestly here.",
     "flag": "small-cost",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -463,6 +490,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -506,6 +537,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -572,6 +607,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -615,6 +654,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -660,6 +703,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -703,6 +750,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -748,6 +799,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -791,6 +846,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -836,6 +895,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -879,6 +942,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -924,6 +991,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -967,6 +1038,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -1012,6 +1087,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1055,6 +1134,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1100,6 +1183,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1143,6 +1230,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1188,6 +1279,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1231,6 +1326,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1282,6 +1381,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1357,6 +1460,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1403,6 +1510,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1446,6 +1557,10 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -1512,6 +1627,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1569,6 +1688,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1613,6 +1736,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1656,6 +1783,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1707,6 +1838,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1765,6 +1900,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1822,6 +1961,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1878,6 +2021,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1954,6 +2101,10 @@
     "flag": "neutral",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1997,6 +2148,10 @@
     "reason": "A warrant is the Board signing off on actual disbursement: checks written and funds transferred. The obligations were incurred earlier, so this is not new spending \u2014 but it is the moment the cash goes out, and the resolution that releases it is the one place the total is put in front of the Board.",
     "flag": "disbursement",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -2049,6 +2204,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2093,6 +2252,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2136,6 +2299,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,

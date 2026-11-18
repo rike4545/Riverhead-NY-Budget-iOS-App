@@ -22,7 +22,10 @@
   "statedCostResolutions": 1,
   "statementBelowTable": 0,
   "statedCostMarkedNo": 0,
-  "largestStatedCostMarkedNo": null
+  "largestStatedCostMarkedNo": null,
+  "signoffRead": 66,
+  "preparerDated": 49,
+  "accountingDated": 55
  },
  "resolutions": [
   {
@@ -117,6 +120,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -173,6 +180,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -255,6 +266,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -327,6 +342,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -389,6 +408,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -453,6 +476,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -515,6 +542,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -579,6 +610,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -635,6 +670,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -699,6 +738,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -761,6 +804,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -834,6 +881,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -896,6 +947,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -965,6 +1020,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1059,6 +1118,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1115,6 +1178,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1185,6 +1252,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1228,6 +1299,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1273,6 +1348,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1316,6 +1395,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1361,6 +1444,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1404,6 +1491,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1462,6 +1553,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1519,6 +1614,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1562,6 +1661,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1607,6 +1710,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1650,6 +1757,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1695,6 +1806,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1738,6 +1853,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1796,6 +1915,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1852,6 +1975,10 @@
     "reason": "The Board closes a finished capital project. That commits no new money: whatever was left unspent is returned, or an earlier resolution already moved it. The Town's 'no fiscal impact' is fair.",
     "flag": "fair",
     "evidence": "resolution-text"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1910,6 +2037,10 @@
     "flag": "fair",
     "evidence": "resolution-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -1953,6 +2084,10 @@
     "reason": "It commits capital or debt-service dollars, typically drawn from reserves, fund balance, or borrowing \u2014 not truly cost-free even if 'absorbed'.",
     "flag": "reserve-draw",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -1998,6 +2133,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2042,6 +2181,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2085,6 +2228,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -2146,6 +2293,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2190,6 +2341,10 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2233,6 +2388,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -2299,6 +2458,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2363,6 +2526,10 @@
     "reason": "Section G charges this to an appropriation account (Water - F/T) and names no fund-balance account. It is ongoing operating money the tax levy carries, not a draw on accumulated surplus \u2014 a distinction the form itself does not draw.",
     "flag": "recurring",
     "evidence": "account-code"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -2447,6 +2614,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2503,6 +2674,10 @@
     "reason": "A salary, raise, contract, or fee change that commits ongoing money.",
     "flag": "reserve-draw",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -2569,6 +2744,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2612,6 +2791,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -2671,6 +2854,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2728,6 +2915,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2778,6 +2969,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -2830,6 +3025,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2873,6 +3072,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -2931,6 +3134,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -2974,6 +3181,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -3026,6 +3237,10 @@
     "flag": "understated",
     "evidence": "statement-text"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3069,6 +3284,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -3114,6 +3333,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3157,6 +3380,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -3216,6 +3443,10 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3260,6 +3491,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3303,6 +3538,10 @@
     "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
     "flag": "understated",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -3355,6 +3594,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3398,6 +3641,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,
@@ -3443,6 +3690,10 @@
     "flag": "understated",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3486,6 +3737,10 @@
     "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
     "flag": "fair",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
    },
    "vote": {
     "adopted": true,
@@ -3531,6 +3786,10 @@
     "flag": "fair",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3575,6 +3834,10 @@
     "flag": "disbursement",
     "evidence": "category"
    },
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
    "vote": {
     "adopted": true,
     "tag": "unanimous",
@@ -3618,6 +3881,10 @@
     "reason": "Money flows, but from a grant, donation, or a developer's own escrow \u2014 not the tax levy.",
     "flag": "neutral",
     "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
    },
    "vote": {
     "adopted": true,

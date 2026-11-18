@@ -7,11 +7,11 @@
  },
  "method": "Each resolution's Town 'Fiscal Impact Statement' answer (Yes/No and absorbed vs. detailed) is transcribed as-published from the agenda packet, alongside a plain-English realistic read keyed on the resolution's category. The amount comes from section G of the statement, where the preparer wrote one. Where the budget table the Board adopted puts a different figure on a fund's Appropriated Fund Balance account, the table's figure is used, because the vote is the appropriation, and section G's is shown beside it. Separately, every dollar figure the resolution's own text states is listed and quoted, each labelled by its wording (a cost, a pay rate, a fee paid to the Town, a grant, a fund-balance transfer, a budget-adjustment line or background); insurance limits an applicant must carry are left out. The stated cost is the largest figure that reads as the Town paying out, taking what the Board resolves over the recitals. Where section G names less than the resolution's own budget table moves, both figures are shown.",
  "summary": {
-  "total": 31,
-  "markedNo": 17,
+  "total": 32,
+  "markedNo": 18,
   "markedYes": 14,
-  "understated": 8,
-  "understatedMarkedNo": 3,
+  "understated": 10,
+  "understatedMarkedNo": 5,
   "identifiedDollarsAtStake": 1956749.0,
   "pricedResolutions": 3,
   "largestUnderstatedMarkedNo": null,
@@ -22,7 +22,10 @@
   "statedCostResolutions": 0,
   "statementBelowTable": 0,
   "statedCostMarkedNo": 0,
-  "largestStatedCostMarkedNo": null
+  "largestStatedCostMarkedNo": null,
+  "signoffRead": 32,
+  "preparerDated": 23,
+  "accountingDated": 10
  },
  "resolutions": [
   {
@@ -62,7 +65,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-996",
@@ -230,7 +242,16 @@
     "flag": "reserve-draw",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-997",
@@ -319,7 +340,16 @@
     "flag": "reserve-draw",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-998",
@@ -433,7 +463,16 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-999",
@@ -481,7 +520,16 @@
     "flag": "neutral",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1000",
@@ -520,7 +568,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1001",
@@ -559,7 +616,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1002",
@@ -598,7 +664,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1003",
@@ -658,7 +733,16 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1004",
@@ -718,7 +802,16 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1005",
@@ -778,7 +871,16 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1006",
@@ -844,7 +946,16 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1007",
@@ -883,7 +994,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1008",
@@ -922,7 +1042,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1009",
@@ -961,7 +1090,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": false,
+    "tag": "tabled",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1010",
@@ -1000,7 +1138,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1011",
@@ -1053,7 +1200,16 @@
     "flag": "neutral",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1012",
@@ -1106,7 +1262,16 @@
     "flag": "neutral",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1013",
@@ -1159,7 +1324,16 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1014",
@@ -1212,7 +1386,16 @@
     "flag": "reserve-draw",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1015",
@@ -1251,7 +1434,16 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1016",
@@ -1303,7 +1495,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1017",
@@ -1342,7 +1543,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1018",
@@ -1395,7 +1605,16 @@
     "flag": "recurring",
     "evidence": "account-code"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": true
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1019",
@@ -1434,14 +1653,23 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1020",
    "numberSource": "printed",
    "seq": 26,
    "title": "Authorize Supervisor to Execute Stipulation with Riverhead Town Police Benevolent Association, Inc",
-   "category": "procedural",
+   "category": "labor-contract",
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": null,
@@ -1468,19 +1696,28 @@
    "statedCost": null,
    "statementBelowTable": null,
    "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1021",
    "numberSource": "printed",
    "seq": 27,
    "title": "Authorize Supervisor to Execute Stipulation with Riverhead Town Superior Officers Association, Inc.",
-   "category": "procedural",
+   "category": "labor-contract",
    "townFiscalImpact": "No",
    "townTreatment": "described",
    "amount": null,
@@ -1507,12 +1744,21 @@
    "statedCost": null,
    "statementBelowTable": null,
    "realistic": {
-    "verdict": "No direct cost",
-    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
-    "flag": "fair",
+    "verdict": "Understated \u2014 the form says 'no fiscal impact'",
+    "reason": "A salary, contract, or fee item marked 'no fiscal impact' typically still moves money.",
+    "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1022",
@@ -1551,7 +1797,16 @@
     "flag": "fair",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1023",
@@ -1621,7 +1876,16 @@
     "flag": "neutral",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1024",
@@ -1660,7 +1924,16 @@
     "flag": "understated",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   },
   {
    "number": "2026-1025",
@@ -1699,7 +1972,64 @@
     "flag": "disbursement",
     "evidence": "category"
    },
-   "vote": null
+   "signoff": {
+    "preparerDated": true,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
+  },
+  {
+   "number": "2026-1026",
+   "numberSource": "printed",
+   "seq": 32,
+   "title": "Adopts A Local Law Amending Chapter 279 Of The Riverhead Town Code Entitled \u201cTaxation\u201d",
+   "category": "legislative",
+   "townFiscalImpact": "No",
+   "townTreatment": "described",
+   "amount": null,
+   "funding": {
+    "source": null,
+    "sources": [],
+    "sourceText": ": : : :",
+    "fundCodes": [],
+    "funds": [],
+    "amount": null,
+    "accounts": [],
+    "fundBalanceAccounts": [],
+    "fundBalanceFunds": [],
+    "fundBalanceDraw": null,
+    "fundBalanceClasses": [],
+    "drawsFundBalance": false,
+    "matchRequired": null,
+    "matchPercent": null,
+    "reimbursementBasis": false,
+    "splitAcross": 0,
+    "createsAccounts": []
+   },
+   "statedAmounts": [],
+   "statedCost": null,
+   "statementBelowTable": null,
+   "realistic": {
+    "verdict": "No direct cost",
+    "reason": "A procedural, permit, or administrative action with no direct levy cost identified.",
+    "flag": "fair",
+    "evidence": "category"
+   },
+   "signoff": {
+    "preparerDated": false,
+    "accountingDated": false
+   },
+   "vote": {
+    "adopted": true,
+    "tag": "unanimous",
+    "ayes": null,
+    "nays": 0
+   }
   }
  ]
 }

@@ -2,10 +2,11 @@
 //  PoliceContracts2027.swift
 //  Riverhead NY Budget App
 //
-//  The proposed 2027-2030 PBA and SOA stipulations, items IX.26 and IX.27 on
-//  the Town Board's November 17, 2026 agenda, and item IX.2, the one-time
-//  retirement-incentive payouts. PROPOSED, NOT APPROVED: set `adopted` once
-//  the Board votes.
+//  The 2027-2030 PBA and SOA stipulations, items IX.26 and IX.27 on the Town
+//  Board's November 17, 2026 agenda, and item IX.2, the one-time
+//  retirement-incentive payouts. The Board approved all three that night, 5-0
+//  (Resolutions 2026-1020, 2026-1021 and 2026-996), per the agenda packet with
+//  the votes filled in (CivicClerk file 12615).
 //
 //  Mirrors the web edition's web/lib/police-stipulations-2027.ts, whose
 //  verify script checks every figure against the agenda packet. Copy changes
@@ -26,8 +27,8 @@ enum PoliceContracts2027 {
         var fourYearChange: Double { rates[4] / rates[0] - 1 }
     }
 
-    /// nil until the Board votes; then true or false.
-    static let adopted: Bool? = nil
+    /// nil until the Board votes; then true or false. Approved November 17, 2026, 5-0.
+    static let adopted: Bool? = true
 
     static let years = [2026, 2027, 2028, 2029, 2030]
     static let meetingDate = "November 17, 2026"
@@ -97,7 +98,7 @@ enum PoliceContracts2027 {
         CseaTerm(year: 2029, pct: 0.035, flat: 0),
     ]
 
-    /// What $100 of 2026 pay becomes by `year` under the proposed police terms
+    /// What $100 of 2026 pay becomes by `year` under the police contracts' terms
     /// (percentages only; the $500 is per person).
     static func policePer100(by year: Int) -> Double {
         100 * pow(1 + impliedRaise, Double(year - 2026))
@@ -140,7 +141,7 @@ enum PoliceContracts2027 {
     static var statusLabel: String {
         switch adopted {
         case .none: return "Proposed, not yet voted on"
-        case .some(true): return "Approved by the Town Board"
+        case .some(true): return "Approved by the Town Board on November 17, 2026, 5–0"
         case .some(false): return "Not approved by the Town Board"
         }
     }

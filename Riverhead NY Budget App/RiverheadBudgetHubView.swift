@@ -937,7 +937,8 @@ fileprivate enum BudgetRecommendations2027 {
     ]
 
     // From the Town's 2027 Preliminary Budget (as the website's
-    // budget-2027-preliminary-lines.json reads it, book pages in brackets).
+    // budget-2027-preliminary-lines.json reads it, book pages in brackets),
+    // which the Board adopted unchanged on November 17, 2026.
     // Every fund below balances to the dollar in the Preliminary; what is left
     // to explain is how much each one counts its savings as income. These used
     // to describe the 2026 Tentative's $74,283 General Fund gap, which the 2027
@@ -946,22 +947,22 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "General Fund (A01) balances, but still uses savings",
             status: "Reserve watch",
-            detail: "The 2027 Preliminary's General Fund spending and revenue both come to $71,932,070, so there is no arithmetic gap. It still counts $880,000 of appropriated fund balance as income, down from $1.25M in the 2026 budget and $950,000 in the 2027 Tentative."
+            detail: "The 2027 Adopted Budget's General Fund spending and revenue both come to $71,932,070, so there is no arithmetic gap. It still counts $880,000 of appropriated fund balance as income, down from $1.25M in the 2026 budget and $950,000 in the 2027 Tentative."
         ),
         .init(
             title: "Sewer Fund (ES1) needs a plain-English reserve explanation",
             status: "Reserve watch",
-            detail: "The 2027 Preliminary counts $2,225,000 of appropriated fund balance as income and also shows a separate $500,000 fund balance contribution on the spending side. Residents should be told why both are there."
+            detail: "The 2027 Adopted Budget counts $2,225,000 of appropriated fund balance as income and also shows a separate $500,000 fund balance contribution on the spending side. Residents should be told why both are there."
         ),
         .init(
             title: "Calverton Sewer (ES3) remains dependent on reserves",
             status: "Reserve watch",
-            detail: "ES3 still uses $645,000 of appropriated fund balance in the 2027 Preliminary, and its fund balance contribution, $35,932 in 2026, is now zero. That should be explained as a temporary fix, not a permanent funding plan."
+            detail: "ES3 still uses $645,000 of appropriated fund balance in the 2027 Adopted Budget, and its fund balance contribution, $35,932 in 2026, is now zero. That should be explained as a temporary fix, not a permanent funding plan."
         ),
         .init(
             title: "Water Fund (EW1) leans on fund balance more than last year",
             status: "Transparency",
-            detail: "EW1 counts $1,975,000 of appropriated fund balance as income in the 2027 Preliminary, up from $1.85M in 2026. The public should be shown whether rates, debt, or operating costs are driving that reliance."
+            detail: "EW1 counts $1,975,000 of appropriated fund balance as income in the 2027 Adopted Budget, up from $1.85M in 2026. The public should be shown whether rates, debt, or operating costs are driving that reliance."
         )
     ]
 
@@ -969,12 +970,12 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "A01 General Fund still budgets a reserve draw",
             status: "Reserve dependence",
-            detail: "The 2027 Preliminary's A01 appropriations and revenues both total $71,932,070, so the 2026 Tentative's $74,283 arithmetic gap is not repeated. A01 still carries $880,000 of appropriated fund balance (A01-9999-000-00000-0), down from $1.25M adopted for 2026; a structural-balance test would ask what recurring revenue replaces it."
+            detail: "The 2027 Adopted Budget's A01 appropriations and revenues both total $71,932,070, so the 2026 Tentative's $74,283 arithmetic gap is not repeated. A01 still carries $880,000 of appropriated fund balance (A01-9999-000-00000-0), down from $1.25M adopted for 2026; a structural-balance test would ask what recurring revenue replaces it."
         ),
         .init(
             title: "ES1 Sewer shows layered reserve use that needs board-level explanation",
             status: "Reserve dependence",
-            detail: "ES1 revenues include $2,225,000 of appropriated fund balance in the 2027 Preliminary, while expenditures also show a $500,000 fund balance contribution line (ES1-9-9990). That presentation should be reconciled in the hearing narrative."
+            detail: "ES1 revenues include $2,225,000 of appropriated fund balance in the 2027 Adopted Budget, while expenditures also show a $500,000 fund balance contribution line (ES1-9-9990). That presentation should be reconciled in the hearing narrative."
         ),
         .init(
             title: "ES3 Calverton Sewer still relies on nonrecurring balance support",
@@ -984,7 +985,7 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "EW1 Water's reserve draw grows",
             status: "Reserve dependence",
-            detail: "EW1 includes $1,975,000 of appropriated fund balance in the 2027 Preliminary, up from $1,850,000 adopted for 2026. That should be paired with a clear statement of whether the driver is rates, capital timing, or operating pressure."
+            detail: "EW1 includes $1,975,000 of appropriated fund balance in the 2027 Adopted Budget, up from $1,850,000 adopted for 2026. That should be paired with a clear statement of whether the driver is rates, capital timing, or operating pressure."
         ),
         .init(
             title: "ES5 Scavenger Waste should be reconciled in the final narrative",
@@ -3927,7 +3928,7 @@ fileprivate struct HearingToolkitView: View {
     // Expert talking points: technically framed for OSC/fiscal compliance context
     private var expertTalkingPoints: [String] {
         [
-            "The 2027 Preliminary appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 41.7% of the 2026 budget and $18.5M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
+            "The 2027 Adopted Budget appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 41.7% of the 2026 budget and $18.5M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
             "Personnel services growth (Police +6.8%, Highway +4.9%) outpaces CPI. What contract provisions drive this, and how does it affect the out-year levy cap forecast?",
             "OSC's February 2024 CPF audit found Riverhead's CPF disbursements and debt service were proper, but some collections were not date-stamped and nine deposits totaling $5.3 million were not deposited within 10 days. What written control changes, training, and receipt-tracking steps have been implemented since then?",
             "If the Supervisor designates or recommends an exempt Budget Officer, what minimum qualifications in accounting, municipal finance, or budget administration does the Board require to preserve independent budget scrutiny and effective pluralism?",

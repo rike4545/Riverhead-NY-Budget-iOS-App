@@ -2184,7 +2184,7 @@ fileprivate struct OverviewStoryView: View {
                   tag: "Big picture"),
             .init(symbol: "banknote.fill",
                   title: "Is the savings account healthy?",
-                  blurb: "Riverhead's 2025 Annual Financial Report shows the General Fund finished 2025 with about $33.4M in fund balance and total governmental funds ended 2025 at about $76.55M, leaving Riverhead with a large cushion well above the 15% policy floor.",
+                  blurb: "The 2025 audit (accepted September 1, 2026, Resolution 2026-834) puts the General Fund's balance at $33.3M at year-end, $28.8M of it unassigned: a large cushion well above the 15% policy floor.",
                   tag: "Fund balance"),
             .init(symbol: "list.bullet.rectangle.fill",
                   title: "What's changing in 2026?",
@@ -3360,7 +3360,7 @@ fileprivate struct CapitalDebtExplorerView: View {
                         n: "1",
                         name: "Can the Town pay its bills?",
                         reading: "Yes",
-                        detail: "Lenders start with cash on hand, savings, and whether a town has to borrow just to make payroll. Riverhead ended 2025 with $33.4M in the bank, $29.7M of it unrestricted, and it does not borrow for cash flow \u{2014} its short-term notes all paid for buildings and land."
+                        detail: "Lenders start with cash on hand, savings, and whether a town has to borrow just to make payroll. Riverhead ended 2025 with a $33.3M General Fund balance, $28.8M of it unassigned (2025 audit), and it does not borrow for cash flow \u{2014} its short-term notes all paid for buildings and land."
                     )
                     oscDebtMetricRow(
                         n: "2",

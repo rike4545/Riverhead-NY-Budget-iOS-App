@@ -161,7 +161,7 @@ private enum BudgetSupplementExplorerData {
     ]
 
     static let annualFinancialResults: [AnnualFinancialFundResult] = [
-        .init(fund: "A", name: "General Fund", revenuesAndSources: 71_010_826, expendituresAndUses: 66_007_499, endingBalance: 33_407_251, note: "Actual 2025 results added more than $5.0M to fund balance; unassigned balance ended at $29.7M."),
+        .init(fund: "A", name: "General Fund", revenuesAndSources: 71_010_826, expendituresAndUses: 66_007_499, endingBalance: 33_407_251, note: "Annual Financial Report (unaudited): 2025 added about $5.0M to fund balance. The 2025 audit puts the year's increase at $4,899,127, the ending balance at $33,303,051 and unassigned at $28,829,513."),
         .init(fund: "CM", name: "Miscellaneous Special Revenue", revenuesAndSources: 8_582_970, expendituresAndUses: 3_999_024, endingBalance: 30_784_387, note: "Large cash and fund-balance position should be explained by restriction, commitment, or intended use."),
         .init(fund: "DA", name: "Highway Town-wide", revenuesAndSources: 7_971_863, expendituresAndUses: 7_777_382, endingBalance: 5_594_416, note: "Slight positive operating result; useful context for equipment, roadwork, and snow-cost assumptions."),
         .init(fund: "ES", name: "Enterprise Sewer", revenuesAndSources: 8_739_458, expendituresAndUses: 9_831_597, endingBalance: 23_794_711, note: "Sewer lost ground in 2025, so 2026 and 2027 sewer rates, transfers, and capital plans need a real operating explanation."),
@@ -170,7 +170,7 @@ private enum BudgetSupplementExplorerData {
     ]
 
     static let annualFinancialWatchItems: [AnnualFinancialWatchItem] = [
-        .init(title: "General Fund unassigned balance", value: "$29.7M", systemImage: "checkmark.seal.fill", tint: .green, note: "This replaces the older app baseline and is the better reserve number for policy and simulator views."),
+        .init(title: "General Fund unassigned balance", value: "$28.8M", systemImage: "checkmark.seal.fill", tint: .green, note: "From the 2025 audit ($28,829,513), accepted September 1, 2026. The unaudited Annual Financial Report said $29.7M."),
         .init(title: "Sewer operating result", value: "-$1.1M", systemImage: "exclamationmark.triangle.fill", tint: .orange, note: "The enterprise fund spent more than it brought in during 2025."),
         .init(title: "BAN exposure due in 2026", value: "$22.0M", systemImage: "calendar.badge.exclamationmark", tint: RiverheadTheme.brandCoral, note: "Short-term notes for Town Hall and Town Square properties need repayment, renewal, or permanent financing."),
         .init(title: "General Fund benefits", value: "$18.8M", systemImage: "person.2.wave.2.fill", tint: .purple, note: "Benefits rose from $16.4M in 2024 and should stay tied to payroll, health enrollment, and retirement assumptions."),
@@ -375,8 +375,8 @@ struct BudgetSupplementExplorerView: View {
         Group {
             Section("Quick Read") {
                 quickReadRow("Tracked funds", value: "\(BudgetSupplementExplorerData.fundSummaries.count)", tint: RiverheadTheme.brandSky)
-                quickReadRow("2025 General Fund actual result", value: currency(5_003_327), tint: RiverheadTheme.brandMint)
-                quickReadRow("2025 unassigned General Fund balance", value: currency(29_671_084), tint: .green)
+                quickReadRow("2025 General Fund increase (audited)", value: currency(4_899_127), tint: RiverheadTheme.brandMint)
+                quickReadRow("2025 unassigned General Fund balance (audited)", value: currency(28_829_513), tint: .green)
                 quickReadRow("ERI planning-case annual savings", value: currency(461_000), tint: RiverheadTheme.brandSky)
                 quickReadRow("Planning-case levy reduction", value: currency(BudgetSupplementExplorerData.planningLevyReductionTotal), tint: .green)
                 quickReadRow("Largest General Fund revenue variance", value: currency(4_260_330), tint: .green)
@@ -526,7 +526,7 @@ struct BudgetSupplementExplorerView: View {
     private var actualsPanel: some View {
         Group {
             Section("2025 Actual Results") {
-                Text("The Annual Financial Report adds the reality check: it shows what actually happened in 2025 before the 2026 budget becomes the launch point for 2027 decisions.")
+                Text("The Annual Financial Report adds the reality check: it shows what actually happened in 2025 before the 2026 budget became the launch point for the 2027 budget, which the Town Board adopted on November 17, 2026.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
 

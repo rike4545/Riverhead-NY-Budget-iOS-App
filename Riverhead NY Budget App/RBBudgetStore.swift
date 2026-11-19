@@ -126,7 +126,54 @@ final class RBBudgetStore {
         }
 
         return [
+            // 2027 (links as the website's budget-stages.json records them)
+            RiverheadBudgetDoc(
+                id: UUID(),
+                title: "2027 Adopted Budget",
+                type: .adopted,
+                year: 2027,
+                url: URL.verified("https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF"),
+                published: d(2026, 11, 17),
+                sizeMB: nil
+            ),
+            RiverheadBudgetDoc(
+                id: UUID(),
+                title: "2027 Preliminary Budget",
+                type: .preliminary,
+                year: 2027,
+                url: URL.verified("https://www.townofriverheadny.gov/DocumentCenter/View/4065/2027-Preliminary-Budget-PDF"),
+                published: nil,
+                sizeMB: nil
+            ),
+            RiverheadBudgetDoc(
+                id: UUID(),
+                title: "2027 Tentative Budget",
+                type: .tentative,
+                year: 2027,
+                url: URL.verified("https://www.townofriverheadny.gov/DocumentCenter/View/3973/2027-Tentative-Budget-PDF"),
+                published: d(2026, 9, 24),
+                sizeMB: nil
+            ),
+            RiverheadBudgetDoc(
+                id: UUID(),
+                title: "2027 Budget Supplement",
+                type: .audit, // treat Supplement as a financial reference/report
+                year: 2027,
+                url: URL.verified("https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF"),
+                published: nil,
+                sizeMB: nil
+            ),
+
             // 2026
+            RiverheadBudgetDoc(
+                id: UUID(),
+                title: "2026 Adopted Budget",
+                type: .adopted,
+                year: 2026,
+                url: URL.verified("https://www.townofriverheadny.gov/DocumentCenter/View/2967/2026-Adopted-Budget"),
+                published: nil,
+                sizeMB: nil
+            ),
             RiverheadBudgetDoc(
                 id: UUID(),
                 title: "2026 Tentative Budget",

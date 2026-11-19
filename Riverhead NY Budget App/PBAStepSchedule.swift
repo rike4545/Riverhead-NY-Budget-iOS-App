@@ -69,7 +69,7 @@ enum PBAStepSchedule {
 
     static let sourceTitle = "Signed 2023-2026 PBA contract, Article XXXVI (Salaries) and Appendix B"
 
-    static let sourceNote = "Two-tier schedule: officers hired on or after 12/3/2012 climb 7 steps (Academy through 6th Year Officer) to reach top pay; officers hired before that date reach the same top dollar figure a year sooner, with no separate 6th-year step. Detective grade pay applies once promoted, regardless of hire date. The 2027 rate for this schedule isn't set — the PBA contract expires 12/31/2026 with no successor yet public; see the 2027 spending-reduction view for how that gap is modeled."
+    static let sourceNote = "Two-tier schedule: officers hired on or after 12/3/2012 climb 7 steps (Academy through 6th Year Officer) to reach top pay; officers hired before that date reach the same top dollar figure a year sooner, with no separate 6th-year step. Detective grade pay applies once promoted, regardless of hire date. These are the 2023–2026 rates. The 2027–2030 stipulation the Board approved on November 17, 2026 (Resolution 2026-1020) raises every step 3.75% a year, plus $500 in 2027."
 
     // MARK: - What the steps actually paid
 

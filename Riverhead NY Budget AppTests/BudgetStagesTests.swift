@@ -103,3 +103,13 @@ struct BudgetLinesTests {
         #expect(SupplementData.history?.supplementYears?.last == 2027)
     }
 }
+
+struct ModelVsAdopted2027Tests {
+
+    @Test func comparesTheModelWithTheAdoptedBudget() throws {
+        let rows = try #require(ModelVsAdopted2027.rows)
+        #expect(rows.first?.adopted.contains("$66,516,005") == true)
+        // NYS retirement lines 9010 and 9015, every fund: 9,926,436 → 10,492,625.
+        #expect(rows.contains { $0.label.hasPrefix("NYS retirement") && $0.adopted.contains("566,189") })
+    }
+}

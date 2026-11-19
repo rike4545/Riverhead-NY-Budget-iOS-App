@@ -164,6 +164,11 @@ struct Budget2027SpendingReductionView: View {
 
     var body: some View {
         List {
+            Section {
+                ModelVsAdoptedCard()
+                    .listRowInsets(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+            }
+
             // Answer first: the real cap gap and the plan that closes it.
             capGapSection
             personalServicesRateSection

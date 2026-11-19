@@ -116,6 +116,7 @@ struct Proposed2027BudgetPresentationView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 header
+                ModelVsAdoptedCard()
                 metricGrid
                 budgetMessage
                 taxpayerPlan

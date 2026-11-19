@@ -953,11 +953,16 @@ private struct ExplainerFlowLayout: Layout {
 
 @MainActor
 struct SnowRemovalOverrunView: View {
-    @State private var adoptedSnowBudget: Double = 300_000
-    @State private var projectedSnowSpend: Double = 300_000
+    /// The snow line in the newest adopted budget (2027 line file), else the 2026 figures.
+    private static let snowYear: Int = BudgetLines.adoptedYear ?? 2026
+    private static let snowOT: Double = BudgetLines.byAccount["DA1-5-5142-111-NON-00000"].flatMap(BudgetLines.value) ?? 75_000
+    private static let snowContractual: Double = BudgetLines.byAccount["DA1-5-5142-400-000-00000"].flatMap(BudgetLines.value) ?? 225_000
 
-    private let personalServicesAdopted = 75_000.0
-    private let contractualAdopted = 225_000.0
+    @State private var adoptedSnowBudget: Double = SnowRemovalOverrunView.snowOT + SnowRemovalOverrunView.snowContractual
+    @State private var projectedSnowSpend: Double = SnowRemovalOverrunView.snowOT + SnowRemovalOverrunView.snowContractual
+
+    private let personalServicesAdopted = SnowRemovalOverrunView.snowOT
+    private let contractualAdopted = SnowRemovalOverrunView.snowContractual
 
     private var overrun: Double {
         max(projectedSnowSpend - adoptedSnowBudget, 0)
@@ -970,12 +975,14 @@ struct SnowRemovalOverrunView: View {
 
     var body: some View {
         List {
-            Section("Riverhead 2026 Snow Line (DA1-5-5142)") {
+            Section("Riverhead \(String(Self.snowYear)) Snow Line (DA1-5-5142)") {
                 valueRow("Personal Services (OT)", value: currency(personalServicesAdopted))
                 valueRow("Contractual", value: currency(contractualAdopted))
                 valueRow("Adopted Total", value: currency(adoptedSnowBudget))
 
-                Text("Code set: DA1-5-5142-000 / 100 / 111 / 400. 2026 adopted totals provided: OT $75,000 + Contractual $225,000 = $300,000.")
+                Text(Self.snowYear > 2026
+                     ? "Code set: DA1-5-5142-111 / 400. The \(String(Self.snowYear)) Adopted Budget sets OT at \(currency(personalServicesAdopted)) and contractual at \(currency(contractualAdopted)), up from $225,000 in 2026; the 2026 total was $300,000."
+                     : "Code set: DA1-5-5142-000 / 100 / 111 / 400. 2026 adopted totals provided: OT $75,000 + Contractual $225,000 = $300,000.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

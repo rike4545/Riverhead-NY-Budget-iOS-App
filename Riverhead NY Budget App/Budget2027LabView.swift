@@ -64,6 +64,7 @@ struct Budget2027LabView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     header
+                    ModelVsAdoptedCard()
                     presetPicker
                     panelPicker
                     dashboard

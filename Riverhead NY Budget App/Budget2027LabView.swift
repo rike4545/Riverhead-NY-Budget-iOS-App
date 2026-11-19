@@ -111,7 +111,7 @@ struct Budget2027LabView: View {
                             .font(.system(.title2, design: .rounded).weight(.bold))
                             .foregroundStyle(.white)
 
-                        Text("Build a scenario, check the tax impact, inspect department pressure, and leave with hearing-ready questions.")
+                        Text("Build a 2027 scenario from the 2026 Adopted Budget, check the tax impact, and inspect department pressure. The Board adopted the actual 2027 budget on November 17, 2026: $120,854,219 across all funds. This lab is a model, not that budget.")
                             .font(.subheadline)
                             .foregroundStyle(.white.opacity(0.9))
                             .fixedSize(horizontal: false, vertical: true)
@@ -779,7 +779,7 @@ struct Budget2027LabView: View {
     }
 
     private func taxChange(for preset: Budget2027LabPreset) -> Double {
-        let rate = store.ratePerThousand * (preset.levyGrowthPercent / 100)
+        let rate = store.modelBaseRatePerThousand * (preset.levyGrowthPercent / 100)
         return (assessment / 1_000) * rate
     }
 
@@ -1165,7 +1165,7 @@ private struct Budget2027LabScenario {
     let electedRaisePackage: Bool
     let customItems: [Budget2027CustomItem]
 
-    var currentLevyEstimate: Double { store.appropriations * 0.703 }
+    var currentLevyEstimate: Double { store.modelBaseAppropriations * 0.703 }
     var levyYield: Double { currentLevyEstimate * (levyGrowthPercent / 100) }
     var automaticPayrollPressure: Double { Budget2027LabModel.cseaPressure + Budget2027LabModel.pbaSOANonContractPressure }
 
@@ -1230,12 +1230,12 @@ private struct Budget2027LabScenario {
     }
 
     var currentReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (store.estimatedFundBalance / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (store.estimatedFundBalance / store.modelBaseAppropriations) * 100
     }
 
     var targetReserveDollars: Double {
-        store.appropriations * (reserveTargetPercent / 100)
+        store.modelBaseAppropriations * (reserveTargetPercent / 100)
     }
 
     var availableOneTimeRoom: Double {
@@ -1255,16 +1255,16 @@ private struct Budget2027LabScenario {
     }
 
     var endingReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (endingReserveDollars / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (endingReserveDollars / store.modelBaseAppropriations) * 100
     }
 
     var currentTownTax: Double {
-        (assessment / 1_000) * store.ratePerThousand
+        (assessment / 1_000) * store.modelBaseRatePerThousand
     }
 
     var sampleTaxChange: Double {
-        let rateChange = store.ratePerThousand * (levyGrowthPercent / 100)
+        let rateChange = store.modelBaseRatePerThousand * (levyGrowthPercent / 100)
         return (assessment / 1_000) * rateChange
     }
 
@@ -1278,7 +1278,7 @@ private struct Budget2027LabScenario {
     }
 
     var potentialAppropriation: Double {
-        max(store.appropriations + netRecurringSpendingChange + capitalTotal, 0)
+        max(store.modelBaseAppropriations + netRecurringSpendingChange + capitalTotal, 0)
     }
 
     var structuralStatus: String {
@@ -1409,7 +1409,7 @@ private struct Budget2027SourceTrail: Identifiable {
     static let sources: [Budget2027SourceTrail] = [
         .init(
             title: "2026 budget baseline",
-            detail: "Uses the app's current 2026 appropriations, rate, and fund-balance store values as the starting point.",
+            detail: "Starts from the 2026 Adopted Budget's General Fund appropriations and Town-wide rate, and the audited fund balance at the end of 2025. The Board adopted the actual 2027 budget on November 17, 2026.",
             confidence: "High",
             icon: "doc.richtext.fill",
             tint: RiverheadTheme.brandSky

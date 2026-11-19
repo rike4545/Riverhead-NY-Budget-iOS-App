@@ -14,7 +14,8 @@ import SwiftUI
 import Observation
 import Charts
 
-private let targetYear: Int = 2026
+/// The newest adopted budget on file (budget-stages.json): 2027 as of November 2026.
+private let targetYear: Int = BudgetStages.currentYear ?? 2026
 
 @MainActor
 public struct FundDetailView: View {
@@ -86,8 +87,13 @@ public struct FundDetailView: View {
             return money.string(from: x as NSNumber) ?? String(format: "%.0f", x)
         }
 
-        // Canonical 2026 numbers (if available)
-        let sum2026 = matchedSummary()
+        // The newest adopted budget's Summary row for this fund; the 2026 CSV row only when the newest year is 2026.
+        let cur = currentFund()
+        let sum2026 = targetYear == 2026 ? matchedSummary() : nil
+        func fmtD(_ v: Double?) -> String {
+            guard let v else { return "—" }
+            return money.string(from: v as NSNumber) ?? String(format: "%.0f", v)
+        }
         // Merged series includes store + prior-years from PDFs + 2026 fallback
         let merged = mergedSeries()
 
@@ -98,38 +104,40 @@ public struct FundDetailView: View {
 
         return LazyVGrid(columns: cols, spacing: 12) {
             kpiCard(
-                title: "Tax Levy (2026)",
+                title: "Tax Levy (\(String(targetYear)))",
                 value: {
+                    if let v = cur?.levy { return fmtD(v) }
                     if let d = sum2026?.taxLevy2026 { return fmtMoney(d) }
                     if let v = merged.levy.first(where: { $0.year == targetYear })?.value {
                         return money.string(from: v as NSNumber) ?? String(format: "%.0f", v)
                     }
                     return "—"
                 }(),
-                chip: levyYoY.map { "vs 2025: \($0.delta) (\($0.pct))" }
+                chip: levyYoY.map { "vs \(String(targetYear - 1)): \($0.delta) (\($0.pct))" }
             )
 
             kpiCard(
-                title: "Appropriations (2026)",
+                title: "Appropriations (\(String(targetYear)))",
                 value: {
+                    if let v = cur?.appropriations { return fmtD(v) }
                     if let d = sum2026?.appropriations2026 { return fmtMoney(d) }
                     if let v = merged.app.first(where: { $0.year == targetYear })?.value {
                         return money.string(from: v as NSNumber) ?? String(format: "%.0f", v)
                     }
                     return "—"
                 }(),
-                chip: appYoY.map { "vs 2025: \($0.delta) (\($0.pct))" }
+                chip: appYoY.map { "vs \(String(targetYear - 1)): \($0.delta) (\($0.pct))" }
             )
 
             kpiCard(
-                title: "Est. Revenues (2026)",
-                value: fmtMoney(sum2026?.estRevenues2026),
+                title: "Est. Revenues (\(String(targetYear)))",
+                value: cur.map { fmtD($0.revenues) } ?? fmtMoney(sum2026?.estRevenues2026),
                 chip: nil
             )
 
             kpiCard(
-                title: "Approp. Fund Balance (2026)",
-                value: fmtMoney(sum2026?.appropFundBalance2026),
+                title: "Approp. Fund Balance (\(String(targetYear)))",
+                value: cur.map { fmtD($0.fundBalance) } ?? fmtMoney(sum2026?.appropFundBalance2026),
                 chip: nil
             )
         }
@@ -320,10 +328,15 @@ public struct FundDetailView: View {
         )
     }
 
-    // MARK: 2026 Details
+    // MARK: Details for the newest adopted year
 
     private var detailsCard: some View {
-        let sum = matchedSummary()
+        let sum = targetYear == 2026 ? matchedSummary() : nil
+        let cur = currentFund()
+        func fmtD(_ v: Double?) -> String {
+            guard let v else { return "—" }
+            return Self.moneyFormatter0.string(from: v as NSNumber) ?? String(format: "%.0f", v)
+        }
         let money = Self.moneyFormatter0
         func fmt(_ d: Decimal?) -> String {
             guard let x = (d as NSDecimalNumber?)?.doubleValue else { return "—" }
@@ -331,14 +344,14 @@ public struct FundDetailView: View {
         }
 
         return VStack(alignment: .leading, spacing: 10) {
-            Text("2026 Details")
+            Text("\(String(targetYear)) Adopted Budget")
                 .font(.headline)
 
             VStack(spacing: 8) {
-                rowKV("Appropriations", fmt(sum?.appropriations2026))
-                rowKV("Estimated Revenues", fmt(sum?.estRevenues2026))
-                rowKV("Appropriated Fund Balance", fmt(sum?.appropFundBalance2026))
-                rowKV("Tax Levy", fmt(sum?.taxLevy2026))
+                rowKV("Appropriations", cur.map { fmtD($0.appropriations) } ?? fmt(sum?.appropriations2026))
+                rowKV("Estimated Revenues", cur.map { fmtD($0.revenues) } ?? fmt(sum?.estRevenues2026))
+                rowKV("Appropriated Fund Balance", cur.map { fmtD($0.fundBalance) } ?? fmt(sum?.appropFundBalance2026))
+                rowKV("Tax Levy", cur.map { fmtD($0.levy) } ?? fmt(sum?.taxLevy2026))
             }
             .padding(12)
             .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -353,7 +366,7 @@ public struct FundDetailView: View {
 
         return VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text("Departments & Sub-Accounts")
+                Text("Departments & Sub-Accounts (\(String(departments.first?.year ?? 2026)) Adopted Budget)")
                     .font(.headline)
                 Spacer()
                 Text("\(departments.count)")
@@ -365,10 +378,16 @@ public struct FundDetailView: View {
                 ContentUnavailableView(
                     "No department rows found",
                     systemImage: "list.bullet.rectangle",
-                    description: Text("The bundled 2026 table data does not expose department-level rows for this fund yet.")
+                    description: Text("The budget lines in the app do not break this fund out by department.")
                 )
                 .padding(.vertical, 8)
             } else {
+                if let note = BudgetLines.sourceNote, departments.first?.year == BudgetLines.adoptedYear {
+                    Text(note)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 VStack(spacing: 8) {
                     ForEach(departments) { department in
                         NavigationLink {
@@ -453,6 +472,13 @@ public struct FundDetailView: View {
         return (dStr, pStr)
     }
 
+    /// This fund's row in the newest adopted budget (budget-stages.json), by fund code.
+    private func currentFund() -> BudgetStageFund? {
+        guard let doc = BudgetStages.current else { return nil }
+        if let code = codeToken(from: fund) ?? matchedSummary()?.fundCode, let f = doc.funds[code] { return f }
+        return doc.funds.values.first { normalize($0.name) == normalize(fund) }
+    }
+
     /// Match this fund to the 2026 Summary row for canonical 2026 values.
     private func matchedSummary() -> RBFundSummary? {
         let all = Riverhead2026BudgetShift.fundSummaries()
@@ -480,9 +506,13 @@ public struct FundDetailView: View {
         return nil
     }
 
-    private func departmentRows() -> [RBDepartmentBudgetRow] {
-        guard let code = matchedSummary()?.fundCode ?? codeToken(from: displayTitle) else { return [] }
-        return Riverhead2026BudgetShift.departmentBudgets(fundCode: code)
+    /// The newest adopted budget's departments from its line file (2027), else the 2026 book's.
+    private func departmentRows() -> [BudgetDepartment] {
+        guard let code = codeToken(from: fund) ?? matchedSummary()?.fundCode ?? codeToken(from: displayTitle) else { return [] }
+        let book2026 = Riverhead2026BudgetShift.departmentBudgets(fundCode: code)
+        let names = Dictionary(book2026.map { ($0.functionCode, $0.name) }, uniquingKeysWith: { first, _ in first })
+        let newest = BudgetLines.departments(fundCode: code, namesByFunction: names)
+        return newest.isEmpty ? book2026.map(BudgetDepartment.init(book2026:)) : newest
     }
 
     private func codeToken(from s: String) -> String? {
@@ -537,7 +567,7 @@ public struct FundDetailView: View {
 }
 
 private struct DepartmentLinkRow: View {
-    let department: RBDepartmentBudgetRow
+    let department: BudgetDepartment
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -553,7 +583,7 @@ private struct DepartmentLinkRow: View {
                     .foregroundStyle(RiverheadTheme.textPrimary)
                     .multilineTextAlignment(.leading)
 
-                Text("\(department.fundCode) function \(department.functionCode) • \(department.subAccounts.count) sub-accounts")
+                Text("\(department.fundCode) function \(department.functionCode) • \(department.accounts.count) sub-accounts")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -561,7 +591,7 @@ private struct DepartmentLinkRow: View {
             Spacer(minLength: 8)
 
             VStack(alignment: .trailing, spacing: 4) {
-                Text(Self.money(department.adopted2026))
+                Text(budgetLineMoney(department.total))
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
                     .foregroundStyle(RiverheadTheme.textPrimary)
@@ -575,21 +605,16 @@ private struct DepartmentLinkRow: View {
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
-
-    private static func money(_ value: Decimal?) -> String {
-        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
-        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
-    }
 }
 
 private struct DepartmentBudgetDetailView: View {
-    let department: RBDepartmentBudgetRow
+    let department: BudgetDepartment
     @State private var searchText = ""
 
-    private var filteredSubAccounts: [RBSubAccountRow] {
+    private var filteredSubAccounts: [BudgetAccountLine] {
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        guard !query.isEmpty else { return department.subAccounts }
-        return department.subAccounts.filter {
+        guard !query.isEmpty else { return department.accounts }
+        return department.accounts.filter {
             $0.accountNumber.lowercased().contains(query) ||
             $0.description.lowercased().contains(query) ||
             $0.objectCode.lowercased().contains(query)
@@ -604,14 +629,14 @@ private struct DepartmentBudgetDetailView: View {
                         .font(.title2.weight(.bold))
                         .foregroundStyle(RiverheadTheme.textPrimary)
 
-                    Text("\(department.fundCode) function \(department.functionCode)")
+                    Text("\(department.fundCode) function \(department.functionCode) · \(String(department.year)) Adopted Budget")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
 
                     HStack {
-                        Label("\(department.subAccounts.count) sub-accounts", systemImage: "list.bullet.rectangle")
+                        Label("\(department.accounts.count) sub-accounts", systemImage: "list.bullet.rectangle")
                         Spacer()
-                        Text(Self.money(department.adopted2026))
+                        Text(budgetLineMoney(department.total))
                             .fontWeight(.semibold)
                             .monospacedDigit()
                     }
@@ -635,15 +660,10 @@ private struct DepartmentBudgetDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Search sub-account or code")
     }
-
-    private static func money(_ value: Decimal?) -> String {
-        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
-        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
-    }
 }
 
 private struct SubAccountLinkRow: View {
-    let account: RBSubAccountRow
+    let account: BudgetAccountLine
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -655,7 +675,7 @@ private struct SubAccountLinkRow: View {
 
                 Spacer(minLength: 8)
 
-                Text(Self.money(account.adopted2026))
+                Text(budgetLineMoney(account.primary))
                     .font(.footnote.weight(.semibold))
                     .monospacedDigit()
                     .foregroundStyle(.secondary)
@@ -668,15 +688,10 @@ private struct SubAccountLinkRow: View {
         }
         .padding(.vertical, 3)
     }
-
-    private static func money(_ value: Decimal?) -> String {
-        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
-        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
-    }
 }
 
 private struct SubAccountDetailView: View {
-    let account: RBSubAccountRow
+    let account: BudgetAccountLine
     let departmentName: String
 
     var body: some View {
@@ -700,38 +715,59 @@ private struct SubAccountDetailView: View {
             }
 
             Section("Budget Values") {
-                valueRow("2025 Budget", account.budget2025)
-                valueRow("2026 Tentative", account.tentative2026)
-                valueRow("2026 Preliminary", account.preliminary2026)
-                valueRow("2026 Adopted", account.adopted2026)
+                ForEach(account.columns, id: \.label) { column in
+                    HStack {
+                        Text(column.label)
+                        Spacer()
+                        Text(budgetLineMoney(column.value))
+                            .fontWeight(column.isPrimary ? .semibold : .regular)
+                            .monospacedDigit()
+                            .foregroundStyle(column.isPrimary ? RiverheadTheme.accent : .secondary)
+                    }
+                }
             }
 
             Section("Source") {
                 LabeledContent("Fund", value: account.fundCode)
                 LabeledContent("Function", value: account.functionCode)
                 LabeledContent("Object", value: account.objectCode)
-                LabeledContent("PDF page", value: "\(account.page)")
-                LabeledContent("Table row", value: "\(account.rowIndex)")
+                if let page = account.page {
+                    LabeledContent("PDF page", value: "\(page)")
+                }
             }
         }
         .navigationTitle("Sub-Account")
         .navigationBarTitleDisplayMode(.inline)
     }
+}
 
-    private func valueRow(_ title: String, _ value: Decimal?) -> some View {
-        HStack {
-            Text(title)
-            Spacer()
-            Text(Self.money(value))
-                .fontWeight(title == "2026 Adopted" ? .semibold : .regular)
-                .monospacedDigit()
-                .foregroundStyle(title == "2026 Adopted" ? RiverheadTheme.accent : .secondary)
-        }
-    }
+private func budgetLineMoney(_ value: Double?) -> String {
+    guard let value else { return "—" }
+    return FundDetailView.moneyFormatter0.string(from: value as NSNumber) ?? String(format: "%.0f", value)
+}
 
-    private static func money(_ value: Decimal?) -> String {
-        guard let amount = (value as NSDecimalNumber?)?.doubleValue else { return "—" }
-        return FundDetailView.moneyFormatter0.string(from: amount as NSNumber) ?? String(format: "%.0f", amount)
+private extension BudgetDepartment {
+    /// A 2026 book department, for a fund the newest line file does not cover.
+    init(book2026 row: RBDepartmentBudgetRow) {
+        func d(_ v: Decimal?) -> Double? { (v as NSDecimalNumber?)?.doubleValue }
+        self.init(
+            fundCode: row.fundCode,
+            functionCode: row.functionCode,
+            name: row.name,
+            year: 2026,
+            accounts: row.subAccounts.map { a in
+                BudgetAccountLine(
+                    fundCode: a.fundCode, functionCode: a.functionCode, objectCode: a.objectCode,
+                    accountNumber: a.accountNumber, description: a.description, page: a.page,
+                    columns: [
+                        BudgetLineValue(label: "2025 Budget", value: d(a.budget2025), isPrimary: false),
+                        BudgetLineValue(label: "2026 Tentative", value: d(a.tentative2026), isPrimary: false),
+                        BudgetLineValue(label: "2026 Preliminary", value: d(a.preliminary2026), isPrimary: false),
+                        BudgetLineValue(label: "2026 Adopted", value: d(a.adopted2026), isPrimary: true),
+                    ]
+                )
+            }
+        )
     }
 }
 

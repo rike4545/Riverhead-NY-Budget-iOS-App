@@ -348,12 +348,12 @@ struct BudgetSimulator2027View: View {
     }
 
     private var currentReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (store.estimatedFundBalance / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (store.estimatedFundBalance / store.modelBaseAppropriations) * 100
     }
 
     private var currentLevyEstimate: Double {
-        store.appropriations * 0.703
+        store.modelBaseAppropriations * 0.703
     }
 
     private var levyYield: Double {
@@ -373,7 +373,7 @@ struct BudgetSimulator2027View: View {
     }
 
     private var targetReserveDollars: Double {
-        store.appropriations * (sim.reserveTargetPercent / 100)
+        store.modelBaseAppropriations * (sim.reserveTargetPercent / 100)
     }
 
     private var availableOneTimeRoom: Double {
@@ -393,8 +393,8 @@ struct BudgetSimulator2027View: View {
     }
 
     private var endingReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (endingReserveDollars / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (endingReserveDollars / store.modelBaseAppropriations) * 100
     }
 
     private var finalBalanceAfterOneTime: Double {
@@ -416,7 +416,7 @@ struct BudgetSimulator2027View: View {
     }
 
     private var sampleTownTaxChange: Double {
-        let deltaRate = store.ratePerThousand * (sim.levyGrowthPercent / 100)
+        let deltaRate = store.modelBaseRatePerThousand * (sim.levyGrowthPercent / 100)
         return (sim.sampleAssessment / 1_000) * deltaRate
     }
 
@@ -646,7 +646,7 @@ struct BudgetSimulator2027View: View {
         .navigationTitle("2027 Simulator")
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: sim.reserveTargetPercent) { _, newValue in
-            let updatedRoom = max(store.estimatedFundBalance - (store.appropriations * (newValue / 100)), 0)
+            let updatedRoom = max(store.estimatedFundBalance - (store.modelBaseAppropriations * (newValue / 100)), 0)
             sim.oneTimeDeployment = min(sim.oneTimeDeployment, updatedRoom)
         }
         .onChange(of: sim.includeCapitalFleetPurchase) { _, _ in
@@ -773,10 +773,10 @@ struct BudgetSimulator2027View: View {
     }
 
     private var baselineCard: some View {
-        simulatorCard(title: "Starting Point", subtitle: "The simulator uses the app’s current Riverhead baseline before any 2027 policy moves.") {
+        simulatorCard(title: "Starting Point", subtitle: "The simulator starts from the 2026 Adopted Budget, before any 2027 policy moves. The Board adopted the actual 2027 budget on November 17, 2026; this remains a model.") {
             LazyVGrid(columns: metricColumns, spacing: 12) {
-                simulatorMetric("Budget year", value: store.fiscalYearTitle, tint: RiverheadTheme.accent)
-                simulatorMetric("Appropriations", value: store.appropriations.formatted(.currency(code: "USD")), tint: RiverheadTheme.gold)
+                simulatorMetric("Budget year", value: store.modelBaseTitle, tint: RiverheadTheme.accent)
+                simulatorMetric("Appropriations", value: store.modelBaseAppropriations.formatted(.currency(code: "USD")), tint: RiverheadTheme.gold)
                 simulatorMetric("Fund balance", value: store.estimatedFundBalance.formatted(.currency(code: "USD")), tint: .green)
                 simulatorMetric("Reserve ratio", value: String(format: "%.1f%%", currentReservePercent), tint: RiverheadTheme.brandSky)
             }

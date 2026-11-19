@@ -61,7 +61,7 @@ private enum CivicDestination: String, Codable, Hashable, CaseIterable {
         case .askAI: return "Ask AI"
         case .budgetHub: return "Budget Hub"
         case .supplementExplorer: return "Supplement Explorer"
-        case .budget2027Summary: return "2027 Summary"
+        case .budget2027Summary: return "2027 Model Whiteboard"
         case .budget2027Lab: return "2027 Lab"
         case .budgetSimulator: return "Budget Simulator"
         case .budgetSignals: return "Budget Signals"
@@ -130,9 +130,9 @@ private enum CivicDestination: String, Codable, Hashable, CaseIterable {
         case .performance: return "Check loading status, cached data, and startup health."
         case .askAI: return "Ask a budget or civic question in plain language."
         case .budgetHub: return "Open the main budget workspace for resident and expert views."
-        case .supplementExplorer: return "Turn 2026 supplement changes into 2027 budget questions."
-        case .budget2027Summary: return "Start with the plain-English 2027 budget story."
-        case .budget2027Lab: return "Model 2027 choices, tradeoffs, and tax impact."
+        case .supplementExplorer: return "The 2027 Budget Supplement, line by line, against 2026."
+        case .budget2027Summary: return "This app's 2027 model, made before the Board adopted the budget."
+        case .budget2027Lab: return "Model 2027 choices from the 2026 baseline: tradeoffs and tax impact."
         case .budgetSimulator: return "Change assumptions and see how the budget moves."
         case .budgetSignals: return "Scan warning signs, fiscal pressure, and policy choices."
         case .myTaxes: return "Estimate how Town budget choices may affect a household bill."
@@ -902,8 +902,8 @@ struct StartHereView: View {
         ("Check a public claim", "Open the source trail and accuracy watchlist before sharing or repeating it.", "checkmark.seal.fill", .sourceTrail),
         ("Prepare for a meeting", "Build sourced questions, notes, and testimony that are specific enough to answer.", "person.line.dotted.person.fill", .actionToolkit),
         ("Review Town Square", "Separate the contract, public costs, hotel review, parking, and performance questions.", "building.2.crop.circle", .townSquare),
-        ("Follow the 2027 budget", "Start with the executive summary, then test scenarios and tradeoffs.", "pencil.and.outline", .budget2027Summary),
-        ("Review the 2026 supplement", "Turn line-item changes into 2027 budget questions.", "doc.text.magnifyingglass", .supplementExplorer),
+        ("See this app's 2027 model", "The whiteboard made before adoption, then scenarios and tradeoffs. The Budget tab has the adopted budget.", "pencil.and.outline", .budget2027Summary),
+        ("Review the 2027 supplement", "Line-item changes from 2026 to the 2027 Adopted Budget.", "doc.text.magnifyingglass", .supplementExplorer),
         ("Think about oversight", "See how representation, liaisons, committees, and political competition shape accountability.", "person.3.sequence.fill", .pluralityGovernance),
         ("Find a department or topic", "Search tools, documents, and budget concepts.", "magnifyingglass", .search)
     ]
@@ -1073,10 +1073,10 @@ struct SourceTrailView: View {
         let fundBalancePercent = store.appropriations > 0 ? store.estimatedFundBalance / store.appropriations : 0
         return [
             EvidenceItem(
-                claim: "2026 General Fund appropriations are shown as \(store.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0)))).",
+                claim: "\(store.fiscalYearTitle) General Fund appropriations are shown as \(store.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0)))).",
                 status: "Loaded app value",
                 source: "RBBudgetStore current budget context",
-                citation: "2026 budget context loaded in app; verify against official 2026 adopted/tentative budget document.",
+                citation: "\(store.fiscalYearTitle) Summary page, from the website's budget-stages.json; verify against the official adopted budget document.",
                 pageHint: "Budget summary / General Fund appropriations table",
                 detail: "Used by dashboards, AI context, scorecard, and tax/fund-balance explanations.",
                 confidence: "High in-app confidence; verify against the adopted budget before formal use.",

@@ -30,7 +30,7 @@ struct RiverheadBudgetHubView: View {
     }
 
     private var primarySections: [BudgetSection] {
-        [.myTaxes, .overview, .proposed2027Budget, .fundBalance, .capitalDebt, .tools]
+        [.overview, .myTaxes, .executiveSummary, .fundBalance, .capitalDebt, .tools]
     }
 
     var body: some View {
@@ -135,7 +135,7 @@ struct RiverheadBudgetHubView: View {
 
                 // The section buttons just below this header are the way in, so
                 // the header names them rather than repeating them.
-                Text("Pick a section below: your taxes, where the money goes, an unofficial 2027 plan, reserves, or debt.")
+                Text("Pick a section below: your taxes, the \(String(BudgetStages.currentYear ?? 2027)) Adopted Budget, the numbers fund by fund, reserves, or debt.")
                     .font(.footnote)
                     .foregroundStyle(.white.opacity(0.88))
                     .fixedSize(horizontal: false, vertical: true)
@@ -328,11 +328,11 @@ fileprivate struct BudgetToolsDirectoryView: View {
 
     private let groups: [BudgetToolGroup] = [
         .init(
-            title: "2027 Planning",
+            title: "This app's 2027 model (made before adoption)",
             shortcuts: [
                 .init(title: "Budget Message", subtitle: "Unofficial proposal, levy target, surplus plan, and risks.", symbol: "doc.text.magnifyingglass", destination: .section(.proposed2027Budget)),
                 .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", destination: .earlyRetirementModel),
-                .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
+                .init(title: "2027 Model Whiteboard", subtitle: "This app's whiteboard of 2027 pressures, made before the Board adopted the budget.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
                 .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", destination: .section(.budget2027)),
                 .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", destination: .budgetSimulator),
                 .init(title: "Spending Reduction", subtitle: "Toggle a real, sourced \(Budget2027TaxCapOffsetModel.fullRecurringReductionPackage.formatted(.currency(code: "USD").precision(.fractionLength(0)))) savings package against the modeled payroll-pressure gap.", symbol: "scissors.circle", destination: .spendingReduction)
@@ -342,7 +342,7 @@ fileprivate struct BudgetToolsDirectoryView: View {
             title: "Evidence And Detail",
             shortcuts: [
                 .init(title: "Supplement Explorer", subtitle: "Annual report, surplus, tax-cut, and labor-pressure details.", symbol: "doc.text.magnifyingglass", destination: .section(.supplementExplorer)),
-                .init(title: "Line-Item Ledger", subtitle: "Every account with 4 years of actuals vs. budget and variance — from the 2025/2026 Supplements.", symbol: "tablecells.fill", destination: .lineItemLedger),
+                .init(title: "Line-Item Ledger", subtitle: "Every account from the 2027 Budget Supplement: 2024 and 2025 actuals, the 2026 budget, the 2027 adopted figure and its run-rate gap.", symbol: "tablecells.fill", destination: .lineItemLedger),
                 .init(title: "Outliers", subtitle: "Budget accuracy, variances, and unusual lines.", symbol: "exclamationmark.triangle.fill", destination: .section(.outliers)),
                 .init(title: "Employees", subtitle: "Payroll and public earnings views.", symbol: "person.2.fill", destination: .section(.employees)),
                 .init(title: "Glossary", subtitle: "Plain-language definitions for budget terms.", symbol: "text.book.closed.fill", destination: .section(.glossary))
@@ -794,7 +794,7 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "Tighten overtime controls",
             impact: "Accountability",
-            detail: "Start with Police Uniform OT, where 2024 actual spending was about $1.40M against a $1.0M budget and the adopted 2026 line remains $1.0M. The March activity report also shows criminal incidents rising to 167 from 144 and total incidents rising to 2,994 from 2,922, so a credible 2027 offset must come from monthly cause-of-OT reporting, scheduling review, and quarterly recovery plans, not from assuming police workload is falling."
+            detail: "Start with Police Uniform OT, where 2024 actual spending was about $1.40M against a $1.0M budget the adopted 2026 line was $1.0M, and the 2027 Adopted Budget sets it at $1,037,500 against 2025 actual spending of $1,113,609. The March activity report also shows criminal incidents rising to 167 from 144 and total incidents rising to 2,994 from 2,922, so a credible 2027 offset must come from monthly cause-of-OT reporting, scheduling review, and quarterly recovery plans, not from assuming police workload is falling."
         ),
         .init(
             title: "Budget a small civilian vacancy factor",
@@ -1275,6 +1275,16 @@ fileprivate enum BudgetRecommendations2027 {
     ]
 }
 
+/// One fund's row on an adopted budget's Summary page.
+fileprivate struct ExecutiveFundRow {
+    let fundCode: String
+    let fundName: String
+    let appropriations: Double?
+    let levy: Double?
+    let revenues: Double?
+    let fundBalance: Double?
+}
+
 @MainActor
 fileprivate struct ExecutiveBudgetSummaryView: View {
     let mode: BudgetAudienceMode
@@ -1282,8 +1292,23 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
     @Environment(\.colorScheme) private var scheme
     @State private var loadedSummaries: [RBFundSummary] = []
 
-    private var summaries: [RBFundSummary] {
-        loadedSummaries.isEmpty ? Riverhead2026BudgetShift.fundSummaries() : loadedSummaries
+    /// The newest adopted budget on file (budget-stages.json): 2027, adopted November 17, 2026.
+    private let year: Int = BudgetStages.currentYear ?? 2026
+    private var yearText: String { String(year) }
+
+    /// The newest adopted budget's Summary page, else the 2026 book's CSV rows.
+    private var summaries: [ExecutiveFundRow] {
+        if let doc = BudgetStages.current {
+            return doc.fundsByCode.map {
+                ExecutiveFundRow(fundCode: $0.code, fundName: $0.fund.name, appropriations: $0.fund.appropriations,
+                                 levy: $0.fund.levy, revenues: $0.fund.revenues, fundBalance: $0.fund.fundBalance)
+            }
+        }
+        let csv = loadedSummaries.isEmpty ? Riverhead2026BudgetShift.fundSummaries() : loadedSummaries
+        return csv.map {
+            ExecutiveFundRow(fundCode: $0.fundCode, fundName: $0.fundName, appropriations: double($0.appropriations2026),
+                             levy: double($0.taxLevy2026), revenues: double($0.estRevenues2026), fundBalance: double($0.appropFundBalance2026))
+        }
     }
 
     private var topFunds: [ExecutiveFundMixSlice] {
@@ -1297,8 +1322,8 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
         ]
 
         return summaries
-            .compactMap { row -> (RBFundSummary, Double)? in
-                guard let amount = double(row.appropriations2026), amount > 0 else { return nil }
+            .compactMap { row -> (ExecutiveFundRow, Double)? in
+                guard let amount = row.appropriations, amount > 0 else { return nil }
                 return (row, amount)
             }
             .sorted { $0.1 > $1.1 }
@@ -1315,37 +1340,37 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
     }
 
     private var totalAppropriations2026: Double {
-        summaries.compactMap { double($0.appropriations2026) }.reduce(0, +)
+        summaries.compactMap(\.appropriations).reduce(0, +)
     }
 
     private var totalTaxLevy2026: Double {
-        summaries.compactMap { double($0.taxLevy2026) }.reduce(0, +)
+        summaries.compactMap(\.levy).reduce(0, +)
     }
 
     private var totalRevenues2026: Double {
-        summaries.compactMap { double($0.estRevenues2026) }.reduce(0, +)
+        summaries.compactMap(\.revenues).reduce(0, +)
     }
 
     private var totalFundBalanceUse2026: Double {
-        summaries.compactMap { double($0.appropFundBalance2026) }.reduce(0, +)
+        summaries.compactMap(\.fundBalance).reduce(0, +)
     }
 
     private var generalFundAppropriations2026: Double {
-        double(summaries.first { $0.fundCode == "A01" }?.appropriations2026)
+        summaries.first { $0.fundCode == "A01" }?.appropriations
             ?? BudgetRecommendations2027.totalBudget2026
     }
 
     private var headlineMetrics: [ExecutiveSummaryMetric] {
         [
             .init(
-                title: "2026 total budget",
+                title: "\(yearText) total budget",
                 value: moneyShort(totalAppropriations2026),
-                caption: "\(summaries.count) funds in the 2026 budget book",
+                caption: "\(summaries.count) funds in the \(yearText) Adopted Budget",
                 symbol: "building.columns.fill",
                 tint: RiverheadTheme.accent
             ),
             .init(
-                title: "2026 tax levy",
+                title: "\(yearText) tax levy",
                 value: moneyShort(totalTaxLevy2026),
                 caption: "Local property-tax support across funds",
                 symbol: "house.and.flag.fill",
@@ -1361,7 +1386,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
             .init(
                 title: "2027 payroll pressure",
                 value: moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure),
-                caption: "Modeled automatic wage pressure before other costs",
+                caption: "This app's model of automatic wage pressure, not a Town figure",
                 symbol: "person.3.fill",
                 tint: RiverheadTheme.brandCoral
             )
@@ -1380,9 +1405,9 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
 
     private var fundingItems: [ExecutiveBridgeItem] {
         [
-            .init(label: "Estimated revenues", amount: totalRevenues2026, role: "2026 source", tint: .green),
-            .init(label: "Tax levy", amount: totalTaxLevy2026, role: "2026 source", tint: RiverheadTheme.brandTeal),
-            .init(label: "Fund balance use", amount: totalFundBalanceUse2026, role: "2026 source", tint: RiverheadTheme.brandGold)
+            .init(label: "Estimated revenues", amount: totalRevenues2026, role: "\(yearText) source", tint: .green),
+            .init(label: "Tax levy", amount: totalTaxLevy2026, role: "\(yearText) source", tint: RiverheadTheme.brandTeal),
+            .init(label: "Fund balance use", amount: totalFundBalanceUse2026, role: "\(yearText) source", tint: RiverheadTheme.brandGold)
         ].filter { $0.amount > 0 }
     }
 
@@ -1414,10 +1439,14 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
 
     private var executiveHero: some View {
         GlassCard(
-            title: "Executive Summary: 2026 Budget + 2027 Plan",
-            subtitle: mode == .resident
-                ? "Here's the short version: 2026 is where things stand today; 2027 is the bridge — wage pressure, savings, revenue, and a few targeted investments."
-                : "A compact fiscal briefing that combines the parsed 2026 fund schedule with the app's 2027 recurring-budget model."
+            title: year > 2026 ? "Executive Summary: the \(yearText) Adopted Budget" : "Executive Summary: 2026 Budget + 2027 Plan",
+            subtitle: year > 2026
+                ? (mode == .resident
+                    ? "The \(yearText) budget the Board adopted\(BudgetStages.adoptionNote(year).map { " " + $0.replacingOccurrences(of: "adopted ", with: "on ") } ?? ""), beside this app's earlier model of 2027 pressures. The model is a projection, not what the Town adopted."
+                    : "The \(yearText) Adopted Budget's Summary page, fund by fund, beside the app's 2027 recurring-budget model, which was made before the Tentative.")
+                : (mode == .resident
+                    ? "Here's the short version: 2026 is where things stand today; 2027 is the bridge — wage pressure, savings, revenue, and a few targeted investments."
+                    : "A compact fiscal briefing that combines the parsed 2026 fund schedule with the app's 2027 recurring-budget model.")
         ) {
             VStack(alignment: .leading, spacing: 12) {
                 Text(mode == .resident ? residentExecutiveSummary : expertExecutiveSummary)
@@ -1426,8 +1455,8 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
                     .fixedSize(horizontal: false, vertical: true)
 
                 HStack(spacing: 10) {
-                    executiveBadge("2026", text: "Budget book", tint: RiverheadTheme.accent)
-                    executiveBadge("2027", text: "Planning model", tint: RiverheadTheme.brandCoral)
+                    executiveBadge(yearText, text: "Adopted budget", tint: RiverheadTheme.accent)
+                    executiveBadge("2027", text: "App model", tint: RiverheadTheme.brandCoral)
                 }
             }
         }
@@ -1442,7 +1471,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
     }
 
     private var fundMixCard: some View {
-        GlassCard(title: "2026 Budget Mix", subtitle: "Largest funds by 2026 appropriations.") {
+        GlassCard(title: "\(yearText) Budget Mix", subtitle: "Largest funds by \(yearText) appropriations.") {
             if topFunds.isEmpty {
                 ContentUnavailableView("No fund data loaded", systemImage: "chart.pie")
             } else {
@@ -1452,7 +1481,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
                             slices: topFunds,
                             total: totalAppropriations2026,
                             centerValue: moneyShort(totalAppropriations2026),
-                            centerLabel: "2026 total"
+                            centerLabel: "\(yearText) total"
                         )
                         .frame(width: 164, height: 164)
 
@@ -1464,7 +1493,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
                             slices: topFunds,
                             total: totalAppropriations2026,
                             centerValue: moneyShort(totalAppropriations2026),
-                            centerLabel: "2026 total"
+                            centerLabel: "\(yearText) total"
                         )
                         .frame(maxWidth: .infinity)
                         .frame(height: 180)
@@ -1490,7 +1519,7 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
     }
 
     private var fundingCard: some View {
-        GlassCard(title: "How 2026 Is Funded", subtitle: "Estimated revenues, tax levy, and appropriated fund balance.") {
+        GlassCard(title: "How \(yearText) Is Funded", subtitle: "Estimated revenues, tax levy, and appropriated fund balance.") {
             VStack(alignment: .leading, spacing: 14) {
                 ExecutiveFundingStack(items: fundingItems, total: totalFundingSources2026)
                     .frame(height: 58)
@@ -1558,6 +1587,10 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
 
     private var sourceLinks: [BudgetSourceLink] {
         [
+            .init(title: "2027 Adopted Budget",
+                  kind: .budgetBook,
+                  note: nil,
+                  url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
             .init(title: "2026 Adopted Budget",
                   kind: .budgetBook,
                   note: nil,
@@ -1574,11 +1607,17 @@ fileprivate struct ExecutiveBudgetSummaryView: View {
     }
 
     private var residentExecutiveSummary: String {
-        "Riverhead's 2026 budget is the baseline: it shows where the money is going now, which funds carry the largest costs, and how much is supported by taxes, revenues, and fund balance. The 2027 plan should be judged by whether it pays for recurring wage pressure first, protects reserves, and then adds visible service improvements only with recurring money."
+        if year > 2026 {
+            return "The Town Board adopted the \(yearText) budget\(BudgetStages.adoptionNote(year).map { " " + $0.replacingOccurrences(of: "adopted ", with: "on ") } ?? ""): \(moneyShort(totalAppropriations2026)) across all funds, with a \(moneyShort(totalTaxLevy2026)) tax levy. The figures above are from its Summary page. The 2027 bridge further down is this app's earlier model, a projection from recent cost trends and contract raises. Judge the adopted budget by whether it pays for recurring wage pressure with recurring money and protects reserves."
+        }
+        return "Riverhead's 2026 budget is the baseline: it shows where the money is going now, which funds carry the largest costs, and how much is supported by taxes, revenues, and fund balance. The 2027 plan should be judged by whether it pays for recurring wage pressure first, protects reserves, and then adds visible service improvements only with recurring money."
     }
 
     private var expertExecutiveSummary: String {
-        "The executive view frames 2026 as the budget baseline and 2027 as a recurring-balance test. The key risk is structural payroll growth: the model carries about \(moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure)) of automatic 2027 pressure before other non-payroll escalators. The recommended posture is recurring offsets and revenue first, targeted service investments second, and reserve use limited to one-time transition, capital, or debt purposes."
+        if year > 2026 {
+            return "The \(yearText) Adopted Budget appropriates \(moneyShort(totalAppropriations2026)) across \(summaries.count) funds, with a \(moneyShort(totalTaxLevy2026)) levy and \(moneyShort(totalFundBalanceUse2026)) of appropriated fund balance. The app's 2027 model, made before the Tentative, carried about \(moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure)) of automatic payroll pressure; it is a projection, not a Town figure. The recommended posture stays recurring offsets and revenue first, targeted service investments second, and reserve use limited to one-time transition, capital, or debt purposes."
+        }
+        return "The executive view frames 2026 as the budget baseline and 2027 as a recurring-balance test. The key risk is structural payroll growth: the model carries about \(moneyShort(BudgetRecommendations2027.modeledAutomaticPayrollPressure)) of automatic 2027 pressure before other non-payroll escalators. The recommended posture is recurring offsets and revenue first, targeted service investments second, and reserve use limited to one-time transition, capital, or debt purposes."
     }
 
     private func executiveBadge(_ title: String, text: String, tint: Color) -> some View {
@@ -1810,7 +1849,7 @@ fileprivate struct ExecutiveFundMixDonut: View {
         }
         .padding(10)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Largest 2026 budget funds")
+        .accessibilityLabel("Largest \(BudgetStages.currentYear.map(String.init) ?? "2026") budget funds")
     }
 
     private func cumulativeValue(before index: Int) -> Double {
@@ -2180,22 +2219,22 @@ fileprivate struct OverviewStoryView: View {
         [
             .init(symbol: "chart.line.uptrend.xyaxis",
                   title: "Is the Town living within its means?",
-                  blurb: "The 2026 tentative budget totals $69.1 million — up from $64.9M in 2025. Levy growth is subject to NY's 2% property tax cap.",
+                  blurb: "The 2027 Adopted Budget's General Fund totals $71.9 million, up 4.1% from $69.1M in 2026. The Town-wide levy rises 1.73%, and the Supervisor's letter on the Tentative put every taxing district within the tax-cap limit.",
                   tag: "Big picture"),
             .init(symbol: "banknote.fill",
                   title: "Is the savings account healthy?",
                   blurb: "The 2025 audit (accepted September 1, 2026, Resolution 2026-834) puts the General Fund's balance at $33.3M at year-end, $28.8M of it unassigned: a large cushion well above the 15% policy floor.",
                   tag: "Fund balance"),
             .init(symbol: "list.bullet.rectangle.fill",
-                  title: "What's changing in 2026?",
-                  blurb: "Police personal services (+$1.65M), employee benefits (+$1.12M), and a one-time Ambulance District equipment purchase (+$610K) are the biggest drivers.",
+                  title: "What changed for 2027?",
+                  blurb: "The General Fund grows by $2.8M and uses $880,000 of its savings, down from $1.25M in 2026. The Board's six amendments to the Tentative cut the levy across all funds by $643,858 before it adopted the Preliminary unchanged.",
                   tag: "Changes"),
             .init(symbol: "person.2.wave.2.fill",
-                  title: "For tonight's hearing…",
-                  blurb: "Ask about recurring vs one-time costs, how much fund balance is being used and whether the policy surplus will be maintained.",
+                  title: "Questions to keep asking",
+                  blurb: "Ask which 2027 costs are recurring and which are one-time, what the $880,000 of General Fund balance pays for, and whether the 15% policy floor will be kept.",
                   tag: "Hearing"),
             .init(symbol: "checkmark.seal.fill",
-                  title: "What should a balanced 2027 budget include?",
+                  title: "What this app said a balanced 2027 budget needed",
                   blurb: BudgetRecommendations2027.residentSummary,
                   tag: "2027")
         ]
@@ -2204,23 +2243,23 @@ fileprivate struct OverviewStoryView: View {
     private var expertCards: [OverviewStoryCard] {
         [
             .init(symbol: "chart.bar.fill",
-                  title: "2026 Adopted: $69,113,159 General Fund appropriations",
-                  blurb: "+6.6% over the 2025 Adopted Budget ($64,852,829). General Fund carries most of the growth via personal services and benefits. Tax cap compliance: verify levy does not exceed the calculated limit.",
+                  title: "2027 Adopted: $71,932,070 General Fund appropriations",
+                  blurb: "+4.08% over the 2026 Adopted Budget ($69,113,159). Adopted November 17, 2026 (Resolution 2026-995, 5–0), unchanged from the Preliminary. General Fund levy $53,784,658; appropriated fund balance $880,000. The Supervisor's letter put the Tentative within a 2.79% tax-cap limit, and no override local law is in the record.",
                   tag: "Fiscal summary"),
             .init(symbol: "banknote.fill",
                   title: "Fund balance: $28,829,513 unassigned",
-                  blurb: "The 2025 audit shows the General Fund ended 2025 with $33.3M in fund balance, $28.8M of it unassigned: 41.7% of the 2026 budget. That is a large cushion next to the Town's 15% floor (Resolution 918 of 2011, which sets no ceiling).",
+                  blurb: "The 2025 audit shows the General Fund ended 2025 with $33.3M in fund balance, $28.8M of it unassigned: 41.7% of 2026 General Fund appropriations and 40.1% of 2027's. That is a large cushion next to the Town's 15% floor (Resolution 918 of 2011, which sets no ceiling).",
                   tag: "Fund balance"),
             .init(symbol: "arrow.up.right.circle.fill",
-                  title: "Key cost drivers",
-                  blurb: "Personnel (Police +6.8%, Highway +4.9%) and benefits (+5.4%) are structural. Ambulance equipment (+108%) is one-time. Confirm exclusions from the tax cap base.",
+                  title: "Key cost drivers in the 2027 General Fund",
+                  blurb: "Line by line against 2026: personal services +$1.93M (police pay +$912K), employee benefits +$1.71M (health insurance +$1.05M, police retirement +$362K), contractual +$350K. Equipment falls $157K and the transfer to the Debt Service Fund falls $1.01M. Pay and benefits are structural.",
                   tag: "Appropriations"),
             .init(symbol: "scroll.fill",
                   title: "Debt & capital posture",
-                  blurb: "No new long-term bonds proposed in the 2026 tentative. Debt service appropriations remain modest. BANs outstanding in Capital Fund should be monitored for conversion.",
+                  blurb: "Debt Service Fund bond principal falls from $3,784,600 in 2026 to $969,939 in the 2027 Adopted Budget, and BAN interest from $1,233,750 to $757,270. The General Fund's transfer to debt service drops $1,006,731. BANs outstanding in the Capital Fund should be monitored for conversion.",
                   tag: "Debt"),
             .init(symbol: "checkmark.seal.fill",
-                  title: "2027 balanced-budget package",
+                  title: "This app's 2027 balanced-budget model",
                   blurb: BudgetRecommendations2027.expertSummary,
                   tag: "2027")
         ]
@@ -2231,10 +2270,10 @@ fileprivate struct OverviewStoryView: View {
     }
 
     // In resident mode the headline metrics are shown visually by
-    // ResidentBudgetSnapshot, so the prose cards drop to the two that add
-    // context a chart can't: what to ask, and what a balanced 2027 needs.
+    // ResidentBudgetSnapshot, so the prose cards drop to the ones that add
+    // context a chart can't: the big picture, what changed, and what to ask.
     private var residentFollowUpCards: [OverviewStoryCard] {
-        residentCards.filter { $0.tag == "Hearing" || $0.tag == "2027" }
+        residentCards.filter { $0.tag == "Big picture" || $0.tag == "Changes" || $0.tag == "Hearing" }
     }
 
     @ViewBuilder
@@ -2268,14 +2307,57 @@ fileprivate struct OverviewStoryView: View {
         }
     }
 
+    /// The newest year's budget at each stage the Town printed it (budget-stages.json),
+    /// so the Summary leads with what the Board adopted.
+    private var adoptedStagesCard: some View {
+        let year = BudgetStages.currentYear ?? 2027
+        let rows = BudgetStages.stages(year)
+        let note = BudgetStages.adoptionNote(year).map { "The Town Board " + $0.replacingOccurrences(of: "adopted ", with: "adopted it on ") + "." } ?? ""
+        return GlassCard(
+            title: "The \(String(year)) Adopted Budget",
+            subtitle: "\(note) Each stage below is the Town's own Summary page, across all funds."
+        ) {
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(rows, id: \.stage) { row in
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(row.stage.label)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.textPrimary)
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text(row.doc.totals.appropriations, format: .currency(code: "USD").precision(.fractionLength(0)))
+                                .font(.subheadline.weight(.semibold))
+                                .monospacedDigit()
+                                .foregroundStyle(RiverheadTheme.textPrimary)
+                            Text("Levy \(row.doc.totals.levy.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+                                .font(.caption)
+                                .monospacedDigit()
+                                .foregroundStyle(RiverheadTheme.textSecondary)
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+                if let tw = BudgetStages.current?.townWide {
+                    Text(String(format: "Town-wide rate: %.3f per $1,000 of assessed value, %@ from %.3f the year before.",
+                                tw.rate, tw.rate >= tw.priorRate ? "up" : "down", tw.priorRate))
+                        .font(.footnote)
+                        .foregroundStyle(RiverheadTheme.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            adoptedStagesCard
+
             if mode == .resident {
                 ResidentBudgetSnapshot()
 
                 GlassCard(
-                    title: "Before tonight's hearing",
-                    subtitle: "Two things worth knowing that the numbers above don't say on their own."
+                    title: "Worth knowing about the 2027 budget",
+                    subtitle: "What the numbers above don't say on their own."
                 ) {
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(residentFollowUpCards) { card in
@@ -2286,7 +2368,7 @@ fileprivate struct OverviewStoryView: View {
             } else {
                 GlassCard(
                     title: "Budget story at a glance",
-                    subtitle: "Key fiscal metrics for the 2026 Adopted Budget. Tap a section chip above to drill deeper."
+                    subtitle: "Key fiscal metrics for the 2027 Adopted Budget, with 2026 for comparison. Tap a section chip above to drill deeper."
                 ) {
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(cards) { card in
@@ -2297,6 +2379,10 @@ fileprivate struct OverviewStoryView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -2326,9 +2412,9 @@ struct PropertyTaxScenario {
 }
 
 fileprivate enum PropertyTaxEngine {
-    // Riverhead 2026 Adopted Budget, rate table p. 6 ("Total Town Wide") — the Town's own
-    // published rate is per $1,000 of ASSESSED value, not full market value:
-    // General Fund 61.948 + Highway 8.695 + Street Lighting 0.955 = 71.598.
+    // The newest adopted budget's "Total Town Wide" rate (budget-stages.json) — the Town's own
+    // published rate is per $1,000 of ASSESSED value, not full market value. 2027 Adopted Budget:
+    // General Fund 62.710 + Highway 8.893 + Street Lighting 0.884 = 72.487 (71.598 in 2026).
     // Suffolk County towns assess residential property at a small fraction of full market
     // value rather than at 100%; MyTaxesView.swift's sourced Receiver of Taxes sheet cites a
     // 7.44% residential assessment ratio, which this reuses to convert a resident's market
@@ -2340,14 +2426,26 @@ fileprivate enum PropertyTaxEngine {
     //
     // Basic STAR is a New York SCHOOL tax exemption (RPTL 425) and does not reduce this
     // Town-only bill, so unlike an earlier version, it is not modeled here.
-    static let totalTownWideRatePerThousandAssessed: Double = 71.598
+    static let totalTownWideRatePerThousandAssessed: Double = BudgetStages.current?.townWide?.rate ?? 72.487
+    static let rateYear: Int = BudgetStages.currentYear ?? 2027
+    /// "General Fund $62.710 + Highway $8.893 + Street Lighting $0.884", from the same rate table.
+    static var rateParts: String {
+        let r = BudgetStages.current?.townWide?.fundRates
+        func f(_ code: String, _ fallback: Double) -> String { String(format: "$%.3f", r?[code]?.rate ?? fallback) }
+        return "General Fund \(f("A01", 62.71)) + Highway \(f("DA1", 8.893)) + Street Lighting \(f("SL1", 0.884))"
+    }
+    /// The Town-wide levy's change from the year before, in percent (2027: +1.73%).
+    static var adoptedLevyChangePercent: Double {
+        guard let tw = BudgetStages.current?.townWide, tw.priorLevy > 0 else { return 3.0 }
+        return BudgetStages.pct(tw.levy, tw.priorLevy)
+    }
     static let residentialAssessmentRatio: Double = 0.0744
 
     static func estimate(for scenario: PropertyTaxScenario) -> PropertyTaxEstimate {
         let assessedValue = max(scenario.marketValue, 0.0) * residentialAssessmentRatio
         let assessedThousand = assessedValue / 1_000.0
 
-        // Current-year bill already reflects the levy change baked into the 2026 rate.
+        // Current-year bill already reflects the levy change baked into the newest adopted rate.
         let currentBill = assessedThousand * totalTownWideRatePerThousandAssessed
 
         // Back-calculate prior-year bill by removing the levy change.
@@ -2381,7 +2479,7 @@ fileprivate struct MyTaxesLabView: View {
 
     @State private var marketValue: Double = 550_000.0
     @State private var inVillage: Bool = false
-    @State private var levyChangePercent: Double = 3.0
+    @State private var levyChangePercent: Double = PropertyTaxEngine.adoptedLevyChangePercent
     @State private var altLevyChangePercent: Double = 1.0
 
     private var scenario: PropertyTaxScenario {
@@ -2401,8 +2499,8 @@ fileprivate struct MyTaxesLabView: View {
             GlassCard(
                 title: "My sample tax bill",
                 subtitle: mode == .resident
-                    ? "Enter your property value and see how the 2026 town levy affects your bill. This estimates the General Fund, Highway, and Street Lighting charges together — not county, school, or special-district taxes, and not a school-tax STAR exemption, which doesn't apply to these town charges."
-                    : "2026 Total Town Wide rate: $71.598 per $1,000 of assessed value (General Fund $61.948 + Highway $8.695 + Street Lighting $0.955, per the 2026 Adopted Budget). Market value is converted to assessed value using the 7.44% residential assessment ratio. Adjust levy change to model different adoption scenarios."
+                    ? "Enter your property value and see how the \(String(PropertyTaxEngine.rateYear)) town levy affects your bill. This estimates the General Fund, Highway, and Street Lighting charges together — not county, school, or special-district taxes, and not a school-tax STAR exemption, which doesn't apply to these town charges."
+                    : "\(String(PropertyTaxEngine.rateYear)) Total Town Wide rate: $\(String(format: "%.3f", PropertyTaxEngine.totalTownWideRatePerThousandAssessed)) per $1,000 of assessed value (\(PropertyTaxEngine.rateParts), per the \(String(PropertyTaxEngine.rateYear)) Adopted Budget). Market value is converted to assessed value using the 7.44% residential assessment ratio. The levy change starts at the adopted Town-wide change; move it to model other scenarios."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
@@ -2418,9 +2516,9 @@ fileprivate struct MyTaxesLabView: View {
                     Toggle("Inside a village", isOn: $inVillage)
 
                     HStack {
-                        Text("2026 levy change vs 2025")
+                        Text("\(String(PropertyTaxEngine.rateYear)) levy change vs \(String(PropertyTaxEngine.rateYear - 1))")
                         Spacer()
-                        Text("\(levyChangePercent, specifier: "%.1f")%")
+                        Text("\(levyChangePercent, specifier: "%.2f")%")
                             .fontWeight(.semibold)
                     }
                     Slider(value: $levyChangePercent, in: -2.0...6.0, step: 0.5)
@@ -2461,7 +2559,7 @@ fileprivate struct MyTaxesLabView: View {
                         Text(
                             mode == .resident
                             ? "This is only the Town's portion of your bill. County, school, and special district levies are separate."
-                            : "Total Town Wide rate $71.598/$1,000 assessed (2026 adopted). About \(estimate.levyImpact, format: .currency(code: "USD")) of the change is attributable to the proposed levy increase."
+                            : "Total Town Wide rate $\(String(format: "%.3f", PropertyTaxEngine.totalTownWideRatePerThousandAssessed))/$1,000 assessed (\(String(PropertyTaxEngine.rateYear)) adopted). About \(estimate.levyImpact, format: .currency(code: "USD")) of the change is attributable to the levy change set above."
                         )
                         .font(.caption)
                         .foregroundStyle(RiverheadTheme.textSecondary)
@@ -2513,6 +2611,10 @@ fileprivate struct MyTaxesLabView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget – rate table and Summary",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
                 .init(title: "2026 Adopted Budget – Tax Cap section",
                       kind: .budgetBook,
                       note: nil,
@@ -2588,14 +2690,14 @@ fileprivate struct FundBalanceDashboardView: View {
 
     private let targetReservePercent = 0.288
 
-    // Real 2026 Adopted Budget figures from RBBudgetStore.
-    // General Fund: appropriations $69,113,159 · audited unassigned fund balance $28,829,513 (end of 2025).
+    // The newest adopted budget's figures from RBBudgetStore.
+    // General Fund: 2027 appropriations $71,932,070 · audited unassigned fund balance $28,829,513 (end of 2025).
     // Policy: Resolution 918 of 2011, a 15% floor and no ceiling. The 20% line is the app's reference point.
     private var snapshots: [FundBalanceSnapshot] {
         [
             .init(
                 fundName: "General Fund",
-                expenditures: store.appropriations,          // $69,113,159
+                expenditures: store.appropriations,          // $71,932,070 (2027)
                 totalFundBalance: store.estimatedFundBalance, // $28,829,513
                 unassigned: store.estimatedFundBalance,
                 policyMinimumPercent: store.fundBalancePolicy.minimumPercent  // 0.15
@@ -2613,13 +2715,13 @@ fileprivate struct FundBalanceDashboardView: View {
                 number: 1,
                 title: "Clean up the current General Fund mismatch",
                 amount: 74_283,
-                detail: "Use one-time money first to close the current A01 imbalance identified in the 2026 supplement before calling anything else balanced."
+                detail: "The 2027 Adopted Budget closes the General Fund on paper, but only by counting $880,000 of fund balance as income. Use one-time money for one-time needs, and name the recurring revenue or savings that will replace that $880,000."
             ),
             .init(
                 number: 2,
                 title: "Crush BAN interest before it compounds",
                 amount: 1_233_750,
-                detail: "The 2026 adopted budget shows BAN interest in the Debt Service Fund at about $1.234M. A one-time reserve deployment here directly reduces financing drag."
+                detail: "BAN interest in the Debt Service Fund falls from $1,233,750 in 2026 to $757,270 in the 2027 Adopted Budget, and BAN principal from $1,025,000 to $800,000. A one-time reserve deployment against what remains directly reduces financing drag."
             ),
             .init(
                 number: 3,
@@ -2794,10 +2896,10 @@ fileprivate struct FundBalanceDashboardView: View {
             }
 
             GlassCard(
-                title: mode == .resident ? "28.8% Reserve Reset" : "Deployment Scenario: 41.7% to 28.8%",
+                title: mode == .resident ? "28.8% Reserve Reset" : "Deployment Scenario: \(Int((store.estimatedFundBalance / max(store.appropriations, 1) * 100).rounded()))% to 28.8%",
                 subtitle: mode == .resident
                     ? "A playful one-time-money plan: keep a big cushion, use the rest on purpose, and show what still fits after the serious bills are paid."
-                    : "Modeled from the audited 2025 unassigned General Fund balance and the 2026 adopted budget. This scenario lowers unassigned fund balance to 28.8% of appropriations and then sequences one-time deployments."
+                    : "Modeled from the audited 2025 unassigned General Fund balance and the \(String(BudgetStages.currentYear ?? 2027)) adopted General Fund appropriations. This scenario lowers unassigned fund balance to 28.8% of appropriations and then sequences one-time deployments."
             ) {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack {
@@ -3084,6 +3186,14 @@ fileprivate struct FundBalanceDashboardView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
+                .init(title: "2027 Budget Supplement",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -3418,7 +3528,7 @@ fileprivate struct CapitalDebtExplorerView: View {
 
                     if mode == .expert {
                         Divider().opacity(0.2)
-                        Text("Total outstanding: \(debt.reduce(0) { $0 + $1.outstanding }, format: .currency(code: "USD")). BANs must be converted to long-term bonds or paid off within their term. Review the 2026 Budget Supplement for the full debt schedule.")
+                        Text("Total outstanding: \(debt.reduce(0) { $0 + $1.outstanding }, format: .currency(code: "USD")). BANs must be converted to long-term bonds or paid off within their term. Review the 2027 Budget Supplement for the full debt schedule.")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -3498,6 +3608,14 @@ fileprivate struct CapitalDebtExplorerView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
+                .init(title: "2027 Budget Supplement",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -3574,34 +3692,36 @@ struct BudgetOutlier: Identifiable {
 fileprivate struct OutlierWatchView: View {
     let mode: BudgetAudienceMode
 
-    // 2026 vs 2025 adopted budget changes — sourced from the 2026 Adopted Budget and Supplement.
-    // These are the largest year-over-year appropriation changes by department/category.
+    // 2027 vs 2026 adopted, from the 2027 line file (budget-2027-preliminary-lines.json, the
+    // Preliminary the Board adopted unchanged): each department's spending lines summed, the
+    // largest increases first. CM4's $2,959,300 move from a debt transfer to a fund balance
+    // contribution is left out: it is the same money relabeled within the fund.
     private var sampleOutliers: [BudgetOutlier] {
         [
+            .init(department: "General Fund – Health Insurance",
+                  category: "Benefits (A01 9060 and 9065)",
+                  changeDollars: 1_045_580.0,
+                  changePercent: 10.3,
+                  isOneTime: false),
             .init(department: "Police",
-                  category: "Personal Services",
-                  changeDollars: 1_652_000.0,
-                  changePercent: 6.8,
+                  category: "Department total (A01 3120)",
+                  changeDollars: 855_184.0,
+                  changePercent: 3.8,
                   isOneTime: false),
-            .init(department: "General Fund – Employee Benefits",
-                  category: "Benefits",
-                  changeDollars: 1_120_000.0,
-                  changePercent: 5.4,
+            .init(department: "Police Retirement",
+                  category: "Benefits (A01 9015)",
+                  changeDollars: 361_609.0,
+                  changePercent: 5.5,
                   isOneTime: false),
-            .init(department: "Ambulance District",
-                  category: "Equipment & Capital",
-                  changeDollars: 610_000.0,
-                  changePercent: 108.0,
-                  isOneTime: true),
-            .init(department: "Highway",
-                  category: "Personal Services",
-                  changeDollars: 480_000.0,
-                  changePercent: 4.9,
+            .init(department: "Information Technology",
+                  category: "Department total (A01 1680)",
+                  changeDollars: 291_837.0,
+                  changePercent: 18.6,
                   isOneTime: false),
-            .init(department: "Parks & Recreation",
-                  category: "Contractual",
-                  changeDollars: 195_000.0,
-                  changePercent: 16.2,
+            .init(department: "Highway Repairs",
+                  category: "Department total (DA1 5110)",
+                  changeDollars: 249_975.0,
+                  changePercent: 7.0,
                   isOneTime: false)
         ]
     }
@@ -3611,8 +3731,8 @@ fileprivate struct OutlierWatchView: View {
             GlassCard(
                 title: "What changed the most?",
                 subtitle: mode == .resident
-                    ? "Which departments' spending jumped the most from 2025 to 2026."
-                    : "Year-over-year appropriation changes by department. Source: 2026 Adopted Budget vs. 2025 Adopted Budget."
+                    ? "Which departments' spending rose the most from the 2026 to the 2027 Adopted Budget."
+                    : "Year-over-year appropriation changes by department, line by line. Source: 2027 Adopted Budget (the Preliminary, adopted unchanged) against the 2026 Adopted Budget it prints beside each line."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(sampleOutliers) { item in
@@ -3679,6 +3799,10 @@ fileprivate struct OutlierWatchView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -3909,7 +4033,7 @@ fileprivate struct HearingToolkitView: View {
         [
             "Is the Town's savings account staying above the 15% minimum policy after this budget?",
             "The 2027 budget uses $880,000 of General Fund savings. With $28.8M unassigned at the end of 2025, what is the plan for the rest?",
-            "Police personal services are up $1.65M — is that from new hires, raises, or overtime?",
+            "Police pay rises $912K in the 2027 budget, after $1.65M in 2026 — how much is from the new PBA and SOA contracts, new hires, or overtime?",
             "OSC said Riverhead's CPF spending and debt payments were proper, but some CPF collections were not logged or deposited on time — what changed to fix that before the next audit?",
             "If the Supervisor recommends an exempt Budget Officer, what financial training or accounting experience does that person have?",
             "If Riverhead adopts a Community Housing Fund, who sits on the advisory board and how will the public see what projects it recommends?",
@@ -3919,7 +4043,7 @@ fileprivate struct HearingToolkitView: View {
             "Will the Town publish a budget calendar and monthly budget reports so residents can see when the tentative budget changes and whether spending is staying on track?",
             "If Riverhead has long used a 15% fund balance floor, why is the General Fund now above 40% of annual spending, and what target does the Board think is actually appropriate now?",
             "Will Riverhead adopt a rule that normal General Fund spending growth cannot run faster than its three-year average revenue growth plus three-year average population growth unless the Board overrides it in public?",
-            "The Ambulance District has a $610K equipment purchase — how will it be paid for?",
+            "The 2026 Ambulance District budget had a $610K equipment purchase — how was it paid for?",
             "Could a small community improvement grant round help fund visible neighborhood ideas without growing the recurring budget?",
             "Will next year's total levy stay within the State levy-limit formula after TBGF, PILOTs, carryover, and exclusions are calculated?"
         ]
@@ -3928,8 +4052,8 @@ fileprivate struct HearingToolkitView: View {
     // Expert talking points: technically framed for OSC/fiscal compliance context
     private var expertTalkingPoints: [String] {
         [
-            "The 2027 Adopted Budget appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 41.7% of the 2026 budget and $18.5M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
-            "Personnel services growth (Police +6.8%, Highway +4.9%) outpaces CPI. What contract provisions drive this, and how does it affect the out-year levy cap forecast?",
+            "The 2027 Adopted Budget appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 40.1% of 2027 General Fund appropriations and about $18.0M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
+            "General Fund personal services rise $1.93M and benefits $1.71M in the 2027 Adopted Budget, while the transfer to the Debt Service Fund falls $1.01M. If debt costs stop falling, how does recurring pay and benefit growth fit under the out-year levy cap?",
             "OSC's February 2024 CPF audit found Riverhead's CPF disbursements and debt service were proper, but some collections were not date-stamped and nine deposits totaling $5.3 million were not deposited within 10 days. What written control changes, training, and receipt-tracking steps have been implemented since then?",
             "If the Supervisor designates or recommends an exempt Budget Officer, what minimum qualifications in accounting, municipal finance, or budget administration does the Board require to preserve independent budget scrutiny and effective pluralism?",
             "If the Town adopts the 0.5% Community Housing Fund tax, what ordinance will govern the advisory board's appointments, recommendation process, conflict rules, and annual reporting?",
@@ -4299,7 +4423,7 @@ fileprivate struct HearingToolkitView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             GlassCard(
-                title: mode == .resident ? "Notes for tonight's hearing" : "Hearing prep notes",
+                title: mode == .resident ? "Notes for a Town Board meeting" : "Hearing prep notes",
                 subtitle: mode == .resident
                     ? "Jot down questions and comments, then share them or email them to yourself."
                     : "Draft testimony points, cite specific line items, and share with colleagues or the Town Clerk."
@@ -4490,8 +4614,8 @@ fileprivate struct HearingToolkitView: View {
                     quickReadRow(
                         title: "Why Police OT is the first offset",
                         detail: mode == .resident
-                            ? "Police Uniform OT came in about $401K over budget in 2024, while the adopted 2026 line still sits at $1.0M. But March workload was not down: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922. The app treats $250K as a recovery target only if the Town publishes monthly OT causes and manages scheduling tightly."
-                            : "Police Uniform OT actuals were $1.401M in 2024 versus a $1.0M budget, and the 2026 adopted baseline is still $1.0M. Recovering $250K would capture about \(BudgetRecommendations2027.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1)))) of the 2024 variance, but March activity data shows criminal incidents and total incidents up year over year. That makes cause coding and coverage constraints essential.",
+                            ? "Police Uniform OT came in about $401K over budget in 2024 and $114K over in 2025, and the 2027 Adopted Budget line is $1,037,500. But March workload was not down: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922. The app treats $250K as a recovery target only if the Town publishes monthly OT causes and manages scheduling tightly."
+                            : "Police Uniform OT actuals were $1.401M in 2024 and $1.114M in 2025 against a $1.0M budget; the 2027 Adopted Budget line is $1,037,500. Recovering $250K would capture about \(BudgetRecommendations2027.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1)))) of the 2024 variance, but March activity data shows criminal incidents and total incidents up year over year. That makes cause coding and coverage constraints essential.",
                         tint: RiverheadTheme.brandSky
                     )
 
@@ -4674,10 +4798,10 @@ fileprivate struct HearingToolkitView: View {
             }
 
             GlassCard(
-                title: "2026 Correction Watch",
+                title: "2027 Correction Watch",
                 subtitle: mode == .resident
-                    ? "Based on the 2026 Budget Supplement, here are the funds the board should be explaining — or fixing — in the open."
-                    : "Fund-level issues pulled from the 2026 Budget Supplement that warrant reconciliation, reserve-use disclosure, or explicit board findings."
+                    ? "Based on the 2027 Adopted Budget, here are the funds the board should be explaining — or fixing — in the open."
+                    : "Fund-level issues in the 2027 Adopted Budget and its Supplement that warrant reconciliation, reserve-use disclosure, or explicit board findings."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(correctionLines) { line in
@@ -4800,9 +4924,9 @@ fileprivate struct HearingToolkitView: View {
             }
 
             GlassCard(
-                title: mode == .resident ? "Questions to ask tonight" : "Technically-framed talking points",
+                title: mode == .resident ? "Questions to ask the Board" : "Technically-framed talking points",
                 subtitle: mode == .resident
-                    ? "Based on the real 2026 tentative budget numbers — written for residents, not accountants."
+                    ? "Based on the 2027 Adopted Budget and the 2025 audit — written for residents, not accountants."
                     : "Framed around OSC guidance, NY Local Finance Law, and GASB 54 compliance."
             ) {
                 VStack(alignment: .leading, spacing: 6) {

@@ -2,14 +2,14 @@
 //  ResidentBudgetSnapshot.swift
 //  Riverhead NY Budget App
 //
-//  Numbers-first "at a glance" view of the 2026 budget for everyday residents:
+//  Numbers-first "at a glance" view of the newest adopted budget (2027) for everyday residents:
 //  big KPI tiles, a fund-balance health bar (where reserves sit against the
 //  Town's own 15% floor, with the app's 20% reference line), and a proportional chart of what's
 //  pushing the budget up — replacing the previous all-prose summary cards.
 //
 //  Headline dollar figures come from RBBudgetStore so they stay consistent with
-//  the rest of the app and the AI assistant. The year-over-year and cost-driver
-//  figures are the 2026 Adopted Budget values already cited in the app.
+//  the rest of the app and the AI assistant. The year-over-year comparison reads the
+//  prior adopted year from BudgetStages; the cost drivers are the 2026 Adopted Budget's.
 //
 //  Swift 6 · iOS 17+
 //
@@ -21,8 +21,9 @@ struct ResidentBudgetSnapshot: View {
     @Environment(RBBudgetStore.self) private var store
     @Environment(\.colorScheme) private var scheme
 
-    // 2025 adopted total, for the year-over-year comparison (2026 Adopted Budget).
-    private let priorYearTotal: Double = 64_895_000
+    /// The newest adopted year (2027) and the General Fund appropriations of the year before.
+    private let year: Int = BudgetStages.currentYear ?? 2027
+    private let priorYearTotal: Double = BudgetStages.prior?.generalFund?.appropriations ?? 69_113_159
 
     // The biggest drivers of the 2026 increase, in dollars (2026 Adopted Budget).
     private struct Driver: Identifiable {
@@ -31,11 +32,28 @@ struct ResidentBudgetSnapshot: View {
         let amount: Double
         let oneTime: Bool
     }
-    private let drivers: [Driver] = [
+    /// The 2026 Adopted Budget's drivers, kept for when the newest line file is missing.
+    private static let drivers2026: [Driver] = [
         .init(label: "Police personal services", amount: 1_650_000, oneTime: false),
         .init(label: "Employee benefits",         amount: 1_120_000, oneTime: false),
         .init(label: "Ambulance equipment",       amount: 610_000,   oneTime: true),
     ]
+
+    /// The year the drivers describe: the newest adopted line file's (2027), else 2026.
+    private let driverYear: Int = BudgetLines.adoptedYear ?? 2026
+
+    /// The General Fund's three largest increases by kind of spending, from the newest
+    /// adopted line file (each account line, 2026 adopted against 2027 adopted).
+    private var drivers: [Driver] {
+        let groups = BudgetLines.changeByGroup(fundCode: "A01").filter { $0.change > 0 }.prefix(3)
+        guard !groups.isEmpty else { return Self.drivers2026 }
+        return groups.map { Driver(label: $0.group.rawValue, amount: $0.change, oneTime: false) }
+    }
+
+    /// The General Fund's largest decrease by kind of spending, for the footnote.
+    private var largestCut: (group: BudgetLines.CostGroup, change: Double)? {
+        BudgetLines.changeByGroup(fundCode: "A01").filter { $0.change < 0 }.min { $0.change < $1.change }
+    }
 
     private var appropriations: Double { store.appropriations }
     private var fundBalance: Double { store.estimatedFundBalance }
@@ -66,8 +84,8 @@ struct ResidentBudgetSnapshot: View {
     private var kpiTiles: some View {
         kpiTile(
             value: compactUSD(appropriations),
-            label: "Total 2026 budget",
-            caption: "\(signedPercent(yoyChange)) vs 2025",
+            label: "\(String(year)) General Fund budget",
+            caption: "\(signedPercent(yoyChange)) vs \(String(year - 1))",
             accent: RiverheadTheme.brandSky
         )
         kpiTile(
@@ -187,11 +205,22 @@ struct ResidentBudgetSnapshot: View {
 
     // MARK: - Cost-driver bars
 
+    private var driverFootnote: String {
+        guard driverYear > 2026 else {
+            return "Recurring pay and benefits are the lasting drivers; one-time items go away the next year."
+        }
+        var text = "Each account line of the \(String(driverYear)) Adopted Budget against 2026, grouped by kind of spending. Pay and benefits are recurring costs."
+        if let cut = largestCut {
+            text += " The largest decrease: \(cut.group.rawValue.lowercased()), down \(compactUSD(abs(cut.change)))."
+        }
+        return text
+    }
+
     private var driversCard: some View {
         let maxAmount = drivers.map(\.amount).max() ?? 1
 
         return VStack(alignment: .leading, spacing: 12) {
-            Text("What's pushing the budget up in 2026")
+            Text(driverYear > 2026 ? "What pushed the \(String(driverYear)) General Fund up" : "What pushed the 2026 budget up")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(RiverheadTheme.textPrimary)
 
@@ -225,7 +254,7 @@ struct ResidentBudgetSnapshot: View {
                 .accessibilityLabel("\(d.label): up \(compactUSD(d.amount))\(d.oneTime ? ", one-time" : "")")
             }
 
-            Text("Recurring pay and benefits are the lasting drivers; one-time items go away next year.")
+            Text(driverFootnote)
                 .font(.footnote)
                 .foregroundStyle(RiverheadTheme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)

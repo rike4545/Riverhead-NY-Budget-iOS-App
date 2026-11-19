@@ -28,6 +28,8 @@ struct BudgetAccuracyWatchlistView: View {
         let plainEnglish: String?
         let issue: String
         let action: String
+        /// The flagged account, to read its newer figures from the 2027 Supplement.
+        let account: String?
 
         init(
             rank: Int,
@@ -39,7 +41,8 @@ struct BudgetAccuracyWatchlistView: View {
             adopted2026: String,
             plainEnglish: String? = nil,
             issue: String,
-            action: String
+            action: String,
+            account: String? = nil
         ) {
             self.rank = rank
             self.title = title
@@ -51,6 +54,7 @@ struct BudgetAccuracyWatchlistView: View {
             self.plainEnglish = plainEnglish
             self.issue = issue
             self.action = action
+            self.account = account
         }
     }
 
@@ -66,7 +70,8 @@ struct BudgetAccuracyWatchlistView: View {
                 adopted2026: "$35,400",
                 plainEnglish: "This is usually cash paid to management or exempt employees for accrued leave, not normal salary. It can be caused by retirements, resignations, separation payouts, unused vacation/personal/comp time cash-outs, or a one-time settlement or reclassification.",
                 issue: "The 2024 actual was nearly 10 times the recurring baseline shown for 2025, yet the 2026 line rises only modestly. This may be deferred buyout payments, a settlement, or reclassification, but the current supplement trail does not explain it.",
-                action: "Require an immediate account-level explanation and identify whether the 2024 actual was amended, reclassified, or left to absorb silently."
+                action: "Require an immediate account-level explanation and identify whether the 2024 actual was amended, reclassified, or left to absorb silently.",
+                account: "A01-1-1310-153-000-00000"
             ),
             .init(
                 rank: 2,
@@ -77,7 +82,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "+809%",
                 adopted2026: "$6,265",
                 issue: "The 2026 budget repeats the 2025 amount despite 2024 actual spending at about nine times the line.",
-                action: "Confirm whether charges were misposted in 2024 or whether the recurring postage baseline is chronically understated."
+                action: "Confirm whether charges were misposted in 2024 or whether the recurring postage baseline is chronically understated.",
+                account: "A01-1-1620-421-000-00000"
             ),
             .init(
                 rank: 3,
@@ -89,7 +95,8 @@ struct BudgetAccuracyWatchlistView: View {
                 adopted2026: "$1,000,000",
                 plainEnglish: "Uniform OT means overtime for sworn uniformed police personnel. It is driven by minimum staffing rules, vacancies, sick or vacation backfill, shift coverage, arrests, court time, events, emergencies, training coverage, and contract overtime premiums.",
                 issue: "The account is frozen below actual spend, making police costs look smaller at adoption while overruns are absorbed later. March workload data complicates the offset story: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922, even though accidents and summonses fell.",
-                action: "Treat this as the first 2027 offset test: either reset the recurring overtime baseline honestly, or publish a monthly Police OT recovery plan showing how much of the $401K 2024 overrun can be captured through scheduling, cause coding, and tighter court/recall/training/event review without assuming workload has declined."
+                action: "Treat this as the first 2027 offset test: either reset the recurring overtime baseline honestly, or publish a monthly Police OT recovery plan showing how much of the $401K 2024 overrun can be captured through scheduling, cause coding, and tighter court/recall/training/event review without assuming workload has declined.",
+                account: "A01-3-3120-111-UNI-00000"
             ),
             .init(
                 rank: 4,
@@ -101,7 +108,8 @@ struct BudgetAccuracyWatchlistView: View {
                 adopted2026: "$116,900",
                 plainEnglish: "This is payment for unused sick leave under police contract or work rules. It can come from retirement or separation payouts, annual sick-leave sellbacks if permitted, or accumulated sick banks converting into cash.",
                 issue: "The 2024 actual was nearly double budget, but the 2026 budget cuts the line by about one-third.",
-                action: "Identify the contract change, usage change, or accounting correction that would make the lower 2026 number realistic."
+                action: "Identify the contract change, usage change, or accounting correction that would make the lower 2026 number realistic.",
+                account: "A01-3-3120-152-000-00000"
             ),
             .init(
                 rank: 5,
@@ -112,7 +120,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "No budget",
                 adopted2026: "$0",
                 issue: "A personal-services payment was made against a line with no 2025 or 2026 budget.",
-                action: "Determine whether this was a misposting or staff paid outside a visible appropriation."
+                action: "Determine whether this was a misposting or staff paid outside a visible appropriation.",
+                account: "A01-3-3410-102-000-00000"
             ),
             .init(
                 rank: 6,
@@ -123,7 +132,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "One-time",
                 adopted2026: "$0",
                 issue: "The body-camera purchase is a separate Police equipment account, not part of IT Equipment. It may be a one-time capital outlay, but the supplement shows no adopted baseline for the account.",
-                action: "Confirm the capital authorization, funding source, and budget amendment trail so the one-time purchase is not confused with recurring IT equipment."
+                action: "Confirm the capital authorization, funding source, and budget amendment trail so the one-time purchase is not confused with recurring IT equipment.",
+                account: "A01-3-3120-240-305-00000"
             ),
             .init(
                 rank: 7,
@@ -134,7 +144,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "+119%",
                 adopted2026: "$164,660",
                 issue: "IT Equipment is its own variance: 2024 actual was about 2.2 times the 2025 adopted baseline, then the 2026 line is cut further.",
-                action: "Confirm what drove the 2024 equipment spike and whether the lower 2026 equipment baseline is operationally sustainable."
+                action: "Confirm what drove the 2024 equipment spike and whether the lower 2026 equipment baseline is operationally sustainable.",
+                account: "A01-1-1680-240-000-00000"
             ),
             .init(
                 rank: 8,
@@ -145,7 +156,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "+541%",
                 adopted2026: "$400,963",
                 issue: "This is consistent with a non-cash GASB 75/OPEB actuarial allocation through the sewer enterprise fund's hospitalization account, rather than normal insurance payments. The supplement does not explain the swing before returning to a much lower 2026 baseline.",
-                action: "Tie the 2024 charge to the audited OPEB allocation or journal entry, identify where it was disclosed, and explain why the supplement does not label the spike as non-cash accounting activity."
+                action: "Tie the 2024 charge to the audited OPEB allocation or journal entry, identify where it was disclosed, and explain why the supplement does not label the spike as non-cash accounting activity.",
+                account: "ES1-9-9060-810-NON-00000"
             ),
             .init(
                 rank: 9,
@@ -167,7 +179,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "No budget",
                 adopted2026: "$0",
                 issue: "A six-figure consulting spend appears with no 2025 or 2026 budget line.",
-                action: "Determine whether this was grant-funded, reimbursed, or an unappropriated consulting expenditure."
+                action: "Determine whether this was grant-funded, reimbursed, or an unappropriated consulting expenditure.",
+                account: "A01-8-8020-436-100-00000"
             ),
             .init(
                 rank: 11,
@@ -178,7 +191,8 @@ struct BudgetAccuracyWatchlistView: View {
                 variance: "YTD $7K",
                 adopted2026: "$43,200",
                 issue: "The $7,000 amount is 2025 YTD, not 2024 actual. The account had no 2025 adopted baseline, then gets formalized at $43,200 for 2026.",
-                action: "Explain the event plan, funding source, public purpose, and why the new 2026 baseline is being created after mid-year spending appeared in 2025."
+                action: "Explain the event plan, funding source, public purpose, and why the new 2026 baseline is being created after mid-year spending appeared in 2025.",
+                account: "A01-8-8686-450-000-00000"
             )
         ]
     }
@@ -191,7 +205,7 @@ struct BudgetAccuracyWatchlistView: View {
                         .font(.headline)
                         .foregroundStyle(.red)
 
-                    Text("The supplement compares 2024 actuals to the 2025 adopted baseline, 2025 mid-year activity, department requests, and the 2026 tentative budget. These flags show where the recurring baseline does not line up with actual spending patterns and needs explanation before 2026 is treated as realistic.")
+                    Text("These flags were first drawn from the 2026 Budget Supplement, which compared 2024 actuals to the 2025 adopted baseline. Each now also shows its 2025 actual, 2026 adopted and 2027 Adopted figures from the 2027 Supplement (the 2027 Preliminary, adopted unchanged on November 17, 2026), so you can see whether the new budget fixed the gap.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
@@ -217,7 +231,7 @@ struct BudgetAccuracyWatchlistView: View {
             }
 
             Section("Revenue Baseline Warning") {
-                Text("Interest earnings are budgeted unusually low compared with actual receipts: General Fund interest shows $1.936M actual against a $50K baseline, DA1 shows $301.8K against $5K, and EW1 shows $307.8K against $400. That deserves separate review because understated revenue can create hidden year-end cushion while recurring expenses are also underbudgeted.")
+                Text("Interest earnings were budgeted far below actual receipts. General Fund interest came in at $1.936M in 2024 and $1.491M in 2025 against a $50K budget; the 2027 Adopted Budget raises it to $1.0M. DA1 took in $251K in 2025 against $5K, now $155K. EW1 took in $423K in 2025 against $400, now $11,371. Understated revenue can create a hidden year-end cushion while recurring expenses are also underbudgeted.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -243,6 +257,8 @@ struct BudgetAccuracyWatchlistView: View {
 
                             Spacer(minLength: 8)
                         }
+
+                        newerFigures(for: flag)
 
                         HStack {
                             moneyBlock("2024 actual", flag.actual2024, tint: .red)
@@ -291,12 +307,12 @@ struct BudgetAccuracyWatchlistView: View {
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             } header: {
-                Text("Seven-Year View \u{00B7} 2020\u{2013}2026 Supplements")
+                Text("\(String(h.supplementYears?.count ?? 7))-Year View \u{00B7} \(String(h.supplementYears?.first ?? 2020))\u{2013}\(String(h.supplementYears?.last ?? 2026)) Supplements")
             }
 
             if !h.underBudgeted.isEmpty {
                 Section {
-                    Text("These sit at or near zero for years, so any single-year comparison reads them as dead lines. Then the bill arrives. Together the 2026 budget is \(h.underBudgeted.reduce(0) { $0 + $1.shortfall }.formatted(.currency(code: "USD").precision(.fractionLength(0)))) short of what they cost in the years they actually happened.")
+                    Text("These sit at or near zero for years, so any single-year comparison reads them as dead lines. Then the bill arrives. Together the \(String(h.proposalYear)) budget is \(h.underBudgeted.reduce(0) { $0 + $1.shortfall }.formatted(.currency(code: "USD").precision(.fractionLength(0)))) short of what they cost in the years they actually happened.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                     ForEach(h.underBudgeted) { line in
@@ -308,8 +324,8 @@ struct BudgetAccuracyWatchlistView: View {
                             HStack {
                                 Text("Costs \(line.averageWhenActive.formatted(.currency(code: "USD").precision(.fractionLength(0)))) when it happens")
                                 Spacer()
-                                Text("2026: \(line.tentative2026.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
-                                    .foregroundStyle(line.tentative2026 == 0 ? RiverheadTheme.brandCoral : RiverheadTheme.textSecondary)
+                                Text("\(String(h.proposalYear)): \(line.proposed.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+                                    .foregroundStyle(line.proposed == 0 ? RiverheadTheme.brandCoral : RiverheadTheme.textSecondary)
                             }
                             .font(.caption2)
                             .foregroundStyle(RiverheadTheme.textSecondary)
@@ -321,12 +337,12 @@ struct BudgetAccuracyWatchlistView: View {
                 }
             }
 
-            if !h.dueIn2027.isEmpty {
+            if !h.dueInBudgetYear.isEmpty {
                 Section {
-                    Text("Spending here repeats on an interval rather than every year. The last spike and the interval put the next one in 2027 \u{2014} the budget being written now.")
+                    Text("Spending here repeats on an interval rather than every year. The last spike and the interval put the next one in \(String(h.proposalYear)), the year this budget covers.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
-                    ForEach(h.dueIn2027) { c in
+                    ForEach(h.dueInBudgetYear) { c in
                         VStack(alignment: .leading, spacing: 4) {
                             Text(c.name)
                                 .font(.subheadline.weight(.semibold))
@@ -335,7 +351,7 @@ struct BudgetAccuracyWatchlistView: View {
                                 .font(.caption2.weight(.bold))
                                 .foregroundStyle(RiverheadTheme.brandGold)
                             sparkline(c.series)
-                            Text("About \(c.spikeAverage.formatted(.currency(code: "USD").precision(.fractionLength(0)))) when it lands; the 2026 budget carries \(c.tentative2026.formatted(.currency(code: "USD").precision(.fractionLength(0)))).")
+                            Text("About \(c.spikeAverage.formatted(.currency(code: "USD").precision(.fractionLength(0)))) when it lands; the \(String(h.proposalYear)) budget carries \(c.proposed.formatted(.currency(code: "USD").precision(.fractionLength(0)))).")
                                 .font(.caption2)
                                 .foregroundStyle(RiverheadTheme.textSecondary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -343,7 +359,7 @@ struct BudgetAccuracyWatchlistView: View {
                         .padding(.vertical, 2)
                     }
                 } header: {
-                    Text("On A Cycle, Due Again In 2027")
+                    Text("On A Cycle, Due Again In \(String(h.proposalYear))")
                 }
             }
 
@@ -393,33 +409,33 @@ struct BudgetAccuracyWatchlistView: View {
     private var dataDrivenSections: some View {
         if let o = SupplementData.outliers {
             Section {
-                Text("Beyond the curated flags above, these are auto-detected across all ~1,700 expenditure lines in the 2026 Supplement. Mandated costs (pension, workers' comp, insurance, debt service) and revenue are excluded — their variance is obligation or timing, not waste.")
+                Text("Beyond the curated flags above, these are auto-detected across the expenditure lines of the \(String(o.budgetYear)) Supplement. Mandated costs (pension, workers' comp, insurance, debt service) and revenue are excluded — their variance is obligation or timing, not waste.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             } header: {
-                Text("Data-Detected · 2026 Supplement")
+                Text("Data-Detected · \(String(o.budgetYear)) Supplement")
             }
 
             outlierSection(
                 "Over-Budget vs. Trailing Actuals",
                 subtitle: "Controllable lines budgeted >30% above their run-rate. Recoverable pool: \(o.recoverablePoolControllable.formatted(.currency(code: "USD").precision(.fractionLength(0)))).",
-                items: o.overBudget, tint: RiverheadTheme.brandCoral, amountLabel: "over"
+                items: o.overBudget, tint: RiverheadTheme.brandCoral, amountLabel: "over", year: o.budgetYear
             )
             outlierSection(
                 "Chronic Overruns",
-                subtitle: "2024 actual ran well above the 2025 adopted budget — a sign the baseline is unrealistic.",
-                items: o.chronicOverrun, tint: .orange, amountLabel: "over budget"
+                subtitle: "\(String(o.budgetYear - 2)) actual ran well above the \(String(o.budgetYear - 1)) adopted budget — a sign the baseline is unrealistic.",
+                items: o.chronicOverrun, tint: .orange, amountLabel: "over budget", year: o.budgetYear
             )
             outlierSection(
                 "Spending With No Budget",
-                subtitle: "Real spending on lines the 2025 budget set to zero (interfund transfers excluded).",
-                items: o.noBudget, tint: .red, amountLabel: "spent"
+                subtitle: "Real spending on lines the \(String(o.budgetYear - 1)) budget set to zero (interfund transfers excluded).",
+                items: o.noBudget, tint: .red, amountLabel: "spent", year: o.budgetYear
             )
         }
     }
 
     @ViewBuilder
-    private func outlierSection(_ title: String, subtitle: String, items: [SupplementOutlier], tint: Color, amountLabel: String) -> some View {
+    private func outlierSection(_ title: String, subtitle: String, items: [SupplementOutlier], tint: Color, amountLabel: String, year: Int) -> some View {
         if !items.isEmpty {
             Section {
                 ForEach(items.prefix(12)) { item in
@@ -433,7 +449,7 @@ struct BudgetAccuracyWatchlistView: View {
                                 .font(.subheadline.weight(.bold))
                                 .foregroundStyle(tint)
                         }
-                        Text("\(item.fund) · 2024 actual \(usd(item.actual2024)) → 2026 tentative \(usd(item.tentative2026)) · \(amountLabel)")
+                        Text("\(item.fund) · \(String(year - 2)) actual \(usd(item.actual)) → \(String(year)) \(BudgetLines.adoptedYear == year ? "adopted" : "proposed") \(usd(item.proposal)) · \(amountLabel)")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -444,6 +460,24 @@ struct BudgetAccuracyWatchlistView: View {
             } footer: {
                 Text(subtitle)
             }
+        }
+    }
+
+    /// The flagged line in the newest Supplement (2027): its latest actual and the new year's figure.
+    @ViewBuilder
+    private func newerFigures(for flag: BudgetAccuracyFlag) -> some View {
+        if let current = SupplementData.currentLines, let account = flag.account,
+           let line = current.lines.first(where: { $0.account == account }) {
+            let y = current.supplementYear
+            let stage = BudgetLines.adoptedYear == y ? "adopted" : "proposed"
+            HStack {
+                moneyBlock("\(String(y - 2)) actual", usd(line.actual), tint: .red)
+                Spacer()
+                moneyBlock("\(String(y - 1)) adopted", usd(line.adopted), tint: .secondary)
+                Spacer()
+                moneyBlock("\(String(y)) \(stage)", usd(line.proposal), tint: .blue)
+            }
+            .accessibilityElement(children: .combine)
         }
     }
 

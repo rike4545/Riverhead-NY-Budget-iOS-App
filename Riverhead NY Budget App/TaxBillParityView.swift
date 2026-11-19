@@ -31,6 +31,18 @@ struct TaxBillParityDocument: Decodable, Sendable {
         let totalTownWide: Double
     }
 
+    /// The newest adopted budget's rates per $1,000, from the bundled budget-stages.json
+    /// (the "Total Town Wide" row and each town-wide fund's rate). Nil until a year newer
+    /// than this document's 2026 rates is adopted, or when the bundle lacks the file.
+    static var newerAdoptedRates: (year: Int, rates: Rates)? {
+        guard let year = BudgetStages.currentYear, year > 2026,
+              let tw = BudgetStages.current?.townWide,
+              let gf = tw.fundRates?["A01"]?.rate,
+              let hw = tw.fundRates?["DA1"]?.rate,
+              let sl = tw.fundRates?["SL1"]?.rate else { return nil }
+        return (year, Rates(generalFund: gf, highway: hw, streetLighting: sl, totalTownWide: tw.rate))
+    }
+
     struct Equalization: Decodable, Sendable {
         let residentialAssessmentRatio: Double
         let asOfYear: Int
@@ -98,21 +110,28 @@ struct NativeTaxBillParityView: View {
         let effectiveAssessed = inputMode == .assessed
             ? assessedValue
             : marketValue * (data.equalization.residentialAssessmentRatio / 100)
-        let estimate2026 = estimate(
+        // The newest adopted year against the one before: 2027 against 2026 once the
+        // 2027 budget is adopted, else this document's 2026 against 2025.
+        let newer = TaxBillParityDocument.newerAdoptedRates
+        let newYear = newer?.year ?? 2026
+        let oldYear = newer == nil ? 2025 : 2026
+        let newRates = newer?.rates ?? data.rates2026
+        let oldRates = newer == nil ? data.rates2025 : data.rates2026
+        let estimateNew = estimate(
             assessedValue: effectiveAssessed,
             reduction: townExemption,
-            rates: data.rates2026
+            rates: newRates
         )
-        let estimate2025 = estimate(
+        let estimateOld = estimate(
             assessedValue: effectiveAssessed,
             reduction: townExemption,
-            rates: data.rates2025
+            rates: oldRates
         )
-        let difference = estimate2026.total - estimate2025.total
-        let rateChange = data.rates2026.totalTownWide - data.rates2025.totalTownWide
-        let rateChangePercent = data.rates2025.totalTownWide == 0
+        let difference = estimateNew.total - estimateOld.total
+        let rateChange = newRates.totalTownWide - oldRates.totalTownWide
+        let rateChangePercent = oldRates.totalTownWide == 0
             ? 0
-            : rateChange / data.rates2025.totalTownWide * 100
+            : rateChange / oldRates.totalTownWide * 100
 
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 16) {
@@ -134,9 +153,9 @@ struct NativeTaxBillParityView: View {
                         .font(.caption.weight(.bold))
                         .textCase(.uppercase)
                         .foregroundStyle(RiverheadTheme.accent)
-                    Text("The Town-wide rate rose from \(data.rates2025.totalTownWide, specifier: "%.3f") to \(data.rates2026.totalTownWide, specifier: "%.3f") per $1,000.")
+                    Text("The Town-wide rate \(rateChange >= 0 ? "rose" : "fell") from \(oldRates.totalTownWide, specifier: "%.3f") in \(String(oldYear)) to \(newRates.totalTownWide, specifier: "%.3f") per $1,000 in the \(String(newYear)) adopted budget.")
                         .font(.headline)
-                    Text("That is an increase of \(rateChange, specifier: "%.3f") per $1,000, or about \(rateChangePercent, specifier: "%.1f")%. The calculator translates that change into dollars for your property.")
+                    Text("That is \(rateChange >= 0 ? "an increase" : "a decrease") of \(abs(rateChange), specifier: "%.3f") per $1,000, or about \(abs(rateChangePercent), specifier: "%.1f")%. The calculator translates that change into dollars for your property.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
@@ -186,24 +205,24 @@ struct NativeTaxBillParityView: View {
 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(alignment: .firstTextBaseline) {
-                        Text("2026 Town portion (estimated)")
+                        Text("\(String(newYear)) Town portion (estimated)")
                             .font(.headline)
                         Spacer()
-                        Text(currency(estimate2026.total))
+                        Text(currency(estimateNew.total))
                             .font(.title2.weight(.bold))
                             .monospacedDigit()
                     }
 
                     HStack {
-                        Text("2025 (for comparison)")
+                        Text("\(String(oldYear)) (for comparison)")
                         Spacer()
-                        Text(currency(estimate2025.total))
+                        Text(currency(estimateOld.total))
                     }
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
                     HStack {
-                        Text("Change vs. 2025")
+                        Text("Change vs. \(String(oldYear))")
                             .fontWeight(.semibold)
                         Spacer()
                         Text("\(difference >= 0 ? "+" : "")\(currency(difference))")
@@ -213,9 +232,9 @@ struct NativeTaxBillParityView: View {
 
                     Divider()
 
-                    componentRow("General Fund", estimate2026.generalFund)
-                    componentRow("Highway Fund", estimate2026.highway)
-                    componentRow("Street Lighting", estimate2026.streetLighting)
+                    componentRow("General Fund", estimateNew.generalFund)
+                    componentRow("Highway Fund", estimateNew.highway)
+                    componentRow("Street Lighting", estimateNew.streetLighting)
 
                     Text("This estimates only the Town portion. County, school, fire, and library taxes are separate line items on the actual bill.")
                         .font(.caption)

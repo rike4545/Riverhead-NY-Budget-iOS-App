@@ -88,9 +88,9 @@ struct PeerReserveBenchmarkView: View {
             ReservePeer(
                 name: "Riverhead",
                 percent: riverheadPercent,
-                dataYear: 2026,
+                dataYear: BudgetStages.currentYear ?? 2027,
                 source: .riverheadLive,
-                sourceDetail: "2026 adopted General Fund · unassigned fund balance ÷ total appropriations. Live from app data."
+                sourceDetail: "Unassigned General Fund balance at December 31, 2025 ÷ \(BudgetStages.currentYear.map(String.init) ?? "2027") adopted General Fund appropriations. Live from app data."
             ),
             ReservePeer(
                 name: "East Hampton",
@@ -532,7 +532,7 @@ struct PeerReserveBenchmarkView: View {
     @ViewBuilder
     private func sourceLabelText(_ peer: ReservePeer) -> some View {
         switch peer.source {
-        case .riverheadLive: Text("Live from app · 2026 adopted")
+        case .riverheadLive: Text("Live from app · \(BudgetStages.currentYear.map(String.init) ?? "2027") adopted")
         case .adoptedBudget: Text("From adopted/tentative budget")
         case .financialPolicy: Text("Stated policy target")
         case .oscAFREstimate: Text("OSC AFR estimate — verify on Open Book NY")

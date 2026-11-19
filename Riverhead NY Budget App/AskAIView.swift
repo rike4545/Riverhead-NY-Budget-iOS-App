@@ -178,10 +178,10 @@ struct AskAIView: View {
 
     private var suggestedPromptsCard: some View {
         let prompts = [
-            "What changed most in Riverhead's 2026 budget?",
+            "What changed from the 2027 Tentative to the Adopted Budget?",
             "Explain Riverhead's fund balance like I'm a resident, not an accountant.",
             "Is 28.8% a reasonable target for Riverhead's fund balance?",
-            "What are the best questions to ask at a budget hearing tonight?",
+            "What should I ask the Town Board about the 2027 Adopted Budget?",
             "How should Riverhead use excess reserves without creating a future budget hole?",
             "Which budget signals in this app look most important, and why?"
         ]

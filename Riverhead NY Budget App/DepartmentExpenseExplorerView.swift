@@ -79,7 +79,7 @@ struct DepartmentExpenseExplorerView: View {
                 }
                 .pickerStyle(.segmented)
 
-                Text("This view blends the staffing count, salary base, and adopted 2026 department totals so residents can see how much of each function is payroll and how much is everything else.")
+                Text("This view blends the 2026 payroll's staffing count and salary base with the \(String(DepartmentBudgetLensData.departmentRecords.first?.budgetYear ?? 2026)) Adopted Budget's department totals, so residents can see how much of each function is payroll and how much is everything else. The salary base is last year's payroll, so part of each department's growth shows up as non-salary until the 2027 payroll is published.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -390,10 +390,14 @@ private struct DepartmentExpenseDetailView: View {
                 }
             }
 
-            Section("2026 Cost View") {
+            Section("\(String(record.budgetYear)) Adopted Budget cost view") {
                 detailCurrencyRow("Adopted total", record.adoptedTotal, tint: .green)
+                if let prior = record.priorAdoptedTotal {
+                    detailCurrencyRow("\(String(record.budgetYear - 1)) adopted total", prior, tint: .secondary)
+                    detailCurrencyRow("Change from \(String(record.budgetYear - 1))", record.adoptedTotal - prior, tint: record.adoptedTotal >= prior ? .orange : .green)
+                }
                 if let salaryBase = record.salaryBase {
-                    detailCurrencyRow("Salary base", salaryBase, tint: .blue)
+                    detailCurrencyRow("Salary base (2026 payroll)", salaryBase, tint: .blue)
                 }
                 if let otherExpense = record.otherExpense {
                     detailCurrencyRow(

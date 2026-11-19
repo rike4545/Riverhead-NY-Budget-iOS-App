@@ -1,0 +1,699 @@
+{
+ "source": {
+  "title": "Town of Riverhead Adopted Budgets (Summary pages)",
+  "url": "https://www.townofriverheadny.gov/206/Financial-Reports"
+ },
+ "note": "Fund-level appropriations and tax levy extracted from each adopted budget Summary page. Years with non-standard layouts are omitted.",
+ "years": [
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026,
+  2027
+ ],
+ "townTotals": {
+  "2020": {
+   "appropriations": 100390400.0,
+   "fundCount": 19
+  },
+  "2021": {
+   "appropriations": 99589200.0,
+   "fundCount": 19
+  },
+  "2022": {
+   "appropriations": 100048100.0,
+   "fundCount": 19
+  },
+  "2023": {
+   "appropriations": 103902700.0,
+   "fundCount": 19
+  },
+  "2024": {
+   "appropriations": 111392696.0,
+   "fundCount": 19
+  },
+  "2025": {
+   "appropriations": 117286316.0,
+   "fundCount": 19
+  },
+  "2026": {
+   "appropriations": 121110904.0,
+   "fundCount": 19
+  },
+  "2027": {
+   "appropriations": 120854219.0,
+   "fundCount": 19
+  }
+ },
+ "funds": [
+  {
+   "code": "A01",
+   "name": "General Fund",
+   "years": {
+    "2020": {
+     "appropriations": 51359400.0
+    },
+    "2021": {
+     "appropriations": 51050700.0
+    },
+    "2022": {
+     "appropriations": 52487600.0
+    },
+    "2023": {
+     "appropriations": 55354900.0
+    },
+    "2024": {
+     "appropriations": 60797800.0
+    },
+    "2025": {
+     "appropriations": 64852829.0
+    },
+    "2026": {
+     "appropriations": 69113159.0
+    },
+    "2027": {
+     "appropriations": 71932070.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 20572670.0,
+   "totalChangePct": 40.1
+  },
+  {
+   "code": "A04",
+   "name": "Police Athletic League",
+   "years": {
+    "2020": {
+     "appropriations": 75900.0
+    },
+    "2021": {
+     "appropriations": 75900.0
+    },
+    "2022": {
+     "appropriations": 75900.0
+    },
+    "2023": {
+     "appropriations": 79400.0
+    },
+    "2024": {
+     "appropriations": 82250.0
+    },
+    "2025": {
+     "appropriations": 82250.0
+    },
+    "2026": {
+     "appropriations": 81490.0
+    },
+    "2027": {
+     "appropriations": 84090.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 8190.0,
+   "totalChangePct": 10.8
+  },
+  {
+   "code": "A06",
+   "name": "Recreation Program Fund",
+   "years": {
+    "2020": {
+     "appropriations": 538900.0
+    },
+    "2021": {
+     "appropriations": 534700.0
+    },
+    "2022": {
+     "appropriations": 534700.0
+    },
+    "2023": {
+     "appropriations": 523100.0
+    },
+    "2024": {
+     "appropriations": 528100.0
+    },
+    "2025": {
+     "appropriations": 528525.0
+    },
+    "2026": {
+     "appropriations": 504500.0
+    },
+    "2027": {
+     "appropriations": 472195.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": -66705.0,
+   "totalChangePct": -12.4
+  },
+  {
+   "code": "CM1",
+   "name": "Business Improvement District",
+   "years": {
+    "2020": {
+     "appropriations": 124200.0
+    },
+    "2021": {
+     "appropriations": 127400.0
+    },
+    "2022": {
+     "appropriations": 130700.0
+    },
+    "2023": {
+     "appropriations": 174400.0
+    },
+    "2024": {
+     "appropriations": 178200.0
+    },
+    "2025": {
+     "appropriations": 183500.0
+    },
+    "2026": {
+     "appropriations": 144136.0
+    },
+    "2027": {
+     "appropriations": 144136.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 19936.0,
+   "totalChangePct": 16.1
+  },
+  {
+   "code": "CM2",
+   "name": "East Creek Docking Facility",
+   "years": {
+    "2020": {
+     "appropriations": 266000.0
+    },
+    "2021": {
+     "appropriations": 266600.0
+    },
+    "2022": {
+     "appropriations": 287200.0
+    },
+    "2023": {
+     "appropriations": 289800.0
+    },
+    "2024": {
+     "appropriations": 297700.0
+    },
+    "2025": {
+     "appropriations": 294323.0
+    },
+    "2026": {
+     "appropriations": 288100.0
+    },
+    "2027": {
+     "appropriations": 288100.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 22100.0,
+   "totalChangePct": 8.3
+  },
+  {
+   "code": "CM4",
+   "name": "Community Preservation Fund",
+   "years": {
+    "2020": {
+     "appropriations": 5008600.0
+    },
+    "2021": {
+     "appropriations": 4699300.0
+    },
+    "2022": {
+     "appropriations": 4587800.0
+    },
+    "2023": {
+     "appropriations": 3207800.0
+    },
+    "2024": {
+     "appropriations": 3200000.0
+    },
+    "2025": {
+     "appropriations": 3090900.0
+    },
+    "2026": {
+     "appropriations": 2979300.0
+    },
+    "2027": {
+     "appropriations": 2979300.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": -2029300.0,
+   "totalChangePct": -40.5
+  },
+  {
+   "code": "DA1",
+   "name": "Highway Fund",
+   "years": {
+    "2020": {
+     "appropriations": 7179300.0
+    },
+    "2021": {
+     "appropriations": 6813000.0
+    },
+    "2022": {
+     "appropriations": 6607100.0
+    },
+    "2023": {
+     "appropriations": 7338300.0
+    },
+    "2024": {
+     "appropriations": 7507500.0
+    },
+    "2025": {
+     "appropriations": 7721800.0
+    },
+    "2026": {
+     "appropriations": 7919250.0
+    },
+    "2027": {
+     "appropriations": 8286042.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 1106742.0,
+   "totalChangePct": 15.4
+  },
+  {
+   "code": "ES1",
+   "name": "Riverhead Sewer District",
+   "years": {
+    "2020": {
+     "appropriations": 6903300.0
+    },
+    "2021": {
+     "appropriations": 6535000.0
+    },
+    "2022": {
+     "appropriations": 6543600.0
+    },
+    "2023": {
+     "appropriations": 7081400.0
+    },
+    "2024": {
+     "appropriations": 7310268.0
+    },
+    "2025": {
+     "appropriations": 7745384.0
+    },
+    "2026": {
+     "appropriations": 8142722.0
+    },
+    "2027": {
+     "appropriations": 8411538.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 1508238.0,
+   "totalChangePct": 21.8
+  },
+  {
+   "code": "ES3",
+   "name": "Calverton Sewer District",
+   "years": {
+    "2020": {
+     "appropriations": 754400.0
+    },
+    "2021": {
+     "appropriations": 711900.0
+    },
+    "2022": {
+     "appropriations": 744300.0
+    },
+    "2023": {
+     "appropriations": 911600.0
+    },
+    "2024": {
+     "appropriations": 934017.0
+    },
+    "2025": {
+     "appropriations": 1393357.0
+    },
+    "2026": {
+     "appropriations": 1488357.0
+    },
+    "2027": {
+     "appropriations": 1538701.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 784301.0,
+   "totalChangePct": 104.0
+  },
+  {
+   "code": "ES5",
+   "name": "Riverhead Scavenger Waste",
+   "years": {
+    "2020": {
+     "appropriations": 1665000.0
+    },
+    "2021": {
+     "appropriations": 1641500.0
+    },
+    "2022": {
+     "appropriations": 1757400.0
+    },
+    "2023": {
+     "appropriations": 1763500.0
+    },
+    "2024": {
+     "appropriations": 1955761.0
+    },
+    "2025": {
+     "appropriations": 2069799.0
+    },
+    "2026": {
+     "appropriations": 2231988.0
+    },
+    "2027": {
+     "appropriations": 2407154.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 742154.0,
+   "totalChangePct": 44.6
+  },
+  {
+   "code": "EW1",
+   "name": "Water District",
+   "years": {
+    "2020": {
+     "appropriations": 8704900.0
+    },
+    "2021": {
+     "appropriations": 9185300.0
+    },
+    "2022": {
+     "appropriations": 8819900.0
+    },
+    "2023": {
+     "appropriations": 9897800.0
+    },
+    "2024": {
+     "appropriations": 10464100.0
+    },
+    "2025": {
+     "appropriations": 10663000.0
+    },
+    "2026": {
+     "appropriations": 11008655.0
+    },
+    "2027": {
+     "appropriations": 11402339.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 2697439.0,
+   "totalChangePct": 31.0
+  },
+  {
+   "code": "MS1",
+   "name": "Workers Compensation Fund",
+   "years": {
+    "2020": {
+     "appropriations": 950000.0
+    },
+    "2021": {
+     "appropriations": 950000.0
+    },
+    "2022": {
+     "appropriations": 950000.0
+    },
+    "2023": {
+     "appropriations": 950000.0
+    },
+    "2024": {
+     "appropriations": 1050000.0
+    },
+    "2025": {
+     "appropriations": 1050000.0
+    },
+    "2026": {
+     "appropriations": 1050000.0
+    },
+    "2027": {
+     "appropriations": 1050000.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 100000.0,
+   "totalChangePct": 10.5
+  },
+  {
+   "code": "MS2",
+   "name": "Risk Retention Fund",
+   "years": {
+    "2020": {
+     "appropriations": 450000.0
+    },
+    "2021": {
+     "appropriations": 450000.0
+    },
+    "2022": {
+     "appropriations": 450000.0
+    },
+    "2023": {
+     "appropriations": 450000.0
+    },
+    "2024": {
+     "appropriations": 450000.0
+    },
+    "2025": {
+     "appropriations": 450000.0
+    },
+    "2026": {
+     "appropriations": 450000.0
+    },
+    "2027": {
+     "appropriations": 450000.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 0.0,
+   "totalChangePct": 0.0
+  },
+  {
+   "code": "SL1",
+   "name": "Street Lighting District",
+   "years": {
+    "2020": {
+     "appropriations": 1218600.0
+    },
+    "2021": {
+     "appropriations": 1209400.0
+    },
+    "2022": {
+     "appropriations": 1209400.0
+    },
+    "2023": {
+     "appropriations": 1179600.0
+    },
+    "2024": {
+     "appropriations": 1124900.0
+    },
+    "2025": {
+     "appropriations": 954400.0
+    },
+    "2026": {
+     "appropriations": 926533.0
+    },
+    "2027": {
+     "appropriations": 911244.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": -307356.0,
+   "totalChangePct": -25.2
+  },
+  {
+   "code": "SM1",
+   "name": "Ambulance District",
+   "years": {
+    "2020": {
+     "appropriations": 1606700.0
+    },
+    "2021": {
+     "appropriations": 1646400.0
+    },
+    "2022": {
+     "appropriations": 1668300.0
+    },
+    "2023": {
+     "appropriations": 3783600.0
+    },
+    "2024": {
+     "appropriations": 4029300.0
+    },
+    "2025": {
+     "appropriations": 4513349.0
+    },
+    "2026": {
+     "appropriations": 2388824.0
+    },
+    "2027": {
+     "appropriations": 2312093.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 705393.0,
+   "totalChangePct": 43.9
+  },
+  {
+   "code": "SR1",
+   "name": "Refuse and Garbage District",
+   "years": {
+    "2020": {
+     "appropriations": 3329300.0
+    },
+    "2021": {
+     "appropriations": 3897300.0
+    },
+    "2022": {
+     "appropriations": 3835800.0
+    },
+    "2023": {
+     "appropriations": 4468100.0
+    },
+    "2024": {
+     "appropriations": 4977700.0
+    },
+    "2025": {
+     "appropriations": 5165700.0
+    },
+    "2026": {
+     "appropriations": 5254540.0
+    },
+    "2027": {
+     "appropriations": 5302990.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 1973690.0,
+   "totalChangePct": 59.3
+  },
+  {
+   "code": "ST1",
+   "name": "Public Parking District",
+   "years": {
+    "2020": {
+     "appropriations": 178700.0
+    },
+    "2021": {
+     "appropriations": 183300.0
+    },
+    "2022": {
+     "appropriations": 188100.0
+    },
+    "2023": {
+     "appropriations": 191800.0
+    },
+    "2024": {
+     "appropriations": 195700.0
+    },
+    "2025": {
+     "appropriations": 201600.0
+    },
+    "2026": {
+     "appropriations": 207100.0
+    },
+    "2027": {
+     "appropriations": 212938.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 34238.0,
+   "totalChangePct": 19.2
+  },
+  {
+   "code": "V01",
+   "name": "Debt Service Fund",
+   "years": {
+    "2020": {
+     "appropriations": 10044100.0
+    },
+    "2021": {
+     "appropriations": 9578400.0
+    },
+    "2022": {
+     "appropriations": 9137200.0
+    },
+    "2023": {
+     "appropriations": 6217500.0
+    },
+    "2024": {
+     "appropriations": 6266400.0
+    },
+    "2025": {
+     "appropriations": 6282600.0
+    },
+    "2026": {
+     "appropriations": 6888150.0
+    },
+    "2027": {
+     "appropriations": 2594028.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": -7450072.0,
+   "totalChangePct": -74.2
+  },
+  {
+   "code": "Z14",
+   "name": "Calverton Parks Community Development Agency",
+   "years": {
+    "2020": {
+     "appropriations": 33100.0
+    },
+    "2021": {
+     "appropriations": 33100.0
+    },
+    "2022": {
+     "appropriations": 33100.0
+    },
+    "2023": {
+     "appropriations": 40100.0
+    },
+    "2024": {
+     "appropriations": 43000.0
+    },
+    "2025": {
+     "appropriations": 43000.0
+    },
+    "2026": {
+     "appropriations": 44100.0
+    },
+    "2027": {
+     "appropriations": 75261.0
+    }
+   },
+   "firstYear": 2020,
+   "lastYear": 2027,
+   "totalChange": 42161.0,
+   "totalChangePct": 127.4
+  }
+ ]
+}

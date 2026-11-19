@@ -161,7 +161,7 @@ struct Proposed2027BudgetPresentationView: View {
                         .foregroundStyle(RiverheadTheme.brandNavy)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    Text("A taxpayer-first planning case that separates one-time surplus uses from recurring savings needed to reduce the 2027 tax levy.")
+                    Text("A taxpayer-first planning case this app made before adoption, separating one-time surplus uses from recurring savings needed to reduce the 2027 tax levy. The Board adopted a different budget on November 17, 2026: a General Fund levy of $53,784,658, up 1.74% from 2026 rather than down 3%.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)

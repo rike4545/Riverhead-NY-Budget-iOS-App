@@ -30,12 +30,13 @@ final class RBBudgetStore {
 
     var municipality: RBMunicipality = .riverhead
     var appTitle: String = "Riverhead NY Budget App"
-    var fiscalYearTitle: String = "2026 Adopted Budget"
+    /// The newest adopted budget on file (BudgetStages, from the website's budget-stages.json).
+    var fiscalYearTitle: String = "\(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget"
 
     // MARK: - Fund Balance (General Fund)
 
-    /// Appropriations for the budget year being analyzed (e.g., FY 2026).
-    var appropriations: Double = 69_113_159
+    /// General Fund appropriations in the newest adopted budget (2027: $71,932,070).
+    var appropriations: Double = BudgetStages.current?.generalFund?.appropriations ?? 71_932_070
 
     /// Unassigned General Fund balance at the end of 2025, from the 2025 audited
     /// financial statements (accepted September 1, 2026, Resolution 2026-834), the
@@ -66,9 +67,20 @@ final class RBBudgetStore {
     // MARK: - Quick Taxes (used by the Expert tab, Budget 2027 tools, and the AI assistant —
     // NOT by MyTaxesView, which keeps its own persisted rate via @AppStorage("tax_rate_per_1000"))
 
-    /// Town-wide tax rate per $1,000 of ASSESSED value. 2026 Adopted Budget, rate table p.6:
-    /// Total Town Wide = General Fund 61.948 + Highway 8.695 + Street Lighting 0.955 = 71.598.
-    var ratePerThousand: Double = 71.598
+    /// Town-wide tax rate per $1,000 of ASSESSED value in the newest adopted budget.
+    /// 2027 Adopted Budget: General Fund 62.710 + Highway 8.893 + Street Lighting 0.884 = 72.487
+    /// (71.598 in 2026).
+    var ratePerThousand: Double = BudgetStages.current?.townWide?.rate ?? 72.487
+
+    // MARK: - The 2027 model's starting point
+    // The 2027 Lab, Simulator and Whiteboard model 2027 from the 2026 Adopted Budget, the
+    // year before the one they project. They read these, not the newest adopted figures above.
+
+    /// 2026 Adopted Budget: General Fund appropriations.
+    var modelBaseAppropriations: Double = BudgetStages.doc(2026, .adopted)?.generalFund?.appropriations ?? 69_113_159
+    /// 2026 Adopted Budget: "Total Town Wide" rate per $1,000 of assessed value.
+    var modelBaseRatePerThousand: Double = BudgetStages.doc(2026, .adopted)?.townWide?.rate ?? 71.598
+    let modelBaseTitle = "2026 Adopted Budget (the 2027 model's starting point)"
 
     // MARK: - NY Property Tax Cap (simplified inputs)
 
@@ -286,6 +298,20 @@ final class RBBudgetStore {
             return []
         }
 
+        // Every adopted budget on file, from each book's Summary page (2005–2008, 2019 onward).
+        if BudgetStages.file != nil {
+            let series = BudgetStages.adoptedSeries(fund: meta.fundCode) { f in
+                switch metric {
+                case .taxLevy: return f.levy
+                case .appropriations: return f.appropriations
+                }
+            }
+            if !series.isEmpty {
+                seriesCache[key] = series
+                return series
+            }
+        }
+
         // Start with historical (2021–2025) via BudgetHistoryShift.
         var byYear: [Int: Double] = [:]
 
@@ -329,7 +355,18 @@ final class RBBudgetStore {
     // MARK: - Internal fund list building
 
     private func rebuildFundMeta() {
-        // 1) Pull all 2026 fund summaries from CSV.
+        // The funds of the newest adopted budget, when the bundled budget-stages.json is present.
+        if let current = BudgetStages.current {
+            let meta = current.fundsByCode.map { row in
+                FundMeta(displayName: Self.displayName(code: row.code, name: row.fund.name), fundCode: row.code, fundName: row.fund.name)
+            }
+            self.fundMeta = meta
+            self.funds = meta.map(\.displayName)
+            self.seriesCache.removeAll(keepingCapacity: true)
+            return
+        }
+
+        // Fallback: 2026 fund summaries from the bundled CSV.
         let summaries = Riverhead2026BudgetShift.fundSummaries()
 
         var meta: [FundMeta] = summaries.map { s in

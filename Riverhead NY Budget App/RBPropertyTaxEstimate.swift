@@ -26,15 +26,18 @@ enum RBPropertyTaxRateSource: Equatable {
     var label: String {
         switch self {
         case .generalTown:
-            return "2025-2026 Receiver of Taxes: General Town"
+            return "\(Self.yearLabel) Adopted Budget: General Town"
         case .generalTownAndHighway:
-            return "2025-2026 Receiver of Taxes: General Town + Highway"
+            return "\(Self.yearLabel) Adopted Budget: General Town + Highway"
         case .totalTownWide:
-            return "2026 Adopted Budget: Total Town Wide (General + Highway + Street Lighting)"
+            return "\(Self.yearLabel) Adopted Budget: Total Town Wide (General + Highway + Street Lighting)"
         case .custom:
             return "Custom user-entered rate"
         }
     }
+
+    /// The newest adopted budget's year, whose rate table the presets use.
+    static var yearLabel: String { BudgetStages.currentYear.map(String.init) ?? "2027" }
 
     static func classify(
         rate: Double,

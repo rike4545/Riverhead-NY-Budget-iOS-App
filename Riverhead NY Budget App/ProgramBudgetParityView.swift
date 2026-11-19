@@ -319,7 +319,7 @@ struct NativeProgramBudgetView: View {
                 .font(.title2.bold())
                 .foregroundStyle(RiverheadTheme.textPrimary)
 
-            Text("The 2026 adopted budget regrouped into seven services using New York's own municipal function codes. Benefits are allocated back to the services whose employees earned them, and user fees are shown against the services that collect them.")
+            Text("The 2026 Adopted Budget, the newest line-by-line record on file, regrouped into seven services using New York's own municipal function codes. Benefits are allocated back to the services whose employees earned them, and user fees are shown against the services that collect them.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 

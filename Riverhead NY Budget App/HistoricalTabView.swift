@@ -188,7 +188,7 @@ struct HistoricalTabView: View {
     /// against an auto axis that anchors at 0. Pads a lone year by ±1.
     private var trendYearDomain: ClosedRange<Int> {
         let years = generalFundTrendRows.map(\.year)
-        guard let lo = years.min(), let hi = years.max() else { return 2021...2026 }
+        guard let lo = years.min(), let hi = years.max() else { return 2021...(BudgetStages.currentYear ?? 2027) }
         return lo == hi ? (lo - 1)...(hi + 1) : lo...hi
     }
 
@@ -204,7 +204,7 @@ struct HistoricalTabView: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
                 Spacer()
-                Text("Prior budgets + 2026")
+                Text("Adopted budgets through \(BudgetStages.currentYear.map(String.init) ?? "2027")")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(RiverheadTheme.gold)
             }

@@ -3,7 +3,7 @@
 //  Riverhead NY Budget App
 //
 //  Combined file:
-//   • ExploreView (2026-only, device-safe, scroll-safe)
+//   • ExploreView (the newest adopted budget, device-safe, scroll-safe)
 //   • Riverhead2026BudgetShift (CSV loader + search + tolerant parsers)
 //
 //  Usage:
@@ -21,12 +21,13 @@ import Charts
 import Foundation
 
 // ======================================================
-// MARK: - ExploreView (device-safe, 2026-locked)
+// MARK: - ExploreView (device-safe, newest adopted year)
 // ======================================================
 
-private let targetYear: Int = 2026
+/// The newest adopted budget on file (budget-stages.json): 2027 as of November 2026.
+private let targetYear: Int = BudgetStages.currentYear ?? 2026
 
-/// Official 2026 funds (code + name) from the Town’s 2026 Preliminary Budget.
+/// The Town's operating funds (code + name). The 2027 Adopted Budget has the same 19 funds as 2026.
 private let allowed2026Funds: [(code: String, name: String)] = [
     ("A01", "General Fund"),
     ("A04", "Police Athletic League"),
@@ -365,8 +366,8 @@ private struct FundCardData {
         var levy = store.valueSeries(for: fund, metric: .taxLevy)
         var app  = store.valueSeries(for: fund, metric: .appropriations)
 
-        // Merge CSV fallback for 2026 if the store lacks that year (per-series).
-        if let fb = fallback2026(for: fallbackDisplay) {
+        // Merge the 2026 CSV values only when the newest year is 2026 and the store lacks it.
+        if targetYear == 2026, let fb = fallback2026(for: fallbackDisplay) {
             if !levy.contains(where: { $0.year == targetYear }), let L = fb.levy {
                 levy.append((year: targetYear, value: L))
             }
@@ -397,9 +398,9 @@ private struct FundCardData {
             return nf
         }()
 
-        let metricTitle = usingLevy ? "Tax Levy (2026)" : "Appropriations (2026)"
+        let metricTitle = usingLevy ? "Tax Levy (\(String(targetYear)))" : "Appropriations (\(String(targetYear)))"
         let metricValue: String = {
-            guard let v = v2026 ?? clamped.last?.value else { return "—" }
+            guard let v = v2026 else { return "—" }
             return nfMoney.string(from: v as NSNumber) ?? String(format: "%.0f", v)
         }()
 
@@ -409,7 +410,7 @@ private struct FundCardData {
             let pct   = a / b - 1
             let dStr  = nfMoney.string(from: delta as NSNumber) ?? String(format: "%.0f", delta)
             let pStr  = nfPct.string(from: pct as NSNumber) ?? "—"
-            return "vs 2025: \(dStr) (\(pStr))"
+            return "vs \(String(targetYear - 1)): \(dStr) (\(pStr))"
         }()
 
         let trend = Array(clamped.suffix(7)).map { ($0.year, $0.value) }
@@ -506,7 +507,7 @@ private struct HollowFundCard: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
-            Text("No 2026 data")
+            Text("No \(String(targetYear)) data")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)

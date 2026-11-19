@@ -17,11 +17,26 @@ struct DepartmentBudgetRecord: Identifiable, Hashable {
     let fundCode: String
     let positions: Int?
     let salaryBase: Double?
-    let adoptedTotal: Double
+    var adoptedTotal: Double
     let keyTitles: [String]
     let note: String?
+    /// The budget year `adoptedTotal` belongs to, and the year before's total when known.
+    var budgetYear: Int = 2026
+    var priorAdoptedTotal: Double? = nil
 
     var id: String { "\(fundCode)-\(budgetDepartment)" }
+
+    /// The same department in the newest adopted line file (2027), when its lines reconcile.
+    /// The salary base and positions stay those of the 2026 payroll.
+    var movedToNewestLines: DepartmentBudgetRecord {
+        guard let year = BudgetLines.adoptedYear, let totals = BudgetLines.departmentTotals(key: fundCode),
+              abs(totals.prior - adoptedTotal) < 1 else { return self }
+        var copy = self
+        copy.adoptedTotal = totals.current
+        copy.priorAdoptedTotal = totals.prior
+        copy.budgetYear = year
+        return copy
+    }
 
     var otherExpense: Double? {
         guard let salaryBase else { return nil }
@@ -53,8 +68,22 @@ struct RebalanceRecommendation: Identifiable, Hashable {
     /// fund's total) rather than genuine net-new or net-reduced spending. Excluded from any rollup that
     /// claims real dollar savings/growth, since counting it would double up against its own offset.
     let isFundNeutralReclassification: Bool
+    /// The line's account number, to find it in the newest adopted line file (2027).
+    let accountNumber: String?
 
     var id: String { "\(fundFunction)-\(account)" }
+
+    /// This line in the newest adopted budget (2027), when the line file has it.
+    var adoptedNewest: Double? {
+        guard let accountNumber, let line = BudgetLines.byAccount[accountNumber] else { return nil }
+        return BudgetLines.value(line)
+    }
+
+    /// The same line's 2026 adopted figure as the newest line file prints it (to the dollar).
+    var adoptedPriorFromLines: Double? {
+        guard let accountNumber else { return nil }
+        return BudgetLines.byAccount[accountNumber]?.adopted
+    }
 
     var change: Double { adopted2026 - adopted2025 }
 
@@ -66,7 +95,8 @@ struct RebalanceRecommendation: Identifiable, Hashable {
         adopted2026: Double,
         changeLabel: String? = nil,
         rationale: String,
-        isFundNeutralReclassification: Bool = false
+        isFundNeutralReclassification: Bool = false,
+        accountNumber: String? = nil
     ) {
         self.fundFunction = fundFunction
         self.account = account
@@ -76,11 +106,17 @@ struct RebalanceRecommendation: Identifiable, Hashable {
         self.changeLabel = changeLabel
         self.rationale = rationale
         self.isFundNeutralReclassification = isFundNeutralReclassification
+        self.accountNumber = accountNumber
     }
 }
 
 enum DepartmentBudgetLensData {
-    static let departmentRecords: [DepartmentBudgetRecord] = [
+    /// Each department in the newest adopted budget (2027), from its line file; the 2026 totals
+    /// below where that file is missing or a department's 2026 total does not match it.
+    static let departmentRecords: [DepartmentBudgetRecord] = departmentRecords2026.map(\.movedToNewestLines)
+
+    /// Department totals from the 2026 Adopted Budget, with the 2026 payroll's staffing.
+    static let departmentRecords2026: [DepartmentBudgetRecord] = [
         .init(
             budgetDepartment: "Town Board / Legislature",
             staffDepartment: nil,
@@ -90,7 +126,7 @@ enum DepartmentBudgetLensData {
             salaryBase: nil,
             adoptedTotal: 295_301,
             keyTitles: [],
-            note: "Budget function total from the 2026 adopted budget. Staffing was not separated cleanly in the payroll summary."
+            note: "Budget function total only. Staffing was not separated cleanly in the payroll summary."
         ),
         .init(
             budgetDepartment: "Justice Court",
@@ -355,7 +391,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 752_400,
             adopted2026: 943_000,
             changeLabel: "+25.3%",
-            rationale: "Tie to scheduling audit before normalizing as permanent baseline."
+            rationale: "Tie to scheduling audit before normalizing as permanent baseline.",
+            accountNumber: "A01-3-3120-122-UNI-00000"
         ),
         .init(
             fundFunction: "A01 Police 3120",
@@ -364,7 +401,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 389_000,
             adopted2026: 501_000,
             changeLabel: "+28.8%",
-            rationale: "Active audit needed. Capture savings if participation declines."
+            rationale: "Active audit needed. Capture savings if participation declines.",
+            accountNumber: "A01-3-3120-154-000-00000"
         ),
         .init(
             fundFunction: "A01 Town Hall 1620",
@@ -374,7 +412,8 @@ enum DepartmentBudgetLensData {
             adopted2026: 167_742,
             changeLabel: "New",
             rationale: "Absorbed into Town Hall utilities with no cost recovery plan. Fund-neutral: the general Town Hall electricity line (A01-1620-472) drops by the same $167,742, so this is a reclassification within the existing utilities budget, not net-new spending.",
-            isFundNeutralReclassification: true
+            isFundNeutralReclassification: true,
+            accountNumber: "A01-1-1620-472-200-00000"
         ),
         .init(
             fundFunction: "ES5 Scavenger Waste 8189",
@@ -383,7 +422,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 490_000,
             adopted2026: 677_000,
             changeLabel: "+38.2%",
-            rationale: "Largest single enterprise fund jump. Benchmark disposal contracts."
+            rationale: "Largest single enterprise fund jump. Benchmark disposal contracts.",
+            accountNumber: "ES5-8-8189-482-000-00000"
         ),
         .init(
             fundFunction: "A01 Tax Collection 1330",
@@ -392,7 +432,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 1_500,
             adopted2026: 13_500,
             changeLabel: "+800%",
-            rationale: "Review billing process changes vs. actual mailing volume."
+            rationale: "Review billing process changes vs. actual mailing volume.",
+            accountNumber: "A01-1-1330-421-000-00000"
         ),
         .init(
             fundFunction: "A01 Other General Government 1989",
@@ -401,7 +442,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 3_200,
             adopted2026: 53_200,
             changeLabel: "+1,563%",
-            rationale: "A catchall 'Miscellaneous' line tripling with no stated driver deserves an itemized explanation before adoption."
+            rationale: "A catchall 'Miscellaneous' line tripling with no stated driver deserves an itemized explanation before adoption.",
+            accountNumber: "A01-1-1989-490-000-00000"
         ),
         .init(
             fundFunction: "A01 Community Development Admin 8686",
@@ -410,7 +452,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 0,
             adopted2026: 43_200,
             changeLabel: "New",
-            rationale: "Brand-new discretionary program line with no prior-year baseline or stated participation target."
+            rationale: "Brand-new discretionary program line with no prior-year baseline or stated participation target.",
+            accountNumber: "A01-8-8686-450-000-00000"
         ),
         .init(
             fundFunction: "A01 Town Attorney 1420",
@@ -419,7 +462,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 104_700,
             adopted2026: 137_300,
             changeLabel: "+31.1%",
-            rationale: "Management buy-back growth should be tied to a specific staffing or policy change, not carried forward automatically."
+            rationale: "Management buy-back growth should be tied to a specific staffing or policy change, not carried forward automatically.",
+            accountNumber: "A01-1-1420-153-000-00000"
         ),
         .init(
             fundFunction: "A01 Buildings & Grounds 1625",
@@ -428,7 +472,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 132_000,
             adopted2026: 55_000,
             changeLabel: "-58.3%",
-            rationale: "Fleet age risk. Deferred replacement compounds future repair costs."
+            rationale: "Fleet age risk. Deferred replacement compounds future repair costs.",
+            accountNumber: "A01-1-1625-280-000-00000"
         ),
         .init(
             fundFunction: "A01 Building 3620",
@@ -455,7 +500,8 @@ enum DepartmentBudgetLensData {
             adopted2025: 25_000,
             adopted2026: 12_500,
             changeLabel: "-50%",
-            rationale: "Deferred maintenance is costlier long-term. Restore if complaints are rising."
+            rationale: "Deferred maintenance is costlier long-term. Restore if complaints are rising.",
+            accountNumber: "A01-1-1625-406-000-00000"
         )
     ]
 

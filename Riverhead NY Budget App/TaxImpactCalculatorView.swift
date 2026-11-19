@@ -33,11 +33,15 @@ struct TaxImpactCalculatorView: View {
 
     @Environment(RBBudgetStore.self) private var store
 
-    // 2025 adopted General Fund figures (Receiver of Taxes 2025-2026 sheet)
-    private let baseLevy: Double           = 48_639_479   // 2025 adopted GF levy
-    private let baseLevyYear: Int          = 2025
-    private let generalTownRate: Double    = 61.9482      // per $1,000 AV
-    private let highwayRate: Double        = 8.6948       // per $1,000 AV
+    // The newest adopted budget's General Fund levy and rates (budget-stages.json).
+    // 2027 Adopted: General Fund levy $53,784,658 at 62.710 per $1,000; Highway 8.893.
+    // (This screen once paired $48,639,479, the 2025 audit's real property tax revenue,
+    // with the 2026 rate; that is not a levy, so the implied taxable value was off.)
+    private let baseLevy: Double           = BudgetStages.current?.generalFund?.levy ?? 53_784_658
+    private let baseLevyYear: Int          = BudgetStages.currentYear ?? 2027
+    private let generalTownRate: Double    = BudgetStages.current?.townWide?.fundRates?["A01"]?.rate ?? 62.71   // per $1,000 AV
+    private let highwayRate: Double        = BudgetStages.current?.townWide?.fundRates?["DA1"]?.rate ?? 8.893   // per $1,000 AV
+    // Sewer rents and refuse are not in the budget's rate table: the 2025-2026 Receiver of Taxes sheet.
     private let sewerRentRate: Double      = 11.4606      // per $1,000 AV (Riverhead Sewer Dist.)
     private let calvertonSewerRate: Double = 79.2149      // per $1,000 AV (Calverton only)
     private let refuseCharge: Double       = 482.40       // flat annual (single-family residential)
@@ -269,7 +273,7 @@ struct TaxImpactCalculatorView: View {
     private var billBreakdownCard: some View {
         GlassCard(
             title: "Estimated Full Town Bill",
-            subtitle: "All applicable charges for this assessment. District charges use 2025-2026 Receiver of Taxes rates."
+            subtitle: "All applicable charges for this assessment. General Town and Highway use the \(String(baseLevyYear)) Adopted Budget rates; sewer rents and refuse use the 2025-2026 Receiver of Taxes sheet."
         ) {
             VStack(alignment: .leading, spacing: 8) {
                 billRow("General Town (current)",   value: currentGeneralTownBill, isNew: false)
@@ -364,9 +368,9 @@ struct TaxImpactCalculatorView: View {
             subtitle: "This is an educational estimate, not an official tax calculation."
         ) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("• Rates: 2025-2026 Town of Riverhead Receiver of Taxes rate sheet. General Town $61.9482, Highway $8.6948, Riverhead Sewer Rent $11.4606, Calverton Sewer Rent $79.2149 — all per $1,000 of assessed value. Single-family refuse: $482.40 flat.")
+                Text("• Rates: the \(String(baseLevyYear)) Adopted Budget rate table for General Town (\(generalTownRate.formatted(.number.precision(.fractionLength(3))))) and Highway (\(highwayRate.formatted(.number.precision(.fractionLength(3))))); the 2025-2026 Town of Riverhead Receiver of Taxes sheet for Riverhead Sewer Rent $11.4606 and Calverton Sewer Rent $79.2149 — all per $1,000 of assessed value. Single-family refuse: $482.40 flat.")
                     .font(.caption2).foregroundStyle(RiverheadTheme.textSecondary)
-                Text("• Base levy: 2025 adopted General Fund tax levy of $48,639,479.")
+                Text("• Base levy: the \(String(baseLevyYear)) adopted General Fund tax levy of \(baseLevy.formatted(.currency(code: "USD").precision(.fractionLength(0)))).")
                     .font(.caption2).foregroundStyle(RiverheadTheme.textSecondary)
                 Text("• Total taxable AV: derived from the levy ÷ rate. County, school, fire district, and special district levies are separate and are NOT included.")
                     .font(.caption2).foregroundStyle(RiverheadTheme.textSecondary)

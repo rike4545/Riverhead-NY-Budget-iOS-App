@@ -33,7 +33,7 @@ struct ContentView: View {
                                 ExploreView()
                             } label: {
                                 actionCard(
-                                    title: "Explore the 2026 Budget",
+                                    title: "Explore the \(BudgetStages.currentYear.map(String.init) ?? "2027") Budget",
                                     subtitle: "Browse funds, departments, and line items with plain-language context.",
                                     icon: "doc.text.magnifyingglass"
                                 )
@@ -151,11 +151,11 @@ struct ContentView: View {
                         .foregroundStyle(RiverheadTheme.accent)
 
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Adopted 2026 Budget Focus")
+                        Text("Adopted \(BudgetStages.currentYear.map(String.init) ?? "2027") Budget Focus")
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(RiverheadTheme.textPrimary)
 
-                        Text("Figures and views in this app generally reflect the Town’s adopted 2026 budget, where available.")
+                        Text("Figures and views in this app generally reflect the Town’s adopted \(BudgetStages.currentYear.map(String.init) ?? "2027") budget, where available. Some tools still run on the 2026 Budget Supplement and say so.")
                             .font(.caption)
                             .foregroundStyle(RiverheadTheme.textSecondary)
                     }

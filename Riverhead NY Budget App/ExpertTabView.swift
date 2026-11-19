@@ -18,14 +18,14 @@ fileprivate final class ExpertStore {
     var gfoaFloorPercent: Double = 0.167
     var policyNotes: String = "Minimum unassigned fund balance of 15% of next-year appropriations."
     var policyYears: Int? = 3
-    var fiscalYearLabel: String = "2026 Adopted Budget"
+    var fiscalYearLabel: String = "\(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget"
 
     // Fund balance snapshot
-    var appropriations: Double = 69_113_159
+    var appropriations: Double = BudgetStages.current?.generalFund?.appropriations ?? 71_932_070
     var estimatedFundBalance: Double = 28_829_513
 
     // Quick taxes (default matches RBBudgetStore.ratePerThousand; overwritten by sync(from:) below)
-    var ratePerThousand: Double = 71.598
+    var ratePerThousand: Double = BudgetStages.current?.townWide?.rate ?? 72.487
 
     // Tax cap inputs (illustrative)
     var priorYearLevy: Double = 10_000_000
@@ -370,7 +370,7 @@ Using only the cushion simply shrinks how much cushion you carry forward; it doe
                             .font(.headline)
 
                         Text("""
-Riverhead exceeded the state's 2% property tax cap nine years running, 2018–2026. The first five years (2018–2022) were WITHOUT the required override local law — an auditor-confirmed violation traced to an error in the Town's 2018 tax-cap calculation that carried forward uncorrected. Every year since (2023, 2024, 2025, 2026) has used a proper override local law, adopted by the required 60% Town Board vote before the budget — so piercing the cap has become the Town's routine, not the exception.
+Riverhead exceeded the state's 2% property tax cap nine years running, 2018–2026. The first five years (2018–2022) were WITHOUT the required override local law — an auditor-confirmed violation traced to an error in the Town's 2018 tax-cap calculation that carried forward uncorrected. Every year since (2023, 2024, 2025, 2026) has used a proper override local law, adopted by the required 60% Town Board vote before the budget — so piercing the cap has become the Town's routine, not the exception. The 2027 budget, adopted November 17, 2026, has no override local law in the record.
 """
                         )
                         .font(.callout)
@@ -383,6 +383,7 @@ Riverhead exceeded the state's 2% property tax cap nine years running, 2018–20
                             taxCapYearRow(year: "2024", detail: "Over cap, override law adopted — 4.86% levy (Supervisor Aguiar)")
                             taxCapYearRow(year: "2025", detail: "Over cap, override law adopted — 7.89% levy, largest since the cap began in 2012 (Supervisor Hubbard)")
                             taxCapYearRow(year: "2026", detail: "Over cap, override law adopted — 7.74% levy (Supervisor Hubbard)")
+                            taxCapYearRow(year: "2027", detail: "Adopted Nov. 17, 2026 (Resolution 2026-995, 5–0) with no override local law in the record. The Supervisor's letter put the Tentative within a 2.79% limit, and the six amendments lowered the levy. Levy across all funds up 1.79% (Supervisor Halpin)")
                         }
                         .padding(.top, 2)
 

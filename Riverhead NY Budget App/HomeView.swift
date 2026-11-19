@@ -5,7 +5,7 @@
 //  Resident-facing home screen for the combined civic + budget app.
 //  - Color system aligned with the official Town of Riverhead website
 //  - Quick links: Channel 22, News & Events, Departments, Code Enforcement
-//  - Budget tools: Overview, My Taxes, Expert (2026 Adopted Budget context)
+//  - Budget tools: Overview, My Taxes, Expert (newest adopted budget, via BudgetStages)
 //  - Strong “unofficial helper” messaging
 //
 
@@ -304,7 +304,7 @@ struct HomeView: View {
 
                 internalFullWidthCard(
                     title: "What should I ask at a meeting?",
-                    subtitle: "Turn budget signals into plain-language hearing questions and follow-up checks.",
+                    subtitle: "Turn budget signals into plain-language questions for the Town Board, using this app's 2027 model.",
                     systemImage: "person.wave.2.fill",
                     accentOverride: RiverheadTheme.brandGold
                 ) {
@@ -456,7 +456,7 @@ struct HomeView: View {
 
                     internalFullWidthCard(
                         title: "Budget Overview",
-                        subtitle: "Town-wide 2026 Adopted Budget snapshot and spending by fund.",
+                        subtitle: "Town-wide \(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget snapshot and spending by fund.",
                         systemImage: "chart.pie.fill",
                         accentOverride: RiverheadTheme.brandSky
                     ) {
@@ -465,7 +465,7 @@ struct HomeView: View {
 
                     internalFullWidthCard(
                         title: "Budget Supplement Explorer",
-                        subtitle: "See the 2026 supplement as line-by-line changes and gaps versus requests.",
+                        subtitle: "The 2027 Budget Supplement, line by line: what changed from 2026 and where the adopted budget fell short of department requests.",
                         systemImage: "text.magnifyingglass",
                         accentOverride: RiverheadTheme.brandMint
                     ) {
@@ -473,8 +473,8 @@ struct HomeView: View {
                     }
 
                     internalFullWidthCard(
-                        title: "2027 Budget Outlook",
-                        subtitle: "Whiteboard view of what the 2027 budget story could look like based on current trends.",
+                        title: "2027 Model Whiteboard",
+                        subtitle: "This app's whiteboard of 2027 pressures, made before the Board adopted the budget on November 17, 2026.",
                         systemImage: "pencil.and.outline",
                         accentOverride: RiverheadTheme.brandNavy
                     ) {

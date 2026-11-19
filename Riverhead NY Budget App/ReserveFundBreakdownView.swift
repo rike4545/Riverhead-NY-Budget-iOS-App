@@ -180,7 +180,7 @@ struct ReserveFundBreakdownView: View {
     private var heroCard: some View {
         GlassCard(
             title: "Riverhead's Reserve Picture (Live)",
-            subtitle: "All figures derive from the 2025 Annual Financial Report and 2026 adopted General Fund appropriations."
+            subtitle: "All figures derive from the 2025 Annual Financial Report and the \(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget's General Fund appropriations."
         ) {
             VStack(alignment: .leading, spacing: 12) {
                 HStack(alignment: .firstTextBaseline) {

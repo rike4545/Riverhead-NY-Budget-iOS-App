@@ -204,7 +204,7 @@ struct NativeBudgetCompareView: View {
                 .font(.title2.bold())
                 .foregroundStyle(RiverheadTheme.textPrimary)
 
-            Text("Compare adopted appropriations across every Town fund using the same 2020–2026 history dataset as Riverhead Budget Live.")
+            Text("Compare adopted appropriations across every Town fund using the same \(String(document.years.min() ?? 2020))–\(String(document.years.max() ?? 2027)) history dataset as Riverhead Budget Live.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 

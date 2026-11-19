@@ -43,7 +43,7 @@ struct Budget2027ExecutiveWhiteboardView: View {
             )
             .ignoresSafeArea()
         )
-        .navigationTitle("2027 Executive Summary")
+        .navigationTitle("2027 Model Whiteboard")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -58,18 +58,18 @@ struct Budget2027ExecutiveWhiteboardView: View {
                         .background(Circle().stroke(WhiteboardInk.blue, lineWidth: 2))
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Potential 2027 Budget")
+                        Text("This app's 2027 model")
                             .font(.system(.title2, design: .rounded).weight(.bold))
                             .foregroundStyle(WhiteboardInk.black)
 
-                        Text("Executive whiteboard summary")
+                        Text("Whiteboard made before adoption")
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(WhiteboardInk.blue)
                     }
 
                     Spacer()
 
-                    Text("Draft")
+                    Text("Model")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(WhiteboardInk.red)
                         .padding(.horizontal, 10)
@@ -80,7 +80,7 @@ struct Budget2027ExecutiveWhiteboardView: View {
                         )
                 }
 
-                Text("The short version: 2027 pressure is mostly recurring. The budget works best if Riverhead pairs any tax increase with visible recurring offsets, protects reserves for one-time needs, and explains department investments with service targets.")
+                Text("The Board adopted the 2027 budget on November 17, 2026 (Resolution 2026-995, 5–0): $120,854,219 across all funds, a $66,516,005 levy and a Town-wide rate of 72.487. This whiteboard is the app's earlier model, built from the 2026 Adopted Budget. Its short version: 2027 pressure is mostly recurring, so any tax increase should be paired with visible recurring offsets, reserves kept for one-time needs, and department investments explained with service targets.")
                     .font(.body)
                     .foregroundStyle(WhiteboardInk.black.opacity(0.86))
                     .fixedSize(horizontal: false, vertical: true)
@@ -118,7 +118,7 @@ struct Budget2027ExecutiveWhiteboardView: View {
                 whiteboardMetric(
                     "Sample tax change",
                     value: summary.sampleTaxChange.currencyText,
-                    note: "For a $450K assessed value at the app's current Town rate.",
+                    note: "For a $450K assessed value at the 2026 Town rate, the model's starting point.",
                     tint: WhiteboardInk.blue,
                     icon: "house.and.flag"
                 )
@@ -547,7 +547,7 @@ private struct Budget2027WhiteboardSummary {
     let currentTemporaryMunicipalAssistance = 7_487.0
 
     var levyYield: Double {
-        store.appropriations * 0.703 * (levyGrowthPercent / 100)
+        store.modelBaseAppropriations * 0.703 * (levyGrowthPercent / 100)
     }
 
     var recurringPressure: Double {
@@ -563,7 +563,7 @@ private struct Budget2027WhiteboardSummary {
     }
 
     var sampleTaxChange: Double {
-        (450_000 / 1_000) * store.ratePerThousand * (levyGrowthPercent / 100)
+        (450_000 / 1_000) * store.modelBaseRatePerThousand * (levyGrowthPercent / 100)
     }
 
     var totalStateMunicipalAid: Double {
@@ -571,8 +571,8 @@ private struct Budget2027WhiteboardSummary {
     }
 
     var totalStateMunicipalAidShare: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return totalStateMunicipalAid / store.appropriations
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return totalStateMunicipalAid / store.modelBaseAppropriations
     }
 
     var fy2027TMAPlanningEstimate: Double {

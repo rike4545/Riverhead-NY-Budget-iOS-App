@@ -111,7 +111,10 @@ struct RoadsDashboardView: View {
 
     private var highwayShareOfBudget: Double {
         guard let v = latestAppropriation?.value, v > 0 else { return 0 }
-        return v / 69_113_159 * 100
+        // Highway appropriations as a share of the same year's General Fund appropriations.
+        let year = latestAppropriation?.year
+        let gf = year.flatMap { BudgetStages.doc($0, .adopted)?.generalFund?.appropriations } ?? 69_113_159
+        return v / gf * 100
     }
 
     // MARK: - Body

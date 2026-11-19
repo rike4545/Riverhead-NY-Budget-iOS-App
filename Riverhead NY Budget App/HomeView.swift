@@ -465,7 +465,7 @@ struct HomeView: View {
 
                     internalFullWidthCard(
                         title: "Budget Supplement Explorer",
-                        subtitle: "The 2026 Budget Supplement as line-by-line changes and gaps versus requests (the 2026 budget cycle).",
+                        subtitle: "The 2027 Budget Supplement, line by line: what changed from 2026 and where the adopted budget fell short of department requests.",
                         systemImage: "text.magnifyingglass",
                         accentOverride: RiverheadTheme.brandMint
                     ) {

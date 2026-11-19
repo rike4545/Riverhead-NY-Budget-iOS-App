@@ -794,7 +794,7 @@ fileprivate enum BudgetRecommendations2027 {
         .init(
             title: "Tighten overtime controls",
             impact: "Accountability",
-            detail: "Start with Police Uniform OT, where 2024 actual spending was about $1.40M against a $1.0M budget and the adopted 2026 line remains $1.0M. The March activity report also shows criminal incidents rising to 167 from 144 and total incidents rising to 2,994 from 2,922, so a credible 2027 offset must come from monthly cause-of-OT reporting, scheduling review, and quarterly recovery plans, not from assuming police workload is falling."
+            detail: "Start with Police Uniform OT, where 2024 actual spending was about $1.40M against a $1.0M budget the adopted 2026 line was $1.0M, and the 2027 Adopted Budget sets it at $1,037,500 against 2025 actual spending of $1,113,609. The March activity report also shows criminal incidents rising to 167 from 144 and total incidents rising to 2,994 from 2,922, so a credible 2027 offset must come from monthly cause-of-OT reporting, scheduling review, and quarterly recovery plans, not from assuming police workload is falling."
         ),
         .init(
             title: "Budget a small civilian vacancy factor",
@@ -2256,7 +2256,7 @@ fileprivate struct OverviewStoryView: View {
                   tag: "Appropriations"),
             .init(symbol: "scroll.fill",
                   title: "Debt & capital posture",
-                  blurb: "The 2026 tentative proposed no new long-term bonds. Debt service appropriations remain modest. BANs outstanding in Capital Fund should be monitored for conversion.",
+                  blurb: "Debt Service Fund bond principal falls from $3,784,600 in 2026 to $969,939 in the 2027 Adopted Budget, and BAN interest from $1,233,750 to $757,270. The General Fund's transfer to debt service drops $1,006,731. BANs outstanding in the Capital Fund should be monitored for conversion.",
                   tag: "Debt"),
             .init(symbol: "checkmark.seal.fill",
                   title: "This app's 2027 balanced-budget model",
@@ -2715,13 +2715,13 @@ fileprivate struct FundBalanceDashboardView: View {
                 number: 1,
                 title: "Clean up the current General Fund mismatch",
                 amount: 74_283,
-                detail: "Use one-time money first to close the current A01 imbalance identified in the 2026 supplement before calling anything else balanced."
+                detail: "The 2027 Adopted Budget closes the General Fund on paper, but only by counting $880,000 of fund balance as income. Use one-time money for one-time needs, and name the recurring revenue or savings that will replace that $880,000."
             ),
             .init(
                 number: 2,
                 title: "Crush BAN interest before it compounds",
                 amount: 1_233_750,
-                detail: "The 2026 adopted budget shows BAN interest in the Debt Service Fund at about $1.234M. A one-time reserve deployment here directly reduces financing drag."
+                detail: "BAN interest in the Debt Service Fund falls from $1,233,750 in 2026 to $757,270 in the 2027 Adopted Budget, and BAN principal from $1,025,000 to $800,000. A one-time reserve deployment against what remains directly reduces financing drag."
             ),
             .init(
                 number: 3,
@@ -3186,6 +3186,14 @@ fileprivate struct FundBalanceDashboardView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
+                .init(title: "2027 Budget Supplement",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -3520,7 +3528,7 @@ fileprivate struct CapitalDebtExplorerView: View {
 
                     if mode == .expert {
                         Divider().opacity(0.2)
-                        Text("Total outstanding: \(debt.reduce(0) { $0 + $1.outstanding }, format: .currency(code: "USD")). BANs must be converted to long-term bonds or paid off within their term. Review the 2026 Budget Supplement for the full debt schedule.")
+                        Text("Total outstanding: \(debt.reduce(0) { $0 + $1.outstanding }, format: .currency(code: "USD")). BANs must be converted to long-term bonds or paid off within their term. Review the 2027 Budget Supplement for the full debt schedule.")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -3600,6 +3608,14 @@ fileprivate struct CapitalDebtExplorerView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
+                .init(title: "2027 Budget Supplement",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -3676,34 +3692,36 @@ struct BudgetOutlier: Identifiable {
 fileprivate struct OutlierWatchView: View {
     let mode: BudgetAudienceMode
 
-    // 2026 vs 2025 adopted budget changes — sourced from the 2026 Adopted Budget and Supplement.
-    // These are the largest year-over-year appropriation changes by department/category.
+    // 2027 vs 2026 adopted, from the 2027 line file (budget-2027-preliminary-lines.json, the
+    // Preliminary the Board adopted unchanged): each department's spending lines summed, the
+    // largest increases first. CM4's $2,959,300 move from a debt transfer to a fund balance
+    // contribution is left out: it is the same money relabeled within the fund.
     private var sampleOutliers: [BudgetOutlier] {
         [
+            .init(department: "General Fund – Health Insurance",
+                  category: "Benefits (A01 9060 and 9065)",
+                  changeDollars: 1_045_580.0,
+                  changePercent: 10.3,
+                  isOneTime: false),
             .init(department: "Police",
-                  category: "Personal Services",
-                  changeDollars: 1_652_000.0,
-                  changePercent: 6.8,
+                  category: "Department total (A01 3120)",
+                  changeDollars: 855_184.0,
+                  changePercent: 3.8,
                   isOneTime: false),
-            .init(department: "General Fund – Employee Benefits",
-                  category: "Benefits",
-                  changeDollars: 1_120_000.0,
-                  changePercent: 5.4,
+            .init(department: "Police Retirement",
+                  category: "Benefits (A01 9015)",
+                  changeDollars: 361_609.0,
+                  changePercent: 5.5,
                   isOneTime: false),
-            .init(department: "Ambulance District",
-                  category: "Equipment & Capital",
-                  changeDollars: 610_000.0,
-                  changePercent: 108.0,
-                  isOneTime: true),
-            .init(department: "Highway",
-                  category: "Personal Services",
-                  changeDollars: 480_000.0,
-                  changePercent: 4.9,
+            .init(department: "Information Technology",
+                  category: "Department total (A01 1680)",
+                  changeDollars: 291_837.0,
+                  changePercent: 18.6,
                   isOneTime: false),
-            .init(department: "Parks & Recreation",
-                  category: "Contractual",
-                  changeDollars: 195_000.0,
-                  changePercent: 16.2,
+            .init(department: "Highway Repairs",
+                  category: "Department total (DA1 5110)",
+                  changeDollars: 249_975.0,
+                  changePercent: 7.0,
                   isOneTime: false)
         ]
     }
@@ -3713,8 +3731,8 @@ fileprivate struct OutlierWatchView: View {
             GlassCard(
                 title: "What changed the most?",
                 subtitle: mode == .resident
-                    ? "Which departments' spending jumped the most from 2025 to 2026."
-                    : "Year-over-year appropriation changes by department. Source: 2026 Adopted Budget vs. 2025 Adopted Budget."
+                    ? "Which departments' spending rose the most from the 2026 to the 2027 Adopted Budget."
+                    : "Year-over-year appropriation changes by department, line by line. Source: 2027 Adopted Budget (the Preliminary, adopted unchanged) against the 2026 Adopted Budget it prints beside each line."
             ) {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(sampleOutliers) { item in
@@ -3781,6 +3799,10 @@ fileprivate struct OutlierWatchView: View {
             }
 
             SourcesStrip(links: [
+                .init(title: "2027 Adopted Budget",
+                      kind: .budgetBook,
+                      note: nil,
+                      url: URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/4170/2027-Adopted-Budget-PDF")),
                 .init(title: "2026 Adopted Budget",
                       kind: .budgetBook,
                       note: nil,
@@ -4592,8 +4614,8 @@ fileprivate struct HearingToolkitView: View {
                     quickReadRow(
                         title: "Why Police OT is the first offset",
                         detail: mode == .resident
-                            ? "Police Uniform OT came in about $401K over budget in 2024, while the adopted 2026 line still sits at $1.0M. But March workload was not down: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922. The app treats $250K as a recovery target only if the Town publishes monthly OT causes and manages scheduling tightly."
-                            : "Police Uniform OT actuals were $1.401M in 2024 versus a $1.0M budget, and the 2026 adopted baseline is still $1.0M. Recovering $250K would capture about \(BudgetRecommendations2027.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1)))) of the 2024 variance, but March activity data shows criminal incidents and total incidents up year over year. That makes cause coding and coverage constraints essential.",
+                            ? "Police Uniform OT came in about $401K over budget in 2024 and $114K over in 2025, and the 2027 Adopted Budget line is $1,037,500. But March workload was not down: criminal incidents rose to 167 from 144 and total incidents rose to 2,994 from 2,922. The app treats $250K as a recovery target only if the Town publishes monthly OT causes and manages scheduling tightly."
+                            : "Police Uniform OT actuals were $1.401M in 2024 and $1.114M in 2025 against a $1.0M budget; the 2027 Adopted Budget line is $1,037,500. Recovering $250K would capture about \(BudgetRecommendations2027.policeOvertimeRecoveryShare.formatted(.percent.precision(.fractionLength(1)))) of the 2024 variance, but March activity data shows criminal incidents and total incidents up year over year. That makes cause coding and coverage constraints essential.",
                         tint: RiverheadTheme.brandSky
                     )
 
@@ -4776,10 +4798,10 @@ fileprivate struct HearingToolkitView: View {
             }
 
             GlassCard(
-                title: "2026 Correction Watch",
+                title: "2027 Correction Watch",
                 subtitle: mode == .resident
-                    ? "Based on the 2026 Budget Supplement, here are the funds the board should be explaining — or fixing — in the open."
-                    : "Fund-level issues pulled from the 2026 Budget Supplement that warrant reconciliation, reserve-use disclosure, or explicit board findings."
+                    ? "Based on the 2027 Adopted Budget, here are the funds the board should be explaining — or fixing — in the open."
+                    : "Fund-level issues in the 2027 Adopted Budget and its Supplement that warrant reconciliation, reserve-use disclosure, or explicit board findings."
             ) {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(correctionLines) { line in

@@ -46,25 +46,53 @@ struct SupplementOutlier: Identifiable, Decodable, Hashable {
     let fund: String
     let name: String
     let control: String
-    let actual2024: Double?
-    let budget2025: Double?
-    let ytd2025: Double?
-    let tentative2026: Double?
+    /// The actual two years before the budget year (2025 for the 2027 Supplement, 2024 for 2026).
+    let actual: Double?
+    /// The current year's adopted budget (2026 for the 2027 Supplement, 2025 for 2026).
+    let adopted: Double?
+    let ytd: Double?
+    /// The new year's figure: the Preliminary or Tentative (2027), or the 2026 Tentative.
+    let proposal: Double?
     let flag: String
     let excess: Double
 
     var id: String { "\(flag)-\(account)" }
+
+    private enum K: String, CodingKey {
+        case account, fund, name, control, flag, excess
+        case actual, adopted, ytd, proposal, tentative
+        case actual2024, budget2025, ytd2025, tentative2026
+    }
+
+    /// Reads the 2027 Supplement's role-named columns, or the 2026 file's year-named ones.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: K.self)
+        account = try c.decode(String.self, forKey: .account)
+        fund = try c.decode(String.self, forKey: .fund)
+        name = try c.decode(String.self, forKey: .name)
+        control = try c.decode(String.self, forKey: .control)
+        flag = try c.decode(String.self, forKey: .flag)
+        excess = try c.decode(Double.self, forKey: .excess)
+        actual = try c.decodeIfPresent(Double.self, forKey: .actual) ?? c.decodeIfPresent(Double.self, forKey: .actual2024)
+        adopted = try c.decodeIfPresent(Double.self, forKey: .adopted) ?? c.decodeIfPresent(Double.self, forKey: .budget2025)
+        ytd = try c.decodeIfPresent(Double.self, forKey: .ytd) ?? c.decodeIfPresent(Double.self, forKey: .ytd2025)
+        proposal = try c.decodeIfPresent(Double.self, forKey: .proposal)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative2026)
+    }
 }
 
 struct SupplementOutliersFile: Decodable {
+    /// The Supplement's budget year (2027); nil in the 2026 file, which predates the field.
+    let supplementYear: Int?
     let overBudget: [SupplementOutlier]
     let chronicOverrun: [SupplementOutlier]
     let noBudget: [SupplementOutlier]
     let recoverablePoolControllable: Double
     let note: String
-}
 
-// MARK: - Line items
+    var budgetYear: Int { supplementYear ?? 2026 }
+}
 
 struct SupplementLine: Identifiable, Decodable, Hashable {
     let account: String
@@ -88,7 +116,7 @@ struct SupplementLine: Identifiable, Decodable, Hashable {
 
 private struct SupplementLinesFile: Decodable { let lines: [SupplementLine] }
 
-// MARK: - Multi-year history (2020-2026 supplements)
+// MARK: - Multi-year history (2020-2027 supplements)
 
 // Each supplement prints an actual from two years back, so stacking seven of
 // them gives an unbroken 2018-2024 actual on the same account. That span is
@@ -103,10 +131,32 @@ struct SupplementCyclicalLine: Identifiable, Decodable {
     let periodYears: Int
     let nextDue: Int
     let spikeAverage: Double
-    let adopted2025: Double
-    let tentative2026: Double
+    /// The current year's adopted figure and the new year's proposal (2026 and 2027 in the
+    /// 2027 history; 2025 and the 2026 Tentative in the older file).
+    let adopted: Double
+    let proposed: Double
 
     var id: String { account }
+
+    private enum K: String, CodingKey {
+        case account, name, series, spikeYears, periodYears, nextDue, spikeAverage
+        case adopted, proposed, tentative, adopted2025, tentative2026
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: K.self)
+        account = try c.decode(String.self, forKey: .account)
+        name = try c.decode(String.self, forKey: .name)
+        series = try c.decode([String: Double].self, forKey: .series)
+        spikeYears = try c.decode([Int].self, forKey: .spikeYears)
+        periodYears = try c.decode(Int.self, forKey: .periodYears)
+        nextDue = try c.decode(Int.self, forKey: .nextDue)
+        spikeAverage = try c.decode(Double.self, forKey: .spikeAverage)
+        adopted = try c.decodeIfPresent(Double.self, forKey: .adopted) ?? c.decodeIfPresent(Double.self, forKey: .adopted2025) ?? 0
+        proposed = try c.decodeIfPresent(Double.self, forKey: .proposed)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative2026) ?? 0
+    }
 }
 
 struct SupplementUnderBudgetedLine: Identifiable, Decodable {
@@ -116,11 +166,31 @@ struct SupplementUnderBudgetedLine: Identifiable, Decodable {
     let quietYears: Int
     let averageWhenActive: Double
     let peak: Double
-    let adopted2025: Double
-    let tentative2026: Double
+    let adopted: Double
+    let proposed: Double
     let shortfall: Double
 
     var id: String { account }
+
+    private enum K: String, CodingKey {
+        case account, name, series, quietYears, averageWhenActive, peak, shortfall
+        case adopted, proposed, tentative, adopted2025, tentative2026
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: K.self)
+        account = try c.decode(String.self, forKey: .account)
+        name = try c.decode(String.self, forKey: .name)
+        series = try c.decode([String: Double].self, forKey: .series)
+        quietYears = try c.decode(Int.self, forKey: .quietYears)
+        averageWhenActive = try c.decode(Double.self, forKey: .averageWhenActive)
+        peak = try c.decode(Double.self, forKey: .peak)
+        shortfall = try c.decode(Double.self, forKey: .shortfall)
+        adopted = try c.decodeIfPresent(Double.self, forKey: .adopted) ?? c.decodeIfPresent(Double.self, forKey: .adopted2025) ?? 0
+        proposed = try c.decodeIfPresent(Double.self, forKey: .proposed)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative)
+            ?? c.decodeIfPresent(Double.self, forKey: .tentative2026) ?? 0
+    }
 }
 
 struct SupplementRenumberedLine: Identifiable, Decodable {
@@ -137,11 +207,37 @@ struct SupplementRenumberedLine: Identifiable, Decodable {
 struct SupplementHistoryFile: Decodable {
     let actualYears: [Int]
     let accountsTracked: Int
+    /// The Supplements stacked (2020–2027) and the year being budgeted (2027); nil in the older file.
+    let supplementYears: [Int]?
+    let budgetYear: Int?
     let cyclical: [SupplementCyclicalLine]
-    let dueIn2027: [SupplementCyclicalLine]
+    /// Lines whose cycle puts the next spike in the year being budgeted.
+    let dueInBudgetYear: [SupplementCyclicalLine]
     let underBudgeted: [SupplementUnderBudgetedLine]
     let renumbered: [SupplementRenumberedLine]
     let note: String
+
+    /// The year whose budget the "proposed" figures describe (2027), 2026 for the older file.
+    var proposalYear: Int { budgetYear ?? 2026 }
+
+    private enum K: String, CodingKey {
+        case actualYears, accountsTracked, supplementYears, budgetYear, cyclical
+        case dueInBudgetYear, dueIn2027, underBudgeted, renumbered, note
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: K.self)
+        actualYears = try c.decode([Int].self, forKey: .actualYears)
+        accountsTracked = try c.decode(Int.self, forKey: .accountsTracked)
+        supplementYears = try c.decodeIfPresent([Int].self, forKey: .supplementYears)
+        budgetYear = try c.decodeIfPresent(Int.self, forKey: .budgetYear)
+        cyclical = try c.decode([SupplementCyclicalLine].self, forKey: .cyclical)
+        dueInBudgetYear = try c.decodeIfPresent([SupplementCyclicalLine].self, forKey: .dueInBudgetYear)
+            ?? c.decodeIfPresent([SupplementCyclicalLine].self, forKey: .dueIn2027) ?? []
+        underBudgeted = try c.decode([SupplementUnderBudgetedLine].self, forKey: .underBudgeted)
+        renumbered = try c.decode([SupplementRenumberedLine].self, forKey: .renumbered)
+        note = try c.decode(String.self, forKey: .note)
+    }
 }
 
 // MARK: - The newest Supplement's lines (2027)
@@ -195,7 +291,8 @@ struct SupplementCurrentFile: Decodable {
 
 enum SupplementData {
     static let reductions: SupplementReductionsFile? = load("reductions")
-    static let outliers: SupplementOutliersFile? = load("supplement-outliers")
+    /// The newest Supplement's outliers (2027), else the 2026 Supplement's.
+    static let outliers: SupplementOutliersFile? = load("supplement-current-outliers") ?? load("supplement-outliers")
     static let lines: [SupplementLine] = (load("supplement-lines") as SupplementLinesFile?)?.lines ?? []
     static let history: SupplementHistoryFile? = load("supplement-history")
     static let currentLines: SupplementCurrentFile? = load("supplement-current-lines")

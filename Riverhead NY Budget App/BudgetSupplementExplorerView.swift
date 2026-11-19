@@ -148,10 +148,104 @@ private struct LevyReductionOffset: Identifiable {
 }
 
 private enum BudgetSupplementExplorerData {
-    static let officialURL = URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/2780/2026-Budget-Supplement-PDF")!
+    // MARK: The newest Supplement (2027), read from its lines
+
+    /// The newest Supplement's lines (2027), when bundled.
+    static var current: SupplementCurrentFile? { SupplementData.currentLines }
+    /// The budget year the panels describe: 2027 from the 2027 Supplement, else 2026.
+    static var year: Int { current?.supplementYear ?? 2026 }
+    /// "2026 adopted" / "2027 adopted" (or "2025 adopted" / "2026 tentative" for the older book).
+    static var priorLabel: String { current == nil ? "2025 adopted" : "\(year - 1) adopted" }
+    static var newLabel: String {
+        guard current != nil else { return "2026 tentative" }
+        return BudgetLines.adoptedYear == year ? "\(year) adopted" : "\(year) proposed"
+    }
+
+    static var officialURL: URL {
+        current == nil
+            ? URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/2780/2026-Budget-Supplement-PDF")!
+            : URL(string: "https://www.townofriverheadny.gov/DocumentCenter/View/3929/2027-Budget-Supplement-PDF")!
+    }
+
+    private static let fundNames: [String: String] = [
+        "A01": "General Fund", "DA1": "Highway", "EW1": "Water", "ES1": "Sewer District", "SM1": "Ambulance", "V01": "Debt Service",
+    ]
+
+    /// Interfund transfers and the fund-balance contribution move money between funds or within
+    /// one; they are left out of the variance list so neither side reads as new spending or revenue.
+    private static func isTransfer(_ line: SupplementCurrentLine) -> Bool {
+        let n = line.name.lowercased()
+        return n.contains("interfund") || n.contains("fund balance contribution") || n.contains("transfers to ot")
+    }
+
+    static var fundSummaries: [SupplementFundSummary] {
+        guard let lines = current?.lines else { return fundSummaries2026 }
+        return ["A01", "DA1", "EW1", "ES1", "SM1", "V01"].map { code in
+            let fund = lines.filter { $0.fund == code }
+            let exp = fund.filter { $0.kind == "expenditure" }, rev = fund.filter { $0.kind == "revenue" }
+            let e = exp.reduce(0) { $0 + ($1.proposal ?? 0) }, r = rev.reduce(0) { $0 + ($1.proposal ?? 0) }
+            return SupplementFundSummary(
+                fund: code, name: fundNames[code] ?? code, tentativeExpenditures: e, tentativeRevenues: r,
+                expenditureChange: e - exp.reduce(0) { $0 + ($1.adopted ?? 0) },
+                revenueChange: r - rev.reduce(0) { $0 + ($1.adopted ?? 0) })
+        }
+    }
+
+    static var biggestChanges: [SupplementChangeLine] {
+        guard let lines = current?.lines else { return biggestChanges2026 }
+        return lines.filter { !isTransfer($0) }
+            .map { ($0, ($0.proposal ?? 0) - ($0.adopted ?? 0)) }
+            .sorted { abs($0.1) > abs($1.1) }
+            .prefix(8)
+            .map { line, change in
+                let revenue = line.kind == "revenue"
+                let actual = line.actual.map { $0.formatted(.currency(code: "USD").precision(.fractionLength(0))) } ?? "not printed"
+                return SupplementChangeLine(
+                    title: line.name, fund: line.fund, kind: revenue ? .revenue : .expense,
+                    adopted2025: line.adopted ?? 0, tentative2026: line.proposal ?? 0, change: change,
+                    note: "\(line.account). \(year - 2) actual: \(actual).",
+                    scenarioQuestion: revenue
+                        ? "Is the \(year) estimate supported by recent receipts, and is it recurring?"
+                        : "What drives this change, and is it a recurring cost or a one-time one?")
+            }
+    }
+
+    static var requestGaps: [SupplementRequestGapLine] {
+        guard let lines = current?.lines else { return requestGaps2026 }
+        return lines.filter { $0.kind == "expenditure" && !isTransfer($0) }
+            .filter { ($0.request ?? 0) - ($0.proposal ?? 0) > 0 }
+            .sorted { (($0.request ?? 0) - ($0.proposal ?? 0)) > (($1.request ?? 0) - ($1.proposal ?? 0)) }
+            .prefix(8)
+            .map { line in
+                SupplementRequestGapLine(
+                    title: line.name, fund: line.fund, request: line.request ?? 0, tentative: line.proposal ?? 0,
+                    note: "\(line.account). The department asked for more than the \(newLabel) figure; the difference should have a budget note.")
+            }
+    }
+
+    static var departmentLines: [SupplementDepartmentLine] {
+        guard let lines = current?.lines else { return departmentLines2026 }
+        let exp = lines.filter { $0.kind == "expenditure" }
+        let grouped = Dictionary(grouping: exp) { line -> String in
+            let parts = line.account.split(separator: "-")
+            return parts.count > 2 ? "\(line.fund)-\(parts[2])" : line.fund
+        }
+        return grouped.map { key, rows in
+            let total = rows.reduce(0) { $0 + ($1.proposal ?? 0) }
+            let change = total - rows.reduce(0) { $0 + ($1.adopted ?? 0) }
+            let name = rows.first.map { String($0.name.split(separator: "-").first ?? "").trimmingCharacters(in: .whitespaces) } ?? key
+            return SupplementDepartmentLine(code: key, title: name, tentative: total, change: change,
+                                            note: "\(rows.count) lines. \(newLabel.capitalized) total against \(priorLabel).")
+        }
+        .sorted { $0.tentative > $1.tentative }
+        .prefix(10)
+        .map { $0 }
+    }
+
+    // MARK: The 2026 Supplement's curated lists (used when the 2027 lines are not bundled)
     static let annualFinancialReportTitle = "2025 Annual Financial Report"
 
-    static let fundSummaries: [SupplementFundSummary] = [
+    static let fundSummaries2026: [SupplementFundSummary] = [
         .init(fund: "A01", name: "General Fund", tentativeExpenditures: 68_945_417, tentativeRevenues: 69_113_159, expenditureChange: 4_092_588, revenueChange: 4_260_330),
         .init(fund: "DA1", name: "Highway", tentativeExpenditures: 7_919_250, tentativeRevenues: 7_919_250, expenditureChange: 197_450, revenueChange: 197_450),
         .init(fund: "EW1", name: "Water", tentativeExpenditures: 9_908_655, tentativeRevenues: 11_008_655, expenditureChange: 345_655, revenueChange: 345_655),
@@ -236,7 +330,7 @@ private enum BudgetSupplementExplorerData {
         levyReductionOffsets.reduce(0) { $0 + $1.planning }
     }
 
-    static let biggestChanges: [SupplementChangeLine] = [
+    static let biggestChanges2026: [SupplementChangeLine] = [
         .init(title: "Property Taxes", fund: "A01", kind: .revenue, adopted2025: 48_639_479, tentative2026: 52_864_609, change: 4_225_130, note: "Largest revenue variance from the 2025 adopted baseline.", scenarioQuestion: "For 2027, separate levy-supported recurring revenue from one-time or uncertain offsets."),
         .init(title: "Police - full-time uniform personnel", fund: "A01", kind: .expense, adopted2025: 13_534_000, tentative2026: 14_966_311, change: 1_432_311, note: "Largest expenditure variance in the operating baseline.", scenarioQuestion: "For 2027, reconcile authorized headcount, salary schedules, and overtime assumptions before setting the appropriation."),
         .init(title: "Police retirement", fund: "A01", kind: .expense, adopted2025: 5_541_809, tentative2026: 6_633_131, change: 1_091_322, note: "A payroll-related fringe benefit that should be reviewed with the salary base.", scenarioQuestion: "For 2027, carry pension cost as a recurring obligation tied to payroll, not as a discretionary add-on."),
@@ -247,7 +341,7 @@ private enum BudgetSupplementExplorerData {
         .init(title: "Metered water sales", fund: "EW1", kind: .revenue, adopted2025: 5_500_000, tentative2026: 5_804_577, change: 304_577, note: "Utility operating revenue that should be tested against consumption and rate assumptions.", scenarioQuestion: "For 2027, model water sales with utility demand and rate assumptions, not townwide tax assumptions.")
     ]
 
-    static let requestGaps: [SupplementRequestGapLine] = [
+    static let requestGaps2026: [SupplementRequestGapLine] = [
         .init(title: "IT personal services", fund: "A01", request: 722_279, tentative: 580_090, note: "Material request-to-tentative variance; requires a staffing, vacancy, or reclassification explanation."),
         .init(title: "Ambulance vehicles", fund: "SM1", request: 205_000, tentative: 85_000, note: "Capital outlay reduction; verify whether the deferred amount remains a future obligation."),
         .init(title: "MTA tax - uniform personnel", fund: "A01", request: 119_661, tentative: 0, note: "Zero appropriation should be supported by an accounting classification or statutory-basis explanation."),
@@ -258,7 +352,7 @@ private enum BudgetSupplementExplorerData {
         .init(title: "Building safety inspection personal services", fund: "A01", request: 518_233, tentative: 477_764, note: "Personal-services variance should be tied to permit volume, inspection backlog, and authorized staffing.")
     ]
 
-    static let departmentLines: [SupplementDepartmentLine] = [
+    static let departmentLines2026: [SupplementDepartmentLine] = [
         .init(code: "3120", title: "Police", tentative: 22_388_906, change: 1_907_028, note: "Material General Fund operating function; review salary, overtime, and equipment subaccounts together."),
         .init(code: "9015", title: "Police retirement", tentative: 6_633_131, change: 1_091_322, note: "Fringe-benefit function that should reconcile to payroll and pension-rate assumptions."),
         .init(code: "9060", title: "Hospitalization", tentative: 5_503_333, change: 368_628, note: "Recurring benefit appropriation; review trend rate, enrollment, and plan assumptions."),
@@ -336,11 +430,13 @@ struct BudgetSupplementExplorerView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label("2026 supplement to 2027 choices", systemImage: "doc.text.magnifyingglass")
+            Label(BudgetSupplementExplorerData.current == nil ? "2026 supplement to 2027 choices" : "\(String(BudgetSupplementExplorerData.year)) Budget Supplement, line by line", systemImage: "doc.text.magnifyingglass")
                 .font(.headline)
                 .foregroundStyle(RiverheadTheme.brandNavy)
 
-            Text("This view reads the official 2026 Budget Supplement alongside the 2025 Annual Financial Report: actual results, fund balance, material variances, request-to-tentative differences, and assumptions that should be documented before the 2027 base budget is set.")
+            Text(BudgetSupplementExplorerData.current == nil
+                 ? "This view reads the official 2026 Budget Supplement alongside the 2025 Annual Financial Report: actual results, fund balance, material variances and request-to-tentative differences."
+                 : "This view reads the official \(String(BudgetSupplementExplorerData.year)) Budget Supplement, line by line, alongside the 2025 Annual Financial Report. Its new-year figures are the \(String(BudgetSupplementExplorerData.year)) Preliminary, which the Town Board adopted unchanged on November 17, 2026. The fund, variance, request and department panels are computed from its lines; the tax-cut, retirement and 2027 control panels are this app's earlier model.")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
 
@@ -392,7 +488,7 @@ struct BudgetSupplementExplorerView: View {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("\(fund.fund) \(fund.name)")
                                     .font(.headline)
-                                Text("Tentative revenue less tentative appropriations: \(currency(fund.balance))")
+                                Text("\(BudgetSupplementExplorerData.newLabel.capitalized) revenue less appropriations: \(currency(fund.balance))")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
@@ -580,7 +676,7 @@ struct BudgetSupplementExplorerView: View {
     private var requestGapPanel: some View {
         Group {
             Section("Department Request vs Tentative") {
-                Text("These lines show material differences between the department request and the tentative appropriation. A difference is not automatically good or bad; it should be supported by a budget note, accounting classification, service-level decision, or funding-source explanation.")
+                Text("These lines show material differences between the department request and the \(BudgetSupplementExplorerData.newLabel) appropriation. A difference is not automatically good or bad; it should be supported by a budget note, accounting classification, service-level decision, or funding-source explanation.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
 
@@ -603,11 +699,11 @@ struct BudgetSupplementExplorerView: View {
                         ViewThatFits(in: .horizontal) {
                             HStack {
                                 metricBlock("Requested", value: line.request, tint: .blue)
-                                metricBlock("Tentative", value: line.tentative, tint: .orange)
+                                metricBlock(BudgetSupplementExplorerData.newLabel.capitalized, value: line.tentative, tint: .orange)
                             }
                             VStack(alignment: .leading) {
                                 metricBlock("Requested", value: line.request, tint: .blue)
-                                metricBlock("Tentative", value: line.tentative, tint: .orange)
+                                metricBlock(BudgetSupplementExplorerData.newLabel.capitalized, value: line.tentative, tint: .orange)
                             }
                         }
 
@@ -642,7 +738,7 @@ struct BudgetSupplementExplorerView: View {
                         }
 
                         HStack {
-                            Text("Change from 2025")
+                            Text("Change from \(BudgetSupplementExplorerData.current == nil ? "2025" : String(BudgetSupplementExplorerData.year - 1))")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             Spacer()
@@ -663,7 +759,7 @@ struct BudgetSupplementExplorerView: View {
 
     private var scenarioBridgePanel: some View {
         Group {
-            Section("Convert 2026 Variances Into 2027 Controls") {
+            Section("Convert 2026 Variances Into 2027 Controls (this app's earlier model)") {
                 Text("The accounting test is simple: recurring expenditures should be supported by recurring revenues, one-time resources should be used for one-time needs, and material variances should have a traceable explanation before they become the next year's baseline.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -828,7 +924,7 @@ struct BudgetSupplementExplorerView: View {
             }
         }
         .frame(height: 230)
-        .chartXAxisLabel("2026 tentative budget")
+        .chartXAxisLabel(BudgetSupplementExplorerData.newLabel.capitalized + " budget")
     }
 
     private func changeLineRow(_ line: SupplementChangeLine) -> some View {
@@ -849,12 +945,12 @@ struct BudgetSupplementExplorerView: View {
 
             ViewThatFits(in: .horizontal) {
                 HStack {
-                    metricBlock("2025 adopted", value: line.adopted2025, tint: .secondary)
-                    metricBlock("2026 tentative", value: line.tentative2026, tint: line.kind.tint)
+                    metricBlock(BudgetSupplementExplorerData.priorLabel.capitalized, value: line.adopted2025, tint: .secondary)
+                    metricBlock(BudgetSupplementExplorerData.newLabel.capitalized, value: line.tentative2026, tint: line.kind.tint)
                 }
                 VStack(alignment: .leading) {
-                    metricBlock("2025 adopted", value: line.adopted2025, tint: .secondary)
-                    metricBlock("2026 tentative", value: line.tentative2026, tint: line.kind.tint)
+                    metricBlock(BudgetSupplementExplorerData.priorLabel.capitalized, value: line.adopted2025, tint: .secondary)
+                    metricBlock(BudgetSupplementExplorerData.newLabel.capitalized, value: line.tentative2026, tint: line.kind.tint)
                 }
             }
 

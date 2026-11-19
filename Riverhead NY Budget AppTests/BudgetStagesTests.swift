@@ -94,4 +94,12 @@ struct BudgetLinesTests {
     @Test func ledgerReadsThe2027Supplement() {
         #expect(SupplementData.currentLines?.supplementYear == 2027)
     }
+
+    @Test func watchListReadsThe2027Supplement() {
+        // budget-supplement/current-outliers.json and history.json on the website.
+        #expect(SupplementData.outliers?.budgetYear == 2027)
+        #expect((SupplementData.outliers?.overBudget.count ?? 0) > 0)
+        #expect(SupplementData.history?.proposalYear == 2027)
+        #expect(SupplementData.history?.supplementYears?.last == 2027)
+    }
 }

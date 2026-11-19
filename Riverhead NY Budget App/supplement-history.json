@@ -1,4 +1,17 @@
 {
+ "supplementYears": [
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026,
+  2027
+ ],
+ "budgetYear": 2027,
+ "proposalStage": "preliminary",
+ "adoptedYear": 2026,
  "actualYears": [
   2018,
   2019,
@@ -6,31 +19,91 @@
   2021,
   2022,
   2023,
-  2024
+  2024,
+  2025
  ],
- "accountsTracked": 1080,
+ "accountsTracked": 1762,
+ "linesParsed": {
+  "2020": 1683,
+  "2021": 1704,
+  "2022": 1468,
+  "2023": 1808,
+  "2024": 1923,
+  "2025": 1955,
+  "2026": 1994,
+  "2027": 2000
+ },
  "cyclical": [
   {
-   "account": "A01-1-1910-488-000-00000",
-   "name": "Unall Ins - S.I.R.",
+   "account": "SM1-4-4540-280-000-00000",
+   "name": "Amb - Vehicles",
    "series": {
-    "2018": 0.0,
+    "2018": 207723.0,
     "2019": 0.0,
     "2020": 0.0,
-    "2021": 185761.0,
+    "2021": 86093.9,
     "2022": 0.0,
+    "2023": 89980.0,
+    "2024": 281676.39,
+    "2025": 59806.98
+   },
+   "spikeYears": [
+    2018,
+    2024
+   ],
+   "periodYears": 6,
+   "nextDue": 2030,
+   "spikeAverage": 244699.7,
+   "adopted": 105000.0,
+   "tentative": 85000.0,
+   "proposed": 85000.0
+  },
+  {
+   "account": "SM1-4-4540-240-000-00000",
+   "name": "Amb - Equipment",
+   "series": {
+    "2018": 1600.0,
+    "2019": 16654.0,
+    "2021": 77497.96,
+    "2022": 31709.73,
     "2023": 0.0,
-    "2024": 210267.0
+    "2024": 0.0,
+    "2025": 220000.0
    },
    "spikeYears": [
     2021,
+    2025
+   ],
+   "periodYears": 4,
+   "nextDue": 2029,
+   "spikeAverage": 148748.98,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0
+  },
+  {
+   "account": "Z14-6-6980-433-000-00000",
+   "name": "Eco Dev  - Prof Svcs - Legal",
+   "series": {
+    "2018": 92874.0,
+    "2019": 68290.43,
+    "2020": 54747.3,
+    "2021": 31021.08,
+    "2022": 34475.5,
+    "2023": 14771.05,
+    "2024": 151491.63,
+    "2025": 1955.0
+   },
+   "spikeYears": [
+    2018,
     2024
    ],
-   "periodYears": 3,
-   "nextDue": 2027,
-   "spikeAverage": 198014.0,
-   "adopted2025": 274100.0,
-   "tentative2026": 275800.0
+   "periodYears": 6,
+   "nextDue": 2030,
+   "spikeAverage": 122182.82,
+   "adopted": 12000.0,
+   "tentative": 12000.0,
+   "proposed": 12000.0
   },
   {
    "account": "A01-1-1680-431-000-00000",
@@ -41,7 +114,8 @@
     "2021": 36899.36,
     "2022": -35772.86,
     "2023": 379.0,
-    "2024": 0.0
+    "2024": 0.0,
+    "2025": 0.0
    },
    "spikeYears": [
     2018,
@@ -50,8 +124,33 @@
    "periodYears": 3,
    "nextDue": 2024,
    "spikeAverage": 117052.18,
-   "adopted2025": 0,
-   "tentative2026": 0
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0
+  },
+  {
+   "account": "A01-1-1625-240-000-00000",
+   "name": "B&G - Equipment",
+   "series": {
+    "2018": 26413.0,
+    "2019": 16316.92,
+    "2020": 42356.52,
+    "2021": 1199.99,
+    "2022": 4673.95,
+    "2023": 94035.45,
+    "2024": 26305.01,
+    "2025": 136572.26
+   },
+   "spikeYears": [
+    2023,
+    2025
+   ],
+   "periodYears": 2,
+   "nextDue": 2027,
+   "spikeAverage": 115303.86,
+   "adopted": 24005.0,
+   "tentative": 57876.0,
+   "proposed": 4576.0
   },
   {
    "account": "Z14-6-6980-436-000-00000",
@@ -63,7 +162,8 @@
     "2021": 8943.75,
     "2022": 0.0,
     "2023": 1505.0,
-    "2024": 63579.41
+    "2024": 63579.41,
+    "2025": 5495.0
    },
    "spikeYears": [
     2019,
@@ -72,29 +172,32 @@
    "periodYears": 5,
    "nextDue": 2029,
    "spikeAverage": 56346.83,
-   "adopted2025": 0,
-   "tentative2026": 0
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0
   },
   {
-   "account": "A01-3-3410-280-000-00000",
-   "name": "Fire Prot - Vehicles",
+   "account": "A01-8-8666-400-000-00000",
+   "name": "Rehab - Contractual",
    "series": {
     "2018": 0.0,
-    "2019": 36792.0,
-    "2021": 0.0,
-    "2022": 0.0,
-    "2023": 65388.53,
-    "2024": 9300.55
+    "2019": 0.0,
+    "2021": 5077.19,
+    "2022": 1325.6,
+    "2023": 30738.48,
+    "2024": 10999.4,
+    "2025": 75709.4
    },
    "spikeYears": [
-    2019,
-    2023
+    2023,
+    2025
    ],
-   "periodYears": 4,
+   "periodYears": 2,
    "nextDue": 2027,
-   "spikeAverage": 51090.26,
-   "adopted2025": 125000.0,
-   "tentative2026": 0
+   "spikeAverage": 53223.94,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0
   },
   {
    "account": "A01-1-1690-240-000-00000",
@@ -105,7 +208,8 @@
     "2021": 0.0,
     "2022": 0.0,
     "2023": 0.0,
-    "2024": 35000.0
+    "2024": 35000.0,
+    "2025": 0.0
    },
    "spikeYears": [
     2019,
@@ -114,73 +218,105 @@
    "periodYears": 5,
    "nextDue": 2029,
    "spikeAverage": 47082.83,
-   "adopted2025": 0,
-   "tentative2026": 5000.0
+   "adopted": 5000.0,
+   "tentative": 5000.0,
+   "proposed": 5000.0
+  },
+  {
+   "account": "ST1-5-5650-400-000-00000",
+   "name": "Pub Prk - Contractual",
+   "series": {
+    "2018": 53711.0,
+    "2019": 6711.27,
+    "2020": 6345.2,
+    "2021": 30494.94,
+    "2022": 36394.42,
+    "2023": 405.57,
+    "2024": 5154.25,
+    "2025": 6488.07
+   },
+   "spikeYears": [
+    2018,
+    2022
+   ],
+   "periodYears": 4,
+   "nextDue": 2026,
+   "spikeAverage": 45052.71,
+   "adopted": 61800.0,
+   "tentative": 61800.0,
+   "proposed": 61800.0
   }
  ],
- "dueIn2027": [
+ "dueInBudgetYear": [
   {
-   "account": "A01-1-1910-488-000-00000",
-   "name": "Unall Ins - S.I.R.",
+   "account": "A01-1-1625-240-000-00000",
+   "name": "B&G - Equipment",
+   "series": {
+    "2018": 26413.0,
+    "2019": 16316.92,
+    "2020": 42356.52,
+    "2021": 1199.99,
+    "2022": 4673.95,
+    "2023": 94035.45,
+    "2024": 26305.01,
+    "2025": 136572.26
+   },
+   "spikeYears": [
+    2023,
+    2025
+   ],
+   "periodYears": 2,
+   "nextDue": 2027,
+   "spikeAverage": 115303.86,
+   "adopted": 24005.0,
+   "tentative": 57876.0,
+   "proposed": 4576.0
+  },
+  {
+   "account": "A01-8-8666-400-000-00000",
+   "name": "Rehab - Contractual",
    "series": {
     "2018": 0.0,
     "2019": 0.0,
-    "2020": 0.0,
-    "2021": 185761.0,
-    "2022": 0.0,
-    "2023": 0.0,
-    "2024": 210267.0
+    "2021": 5077.19,
+    "2022": 1325.6,
+    "2023": 30738.48,
+    "2024": 10999.4,
+    "2025": 75709.4
    },
    "spikeYears": [
-    2021,
-    2024
+    2023,
+    2025
    ],
-   "periodYears": 3,
+   "periodYears": 2,
    "nextDue": 2027,
-   "spikeAverage": 198014.0,
-   "adopted2025": 274100.0,
-   "tentative2026": 275800.0
-  },
-  {
-   "account": "A01-3-3410-280-000-00000",
-   "name": "Fire Prot - Vehicles",
-   "series": {
-    "2018": 0.0,
-    "2019": 36792.0,
-    "2021": 0.0,
-    "2022": 0.0,
-    "2023": 65388.53,
-    "2024": 9300.55
-   },
-   "spikeYears": [
-    2019,
-    2023
-   ],
-   "periodYears": 4,
-   "nextDue": 2027,
-   "spikeAverage": 51090.26,
-   "adopted2025": 125000.0,
-   "tentative2026": 0
+   "spikeAverage": 53223.94,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0
   }
  ],
  "underBudgeted": [
   {
-   "account": "A01-3-3120-152-000-00000",
-   "name": "Police - Pers Svcs Sick Buy Back",
+   "account": "A01-3-3120-155-000-00000",
+   "name": "Police - Pers Svcs Union Buy Back",
    "series": {
-    "2018": 0.0,
-    "2019": 0.0,
-    "2021": 0.0,
-    "2022": 0.0,
-    "2023": 0.0,
-    "2024": 334737.5
+    "2018": 356283.0,
+    "2019": 397661.71,
+    "2020": 561896.73,
+    "2021": 452750.38,
+    "2022": 604666.45,
+    "2023": 449410.2,
+    "2024": 0.0,
+    "2025": 0.0
    },
-   "quietYears": 5,
-   "averageWhenActive": 334737.5,
-   "peak": 334737.5,
-   "adopted2025": 174200.0,
-   "tentative2026": 116900.0,
-   "shortfall": 217837.5
+   "quietYears": 2,
+   "averageWhenActive": 470444.74,
+   "peak": 604666.45,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 470444.74
   },
   {
    "account": "A01-1-1690-280-000-00000",
@@ -192,13 +328,15 @@
     "2021": 390049.32,
     "2022": 357814.92,
     "2023": 0.0,
-    "2024": 0.0
+    "2024": 0.0,
+    "2025": 0.0
    },
-   "quietYears": 4,
+   "quietYears": 5,
    "averageWhenActive": 263409.75,
    "peak": 390049.32,
-   "adopted2025": 0,
-   "tentative2026": 0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
    "shortfall": 263409.75
   },
   {
@@ -210,14 +348,157 @@
     "2021": 231983.67,
     "2022": 0.0,
     "2023": 231983.67,
-    "2024": 0.0
+    "2024": 0.0,
+    "2025": 0.0
    },
-   "quietYears": 3,
+   "quietYears": 4,
    "averageWhenActive": 187796.3,
    "peak": 231983.67,
-   "adopted2025": 0,
-   "tentative2026": 0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
    "shortfall": 187796.3
+  },
+  {
+   "account": "A01-8-8160-240-000-00000",
+   "name": "Refuse - Equipment",
+   "series": {
+    "2018": 0.0,
+    "2019": 0.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 186039.44
+   },
+   "quietYears": 6,
+   "averageWhenActive": 186039.44,
+   "peak": 186039.44,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 186039.44
+  },
+  {
+   "account": "A01-3-3125-101-UNI-00000",
+   "name": "Juv Aid -Pers Serv - FT Uni Personnel",
+   "series": {
+    "2018": 239802.0,
+    "2019": 110854.02,
+    "2020": 259007.79,
+    "2021": 236527.36,
+    "2022": 130462.19,
+    "2023": 128338.28,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 2,
+   "averageWhenActive": 184165.27,
+   "peak": 259007.79,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 184165.27
+  },
+  {
+   "account": "A01-1-1680-240-VXR-00000",
+   "name": "IT - Equip - VX Rail",
+   "series": {
+    "2020": 367947.0,
+    "2021": 96036.76,
+    "2022": 30483.78,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 3,
+   "averageWhenActive": 164822.51,
+   "peak": 367947.0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 164822.51
+  },
+  {
+   "account": "A01-8-8160-280-000-00000",
+   "name": "Refuse - Vehicles",
+   "series": {
+    "2020": 0.0,
+    "2021": 160317.0,
+    "2022": 160317.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 4,
+   "averageWhenActive": 160317.0,
+   "peak": 160317.0,
+   "adopted": 0,
+   "tentative": 55000.0,
+   "proposed": 0,
+   "shortfall": 160317.0
+  },
+  {
+   "account": "A01-3-3122-101-UNI-00000",
+   "name": "Bay Con -Pers Serv - FT Uni Personnel",
+   "series": {
+    "2018": 93721.0,
+    "2019": 121985.62,
+    "2020": 63778.04,
+    "2021": 76947.79,
+    "2022": 65049.27,
+    "2023": 70573.89,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 2,
+   "averageWhenActive": 82009.27,
+   "peak": 121985.62,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 82009.27
+  },
+  {
+   "account": "A01-1-1625-280-000-00000",
+   "name": "B&G - Vehicles",
+   "series": {
+    "2018": 60965.0,
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 40494.0,
+    "2022": 66117.0,
+    "2023": 0.0,
+    "2024": 122777.4,
+    "2025": 119128.43
+   },
+   "quietYears": 3,
+   "averageWhenActive": 81896.37,
+   "peak": 122777.4,
+   "adopted": 55000.0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 81896.37
+  },
+  {
+   "account": "SM1-4-4540-240-000-00000",
+   "name": "Amb - Equipment",
+   "series": {
+    "2018": 1600.0,
+    "2019": 16654.0,
+    "2021": 77497.96,
+    "2022": 31709.73,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 220000.0
+   },
+   "quietYears": 2,
+   "averageWhenActive": 69492.34,
+   "peak": 220000.0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 69492.34
   },
   {
    "account": "A01-1-1680-431-000-00000",
@@ -228,32 +509,16 @@
     "2021": 36899.36,
     "2022": -35772.86,
     "2023": 379.0,
-    "2024": 0.0
+    "2024": 0.0,
+    "2025": 0.0
    },
-   "quietYears": 2,
+   "quietYears": 3,
    "averageWhenActive": 59470.84,
    "peak": 197205.0,
-   "adopted2025": 0,
-   "tentative2026": 0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
    "shortfall": 59470.84
-  },
-  {
-   "account": "A01-1-1310-430-000-00000",
-   "name": "Acct - Software License & Support",
-   "series": {
-    "2018": 52219.0,
-    "2019": -12275.0,
-    "2021": 0.0,
-    "2022": 0.0,
-    "2023": 0.0,
-    "2024": 0.0
-   },
-   "quietYears": 5,
-   "averageWhenActive": 52219.0,
-   "peak": 52219.0,
-   "adopted2025": 0,
-   "tentative2026": 0,
-   "shortfall": 52219.0
   },
   {
    "account": "A01-3-3410-280-000-00000",
@@ -264,14 +529,78 @@
     "2021": 0.0,
     "2022": 0.0,
     "2023": 65388.53,
-    "2024": 9300.55
+    "2024": 9300.55,
+    "2025": 122373.6
    },
    "quietYears": 3,
-   "averageWhenActive": 37160.36,
-   "peak": 65388.53,
-   "adopted2025": 125000.0,
-   "tentative2026": 0,
-   "shortfall": 37160.36
+   "averageWhenActive": 58463.67,
+   "peak": 122373.6,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 58463.67
+  },
+  {
+   "account": "SL1-5-5182-280-000-00000",
+   "name": "Street -Vehicles",
+   "series": {
+    "2018": 110234.0,
+    "2019": 0.0,
+    "2020": 0.0,
+    "2021": 28994.0,
+    "2022": 28994.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 5,
+   "averageWhenActive": 56074.0,
+   "peak": 110234.0,
+   "adopted": 10000.0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 56074.0
+  },
+  {
+   "account": "A01-1-1310-430-000-00000",
+   "name": "Acct - Software License & Support",
+   "series": {
+    "2018": 52219.0,
+    "2019": -12275.0,
+    "2021": 0.0,
+    "2022": 0.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 6,
+   "averageWhenActive": 52219.0,
+   "peak": 52219.0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 52219.0
+  },
+  {
+   "account": "EW1-8-8320-436-100-00000",
+   "name": "Water - Consultant Cell Towers",
+   "series": {
+    "2018": 0.0,
+    "2019": 60466.76,
+    "2020": 56595.96,
+    "2021": 21843.6,
+    "2022": 0.0,
+    "2023": 0.0,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 5,
+   "averageWhenActive": 46302.11,
+   "peak": 60466.76,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 46302.11
   },
   {
    "account": "A01-1-1690-240-000-00000",
@@ -282,14 +611,57 @@
     "2021": 0.0,
     "2022": 0.0,
     "2023": 0.0,
-    "2024": 35000.0
+    "2024": 35000.0,
+    "2025": 0.0
    },
-   "quietYears": 3,
+   "quietYears": 4,
    "averageWhenActive": 31555.22,
    "peak": 59165.66,
-   "adopted2025": 0,
-   "tentative2026": 5000.0,
+   "adopted": 5000.0,
+   "tentative": 5000.0,
+   "proposed": 5000.0,
    "shortfall": 26555.22
+  },
+  {
+   "account": "A01-8-8666-400-000-00000",
+   "name": "Rehab - Contractual",
+   "series": {
+    "2018": 0.0,
+    "2019": 0.0,
+    "2021": 5077.19,
+    "2022": 1325.6,
+    "2023": 30738.48,
+    "2024": 10999.4,
+    "2025": 75709.4
+   },
+   "quietYears": 2,
+   "averageWhenActive": 24770.01,
+   "peak": 75709.4,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
+   "shortfall": 24770.01
+  },
+  {
+   "account": "EW1-8-8310-152-000-00000",
+   "name": "Water AdmPers Svcs Sick Buy Back",
+   "series": {
+    "2018": 19706.0,
+    "2019": 0.0,
+    "2020": 76547.49,
+    "2021": 400.0,
+    "2022": 3458.47,
+    "2023": 2974.78,
+    "2024": 0.0,
+    "2025": 0.0
+   },
+   "quietYears": 3,
+   "averageWhenActive": 20617.35,
+   "peak": 76547.49,
+   "adopted": 0,
+   "tentative": 2300.0,
+   "proposed": 2300.0,
+   "shortfall": 18317.35
   },
   {
    "account": "A01-8-8687-400-000-00000",
@@ -301,14 +673,309 @@
     "2021": 5000.0,
     "2022": 50000.0,
     "2023": 0.0,
-    "2024": 0.0
+    "2024": 0.0,
+    "2025": 0.0
    },
-   "quietYears": 2,
+   "quietYears": 3,
    "averageWhenActive": 14000.0,
    "peak": 50000.0,
-   "adopted2025": 0,
-   "tentative2026": 0,
+   "adopted": 0,
+   "tentative": 0,
+   "proposed": 0,
    "shortfall": 14000.0
+  }
+ ],
+ "chronicUnderBudget": [
+  {
+   "account": "DA1-5-5130-240-000-00000",
+   "name": "Mach -Equipment",
+   "fund": "DA1",
+   "page": 34,
+   "actual": {
+    "2023": 1029356.46,
+    "2024": 882072.47,
+    "2025": 1065292.03
+   },
+   "adoptedByYear": {
+    "2023": 233500.0,
+    "2024": 233500.0,
+    "2025": 236500.0
+   },
+   "averageActual": 992240.32,
+   "averageAdopted": 234500.0,
+   "ytd": 633455.0,
+   "adopted": 236500.0,
+   "tentative": 236500.0,
+   "proposed": 211129.0,
+   "gap": 781111.32
+  },
+  {
+   "account": "A01-1-1420-433-000-00000",
+   "name": "Atty - Prof Svcs - Legal",
+   "fund": "A01",
+   "page": 5,
+   "actual": {
+    "2023": 710192.15,
+    "2024": 467133.86,
+    "2025": 818960.74
+   },
+   "adoptedByYear": {
+    "2023": 400000.0,
+    "2024": 400000.0,
+    "2025": 400000.0
+   },
+   "averageActual": 665428.92,
+   "averageAdopted": 400000.0,
+   "ytd": 405990.28,
+   "adopted": 400000.0,
+   "tentative": 400000.0,
+   "proposed": 400000.0,
+   "gap": 265428.92
+  },
+  {
+   "account": "A01-3-3120-111-UNI-00000",
+   "name": "Police - Pers Svcs Uniform OT",
+   "fund": "A01",
+   "page": 11,
+   "actual": {
+    "2023": 1072180.51,
+    "2024": 1401354.14,
+    "2025": 1113609.1
+   },
+   "adoptedByYear": {
+    "2023": 700000.0,
+    "2024": 700011.0,
+    "2025": 1000000.0
+   },
+   "averageActual": 1195714.58,
+   "averageAdopted": 800003.67,
+   "ytd": 418612.65,
+   "adopted": 1000000.0,
+   "tentative": 1037500.0,
+   "proposed": 1037500.0,
+   "gap": 158214.58
+  }
+ ],
+ "unused": [
+  {
+   "account": "A01-3-3625-102-000-00000",
+   "name": "Code - Personal Services PT",
+   "fund": "A01",
+   "page": 16,
+   "adoptedPrior": 28210.0,
+   "adopted": 75998.0,
+   "tentative": 142186.0,
+   "proposed": 142186.0
+  },
+  {
+   "account": "A01-1-1989-110-000-00000",
+   "name": "Other Genrl Gov't - Pers Svcs Severance",
+   "fund": "A01",
+   "page": 11,
+   "adoptedPrior": 74444.0,
+   "adopted": 74444.0,
+   "tentative": 74444.0,
+   "proposed": 74444.0
+  },
+  {
+   "account": "SR1-8-8160-280-000-00000",
+   "name": "Refuse - Vehicles",
+   "fund": "SR1",
+   "page": 49,
+   "adoptedPrior": 50000.0,
+   "adopted": 50000.0,
+   "tentative": 50000.0,
+   "proposed": 50000.0
+  },
+  {
+   "account": "A01-1-1220-102-000-00000",
+   "name": "Super - Pers Svcs - Part Time",
+   "fund": "A01",
+   "page": 2,
+   "adoptedPrior": 20000.0,
+   "adopted": 20000.0,
+   "tentative": 20000.0,
+   "proposed": 20000.0
+  },
+  {
+   "account": "A01-8-8010-433-000-00000",
+   "name": "Zone - Prof Svcs - Legal",
+   "fund": "A01",
+   "page": 23,
+   "adoptedPrior": 8200.0,
+   "adopted": 8200.0,
+   "tentative": 8200.0,
+   "proposed": 8200.0
+  },
+  {
+   "account": "ES3-8-8130-475-000-00000",
+   "name": "Sewer Trmt - Utl - Comm/Wifi",
+   "fund": "ES3",
+   "page": 40,
+   "adoptedPrior": 5500.0,
+   "adopted": 5500.0,
+   "tentative": 8000.0,
+   "proposed": 8000.0
+  },
+  {
+   "account": "ES3-8-8130-154-000-00000",
+   "name": "Sewer Treatment Health Ins BB",
+   "fund": "ES3",
+   "page": 40,
+   "adoptedPrior": 1905.0,
+   "adopted": 1905.0,
+   "tentative": 7380.0,
+   "proposed": 7380.0
+  },
+  {
+   "account": "A01-1-1989-442-000-00000",
+   "name": "Other Gen Govt-Prof Education & Training",
+   "fund": "A01",
+   "page": 11,
+   "adoptedPrior": 7000.0,
+   "adopted": 7000.0,
+   "tentative": 7000.0,
+   "proposed": 7000.0
+  },
+  {
+   "account": "A01-4-4020-101-NON-00000",
+   "name": "Registrar of Vi Personal Services NON",
+   "fund": "A01",
+   "page": 17,
+   "adoptedPrior": 6500.0,
+   "adopted": 6500.0,
+   "tentative": 6500.0,
+   "proposed": 6500.0
+  },
+  {
+   "account": "A01-1-1220-153-000-00000",
+   "name": "Super - Pers Svcs Mgmt Buy Back",
+   "fund": "A01",
+   "page": 2,
+   "adoptedPrior": 5300.0,
+   "adopted": 3800.0,
+   "tentative": 3800.0,
+   "proposed": 3800.0
+  },
+  {
+   "account": "ES5-8-8189-154-NON-00000",
+   "name": "Scav Waste - Pers Svcs Health Ins Buy Ba",
+   "fund": "ES5",
+   "page": 42,
+   "adoptedPrior": 2000.0,
+   "adopted": 2000.0,
+   "tentative": 2000.0,
+   "proposed": 2000.0
+  },
+  {
+   "account": "SL1-5-5182-490-000-00000",
+   "name": "Street -Miscellaneous",
+   "fund": "SL1",
+   "page": 47,
+   "adoptedPrior": 1000.0,
+   "adopted": 1000.0,
+   "tentative": 1590.0,
+   "proposed": 1590.0
+  },
+  {
+   "account": "ES5-8-8189-154-000-00000",
+   "name": "Scavenger Waste Health Ins BB",
+   "fund": "ES5",
+   "page": 42,
+   "adoptedPrior": 255.0,
+   "adopted": 255.0,
+   "tentative": 1500.0,
+   "proposed": 1500.0
+  },
+  {
+   "account": "A01-1-1420-111-NON-00000",
+   "name": "Atty - Personal Services OT",
+   "fund": "A01",
+   "page": 5,
+   "adoptedPrior": 1000.0,
+   "adopted": 1000.0,
+   "tentative": 1000.0,
+   "proposed": 1000.0
+  },
+  {
+   "account": "DA1-5-5110-436-000-00000",
+   "name": "Repair - Prof Svcs - Consultants",
+   "fund": "DA1",
+   "page": 34,
+   "adoptedPrior": 1000.0,
+   "adopted": 1000.0,
+   "tentative": 1000.0,
+   "proposed": 1000.0
+  },
+  {
+   "account": "A01-3-3410-154-NON-00000",
+   "name": "Fire Prot - Pers Svcs Health Ins Buy Bac",
+   "fund": "A01",
+   "page": 15,
+   "adoptedPrior": 900.0,
+   "adopted": 900.0,
+   "tentative": 900.0,
+   "proposed": 900.0
+  },
+  {
+   "account": "SR1-8-8160-455-231-00000",
+   "name": "Refuse - Program Exp - Recycling Program",
+   "fund": "SR1",
+   "page": 50,
+   "adoptedPrior": 1000.0,
+   "adopted": 1000.0,
+   "tentative": 900.0,
+   "proposed": 900.0
+  },
+  {
+   "account": "A01-8-8686-154-NON-00000",
+   "name": "CDA -Pers Svcs Health Ins Buy Back",
+   "fund": "A01",
+   "page": 25,
+   "adoptedPrior": 900.0,
+   "adopted": 900.0,
+   "tentative": 900.0,
+   "proposed": 900.0
+  },
+  {
+   "account": "A01-3-3989-415-000-00000",
+   "name": "Anti-Bias Task Force - Supplies",
+   "fund": "A01",
+   "page": 17,
+   "adoptedPrior": 2500.0,
+   "adopted": 2500.0,
+   "tentative": 500.0,
+   "proposed": 500.0
+  },
+  {
+   "account": "ES1-8-8110-123-000-00000",
+   "name": "Sewer Adm - Pers Svcs Cleaning Allow",
+   "fund": "ES1",
+   "page": 37,
+   "adoptedPrior": 140.0,
+   "adopted": 140.0,
+   "tentative": 140.0,
+   "proposed": 140.0
+  },
+  {
+   "account": "CM2-7-7230-123-000-00000",
+   "name": "Marinas & Docs Cleaning Allowance",
+   "fund": "CM2",
+   "page": 32,
+   "adoptedPrior": 140.0,
+   "adopted": 140.0,
+   "tentative": 100.0,
+   "proposed": 100.0
+  },
+  {
+   "account": "ES3-8-8130-123-000-00000",
+   "name": "Sewer Trmt - Pers Svcs Clean/Cloth",
+   "fund": "ES3",
+   "page": 40,
+   "adoptedPrior": 20.0,
+   "adopted": 20.0,
+   "tentative": 20.0,
+   "proposed": 20.0
   }
  ],
  "renumbered": [
@@ -318,7 +985,7 @@
    "lastYear": 2023,
    "newAccount": "A01-3-3120-154-000-00000",
    "firstYear": 2024,
-   "peak": 401271.73
+   "peak": 416761.89
   },
   {
    "name": "Police - Pers Svcs Health Ins Buy Back",
@@ -326,8 +993,8 @@
    "lastYear": 2023,
    "newAccount": "A01-3-3120-154-000-00000",
    "firstYear": 2024,
-   "peak": 401271.73
+   "peak": 416761.89
   }
  ],
- "note": "Built from the Town's own Budget Supplements, 2020 through 2026. Each prints an actual from two years back, so together they give an unbroken actual for 2018-2024 on the same account. Mandated costs, debt service and interfund transfers are excluded \u2014 their swings are obligation or timing, not discretion."
+ "note": "Built from the Town's own Budget Supplements, 2020 through 2027. Each prints an actual from two years back, so together they give an unbroken actual for 2018-2025 on the same account, in every fund. Mandated costs, debt service and interfund transfers are excluded \u2014 their swings are obligation or timing, not discretion."
 }

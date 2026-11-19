@@ -130,7 +130,7 @@ private enum CivicDestination: String, Codable, Hashable, CaseIterable {
         case .performance: return "Check loading status, cached data, and startup health."
         case .askAI: return "Ask a budget or civic question in plain language."
         case .budgetHub: return "Open the main budget workspace for resident and expert views."
-        case .supplementExplorer: return "Turn 2026 supplement changes into 2027 budget questions."
+        case .supplementExplorer: return "The 2027 Budget Supplement, line by line, against 2026."
         case .budget2027Summary: return "This app's 2027 model, made before the Board adopted the budget."
         case .budget2027Lab: return "Model 2027 choices from the 2026 baseline: tradeoffs and tax impact."
         case .budgetSimulator: return "Change assumptions and see how the budget moves."
@@ -903,7 +903,7 @@ struct StartHereView: View {
         ("Prepare for a meeting", "Build sourced questions, notes, and testimony that are specific enough to answer.", "person.line.dotted.person.fill", .actionToolkit),
         ("Review Town Square", "Separate the contract, public costs, hotel review, parking, and performance questions.", "building.2.crop.circle", .townSquare),
         ("See this app's 2027 model", "The whiteboard made before adoption, then scenarios and tradeoffs. The Budget tab has the adopted budget.", "pencil.and.outline", .budget2027Summary),
-        ("Review the 2026 supplement", "Turn line-item changes into 2027 budget questions.", "doc.text.magnifyingglass", .supplementExplorer),
+        ("Review the 2027 supplement", "Line-item changes from 2026 to the 2027 Adopted Budget.", "doc.text.magnifyingglass", .supplementExplorer),
         ("Think about oversight", "See how representation, liaisons, committees, and political competition shape accountability.", "person.3.sequence.fill", .pluralityGovernance),
         ("Find a department or topic", "Search tools, documents, and budget concepts.", "magnifyingglass", .search)
     ]

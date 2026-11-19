@@ -20,14 +20,22 @@ public enum ContractCatalog {
                 2024: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2024 salary schedule is +2.5% over the 2023 schedule."),
                 2025: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2025 salary schedule is +2.5% over the 2024 schedule."),
                 2026: .percent(0.025, note: "Signed PBA contract, Article XXXVI: 2026 salary schedule is +2.5% over the 2025 schedule."),
-                2027: .percent(0.0336, note: "PLACEHOLDER: the PBA contract expires 12/31/2026 with no successor yet public. Uses PBA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2.5%, 2.5%, 2.5%) as a forward estimate — not a signed rate. Replace once a new PBA contract is ratified.")
+                2027: .percentPlusFlat(0.0375, flatPerFTE: 500, note: "PBA 2027–2030 stipulation, Resolution 2026-1020, approved 11/17/2026: Appendix B raises every step 3.75% and adds $500 to 2027 salaries for body cameras (the last such increase)."),
+                2028: .percent(0.0375, note: "PBA 2027–2030 stipulation, Resolution 2026-1020: +3.75% on the 2027 schedule."),
+                2029: .percent(0.0375, note: "PBA 2027–2030 stipulation, Resolution 2026-1020: +3.75%."),
+                2030: .percent(0.0375, note: "PBA 2027–2030 stipulation, Resolution 2026-1020: +3.75%."),
+                // Superseded placeholder, kept for the record: "PLACEHOLDER: the PBA contract expired 12/31/2026 with no successor yet public. Uses PBA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2.5%, 2.5%, 2.5%) as a forward estimate — not a signed rate. Replace once a new PBA contract is ratified.")
             ],
             .soa: [
                 2023: .percent(0.06, note: "SOA base agreement Article I covers Sergeants, Detective Sergeants, and Lieutenants; signed SOA MOA Articles XXVI/XXXII set the 1/1/2023-12/31/2026 term and increased those schedules 6.0% effective 7/30/2023."),
                 2024: .percent(0.02, note: "Signed SOA MOA, Article XXXII: 2024 salary schedules are +2.0% over the 7/30/2023 schedules."),
                 2025: .percent(0.04, note: "Signed SOA MOA, Article XXXII: 2025 salary schedules are +4.0% over the 2024 schedules."),
                 2026: .percent(0.06, note: "Signed SOA MOA, Article XXXII: 2026 salary schedules are +6.0% over the 2025 schedules."),
-                2027: .percent(0.0449, note: "PLACEHOLDER: the SOA contract expires 12/31/2026 with no successor yet public. Uses SOA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2%, 4%, 6%) as a forward estimate — not a signed rate. Replace once a new SOA contract is ratified.")
+                2027: .percentPlusFlat(0.0375, flatPerFTE: 500, note: "SOA 2027–2030 stipulation, Resolution 2026-1021, approved 11/17/2026: Appendix B raises every rank 3.75% and adds $500 to 2027 salaries for body cameras (the last such increase)."),
+                2028: .percent(0.0375, note: "SOA 2027–2030 stipulation, Resolution 2026-1021: +3.75% on the 2027 schedule."),
+                2029: .percent(0.0375, note: "SOA 2027–2030 stipulation, Resolution 2026-1021: +3.75%."),
+                2030: .percent(0.0375, note: "SOA 2027–2030 stipulation, Resolution 2026-1021: +3.75%."),
+                // Superseded placeholder, kept for the record: "PLACEHOLDER: the SOA contract expired 12/31/2026 with no successor yet public. Uses SOA's own trailing geometric-average annual raise from its just-completed 2023-2026 contract (6%, 2%, 4%, 6%) as a forward estimate — not a signed rate. Replace once a new SOA contract is ratified.")
             ],
             .csea: [
                 2023: .percentPlusFlat(0.05, flatPerFTE: 1500, note: "Executed CSEA CBA 2023-2025, Article 15: +5.0% retroactive to 1/1/2023 plus a one-time, non-recurring $1,500 salary-schedule adjustment."),

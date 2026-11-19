@@ -6,12 +6,16 @@
 //  through a divided Town Board. Ported from the web edition's close-the-gap-2027.ts
 //  so the three platforms tell the same story.
 //
-//  Two different "gaps" appear in the 2027 planning views and they measure
+//  Two different "gaps" appeared in the 2027 planning views and they measure
 //  different things:
 //    • payroll-pressure gap ($936,727) — the recurring cost of standing still.
-//    • cap-piercing gap    ($2,757,133) — how far the projected 2027 levy
-//      overshoots what NY's 2% property-tax cap allows. This is the number that
-//      forces a political decision.
+//    • cap-piercing gap    ($2,316,256) — how far the September model's 2027
+//      levy overshot a flat 2% increase.
+//
+//  These are the website's September model, kept as it was made before the
+//  Tentative (budget-2027-prediction-september.json): a projection from recent
+//  cost trends and contract raises, not a Town figure. `Outcome` holds what the
+//  Town Board actually adopted on November 17, 2026.
 //
 //  Swift 6 / iOS 17+
 //
@@ -19,14 +23,28 @@
 import Foundation
 
 enum CloseTheGap2027 {
-    // From the 2027 prediction model (budget-2027-prediction.json capGap).
-    // Regenerated after the Personal Services rate moved from one flat 3.5% to a
-    // payroll-weighted blend of each bargaining unit's own 2027 terms — see
-    // `unionBreakdown` below. The gap widened from $2,619,382 to $2,757,133.
-    static let capPiercingGap: Double = 2_757_133
+    // The September model's capGap (web/public/data/budget-2027-prediction-september.json).
+    // This app's earlier copy ($2,757,133 on a $69,407,951 levy) came from a later
+    // re-run, not the model the website quotes; these are the website's figures.
+    static let capPiercingGap: Double = 2_316_256
     static let allowedLevy: Double = 66_650_818
-    static let predictedLevy: Double = 69_407_951
-    static let predictedLevyPct: Double = 6.2
+    static let predictedLevy: Double = 68_967_074
+    static let predictedLevyPct: Double = 5.5
+
+    /// What the Town Board adopted, from the 2027 Adopted Budget's Summary page
+    /// (levy across all funds) and the November 17, 2026 minutes.
+    enum Outcome {
+        static let adoptedLevy: Double = 66_516_005
+        static let adoptedLevyPct: Double = 1.79
+        static let adoptedOn = "November 17, 2026"
+        static let resolution = "2026-995"
+        static let vote = "5–0"
+        /// Under the 2% reference line by this much (allowedLevy − adoptedLevy).
+        static var underReferenceLine: Double { CloseTheGap2027.allowedLevy - adoptedLevy }
+        /// Below the September model by this much.
+        static var belowModel: Double { CloseTheGap2027.predictedLevy - adoptedLevy }
+        static let summary = "The Town Board adopted the 2027 budget on November 17, 2026 (Resolution 2026-995, 5–0) with a levy across all funds of $66,516,005, up 1.79% from 2026. That is $134,813 under the 2% reference line and $2,451,069 below the September model, so the gap the model projected did not happen. The six October 20 amendments cut $643,858 from the Supervisor’s Tentative."
+    }
     static let capBasePct: Double = 2
 
     /// The real ceiling is a little higher than a flat 2% once the tax-base-growth
@@ -51,7 +69,7 @@ enum CloseTheGap2027 {
 
     static let blendedPersonalServicesRatePct: Double = 3.84
 
-    static let unionBreakdownNote = "How the Personal Services rate (3.84%/yr) is built: each bargaining unit's own 2027 rate, weighted by its share of 2025 actual Town payroll."
+    static let unionBreakdownNote = "How the September model built its Personal Services rate (3.84%/yr): each bargaining unit’s 2027 rate as known then, weighted by its share of 2025 actual Town payroll. It is a projection made before the Tentative, not a Town figure."
 
     static let unionBreakdown: [UnionRate] = [
         .init(
@@ -67,7 +85,7 @@ enum CloseTheGap2027 {
             payrollSharePct: 36.7,
             ratePct: 3.36,
             known2027: false,
-            term: "2023–2026 MOA (expires 12/31/2026, no successor yet public)",
+            term: "2023–2026 MOA; the September model's placeholder. Approved Nov 17, 2026: 3.75% a year plus $500 in 2027 (Resolution 2026-1020)",
             source: "Signed PBA MOA, Article XXXVII (Salaries), 7/25/2023. Full known PBA history back to 2016 (2%/2%/1.5%/1.5% in 2017–2020, 2%/2% in the 2021–2022 COVID extension per Town Board Resolution 2020-519) confirms the contracts are continuous with no gap — but the placeholder still uses only the most recent 2023–2026 contract, as the closer starting point for the next negotiation."
         ),
         .init(
@@ -75,7 +93,7 @@ enum CloseTheGap2027 {
             payrollSharePct: 8.5,
             ratePct: 4.49,
             known2027: false,
-            term: "2023–2026 agreement (expires 12/31/2026, no successor yet public)",
+            term: "2023–2026 agreement; the September model's placeholder. Approved Nov 17, 2026: 3.75% a year plus $500 in 2027 (Resolution 2026-1021)",
             source: "Signed SOA MOA, Article XXXII (Salaries), 12/12/2023. Full known SOA history back to 2016 (2%/2%/2%/2%/1.5% in 2016–2020, 2%/2% in the 2021–2022 COVID extension per Town Board Resolution 2020-520) confirms the contracts are continuous with no gap — but the placeholder still uses only the most recent 2023–2026 contract, as the closer starting point for the next negotiation."
         ),
         .init(
@@ -88,7 +106,7 @@ enum CloseTheGap2027 {
         ),
     ]
 
-    static let unionBreakdownEstimateNote = "“Est.” means that union's contract expires 12/31/2026 with no successor yet public — the rate shown is that union's own trailing average annual raise from its just-completed contract, used as a placeholder."
+    static let unionBreakdownEstimateNote = "“Est.” marks the rates the September model used while PBA and SOA had no successor contract: each union’s own trailing average raise. On November 17, 2026 the Board approved 2027–2030 stipulations for PBA and SOA: 3.75% a year, plus $500 in 2027 (Resolutions 2026-1020 and 2026-1021). The adopted budget, not this model, is what happened."
 
     // MARK: - Pension exclusion from the tax cap
 
@@ -173,13 +191,13 @@ enum CloseTheGap2027 {
             name: "Use a modest, disclosed one-time fund-balance appropriation for the residual only",
             closes: "whatever gap remains after the recurring measures above",
             standing: .oneTime,
-            politics: "An easy vote — it raises no tax and cuts no service — but it spends one-time money on recurring cost, so it can only bridge a transitional remainder. Appropriating the full $2.76M would burn ~9.3% of the $29.7M unassigned fund balance — the truly flexible cushion — for something that recurs."
+            politics: "An easy vote — it raises no tax and cuts no service — but it spends one-time money on recurring cost, so it can only bridge a transitional remainder. Appropriating the model's full $2.32M would have used ~8.0% of the $28.8M unassigned fund balance (2025 audit) — the truly flexible cushion — for something that recurs."
         ),
         .init(
             name: "If the Board still wants the spending, override the cap — deliberately and in public",
             closes: "the full gap, by raising the legal ceiling",
             standing: .deliberate,
-            politics: "The cap can be exceeded legally: adopt the override local law first, in the open, with the 60% vote on the record — as Riverhead did in 2023, 2024, and 2026. The problem to avoid is piercing the cap by accident; a disclosed, on-purpose override is a legitimate choice, not a violation."
+            politics: "The cap can be exceeded legally: adopt the override local law first, in the open, with the 60% vote on the record — as Riverhead did for the 2023, 2024, 2025 and 2026 budgets. The problem to avoid is piercing the cap by accident; a disclosed, on-purpose override is a legitimate choice, not a violation."
         ),
         .init(
             name: "The blunt shortcut: an across-the-board 2.5% cut",

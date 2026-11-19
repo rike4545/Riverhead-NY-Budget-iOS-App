@@ -799,7 +799,7 @@ struct BudgetSimulator2027View: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
 
-                    Text("The signed PBA contract and the signed SOA MOA both run through December 31, 2026, not 2027. The PBA contract's Article XXXVI salary schedules step from the 2023 schedule to +2.5% in 2024, +2.5% in 2025, and +2.5% in 2026. The SOA MOA's Articles XXVI and XXXII set the 2023-2026 term and increase Sergeant, Detective Sergeant, and Lieutenant schedules by 6% effective July 30, 2023, then +2% in 2024, +4% in 2025, and +6% in 2026. The automatic COLA control therefore treats 2027 PBA, SOA, and non-contract growth as a planning fallback while keeping the approved CSEA 2027 action fixed.")
+                    Text("The signed PBA contract and the signed SOA MOA both run through December 31, 2026, not 2027. The PBA contract's Article XXXVI salary schedules step from the 2023 schedule to +2.5% in 2024, +2.5% in 2025, and +2.5% in 2026. The SOA MOA's Articles XXVI and XXXII set the 2023-2026 term and increase Sergeant, Detective Sergeant, and Lieutenant schedules by 6% effective July 30, 2023, then +2% in 2024, +4% in 2025, and +6% in 2026. The automatic COLA control treats 2027 PBA, SOA, and non-contract growth as a planning fallback while keeping the approved CSEA 2027 action fixed. Since this simulator was built, the Board approved 2027–2030 PBA and SOA stipulations on November 17, 2026: 3.75% a year plus $500 in 2027 (Resolutions 2026-1020 and 2026-1021). To match them, set the fallback near 3.75%; the $500 is not modeled.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
 

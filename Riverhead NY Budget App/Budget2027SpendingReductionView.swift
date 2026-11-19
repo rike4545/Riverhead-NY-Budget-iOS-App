@@ -228,7 +228,7 @@ struct Budget2027SpendingReductionView: View {
                         .foregroundStyle(.secondary)
                         .padding(.vertical, 4)
 
-                    Text("PBA and SOA contracts both expire 12/31/2026 (CSEA is already locked through a ratified 2026-2029 agreement). New York law routes police/fire bargaining impasses to binding arbitration rather than legislative resolution, and comparable Long Island police contracts have taken 1-3+ years past expiration to settle — so the PBA/SOA figures above will likely remain placeholder estimates through the 2027 budget cycle, with any successor terms applied retroactively once reached.")
+                    Text("PBA and SOA’s 2023–2026 contracts expire 12/31/2026 (CSEA is locked through a ratified 2026–2029 agreement). They did not go to arbitration: on November 17, 2026 the Board approved 2027–2030 stipulations for both, 3.75% a year plus $500 in 2027 (Resolutions 2026-1020 and 2026-1021). The PBA/SOA rates above are the September model’s placeholders, kept as they were.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .padding(.vertical, 4)
@@ -348,6 +348,18 @@ struct Budget2027SpendingReductionView: View {
     @ViewBuilder private var capGapSection: some View {
         Section {
             VStack(alignment: .leading, spacing: 8) {
+                Text("What happened")
+                    .font(.headline)
+                Text(CloseTheGap2027.Outcome.summary)
+                    .font(.footnote)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text("Everything below is this app’s September model, kept as it was made before the Tentative: a projection from recent cost trends and contract raises, not a Town figure and not what happened.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Divider()
+
                 Text("Two different “gaps” — and which one actually binds")
                     .font(.headline)
                 Text("There are two numbers. The payroll-pressure gap (\(payrollPressureGap, format: .currency(code: "USD").precision(.fractionLength(0)))) is the recurring cost of standing still. The one that actually forces a decision is bigger: the projected 2027 levy overshoots New York's 2% property-tax cap by about \(capGap, format: .currency(code: "USD").precision(.fractionLength(0))) (a ~\(CloseTheGap2027.predictedLevyPct.formatted())% levy against a ~\(Int(CloseTheGap2027.capBasePct))% ceiling). That is the real overage to resolve.")
@@ -370,7 +382,7 @@ struct Budget2027SpendingReductionView: View {
             }
             .padding(.vertical, 4)
         } header: {
-            Text("The real constraint")
+            Text("2027 outcome and the September model")
         }
     }
 
@@ -407,7 +419,7 @@ struct Budget2027SpendingReductionView: View {
         Section {
             DisclosureGroup("Will it pass a divided board? The politics") {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Closing the gap has to pass a divided board: a Democratic Supervisor with a four-member Republican Council majority. Under NY Town Law the Supervisor prepares the tentative budget and the Council adopts it, so a durable plan needs both. These levers are ordered by how well each survives that split — least partisan first.")
+                    Text("Closing the gap had to pass a divided board: a Democratic Supervisor with a four-member Republican Council majority. Under NY Town Law the Supervisor prepares the tentative budget and the Council adopts it, so a durable plan needs both. These levers are ordered by how well each survives that split — least partisan first.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -482,7 +494,7 @@ struct Budget2027SpendingReductionView: View {
             }
             .frame(height: 8)
 
-            Text("\(rawGapCoverage.formatted(.percent.precision(.fractionLength(0)))) of the \(payrollPressureGap, format: .currency(code: "USD").precision(.fractionLength(0))) modeled 2027 payroll-pressure gap\(rawGapCoverage >= 1 ? " — fully covered" : "") — the smaller of the two gaps; the ~$2.76M cap-piercing gap above is the one that actually binds.")
+            Text("\(rawGapCoverage.formatted(.percent.precision(.fractionLength(0)))) of the \(payrollPressureGap, format: .currency(code: "USD").precision(.fractionLength(0))) modeled 2027 payroll-pressure gap\(rawGapCoverage >= 1 ? " — fully covered" : "") — the smaller of the two gaps; the ~$2.32M cap-piercing gap above, from the September model, was the one that would have bound. The adopted levy came in under the 2% line.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

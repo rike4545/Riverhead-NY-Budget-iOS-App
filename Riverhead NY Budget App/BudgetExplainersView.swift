@@ -162,7 +162,7 @@ struct BudgetExplainersView: View {
                     .init(label: "Annual costs", systemImage: "calendar", tint: .red),
                     .init(label: "Next year gap", systemImage: "exclamationmark.triangle.fill", tint: .orange)
                 ],
-                whyItMatters: "A budget can look balanced now and still create a structural gap next year if one-time money is carrying recurring costs. Riverhead's $29.7M unassigned fund balance (of a $33.4M General Fund balance) could erase the entire 2027 cap gap on paper — but it is one-time money against a cost that returns every year, so it would buy one budget and leave the same hole behind.",
+                whyItMatters: "A budget can look balanced now and still create a structural gap next year if one-time money is carrying recurring costs. Riverhead's $28.8M unassigned fund balance (of a $33.3M General Fund balance, 2025 audit) could have erased this app's whole September-model cap gap on paper — but it is one-time money against a cost that returns every year, so it would buy one budget and leave the same hole behind.",
                 practicalQuestion: "Which part of this plan disappears after one year, and which costs still remain?",
                 authority: "Chapter 528 of the Laws of 2000"
             ),
@@ -206,7 +206,7 @@ struct BudgetExplainersView: View {
                     .init(label: "Board vote", systemImage: "person.3.fill", tint: RiverheadTheme.brandSky),
                     .init(label: "Public reason", systemImage: "quote.bubble.fill", tint: RiverheadTheme.gold)
                 ],
-                whyItMatters: "The public question is not just whether an override happens. It is whether the Town shows a cap-compliant baseline, clear findings, and a path back to stability. Riverhead has adopted overrides in 2023, 2024, and 2026, and on current trends the 2027 levy pierces the cap by about $2.76M — so this is a live question, not a hypothetical.",
+                whyItMatters: "The public question is not just whether an override happens. It is whether the Town shows a cap-compliant baseline, clear findings, and a path back to stability. Riverhead adopted override laws for the 2023, 2024, 2025 and 2026 budgets. For 2027 this app’s September model projected the levy about $2.32M over a 2% line, but the budget adopted on November 17, 2026 raised the levy across all funds 1.79%, and no override law is in the record. The question returns with the 2028 budget.",
                 practicalQuestion: "What would the budget look like under the cap, and what exactly does an override fund? (The 2027 Spending Reduction deep dive below works this out line by line.)",
                 authority: "General Municipal Law §3-c (enacted 2011, effective for fiscal years beginning 2012)"
             ),
@@ -582,7 +582,7 @@ struct BudgetExplainersView: View {
             } label: {
                 deepDiveCard(
                     title: "The 2027 Tax Cap Gap, Worked Out",
-                    subtitle: "“What would the budget look like under the cap?” — answered: the levy pierces it by about $2.76M, and here is what closes the gap without an override.",
+                    subtitle: "“What would the budget look like under the cap?” — answered for 2027: this app’s September model projected the levy over a 2% line by about $2.32M; the adopted levy came in under it.",
                     systemImage: "chart.line.downtrend.xyaxis",
                     accent: RiverheadTheme.brandMint
                 )

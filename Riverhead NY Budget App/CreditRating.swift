@@ -253,8 +253,8 @@ enum CreditRating {
         ),
         .init(
             title: "Bargain plan-design changes for future hires in successor contracts",
-            detail: "Current retirees' benefits are vested and can't be reduced. But the PBA contract expired in 2026 with no successor public yet — a real, near-term opening. Police and fire units have historically negotiated the strongest retiree-health terms of any bargaining unit, so this is the highest-leverage seat at the table. Common changes towns negotiate for new hires only: a longer years-of-service vesting requirement before retiree health kicks in, retiree premium cost-sharing instead of a fully Town-paid premium, or capping the Town's dollar contribution so it doesn't automatically scale with future healthcare cost inflation.",
-            evidence: "PBA contract (2023–2026) expired with no successor public as of this writing; police/fire units cited as the workforce segment carrying the strongest retiree-health terms."
+            detail: "Current retirees' benefits are vested and can't be reduced. The PBA's 2027–2030 stipulation, approved November 17, 2026 (Resolution 2026-1020), sets pay; whether it changed retiree health for new hires is not public, because the agenda attached only its pay and night-differential tables. The next opening is the successor to that contract. Police and fire units have historically negotiated the strongest retiree-health terms of any bargaining unit, so this is the highest-leverage seat at the table. Common changes towns negotiate for new hires only: a longer years-of-service vesting requirement before retiree health kicks in, retiree premium cost-sharing instead of a fully Town-paid premium, or capping the Town's dollar contribution so it doesn't automatically scale with future healthcare cost inflation.",
+            evidence: "PBA 2027–2030 stipulation, Resolution 2026-1020 (November 17, 2026; only its Appendix A and B were in the agenda packet); police/fire units cited as the workforce segment carrying the strongest retiree-health terms."
         ),
         .init(
             title: "Extend the buyback/opt-out CSEA already has to PBA and SOA",

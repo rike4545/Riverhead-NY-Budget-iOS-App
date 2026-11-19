@@ -49,7 +49,7 @@ private enum CandidateCBData {
             planks: [
                 CBPlank(
                     proposal: "Keep a tight lid on Town spending.",
-                    benefit: "Directly attacks the ~$2.76M by which the 2027 levy is projected to pierce the 2% tax cap. The app already identifies ~$2.1M in firm, individually-sourced recurring trims — so “hold the line” is not an empty slogan here; the line items exist.",
+                    benefit: "Directly attacks the ~$2.32M by which this app’s September model projected the 2027 levy over a 2% increase (the adopted levy came in under that line). The app already identifies ~$2.1M in firm, individually-sourced recurring trims — so “hold the line” is not an empty slogan here; the line items exist.",
                     cost: "Most of the budget base is personnel and mandated costs (pension, debt service, insurance) a freeze can't touch. Real restraint means audits, held vacancies, and deferred equipment — each trading a dollar saved for a service or a delayed repair.",
                     tradeoff: "The two largest cost drivers — the PBA and SOA contracts — expire 12/31/2026 and settle through binding arbitration, not a Supervisor's pen. Much of the 2027 payroll pressure is locked until those settle."
                 ),
@@ -68,7 +68,7 @@ private enum CandidateCBData {
                 CBPlank(
                     proposal: "Build a stable budget that doesn't over-tax young families and seniors.",
                     benefit: "Frames the goal as recurring balance rather than one-time patches — the fiscally honest target, consistent with staying under the tax cap year over year.",
-                    cost: "“Stable” is an outcome, not a mechanism: it still needs either the trims or the new revenue. If neither fully lands, the only lever left is fund balance — $29.7M of the $33.4M General Fund balance is unassigned and actually flexible — and that is one-time money that can't fund a recurring gap twice.",
+                    cost: "“Stable” is an outcome, not a mechanism: it still needs either the trims or the new revenue. If neither fully lands, the only lever left is fund balance — $28.8M of the $33.3M General Fund balance is unassigned and actually flexible (2025 audit) — and that is one-time money that can't fund a recurring gap twice.",
                     tradeoff: "Protecting specific groups from tax increases can mean shifting cost to fees or districts, which are less visible but land on the same households."
                 ),
             ],
@@ -83,8 +83,8 @@ private enum CandidateCBData {
             planks: [
                 CBPlank(
                     proposal: "Lower the cost of taxes — the campaign's stated top issue.",
-                    benefit: "Direct, immediately felt relief for every property owner, and the Town has a large cushion to work from: a $33.4M General Fund balance, of which $29.7M is unassigned and actually available.",
-                    cost: "An actual levy cut (versus merely holding growth) widens the ~$2.76M cap gap rather than closing it — the reduction has to be found on top of the gap. Funding a cut from reserves spends one-time money on a recurring obligation.",
+                    benefit: "Direct, immediately felt relief for every property owner, and the Town has a large cushion to work from: a $33.3M General Fund balance, of which $28.8M is unassigned and actually available (2025 audit).",
+                    cost: "An actual levy cut (versus merely holding growth) would have widened the ~$2.32M cap gap in this app’s September model rather than closing it — the reduction has to be found on top of the gap. Funding a cut from reserves spends one-time money on a recurring obligation.",
                     tradeoff: "The NY tax cap already caps levy growth at ~2%; the fiscal distance between “hold at the cap” and “actually lower” is large, and this plank must be squared with the new-spending planks below."
                 ),
                 CBPlank(
@@ -118,26 +118,26 @@ private enum CandidateCBData {
 
     static let common = [
         "Both run on tax-base growth over levy increases, and both promise spending restraint — on fiscal strategy they are more alike than different.",
-        "Both face the same unnamed constraint: the ~$2.76M by which the 2027 levy is projected to pierce the tax cap, and the PBA/SOA contracts expiring 12/31/2026 that settle by binding arbitration.",
+        "Both face the same unnamed constraint: the ~$2.32M by which this app’s September model projected the 2027 levy over a 2% increase, and the PBA/SOA contracts expiring 12/31/2026 (settled on November 17, 2026: 3.75% a year plus $500 in 2027).",
     ]
     static let divergence = [
         "The incumbent's platform is mostly “hold and grow” — restraint plus development — which maps onto the identified trims but is slow on the revenue side.",
         "The challenger adds concrete new-spending planks (veterans, police, clean water) alongside an explicit tax cut, which sharpens the appeal but requires naming an offset the platform hasn't yet specified.",
         "Both share the development-versus-open-space tension; neither has reconciled it in dollar terms.",
     ]
-    static let scorecard = "Neither platform, as stated, closes the ~$2.76M cap gap on paper. That is the honest scorecard: the ideas are directionally sound, but the arithmetic to hit the cap still has to be shown."
+    static let scorecard = "Neither platform, as stated, closed the ~$2.32M cap gap in this app’s September model on paper. That is the honest scorecard: the ideas are directionally sound, but the arithmetic to hit the cap still has to be shown."
 
     // Beyond the campaigns — a neutral fiscal observer's view.
-    static let neutralIntro = "Set the campaigns aside. Riverhead has leaned on above-cap levy increases and cap overrides in several recent years — a 7.89% levy increase in the 2025 budget, and adopted overrides in 2023, 2024, and 2026. When a town overrides the cap that often, the issue is usually structural: recurring costs are outgrowing recurring revenue, and the gap is closed late, at adoption, rather than planned for."
+    static let neutralIntro = "Set the campaigns aside. Riverhead has leaned on above-cap levy increases and cap overrides in several recent years — a 7.89% levy increase in the 2025 budget, and override laws for the 2023, 2024, 2025 and 2026 budgets. When a town overrides the cap that often, the issue is usually structural: recurring costs are outgrowing recurring revenue, and the gap is closed late, at adoption, rather than planned for."
     static let history = [
         "2025 adopted budget: ~7.89% tax-levy increase.",
-        "Tax-cap overrides adopted in 2023, 2024, and 2026.",
-        "2027 projection: the levy again pierces the ~2% cap, by about $2.76M.",
+        "Tax-cap override laws adopted for the 2023, 2024, 2025 and 2026 budgets.",
+        "2027, as adopted November 17, 2026: the levy across all funds rose 1.79%, under a 2% line. This app’s September model had projected it about $2.32M over.",
     ]
     static let principles: [(String, String)] = [
         ("Fund recurring costs with recurring revenue", "The most common structural error is patching an operating gap with one-time money — appropriated fund balance, one-off sales. It balances this year and guarantees the same gap next year. A simple rule — reserves only for one-time or emergency needs — prevents the cliff."),
         ("Adopt a rolling multi-year forecast", "A 3–5 year projection of revenues, payroll, pension, and debt turns a surprise at adoption into a problem seen 18 months out, when small corrections still work."),
-        ("Set — and respect — a fund-balance target", "The $33.4M General Fund balance — $29.7M of it unassigned — is a genuine strength; GFOA guidance is to hold at least ~two months of operating expenditures. That cushion is for emergencies and cash flow, not for buying down recurring costs."),
+        ("Set — and respect — a fund-balance target", "The $33.3M General Fund balance — $28.8M of it unassigned (2025 audit) — is a genuine strength; GFOA guidance is to hold at least ~two months of operating expenditures. That cushion is for emergencies and cash flow, not for buying down recurring costs."),
         ("Treat a cap override as an exception, decided in the open", "A deliberate override local law, adopted in public with the 60% vote on the record and a stated reason, is very different from backing into an increase. Overriding routinely is how the discipline erodes."),
         ("Go at the real cost drivers, with the data", "The 2026 retirement incentive, police-overtime normalization, and the audited line-item increases in the Budget Supplement are where the recurring dollars are. Prepare early and with comparables for the PBA/SOA arbitrations expiring 12/31/2026."),
         ("Diversify revenue honestly — but don't bank it early", "Economic development, cost-aligned fees, and grants are legitimate offsets. The discipline is timing: base growth is real but slow, so it belongs in the multi-year plan, not as a same-year plug."),

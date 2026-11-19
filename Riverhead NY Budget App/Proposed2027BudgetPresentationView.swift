@@ -40,7 +40,7 @@ private enum Proposed2027BudgetData {
     static let offsetCushion = 325_062.0
 
     static let budgetMessage = [
-        "This is an unofficial planning proposal. The Town's official 2027 budget will be released later through the normal budget cycle, including the tentative, preliminary, public hearing, and adopted-budget steps.",
+        "This is an unofficial planning proposal, written before the Town's budget cycle ran. The Town Board adopted the official 2027 budget on November 17, 2026 (Resolution 2026-995, 5–0): $120,854,219 across all funds, with the town-wide levy up 1.73%. This plan is kept as an alternative to compare against it, not as a description of it.",
         "The proposal puts taxpayers first by modeling a 3% General Fund levy reduction while protecting services, reserves, and long-term financial stability.",
         "The plan does not treat the 2025 surplus as a recurring revenue source. It uses one-time money for one-time priorities: parks, vehicles, software, training, labor pressure, tax stabilization, and targeted workforce modernization.",
         "The tax reduction is supported by recurring savings and recurring revenue: potential early retirement savings, vacancy discipline, procurement controls, software/process improvements, avoided fleet costs, and conservative cannabis revenue recognition.",
@@ -333,7 +333,7 @@ struct Proposed2027BudgetPresentationView: View {
     }
 
     private var adoptionDecisions: some View {
-        briefingPanel(title: "Decisions Before Adoption", subtitle: "Items to resolve before this can become an official budget.", systemImage: "exclamationmark.triangle.fill") {
+        briefingPanel(title: "Decisions This Plan Raised", subtitle: "What this plan would have needed before adoption. The Board adopted a different budget.", systemImage: "exclamationmark.triangle.fill") {
             LazyVGrid(columns: twoColumns, spacing: 10) {
                 ForEach(Proposed2027BudgetData.adoptionDecisions, id: \.self) { decision in
                     HStack(alignment: .top, spacing: 9) {

@@ -779,7 +779,7 @@ struct Budget2027LabView: View {
     }
 
     private func taxChange(for preset: Budget2027LabPreset) -> Double {
-        let rate = store.ratePerThousand * (preset.levyGrowthPercent / 100)
+        let rate = store.modelBaseRatePerThousand * (preset.levyGrowthPercent / 100)
         return (assessment / 1_000) * rate
     }
 
@@ -1165,7 +1165,7 @@ private struct Budget2027LabScenario {
     let electedRaisePackage: Bool
     let customItems: [Budget2027CustomItem]
 
-    var currentLevyEstimate: Double { store.appropriations * 0.703 }
+    var currentLevyEstimate: Double { store.modelBaseAppropriations * 0.703 }
     var levyYield: Double { currentLevyEstimate * (levyGrowthPercent / 100) }
     var automaticPayrollPressure: Double { Budget2027LabModel.cseaPressure + Budget2027LabModel.pbaSOANonContractPressure }
 
@@ -1230,12 +1230,12 @@ private struct Budget2027LabScenario {
     }
 
     var currentReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (store.estimatedFundBalance / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (store.estimatedFundBalance / store.modelBaseAppropriations) * 100
     }
 
     var targetReserveDollars: Double {
-        store.appropriations * (reserveTargetPercent / 100)
+        store.modelBaseAppropriations * (reserveTargetPercent / 100)
     }
 
     var availableOneTimeRoom: Double {
@@ -1255,16 +1255,16 @@ private struct Budget2027LabScenario {
     }
 
     var endingReservePercent: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return (endingReserveDollars / store.appropriations) * 100
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return (endingReserveDollars / store.modelBaseAppropriations) * 100
     }
 
     var currentTownTax: Double {
-        (assessment / 1_000) * store.ratePerThousand
+        (assessment / 1_000) * store.modelBaseRatePerThousand
     }
 
     var sampleTaxChange: Double {
-        let rateChange = store.ratePerThousand * (levyGrowthPercent / 100)
+        let rateChange = store.modelBaseRatePerThousand * (levyGrowthPercent / 100)
         return (assessment / 1_000) * rateChange
     }
 
@@ -1278,7 +1278,7 @@ private struct Budget2027LabScenario {
     }
 
     var potentialAppropriation: Double {
-        max(store.appropriations + netRecurringSpendingChange + capitalTotal, 0)
+        max(store.modelBaseAppropriations + netRecurringSpendingChange + capitalTotal, 0)
     }
 
     var structuralStatus: String {

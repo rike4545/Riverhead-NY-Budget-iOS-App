@@ -456,7 +456,7 @@ struct HomeView: View {
 
                     internalFullWidthCard(
                         title: "Budget Overview",
-                        subtitle: "Town-wide 2026 Adopted Budget snapshot and spending by fund.",
+                        subtitle: "Town-wide \(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget snapshot and spending by fund.",
                         systemImage: "chart.pie.fill",
                         accentOverride: RiverheadTheme.brandSky
                     ) {
@@ -465,7 +465,7 @@ struct HomeView: View {
 
                     internalFullWidthCard(
                         title: "Budget Supplement Explorer",
-                        subtitle: "See the 2026 supplement as line-by-line changes and gaps versus requests.",
+                        subtitle: "The 2026 Budget Supplement as line-by-line changes and gaps versus requests (the 2026 budget cycle).",
                         systemImage: "text.magnifyingglass",
                         accentOverride: RiverheadTheme.brandMint
                     ) {

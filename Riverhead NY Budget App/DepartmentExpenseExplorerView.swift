@@ -79,7 +79,7 @@ struct DepartmentExpenseExplorerView: View {
                 }
                 .pickerStyle(.segmented)
 
-                Text("This view blends the staffing count, salary base, and adopted 2026 department totals so residents can see how much of each function is payroll and how much is everything else.")
+                Text("This view blends the staffing count, salary base, and the 2026 Adopted Budget's department totals so residents can see how much of each function is payroll and how much is everything else. Department detail is from the 2026 book, the newest line-by-line record in the app; the fund totals elsewhere use the \(BudgetStages.currentYear.map(String.init) ?? "2027") Adopted Budget.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -390,7 +390,7 @@ private struct DepartmentExpenseDetailView: View {
                 }
             }
 
-            Section("2026 Cost View") {
+            Section("2026 Adopted Budget cost view") {
                 detailCurrencyRow("Adopted total", record.adoptedTotal, tint: .green)
                 if let salaryBase = record.salaryBase {
                     detailCurrencyRow("Salary base", salaryBase, tint: .blue)

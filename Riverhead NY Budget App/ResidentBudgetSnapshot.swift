@@ -2,14 +2,14 @@
 //  ResidentBudgetSnapshot.swift
 //  Riverhead NY Budget App
 //
-//  Numbers-first "at a glance" view of the 2026 budget for everyday residents:
+//  Numbers-first "at a glance" view of the newest adopted budget (2027) for everyday residents:
 //  big KPI tiles, a fund-balance health bar (where reserves sit against the
 //  Town's own 15% floor, with the app's 20% reference line), and a proportional chart of what's
 //  pushing the budget up — replacing the previous all-prose summary cards.
 //
 //  Headline dollar figures come from RBBudgetStore so they stay consistent with
-//  the rest of the app and the AI assistant. The year-over-year and cost-driver
-//  figures are the 2026 Adopted Budget values already cited in the app.
+//  the rest of the app and the AI assistant. The year-over-year comparison reads the
+//  prior adopted year from BudgetStages; the cost drivers are the 2026 Adopted Budget's.
 //
 //  Swift 6 · iOS 17+
 //
@@ -21,8 +21,9 @@ struct ResidentBudgetSnapshot: View {
     @Environment(RBBudgetStore.self) private var store
     @Environment(\.colorScheme) private var scheme
 
-    // 2025 adopted total, for the year-over-year comparison (2026 Adopted Budget).
-    private let priorYearTotal: Double = 64_895_000
+    /// The newest adopted year (2027) and the General Fund appropriations of the year before.
+    private let year: Int = BudgetStages.currentYear ?? 2027
+    private let priorYearTotal: Double = BudgetStages.prior?.generalFund?.appropriations ?? 69_113_159
 
     // The biggest drivers of the 2026 increase, in dollars (2026 Adopted Budget).
     private struct Driver: Identifiable {
@@ -66,8 +67,8 @@ struct ResidentBudgetSnapshot: View {
     private var kpiTiles: some View {
         kpiTile(
             value: compactUSD(appropriations),
-            label: "Total 2026 budget",
-            caption: "\(signedPercent(yoyChange)) vs 2025",
+            label: "\(String(year)) General Fund budget",
+            caption: "\(signedPercent(yoyChange)) vs \(String(year - 1))",
             accent: RiverheadTheme.brandSky
         )
         kpiTile(
@@ -191,7 +192,7 @@ struct ResidentBudgetSnapshot: View {
         let maxAmount = drivers.map(\.amount).max() ?? 1
 
         return VStack(alignment: .leading, spacing: 12) {
-            Text("What's pushing the budget up in 2026")
+            Text("What pushed the 2026 budget up")
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(RiverheadTheme.textPrimary)
 
@@ -225,7 +226,7 @@ struct ResidentBudgetSnapshot: View {
                 .accessibilityLabel("\(d.label): up \(compactUSD(d.amount))\(d.oneTime ? ", one-time" : "")")
             }
 
-            Text("Recurring pay and benefits are the lasting drivers; one-time items go away next year.")
+            Text("Recurring pay and benefits are the lasting drivers; one-time items go away the next year. These are the 2026 Adopted Budget's drivers; the app doesn't break down 2027's yet.")
                 .font(.footnote)
                 .foregroundStyle(RiverheadTheme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)

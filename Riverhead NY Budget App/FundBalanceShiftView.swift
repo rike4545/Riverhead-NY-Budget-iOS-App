@@ -16,7 +16,8 @@ import Foundation
 
 public struct FundBalanceShiftView: View {
     // Inputs (you can seed these from real data later)
-    @State private var appropriations: Double = 69_113_159
+    // The newest adopted budget's General Fund appropriations (2027: $71,932,070).
+    @State private var appropriations: Double = BudgetStages.current?.generalFund?.appropriations ?? 71_932_070
     @State private var estimatedFundBalance: Double = 28_829_513
     @State private var minPercent: Double = 0.15   // 15%
     @State private var policyNotes: String = "Minimum unassigned fund balance of 15% of next-year appropriations."

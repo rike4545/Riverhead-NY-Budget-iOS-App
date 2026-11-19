@@ -198,7 +198,7 @@ struct RiverheadAIService {
         let deployableAbove288 = max(0, store.estimatedFundBalance - target288Balance)
 
         return [
-            "- 2026 General Fund appropriations in the app: \(formatCurrency(store.appropriations)).",
+            "- \(store.fiscalYearTitle) General Fund appropriations in the app: \(formatCurrency(store.appropriations)).",
             "- 2026 estimated unassigned General Fund balance in the app: \(formatCurrency(store.estimatedFundBalance)), about \(formatPercent(fundBalancePercent)).",
             "- The app currently treats 15% as Riverhead's local floor, notes GFOA's two-month benchmark as about 16.7% to 17%, and presents 25% to 32% as a practical Riverhead operating range.",
             "- The app's featured reserve reset lowers Riverhead from about 41.7% (audited end of 2025, over the 2026 budget) to 28.8%, leaving about \(formatCurrency(deployableAbove288)) of one-time deployment capacity before specific uses are assigned.",

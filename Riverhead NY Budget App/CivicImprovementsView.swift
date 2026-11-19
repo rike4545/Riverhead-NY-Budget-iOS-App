@@ -1073,7 +1073,7 @@ struct SourceTrailView: View {
         let fundBalancePercent = store.appropriations > 0 ? store.estimatedFundBalance / store.appropriations : 0
         return [
             EvidenceItem(
-                claim: "2026 General Fund appropriations are shown as \(store.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0)))).",
+                claim: "\(store.fiscalYearTitle) General Fund appropriations are shown as \(store.appropriations.formatted(.currency(code: "USD").precision(.fractionLength(0)))).",
                 status: "Loaded app value",
                 source: "RBBudgetStore current budget context",
                 citation: "2026 budget context loaded in app; verify against official 2026 adopted/tentative budget document.",

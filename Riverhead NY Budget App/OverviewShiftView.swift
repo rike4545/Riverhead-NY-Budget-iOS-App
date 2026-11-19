@@ -2,9 +2,9 @@
 //  BudgetOverviewShiftView.swift
 //  Riverhead NY Budget App
 //
-//  Resident-facing 2026 overview:
-//   • Plain-English snapshot of the 2026 Adopted Budget
-//   • Key numbers pulled directly from the 2026 Adopted Budget summary
+//  Resident-facing overview of the newest adopted budget:
+//   • Plain-English snapshot of the latest Adopted Budget (2027 as of November 2026)
+//   • Key numbers from that book's Summary page, via BudgetStages (budget-stages.json)
 //   • Tap “Use of Fund Balance” to see a fund-by-fund breakdown
 //
 
@@ -14,16 +14,26 @@ import SwiftUI
 struct BudgetOverviewShiftView: View {
     @Environment(\.colorScheme) private var scheme
 
-    // MARK: - 2026 snapshot numbers (from adopted budget summary)
+    // MARK: - Snapshot numbers: the newest adopted budget's Summary page
+
+    private let year: Int = BudgetStages.currentYear ?? 2027
+    private let doc: BudgetStageDoc? = BudgetStages.current
+    private let prior: BudgetStageDoc? = BudgetStages.prior
 
     // Total Town Operating row (all operating funds)
-    private let totalOperatingAppropriations2026: Double = 121_110_904
-    private let totalOperatingLevy2026: Double = 65_343_939
-    private let appropriatedFundBalance2026: Double = 5_995_000
+    private var totalOperatingAppropriations: Double { doc?.totals.appropriations ?? 0 }
+    private var totalOperatingLevy: Double { doc?.totals.levy ?? 0 }
+    private var appropriatedFundBalance: Double { doc?.totals.fundBalance ?? 0 }
 
     // Town-wide row (A01 General, DA1 Highway, SL1 Street Lighting)
-    private let townWideAppropriations2026: Double = 77_958_942
-    private let townWideLevy2026: Double = 61_178_292
+    private var townWideLevy: Double { doc?.townWide?.levy ?? 0 }
+
+    /// " Up 1.73% from 2026.", from the adopted budgets on file.
+    private func change(_ now: Double, _ before: Double?) -> String {
+        guard let before, before > 0, let py = BudgetStages.priorYear else { return "" }
+        let p = BudgetStages.pct(now, before)
+        return String(format: " %@ %.2f%% from %d.", p >= 0 ? "Up" : "Down", abs(p), py)
+    }
 
     // Simple currency formatter (no cents)
     private let nfCurrency0: NumberFormatter = {
@@ -64,11 +74,11 @@ struct BudgetOverviewShiftView: View {
     private var summaryCard: some View {
         BudgetCard {
             VStack(alignment: .leading, spacing: 8) {
-                Text("2026 Adopted Budget")
+                Text("\(String(year)) Adopted Budget")
                     .font(.title2.weight(.bold))
                     .foregroundStyle(RiverheadTheme.textPrimary)
 
-                Text("High-level snapshot of the Town of Riverhead’s 2026 Adopted Budget, based on the summary table in the official adopted budget.")
+                Text("High-level snapshot of the Town of Riverhead’s \(String(year)) Adopted Budget, from the Summary page of the official book\(BudgetStages.adoptionNote(year).map { ". The Town Board \($0)" } ?? "").")
                     .font(.subheadline)
                     .foregroundStyle(RiverheadTheme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -100,8 +110,9 @@ struct BudgetOverviewShiftView: View {
 
     private var snapshotIntro: some View {
         Text(
-            "Total Town operating appropriations across all funds in 2026 are " +
-            "\(currency(totalOperatingAppropriations2026)). This is funded by estimated revenues, use of fund balance, and the Town’s property tax levy across all operating funds."
+            "Total Town operating appropriations across all funds in \(String(year)) are " +
+            "\(currency(totalOperatingAppropriations))." + change(totalOperatingAppropriations, prior?.totals.appropriations) +
+            " This is funded by estimated revenues, use of fund balance, and the Town’s property tax levy across all operating funds."
         )
         .font(.footnote)
         .foregroundStyle(RiverheadTheme.textSecondary)
@@ -119,22 +130,22 @@ struct BudgetOverviewShiftView: View {
             // Town-wide levy only (A01, DA1, SL1)
             BudgetMetricTile(
                 title: "Town-Wide Tax Levy",
-                bigValue: shortMillions(townWideLevy2026),
-                subtitle: "2026 levy for Town-wide funds only: General, Highway, and Street Lighting (A01 + DA1 + SL1)."
+                bigValue: shortMillions(townWideLevy),
+                subtitle: "\(String(year)) levy for Town-wide funds only: General, Highway, and Street Lighting (A01 + DA1 + SL1)." + change(townWideLevy, prior?.townWide?.levy)
             )
 
             // Total levy across all operating funds
             BudgetMetricTile(
                 title: "Total Tax Levy (All Funds)",
-                bigValue: shortMillions(totalOperatingLevy2026),
-                subtitle: "Total 2026 Town property tax levy across all operating funds (matches the “Total Town Operating” row)."
+                bigValue: shortMillions(totalOperatingLevy),
+                subtitle: "Total \(String(year)) Town property tax levy across all operating funds (the “Total Town Operating” row)." + change(totalOperatingLevy, prior?.totals.levy)
             )
 
             // Total operating appropriations across all funds
             BudgetMetricTile(
                 title: "Total Operating Budget",
-                bigValue: shortMillions(totalOperatingAppropriations2026),
-                subtitle: "Appropriations across all Town operating funds: \(currency(totalOperatingAppropriations2026))."
+                bigValue: shortMillions(totalOperatingAppropriations),
+                subtitle: "Appropriations across all Town operating funds: \(currency(totalOperatingAppropriations))."
             )
 
             // Appropriated fund balance across all funds — now tappable for breakdown
@@ -143,8 +154,8 @@ struct BudgetOverviewShiftView: View {
             } label: {
                 BudgetMetricTile(
                     title: "Use of Fund Balance",
-                    bigValue: shortMillions(appropriatedFundBalance2026),
-                    subtitle: "Total appropriated fund balance in 2026 across all operating funds. Tap for a fund-by-fund breakdown."
+                    bigValue: shortMillions(appropriatedFundBalance),
+                    subtitle: "Total appropriated fund balance in \(String(year)) across all operating funds. Tap for a fund-by-fund breakdown."
                 )
             }
             .buttonStyle(.plain)
@@ -262,7 +273,7 @@ private struct BudgetMetricTile: View {
 
 //
 //  FundBalanceUseBreakdownView
-//  Shows how the $5,995,000 of appropriated fund balance is split by fund.
+//  Shows how the newest adopted budget's appropriated fund balance is split by fund.
 //
 
 @MainActor
@@ -276,15 +287,14 @@ private struct FundBalanceUseBreakdownView: View {
         let amount: Double
     }
 
-    // From the “2026 Appropriated Fund Balance” column in the summary table.
-    // A01 + ES1 + ES3 + ES5 + EW1 = 5,995,000.
-    private let entries: [Entry] = [
-        .init(code: "A01", name: "General Fund",              amount: 1_250_000),
-        .init(code: "ES1", name: "Riverhead Sewer District",  amount: 2_150_000),
-        .init(code: "ES3", name: "Calverton Sewer District",  amount: 645_000),
-        .init(code: "ES5", name: "Scavenger Waste District",  amount: 100_000),
-        .init(code: "EW1", name: "Water District",            amount: 1_850_000)
-    ]
+    private let year: Int = BudgetStages.currentYear ?? 2027
+
+    // The "Appropriated Fund Balance" column of the newest adopted budget's Summary page.
+    private let entries: [Entry] = (BudgetStages.current?.fundsByCode ?? [])
+        .compactMap { row in
+            guard let amount = row.fund.fundBalance, amount > 0 else { return nil }
+            return Entry(code: row.code, name: row.fund.name, amount: amount)
+        }
 
     private var totalAmount: Double {
         entries.reduce(0) { $0 + $1.amount }
@@ -303,11 +313,11 @@ private struct FundBalanceUseBreakdownView: View {
             VStack(alignment: .leading, spacing: 16) {
                 BudgetCard {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Use of Fund Balance – 2026")
+                        Text("Use of Fund Balance – \(String(year))")
                             .font(.title3.weight(.semibold))
                             .foregroundStyle(RiverheadTheme.textPrimary)
 
-                        Text("This is the portion of previously accumulated fund balances that is planned to be used to support 2026 appropriations, by fund.")
+                        Text("This is the portion of previously accumulated fund balances that is planned to be used to support \(String(year)) appropriations, by fund.")
                             .font(.footnote)
                             .foregroundStyle(RiverheadTheme.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
@@ -338,7 +348,7 @@ private struct FundBalanceUseBreakdownView: View {
                                 .font(.title3.monospacedDigit().weight(.bold))
                                 .foregroundStyle(RiverheadTheme.textPrimary)
 
-                            Text("Appropriated fund balance in 2026 for this fund, as shown in the adopted budget summary.")
+                            Text("Appropriated fund balance in \(String(year)) for this fund, as shown in the adopted budget summary.")
                                 .font(.footnote)
                                 .foregroundStyle(RiverheadTheme.textSecondary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -347,7 +357,7 @@ private struct FundBalanceUseBreakdownView: View {
                 }
 
                 BudgetCard {
-                    Text("These amounts come from the “2026 Appropriated Fund Balance” column in the 2026 Adopted Budget summary. They explain how the total of \(currency(totalAmount)) is spread across individual funds.")
+                    Text("These amounts come from the “Appropriated Fund Balance” column in the \(String(year)) Adopted Budget summary. They explain how the total of \(currency(totalAmount)) is spread across individual funds.")
                         .font(.footnote)
                         .foregroundStyle(RiverheadTheme.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)

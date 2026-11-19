@@ -446,22 +446,48 @@ private struct SignalSeverityRow: Identifiable {
     var id: String { label }
 }
 
+/// One fund's Summary-page figures for the year the signals read.
+private struct SignalFund {
+    let fundCode: String
+    let fundName: String
+    let appropriations: Double?
+    let levy: Double?
+    let appFundBalance: Double?
+}
+
 @MainActor
 private enum RiverheadBudgetSignalEngine {
+    /// The year the fund signals read: the newest adopted budget on file (2027 as of November 2026).
+    static let signalYear: Int = BudgetStages.currentYear ?? 2026
+
+    /// The newest adopted budget's funds (budget-stages.json), else the 2026 book's CSV rows.
+    private static func signalFunds() -> [SignalFund] {
+        if let doc = BudgetStages.current {
+            return doc.fundsByCode.map {
+                SignalFund(fundCode: $0.code, fundName: $0.fund.name, appropriations: $0.fund.appropriations,
+                           levy: $0.fund.levy, appFundBalance: $0.fund.fundBalance)
+            }
+        }
+        return Riverhead2026BudgetShift.fundSummaries().map {
+            SignalFund(fundCode: $0.fundCode, fundName: $0.fundName, appropriations: decimalToDouble($0.appropriations2026),
+                       levy: decimalToDouble($0.taxLevy2026), appFundBalance: decimalToDouble($0.appropFundBalance2026))
+        }
+    }
+
     static func makeFundSignals(store: RBBudgetStore) -> [BudgetSignal] {
-        let summaries = Riverhead2026BudgetShift.fundSummaries()
+        // The estimated balance at December 31, 2025 is from the 2026 book, the newest estimate in the app.
         let balances = Dictionary(
             uniqueKeysWithValues: Riverhead2026BudgetShift.fundBalances().map { ($0.fundCode.uppercased(), $0) }
         )
 
-        return summaries.compactMap { summary in
-            guard let appropriations = decimalToDouble(summary.appropriations2026), appropriations > 0 else {
+        return signalFunds().compactMap { summary in
+            guard let appropriations = summary.appropriations, appropriations > 0 else {
                 return nil
             }
 
-            let levy = decimalToDouble(summary.taxLevy2026) ?? 0
+            let levy = summary.levy ?? 0
             let levyShare = levy / appropriations
-            let appFundBalance = decimalToDouble(summary.appropFundBalance2026) ?? 0
+            let appFundBalance = summary.appFundBalance ?? 0
             let drawShare = appFundBalance / appropriations
             let balance = balances[summary.fundCode.uppercased()]
             let estimatedFundBalance = decimalToDouble(balance?.estimatedFundBalance_2025_12_31)
@@ -491,11 +517,11 @@ private enum RiverheadBudgetSignalEngine {
             var icon = "waveform.path.ecg"
 
             if let reserveRatio, reserveRatio < 0.15 {
-                reasons.append("estimated fund balance is only \(percent(reserveRatio)) of appropriations")
+                reasons.append("estimated fund balance at the end of 2025 is only \(percent(reserveRatio)) of \(signalYear) appropriations")
                 why.append("That is below the app's own 15% floor and leaves less room for shocks.")
                 icon = "exclamationmark.shield"
             } else if let reserveRatio, reserveRatio < 0.20 {
-                reasons.append("estimated fund balance is \(percent(reserveRatio)) of appropriations")
+                reasons.append("estimated fund balance at the end of 2025 is \(percent(reserveRatio)) of \(signalYear) appropriations")
                 why.append("That is above the floor, but still close enough that a bad year can narrow options quickly.")
                 icon = "gauge.with.dots.needle.33percent"
             }
@@ -521,11 +547,11 @@ private enum RiverheadBudgetSignalEngine {
             }
 
             if let yoyGrowth, yoyGrowth > 0.10 {
-                reasons.append("2026 appropriations are up \(percent(yoyGrowth)) from 2025")
+                reasons.append("\(signalYear) appropriations are up \(percent(yoyGrowth)) from \(signalYear - 1)")
                 why.append("Faster growth usually deserves a plain-English explanation so residents know what is structural versus one-time.")
                 icon = "chart.line.uptrend.xyaxis"
             } else if let yoyGrowth, yoyGrowth > 0.05 {
-                reasons.append("2026 appropriations are up \(percent(yoyGrowth)) from 2025")
+                reasons.append("\(signalYear) appropriations are up \(percent(yoyGrowth)) from \(signalYear - 1)")
                 why.append("This is not extreme, but it is large enough to merit context.")
                 icon = "chart.line.uptrend.xyaxis"
             }
@@ -693,14 +719,14 @@ private enum RiverheadBudgetSignalEngine {
         return display
     }
 
-    private static func yoyGrowthPercent(for summary: RBFundSummary, store: RBBudgetStore) -> Double? {
+    private static func yoyGrowthPercent(for summary: SignalFund, store: RBBudgetStore) -> Double? {
         let display = "\(summary.fundCode) • \(summary.fundName)"
         let storeKey = resolveFundName(display: display, store: store)
         let series = store.valueSeries(for: storeKey, metric: .appropriations).sorted { $0.year < $1.year }
 
         guard
-            let current = series.first(where: { $0.year == 2026 })?.value,
-            let previous = series.first(where: { $0.year == 2025 })?.value,
+            let current = series.first(where: { $0.year == signalYear })?.value,
+            let previous = series.first(where: { $0.year == signalYear - 1 })?.value,
             previous != 0
         else {
             return nil
@@ -709,7 +735,7 @@ private enum RiverheadBudgetSignalEngine {
         return (current / previous) - 1
     }
 
-    private static func appropriationVolatility(for summary: RBFundSummary, store: RBBudgetStore) -> Double {
+    private static func appropriationVolatility(for summary: SignalFund, store: RBBudgetStore) -> Double {
         let display = "\(summary.fundCode) • \(summary.fundName)"
         let storeKey = resolveFundName(display: display, store: store)
         let values = store.valueSeries(for: storeKey, metric: .appropriations)

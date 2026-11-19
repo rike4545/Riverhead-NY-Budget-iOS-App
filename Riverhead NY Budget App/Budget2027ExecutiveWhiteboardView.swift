@@ -547,7 +547,7 @@ private struct Budget2027WhiteboardSummary {
     let currentTemporaryMunicipalAssistance = 7_487.0
 
     var levyYield: Double {
-        store.appropriations * 0.703 * (levyGrowthPercent / 100)
+        store.modelBaseAppropriations * 0.703 * (levyGrowthPercent / 100)
     }
 
     var recurringPressure: Double {
@@ -563,7 +563,7 @@ private struct Budget2027WhiteboardSummary {
     }
 
     var sampleTaxChange: Double {
-        (450_000 / 1_000) * store.ratePerThousand * (levyGrowthPercent / 100)
+        (450_000 / 1_000) * store.modelBaseRatePerThousand * (levyGrowthPercent / 100)
     }
 
     var totalStateMunicipalAid: Double {
@@ -571,8 +571,8 @@ private struct Budget2027WhiteboardSummary {
     }
 
     var totalStateMunicipalAidShare: Double {
-        guard store.appropriations > 0 else { return 0 }
-        return totalStateMunicipalAid / store.appropriations
+        guard store.modelBaseAppropriations > 0 else { return 0 }
+        return totalStateMunicipalAid / store.modelBaseAppropriations
     }
 
     var fy2027TMAPlanningEstimate: Double {

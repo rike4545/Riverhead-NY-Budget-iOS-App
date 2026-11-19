@@ -54,7 +54,7 @@ struct RebalancedSpendingView: View {
                 }
                 .pickerStyle(.segmented)
 
-                Text("This view is a practical rebalancing lens, not an audit accusation. It surfaces the accounts that moved the most, look unusually stretched, or appear too lean for the service goals the Town is describing.")
+                Text("This view is a practical rebalancing lens, not an audit accusation. It surfaces the accounts that moved the most, look unusually stretched, or appear too lean for the service goals the Town is describing. It compares the 2025 and 2026 Adopted Budgets account by account, the newest line-by-line record in the app.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -206,7 +206,7 @@ struct RebalancedSpendingView: View {
 
     private var topMoverChart: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Largest 2026 movement")
+            Text("Largest movement, 2025 to 2026 adopted")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 

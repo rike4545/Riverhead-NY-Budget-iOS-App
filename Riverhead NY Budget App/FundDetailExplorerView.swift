@@ -56,7 +56,7 @@ struct FundDetailExplorerView: View {
             }
 
             Section {
-                Text("Tip: The detailed view anchors 2026 to the Town’s summary table (CSV) and pulls prior years from the historical shift dataset.")
+                Text("Figures are each adopted budget’s Summary page, newest first: \(BudgetStages.currentYear.map(String.init) ?? "2027") here, with every adopted year on file in the detail view.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -111,9 +111,11 @@ struct FundDetailExplorerView: View {
 
     // MARK: - 2026 Snapshot Helpers
 
+    /// The fund's figure in the newest adopted budget (2027 as of November 2026).
     private func valueFor2026(fund: String, metric: RBBudgetMetric) -> Double? {
         let series = store.valueSeries(for: fund, metric: metric)
-        return series.first(where: { $0.year == 2026 })?.value
+        let year = BudgetStages.currentYear ?? 2027
+        return series.first(where: { $0.year == year })?.value
     }
 
     // MARK: - Warm-up
@@ -156,8 +158,8 @@ private struct FundExplorerRow: View {
                     .foregroundStyle(RiverheadTheme.textPrimary)
 
                 HStack(spacing: 12) {
-                    snapshot(label: "Levy 2026", value: levy2026)
-                    snapshot(label: "App 2026", value: app2026)
+                    snapshot(label: "Levy \(BudgetStages.currentYear.map(String.init) ?? "2027")", value: levy2026)
+                    snapshot(label: "App \(BudgetStages.currentYear.map(String.init) ?? "2027")", value: app2026)
                 }
                 .font(.caption)
                 .foregroundStyle(.secondary)

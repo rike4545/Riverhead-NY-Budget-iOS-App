@@ -19,7 +19,7 @@ struct MyTaxesView: View {
     // Persisted inputs
     @AppStorage("tax_assessed_value")   private var assessedValue: Double = 450_000
     @AppStorage("tax_exemptions")       private var exemptions: Double = 0
-    @AppStorage("tax_rate_per_1000")    private var ratePerThousand: Double = 61.9482
+    @AppStorage("tax_rate_per_1000")    private var ratePerThousand: Double = BudgetStages.current?.townWide?.fundRates?["A01"]?.rate ?? 62.71
     @AppStorage("cap_prior_year_levy")  private var priorYearLevy: Double = 10_000_000
     @AppStorage("cap_cpi_percent")      private var cpiPercent: Double = 2.00
     @AppStorage("cap_tbgf")             private var tbgf: Double = 1.0072
@@ -33,13 +33,18 @@ struct MyTaxesView: View {
 
     private let cardBG: Material = .thinMaterial
     private let borderColor = Color(uiColor: .separator).opacity(0.25)
-    private let contextLevyYear: Int = 2026
-    private let receiverGeneralTownRate: Double = 61.9482
-    private let receiverHighwayRate: Double = 8.6948
-    // Street Lighting isn't broken out on the Receiver of Taxes sheet this view otherwise
-    // cites, so this uses the 2026 Adopted Budget's own published rate table (p.6) instead,
-    // matching the "Total Town Wide" rate used by the Hub's tax calculator (RiverheadBudgetHubView.swift).
-    private let receiverStreetLightingRate: Double = 0.955
+    private let contextLevyYear: Int = BudgetStages.currentYear ?? 2027
+    // The presets use the newest adopted budget's own rate table (budget-stages.json,
+    // "Total Town Wide" and each town-wide fund). 2027: 62.710 + 8.893 + 0.884 = 72.487.
+    private let receiverGeneralTownRate: Double = BudgetStages.current?.townWide?.fundRates?["A01"]?.rate ?? 62.71
+    private let receiverHighwayRate: Double = BudgetStages.current?.townWide?.fundRates?["DA1"]?.rate ?? 8.893
+    private let receiverStreetLightingRate: Double = BudgetStages.current?.townWide?.fundRates?["SL1"]?.rate ?? 0.884
+    /// Rates a saved setting may hold from an earlier preset: the 2025-2026 Receiver of Taxes
+    /// sheet (General Town 61.9482, + Highway 70.643) and the 2026 Adopted "Total Town Wide" 71.598.
+    private static let olderPresets: [(rate: Double, kind: RBPropertyTaxRateSource)] = [
+        (61.9482, .generalTown), (61.9482 + 8.6948, .generalTownAndHighway), (71.598, .totalTownWide),
+    ]
+    @AppStorage("tax_rate_year") private var rateYear: Int = 0
     private let riverheadSewerRentRate: Double = 11.4606
     private let calvertonSewerRentRate: Double = 79.2149
 
@@ -118,12 +123,15 @@ struct MyTaxesView: View {
 
         guard let key = maybeKey else { return nil }
 
-        // 1) Prefer 2026 levy from the store, if present
-        let series = store.valueSeries(for: key, metric: .taxLevy)
-        var levyValue: Double? = series.first(where: { $0.year == contextLevyYear })?.value
+        // 1) The newest adopted budget's General Fund levy (budget-stages.json), else the store's series.
+        var levyValue: Double? = BudgetStages.current?.generalFund?.levy
+        if levyValue == nil {
+            let series = store.valueSeries(for: key, metric: .taxLevy)
+            levyValue = series.first(where: { $0.year == contextLevyYear })?.value
+        }
 
-        // 2) Fallback to CSV-parsed 2026 Adopted Budget via Riverhead2026BudgetShift
-        if levyValue == nil || levyValue ?? 0 <= 0 {
+        // 2) Last resort, only when the newest year is 2026: the CSV-parsed 2026 Adopted Budget.
+        if (levyValue == nil || levyValue ?? 0 <= 0) && contextLevyYear == 2026 {
             let summaries = Riverhead2026BudgetShift.fundSummaries()
             if let summary = summaries.first(where: {
                 $0.fundCode.compare("A01", options: .caseInsensitive) == .orderedSame
@@ -163,6 +171,7 @@ struct MyTaxesView: View {
             }
             .navigationTitle("My Taxes")
             .scrollDismissesKeyboard(.interactively)
+            .onAppear(perform: moveOlderPresetForward)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -179,6 +188,21 @@ struct MyTaxesView: View {
                 }
             }
         }
+    }
+
+    /// A rate saved from an earlier year's preset moves to the same preset in the newest
+    /// adopted budget, once. A rate the reader typed in is left alone.
+    private func moveOlderPresetForward() {
+        guard rateYear < contextLevyYear else { return }
+        if let match = Self.olderPresets.first(where: { ratePerThousand.isApproximately($0.rate) }) {
+            switch match.kind {
+            case .generalTown: ratePerThousand = receiverGeneralTownRate
+            case .generalTownAndHighway: ratePerThousand = receiverGeneralAndHighwayRate
+            case .totalTownWide: ratePerThousand = receiverTotalTownWideRate
+            case .custom: break
+            }
+        }
+        rateYear = contextLevyYear
     }
 
     // MARK: - Sections
@@ -363,7 +387,7 @@ struct MyTaxesView: View {
             Label("Receiver of Taxes reference", systemImage: "list.bullet.rectangle")
                 .font(.headline)
 
-            Text("Riverhead's official 2025-2026 Receiver of Taxes sheet shows how district charges stack on top of the Town-wide bill. It lists General Town at `61.9482` per $1,000 of assessed value, Highway at `8.6948`, Riverhead Sewer Rent at `11.4606`, Calverton Sewer Rent at `79.2149`, and a single-family residential refuse-collection charge of `$482.40`. The same sheet reports a 2025 equalization rate of `8.16%` and a residential assessment ratio of `7.44%`. The Town's Receiver of Taxes archive also preserves annual tax-rate PDFs back through `2013-2014`, which makes historical year-over-year comparison possible. Town Code also makes clear that Calverton sewer rents are set annually by Town Board resolution with the sewer budget, collected by the Receiver of Taxes, and become a lien on the served property.")
+            Text("The rate presets above use the \(String(contextLevyYear)) Adopted Budget's rate table. For last year's bill, Riverhead's official 2025-2026 Receiver of Taxes sheet shows how district charges stack on top of the Town-wide bill. It lists General Town at `61.9482` per $1,000 of assessed value, Highway at `8.6948`, Riverhead Sewer Rent at `11.4606`, Calverton Sewer Rent at `79.2149`, and a single-family residential refuse-collection charge of `$482.40`. The same sheet reports a 2025 equalization rate of `8.16%` and a residential assessment ratio of `7.44%`. The Town's Receiver of Taxes archive also preserves annual tax-rate PDFs back through `2013-2014`, which makes historical year-over-year comparison possible. Town Code also makes clear that Calverton sewer rents are set annually by Town Board resolution with the sewer budget, collected by the Receiver of Taxes, and become a lien on the served property.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 

@@ -20,7 +20,7 @@ struct SettingsView: View {
     // MARK: - My Property (shared with MyTaxesView)
     @AppStorage("tax_assessed_value")  private var assessedValue: Double  = 450_000
     @AppStorage("tax_exemptions")      private var exemptions: Double      = 0
-    @AppStorage("tax_rate_per_1000")   private var ratePerThousand: Double = 61.9482
+    @AppStorage("tax_rate_per_1000")   private var ratePerThousand: Double = BudgetStages.current?.townWide?.fundRates?["A01"]?.rate ?? 62.71
 
 
     // MARK: - Cached data (Council Scorecard)

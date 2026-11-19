@@ -741,9 +741,11 @@ private struct SubAccountDetailView: View {
     }
 }
 
+/// Whole-dollar currency for the department and account rows. A format style, not
+/// FundDetailView's shared formatter, which is main-actor isolated with the view.
 private func budgetLineMoney(_ value: Double?) -> String {
     guard let value else { return "—" }
-    return FundDetailView.moneyFormatter0.string(from: value as NSNumber) ?? String(format: "%.0f", value)
+    return value.formatted(.currency(code: "USD").precision(.fractionLength(0)))
 }
 
 private extension BudgetDepartment {

@@ -14,12 +14,12 @@
 
 import Foundation
 
-struct BudgetStageSource: Decodable, Hashable {
+struct BudgetStageSource: Decodable, Hashable, Sendable {
     let title: String
     let url: String
 }
 
-struct BudgetStageFund: Decodable, Hashable {
+struct BudgetStageFund: Decodable, Hashable, Sendable {
     let name: String
     let appropriations: Double
     let revenues: Double?
@@ -27,21 +27,21 @@ struct BudgetStageFund: Decodable, Hashable {
     let levy: Double?
 }
 
-struct BudgetStageTotals: Decodable, Hashable {
+struct BudgetStageTotals: Decodable, Hashable, Sendable {
     let funds: Int
     let appropriations: Double
     let levy: Double
     let fundBalance: Double?
 }
 
-struct BudgetStageFundRate: Decodable, Hashable {
+struct BudgetStageFundRate: Decodable, Hashable, Sendable {
     let rate: Double
     let priorRate: Double
 }
 
 /// The "Total Town Wide" rows: the General Fund, Highway and Street Lighting,
 /// the three funds on every Town tax bill.
-struct BudgetStageTownWide: Decodable, Hashable {
+struct BudgetStageTownWide: Decodable, Hashable, Sendable {
     let appropriations: Double
     let priorAppropriations: Double
     let levy: Double
@@ -52,7 +52,7 @@ struct BudgetStageTownWide: Decodable, Hashable {
     let fundRates: [String: BudgetStageFundRate]?
 }
 
-struct BudgetStageDoc: Decodable, Hashable {
+struct BudgetStageDoc: Decodable, Hashable, Sendable {
     let source: BudgetStageSource
     let funds: [String: BudgetStageFund]
     let totals: BudgetStageTotals
@@ -66,7 +66,7 @@ struct BudgetStageDoc: Decodable, Hashable {
     var generalFund: BudgetStageFund? { funds["A01"] }
 }
 
-struct BudgetStageTransition: Decodable, Hashable {
+struct BudgetStageTransition: Decodable, Hashable, Sendable {
     struct Change: Decodable, Hashable { let from: Double; let to: Double; let delta: Double }
     let year: Int
     let from: String
@@ -76,7 +76,7 @@ struct BudgetStageTransition: Decodable, Hashable {
     let levy: Change
 }
 
-enum BudgetStage: String, CaseIterable {
+enum BudgetStage: String, CaseIterable, Sendable {
     case tentative, preliminary, adopted
 
     var label: String {
@@ -88,7 +88,7 @@ enum BudgetStage: String, CaseIterable {
     }
 }
 
-struct BudgetStagesFile: Decodable {
+struct BudgetStagesFile: Decodable, Sendable {
     let years: [String: [String: BudgetStageDoc]]
     let transitions: [BudgetStageTransition]
 }

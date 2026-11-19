@@ -15,7 +15,7 @@
 
 import Foundation
 
-struct BudgetLineRecord: Decodable, Hashable {
+struct BudgetLineRecord: Decodable, Hashable, Sendable {
     let account: String
     let fund: String
     let kind: String
@@ -35,12 +35,12 @@ struct BudgetLineRecord: Decodable, Hashable {
     var objectCode: String { parts.count > 3 ? parts[3] : "" }
 }
 
-struct BudgetLinesSource: Decodable, Hashable {
+struct BudgetLinesSource: Decodable, Hashable, Sendable {
     let title: String
     let url: String
 }
 
-struct BudgetLinesFile: Decodable {
+struct BudgetLinesFile: Decodable, Sendable {
     let year: Int
     let stage: String
     let source: BudgetLinesSource
@@ -48,14 +48,14 @@ struct BudgetLinesFile: Decodable {
 }
 
 /// One value column of an account line, labelled with its year and stage.
-struct BudgetLineValue: Hashable {
+struct BudgetLineValue: Hashable, Sendable {
     let label: String
     let value: Double?
     let isPrimary: Bool
 }
 
 /// An account line, from either the newest line file or the bundled 2026 book.
-struct BudgetAccountLine: Identifiable, Hashable {
+struct BudgetAccountLine: Identifiable, Hashable, Sendable {
     var id: String { accountNumber }
     let fundCode: String
     let functionCode: String
@@ -69,7 +69,7 @@ struct BudgetAccountLine: Identifiable, Hashable {
 }
 
 /// A department (function code) of one fund, with its account lines.
-struct BudgetDepartment: Identifiable, Hashable {
+struct BudgetDepartment: Identifiable, Hashable, Sendable {
     var id: String { "\(fundCode)-\(functionCode)" }
     let fundCode: String
     let functionCode: String

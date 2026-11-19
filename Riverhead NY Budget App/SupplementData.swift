@@ -17,7 +17,7 @@ import Foundation
 
 // MARK: - Reductions
 
-struct SupplementReduction: Identifiable, Decodable, Hashable {
+struct SupplementReduction: Identifiable, Decodable, Hashable, Sendable {
     let account: String
     let name: String
     let fund: String
@@ -31,7 +31,7 @@ struct SupplementReduction: Identifiable, Decodable, Hashable {
     var id: String { account }
 }
 
-struct SupplementReductionsFile: Decodable {
+struct SupplementReductionsFile: Decodable, Sendable {
     let gapToClose: Double
     let total: Double
     let byConfidence: [String: Double]
@@ -41,7 +41,7 @@ struct SupplementReductionsFile: Decodable {
 
 // MARK: - Outliers
 
-struct SupplementOutlier: Identifiable, Decodable, Hashable {
+struct SupplementOutlier: Identifiable, Decodable, Hashable, Sendable {
     let account: String
     let fund: String
     let name: String
@@ -82,7 +82,7 @@ struct SupplementOutlier: Identifiable, Decodable, Hashable {
     }
 }
 
-struct SupplementOutliersFile: Decodable {
+struct SupplementOutliersFile: Decodable, Sendable {
     /// The Supplement's budget year (2027); nil in the 2026 file, which predates the field.
     let supplementYear: Int?
     let overBudget: [SupplementOutlier]
@@ -94,7 +94,7 @@ struct SupplementOutliersFile: Decodable {
     var budgetYear: Int { supplementYear ?? 2026 }
 }
 
-struct SupplementLine: Identifiable, Decodable, Hashable {
+struct SupplementLine: Identifiable, Decodable, Hashable, Sendable {
     let account: String
     let fund: String
     let name: String
@@ -123,7 +123,7 @@ private struct SupplementLinesFile: Decodable { let lines: [SupplementLine] }
 // what separates a line genuinely over budget from one that simply runs on a
 // multi-year cycle and happens to be in an off year.
 
-struct SupplementCyclicalLine: Identifiable, Decodable {
+struct SupplementCyclicalLine: Identifiable, Decodable, Sendable {
     let account: String
     let name: String
     let series: [String: Double]
@@ -159,7 +159,7 @@ struct SupplementCyclicalLine: Identifiable, Decodable {
     }
 }
 
-struct SupplementUnderBudgetedLine: Identifiable, Decodable {
+struct SupplementUnderBudgetedLine: Identifiable, Decodable, Sendable {
     let account: String
     let name: String
     let series: [String: Double]
@@ -193,7 +193,7 @@ struct SupplementUnderBudgetedLine: Identifiable, Decodable {
     }
 }
 
-struct SupplementRenumberedLine: Identifiable, Decodable {
+struct SupplementRenumberedLine: Identifiable, Decodable, Sendable {
     let name: String
     let oldAccount: String
     let lastYear: Int
@@ -204,7 +204,7 @@ struct SupplementRenumberedLine: Identifiable, Decodable {
     var id: String { oldAccount }
 }
 
-struct SupplementHistoryFile: Decodable {
+struct SupplementHistoryFile: Decodable, Sendable {
     let actualYears: [Int]
     let accountsTracked: Int
     /// The Supplements stacked (2020–2027) and the year being budgeted (2027); nil in the older file.
@@ -245,7 +245,7 @@ struct SupplementHistoryFile: Decodable {
 // by role, with `columns` giving each role's year (actual 2025, adopted 2026, ytd 2026,
 // request/tentative/preliminary 2027, priorActual 2024, priorAdopted 2025, priorYtd 2025).
 
-struct SupplementCurrentLine: Identifiable, Decodable, Hashable {
+struct SupplementCurrentLine: Identifiable, Decodable, Hashable, Sendable {
     let account: String
     let fund: String
     let name: String
@@ -281,7 +281,7 @@ struct SupplementCurrentLine: Identifiable, Decodable, Hashable {
     }
 }
 
-struct SupplementCurrentFile: Decodable {
+struct SupplementCurrentFile: Decodable, Sendable {
     let supplementYear: Int
     let columns: [String: Int]
     let lines: [SupplementCurrentLine]

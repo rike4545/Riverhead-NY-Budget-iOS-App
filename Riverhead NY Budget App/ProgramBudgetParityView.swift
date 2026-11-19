@@ -192,7 +192,9 @@ struct ProgramBudgetParityDocument: Decodable, Sendable {
         let programs: [ProgramSummary]
 
         var id: Int { year }
-        var isProposed: Bool { stage != "adopted" }
+        /// A Preliminary the Board adopted unchanged is published with stage "preliminary"
+        /// and the label "2027 adopted"; the label is what decides.
+        var isProposed: Bool { stage != "adopted" && !label.lowercased().contains("adopted") }
     }
 
     let schemaVersion: Int
@@ -313,7 +315,46 @@ struct NativeProgramBudgetView: View {
         }
     }
 
+    /// The newest adopted year in the series when it is newer than the itemized headline year
+    /// (2027, adopted November 17, 2026), else nil.
+    private func newerAdoptedYear(_ document: ProgramBudgetParityDocument) -> ProgramBudgetParityDocument.Year? {
+        guard let years = document.years,
+              let headline = years.filter({ $0.stage == "adopted" }).map(\.year).max(),
+              let newest = years.filter({ !$0.isProposed }).max(by: { $0.year < $1.year }),
+              newest.year > headline else { return nil }
+        return newest
+    }
+
     private func overviewCard(_ document: ProgramBudgetParityDocument) -> some View {
+        if let newer = newerAdoptedYear(document) {
+            return AnyView(newerOverviewCard(newer, headlineCount: document.programs.count))
+        }
+        return AnyView(itemizedOverviewCard(document))
+    }
+
+    private func newerOverviewCard(_ year: ProgramBudgetParityDocument.Year, headlineCount: Int) -> some View {
+        let recoveryPct = year.totals.fullCost > 0 ? year.totals.earned / year.totals.fullCost * 100 : 0
+        return VStack(alignment: .leading, spacing: 12) {
+            Text("What the Town does, and what it costs")
+                .font(.title2.bold())
+                .foregroundStyle(RiverheadTheme.textPrimary)
+
+            Text("The \(String(year.year)) Adopted Budget (the Preliminary, which the Town Board adopted unchanged on November 17, 2026), regrouped into seven services using New York's own municipal function codes. Benefits are allocated back to the services whose employees earned them, and user fees are shown against the services that collect them. The service cards further down itemize \(String(year.year - 1)), the newest year with departments and revenues listed; staff counts are the \(String(year.staffYear)) payroll.")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 145), spacing: 10)], spacing: 10) {
+                programStat("Cost of services", moneyShortProgram(year.totals.fullCost), "\(year.programs.count) programs")
+                programStat("Earned back", moneyShortProgram(year.totals.earned), "\(String(format: "%.0f", recoveryPct))% recovery")
+                programStat("Not covered by fees", moneyShortProgram(year.totals.net), "taxes + general revenue")
+                programStat("Per resident", moneyProgram(year.perResident.everything), "all in")
+                programStat("Per household", moneyProgram(year.perHousehold.everything), "scale, not a tax bill")
+            }
+        }
+        .programParityCard()
+    }
+
+    private func itemizedOverviewCard(_ document: ProgramBudgetParityDocument) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("What the Town does, and what it costs")
                 .font(.title2.bold())
@@ -339,11 +380,11 @@ struct NativeProgramBudgetView: View {
             Text("Full cost by service")
                 .font(.headline)
 
-            Text("Department appropriations plus pension, health insurance, payroll taxes, and other allocated benefits.")
+            Text("Department appropriations plus pension, health insurance, payroll taxes, and other allocated benefits\(newerAdoptedYear(document).map { ", in the \(String($0.year)) Adopted Budget" } ?? "").")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 
-            Chart(document.programs) { program in
+            Chart(chartRows(document), id: \.name) { program in
                 BarMark(
                     x: .value("Full cost", program.fullCost),
                     y: .value("Program", shortProgramName(program.name))
@@ -369,6 +410,14 @@ struct NativeProgramBudgetView: View {
             .frame(height: 310)
         }
         .programParityCard()
+    }
+
+    /// The chart's rows: the newer adopted year's services when there is one, else the itemized year's.
+    private func chartRows(_ document: ProgramBudgetParityDocument) -> [(name: String, fullCost: Double)] {
+        if let newer = newerAdoptedYear(document) {
+            return newer.programs.map { ($0.name, $0.fullCost) }
+        }
+        return document.programs.map { ($0.name, $0.fullCost) }
     }
 
     private func programRow(_ program: ProgramBudgetParityDocument.Program) -> some View {

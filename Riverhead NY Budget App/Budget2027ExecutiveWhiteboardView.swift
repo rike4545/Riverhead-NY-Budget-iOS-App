@@ -22,6 +22,7 @@ struct Budget2027ExecutiveWhiteboardView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 whiteboardHeader
+                ModelVsAdoptedCard()
                 bottomLineCard
                 pressureAndOffsetBoard
                 decisionBoard

@@ -622,6 +622,7 @@ struct BudgetSimulator2027View: View {
 
                 switch sim.activeStage {
                 case .overview:
+                    ModelVsAdoptedCard()
                     baselineCard
                     planShowcaseCard
                     exactChangesCard

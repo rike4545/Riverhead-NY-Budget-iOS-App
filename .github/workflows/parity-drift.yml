@@ -14,12 +14,12 @@ on:
     - cron: '25 15 * * *'
   workflow_dispatch:
 
-# The write scopes are for the scheduled run, which opens the draft PR. On a
-# pull_request event every write step is skipped, and a pull_request token from
-# a fork is read-only regardless.
+# Read-only by default. The checking job never gets a write token, so nothing a
+# pull request changes runs with one. The report job, which commits the report
+# and opens the tracking issue, asks for write scopes and never runs on a pull
+# request.
 permissions:
-  contents: write
-  issues: write
+  contents: read
 
 concurrency:
   group: parity-drift-${{ github.event_name == 'pull_request' && github.ref || 'scheduled' }}
@@ -75,8 +75,30 @@ jobs:
             parity-drift.md
           if-no-files-found: warn
 
+  report:
+    name: Commit the report and update the tracking issue
+    needs: drift
+    if: always() && github.event_name != 'pull_request' && needs.drift.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history: this job commits on top of the report branch.
+          fetch-depth: 0
+
+      - name: Download the report
+        uses: actions/download-artifact@v7
+        with:
+          name: parity-drift-report
+          path: .
+        continue-on-error: true
+
       - name: Decide whether there is anything to report
-        if: always() && github.event_name != 'pull_request'
+        if: always()
         id: triage
         run: |
           set -euo pipefail
@@ -97,7 +119,7 @@ jobs:
           echo "$breaks break, $drifts drift"
 
       - name: Open or update the parity tracking issue
-        if: always() && github.event_name != 'pull_request' && steps.triage.outputs.actionable == 'true'
+        if: always() && steps.triage.outputs.actionable == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BREAKS: ${{ steps.triage.outputs.breaks }}
@@ -185,7 +207,7 @@ jobs:
         # Kept last so the pull request is opened first: the point of the
         # scheduled run is the report, and a red run with no report would say
         # less than a green one with a report.
-        if: always() && github.event_name != 'pull_request' && steps.triage.outputs.breaks != '0' && steps.triage.outputs.breaks != ''
+        if: always() && steps.triage.outputs.breaks != '0' && steps.triage.outputs.breaks != ''
         run: |
           echo "::error::${{ steps.triage.outputs.breaks }} parity break(s) — a native view is silently falling back to the web page."
           exit 1

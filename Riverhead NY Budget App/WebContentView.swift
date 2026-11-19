@@ -136,13 +136,28 @@ private struct WebViewRepresentable: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            // Handle target=_blank by loading in the same view
-            if navigationAction.targetFrame == nil, let url = navigationAction.request.url {
-                webView.load(URLRequest(url: url))
+            guard let url = navigationAction.request.url else {
                 decisionHandler(.cancel)
                 return
             }
-            decisionHandler(.allow)
+            switch url.scheme?.lowercased() {
+            case "https", "about":
+                // Handle target=_blank by loading in the same view
+                if navigationAction.targetFrame == nil {
+                    webView.load(URLRequest(url: url))
+                    decisionHandler(.cancel)
+                    return
+                }
+                decisionHandler(.allow)
+            case "mailto", "tel", "sms":
+                // Hand contact links to the system instead of the web view.
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+            default:
+                // JavaScript is on for these pages, so the view only ever shows
+                // https content: no http, file, data or custom-scheme pages.
+                decisionHandler(.cancel)
+            }
         }
 
         private func updateProgress(_ value: Double) {

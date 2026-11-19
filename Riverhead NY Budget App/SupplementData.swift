@@ -144,6 +144,53 @@ struct SupplementHistoryFile: Decodable {
     let note: String
 }
 
+// MARK: - The newest Supplement's lines (2027)
+// budget-supplement/current-lines.json on the website: one Supplement's columns named
+// by role, with `columns` giving each role's year (actual 2025, adopted 2026, ytd 2026,
+// request/tentative/preliminary 2027, priorActual 2024, priorAdopted 2025, priorYtd 2025).
+
+struct SupplementCurrentLine: Identifiable, Decodable, Hashable {
+    let account: String
+    let fund: String
+    let name: String
+    let kind: String
+    let control: String
+    let page: Int?
+    let priorActual: Double?
+    let actual: Double?
+    let priorAdopted: Double?
+    let adopted: Double?
+    let priorYtd: Double?
+    let ytd: Double?
+    let request: Double?
+    let tentative: Double?
+    let preliminary: Double?
+
+    var id: String { account }
+
+    /// The newest stage's figure: the Preliminary when printed, else the Tentative.
+    var proposal: Double? { preliminary ?? tentative }
+
+    /// The trailing full-year run-rate: the larger of last year's actual and twice this
+    /// year's year-to-date, as etl/parse_supplement_history.py computes it.
+    var runRate: Double? {
+        guard actual != nil || ytd != nil else { return nil }
+        return max(actual ?? 0, (ytd ?? 0) * 2)
+    }
+
+    /// How far the newest stage sits above (+) or below (−) the run-rate.
+    var overRunRate: Double? {
+        guard let proposal, let runRate else { return nil }
+        return proposal - runRate
+    }
+}
+
+struct SupplementCurrentFile: Decodable {
+    let supplementYear: Int
+    let columns: [String: Int]
+    let lines: [SupplementCurrentLine]
+}
+
 // MARK: - Loader
 
 enum SupplementData {
@@ -151,6 +198,7 @@ enum SupplementData {
     static let outliers: SupplementOutliersFile? = load("supplement-outliers")
     static let lines: [SupplementLine] = (load("supplement-lines") as SupplementLinesFile?)?.lines ?? []
     static let history: SupplementHistoryFile? = load("supplement-history")
+    static let currentLines: SupplementCurrentFile? = load("supplement-current-lines")
 
     private static func load<T: Decodable>(_ resource: String) -> T? {
         guard let url = Bundle.main.url(forResource: resource, withExtension: "json"),

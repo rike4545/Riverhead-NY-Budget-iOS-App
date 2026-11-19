@@ -61,3 +61,37 @@ struct BudgetStagesTests {
         #expect(store.modelBaseRatePerThousand == 71.598)
     }
 }
+
+struct BudgetLinesTests {
+
+    @Test func linesReconcileToTheAdoptedSummary() {
+        // budget-2027-preliminary-lines.json: the Preliminary the Board adopted unchanged.
+        #expect(BudgetLines.file?.year == 2027)
+        #expect(BudgetLines.isAdopted)
+        #expect(BudgetLines.adoptedYear == 2027)
+    }
+
+    @Test func generalFundDepartmentsAddUpToItsAppropriations() {
+        let total = BudgetLines.departments(fundCode: "A01").reduce(0) { $0 + $1.total }
+        #expect(abs(total - 71_932_070) < 1)
+    }
+
+    @Test func generalFundChangeByGroupAddsUpToTheIncrease() {
+        // 71,932,070 − 69,113,159 = 2,818,911
+        let groups = BudgetLines.changeByGroup(fundCode: "A01")
+        #expect(abs(groups.reduce(0) { $0 + $1.change } - 2_818_911) < 1)
+        let personal = groups.first { $0.group == .personalServices }?.change ?? 0
+        #expect(abs(personal - 1_926_098) < 1)
+    }
+
+    @Test func departmentRecordsMoveTo2027() {
+        let police = DepartmentBudgetLensData.departmentRecords.first { $0.fundCode == "A01-3120" }
+        #expect(police?.budgetYear == 2027)
+        #expect(police?.adoptedTotal == 23_244_090)
+        #expect(police?.priorAdoptedTotal == 22_388_906)
+    }
+
+    @Test func ledgerReadsThe2027Supplement() {
+        #expect(SupplementData.currentLines?.supplementYear == 2027)
+    }
+}

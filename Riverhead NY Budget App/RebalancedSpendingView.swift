@@ -54,7 +54,7 @@ struct RebalancedSpendingView: View {
                 }
                 .pickerStyle(.segmented)
 
-                Text("This view is a practical rebalancing lens, not an audit accusation. It surfaces the accounts that moved the most, look unusually stretched, or appear too lean for the service goals the Town is describing. It compares the 2025 and 2026 Adopted Budgets account by account, the newest line-by-line record in the app.")
+                Text("This view is a practical rebalancing lens, not an audit accusation. It surfaces the accounts that moved the most, look unusually stretched, or appear too lean for the service goals the Town is describing. It compares the 2025 and 2026 Adopted Budgets account by account, the lines this app flagged before 2027, and shows what the 2027 Adopted Budget did with each.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -120,6 +120,18 @@ struct RebalancedSpendingView: View {
                                     .foregroundStyle(.secondary)
                                 Text(item.adopted2026, format: .currency(code: "USD"))
                                     .font(.subheadline.weight(.semibold))
+                            }
+                        }
+
+                        if let year = BudgetLines.adoptedYear {
+                            if let newest = item.adoptedNewest {
+                                Text("\(String(year)) Adopted: \(newest.formatted(.currency(code: "USD").precision(.fractionLength(0)))), \(newest >= (item.adoptedPriorFromLines ?? item.adopted2026) ? "up" : "down") \(abs(newest - (item.adoptedPriorFromLines ?? item.adopted2026)).formatted(.currency(code: "USD").precision(.fractionLength(0)))) from 2026.")
+                                    .font(.footnote.weight(.semibold))
+                                    .foregroundStyle(RiverheadTheme.textPrimary)
+                            } else {
+                                Text("Not a separate line in the \(String(year)) Adopted Budget.")
+                                    .font(.footnote.weight(.semibold))
+                                    .foregroundStyle(.secondary)
                             }
                         }
 

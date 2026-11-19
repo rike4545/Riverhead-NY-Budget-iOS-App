@@ -342,7 +342,7 @@ fileprivate struct BudgetToolsDirectoryView: View {
             title: "Evidence And Detail",
             shortcuts: [
                 .init(title: "Supplement Explorer", subtitle: "Annual report, surplus, tax-cut, and labor-pressure details.", symbol: "doc.text.magnifyingglass", destination: .section(.supplementExplorer)),
-                .init(title: "Line-Item Ledger", subtitle: "Every account with 4 years of actuals vs. budget and variance — from the 2025/2026 Supplements.", symbol: "tablecells.fill", destination: .lineItemLedger),
+                .init(title: "Line-Item Ledger", subtitle: "Every account from the 2027 Budget Supplement: 2024 and 2025 actuals, the 2026 budget, the 2027 adopted figure and its run-rate gap.", symbol: "tablecells.fill", destination: .lineItemLedger),
                 .init(title: "Outliers", subtitle: "Budget accuracy, variances, and unusual lines.", symbol: "exclamationmark.triangle.fill", destination: .section(.outliers)),
                 .init(title: "Employees", subtitle: "Payroll and public earnings views.", symbol: "person.2.fill", destination: .section(.employees)),
                 .init(title: "Glossary", subtitle: "Plain-language definitions for budget terms.", symbol: "text.book.closed.fill", destination: .section(.glossary))
@@ -2251,8 +2251,8 @@ fileprivate struct OverviewStoryView: View {
                   blurb: "The 2025 audit shows the General Fund ended 2025 with $33.3M in fund balance, $28.8M of it unassigned: 41.7% of 2026 General Fund appropriations and 40.1% of 2027's. That is a large cushion next to the Town's 15% floor (Resolution 918 of 2011, which sets no ceiling).",
                   tag: "Fund balance"),
             .init(symbol: "arrow.up.right.circle.fill",
-                  title: "Key cost drivers in the 2026 budget",
-                  blurb: "Personnel (Police +6.8%, Highway +4.9%) and benefits (+5.4%) are structural. Ambulance equipment (+108%) is one-time. Confirm exclusions from the tax cap base.",
+                  title: "Key cost drivers in the 2027 General Fund",
+                  blurb: "Line by line against 2026: personal services +$1.93M (police pay +$912K), employee benefits +$1.71M (health insurance +$1.05M, police retirement +$362K), contractual +$350K. Equipment falls $157K and the transfer to the Debt Service Fund falls $1.01M. Pay and benefits are structural.",
                   tag: "Appropriations"),
             .init(symbol: "scroll.fill",
                   title: "Debt & capital posture",
@@ -4011,7 +4011,7 @@ fileprivate struct HearingToolkitView: View {
         [
             "Is the Town's savings account staying above the 15% minimum policy after this budget?",
             "The 2027 budget uses $880,000 of General Fund savings. With $28.8M unassigned at the end of 2025, what is the plan for the rest?",
-            "Police personal services rose $1.65M in the 2026 budget — was that from new hires, raises, or overtime, and how much carries into 2027?",
+            "Police pay rises $912K in the 2027 budget, after $1.65M in 2026 — how much is from the new PBA and SOA contracts, new hires, or overtime?",
             "OSC said Riverhead's CPF spending and debt payments were proper, but some CPF collections were not logged or deposited on time — what changed to fix that before the next audit?",
             "If the Supervisor recommends an exempt Budget Officer, what financial training or accounting experience does that person have?",
             "If Riverhead adopts a Community Housing Fund, who sits on the advisory board and how will the public see what projects it recommends?",
@@ -4031,7 +4031,7 @@ fileprivate struct HearingToolkitView: View {
     private var expertTalkingPoints: [String] {
         [
             "The 2027 Adopted Budget appropriates $880,000 of General Fund balance, while the audited unassigned balance was $28,829,513 at the end of 2025, 40.1% of 2027 General Fund appropriations and about $18.0M above the 15% floor in Resolution 918 of 2011. What is the Board's plan for the balance above the floor?",
-            "Personnel services growth (Police +6.8%, Highway +4.9%) outpaces CPI. What contract provisions drive this, and how does it affect the out-year levy cap forecast?",
+            "General Fund personal services rise $1.93M and benefits $1.71M in the 2027 Adopted Budget, while the transfer to the Debt Service Fund falls $1.01M. If debt costs stop falling, how does recurring pay and benefit growth fit under the out-year levy cap?",
             "OSC's February 2024 CPF audit found Riverhead's CPF disbursements and debt service were proper, but some collections were not date-stamped and nine deposits totaling $5.3 million were not deposited within 10 days. What written control changes, training, and receipt-tracking steps have been implemented since then?",
             "If the Supervisor designates or recommends an exempt Budget Officer, what minimum qualifications in accounting, municipal finance, or budget administration does the Board require to preserve independent budget scrutiny and effective pluralism?",
             "If the Town adopts the 0.5% Community Housing Fund tax, what ordinance will govern the advisory board's appointments, recommendation process, conflict rules, and annual reporting?",

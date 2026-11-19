@@ -111,7 +111,7 @@ struct Budget2027LabView: View {
                             .font(.system(.title2, design: .rounded).weight(.bold))
                             .foregroundStyle(.white)
 
-                        Text("Build a scenario, check the tax impact, inspect department pressure, and leave with hearing-ready questions.")
+                        Text("Build a 2027 scenario from the 2026 Adopted Budget, check the tax impact, and inspect department pressure. The Board adopted the actual 2027 budget on November 17, 2026: $120,854,219 across all funds. This lab is a model, not that budget.")
                             .font(.subheadline)
                             .foregroundStyle(.white.opacity(0.9))
                             .fixedSize(horizontal: false, vertical: true)
@@ -1409,7 +1409,7 @@ private struct Budget2027SourceTrail: Identifiable {
     static let sources: [Budget2027SourceTrail] = [
         .init(
             title: "2026 budget baseline",
-            detail: "Uses the app's current 2026 appropriations, rate, and fund-balance store values as the starting point.",
+            detail: "Starts from the 2026 Adopted Budget's General Fund appropriations and Town-wide rate, and the audited fund balance at the end of 2025. The Board adopted the actual 2027 budget on November 17, 2026.",
             confidence: "High",
             icon: "doc.richtext.fill",
             tint: RiverheadTheme.brandSky

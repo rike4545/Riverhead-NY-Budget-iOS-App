@@ -30,7 +30,7 @@ struct RiverheadBudgetHubView: View {
     }
 
     private var primarySections: [BudgetSection] {
-        [.myTaxes, .overview, .proposed2027Budget, .fundBalance, .capitalDebt, .tools]
+        [.overview, .myTaxes, .executiveSummary, .fundBalance, .capitalDebt, .tools]
     }
 
     var body: some View {
@@ -135,7 +135,7 @@ struct RiverheadBudgetHubView: View {
 
                 // The section buttons just below this header are the way in, so
                 // the header names them rather than repeating them.
-                Text("Pick a section below: your taxes, where the money goes, an unofficial 2027 plan, reserves, or debt.")
+                Text("Pick a section below: your taxes, the \(String(BudgetStages.currentYear ?? 2027)) Adopted Budget, the numbers fund by fund, reserves, or debt.")
                     .font(.footnote)
                     .foregroundStyle(.white.opacity(0.88))
                     .fixedSize(horizontal: false, vertical: true)
@@ -328,11 +328,11 @@ fileprivate struct BudgetToolsDirectoryView: View {
 
     private let groups: [BudgetToolGroup] = [
         .init(
-            title: "2027 Planning",
+            title: "This app's 2027 model (made before adoption)",
             shortcuts: [
                 .init(title: "Budget Message", subtitle: "Unofficial proposal, levy target, surplus plan, and risks.", symbol: "doc.text.magnifyingglass", destination: .section(.proposed2027Budget)),
                 .init(title: "Early Retirement Model", subtitle: "What-if savings, payout, public questions, and reserve impact.", symbol: "person.3.sequence.fill", destination: .earlyRetirementModel),
-                .init(title: "Executive Summary", subtitle: "Whiteboard-style summary of the current 2027 framework.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
+                .init(title: "2027 Model Whiteboard", subtitle: "This app's whiteboard of 2027 pressures, made before the Board adopted the budget.", symbol: "pencil.and.outline", destination: .section(.budget2027Summary)),
                 .init(title: "Budget Lab", subtitle: "Scenario controls for revenues, expenses, and tradeoffs.", symbol: "slider.horizontal.below.sun.max.fill", destination: .section(.budget2027)),
                 .init(title: "Budget Simulator", subtitle: "Interactive 2027 budget modeling.", symbol: "slider.horizontal.3", destination: .budgetSimulator),
                 .init(title: "Spending Reduction", subtitle: "Toggle a real, sourced \(Budget2027TaxCapOffsetModel.fullRecurringReductionPackage.formatted(.currency(code: "USD").precision(.fractionLength(0)))) savings package against the modeled payroll-pressure gap.", symbol: "scissors.circle", destination: .spendingReduction)
@@ -2270,10 +2270,10 @@ fileprivate struct OverviewStoryView: View {
     }
 
     // In resident mode the headline metrics are shown visually by
-    // ResidentBudgetSnapshot, so the prose cards drop to the two that add
-    // context a chart can't: what to ask, and what a balanced 2027 needs.
+    // ResidentBudgetSnapshot, so the prose cards drop to the ones that add
+    // context a chart can't: the big picture, what changed, and what to ask.
     private var residentFollowUpCards: [OverviewStoryCard] {
-        residentCards.filter { $0.tag == "Hearing" || $0.tag == "2027" }
+        residentCards.filter { $0.tag == "Big picture" || $0.tag == "Changes" || $0.tag == "Hearing" }
     }
 
     @ViewBuilder
@@ -2307,14 +2307,57 @@ fileprivate struct OverviewStoryView: View {
         }
     }
 
+    /// The newest year's budget at each stage the Town printed it (budget-stages.json),
+    /// so the Summary leads with what the Board adopted.
+    private var adoptedStagesCard: some View {
+        let year = BudgetStages.currentYear ?? 2027
+        let rows = BudgetStages.stages(year)
+        let note = BudgetStages.adoptionNote(year).map { "The Town Board " + $0.replacingOccurrences(of: "adopted ", with: "adopted it on ") + "." } ?? ""
+        return GlassCard(
+            title: "The \(String(year)) Adopted Budget",
+            subtitle: "\(note) Each stage below is the Town's own Summary page, across all funds."
+        ) {
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(rows, id: \.stage) { row in
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(row.stage.label)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(RiverheadTheme.textPrimary)
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 2) {
+                            Text(row.doc.totals.appropriations, format: .currency(code: "USD").precision(.fractionLength(0)))
+                                .font(.subheadline.weight(.semibold))
+                                .monospacedDigit()
+                                .foregroundStyle(RiverheadTheme.textPrimary)
+                            Text("Levy \(row.doc.totals.levy.formatted(.currency(code: "USD").precision(.fractionLength(0))))")
+                                .font(.caption)
+                                .monospacedDigit()
+                                .foregroundStyle(RiverheadTheme.textSecondary)
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+                if let tw = BudgetStages.current?.townWide {
+                    Text(String(format: "Town-wide rate: %.3f per $1,000 of assessed value, %@ from %.3f the year before.",
+                                tw.rate, tw.rate >= tw.priorRate ? "up" : "down", tw.priorRate))
+                        .font(.footnote)
+                        .foregroundStyle(RiverheadTheme.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+            adoptedStagesCard
+
             if mode == .resident {
                 ResidentBudgetSnapshot()
 
                 GlassCard(
-                    title: "Before tonight's hearing",
-                    subtitle: "Two things worth knowing that the numbers above don't say on their own."
+                    title: "Worth knowing about the 2027 budget",
+                    subtitle: "What the numbers above don't say on their own."
                 ) {
                     VStack(alignment: .leading, spacing: 8) {
                         ForEach(residentFollowUpCards) { card in
@@ -4358,7 +4401,7 @@ fileprivate struct HearingToolkitView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             GlassCard(
-                title: mode == .resident ? "Notes for tonight's hearing" : "Hearing prep notes",
+                title: mode == .resident ? "Notes for a Town Board meeting" : "Hearing prep notes",
                 subtitle: mode == .resident
                     ? "Jot down questions and comments, then share them or email them to yourself."
                     : "Draft testimony points, cite specific line items, and share with colleagues or the Town Clerk."

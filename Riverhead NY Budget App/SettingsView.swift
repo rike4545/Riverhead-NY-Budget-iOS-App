@@ -176,7 +176,7 @@ struct SettingsView: View {
                     .multilineTextAlignment(.trailing)
                     .frame(width: 130)
                     .accessibilityLabel("Town tax rate per thousand dollars of assessed value")
-                    .accessibilityHint("The current 2026 rate is approximately 61.95 per thousand dollars.")
+                    .accessibilityHint("The \(String(BudgetStages.currentYear ?? 2027)) adopted General Town rate is \(String(format: "%.2f", BudgetStages.current?.townWide?.fundRates?["A01"]?.rate ?? 62.71)) per thousand dollars.")
             }
 
             // Live estimate

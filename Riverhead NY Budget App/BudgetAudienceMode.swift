@@ -58,8 +58,8 @@ enum BudgetSection: String, CaseIterable, Identifiable {
         switch self {
         case .overview:           return "Summary"
         case .supplementExplorer: return "Line Changes"
-        case .budget2027Summary:  return "2027 Outlook"
-        case .proposed2027Budget: return "2027 Plan"
+        case .budget2027Summary:  return "2027 Model"
+        case .proposed2027Budget: return "App's 2027 Plan"
         case .budget2027:         return "Build a Budget"
         case .executiveSummary:   return "By the Numbers"
         case .myTaxes:            return "My Taxes"

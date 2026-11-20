@@ -173,6 +173,12 @@ enum PoliceContracts2027 {
             return values.min()!...values.max()!
         }
 
+        /// True when the person has 25 years by January 1 of `year`, from 2028, whether or not
+        /// the app can price it (the chief's title is on neither salary schedule).
+        func qualifies(in year: Int) -> Bool {
+            year >= PoliceContracts2027.longevityStartYear && reaches25 <= PoliceContracts2027.jan1(year)
+        }
+
         /// True when the person reaches 25 years during `year`, not by its first day.
         func reachesDuring(_ year: Int) -> Bool {
             reaches25 > PoliceContracts2027.jan1(year) && reaches25 < PoliceContracts2027.jan1(year + 1)

@@ -228,9 +228,10 @@ struct PoliceStepScheduleView: View {
 
             ForEach([2028, 2029, 2030], id: \.self) { year in
                 let total = PoliceContracts2027.longevityTotal(in: year)
-                let count = people.filter { $0.amount(in: year) != nil }.count
+                let count = people.filter { $0.qualifies(in: year) }.count
+                let priced = people.filter { $0.amount(in: year) != nil }.count
                 HStack {
-                    Text("\(String(year)): \(count) eligible")
+                    Text("\(String(year)): \(count) eligible\(priced < count ? ", \(priced) priced" : "")")
                         .font(.footnote.weight(.semibold))
                     Spacer()
                     Text(rangeText(total))

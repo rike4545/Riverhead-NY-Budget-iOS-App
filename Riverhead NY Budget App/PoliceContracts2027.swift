@@ -118,6 +118,112 @@ enum PoliceContracts2027 {
     /// website's payroll page computes it.
     static let cseaTypical2026 = 68_564.79
 
+    // MARK: - Year-by-year change in each pay step
+
+    /// Each year's rate and its change from the year before, 2027 through 2030.
+    static func yearlyChanges(_ row: Row) -> [(year: Int, rate: Double, change: Double, pct: Double)] {
+        (1..<years.count).map { i in
+            (years[i], row.rates[i], row.rates[i] - row.rates[i - 1], row.rates[i] / row.rates[i - 1] - 1)
+        }
+    }
+
+    // MARK: - K-9
+
+    /// The K-9 rate (PBA Appendix A, packet page 204), a yearly amount on top of salary.
+    static var k9: Row { nightDifferential.first { $0.title == "K-9" }! }
+
+    /// Officers the 2025 payroll lists in the K-9 unit, the newest payroll on file.
+    static var k9Officers: [PayrollRow] {
+        let latest = PayrollData.rows.map(\.y).max() ?? 0
+        return PayrollData.rows
+            .filter { $0.y == latest && ($0.d ?? "").localizedCaseInsensitiveContains("K-9") }
+            .sorted { $0.n < $1.n }
+    }
+
+    // MARK: - Longevity at 25 years, from 2028 (reported; not in the agenda packet)
+
+    /// The agenda packet attaches only the pay tables, not the stipulations' text, so this
+    /// term comes from the press: RiverheadLOCAL, November 19, 2026.
+    static let longevityPct = 0.08
+    static let longevityServiceYears = 25
+    static let longevityStartYear = 2028
+    static let longevityQuote = "Beginning Jan. 1, 2028, both agreements add a longevity provision of 8% of total base pay after 25 years of consecutive service."
+    static let longevitySource = "RiverheadLOCAL, “Riverhead Town Board OKs police contracts, disabled veterans tax break,” November 19, 2026"
+    static let longevityURL = URL(string: "https://riverheadlocal.com/2026/11/19/riverhead-town-board-oks-police-contracts-disabled-veterans-tax-break/")!
+
+    struct LongevityCandidate: Identifiable {
+        let name: String
+        let title: String
+        let union: String
+        let hireDate: Date
+        /// The 25-year anniversary of the hire date.
+        let reaches25: Date
+        /// The schedule rows that could set this person's base pay (one, or a detective's three grades).
+        let baseRows: [Row]
+        /// Longevity pay under the current contract in the 2025 payroll.
+        let longevityPaid2025: Double
+        var id: String { "\(name)|\(title)" }
+
+        /// 8% of the base pay range in `year`, when the person has 25 years by January 1 of it.
+        func amount(in year: Int) -> ClosedRange<Double>? {
+            guard year >= PoliceContracts2027.longevityStartYear,
+                  let idx = PoliceContracts2027.years.firstIndex(of: year), !baseRows.isEmpty,
+                  reaches25 <= PoliceContracts2027.jan1(year) else { return nil }
+            let values = baseRows.map { $0.rates[idx] * PoliceContracts2027.longevityPct }
+            return values.min()!...values.max()!
+        }
+
+        /// True when the person reaches 25 years during `year`, not by its first day.
+        func reachesDuring(_ year: Int) -> Bool {
+            reaches25 > PoliceContracts2027.jan1(year) && reaches25 < PoliceContracts2027.jan1(year + 1)
+        }
+    }
+
+    static func jan1(_ year: Int) -> Date {
+        var c = DateComponents(); c.year = year; c.month = 1; c.day = 1
+        return Calendar(identifier: .gregorian).date(from: c)!
+    }
+
+    /// The schedule rows for a payroll title: an officer with 25 years is at the top step,
+    /// a detective's grade is not in the payroll, and the chief is on no schedule.
+    static func scheduleRows(forTitle title: String) -> [Row] {
+        let t = title.lowercased()
+        if t.contains("detective sergeant") { return soaRanks.filter { $0.title == "Detective sergeant" } }
+        if t.contains("lieutenant") { return soaRanks.filter { $0.title == "Lieutenant" } }
+        if t.contains("sergeant") { return soaRanks.filter { $0.title == "Sergeant" } }
+        if t.contains("detective") { return pbaDetectives }
+        if t.contains("police officer") { return [pbaOfficers[6]] }
+        return []
+    }
+
+    /// Everyone in the 2025 PBA and SOA payroll whose hire date reaches 25 years by the end of 2030.
+    static var longevityCandidates: [LongevityCandidate] {
+        let latest = PayrollData.rows.map(\.y).max() ?? 0
+        let fmt = DateFormatter()
+        fmt.calendar = Calendar(identifier: .gregorian)
+        fmt.locale = Locale(identifier: "en_US_POSIX")
+        fmt.dateFormat = "yyyy-MM-dd"
+        let cal = Calendar(identifier: .gregorian)
+        return PayrollData.rows
+            .filter { $0.y == latest && ["PBA", "SOA"].contains($0.u ?? "") }
+            .compactMap { row -> LongevityCandidate? in
+                guard let h = row.h, h.count == 10, let hire = fmt.date(from: h),
+                      let at25 = cal.date(byAdding: .year, value: longevityServiceYears, to: hire),
+                      at25 < jan1(2031) else { return nil }
+                let title = row.t ?? ""
+                return LongevityCandidate(
+                    name: row.n, title: title, union: row.u ?? "", hireDate: hire, reaches25: at25,
+                    baseRows: scheduleRows(forTitle: title), longevityPaid2025: row.k?.first ?? 0)
+            }
+            .sorted { $0.hireDate < $1.hireDate }
+    }
+
+    /// The low and high total of the 8% for everyone eligible on January 1 of `year`.
+    static func longevityTotal(in year: Int) -> ClosedRange<Double> {
+        let ranges = longevityCandidates.compactMap { $0.amount(in: year) }
+        return ranges.reduce(0...0) { ($0.lowerBound + $1.lowerBound)...($0.upperBound + $1.upperBound) }
+    }
+
     // MARK: - Item IX.2: the one-time retirement-incentive payouts
 
     struct PayoutLine: Identifiable {

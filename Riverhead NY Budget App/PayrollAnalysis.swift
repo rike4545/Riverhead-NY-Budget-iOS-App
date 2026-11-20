@@ -48,6 +48,10 @@ struct PayrollRow: Decodable {
     let g: Double
     /// Fields carried back from the person's other years: d/t/c/u.
     let i: String?
+    /// Hire date from the export (YYYY-MM-DD, or the year alone), when on file.
+    let h: String?
+    /// Other pay: [longevity, holiday/differential, stipends, buy-outs, retro].
+    let k: [Double]?
 
     var titleIsReported: Bool { !(i ?? "").contains("t") }
     var residual: Double { g - r - o }

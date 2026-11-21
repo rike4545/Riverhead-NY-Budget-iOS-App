@@ -113,3 +113,43 @@ struct ModelVsAdopted2027Tests {
         #expect(rows.contains { $0.label.hasPrefix("NYS retirement") && $0.adopted.contains("566,189") })
     }
 }
+
+struct PoliceContracts2027DetailTests {
+
+    @Test func stepChangesFollowTheSchedule() {
+        let top = PoliceContracts2027.pbaOfficers[6]
+        let changes = PoliceContracts2027.yearlyChanges(top)
+        #expect(changes.count == 4)
+        #expect(changes.first?.year == 2027)
+        // 159,134.43 − 152,900.66, Appendix B page 205.
+        #expect(abs((changes.first?.change ?? 0) - 6_233.77) < 0.01)
+    }
+
+    @Test func k9RatesAndHandlers() {
+        #expect(PoliceContracts2027.k9.rates[1] == 8_349.39)
+        #expect(!PoliceContracts2027.k9Officers.isEmpty)
+    }
+
+    @Test func longevityListsTheSeniorOfficers() {
+        let people = PoliceContracts2027.longevityCandidates
+        #expect(!people.isEmpty)
+        // Nobody is paid before January 1, 2028.
+        #expect(people.allSatisfy { $0.amount(in: 2027) == nil })
+        // A top-step officer with 25 years gets 8% of 165,101.98 in 2028.
+        let officer = people.first { $0.title == "Police Officer" && $0.amount(in: 2028) != nil }
+        #expect(abs((officer?.amount(in: 2028)?.lowerBound ?? 0) - 13_208.16) < 0.01)
+    }
+}
+
+struct PurchasingPowerTests {
+
+    @Test func bundledFileLoadsAndAddsUp() throws {
+        let doc = try #require(PurchasingPowerDocument.bundled)
+        let s = doc.summary
+        #expect(s.ahead + s.even + s.behind == s.people)
+        #expect(doc.wageFloor.hourly == 17.0)
+        #expect(!doc.sameTitle.isEmpty)
+        // Every person's 2026 point is their 2026 salary.
+        #expect(doc.people.allSatisfy { $0.series.last?.salary == $0.salary })
+    }
+}

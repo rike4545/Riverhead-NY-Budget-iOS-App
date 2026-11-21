@@ -18,11 +18,15 @@ import SwiftUI
 struct PoliceStepScheduleView: View {
 
     @State private var selectedYear: Int = 2026
+    @State private var changeYear: Int = 2027
 
     var body: some View {
         List {
             ledeSection
             proposedContractsSection
+            stepChangesSection
+            k9Section
+            longevitySection
             yearPickerSection
             officerScheduleSection
             legacyTierSection
@@ -115,6 +119,176 @@ struct PoliceStepScheduleView: View {
     }
 
     private var top: PoliceContracts2027.Row { PoliceContracts2027.pbaOfficers[6] }
+
+    // MARK: - Step salaries, year by year
+
+    private var stepChangesSection: some View {
+        Section {
+            Picker("Year", selection: $changeYear) {
+                ForEach([2027, 2028, 2029, 2030], id: \.self) { Text(String($0)).tag($0) }
+            }
+            .pickerStyle(.segmented)
+            .accessibilityLabel("Contract year")
+
+            Text(changeYear == 2027
+                 ? "Each step rises 3.75% from 2026, plus the $500 body-camera amount."
+                 : "Each step rises 3.75% from \(String(changeYear - 1)).")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+
+            ForEach(PoliceContracts2027.pbaOfficers + PoliceContracts2027.pbaDetectives + PoliceContracts2027.soaRanks) { row in
+                if let c = PoliceContracts2027.yearlyChanges(row).first(where: { $0.year == changeYear }) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(row.title)
+                            .font(.footnote.weight(.semibold))
+                        Spacer(minLength: 6)
+                        VStack(alignment: .trailing, spacing: 1) {
+                            Text(c.rate, format: .currency(code: "USD").precision(.fractionLength(2)))
+                                .font(.footnote.weight(.bold))
+                                .monospacedDigit()
+                            Text("+\(c.change.formatted(.currency(code: "USD").precision(.fractionLength(2)))) (\((c.pct * 100).formatted(.number.precision(.fractionLength(2))))%)")
+                                .font(.caption2)
+                                .foregroundStyle(RiverheadTheme.brandCoral)
+                                .monospacedDigit()
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+        } header: {
+            Label("Step salaries, year by year", systemImage: "chart.line.uptrend.xyaxis")
+        } footer: {
+            Text("Appendix B of each stipulation, agenda packet pages 205 (PBA) and 209 (SOA). Approved November 17, 2026, Resolutions 2026-1020 and 2026-1021.")
+        }
+    }
+
+    // MARK: - K-9
+
+    private var k9Section: some View {
+        Section {
+            Text("K-9 officers receive a yearly K-9 amount on top of salary. It rises 3.75% a year with the night differentials.")
+                .font(.footnote)
+                .fixedSize(horizontal: false, vertical: true)
+            ForEach(Array(PoliceContracts2027.years.enumerated()), id: \.offset) { i, year in
+                HStack {
+                    Text(String(year)).font(.footnote.weight(.semibold))
+                    Spacer()
+                    Text(PoliceContracts2027.k9.rates[i], format: .currency(code: "USD").precision(.fractionLength(2)))
+                        .font(.footnote.weight(i == 0 ? .regular : .bold))
+                        .monospacedDigit()
+                    if i > 0 {
+                        Text("+\((PoliceContracts2027.k9.rates[i] - PoliceContracts2027.k9.rates[i - 1]).formatted(.currency(code: "USD").precision(.fractionLength(2))))")
+                            .font(.caption2)
+                            .foregroundStyle(RiverheadTheme.brandCoral)
+                            .monospacedDigit()
+                    }
+                }
+                .accessibilityElement(children: .combine)
+            }
+            let officers = PoliceContracts2027.k9Officers
+            if !officers.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("In the K-9 unit on the 2025 payroll")
+                        .font(.footnote.weight(.bold))
+                    ForEach(officers, id: \.n) { o in
+                        Text("\(o.n), \(o.t ?? "")")
+                            .font(.footnote)
+                    }
+                    Text("At \(PoliceContracts2027.k9.rates[1].formatted(.currency(code: "USD").precision(.fractionLength(0)))) each in 2027, the K-9 amount for \(officers.count) officer\(officers.count == 1 ? "" : "s") comes to \((PoliceContracts2027.k9.rates[1] * Double(officers.count)).formatted(.currency(code: "USD").precision(.fractionLength(0)))), if the unit keeps the same handlers.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.vertical, 2)
+            }
+        } header: {
+            Label("K-9 pay", systemImage: "pawprint.fill")
+        } footer: {
+            Text("PBA Appendix A, agenda packet page 204. The unit's handlers are those the Town's 2025 payroll export lists in the K-9 department.")
+        }
+    }
+
+    // MARK: - Longevity at 25 years
+
+    private var longevitySection: some View {
+        let people = PoliceContracts2027.longevityCandidates
+        return Section {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("From January 1, 2028, both contracts add longevity pay of 8% of base pay after 25 years of consecutive service.")
+                    .font(.subheadline)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text("This term is not in the agenda packet, which printed only the pay tables. It was reported by RiverheadLOCAL: \u{201C}\(PoliceContracts2027.longevityQuote)\u{201D}")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Link("Read the RiverheadLOCAL report", destination: PoliceContracts2027.longevityURL)
+                    .font(.caption.weight(.semibold))
+            }
+            .padding(.vertical, 2)
+
+            ForEach([2028, 2029, 2030], id: \.self) { year in
+                let total = PoliceContracts2027.longevityTotal(in: year)
+                let count = people.filter { $0.qualifies(in: year) }.count
+                let priced = people.filter { $0.amount(in: year) != nil }.count
+                HStack {
+                    Text("\(String(year)): \(count) eligible\(priced < count ? ", \(priced) priced" : "")")
+                        .font(.footnote.weight(.semibold))
+                    Spacer()
+                    Text(rangeText(total))
+                        .font(.footnote.weight(.bold))
+                        .monospacedDigit()
+                }
+                .accessibilityElement(children: .combine)
+            }
+
+            DisclosureGroup("Who would receive it, and how much") {
+                ForEach(people) { person in
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(person.name)
+                            .font(.footnote.weight(.semibold))
+                        Text("\(person.title.replacingOccurrences(of: "  ", with: " ")) · \(person.union) · hired \(person.hireDate.formatted(date: .abbreviated, time: .omitted)) · 25 years on \(person.reaches25.formatted(date: .abbreviated, time: .omitted))")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                        if person.baseRows.isEmpty {
+                            Text("This title is not on either salary schedule, so no amount is shown.")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        } else {
+                            HStack(spacing: 10) {
+                                ForEach([2028, 2029, 2030], id: \.self) { year in
+                                    VStack(alignment: .leading, spacing: 1) {
+                                        Text(String(year)).font(.caption2).foregroundStyle(.secondary)
+                                        Text(person.amount(in: year).map(rangeText) ?? (person.reachesDuring(year) ? "from \(person.reaches25.formatted(.dateTime.month(.abbreviated).day()))" : "—"))
+                                            .font(.caption.weight(.semibold))
+                                            .monospacedDigit()
+                                    }
+                                }
+                            }
+                        }
+                        if person.longevityPaid2025 > 0 {
+                            Text("Longevity paid in 2025 under the current contract: \(Self.money(person.longevityPaid2025)).")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                    .padding(.vertical, 2)
+                }
+            }
+            .font(.footnote)
+        } header: {
+            Label("Longevity pay at 25 years", systemImage: "clock.badge.checkmark")
+        } footer: {
+            Text("This app's estimate, not a Town figure. It takes everyone on the 2025 police payroll whose hire date reaches 25 years by 2030, and 8% of their rank's scheduled salary, for those with 25 years by January 1 of each year. Officers with 25 years are at the top step. The payroll doesn't give a detective's grade, so detectives show a range from grade III to grade I. The list is the 2025 payroll: seven PBA members retired under the 2026 incentive and are not identified. The hire date stands in for consecutive service, \u{201C}total base pay\u{201D} may include more than the schedule salary, and the contracts' own longevity rules for part years and for the current longevity pay are not public.")
+        }
+    }
+
+    private func rangeText(_ r: ClosedRange<Double>) -> String {
+        r.lowerBound == r.upperBound
+            ? Self.money(r.lowerBound)
+            : "\(Self.money(r.lowerBound))–\(Self.money(r.upperBound))"
+    }
 
     private static func money(_ value: Double) -> String {
         value.formatted(.currency(code: "USD").precision(.fractionLength(0)))

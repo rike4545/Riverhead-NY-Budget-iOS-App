@@ -261,6 +261,12 @@ struct PurchasingPowerView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
+            NavigationLink {
+                PeerTitlePayView()
+            } label: {
+                Label("Compare the same job in Southampton and Southold", systemImage: "building.2")
+                    .font(.footnote.weight(.semibold))
+            }
         } header: {
             Label("The same job, 2018 and 2026", systemImage: "briefcase.fill")
         } footer: {

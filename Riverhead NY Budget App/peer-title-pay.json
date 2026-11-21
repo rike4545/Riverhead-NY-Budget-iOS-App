@@ -1,0 +1,3481 @@
+{
+ "title": "Same job, Riverhead and neighbouring towns",
+ "points": {
+  "start": 2022,
+  "mid": 2024,
+  "current": 2026
+ },
+ "southoldYears": {
+  "start": 2021,
+  "mid": 2024,
+  "current": 2026
+ },
+ "method": "For each job title Riverhead and a neighbouring town both fill, the median, lowest and highest annual salary in each town's own salary record, in 2022, 2024 and 2026. Titles are matched by name; a few offices with different names are paired (Councilman and Town Council, Receiver of Taxes and Tax Receiver, Riverhead's Detective grades and Southampton's Detective, Southampton's numbered Police Officer steps). A median reflects who holds the title (how many are new or senior), not only the pay scale. Salaries only: no benefits, overtime, longevity or stipends. Southampton's vacant positions are left out. Real change carries the start-year median forward by the New York-area CPI-U.",
+ "caveats": [
+  "Southampton's 2018 and 2020 salary charts are no longer on its website, so 2022 is the earliest year all three towns can be compared.",
+  "Southold's 2022 budget is not on its website; its start point is the 2021 Preliminary Budget.",
+  "Southold publishes salaries only for elected and appointed officials, so it appears only for elected offices.",
+  "Southampton has one appointed Sole Assessor; Riverhead and Southold elect three assessors. Southampton's Assessor is not compared.",
+  "Riverhead's Assessor figures leave out the chairperson, whose salary includes the chair's added pay.",
+  "Riverhead's January 2026 salary resolutions list no Town Clerk salary, so Town Clerk is not compared.",
+  "A Police Officer median mixes every step from recruit to top step, so it moves with hiring: Southampton's fell from 2022 to 2024 as new officers joined."
+ ],
+ "sources": [
+  {
+   "town": "Riverhead",
+   "year": 2022,
+   "title": "Town of Riverhead, 2022 salary resolutions (January 2022 Town Board)",
+   "file": "web/public/data/salary/authorized-2022.json"
+  },
+  {
+   "town": "Riverhead",
+   "year": 2024,
+   "title": "Town of Riverhead, 2024 salary resolutions (January 2024 Town Board)",
+   "file": "web/public/data/salary/authorized-2024.json"
+  },
+  {
+   "town": "Riverhead",
+   "year": 2026,
+   "title": "Town of Riverhead, 2026 salary resolutions (January 6, 2026 Town Board)",
+   "file": "web/public/data/salary/authorized-2026.json"
+  },
+  {
+   "town": "Southampton",
+   "year": 2022,
+   "title": "Town of Southampton 2022 Budget, Salary Charts (Adopted)",
+   "url": "https://www.southamptontownny.gov/DocumentCenter/View/24741/_09-2022-SalaryCharts",
+   "file": "etl/data/salary/peers/southampton-2022-salary-charts-adopted.txt"
+  },
+  {
+   "town": "Southampton",
+   "year": 2024,
+   "title": "Town of Southampton 2024 Budget, Salary Charts (Adopted)",
+   "url": "https://southamptontownny.gov/DocumentCenter/View/30328/2024-Salary-Charts-Adopted",
+   "file": "etl/data/salary/peers/southampton-2024-salary-charts-adopted.txt"
+  },
+  {
+   "town": "Southampton",
+   "year": 2026,
+   "title": "Town of Southampton 2026 Budget, Salary Charts (Adopted)",
+   "url": "https://www.southamptontownny.gov/DocumentCenter/View/42519/2026-Salary-Charts---Adopted",
+   "file": "etl/data/salary/peers/southampton-2026-salary-charts-adopted.txt"
+  },
+  {
+   "town": "Southold",
+   "year": 2021,
+   "title": "Town of Southold 2021 Preliminary Budget, Schedule of Salaries of Elected Officials",
+   "url": "https://southoldtownny.gov/DocumentCenter/View/8120/2021-Preliminary-Budget--Final-Signed",
+   "file": "etl/data/salary/peers/southold-2021-preliminary-budget-elected-salaries.txt",
+   "note": "Southold's 2022 budget is not on the Town's website; this is the nearest earlier year published."
+  },
+  {
+   "town": "Southold",
+   "year": 2024,
+   "title": "Town of Southold Adopted 2024 Budget, Schedule of Salaries of Elected Officials",
+   "url": "https://southoldtownny.gov/DocumentCenter/View/10113/Adopted-2024_Budget",
+   "file": "etl/data/salary/peers/southold-2024-adopted-budget-elected-salaries-transcription.txt",
+   "note": "A scanned page, transcribed by hand; the page image is kept beside the transcription."
+  },
+  {
+   "town": "Southold",
+   "year": 2026,
+   "title": "Southold Town Board Organizational Meeting agenda, January 2, 2026: 2026 Elected Officials Salaries",
+   "url": "https://southoldtownny.gov/AgendaCenter/ViewFile/Agenda/_01022026-1620",
+   "file": "etl/data/salary/peers/southold-2026-01-02-organizational-meeting-agenda.txt"
+  }
+ ],
+ "cpi": {
+  "2021": {
+   "value": 292.303,
+   "months": 12
+  },
+  "2022": {
+   "value": 310.141,
+   "months": 12
+  },
+  "2024": {
+   "value": 334.209,
+   "months": 12
+  },
+  "2026": {
+   "value": 359.659,
+   "months": 10
+  }
+ },
+ "summary": {
+  "titles": 56,
+  "comparedWithSouthampton2026": 55,
+  "riverheadHigherThanSouthampton2026": 25,
+  "medianRiverheadVsSouthampton2026Pct": -2.22
+ },
+ "titles": [
+  {
+   "title": "Assessor",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 83846.0,
+      "low": 83846.0,
+      "high": 83846.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 88038.0,
+      "low": 88038.0,
+      "high": 88038.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 96085.0,
+      "low": 96085.0,
+      "high": 96085.0
+     },
+     "nominalChangePct": 14.6,
+     "realChangePct": -1.18
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 3,
+      "median": 82215.0,
+      "low": 82215.0,
+      "high": 82215.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 87674.0,
+      "low": 87674.0,
+      "high": 87674.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 91216.0,
+      "low": 91216.0,
+      "high": 91216.0
+     },
+     "nominalChangePct": 10.95,
+     "realChangePct": -9.83
+    }
+   },
+   "riverheadVsPct": {
+    "Southold": {
+     "mid": 0.42,
+     "current": 5.34
+    }
+   }
+  },
+  {
+   "title": "Superintendent of Highways",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 94803.0,
+      "low": 94803.0,
+      "high": 94803.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 99543.0,
+      "low": 99543.0,
+      "high": 99543.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 107967.0,
+      "low": 107967.0,
+      "high": 107967.0
+     },
+     "nominalChangePct": 13.89,
+     "realChangePct": -1.79
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 125000.0,
+      "low": 125000.0,
+      "high": 125000.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 132738.0,
+      "low": 132738.0,
+      "high": 132738.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 141837.0,
+      "low": 141837.0,
+      "high": 141837.0
+     },
+     "nominalChangePct": 13.47,
+     "realChangePct": -2.15
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 1,
+      "median": 114154.0,
+      "low": 114154.0,
+      "high": 114154.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 121735.0,
+      "low": 121735.0,
+      "high": 121735.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 126653.0,
+      "low": 126653.0,
+      "high": 126653.0
+     },
+     "nominalChangePct": 10.95,
+     "realChangePct": -9.83
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -24.16,
+     "mid": -25.01,
+     "current": -23.88
+    },
+    "Southold": {
+     "mid": -18.23,
+     "current": -14.75
+    }
+   }
+  },
+  {
+   "title": "Supervisor",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 115148.0,
+      "low": 115148.0,
+      "high": 115148.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 115148.0,
+      "low": 115148.0,
+      "high": 115148.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 110000.0,
+      "low": 110000.0,
+      "high": 110000.0
+     },
+     "nominalChangePct": -4.47,
+     "realChangePct": -17.62
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 135000.0,
+      "low": 135000.0,
+      "high": 135000.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 143193.0,
+      "low": 143193.0,
+      "high": 143193.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 149773.0,
+      "low": 149773.0,
+      "high": 149773.0
+     },
+     "nominalChangePct": 10.94,
+     "realChangePct": -4.33
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 1,
+      "median": 114154.0,
+      "low": 114154.0,
+      "high": 114154.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 126963.0,
+      "low": 126963.0,
+      "high": 126963.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 129502.0,
+      "low": 129502.0,
+      "high": 129502.0
+     },
+     "nominalChangePct": 13.44,
+     "realChangePct": -7.8
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -14.71,
+     "mid": -19.59,
+     "current": -26.56
+    },
+    "Southold": {
+     "mid": -9.31,
+     "current": -15.06
+    }
+   }
+  },
+  {
+   "title": "Tax Receiver",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 83846.0,
+      "low": 83846.0,
+      "high": 83846.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 88038.0,
+      "low": 88038.0,
+      "high": 88038.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 96085.0,
+      "low": 96085.0,
+      "high": 96085.0
+     },
+     "nominalChangePct": 14.6,
+     "realChangePct": -1.18
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 115000.0,
+      "low": 115000.0,
+      "high": 115000.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 122283.0,
+      "low": 122283.0,
+      "high": 122283.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 130906.0,
+      "low": 130906.0,
+      "high": 130906.0
+     },
+     "nominalChangePct": 13.83,
+     "realChangePct": -1.84
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 1,
+      "median": 42917.0,
+      "low": 42917.0,
+      "high": 42917.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 45767.0,
+      "low": 45767.0,
+      "high": 45767.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 47616.0,
+      "low": 47616.0,
+      "high": 47616.0
+     },
+     "nominalChangePct": 10.95,
+     "realChangePct": -9.83
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -27.09,
+     "mid": -28.0,
+     "current": -26.6
+    },
+    "Southold": {
+     "mid": 92.36,
+     "current": 101.79
+    }
+   }
+  },
+  {
+   "title": "Town Board member",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 48955.0,
+      "low": 48955.0,
+      "high": 48955.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 48955.0,
+      "low": 48955.0,
+      "high": 48955.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 50558.0,
+      "low": 50558.0,
+      "high": 50558.0
+     },
+     "nominalChangePct": 3.27,
+     "realChangePct": -10.94
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 72500.0,
+      "low": 72500.0,
+      "high": 72500.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 77849.0,
+      "low": 77849.0,
+      "high": 77849.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 84451.0,
+      "low": 84451.0,
+      "high": 84451.0
+     },
+     "nominalChangePct": 16.48,
+     "realChangePct": 0.45
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 4,
+      "median": 37598.0,
+      "low": 37598.0,
+      "high": 37598.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 43500.0,
+      "low": 43500.0,
+      "high": 43500.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 44370.0,
+      "low": 44370.0,
+      "high": 44370.0
+     },
+     "nominalChangePct": 18.01,
+     "realChangePct": -4.09
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -32.48,
+     "mid": -37.12,
+     "current": -40.13
+    },
+    "Southold": {
+     "mid": 12.54,
+     "current": 13.95
+    }
+   }
+  },
+  {
+   "title": "Town Justice",
+   "group": "Elected",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 84571.0,
+      "low": 84571.0,
+      "high": 84571.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 88800.0,
+      "low": 88800.0,
+      "high": 88800.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 96872.0,
+      "low": 96872.0,
+      "high": 96872.0
+     },
+     "nominalChangePct": 14.55,
+     "realChangePct": -1.23
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 81271.0,
+      "low": 81271.0,
+      "high": 81271.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 87019.0,
+      "low": 87019.0,
+      "high": 87019.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 94038.0,
+      "low": 94038.0,
+      "high": 94038.0
+     },
+     "nominalChangePct": 15.71,
+     "realChangePct": -0.22
+    },
+    "Southold": {
+     "start": {
+      "year": 2021,
+      "count": 2,
+      "median": 76908.0,
+      "low": 76908.0,
+      "high": 76908.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 85000.0,
+      "low": 85000.0,
+      "high": 85000.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 88434.0,
+      "low": 88434.0,
+      "high": 88434.0
+     },
+     "nominalChangePct": 14.99,
+     "realChangePct": -6.55
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 4.06,
+     "mid": 2.05,
+     "current": 3.01
+    },
+    "Southold": {
+     "mid": 4.47,
+     "current": 9.54
+    }
+   }
+  },
+  {
+   "title": "Captain",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 191847.17,
+      "low": 191847.17,
+      "high": 191847.17
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 210637.12,
+      "low": 210637.12,
+      "high": 210637.12
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 215381.4,
+      "low": 215381.4,
+      "high": 215381.4
+     },
+     "nominalChangePct": 12.27,
+     "realChangePct": -3.19
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 189551.6,
+      "low": 189551.6,
+      "high": 189551.6
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 200496.7,
+      "low": 200496.7,
+      "high": 200496.7
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 211218.15,
+      "low": 211218.15,
+      "high": 211218.15
+     },
+     "nominalChangePct": 11.43,
+     "realChangePct": -3.91
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 1.21,
+     "mid": 5.06,
+     "current": 1.97
+    }
+   }
+  },
+  {
+   "title": "Detective",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 7,
+      "median": 151143.07,
+      "low": 141314.29,
+      "high": 151143.07
+     },
+     "mid": {
+      "year": 2024,
+      "count": 8,
+      "median": 162158.12,
+      "low": 153537.98,
+      "high": 164216.95
+     },
+     "current": {
+      "year": 2026,
+      "count": 9,
+      "median": 175080.43,
+      "low": 163860.84,
+      "high": 175080.43
+     },
+     "nominalChangePct": 15.84,
+     "realChangePct": -0.11
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 9,
+      "median": 143335.77,
+      "low": 136702.9,
+      "high": 143335.77
+     },
+     "mid": {
+      "year": 2024,
+      "count": 6,
+      "median": 151600.66,
+      "low": 144645.65,
+      "high": 152178.05
+     },
+     "current": {
+      "year": 2026,
+      "count": 8,
+      "median": 157084.38,
+      "low": 151573.29,
+      "high": 160379.08
+     },
+     "nominalChangePct": 9.59,
+     "realChangePct": -5.5
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 5.45,
+     "mid": 6.96,
+     "current": 11.46
+    }
+   }
+  },
+  {
+   "title": "Detective Sergeant",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 172071.64,
+      "low": 172071.64,
+      "high": 172071.64
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 192311.78,
+      "low": 192311.78,
+      "high": 192311.78
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 165055.86,
+      "low": 165055.86,
+      "high": 165055.86
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 174886.4,
+      "low": 174886.4,
+      "high": 174886.4
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 184271.95,
+      "low": 184271.95,
+      "high": 184271.95
+     },
+     "nominalChangePct": 11.64,
+     "realChangePct": -3.73
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": -1.61,
+     "current": 4.36
+    }
+   }
+  },
+  {
+   "title": "Lieutenant",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 166884.24,
+      "low": 166884.24,
+      "high": 166884.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 180435.24,
+      "low": 180435.24,
+      "high": 180435.24
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 201531.81,
+      "low": 201531.81,
+      "high": 201531.81
+     },
+     "nominalChangePct": 20.76,
+     "realChangePct": 4.13
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 171299.41,
+      "low": 171299.41,
+      "high": 171299.41
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 181414.04,
+      "low": 181414.04,
+      "high": 181414.04
+     },
+     "current": {
+      "year": 2026,
+      "count": 5,
+      "median": 191140.09,
+      "low": 191140.09,
+      "high": 191140.09
+     },
+     "nominalChangePct": 11.58,
+     "realChangePct": -3.78
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -2.58,
+     "mid": -0.54,
+     "current": 5.44
+    }
+   }
+  },
+  {
+   "title": "Police Officer",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 69,
+      "median": 131712.76,
+      "low": 46736.47,
+      "high": 131712.76
+     },
+     "mid": {
+      "year": 2024,
+      "count": 71,
+      "median": 127718.13,
+      "low": 66166.97,
+      "high": 143105.92
+     },
+     "current": {
+      "year": 2026,
+      "count": 77,
+      "median": 136733.86,
+      "low": 72066.67,
+      "high": 152900.66
+     },
+     "nominalChangePct": 3.81,
+     "realChangePct": -10.48
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 63,
+      "median": 133958.66,
+      "low": 71744.15,
+      "high": 133958.66
+     },
+     "mid": {
+      "year": 2024,
+      "count": 77,
+      "median": 115279.97,
+      "low": 68994.72,
+      "high": 142374.28
+     },
+     "current": {
+      "year": 2026,
+      "count": 78,
+      "median": 130866.98,
+      "low": 70001.68,
+      "high": 151573.0
+     },
+     "nominalChangePct": -2.31,
+     "realChangePct": -15.76
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -1.68,
+     "mid": 10.79,
+     "current": 4.48
+    }
+   }
+  },
+  {
+   "title": "Sergeant",
+   "group": "Police",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 8,
+      "median": 155235.25,
+      "low": 143474.01,
+      "high": 155235.25
+     },
+     "mid": {
+      "year": 2024,
+      "count": 7,
+      "median": 167840.35,
+      "low": 155124.1,
+      "high": 167840.35
+     },
+     "current": {
+      "year": 2026,
+      "count": 8,
+      "median": 187647.21,
+      "low": 187647.21,
+      "high": 187647.21
+     },
+     "nominalChangePct": 20.88,
+     "realChangePct": 4.24
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 14,
+      "median": 155586.49,
+      "low": 155586.49,
+      "high": 155586.49
+     },
+     "mid": {
+      "year": 2024,
+      "count": 16,
+      "median": 164986.18,
+      "low": 164986.18,
+      "high": 164986.18
+     },
+     "current": {
+      "year": 2026,
+      "count": 18,
+      "median": 173855.31,
+      "low": 173855.31,
+      "high": 173855.31
+     },
+     "nominalChangePct": 11.74,
+     "realChangePct": -3.64
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -0.23,
+     "mid": 1.73,
+     "current": 7.93
+    }
+   }
+  },
+  {
+   "title": "Accountant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 76062.48,
+      "low": 73336.93,
+      "high": 78788.02
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 76570.99,
+      "low": 76570.99,
+      "high": 76570.99
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 92097.61,
+      "low": 92097.61,
+      "high": 92097.61
+     },
+     "nominalChangePct": 21.08,
+     "realChangePct": 4.41
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 68569.92,
+      "low": 68569.92,
+      "high": 68569.92
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 76283.92,
+      "low": 76283.92,
+      "high": 76283.92
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 76253.76,
+      "low": 76253.76,
+      "high": 76253.76
+     },
+     "nominalChangePct": 11.21,
+     "realChangePct": -4.11
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 10.93,
+     "mid": 0.38,
+     "current": 20.78
+    }
+   }
+  },
+  {
+   "title": "Administrative Assistant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 61593.23,
+      "low": 61593.23,
+      "high": 61593.23
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 67145.41,
+      "low": 67145.41,
+      "high": 67145.41
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 62994.96,
+      "low": 62744.4,
+      "high": 62994.96
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 70153.12,
+      "low": 69188.96,
+      "high": 71117.28
+     },
+     "current": {
+      "year": 2026,
+      "count": 8,
+      "median": 72558.0,
+      "low": 71054.32,
+      "high": 77694.48
+     },
+     "nominalChangePct": 15.18,
+     "realChangePct": -0.68
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": -12.2,
+     "current": -7.46
+    }
+   }
+  },
+  {
+   "title": "Associate Administrator",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 74427.15,
+      "low": 74427.15,
+      "high": 74427.15
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 83576.72,
+      "low": 83576.72,
+      "high": 83576.72
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 96956.79,
+      "low": 96956.79,
+      "high": 96956.79
+     },
+     "nominalChangePct": 30.27,
+     "realChangePct": 12.34
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 70198.56,
+      "low": 69707.88,
+      "high": 70689.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 5,
+      "median": 73213.28,
+      "low": 73213.28,
+      "high": 78369.44
+     },
+     "current": {
+      "year": 2026,
+      "count": 5,
+      "median": 78373.08,
+      "low": 76247.48,
+      "high": 79448.4
+     },
+     "nominalChangePct": 11.64,
+     "realChangePct": -3.73
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 6.02,
+     "mid": 14.16,
+     "current": 23.71
+    }
+   }
+  },
+  {
+   "title": "Automotive Equipment Operator",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 52731.28,
+      "low": 48556.76,
+      "high": 56905.79
+     },
+     "mid": {
+      "year": 2024,
+      "count": 15,
+      "median": 53534.3,
+      "low": 52158.63,
+      "high": 63851.76
+     },
+     "current": {
+      "year": 2026,
+      "count": 20,
+      "median": 59343.94,
+      "low": 57197.08,
+      "high": 69362.62
+     },
+     "nominalChangePct": 12.54,
+     "realChangePct": -2.95
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 19,
+      "median": 50759.28,
+      "low": 48660.84,
+      "high": 67338.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 21,
+      "median": 56895.92,
+      "low": 53165.04,
+      "high": 72773.12
+     },
+     "current": {
+      "year": 2026,
+      "count": 19,
+      "median": 56146.32,
+      "low": 55373.76,
+      "high": 59654.16
+     },
+     "nominalChangePct": 10.61,
+     "realChangePct": -4.62
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 3.89,
+     "mid": -5.91,
+     "current": 5.7
+    }
+   }
+  },
+  {
+   "title": "Budget Assistant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 59762.43,
+      "low": 59762.43,
+      "high": 59762.43
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 65416.51,
+      "low": 65416.51,
+      "high": 65416.51
+     }
+    },
+    "Southampton": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 55373.76,
+      "low": 55373.76,
+      "high": 55373.76
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": 18.14
+    }
+   }
+  },
+  {
+   "title": "Building Inspector",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 68177.8,
+      "low": 68177.8,
+      "high": 68177.8
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 72925.71,
+      "low": 69139.39,
+      "high": 76712.04
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 83562.23,
+      "low": 83562.23,
+      "high": 83562.23
+     },
+     "nominalChangePct": 22.57,
+     "realChangePct": 5.69
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 74170.98,
+      "low": 71044.2,
+      "high": 77297.76
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 73213.28,
+      "low": 73213.28,
+      "high": 78914.4
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 76253.76,
+      "low": 76253.76,
+      "high": 78373.08
+     },
+     "nominalChangePct": 2.81,
+     "realChangePct": -11.35
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -8.08,
+     "mid": -0.39,
+     "current": 9.58
+    }
+   }
+  },
+  {
+   "title": "Building Plans Examiner",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 68161.2,
+      "low": 68161.2,
+      "high": 68161.2
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 56313.36,
+      "low": 56313.36,
+      "high": 56313.36
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 69187.78,
+      "low": 68222.44,
+      "high": 70153.12
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 75074.04,
+      "low": 75074.04,
+      "high": 75074.04
+     },
+     "nominalChangePct": 33.31,
+     "realChangePct": 14.96
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -9.21
+    }
+   }
+  },
+  {
+   "title": "Chief Fire Marshal",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 96723.42,
+      "low": 96723.42,
+      "high": 96723.42
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 107960.52,
+      "low": 107960.52,
+      "high": 107960.52
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 112344.89,
+      "low": 112344.89,
+      "high": 112344.89
+     },
+     "nominalChangePct": 16.15,
+     "realChangePct": 0.16
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 97864.56,
+      "low": 97864.56,
+      "high": 97864.56
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 106916.96,
+      "low": 106916.96,
+      "high": 106916.96
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 114652.08,
+      "low": 114652.08,
+      "high": 114652.08
+     },
+     "nominalChangePct": 17.15,
+     "realChangePct": 1.02
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -1.17,
+     "mid": 0.98,
+     "current": -2.01
+    }
+   }
+  },
+  {
+   "title": "Cook",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 40194.19,
+      "low": 37623.44,
+      "high": 42764.95
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 46830.66,
+      "low": 45328.87,
+      "high": 48332.45
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 50483.03,
+      "low": 45535.24,
+      "high": 55430.82
+     },
+     "nominalChangePct": 25.6,
+     "realChangePct": 8.31
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 56689.2,
+      "low": 56689.2,
+      "high": 56689.2
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 61601.44,
+      "low": 61601.44,
+      "high": 61601.44
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 64143.36,
+      "low": 64143.36,
+      "high": 64143.36
+     },
+     "nominalChangePct": 13.15,
+     "realChangePct": -2.43
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -29.1,
+     "mid": -23.98,
+     "current": -21.3
+    }
+   }
+  },
+  {
+   "title": "Custodial Worker I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 45709.59,
+      "low": 42814.08,
+      "high": 61345.35
+     },
+     "mid": {
+      "year": 2024,
+      "count": 5,
+      "median": 49244.53,
+      "low": 47383.88,
+      "high": 67230.87
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 52088.74,
+      "low": 52088.74,
+      "high": 52088.74
+     },
+     "nominalChangePct": 13.96,
+     "realChangePct": -1.73
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 41958.36,
+      "low": 41060.52,
+      "high": 42856.2
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 45839.52,
+      "low": 45200.24,
+      "high": 48396.64
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 49130.64,
+      "low": 47084.4,
+      "high": 50654.88
+     },
+     "nominalChangePct": 17.09,
+     "realChangePct": 0.97
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 8.94,
+     "mid": 7.43,
+     "current": 6.02
+    }
+   }
+  },
+  {
+   "title": "Custodial Worker II",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 56817.98,
+      "low": 56817.98,
+      "high": 56817.98
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 5,
+      "median": 52575.84,
+      "low": 48660.84,
+      "high": 52575.84
+     },
+     "mid": {
+      "year": 2024,
+      "count": 5,
+      "median": 54653.2,
+      "low": 53165.04,
+      "high": 57283.68
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 56525.99,
+      "low": 54619.31,
+      "high": 59654.16
+     },
+     "nominalChangePct": 7.51,
+     "realChangePct": -7.29
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": 0.52
+    }
+   }
+  },
+  {
+   "title": "Custodial Worker III",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 66174.72,
+      "low": 66174.72,
+      "high": 66174.72
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 57900.24,
+      "low": 57900.24,
+      "high": 57900.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 65311.36,
+      "low": 65311.36,
+      "high": 65311.36
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 68695.2,
+      "low": 68695.2,
+      "high": 68695.2
+     },
+     "nominalChangePct": 18.64,
+     "realChangePct": 2.31
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -3.67
+    }
+   }
+  },
+  {
+   "title": "Deputy Tax Receiver",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 49520.62,
+      "low": 49520.62,
+      "high": 49520.62
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 60958.44,
+      "low": 60958.44,
+      "high": 60958.44
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 68267.43,
+      "low": 68267.43,
+      "high": 68267.43
+     },
+     "nominalChangePct": 37.86,
+     "realChangePct": 18.88
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 86000.0,
+      "low": 86000.0,
+      "high": 86000.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 92004.0,
+      "low": 92004.0,
+      "high": 92004.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 99250.0,
+      "low": 99250.0,
+      "high": 99250.0
+     },
+     "nominalChangePct": 15.41,
+     "realChangePct": -0.48
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -42.42,
+     "mid": -33.74,
+     "current": -31.22
+    }
+   }
+  },
+  {
+   "title": "Deputy Town Attorney",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 119932.22,
+      "low": 97894.68,
+      "high": 128568.97
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 126189.14,
+      "low": 115000.0,
+      "high": 151748.41
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 141082.7,
+      "low": 127774.33,
+      "high": 171435.81
+     },
+     "nominalChangePct": 17.64,
+     "realChangePct": 1.44
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 130050.0,
+      "low": 130050.0,
+      "high": 130050.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 138058.0,
+      "low": 138058.0,
+      "high": 138058.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 147400.0,
+      "low": 147400.0,
+      "high": 147400.0
+     },
+     "nominalChangePct": 13.34,
+     "realChangePct": -2.26
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -7.78,
+     "mid": -8.6,
+     "current": -4.29
+    }
+   }
+  },
+  {
+   "title": "Deputy Town Clerk",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 58661.49,
+      "low": 58661.49,
+      "high": 58661.49
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 99608.0,
+      "low": 99608.0,
+      "high": 99608.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 108281.0,
+      "low": 108281.0,
+      "high": 108281.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 118308.0,
+      "low": 118308.0,
+      "high": 118308.0
+     },
+     "nominalChangePct": 18.77,
+     "realChangePct": 2.42
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -50.42
+    }
+   }
+  },
+  {
+   "title": "Fire Marshal I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 78783.74,
+      "low": 66157.62,
+      "high": 91409.87
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 94020.94,
+      "low": 86448.29,
+      "high": 101593.59
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 79622.93,
+      "low": 73432.62,
+      "high": 85813.25
+     },
+     "nominalChangePct": 1.07,
+     "realChangePct": -12.85
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 63913.68,
+      "low": 62994.96,
+      "high": 64847.64
+     },
+     "mid": {
+      "year": 2024,
+      "count": 5,
+      "median": 71117.28,
+      "low": 69188.96,
+      "high": 74596.64
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 73059.12,
+      "low": 71057.35,
+      "high": 76097.16
+     },
+     "nominalChangePct": 14.31,
+     "realChangePct": -1.43
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 23.27,
+     "mid": 32.21,
+     "current": 8.98
+    }
+   }
+  },
+  {
+   "title": "Groundskeeper I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 46406.39,
+      "low": 45803.01,
+      "high": 51233.45
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 52523.69,
+      "low": 51877.47,
+      "high": 57693.48
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 62868.95,
+      "low": 62868.95,
+      "high": 62868.95
+     },
+     "nominalChangePct": 35.47,
+     "realChangePct": 16.82
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 47460.24,
+      "low": 47460.24,
+      "high": 47460.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 49093.56,
+      "low": 45200.24,
+      "high": 52986.88
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 48086.64,
+      "low": 47084.4,
+      "high": 55185.84
+     },
+     "nominalChangePct": 1.32,
+     "realChangePct": -12.63
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -2.22,
+     "mid": 6.99,
+     "current": 30.74
+    }
+   }
+  },
+  {
+   "title": "Harbormaster I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 72384.81,
+      "low": 72384.81,
+      "high": 72384.81
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 73432.62,
+      "low": 73432.62,
+      "high": 73432.62
+     }
+    },
+    "Southampton": {
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 84428.28,
+      "low": 76253.76,
+      "high": 86672.88
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -13.02
+    }
+   }
+  },
+  {
+   "title": "Heavy Equipment Operator",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 11,
+      "median": 58565.94,
+      "low": 55312.29,
+      "high": 67676.18
+     },
+     "mid": {
+      "year": 2024,
+      "count": 15,
+      "median": 64951.06,
+      "low": 54497.06,
+      "high": 75405.05
+     },
+     "current": {
+      "year": 2026,
+      "count": 5,
+      "median": 67624.9,
+      "low": 64724.55,
+      "high": 74150.7
+     },
+     "nominalChangePct": 15.47,
+     "realChangePct": -0.43
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 19,
+      "median": 58808.52,
+      "low": 55519.92,
+      "high": 60823.44
+     },
+     "mid": {
+      "year": 2024,
+      "count": 16,
+      "median": 67700.8,
+      "low": 65217.04,
+      "high": 70184.56
+     },
+     "current": {
+      "year": 2026,
+      "count": 21,
+      "median": 70793.64,
+      "low": 66935.02,
+      "high": 74886.12
+     },
+     "nominalChangePct": 20.38,
+     "realChangePct": 3.81
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -0.41,
+     "mid": -4.06,
+     "current": -4.48
+    }
+   }
+  },
+  {
+   "title": "Highway Labor Crew Leader",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 75449.97,
+      "low": 75449.97,
+      "high": 75449.97
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 79661.0,
+      "low": 79278.73,
+      "high": 80043.27
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 87163.32,
+      "low": 87163.32,
+      "high": 87163.32
+     },
+     "nominalChangePct": 15.52,
+     "realChangePct": -0.38
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 85566.24,
+      "low": 85566.24,
+      "high": 85566.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 91909.6,
+      "low": 91909.6,
+      "high": 91909.6
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 89449.92,
+      "low": 89449.92,
+      "high": 89449.92
+     },
+     "nominalChangePct": 4.54,
+     "realChangePct": -9.85
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -11.82,
+     "mid": -13.33,
+     "current": -2.56
+    }
+   }
+  },
+  {
+   "title": "Justice Court Clerk",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 46819.09,
+      "low": 46819.09,
+      "high": 48713.01
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 53701.63,
+      "low": 51673.25,
+      "high": 53701.63
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 58074.62,
+      "low": 57371.18,
+      "high": 58778.07
+     },
+     "nominalChangePct": 24.04,
+     "realChangePct": 6.96
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 52200.0,
+      "low": 51458.76,
+      "high": 52596.72
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 53909.12,
+      "low": 53165.04,
+      "high": 57283.68
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 56146.32,
+      "low": 55373.76,
+      "high": 56929.32
+     },
+     "nominalChangePct": 7.56,
+     "realChangePct": -7.25
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -10.31,
+     "mid": -0.38,
+     "current": 3.43
+    }
+   }
+  },
+  {
+   "title": "Justice Court Director",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 74743.39,
+      "low": 71208.07,
+      "high": 78278.7
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 92939.13,
+      "low": 92939.13,
+      "high": 92939.13
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 100444.9,
+      "low": 100444.9,
+      "high": 100444.9
+     },
+     "nominalChangePct": 34.39,
+     "realChangePct": 15.88
+    },
+    "Southampton": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 95325.0,
+      "low": 95325.0,
+      "high": 95325.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 102722.0,
+      "low": 102722.0,
+      "high": 102722.0
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": -2.5,
+     "current": -2.22
+    }
+   }
+  },
+  {
+   "title": "Maintenance Mechanic I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 50243.42,
+      "low": 50243.42,
+      "high": 50243.42
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 55834.88,
+      "low": 55834.88,
+      "high": 55834.88
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 7,
+      "median": 49360.32,
+      "low": 48660.84,
+      "high": 52200.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 7,
+      "median": 53909.12,
+      "low": 53165.04,
+      "high": 54653.2
+     },
+     "current": {
+      "year": 2026,
+      "count": 7,
+      "median": 56146.32,
+      "low": 55373.76,
+      "high": 58432.68
+     },
+     "nominalChangePct": 13.75,
+     "realChangePct": -1.91
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": -6.8,
+     "current": -0.55
+    }
+   }
+  },
+  {
+   "title": "Maintenance Mechanic II",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 3,
+      "median": 50106.44,
+      "low": 48154.24,
+      "high": 50757.17
+     },
+     "mid": {
+      "year": 2024,
+      "count": 10,
+      "median": 55147.69,
+      "low": 53103.2,
+      "high": 74011.19
+     },
+     "current": {
+      "year": 2026,
+      "count": 9,
+      "median": 59648.92,
+      "low": 56748.57,
+      "high": 79951.42
+     },
+     "nominalChangePct": 19.04,
+     "realChangePct": 2.65
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 5,
+      "median": 60823.44,
+      "low": 56313.36,
+      "high": 68841.36
+     },
+     "mid": {
+      "year": 2024,
+      "count": 6,
+      "median": 62921.92,
+      "low": 61203.2,
+      "high": 65940.16
+     },
+     "current": {
+      "year": 2026,
+      "count": 8,
+      "median": 63725.76,
+      "low": 62878.16,
+      "high": 68695.2
+     },
+     "nominalChangePct": 4.77,
+     "realChangePct": -9.65
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -17.62,
+     "mid": -12.36,
+     "current": -6.4
+    }
+   }
+  },
+  {
+   "title": "Maintenance Mechanic III",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 63939.11,
+      "low": 56330.05,
+      "high": 68239.89
+     },
+     "mid": {
+      "year": 2024,
+      "count": 6,
+      "median": 71071.75,
+      "low": 61150.85,
+      "high": 76032.19
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 71019.46,
+      "low": 60697.76,
+      "high": 81341.16
+     },
+     "nominalChangePct": 11.07,
+     "realChangePct": -4.22
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 7,
+      "median": 68392.44,
+      "low": 64842.84,
+      "high": 69071.04
+     },
+     "mid": {
+      "year": 2024,
+      "count": 7,
+      "median": 74596.64,
+      "low": 70153.12,
+      "high": 74596.64
+     },
+     "current": {
+      "year": 2026,
+      "count": 7,
+      "median": 73059.12,
+      "low": 71054.32,
+      "high": 77694.48
+     },
+     "nominalChangePct": 6.82,
+     "realChangePct": -7.88
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -6.51,
+     "mid": -4.73,
+     "current": -2.79
+    }
+   }
+  },
+  {
+   "title": "Maintenance Mechanic IV",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 59388.07,
+      "low": 54747.97,
+      "high": 64028.18
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 63987.81,
+      "low": 63987.81,
+      "high": 63987.81
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 69266.07,
+      "low": 68868.35,
+      "high": 69663.78
+     },
+     "nominalChangePct": 16.63,
+     "realChangePct": 0.57
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 77678.82,
+      "low": 70543.08,
+      "high": 84814.56
+     },
+     "mid": {
+      "year": 2024,
+      "count": 3,
+      "median": 78348.48,
+      "low": 78348.48,
+      "high": 91113.12
+     },
+     "current": {
+      "year": 2026,
+      "count": 6,
+      "median": 82448.85,
+      "low": 80450.64,
+      "high": 84177.72
+     },
+     "nominalChangePct": 6.14,
+     "realChangePct": -8.47
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -23.55,
+     "mid": -18.33,
+     "current": -15.99
+    }
+   }
+  },
+  {
+   "title": "Office Assistant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 40003.86,
+      "low": 37478.64,
+      "high": 42529.09
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 44915.04,
+      "low": 41669.62,
+      "high": 48160.46
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 44853.07,
+      "low": 44853.07,
+      "high": 44853.07
+     },
+     "nominalChangePct": 12.12,
+     "realChangePct": -3.32
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 7,
+      "median": 44860.68,
+      "low": 44213.4,
+      "high": 48483.36
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 49528.48,
+      "low": 48510.87,
+      "high": 50545.04
+     },
+     "current": {
+      "year": 2026,
+      "count": 6,
+      "median": 51229.08,
+      "low": 51229.08,
+      "high": 51928.56
+     },
+     "nominalChangePct": 14.2,
+     "realChangePct": -1.53
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -10.83,
+     "mid": -9.31,
+     "current": -12.45
+    }
+   }
+  },
+  {
+   "title": "Paralegal",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 96231.5,
+      "low": 96231.5,
+      "high": 96231.5
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 80657.67,
+      "low": 77738.61,
+      "high": 83576.72
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 90275.41,
+      "low": 87238.43,
+      "high": 93312.4
+     },
+     "nominalChangePct": -6.19,
+     "realChangePct": -19.11
+    },
+    "Southampton": {
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 70153.12,
+      "low": 69188.96,
+      "high": 71117.28
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 74061.36,
+      "low": 74061.36,
+      "high": 74061.36
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": 14.97,
+     "current": 21.89
+    }
+   }
+  },
+  {
+   "title": "Planner",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 79875.95,
+      "low": 79875.95,
+      "high": 79875.95
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 87077.15,
+      "low": 87077.15,
+      "high": 87077.15
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 97652.28,
+      "low": 97652.28,
+      "high": 97652.28
+     },
+     "nominalChangePct": 22.25,
+     "realChangePct": 5.42
+    },
+    "Southampton": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 77308.2,
+      "low": 77308.2,
+      "high": 77308.2
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": 26.32
+    }
+   }
+  },
+  {
+   "title": "Principal Account Clerk",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 71733.34,
+      "low": 71733.34,
+      "high": 71733.34
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 80200.15,
+      "low": 80200.15,
+      "high": 80200.15
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 64798.72,
+      "low": 64798.72,
+      "high": 64798.72
+     },
+     "nominalChangePct": -9.67,
+     "realChangePct": -22.1
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 68392.44,
+      "low": 68392.44,
+      "high": 68392.44
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 74596.64,
+      "low": 74596.64,
+      "high": 74596.64
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 74467.58,
+      "low": 71240.69,
+      "high": 77694.48
+     },
+     "nominalChangePct": 8.88,
+     "realChangePct": -6.11
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 4.88,
+     "mid": 7.51,
+     "current": -12.98
+    }
+   }
+  },
+  {
+   "title": "Principal Accountant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 97894.68,
+      "low": 97894.68,
+      "high": 97894.68
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 111990.11,
+      "low": 111990.11,
+      "high": 111990.11
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 108438.75,
+      "low": 108438.75,
+      "high": 108438.75
+     },
+     "nominalChangePct": 10.77,
+     "realChangePct": -4.48
+    },
+    "Southampton": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 98543.16,
+      "low": 98543.16,
+      "high": 98543.16
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": 10.04
+    }
+   }
+  },
+  {
+   "title": "Principal Office Assistant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 51869.54,
+      "low": 51869.54,
+      "high": 51869.54
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 54039.69,
+      "low": 53701.63,
+      "high": 54377.76
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 62295.29,
+      "low": 60184.96,
+      "high": 64405.63
+     },
+     "nominalChangePct": 20.1,
+     "realChangePct": 3.56
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 67046.0,
+      "low": 67046.0,
+      "high": 67046.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 69188.96,
+      "low": 69188.96,
+      "high": 69188.96
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 74030.3,
+      "low": 71054.32,
+      "high": 74061.36
+     },
+     "nominalChangePct": 10.42,
+     "realChangePct": -4.79
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -22.64,
+     "mid": -21.9,
+     "current": -15.85
+    }
+   }
+  },
+  {
+   "title": "Public Safety Dispatcher I",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 8,
+      "median": 51739.92,
+      "low": 48154.22,
+      "high": 66408.69
+     },
+     "mid": {
+      "year": 2024,
+      "count": 10,
+      "median": 56943.45,
+      "low": 53103.17,
+      "high": 74050.17
+     },
+     "current": {
+      "year": 2026,
+      "count": 12,
+      "median": 62560.07,
+      "low": 60380.75,
+      "high": 79994.68
+     },
+     "nominalChangePct": 20.91,
+     "realChangePct": 4.27
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 17,
+      "median": 68541.2,
+      "low": 58564.8,
+      "high": 72814.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 19,
+      "median": 73754.8,
+      "low": 65856.0,
+      "high": 78204.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 19,
+      "median": 75950.0,
+      "low": 66199.0,
+      "high": 81771.2
+     },
+     "nominalChangePct": 10.81,
+     "realChangePct": -4.45
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -24.51,
+     "mid": -22.79,
+     "current": -17.63
+    }
+   }
+  },
+  {
+   "title": "Public Safety Dispatcher II",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 61002.25,
+      "low": 61002.25,
+      "high": 61002.25
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 68285.88,
+      "low": 68285.88,
+      "high": 68285.88
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 69584.75,
+      "low": 69584.75,
+      "high": 69584.75
+     },
+     "nominalChangePct": 14.07,
+     "realChangePct": -1.64
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 4,
+      "median": 78640.1,
+      "low": 72275.0,
+      "high": 83045.2
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 82981.5,
+      "low": 79958.2,
+      "high": 86004.8
+     },
+     "current": {
+      "year": 2026,
+      "count": 4,
+      "median": 86107.7,
+      "low": 81191.0,
+      "high": 89924.8
+     },
+     "nominalChangePct": 9.5,
+     "realChangePct": -5.58
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -22.43,
+     "mid": -17.71,
+     "current": -19.19
+    }
+   }
+  },
+  {
+   "title": "Public Safety Dispatcher III",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 80606.16,
+      "low": 80606.16,
+      "high": 80606.16
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 84583.8,
+      "low": 84583.8,
+      "high": 84583.8
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 85282.0,
+      "low": 85282.0,
+      "high": 85282.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 102949.0,
+      "low": 102949.0,
+      "high": 102949.0
+     },
+     "nominalChangePct": 21.71,
+     "realChangePct": 4.96
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -21.7
+    }
+   }
+  },
+  {
+   "title": "Senior Account Clerk",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 66884.71,
+      "low": 66884.71,
+      "high": 66884.71
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 74677.02,
+      "low": 74677.02,
+      "high": 74677.02
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 79437.58,
+      "low": 74957.3,
+      "high": 83917.87
+     },
+     "nominalChangePct": 18.77,
+     "realChangePct": 2.42
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 56710.08,
+      "low": 55519.92,
+      "high": 57900.24
+     },
+     "mid": {
+      "year": 2024,
+      "count": 4,
+      "median": 65625.76,
+      "low": 62869.52,
+      "high": 105156.32
+     },
+     "current": {
+      "year": 2026,
+      "count": 3,
+      "median": 68016.6,
+      "low": 62876.57,
+      "high": 68695.2
+     },
+     "nominalChangePct": 19.94,
+     "realChangePct": 3.42
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 17.94,
+     "mid": 13.79,
+     "current": 16.79
+    }
+   }
+  },
+  {
+   "title": "Senior Cook",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 43034.13,
+      "low": 43034.13,
+      "high": 43034.13
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 48701.36,
+      "low": 48701.36,
+      "high": 48701.36
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 56108.19,
+      "low": 56108.19,
+      "high": 56108.19
+     },
+     "nominalChangePct": 30.38,
+     "realChangePct": 12.43
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 58808.52,
+      "low": 58808.52,
+      "high": 58808.52
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 65510.48,
+      "low": 65510.48,
+      "high": 65510.48
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 65787.66,
+      "low": 62880.12,
+      "high": 68695.2
+     },
+     "nominalChangePct": 11.87,
+     "realChangePct": -3.53
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -26.82,
+     "mid": -25.66,
+     "current": -14.71
+    }
+   }
+  },
+  {
+   "title": "Senior Justice Court Clerk",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 57264.49,
+      "low": 57264.49,
+      "high": 57264.49
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 64254.14,
+      "low": 64254.14,
+      "high": 64254.14
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 67987.46,
+      "low": 62549.29,
+      "high": 73425.63
+     },
+     "nominalChangePct": 18.73,
+     "realChangePct": 2.38
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 2,
+      "median": 62493.84,
+      "low": 59048.64,
+      "high": 65939.04
+     },
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 66699.96,
+      "low": 65311.36,
+      "high": 68088.56
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 70965.9,
+      "low": 63725.76,
+      "high": 78206.04
+     },
+     "nominalChangePct": 13.56,
+     "realChangePct": -2.08
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -8.37,
+     "mid": -3.67,
+     "current": -4.2
+    }
+   }
+  },
+  {
+   "title": "Senior Office Assistant",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 49240.34,
+      "low": 49240.34,
+      "high": 49240.34
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 56593.18,
+      "low": 56593.18,
+      "high": 56593.18
+     }
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 16,
+      "median": 55598.22,
+      "low": 51730.2,
+      "high": 68841.36
+     },
+     "mid": {
+      "year": 2024,
+      "count": 15,
+      "median": 58038.24,
+      "low": 56395.5,
+      "high": 61601.44
+     },
+     "current": {
+      "year": 2026,
+      "count": 15,
+      "median": 62138.88,
+      "low": 59612.4,
+      "high": 64143.36
+     },
+     "nominalChangePct": 11.76,
+     "realChangePct": -3.62
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": -15.16,
+     "current": -8.92
+    }
+   }
+  },
+  {
+   "title": "Senior Planner",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 99441.29,
+      "low": 95181.68,
+      "high": 103700.91
+     },
+     "current": {
+      "year": 2026,
+      "count": 2,
+      "median": 110867.65,
+      "low": 106435.96,
+      "high": 115299.34
+     }
+    },
+    "Southampton": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 83450.89,
+      "low": 83450.89,
+      "high": 83450.89
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": 32.85
+    }
+   }
+  },
+  {
+   "title": "Technical Support Aide",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 53847.6,
+      "low": 53847.6,
+      "high": 53847.6
+     }
+    },
+    "Southampton": {
+     "mid": {
+      "year": 2024,
+      "count": 2,
+      "median": 62953.36,
+      "low": 62073.04,
+      "high": 63833.68
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 64644.48,
+      "low": 64644.48,
+      "high": 64644.48
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "current": -16.7
+    }
+   }
+  },
+  {
+   "title": "Town Attorney",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 139480.89,
+      "low": 139480.89,
+      "high": 139480.89
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 152613.98,
+      "low": 152613.98,
+      "high": 152613.98
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 175774.31,
+      "low": 175774.31,
+      "high": 175774.31
+     },
+     "nominalChangePct": 26.02,
+     "realChangePct": 8.67
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 149387.0,
+      "low": 149387.0,
+      "high": 149387.0
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 160325.0,
+      "low": 160325.0,
+      "high": 160325.0
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 170680.0,
+      "low": 170680.0,
+      "high": 170680.0
+     },
+     "nominalChangePct": 14.25,
+     "realChangePct": -1.48
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": -6.63,
+     "mid": -4.81,
+     "current": 2.98
+    }
+   }
+  },
+  {
+   "title": "Town Investigator",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 98578.4,
+      "low": 98578.4,
+      "high": 98578.4
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 88412.5,
+      "low": 88412.5,
+      "high": 88412.5
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 96262.97,
+      "low": 96262.97,
+      "high": 96262.97
+     },
+     "nominalChangePct": -2.35,
+     "realChangePct": -15.79
+    },
+    "Southampton": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 73184.4,
+      "low": 73184.4,
+      "high": 73184.4
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 72196.98,
+      "low": 72196.98,
+      "high": 72196.98
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 76253.76,
+      "low": 76253.76,
+      "high": 76253.76
+     },
+     "nominalChangePct": 4.19,
+     "realChangePct": -10.15
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "start": 34.7,
+     "mid": 22.46,
+     "current": 26.24
+    }
+   }
+  },
+  {
+   "title": "Youth Counselor",
+   "group": "Civilian",
+   "towns": {
+    "Riverhead": {
+     "start": {
+      "year": 2022,
+      "count": 1,
+      "median": 66568.76,
+      "low": 66568.76,
+      "high": 66568.76
+     },
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 74668.9,
+      "low": 74668.9,
+      "high": 74668.9
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 85899.36,
+      "low": 85899.36,
+      "high": 85899.36
+     },
+     "nominalChangePct": 29.04,
+     "realChangePct": 11.27
+    },
+    "Southampton": {
+     "mid": {
+      "year": 2024,
+      "count": 1,
+      "median": 69188.96,
+      "low": 69188.96,
+      "high": 69188.96
+     },
+     "current": {
+      "year": 2026,
+      "count": 1,
+      "median": 72056.88,
+      "low": 72056.88,
+      "high": 72056.88
+     }
+    }
+   },
+   "riverheadVsPct": {
+    "Southampton": {
+     "mid": 7.92,
+     "current": 19.21
+    }
+   }
+  }
+ ]
+}

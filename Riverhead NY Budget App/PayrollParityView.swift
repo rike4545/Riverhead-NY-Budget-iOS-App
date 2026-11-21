@@ -253,6 +253,12 @@ struct NativePayrollParityView: View {
                 } label: {
                     payrollRow("Police Pay Steps", "How PBA step increases work", "figure.walk.motion")
                 }
+
+                NavigationLink {
+                    PurchasingPowerView()
+                } label: {
+                    payrollRow("Purchasing Power", "Each salary against inflation since it was first on file", "cart.fill")
+                }
             }
 
             Section("Source") {

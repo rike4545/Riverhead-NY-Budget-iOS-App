@@ -140,3 +140,16 @@ struct PoliceContracts2027DetailTests {
         #expect(abs((officer?.amount(in: 2028)?.lowerBound ?? 0) - 13_208.16) < 0.01)
     }
 }
+
+struct PurchasingPowerTests {
+
+    @Test func bundledFileLoadsAndAddsUp() throws {
+        let doc = try #require(PurchasingPowerDocument.bundled)
+        let s = doc.summary
+        #expect(s.ahead + s.even + s.behind == s.people)
+        #expect(doc.wageFloor.hourly == 17.0)
+        #expect(!doc.sameTitle.isEmpty)
+        // Every person's 2026 point is their 2026 salary.
+        #expect(doc.people.allSatisfy { $0.series.last?.salary == $0.salary })
+    }
+}

@@ -153,3 +153,25 @@ struct PurchasingPowerTests {
         #expect(doc.people.allSatisfy { $0.series.last?.salary == $0.salary })
     }
 }
+
+struct PeerTitlePayTests {
+
+    @Test func bundledFileLoads() throws {
+        let doc = try #require(PeerTitlePayDocument.bundled)
+        #expect(doc.points["start"] == 2022)
+        #expect(doc.points["current"] == 2026)
+        #expect(doc.titles.count == doc.summary.titles)
+        // Every title has Riverhead's 2026 figure and at least one neighbour.
+        #expect(doc.titles.allSatisfy { $0.towns["Riverhead"]?.current != nil && $0.towns.count >= 2 })
+    }
+
+    @Test func quotesTheNeighboursRecords() throws {
+        let doc = try #require(PeerTitlePayDocument.bundled)
+        let board = try #require(doc.titles.first { $0.title == "Town Board member" })
+        // Southampton 2026 Salary Charts: Town Council (4), $84,451.
+        #expect(board.towns["Southampton"]?.current?.median == 84_451)
+        // Southold 2021 Preliminary Budget: Members of the Town Board (4), $37,598.
+        #expect(board.towns["Southold"]?.start?.year == 2021)
+        #expect(board.towns["Southold"]?.start?.median == 37_598)
+    }
+}
